@@ -1,0 +1,40 @@
+.pago-en-linea {
+    background: linear-gradient(to bottom, #0e94ee, #086bbb); /* Gradiente de azul cielo a azul más oscuro */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .pago-en-linea-img {
+    width: 400px;
+    height: auto;
+    margin-right: 20px;
+  }
+  
+  .pago-en-linea-text {
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .pago-en-linea-text h2 {
+    margin-bottom: 10px;
+  }
+  
+  .pago-en-linea-text p {
+    margin-bottom: 10px;
+  }
+  
+  .btn-orange {
+    background-color: #FFA500; /* Color anaranjado */
+    border-color: #FFA500;
+    color: white;
+  }
+  
+  .btn-orange:hover {
+    background-color: #FF8C00; /* Color anaranjado más oscuro para el hover */
+    border-color: #FF8C00;
+  }

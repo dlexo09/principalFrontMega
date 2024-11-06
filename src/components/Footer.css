@@ -1,0 +1,43 @@
+footer {
+    color: white;
+  }
+  
+  .footer-top {
+    background: linear-gradient(to right, #000000, #333333); /* Gradiente de negro a gris oscuro */
+  }
+  
+  .social-icons a {
+    color: white;
+    margin-right: 10px;
+    font-size: 1.5rem;
+  }
+  
+  .contact-info p {
+    margin: 0;
+  }
+  
+  .footer-bottom {
+    background-color: #444444; /* Fondo oscuro sin llegar a negro */
+  }
+  
+  .footer-bottom h5 {
+    margin-bottom: 15px;
+  }
+  
+  .footer-bottom ul {
+    padding: 0;
+    list-style: none;
+  }
+  
+  .footer-bottom ul li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-bottom ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footer-bottom ul li a:hover {
+    text-decoration: underline;
+  }

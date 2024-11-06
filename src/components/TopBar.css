@@ -1,0 +1,21 @@
+.navbar-custom {
+    background-color: #001f3f;
+    margin-bottom: 0;
+    width: 100%;
+  }
+  
+  .navbar-custom .navbar-brand,
+  .navbar-custom .navbar-text,
+  .navbar-custom .btn {
+    color: white;
+  }
+  
+  .navbar-custom .btn-primary {
+    background-color: #001f3f;
+    border-color: #001f3f;
+  }
+  
+  .navbar-custom .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }

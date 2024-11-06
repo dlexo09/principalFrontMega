@@ -1,0 +1,19 @@
+.call-to-action-home {
+    background-color: #003366; /* Azul marino más claro */
+    padding: 20px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .call-to-action-home form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .call-to-action-home .form-control {
+    width: auto;
+  }

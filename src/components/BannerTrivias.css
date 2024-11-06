@@ -1,0 +1,24 @@
+.banner-trivias {
+  background-color: #f8f9fa; /* Fondo claro */
+  text-align: center;
+  color: #333;
+  margin: 20px 0;
+}
+
+.banner-trivias p {
+  margin-bottom: 10px;
+}
+
+.banner-trivias a {
+  color: #080000;
+  text-decoration: none;
+}
+
+.banner-trivias a:hover {
+  text-decoration: underline;
+}
+
+.mega-logo {
+  width: 350px;
+  height: auto;
+}
