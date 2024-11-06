@@ -8,6 +8,11 @@ import PaquetesResidenciales from './views/PaquetesResidenciales';
 import Xview from './views/Xview';
 import FoxSports from './views/FoxSports';
 import AdultPack from './views/AdultPack';
+import Canales from './views/Canales';
+import MideVelocidad from './views/MideVelocidad';
+import { LocationProvider } from './LocationContext';
+
+
 import './App.css'
 
 function App() {
@@ -23,22 +28,30 @@ function App() {
 
   return (
     <>
-    <BrowserRouter>
-        <TopBar locations={locations} onLocationChange={handleLocationChange} currentLocation={location} setCurrentLocation={setLocation}/>        
-        <NavBar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/paquetesResidenciales" element={<PaquetesResidenciales location={location} />} />
-          <Route path="/xview" element={<Xview />} />
-          <Route path="/foxSports" element={<FoxSports />} />
-          <Route path="/adultPack" element={<AdultPack />} />
+      <LocationProvider>
+        <BrowserRouter>
+          <TopBar locations={locations} onLocationChange={handleLocationChange} currentLocation={location} setCurrentLocation={setLocation} />
+          <NavBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/paquetesResidenciales" element={<PaquetesResidenciales location={location} />} />
+            <Route path="/xview" element={<Xview />} />
+            <Route path="/foxSports" element={<FoxSports />} />
+            <Route path="/adultPack" element={<AdultPack />} />
+            <Route path="/canales" element={<Canales />} />
+            <Route path="/mideVelocidad" element={<MideVelocidad />} />
 
-        </Routes>
-      </BrowserRouter>
+          </Routes>
+        </BrowserRouter>
+      </LocationProvider>
 
-      
+
+
+
+
+
       <div className="container">
-       
+
       </div>
     </>
   )

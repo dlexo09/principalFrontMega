@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './TopBar.css';
-import { serverUrl, serverAPIUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPIUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { LocationContext } from '../LocationContext'; // Ajusta la ruta según la ubicación de tu archivo LocationContext.js
 
-const TopBar = ({ onLocationChange, currentLocation, setCurrentLocation }) => {
+const TopBar = () => {
+  const { currentLocation, setCurrentLocation } = useContext(LocationContext);
   const [locations, setLocations] = useState([]);
 
   useEffect(() => {
@@ -14,7 +16,7 @@ const TopBar = ({ onLocationChange, currentLocation, setCurrentLocation }) => {
         const data = await response.json();
         setLocations(data);
         if (data.length > 0) {
-          setCurrentLocation(data[0].sucursalName);
+          setCurrentLocation(data[0]);
         }
       } catch (error) {
         console.error('Error fetching locations:', error);
@@ -23,6 +25,11 @@ const TopBar = ({ onLocationChange, currentLocation, setCurrentLocation }) => {
 
     fetchLocations();
   }, [setCurrentLocation]);
+
+  const handleLocationChange = (e) => {
+    const selectedLocation = locations.find(location => location.sucursalName === e.target.value);
+    setCurrentLocation(selectedLocation);
+  };
 
   return (
     <>
@@ -33,7 +40,7 @@ const TopBar = ({ onLocationChange, currentLocation, setCurrentLocation }) => {
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal">
-                  {currentLocation || 'Select Location'}
+                  {currentLocation?.sucursalName || 'Select Location'}
                 </button>
               </li>
             </ul>
@@ -58,7 +65,7 @@ const TopBar = ({ onLocationChange, currentLocation, setCurrentLocation }) => {
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <select className="form-select" onChange={(e) => onLocationChange(e.target.value)}>
+              <select className="form-select" onChange={handleLocationChange}>
                 {locations.map((location) => (
                   <option key={location.idSucursal} value={location.sucursalName}>{location.sucursalName}</option>
                 ))}
@@ -72,6 +79,6 @@ const TopBar = ({ onLocationChange, currentLocation, setCurrentLocation }) => {
       </div>
     </>
   );
-}
+};
 
 export default TopBar;

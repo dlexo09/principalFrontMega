@@ -42,16 +42,16 @@ const NavBar = () => {
                         <li><a className="dropdown-item" href="/adultPack">Adult pack</a></li>
                       </ul>
                     </li>
-                    <li><a className="dropdown-item" href="#">Canales</a></li>
+                    <li><a className="dropdown-item" href="/Canales">Canales</a></li>
                   </ul>
                 </li>
                 <li className="dropdown-submenu">
                   <a className="dropdown-item dropdown-toggle" href="#">Internet</a>
                   <ul className="dropdown-submenu">
-                    <li><a className="dropdown-item" href="#">Mide tu velocidad</a></li>
-                    <li><a className="dropdown-item" href="#">Zonas WIFI</a></li>
-                    <li><a className="dropdown-item" href="#">Extensor WIFI</a></li>
-                    <li><a className="dropdown-item" href="#">Norton</a></li>
+                    <li><a className="dropdown-item" href="/mideVelocidad">Mide tu velocidad</a></li>
+                    <li><a className="dropdown-item" href="/zonaWifi">Zonas WIFI</a></li>
+                    <li><a className="dropdown-item" href="/extensorWifi">Extensor WIFI</a></li>
+                    <li><a className="dropdown-item" href="/norton">Norton</a></li>
 
                   </ul>
                 </li>
