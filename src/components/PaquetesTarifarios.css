@@ -1,0 +1,37 @@
+.paquetes-tarifarios {
+    padding: 20px;
+  }
+  
+  .paquete-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .paquete-item:hover {
+    border-color: #28a745; /* Verde */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .paquete-item:hover .btn {
+    background-color: #28a745; /* Verde */
+    border-color: #28a745;
+    color: white;
+  }
+  
+  .card-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+  }
+  
+  .btn-outline-dark {
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+  }

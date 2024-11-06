@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { serverAPIUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext';
+import './PaquetesTarifarios.css';
 
 const PaquetesTarifarios = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -24,6 +25,16 @@ const PaquetesTarifarios = () => {
     fetchPaquetes();
   }, [selectedPack, currentLocation]);
 
+  const chunkArray = (array, size) => {
+    const chunkedArr = [];
+    for (let i = 0; i < array.length; i += size) {
+      chunkedArr.push(array.slice(i, i + size));
+    }
+    return chunkedArr;
+  };
+
+  const chunkedPaquetes = chunkArray(paquetes, 4);
+
   return (
     <div className="paquetes-tarifarios">
       <h1>Paquetes Tarifarios</h1>
@@ -43,14 +54,33 @@ const PaquetesTarifarios = () => {
           Doble Pack
         </button>
       </div>
-      <div className="paquetes-list">
-        {paquetes.map((paquete, index) => (
-          <div key={index} className="paquete-item">
-            <h2>{paquete.nombreTipoPaquete}</h2>
-            <p>{paquete.nameServicioCable}</p>
-            <p>Precio: {paquete.tarifaPromocional}</p>
-          </div>
-        ))}
+      <div id="carouselPaquetes" className="carousel slide" data-bs-ride="carousel">
+        <div className="carousel-inner">
+          {chunkedPaquetes.map((chunk, index) => (
+            <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+              <div className="d-flex justify-content-center">
+                {chunk.map((paquete, i) => (
+                  <div key={i} className="paquete-item card m-2">
+                    <div className="card-body">
+                      <h2 className="card-title">{paquete.nombreTipoPaquete}</h2>
+                      <p className="card-text">{paquete.nameServicioCable}</p>
+                      <p className="card-text">Precio: {paquete.tarifaPromocional}</p>
+                      <button className="btn btn-outline-dark">¡Llámame!</button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+        <button className="carousel-control-prev" type="button" data-bs-target="#carouselPaquetes" data-bs-slide="prev">
+          <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button className="carousel-control-next" type="button" data-bs-target="#carouselPaquetes" data-bs-slide="next">
+          <span className="carousel-control-next-icon" aria-hidden="true"></span>
+          <span className="visually-hidden">Next</span>
+        </button>
       </div>
     </div>
   );
