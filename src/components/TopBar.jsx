@@ -11,20 +11,22 @@ const TopBar = () => {
 
   useEffect(() => {
     const fetchLocations = async () => {
-      try {
-        const response = await fetch(`${serverAPIUrl}api/sucursales`);
-        const data = await response.json();
-        setLocations(data);
-        if (data.length > 0) {
-          setCurrentLocation(data[0]);
+      if (locations.length === 0) {
+        try {
+          const response = await fetch(`${serverAPIUrl}api/sucursales`);
+          const data = await response.json();
+          setLocations(data);
+          if (data.length > 0 && !currentLocation) {
+            setCurrentLocation(data[0]);
+          }
+        } catch (error) {
+          console.error('Error fetching locations:', error);
         }
-      } catch (error) {
-        console.error('Error fetching locations:', error);
       }
     };
 
     fetchLocations();
-  }, [setCurrentLocation]);
+  }, [setCurrentLocation, currentLocation, locations]);
 
   const handleLocationChange = (e) => {
     const selectedLocation = locations.find(location => location.sucursalName === e.target.value);
@@ -35,12 +37,12 @@ const TopBar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">Mega</a>
+          <a className="navbar-brand" href="#"></a>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
                 <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#locationModal">
-                  {currentLocation?.sucursalName || 'Select Location'}
+                  {currentLocation?.sucursalName || 'Seleccionar Sucursal'}
                 </button>
               </li>
             </ul>
@@ -61,11 +63,11 @@ const TopBar = () => {
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="locationModalLabel">Select Location</h5>
+              <h5 className="modal-title" id="locationModalLabel">Seleccionar Sucursal</h5>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body">
-              <select className="form-select" onChange={handleLocationChange}>
+              <select className="form-select" onChange={handleLocationChange} value={currentLocation?.sucursalName || ''}>
                 {locations.map((location) => (
                   <option key={location.idSucursal} value={location.sucursalName}>{location.sucursalName}</option>
                 ))}

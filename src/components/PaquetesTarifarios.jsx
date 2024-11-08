@@ -8,6 +8,7 @@ const PaquetesTarifarios = () => {
   const { currentLocation } = useContext(LocationContext);
   const [paquetes, setPaquetes] = useState([]);
   const [selectedPack, setSelectedPack] = useState('triple');
+  const promoValue = 60; // Definir la variable para el valor adicional
 
   useEffect(() => {
     const fetchPaquetes = async () => {
@@ -62,10 +63,33 @@ const PaquetesTarifarios = () => {
                 {chunk.map((paquete, i) => (
                   <div key={i} className="paquete-item card m-2">
                     <div className="card-body">
-                      <h2 className="card-title">{paquete.nombreTipoPaquete}</h2>
-                      <p className="card-text">{paquete.nameServicioCable}</p>
-                      <p className="card-text">Precio: {paquete.tarifaPromocional}</p>
-                      <button className="btn btn-outline-dark">¡Llámame!</button>
+                      <h2 className="card-title">{paquete.simetria == 0 ? 'INTERNET ILIMITADO' : 'INTERNET SIMÉTRICO'}</h2>
+                      <p className="card-text">{paquete.velocidadInternet} Megas de velocidad</p>
+                      <p className="card-text velocidadPromo"> {paquete.velocidadPromo} Megas</p>
+                      <p className="card-text tiempoVelocidadPromo">x {paquete.tiempoVelocidaPromo} meses*</p>
+                      <hr />
+                      {paquete.archivo && (
+                        <div>
+                          <p>
+                            <img src={`${serverAPIUrl}${paquete.ruta}${paquete.archivo}`} alt={`${serverAPIUrl}${paquete.ruta}${paquete.archivo}`} style={{ height: '30px' }} />
+                          </p>
+                          <p className="card-text">{paquete.textoServicioCable}</p>
+                          <p className="card-text">+ de 25000 horas</p>
+                          <p className="card-text">de peliculas y series</p>
+                        </div>
+                      )}
+                      <br />
+                      <p className="card-text">+ Telefonia Fija</p>
+                      <div className='promoExtra'>
+                        <img src={`${serverAPIUrl}/uploads/banners/promo-partner.png`} alt={`${serverAPIUrl}/uploads/banners/promo-partner.png`} style={{ height: '50px' }} />
+                        <p className="card-text">${paquete.tarifaPromocional + promoValue}* al mes</p>
+                        <p className="card-text">x {paquete.tiempoVelocidaPromo} Meses*</p>
+                      </div>
+                      <br />
+                      <button className='btn btn-primary'>Contrata Ahora</button>
+
+
+
                     </div>
                   </div>
                 ))}
