@@ -5,8 +5,7 @@ import PaquetesResidenciales from '../views/PaquetesResidenciales';
 import PaquetesTarifarios from '../components/PaquetesTarifarios';
 import BannerStreamingHome from '../components/BannerStreamingHome';
 import BannerAvisos from '../components/BannerAvisos';
-import BannerTrivias from '../components/BannerTrivias';  
-import Footer from '../components/Footer'; 
+
 
 const Home = () => {
     return (
@@ -18,8 +17,7 @@ const Home = () => {
             <PaquetesTarifarios />
             <BannerStreamingHome />
             <BannerAvisos />
-            <BannerTrivias />
-            <Footer />
+
         </>
 
     );

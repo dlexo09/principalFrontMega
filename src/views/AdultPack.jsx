@@ -1,5 +1,3 @@
-import BannerTrivias from '../components/BannerTrivias';
-import Footer from '../components/Footer';
 
 const AdultPack = () => {
   return (
@@ -7,8 +5,6 @@ const AdultPack = () => {
       <div>
         <h1>Adult pack</h1>
       </div>
-      <BannerTrivias />
-      <Footer />
     </>
   )
 }

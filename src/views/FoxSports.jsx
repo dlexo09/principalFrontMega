@@ -1,5 +1,3 @@
-import BannerTrivias from '../components/BannerTrivias';
-import Footer from '../components/Footer';
 
 const FoxSports = () => {
   return (
@@ -7,8 +5,6 @@ const FoxSports = () => {
       <div>
         <h1>Fox Sports</h1>
       </div>
-      <BannerTrivias />
-      <Footer />
     </>
 
   )

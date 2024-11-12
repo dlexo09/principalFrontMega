@@ -54,6 +54,10 @@ const PaquetesTarifarios = () => {
         >
           Doble Pack
         </button>
+        
+      </div>
+      <div className="d-flex justify-content-center mb-3">
+        <p>(Cliente nuevo)</p>
       </div>
       <div id="carouselPaquetes" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">

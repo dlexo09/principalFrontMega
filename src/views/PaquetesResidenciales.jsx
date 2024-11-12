@@ -1,5 +1,3 @@
-import BannerTrivias from '../components/BannerTrivias';  
-import Footer from '../components/Footer';  
 import PaquetesTarifarios from '../components/PaquetesTarifarios';
 
 const PaquetesResidenciales = () => {
@@ -8,8 +6,7 @@ const PaquetesResidenciales = () => {
 
     <>
       <PaquetesTarifarios />
-      <BannerTrivias />
-      <Footer />
+
     </>
 
   );
