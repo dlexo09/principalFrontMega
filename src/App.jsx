@@ -12,6 +12,9 @@ import FoxSports from './views/FoxSports';
 import AdultPack from './views/AdultPack';
 import Canales from './views/Canales';
 import MideVelocidad from './views/MideVelocidad';
+import Wifi from './views/Wifi';
+
+
 import { LocationProvider } from './LocationContext';
 import './App.css';
 
@@ -30,6 +33,7 @@ function App() {
             <Route path="/adultPack" element={<AdultPack />} />
             <Route path="/canales" element={<Canales />} />
             <Route path="/mideVelocidad" element={<MideVelocidad />} />
+            <Route path="/wifi" element={<Wifi />} />
 
           </Routes>
         </div>

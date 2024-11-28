@@ -48,7 +48,7 @@ const NavBar = () => {
                       <a className="dropdown-item dropdown-toggle" >Internet</a>
                       <ul className="dropdown-menu">
                         <li><Link className="dropdown-item" to="/MideVelocidad">Mide tu velocidad</Link></li>
-                        <li><Link className="dropdown-item" to="/MideVelocidad">Zona Wifi</Link></li>
+                        <li><Link className="dropdown-item" to="/wifi">Zona Wifi</Link></li>
                         <li><Link className="dropdown-item" to="/MideVelocidad">Extensor Wifi</Link></li>
                         <li><Link className="dropdown-item" to="/MideVelocidad">Norton</Link></li>
                       </ul>
