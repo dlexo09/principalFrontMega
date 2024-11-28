@@ -1,0 +1,30 @@
+.font-weight-bold {
+  font-weight: bold;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  max-height: 50px; /* Altura máxima de 100px */
+}
+
+.fas.fa-check {
+  color: green;
+}
+
+.bg-dark {
+  background-color: #343a40 !important; /* Fondo oscuro */
+}
+
+.text-white {
+  color: #fff !important; /* Texto blanco */
+}
+
+.text-center {
+  text-align: center !important; /* Texto centrado */
+}
+
+.py-2 {
+  padding-top: .5rem !important;
+  padding-bottom: .5rem !important;
+}

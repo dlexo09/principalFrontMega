@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 import TopBar from './components/TopBar';
 import NavBar from './components/NavBar';
 import BannerTrivias from './components/BannerTrivias';  
