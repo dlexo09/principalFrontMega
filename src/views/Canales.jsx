@@ -20,8 +20,8 @@ const Canales = () => {
             }
             acc[tipoCanal].push({
               ...canal,
-              conecta: validacion >= 1,
-              basico_plus: validacion == 2
+              conecta: validacion == 2,
+              basico_plus: validacion >= 1
             });
             return acc;
           }, {});
