@@ -11,7 +11,14 @@ const BannerHome = () => {
       try {
         const response = await fetch(`${serverAPIUrl}api/bannerHero`);
         const data = await response.json();
-        setBanners(data);
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const activeBanners = data.filter(banner => {
+          const startDate = new Date(new Date(banner.fhInicio).setHours(0, 0, 0, 0));
+          const endDate = new Date(new Date(banner.fhFin).setHours(23, 59, 59, 999));
+          return banner.status === 1 && startDate <= today && endDate >= today;
+        });
+        setBanners(activeBanners);
       } catch (error) {
         console.error('Error fetching banners:', error);
       }
@@ -40,24 +47,16 @@ const BannerHome = () => {
           <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
             {banner.link ? (
               <a href={banner.link} target="_blank" rel="noopener noreferrer">
-                <img src={`${serverAPIUrl}${banner.ruta}${banner.archivo}`} className="d-block w-100" alt={`Slide ${index + 1}`} />
+                <img src={`${serverAPIUrl}${banner.ruta}${banner.archivo}`} className="d-block w-100" alt={`Banner ${index + 1}`} />
               </a>
             ) : (
-              <img src={`${serverAPIUrl}${banner.ruta}${banner.archivo}`} className="d-block w-100" alt={`Slide ${index + 1}`} />
+              <img src={`${serverAPIUrl}${banner.ruta}${banner.archivo}`} className="d-block w-100" alt={`Banner ${index + 1}`} />
             )}
           </div>
         ))}
       </div>
-      <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span className="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Previous</span>
-      </button>
-      <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span className="carousel-control-next-icon" aria-hidden="true"></span>
-        <span className="visually-hidden">Next</span>
-      </button>
     </div>
   );
-}
+};
 
 export default BannerHome;
