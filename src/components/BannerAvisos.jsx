@@ -11,7 +11,14 @@ const BannerAvisos = () => {
       try {
         const response = await fetch(`${serverAPIUrl}api/bannerFooter`);
         const data = await response.json();
-        setBanners(data);
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        const activeBanners = data.filter(banner => {
+          const startDate = new Date(new Date(banner.fhInicio).setHours(0, 0, 0, 0));
+          const endDate = new Date(new Date(banner.fhFin).setHours(23, 59, 59, 999));
+          return banner.status === 1 && startDate <= today && endDate >= today;
+        });
+        setBanners(activeBanners);
       } catch (error) {
         console.error('Error fetching banners:', error);
       }
