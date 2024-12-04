@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './NavBar.css';
+import { serverAPIUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+
 
 const NavBar = () => {
   return (
@@ -14,7 +16,9 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <Link className="nav-link active" aria-current="page" to="/">MegaLogo</Link>
+            <Link className="nav-link active" aria-current="page" to="/">
+                <img src={`${serverAPIUrl}/uploads/assets/megacable-logo.svg`} alt="MegaLogo" className="mega-logo-navbar" />
+              </Link>
             </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -49,7 +53,7 @@ const NavBar = () => {
                       <ul className="dropdown-menu">
                         <li><Link className="dropdown-item" to="/MideVelocidad">Mide tu velocidad</Link></li>
                         <li><Link className="dropdown-item" to="/wifi">Zona Wifi</Link></li>
-                        <li><Link className="dropdown-item" to="/MideVelocidad">Extensor Wifi</Link></li>
+                        <li><Link className="dropdown-item" to="/wifi-ultra">Extensor Wifi</Link></li>
                         <li><Link className="dropdown-item" to="/MideVelocidad">Norton</Link></li>
                       </ul>
                     </li>

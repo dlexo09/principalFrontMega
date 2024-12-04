@@ -1,8 +1,11 @@
 import React from 'react';
+import PaquetesTarifarios from '../components/PaquetesTarifarios';
+
 
 const Xview = () => {
   return (
     <>
+    <PaquetesTarifarios />
       <section className="container-fluid p-0 back-xvie" id="xview-section">
         {/*<!-- BANNER PRODUCTOS -->*/}
         <div className="xview w-100 d-block position-relative">

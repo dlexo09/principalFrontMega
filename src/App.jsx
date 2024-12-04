@@ -1,10 +1,8 @@
+import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '@fortawesome/fontawesome-free/css/all.min.css';
 import TopBar from './components/TopBar';
 import NavBar from './components/NavBar';
-import BannerTrivias from './components/BannerTrivias';  
-import Footer from './components/Footer'; 
 import Home from './views/Home';
 import PaquetesResidenciales from './views/PaquetesResidenciales';
 import Xview from './views/Xview';
@@ -13,8 +11,9 @@ import AdultPack from './views/AdultPack';
 import Canales from './views/Canales';
 import MideVelocidad from './views/MideVelocidad';
 import Wifi from './views/Wifi';
-
-
+import WifiUltra from './views/WifiUltra';
+import BannerTrivias from './components/BannerTrivias';
+import Footer from './components/Footer';
 import { LocationProvider } from './LocationContext';
 import './App.css';
 
@@ -34,7 +33,7 @@ function App() {
             <Route path="/canales" element={<Canales />} />
             <Route path="/mideVelocidad" element={<MideVelocidad />} />
             <Route path="/wifi" element={<Wifi />} />
-
+            <Route path="/wifi-ultra" element={<WifiUltra />} />
           </Routes>
         </div>
         <BannerTrivias />
