@@ -1,21 +1,92 @@
 .navbar-custom {
-    background-color: #001f3f;
-    margin-bottom: 0;
-    width: 100%;
-  }
-  
-  .navbar-custom .navbar-brand,
-  .navbar-custom .navbar-text,
-  .navbar-custom .btn {
-    color: white;
-  }
-  
-  .navbar-custom .btn-primary {
-    background-color: #001f3f;
-    border-color: #001f3f;
-  }
-  
-  .navbar-custom .btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
-  }
+  background-color: #000000;
+  margin-bottom: 0;
+  width: 100%;
+}
+
+.navbar-custom .navbar-brand,
+.navbar-custom .navbar-text,
+.navbar-custom .btn {
+  color: white;
+}
+
+.navbar-custom .btn-primary {
+  background-color: #001f3f;
+  border-color: #001f3f;
+}
+
+.navbar-custom .btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+}
+.top-bar{
+  padding: 3px 20px;
+}
+.top-bar ul {
+  margin: 0;
+}
+.top-bar-phone a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: color 0.2s ease-in;
+}
+.top-bar-phone a:hover{
+  color: #ffffffa5;
+}
+.top-bar-phone span{
+  display: inline-block;
+  width: 15px;
+  height: 23px;
+  background-image: url(../assets/icons/phone-icon.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-right: 8px;
+}
+.client-mega{
+  gap: 30px;
+}
+.client-mega a{
+   text-decoration: none;
+   color: #ffffff;
+   transition: color 0.2s ease-in;
+}
+.client-mega a:hover{
+  color: #ffffffa5;
+}
+.top-bar-location{
+  background-color: #303030;
+  padding: 8px 15px 5px 15px;
+  border-radius: 50px;
+  border: 1px solid #ffffff;
+  transition: background-color 0.2s ease-in;
+}
+.top-bar-location:hover{
+  background-color: #303030d0;
+  border: 1px solid #ffffff;
+}
+.top-bar-location span{
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.location-icon{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image:url(../assets/icons/location-icon.png) ;
+  margin-right: 10px;
+}
+.down-icon{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image:url(../assets/icons/down-icon.png) ;
+  margin-left: 50px;
+}
+.top-bar-ubicacion{
+  gap: 20px;
+}
+.paquetes-tarifarios sup{
+  font-size: 1rem;
+  vertical-align: 15px;
+}

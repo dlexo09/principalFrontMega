@@ -1,22 +1,8 @@
-.banner-streaming-home {
-    padding: 20px;
-    background-color: #f8f9fa; /* Fondo claro */
-    border-radius: 10px;
-    margin: 20px 0;
-  }
-  
-  .banner-streaming-home h1 {
-    margin-bottom: 20px;
-    color: #333;
-  }
-  
-  .banner-streaming-home p {
-    margin-bottom: 20px;
-    color: #555;
-  }
-  
-  .streaming-logos .logo {
-    width: 100px;
-    height: auto;
-    margin: 0 10px;
-  }
+.banner-streaming-home{
+  margin: 150px 0;
+}
+.txt-wht{
+  width: 650px;
+  margin: 0 auto;
+  margin-top: 30px;
+}

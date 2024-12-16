@@ -1,0 +1,14 @@
+.internet-simetrico{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.internet-simetrico-txt{
+    margin-left: 20px;
+}
+.internet-simetrico-img{
+    text-align: center;
+}
+.internet-simetrico-img img{
+    width: 75%;
+}

@@ -1,37 +1,138 @@
+.btn-container {
+  margin: auto;
+  width: 450px;
+  background-color: #e5e5e5;
+  border-radius: 50px;
+  padding: 5px;
+}
+.pack-btn {
+  width: 50%;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 15px;
+  padding: 11px 0 6px 0;
+  margin: 0 !important;
+}
+.pack-btn span {
+  font-size: 10px;
+  font-weight: 600;
+}
+.pack-btn-active {
+  background-color: var(--turquesa-btn);
+  color: #0f0d1d;
+}
+.pack-btn-inactive {
+  background-color: #e5e5e5;
+  font-weight: 400;
+  color: #0f0d1d9f;
+}
+
 .paquetes-tarifarios {
-    padding: 20px;
-  }
-  
-  .paquete-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    padding: 20px;
-    margin: 10px;
-    text-align: center;
-    transition: border-color 0.3s, box-shadow 0.3s;
-  }
-  
-  .paquete-item:hover {
-    border-color: #28a745; /* Verde */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .paquete-item:hover .btn {
-    background-color: #28a745; /* Verde */
-    border-color: #28a745;
-    color: white;
-  }
-  
-  .card-title {
-    font-size: 1.5rem;
-    margin-bottom: 10px;
-  }
-  
-  .card-text {
-    margin-bottom: 10px;
-  }
-  
-  .btn-outline-dark {
-    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-  }
+  padding: 150px 0;
+}
+
+.paquete-item {
+  background-color: #fff;
+  border: 2px solid var(--blue-dark);
+  border-radius: var(--br-card);
+  padding: 20px;
+  text-align: center;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+
+.card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.btn-outline-dark {
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.packs-terminos{
+  font-size: 14px;
+  line-height: 14px;
+}
+.velocidadPromo{
+  font-size: 2.2rem;
+  color: var(--blue-dark);
+  font-weight: 700;
+  line-height: 1.6rem;
+}
+.tiempoVelocidadPromo{
+  margin-top: 5px;
+  font-size: 1rem;
+}
+.tiempoVelocidadPromo sup{
+  vertical-align: 1px;
+  font-size: 0.5rem;
+}
+.slider-gp{
+  gap: 50px;
+}
+.xview-content, .promoExtra{
+  margin-top: 30px;
+}
+.servicio-m{
+  margin-top: 40px;
+}
+.card-servicio-txt{
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.xview-content img{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.price-card{
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 20px;
+  margin-top: 50px;
+}
+.price-card .time-crd{
+  font-size: 1rem;
+  font-weight: 400;
+}
+.price-card .price-mxn{
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.slider-gp{
+  padding-bottom: 30px;
+}
+.promo-xview{
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 100px;
+}
+.promo-xview span{
+  color: var(--blue-dark);
+}
+.card-body{
+  position: relative;
+}
+.btn-pack-card{
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  right: 0;
+  z-index: 999;
+}
+.icon-card-packs{
+  position: absolute;
+  width: 45px;
+  left: -42px;
+}
+.internet-icon{
+  top: 35px;
+}
+.tv-icon{
+  top: 160px;
+}
+.telefonia-icon{
+  top: 265px;
+}
