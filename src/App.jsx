@@ -12,6 +12,8 @@ import Canales from './views/Canales';
 import MideVelocidad from './views/MideVelocidad';
 import Wifi from './views/Wifi';
 import WifiUltra from './views/WifiUltra';
+import Trivias from './views/Trivias'; // Importar el componente Trivias
+import TriviaDetail from './views/TriviaDetail'; // Importar el componente TriviaDetail
 import BannerTrivias from './components/BannerTrivias';
 import Footer from './components/Footer';
 import { LocationProvider } from './LocationContext';
@@ -34,6 +36,8 @@ function App() {
             <Route path="/mideVelocidad" element={<MideVelocidad />} />
             <Route path="/wifi" element={<Wifi />} />
             <Route path="/wifi-ultra" element={<WifiUltra />} />
+            <Route path="/trivias" element={<Trivias />} /> {/* Agregar la ruta para Trivias */}
+            <Route path="/trivias/:endpoint" element={<TriviaDetail />} /> {/* Agregar la ruta dinámica para TriviaDetail */}
           </Routes>
         </div>
         <BannerTrivias />

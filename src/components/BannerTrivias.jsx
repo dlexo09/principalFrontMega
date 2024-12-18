@@ -10,7 +10,7 @@ const BannerTrivias = () => {
                 <p>Ponemos a su disposición la actualización de nuestro aviso de privacidad <a href="aviso-de-privacidad" target="_blank" rel="noopener noreferrer">Aquí</a></p>
             </div>
             <div className="col-md-12">
-                <a href="/participa-y-gana" className="btn btn-outline-primary">Participa y Gana</a>
+                <a href="/trivias" className="btn btn-outline-primary">Participa y Gana</a>
                 <a href="https://pagoenlinea.megacable.com.mx/" className="btn btn-outline-primary">Pago en Línea</a>
             </div>
 
