@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { serverAPIUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext';
 import './PaquetesTarifarios.css';
+import './Globales.css'
 
 const PaquetesTarifarios = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -37,22 +38,23 @@ const PaquetesTarifarios = () => {
   const chunkedPaquetes = chunkArray(paquetes, 4);
 
   return (
-    <div className="paquetes-tarifarios">
-      <h1>Paquetes Tarifarios</h1>
-      <div className="d-flex justify-content-center mb-3">
+    <div className="paquetes-tarifarios text-center">
+      <h2 className='small-title'>Elige el paquete ideal para ti</h2>
+      <p className='big-title mb-5'>¡Te instalamos sin costo!<sup>*</sup></p>
+      <div className="d-flex justify-content-center mb-5 btn-container">
         <button
           type="button"
-          className={`btn ${selectedPack === 'triple' ? 'btn-primary' : 'btn-outline-primary'} btn-lg mx-2`}
+          className={`pack-btn ${selectedPack === 'triple' ? 'pack-btn-active' : 'pack-btn-inactive'} btn-lg mx-2`}
           onClick={() => setSelectedPack('triple')}
         >
-          Triple Pack
+          TRIPLE PACK<br/><span>TV+INTERNET+TELEFONIA</span>
         </button>
         <button
           type="button"
-          className={`btn ${selectedPack === 'doble' ? 'btn-primary' : 'btn-outline-primary'} btn-lg mx-2`}
+          className={`pack-btn ${selectedPack === 'doble' ? 'pack-btn-active' : 'pack-btn-inactive'} btn-lg mx-2`}
           onClick={() => setSelectedPack('doble')}
         >
-          Doble Pack
+          DOBLE PACK<br/><span>TV+INTERNET</span>
         </button>
         
       </div>
@@ -63,43 +65,51 @@ const PaquetesTarifarios = () => {
         <div className="carousel-inner">
           {chunkedPaquetes.map((chunk, index) => (
             <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-              <div className="d-flex justify-content-center">
+              <div className="d-flex justify-content-center slider-gp">
                 {chunk.map((paquete, i) => (
                   <div key={i} className="paquete-item card m-2">
+                    
                     <div className="card-body">
                       <h2 className="card-title">{paquete.simetria == 0 ? 'INTERNET ILIMITADO' : 'INTERNET SIMÉTRICO'}</h2>
+                      {/*  
                       <p className="card-text">{paquete.velocidadInternet} Megas de velocidad</p>
-                      <p className="card-text velocidadPromo"> {paquete.velocidadPromo} Megas</p>
-                      <p className="card-text tiempoVelocidadPromo">x {paquete.tiempoVelocidaPromo} meses*</p>
-                      <hr />
+                      */}
+                      <p className="card-text velocidadPromo"> {paquete.velocidadPromo} MEGAS</p>
+                      <p className="card-text tiempoVelocidadPromo">x {paquete.tiempoVelocidaPromo} meses<sup>*</sup></p>
+                      
                       {paquete.archivo && (
-                        <div>
+                        <div className='xview-content'>
+                          <p className='card-servicio-txt'>TV HD INTERACTIVA</p>
                           <p>
                             <img src={`${serverAPIUrl}${paquete.ruta}${paquete.archivo}`} alt={`${serverAPIUrl}${paquete.ruta}${paquete.archivo}`} style={{ height: '30px' }} />
                           </p>
                           <p className="card-text">{paquete.textoServicioCable}</p>
-                          <p className="card-text">+ de 25000 horas</p>
-                          <p className="card-text">de peliculas y series</p>
                         </div>
                       )}
-                      <br />
-                      <p className="card-text">+ Telefonia Fija</p>
+                      
+                      <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
                       <div className='promoExtra'>
                         <img src={`${serverAPIUrl}/uploads/banners/promo-partner.png`} alt={`${serverAPIUrl}/uploads/banners/promo-partner.png`} style={{ height: '50px' }} />
-                        <p className="card-text">${paquete.tarifaPromocional + promoValue}* al mes</p>
-                        <p className="card-text">x {paquete.tiempoVelocidaPromo} Meses*</p>
+                        <p className="card-text price-card"><span className='price-mxn'>$</span>{paquete.tarifaPromocional + promoValue}<sup>*</sup><span className='time-crd'>/mes</span></p>
+                        <p className="card-text">x {paquete.tiempoVelocidaPromo} meses</p>
                       </div>
-                      <br />
-                      <button className='btn btn-primary'>Contrata Ahora</button>
-
-
-
+                      <button className='btn btn-packs btn-pack-card'>¡Lo quiero!</button>
+                      
+                      {/* Icons cards */}
+                      <img className='icon-card-packs internet-icon' src="../src/assets/icons/internet-icon.png" alt="" />
+                      <img className='icon-card-packs tv-icon' src="../src/assets/icons/tv-icon.png" alt="" />
+                      <img className='icon-card-packs telefonia-icon' src="../src/assets/icons/telefonia-icon.png" alt="" />
                     </div>
                   </div>
                 ))}
               </div>
             </div>
           ))}
+        </div>
+        <div className="packs-terminos mt-5">
+         <p className='promo-xview'>Incluyen <span>más de 30 000 hrs de contenido</span> en Xview+</p>
+          <p>Nota: Promoción válida domiciliando el pago a tarjeta. Tarifas registradas ante el IFT. Aplican restricciones. Consulta términos y condiciones <a href="">aquí.</a></p>
+          
         </div>
         <button className="carousel-control-prev" type="button" data-bs-target="#carouselPaquetes" data-bs-slide="prev">
           <span className="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -110,6 +120,7 @@ const PaquetesTarifarios = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+
     </div>
   );
 };

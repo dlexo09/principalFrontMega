@@ -1,0 +1,100 @@
+:root{
+    --turquesa-btn:#00D7CC;
+    --blue-dark:#3a66fb;
+    --br-card: 40px;
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url(../assets/fonts/Poppins-Light.ttf);
+    font-weight: 300;
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url(../assets/fonts/Poppins-Regular.ttf);
+    font-weight: 400;
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url(../assets/fonts/Poppins-Medium.ttf);
+    font-weight: 500;
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url(../assets/fonts/Poppins-SemiBold.ttf);
+    font-weight: 600;
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url(../assets/fonts/Poppins-Bold.ttf);
+    font-weight: 700;
+}
+@font-face{
+    font-family: 'Poppins';
+    src: url(../assets/fonts/Poppins-Black.ttf);
+    font-weight: 900;
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
+ul{
+    list-style: none;
+    padding: 0;
+}
+p, h1, h2, h3{
+    margin: 0;
+}
+
+/*Titulos*/
+.small-title{
+    color: var(--blue-dark);
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+.big-title{
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: initial;
+}
+.secondary-title{
+    margin-top: 5px;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+.secondary-title span{
+    font-weight: 600;
+}
+
+/* Botones */
+.btn-packs{
+    background-color: var(--turquesa-btn);
+    border-radius: 50px;
+    font-size: 1.3rem;
+    padding: 10px 50px;
+    font-weight: 500;
+    border: none;
+}
+.btn-action{
+    background-color: var(--turquesa-btn);
+    border-radius: 50px;
+    font-size: 1.3rem;
+    padding: 10px 20px;
+    font-weight: 500;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.btn-packs:hover, .btn-action:hover{
+    background-color: #01c6bd;
+}
+.open-page-icon{
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../assets/icons/next-page-icon.png);
+    background-position: center;
+    background-size: cover;
+}
