@@ -6,3 +6,93 @@
   margin: 0 auto;
   margin-top: 30px;
 }
+
+.swiper-container{
+  padding: 0 6px;
+  margin-top: -90px;
+  margin-bottom: 100px;
+}
+.swiper-slide {
+  height: 350px; /* Ajusta la altura del slide */
+  border-radius: 40px;
+  box-shadow: 0 0 20px 2px #00000029;
+}
+.swiper-slide img {
+  width: 100%; /* La imagen toma el 100% del contenedor */
+  height: 100%; /* La altura también será 100% */
+  border-radius: 2rem;
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  border-radius: 40px;
+}
+
+.swiper-img-container {
+  width: 100%; /* Ajusta el contenedor al tamaño del slide */
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+.swiper-img-container img{
+  width: 100%;
+  border-radius: 0;
+}
+.max-item{
+  background-color: #002BE7;
+}
+.prime-item{
+  background-color: #fff;
+}
+.netflix-item{
+  background-color: #000;
+}
+.paramount-item{
+  background-color: #0064FF;
+}
+.disney-item{
+  background-image: url(../assets/images/home/bg-disney.jpg);
+}
+.swiper-3d .swiper-slide-shadow-left{
+  background-image: none;
+}
+.swiper-3d .swiper-slide-shadow-right{
+  background-image: none;
+}
+.swiper-wrappe{
+  padding: 20px 0 !important;
+}
+.swiper-3d {
+  width: 100%;
+  padding: 20px 0;
+}
+.swiper-content{
+  gap:20px;
+}
+
+/* Mostrar el botón solo en el slide activo */
+.swiper-slide-active .hidden-button {
+  display: block;
+
+}
+.hidden-button {
+  display: none;
+}
+
+
+@media (max-width: 500px) {
+  .swiper_container {
+    height: 47rem;
+  }
+  .swiper-slide {
+    width: 28rem !important;
+    height: 36rem !important;
+  }
+  .swiper-slide img {
+    width: 28rem !important;
+    height: 36rem !important;
+  }
+}
+
+
+
+

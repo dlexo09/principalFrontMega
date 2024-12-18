@@ -1,0 +1,19 @@
+
+.carrousel-container{
+    margin-top: 90px;
+}
+.carousel-inner{
+    border-radius: var(--br-card);
+}
+.avisos-legal{
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 150px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.avisos-legal a{
+    color: #000;
+}

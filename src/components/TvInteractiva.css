@@ -1,0 +1,15 @@
+.tv-interactiva-container{
+    background-image: url(../assets/images/home/tv-interactiva-bg.png);
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0;
+    margin: 100px 0;
+
+}
+.tv-interactiva-content{
+    margin: 0 auto;
+}
+.tv-interactiva-img img{
+    width: 100%;
+}

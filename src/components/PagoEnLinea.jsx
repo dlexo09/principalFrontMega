@@ -1,25 +1,31 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import './PagoEnLinea.css';
+import "./Globales.css";
 
 const PagoEnLinea = () => {
     return (
-        <div className="pago-en-linea d-flex align-items-center">
-            <div className='col-md-4'>
-                <img src="https://www.megacable.com.mx/images/img-pago-en-linea.png" alt="Pago en línea" className="pago-en-linea-img" />
+        <>
+            <div className="container-fluid pago-en-linea">
+                <div className="container d-flex align-items-center pago-en-linea-content">
+                    <div className="pago-img">
+                        <img src="../src/assets/images/home/paga-en-linea-img.png" alt="" />
+                    </div>
+                    <div>
+                        <h2 className="secondary-title"><span>Pago en Línea</span></h2>
+                        <p>Paga la factura de tus servicios de<br />forma fácil y rápida aquí.</p>
+                        <div className="pago-bancos">
+                            <img src="../src/assets/images/home/pagos-tarjetas-img.png" alt="" />
+                        </div>
+                        <button className="btn-action">Paga aquí<span className="open-page-icon"></span></button>
+                    </div>
+                </div>
             </div>
-            <div className='col-md-4'>
-                <h2>Pago en línea</h2>
-                <p>Realiza tu pago aquí</p>
-                <p>o acude con tu número de suscriptor a 10 dígitos a:</p>
-                <p>Ahora tu nueva forma de pago con</p>
+            <div className="wave-vector">
+                <img src="../src/assets/images/home/pago-vector.png" alt="" />
             </div>
-            <div className='col-md-4'>
-                <a href="https://portalpagos.cloudsvc.megacable.com.mx/" target="_blank" rel="noopener noreferrer" className="btn btn-orange ms-auto">Ir a Pago en Línea</a>
-            </div>
-
-
-        </div>
+        </>
     );
 };
 

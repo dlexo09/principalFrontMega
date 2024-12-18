@@ -1,40 +1,28 @@
 .pago-en-linea {
-    background: linear-gradient(to bottom, #0e94ee, #086bbb); /* Gradiente de azul cielo a azul más oscuro */
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
+  background-image: url(../assets/images/home/paga-en-linea-wave.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  padding-top: 100px;
+}
+
+.pago-img img{
+  width: 750px;
+  padding-bottom: 30px;
+}
+.pago-bancos img{
+  width: 300px;
+  margin-top: 20px;
+  margin-bottom: 30px;
   
-  .pago-en-linea-img {
-    width: 400px;
-    height: auto;
-    margin-right: 20px;
-  }
-  
-  .pago-en-linea-text {
-    max-width: 600px;
-    text-align: center;
-  }
-  
-  .pago-en-linea-text h2 {
-    margin-bottom: 10px;
-  }
-  
-  .pago-en-linea-text p {
-    margin-bottom: 10px;
-  }
-  
-  .btn-orange {
-    background-color: #FFA500; /* Color anaranjado */
-    border-color: #FFA500;
-    color: white;
-  }
-  
-  .btn-orange:hover {
-    background-color: #FF8C00; /* Color anaranjado más oscuro para el hover */
-    border-color: #FF8C00;
-  }
+}
+.pago-en-linea-content{
+  margin: 0 auto;
+  gap: 100px;
+}
+.wave-vector{
+  margin-top: -123px;
+}
+.wave-vector img{
+  width: 100%;
+}
