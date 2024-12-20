@@ -7,12 +7,28 @@ import './NavBar.css';
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
-      <div className="container-fluid justify-content-center">
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav className="navbar navbar-expand-xl navbar-custom navbar-container">
+      <div className="container">
+        {/* Logo */}
+        <div className="navbar-logo">
+          <img
+            src="../src/assets/images/general/mega-logo.png"
+            alt="Logo"
+            className="logo-img"
+          />
+        </div>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
+        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href={`${serverUrl}`}>Home</a>
@@ -36,7 +52,7 @@ const NavBar = () => {
                   <ul className="dropdown-submenu">
                     <li><a className="dropdown-item" href="/xview">TV Interactiva</a></li>
                     <li className="dropdown-submenu">
-                      <a className="dropdown-item dropdown-toggle" >Premier</a>
+                      <a className="dropdown-item dropdown-toggle">Premier</a>
                       <ul className="dropdown-submenu">
                         <li><a className="dropdown-item" href="/foxSports">Fox sports premium</a></li>
                         <li><a className="dropdown-item" href="/adultPack">Adult pack</a></li>
@@ -52,7 +68,6 @@ const NavBar = () => {
                     <li><a className="dropdown-item" href="/zonaWifi">Zonas WIFI</a></li>
                     <li><a className="dropdown-item" href="/extensorWifi">Extensor WIFI</a></li>
                     <li><a className="dropdown-item" href="/norton">Norton</a></li>
-
                   </ul>
                 </li>
                 <li><a className="dropdown-item" href="#">Mega móvil</a></li>
@@ -74,7 +89,7 @@ const NavBar = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Mega móvil</a>
+              <a className="nav-link" aria-current="page" href="#">Mega móvil</a>
             </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -91,10 +106,12 @@ const NavBar = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">Pago en Línea</a>
+              <a className="nav-link" aria-current="page" href="#">Pago en Línea</a>
             </li>
           </ul>
         </div>
+
+
       </div>
     </nav>
   );

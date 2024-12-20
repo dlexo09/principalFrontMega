@@ -42,7 +42,7 @@ const BannerAvisos = () => {
             ></button>
           ))}
         </div>
-        <div className="carousel-inner ">
+        <div className="carousel-inner carrousel-avisos">
           {banners.map((banner, index) => (
             <div
               key={index}
@@ -91,7 +91,7 @@ const BannerAvisos = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
-      <div className="avisos-legal">
+      <div className="container avisos-legal">
         <p>*Los incentivos promocionales quedan sujetos a la vigencia, términos y condiciones indicados en el paquete contratado Ponemos a su disposición la actualización de nuestro aviso de privacidad <a href="">Aquí</a></p>
       </div>
     </>

@@ -21,7 +21,7 @@ const BannerHome = () => {
   }, []);
 
   return (
-    <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
+    <div id="carouselExampleIndicators" className="carousel slide banner-home-container" data-bs-ride="carousel">
       <div className="carousel-indicators">
         {banners.map((banner, index) => (
           <button
@@ -35,7 +35,7 @@ const BannerHome = () => {
           ></button>
         ))}
       </div>
-      <div className="carousel-inner">
+      <div className="carousel-inner ">
         {banners.map((banner, index) => (
           <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
             {banner.link ? (

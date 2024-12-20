@@ -1,7 +1,8 @@
-.navbar-custom {
+.top-bar-container {
   background-color: #000000;
   margin-bottom: 0;
   width: 100%;
+  display: none;
 }
 
 .navbar-custom .navbar-brand,
@@ -89,4 +90,10 @@
 .paquetes-tarifarios sup{
   font-size: 1rem;
   vertical-align: 15px;
+}
+@media screen and (min-width: 900px) {
+  .top-bar-container {
+    display: block;
+  }
+  
 }

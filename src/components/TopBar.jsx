@@ -37,7 +37,7 @@ const TopBar = () => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg navbar-dark navbar-custom">
+      <nav className="navbar navbar-expand-lg navbar-custom top-bar-container">
         <div className="container-fluid">
           <a className="navbar-brand" href="#"></a>
           <div

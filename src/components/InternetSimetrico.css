@@ -1,14 +1,48 @@
 .internet-simetrico{
-   display: flex;
-   align-items: center;
-   justify-content: center;
+    max-width: 1250px;
+    margin: 0 auto;
 }
 .internet-simetrico-txt{
-    margin-left: 20px;
+    width: 110%;
 }
 .internet-simetrico-img{
-    text-align: center;
+    width: 200%;
 }
 .internet-simetrico-img img{
-    width: 75%;
+width: 100%;
+}
+.text-p{
+    padding-right: 85px;
+}
+
+@media screen and (max-width: 1023px){
+    .internet-simetrico{
+        
+        text-align: center;
+    }
+    .internet-simetrico-content {
+        display: flex;
+        flex-direction: column;
+    }
+    .internet-simetrico-txt {
+        width: 100%;
+    }
+    .internet-simetrico-img, .internet-simetrico-img img {
+        width: 100%;
+        margin-top: 10px;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1300px){
+    .internet-simetrico{
+        padding: 0 40px;
+    }
+}
+@media screen and (min-width: 1024px) and (max-width: 1500px) {
+    .internet-simetrico-txt {
+        width: 180%;
+    }
+    .internet-simetrico-img img {
+        width: 155%;
+    }
+    
 }

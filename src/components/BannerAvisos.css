@@ -2,9 +2,7 @@
 .carrousel-container{
     margin-top: 90px;
 }
-.carousel-inner{
-    border-radius: var(--br-card);
-}
+
 .avisos-legal{
     max-width: 900px;
     text-align: center;
@@ -16,4 +14,21 @@
 }
 .avisos-legal a{
     color: #000;
+}
+@media screen and (min-width: 768px){
+    .carrousel-avisos{
+        border-radius: var(--br-card);
+    }
+    
+}
+@media screen and (max-width: 767px){
+    .carrousel-avisos{
+        border-radius: 20px;
+    }
+    .carrousel-container {
+        margin-top: 50px;
+    }
+    .avisos-legal{
+        margin-bottom: 50px;
+ }
 }
