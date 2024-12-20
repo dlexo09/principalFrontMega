@@ -43,29 +43,31 @@ const BannerAvisos = () => {
           ))}
         </div>
         <div className="carousel-inner carrousel-avisos">
-          {banners.map((banner, index) => (
-            <div
-              key={index}
-              className={`carousel-item ${index === 0 ? "active" : ""}`}
-            >
-              {banner.link ? (
-                <a href={banner.link} target="_blank" rel="noopener noreferrer">
-                  <img
-                    src={`${serverAPIUrl}${banner.ruta}${banner.archivo}`}
-                    className="d-block w-100"
-                    alt={`Slide ${index + 1}`}
-                  />
-                </a>
-              ) : (
-                <img
-                  src={`${serverAPIUrl}${banner.ruta}${banner.archivo}`}
-                  className="d-block w-100"
-                  alt={`Slide ${index + 1}`}
-                />
-              )}
-            </div>
-          ))}
-        </div>
+  {banners.map((banner, index) => (
+    <div
+      key={index}
+      className={`carousel-item ${index === 0 ? "active" : ""}`}
+    >
+      {banner.link ? (
+        <a href={banner.link} target="_blank" rel="noopener noreferrer">
+          <img
+            src={`${serverAPIUrl}${banner.ruta}${banner.archivo}`}
+            className="d-block carousel-image"
+            alt={`Slide ${index + 1}`}
+          />
+        </a>
+      ) : (
+        <img
+          src={`${serverAPIUrl}${banner.ruta}${banner.archivo}`}
+          className="d-block carousel-image"
+          alt={`Slide ${index + 1}`}
+        />
+      )}
+    </div>
+  ))}
+</div>
+
+
         <button
           className="carousel-control-prev"
           type="button"
@@ -92,7 +94,12 @@ const BannerAvisos = () => {
         </button>
       </div>
       <div className="container avisos-legal">
-        <p>*Los incentivos promocionales quedan sujetos a la vigencia, términos y condiciones indicados en el paquete contratado Ponemos a su disposición la actualización de nuestro aviso de privacidad <a href="">Aquí</a></p>
+        <p>
+          *Los incentivos promocionales quedan sujetos a la vigencia, términos y
+          condiciones indicados en el paquete contratado Ponemos a su
+          disposición la actualización de nuestro aviso de privacidad{" "}
+          <a href="">Aquí</a>
+        </p>
       </div>
     </>
   );

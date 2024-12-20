@@ -82,9 +82,9 @@
   padding :30px;
 }
 .promo-xview{
-  font-size: clamp(2rem, 1.6667rem + 0.6944vw, 2.5rem);
+  font-size: clamp(1.3rem, 0.9537rem + 1.2886vw, 2.5rem);
   font-weight: 600;
-  line-height: 2.5rem;
+  line-height: 1.7rem;
   margin-bottom: 20px;
 
 }
@@ -119,9 +119,21 @@
   top: 130px; /* Ajusta la posición según sea necesario */
 }
 .title-especial{
-  line-height: 50px;
+  line-height: 40px;
 }
-
+@media screen and (max-width:600px) {
+  .tarifario-title{
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .paquetes-tarifarios {
+    vertical-align: 5px;
+  }
+  .packs-terminos {
+    margin-top: 40px;
+}
+}
 @media screen and (max-width: 1024px){
   .paquetes-tarifarios {
     padding: 100px 20px;

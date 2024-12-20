@@ -59,7 +59,7 @@ const PaquetesTarifarios = () => {
 
   return (
     <div className="container paquetes-tarifarios text-center">
-      <h2 className="small-title">Elige el paquete ideal para ti</h2>
+      <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
       <p className="big-title mb-5 title-especial">¡Te instalamos sin costo!<sup>*</sup></p>
       <div className="d-flex justify-content-center mb-3 btn-container">
         <button
@@ -67,14 +67,14 @@ const PaquetesTarifarios = () => {
           className={`pack-btn ${selectedPack === 'triple' ? 'pack-btn-active' : 'pack-btn-inactive'} btn-lg mx-2`}
           onClick={() => setSelectedPack('triple')}
         >
-          TRIPLE PACK<br /><span>TV+INTERNET+TELEFONÍA</span>
+          TRIPLE PACK<br /><span>INTERNET + TV +   TELEFONÍA</span>
         </button>
         <button
           type="button"
           className={`pack-btn ${selectedPack === 'doble' ? 'pack-btn-active' : 'pack-btn-inactive'} btn-lg mx-2`}
           onClick={() => setSelectedPack('doble')}
         >
-          DOBLE PACK<br /><span>TELEFONÍA+INTERNET</span>
+          DOBLE PACK<br /><span>INTERNET + TELEFONÍA </span>
         </button>
       </div>
       <div id="carouselPaquetes" className="carousel slide" data-bs-ride="carousel">
