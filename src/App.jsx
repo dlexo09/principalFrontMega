@@ -25,7 +25,7 @@ function App() {
       <BrowserRouter>
         <TopBar />
         <NavBar />
-        <div style={{ marginTop: '112px' }}> {/* Ajusta el margen superior según sea necesario */}
+        <div style={{ marginTop: '-60px' }}> {/* Ajusta el margen superior según sea necesario */}
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/paquetesResidenciales" element={<PaquetesResidenciales />} />

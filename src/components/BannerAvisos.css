@@ -1,0 +1,49 @@
+
+.carrousel-container{
+    margin-top: 90px;
+}
+
+.avisos-legal{
+    max-width: 900px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 30px;
+    margin-bottom: 150px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.avisos-legal a{
+    color: #000;
+}
+
+.carousel-image {
+    width: 100%;
+    object-fit: cover; 
+    height: auto;
+  }
+  
+
+
+  
+@media screen and (min-width: 768px){
+    .carrousel-avisos{
+        border-radius: var(--br-card);
+    }
+    
+}
+@media screen and (max-width: 767px){
+    .carrousel-avisos{
+        border-radius: 20px;
+    }
+    .carrousel-container {
+        margin-top: 50px;
+    }
+    .avisos-legal{
+        margin-bottom: 50px;
+ }
+ .carousel-image {
+    width: auto; 
+    max-height: 450px; 
+    margin: 0 auto; 
+  }
+}

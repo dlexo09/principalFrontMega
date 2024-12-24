@@ -1,3 +1,13 @@
 .megamovil-home {
     margin: 100px auto;
 }
+@media screen and (max-width: 768px) {
+    .megamovil-home{
+      margin-top: 0px;
+      row-gap: 50px;
+    }
+    .text-p{
+        padding-right: 0 !important;
+    }
+    
+  }

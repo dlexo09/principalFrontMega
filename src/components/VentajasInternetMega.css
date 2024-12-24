@@ -25,3 +25,16 @@
     width: 100px;
     margin-bottom: 30px;
 }
+@media screen and (max-width: 1024px){
+    .ventajas-internet-cards{
+        flex-wrap: wrap;
+        margin-top: 50px;
+    }
+    .ventajasInternerMega{
+        padding:20px 0 200px 0;
+    }
+    .ventaja-internet-card{
+        width: 300px;
+    }
+    
+}

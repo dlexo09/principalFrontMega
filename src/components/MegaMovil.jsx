@@ -7,14 +7,17 @@ import './Globales.css'
 const MegaMovil = () => {
     return (
         <>
-            <div className="container megamovil-home row d-flex justify-content-center align-items-center">
-                <div className="col-6 ps-5 pe-5">
-                    <h2 className="small-title">Conéctate con Mega móvil</h2>
+            <div className="container text-center text-lg-start megamovil-home row d-flex fle justify-content-center align-items-center">
+                <div className="col-12 order-2 order-lg-1 col-lg-6 text-p">
+                    <h2 className="small-title d-none d-md-block">Conéctate con Mega móvil</h2>
                     <h3 className="secondary-title">¡La mejor cobertura<br /><span>sin cambiar tú número!</span> </h3>
-                    <p className="mt-5">Descubre Mega Móvil y disfruta de minutos y SMS ilimitados en México, EE.UU y Canadá , junto con excelentes beneficios para cllientes.</p>
-                    <button className="btn-action mt-5">Saber más <span className="open-page-icon"></span></button>
+                    <p className="mt-4 mt-lg-5 ">Descubre Mega Móvil y disfruta de minutos y SMS ilimitados en México, EE.UU y Canadá , junto con excelentes beneficios para cllientes.</p>
+                    <div className="mt-4 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
+                    <button className="btn-action">Saber más <span className="open-page-icon"></span></button>
+                    </div>
                 </div>
-                <div className="col-6">
+                <div className="col-12 col-lg-6 order-1 order-lg-2 ">
+                <h2 className="small-title d-block d-md-none mb-4">Conéctate con Mega móvil</h2>
                     <img className="img-fluid" src="../src/assets/images/home/megamovil-home-img.png" alt="" />
                 </div>
             </div>
