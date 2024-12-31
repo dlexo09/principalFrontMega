@@ -1,43 +1,108 @@
-footer {
-    color: white;
+.footer {
+  background-color: #000;
+  padding: 70px 0;
+}
+
+.btn-footer {
+  font-size: 0.8rem;
+  border: none;
+  background-color: black;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  text-transform: uppercase;
+  padding-left: 20px;
+}
+
+.accordion-item,
+.accordion-item button {
+  width: 100%;
+}
+
+.accordion-item:first-of-type>.accordion-header .accordion-button {
+  background-color: #000;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.accordion,
+.accordion-item {
+  background-color: #000;
+  border: none;
+}
+
+.accordion {
+  border-top: 0.5px solid #fff;
+  --bs-accordion-border-width: 0;
+}
+
+.accordion-body {
+  padding: 0 20px;
+}
+
+.accordion-item:focus {
+  outline: none !important;
+  /* Evita que aparezca el borde al hacer clic o usar el teclado */
+}
+
+.accordion-item {
+  outline: none !important;
+  /* Elimina el borde cuando el botón tiene el foco */
+}
+
+.list-ct {
+  color: #fff;
+  font-size: 0.8rem;
+}
+
+.list-ct-item {
+  padding-top: 5px;
+}
+
+.list-ct-title {
+  font-weight: 600;
+}
+
+.list-ct-item a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.list-ct-item a:hover {
+  color: #ffffff95;
+}
+
+.accordion-button::after {
+  content: '';
+  background-image: url('../assets/icons/acordin-close.png'); 
+  background-size: contain; 
+  background-repeat: no-repeat;
+  width: 1em;
+  height: 1em; 
+  display: inline-block;
+
+}
+.accordion-button:not(.collapsed)::after {
+  content: '';
+  background-image: url('../assets/icons/acording-open.png');
+  transform: rotate(0deg);
+}
+.footer-logos{
+  gap: 100px;
+  padding-right: 100px;
+}
+.footer-logos img{
+  width: 200px;
+}
+@media screen and (max-width: 768px){
+  .footer-logos{
+    gap: 20px;
+    padding-right: 0;
   }
-  
-  .footer-top {
-    background: linear-gradient(to right, #000000, #333333); /* Gradiente de negro a gris oscuro */
+  .footer-logos img{
+    width: 250px;
   }
-  
-  .social-icons a {
-    color: white;
-    margin-right: 10px;
-    font-size: 1.5rem;
-  }
-  
-  .contact-info p {
-    margin: 0;
-  }
-  
-  .footer-bottom {
-    background-color: #444444; /* Fondo oscuro sin llegar a negro */
-  }
-  
-  .footer-bottom h5 {
-    margin-bottom: 15px;
-  }
-  
-  .footer-bottom ul {
-    padding: 0;
-    list-style: none;
-  }
-  
-  .footer-bottom ul li {
-    margin-bottom: 10px;
-  }
-  
-  .footer-bottom ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  .footer-bottom ul li a:hover {
-    text-decoration: underline;
-  }
+}
+

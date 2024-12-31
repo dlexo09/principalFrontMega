@@ -62,7 +62,7 @@ html, body{
 }
 .secondary-title{
     margin-top: 5px;
-    font-size: clamp(1.5rem, 1.2157rem + 1.0702vw, 2.5rem);
+    font-size: 2.5rem;
     font-weight: 300;
 }
 .secondary-title span{
