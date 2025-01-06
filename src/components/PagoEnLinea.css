@@ -88,5 +88,13 @@
   .pago-en-linea-content {
     gap: 30px;
   }
+  .pago-bancos img{
+    width: 200px;
+    
+  }
+  .pago-title{
+    font-size: 2.5rem;
+
+  }
   
   }

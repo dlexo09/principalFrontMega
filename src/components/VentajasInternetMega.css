@@ -25,6 +25,13 @@
     width: 100px;
     margin-bottom: 30px;
 }
+@media screen and (max-width: 500px){
+    .ventajas-title{
+        width: 230px;
+        margin: 0 auto;
+        margin-bottom: 20px;
+    }
+}
 @media screen and (max-width: 1024px){
     .ventajas-internet-cards{
         flex-wrap: wrap;
@@ -34,7 +41,12 @@
         padding:20px 0 200px 0;
     }
     .ventaja-internet-card{
-        width: 300px;
+        width: 250px;
+    }
+
+    .ventajasInternerMega{
+        background-image: url(../assets/images/home/waves-bg-1-movil.png);
+        
     }
     
 }

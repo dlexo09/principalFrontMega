@@ -14,7 +14,12 @@ width: 100%;
 .text-p{
     padding-right: 85px;
 }
-
+@media screen and (max-width: 500px){
+    .is-title-s{
+        width: 300px;
+        margin: 0 auto;
+    }
+}
 @media screen and (max-width: 1023px){
     .internet-simetrico{
         

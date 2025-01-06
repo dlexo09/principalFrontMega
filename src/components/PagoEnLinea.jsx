@@ -13,8 +13,9 @@ const PagoEnLinea = () => {
                         <img src="../src/assets/images/home/paga-en-linea-img.png" alt="" />
                     </div>
                     <div className='text-center text-lg-start order-1 order-lg-2 flex-column pago-text'>
-                        <h2 className="secondary-title"><span>Pago en Línea</span></h2>
-                        <p>Paga la factura de tus servicios de forma fácil y rápida aquí.</p>
+                        <h3 className="small-title d-lg-none mt-3">PAGA FÁCIL Y RÁPIDO</h3>
+                        <h2 className="secondary-title pago-title"><span>Pago en Línea</span></h2>
+                        <p className='mt-2'>Paga la factura de tus servicios de forma fácil y rápida aquí.</p>
                         <div className="pago-bancos">
                             <img src="../src/assets/images/home/pagos-tarjetas-img.png" alt="" />
                         </div>

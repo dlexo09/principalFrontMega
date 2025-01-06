@@ -101,7 +101,7 @@ const BannerAvisos = () => {
         </button>
       </div>
       <div className="container avisos-legal">
-        <p>
+        <p className="pe-3 ps-3 pe-md-3 ps-md-3">
           *Los incentivos promocionales quedan sujetos a la vigencia, términos y
           condiciones indicados en el paquete contratado Ponemos a su
           disposición la actualización de nuestro aviso de privacidad{" "}
