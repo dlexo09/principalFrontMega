@@ -20,7 +20,7 @@ const Canales = () => {
             }
             acc[tipoCanal].push({
               ...canal,
-              conecta: validacion == 2,
+              conecta: validacion === 2,
               basico_plus: validacion >= 1
             });
             return acc;
@@ -51,10 +51,10 @@ const Canales = () => {
                 <img src={`${serverAPIUrl}uploads/canales/${canal.imagen}`} alt={`${canal.imagen}`} className="img-fluid" style={{ maxHeight: '100px' }} />
               </div>
               <div className="col-3">
-                {canal.conecta ? <i className="fas fa-check"></i> : null}
+                {canal.conecta ? <i className="fas fa-check">*</i> : null}
               </div>
               <div className="col-3">
-                {canal.basico_plus ? <i className="fas fa-check"></i> : null}
+                {canal.basico_plus ? <i className="fas fa-check">*</i> : null}
               </div>
               <div className="col-3">
                 {canal.selectorCanal}
