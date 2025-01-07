@@ -96,6 +96,11 @@
 .footer-logos img{
   width: 200px;
 }
+.accordion-button:focus {
+  z-index: 3;
+  outline: 0;
+  box-shadow: none;
+}
 @media screen and (max-width: 768px){
   .footer-logos{
     gap: 20px;

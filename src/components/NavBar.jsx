@@ -30,50 +30,29 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav">
+            {/* home url
             <li className="nav-item">
               <a className="nav-link active" aria-current="page" href={`${serverUrl}`}>Home</a>
             </li>
+             */}
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Paquetes
+                Oferta
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a className="dropdown-item" href="/paquetesResidenciales">Residencial</a></li>
                 <li><a className="dropdown-item" href="https://empresas.megacable.com.mx/" target="_blank" rel="noopener noreferrer">Negocios</a></li>
+                <li><a className="dropdown-item" href="#" target="_blank" rel="noopener noreferrer">MCM</a></li>
               </ul>
             </li>
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Servicios
               </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li className="dropdown-submenu">
-                  <a className="dropdown-item dropdown-toggle" href="#">Televisión</a>
-                  <ul className="dropdown-submenu">
-                    <li><a className="dropdown-item" href="/xview">TV Interactiva</a></li>
-                    <li className="dropdown-submenu">
-                      <a className="dropdown-item dropdown-toggle">Premier</a>
-                      <ul className="dropdown-submenu">
-                        <li><a className="dropdown-item" href="/foxSports">Fox sports premium</a></li>
-                        <li><a className="dropdown-item" href="/adultPack">Adult pack</a></li>
-                      </ul>
-                    </li>
-                    <li><a className="dropdown-item" href="/Canales">Canales</a></li>
-                  </ul>
-                </li>
-                <li className="dropdown-submenu">
-                  <a className="dropdown-item dropdown-toggle" href="#">Internet</a>
-                  <ul className="dropdown-submenu">
-                    <li><a className="dropdown-item" href="/mideVelocidad">Mide tu velocidad</a></li>
-                    <li><a className="dropdown-item" href="/zonaWifi">Zonas WIFI</a></li>
-                    <li><a className="dropdown-item" href="/extensorWifi">Extensor WIFI</a></li>
-                    <li><a className="dropdown-item" href="/norton">Norton</a></li>
-                  </ul>
-                </li>
-                <li><a className="dropdown-item" href="#">Mega móvil</a></li>
-                <li><a className="dropdown-item" href="#">Telefonia ilimitada</a></li>
-                <li><a className="dropdown-item" href="#">Extensor WIFI</a></li>
-                <li><a className="dropdown-item" href="#">Metrocarrier</a></li>
+              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">      
+                <li><a className="dropdown-item" href="#">Televisión</a></li>
+                <li><a className="dropdown-item" href="#">Internet</a></li>
+                <li><a className="dropdown-item" href="#">Telefonía Ilimitada</a></li>
               </ul>
             </li>
             <li className="nav-item dropdown">
@@ -81,7 +60,7 @@ const NavBar = () => {
                 Entretenimiento
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="#">Disney+</a></li>
+                <li><a className="dropdown-item" href="/disneyplus">Disney+</a></li>
                 <li><a className="dropdown-item" href="#">Netflix</a></li>
                 <li><a className="dropdown-item" href="#">Amazon prime</a></li>
                 <li><a className="dropdown-item" href="#">Max</a></li>
@@ -89,24 +68,16 @@ const NavBar = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">Mega móvil</a>
-            </li>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Mi cuenta
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="#">Mi cuenta Mega</a></li>
-                <li><a className="dropdown-item" href="#">Soporte técnico</a></li>
-                <li><a className="dropdown-item" href="#">Formas de pago</a></li>
-                <li><a className="dropdown-item" href="#">CIS</a></li>
-                <li><a className="dropdown-item" href="#">Preguntas frecuentes</a></li>
-                <li><a className="dropdown-item" href="#">Chat</a></li>
-                <li><a className="dropdown-item" href="#">Correo</a></li>
-              </ul>
+              <a className="nav-link" aria-current="page" href="#">Fibra óptica y simetria</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">Pago en Línea</a>
+              <a className="nav-link" aria-current="page" href="#">Xview+</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" aria-current="page" href="#">Mega móvil</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" aria-current="page" href="#">Soporte</a>
             </li>
           </ul>
         </div>
