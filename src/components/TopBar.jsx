@@ -41,7 +41,7 @@ const TopBar = () => {
         <div className="container-fluid">
           <a className="navbar-brand" href="#"></a>
           <div
-            className="top-bar collapse navbar-collapse d-flex justify-content-between align-item-center"
+            className="container top-bar collapse navbar-collapse d-flex justify-content-between align-item-center"
             id="navbarNav"
           >
             <div className="top-bar-phone">
@@ -66,8 +66,8 @@ const TopBar = () => {
             </ul>
 
             <div className="client-mega d-flex">
-              <a href="">Mi Cuenta</a>
-              <a href="">Pago en Línea</a>
+              <a href="">Paga en línea</a>
+              <a href="">Iniciar sesión</a>
             </div>
           </div>
         </div>

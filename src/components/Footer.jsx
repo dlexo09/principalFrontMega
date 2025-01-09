@@ -173,11 +173,32 @@ const Footer = () => {
 
   return (
     <footer className="footer">
+      <div className="top-footer">
+        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+          <div className="contratar-container d-flex flex-column flex-lg-row align-items-center">
+            <label>¡Quiero contratar!</label>
+            <form className='form-footer d-flex flex-column flex-md-row' action="">
+              <input type="text" placeholder='  Tu número'/>
+              <button type="submit">¡Llámame!</button>
+            </form>
+          </div>
+          <div className="social-foter-container d-flex flex-md-column flex-lg-row mt-4 mt-md-0">
+            <h3>Síguenos en:</h3>
+            <div className="social-footer">
+              <a className='me-2' href=""><img src="../src/assets/icons/youtube-icon-footer.png" alt="" /></a>
+              <a href=""><img src="../src/assets/icons/x-icon-footer.png" alt="" /></a>
+              <a href=""><img src="../src/assets/icons/tiktok-icon-footer.png" alt="" /></a>
+              <a href=""><img src="../src/assets/icons/facebook-icon-footer.png" alt="" /></a>
+              <a href=""><img src="../src/assets/icons/instagram-icon-footer.png" alt="" /></a>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="container">
         {rows.map((row, rowIndex) => (
           <div className="row" key={`row-${rowIndex}`}>
             {row.map((item) => (
-              <div className="col-md-6 col-xl-3 mt-4" key={item.id}>
+              <div className="col-md-6 col-xl-3 mt-d-4" key={item.id}>
                 <div className="accordion" id={`accordion-${item.id}`}>
                   <AccordionItem {...item} />
                 </div>
@@ -187,7 +208,7 @@ const Footer = () => {
         ))}
       </div>
 
-      <div className="container mt-4">
+      <div className="container mt-5 mt-md-4 ps-4 ">
         <div className="row">
           <div className="col-md-6 ps-4">
             <ul className="list-ct">
@@ -196,7 +217,7 @@ const Footer = () => {
               <li className="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Responsabilidad Social</a></li>
             </ul>
           </div>
-          <div className="col-md-6 footer-logos d-flex flex-column flex-md-row justify-content-md-end align-items-center">
+          <div className="col-md-6 footer-logos d-flex flex-column flex-md-row justify-content-md-end align-items-center mt-5 mt-md-0">
             <img src="../src/assets/images/general/esr.png" alt="Icono Internet" />
             <img src="../src/assets/images/general/lg-distintivo_digital_profeco.webp" alt="Icono Internet" />
           </div>
