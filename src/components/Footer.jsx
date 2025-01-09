@@ -61,7 +61,7 @@ const Footer = () => {
       {
         id: 1,
         title: 'Códigos de prácticas comerciales',
-        link: '#',
+        link: 'files/Codigo_Practicas_Comerciales.pdf',
       },
       {
         id: 2,
