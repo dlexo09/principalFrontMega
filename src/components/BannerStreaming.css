@@ -1,0 +1,25 @@
+.bannerStreaming-container{
+    background-image: url(../assets/images/streamings/disneyplus/streaming-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 800px;
+}
+.btn-streaming-1{
+    background-color: #008999;
+    border-radius: 50px;
+    padding: 20px 50px;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    margin-top: 50px;
+    width: 60%;
+    text-transform: uppercase;
+}
+.streaming-title h2{
+    font-size: 40px;
+    margin-top: 20px;
+}
+.streaming-logo{
+    width: 400px;
+}

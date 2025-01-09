@@ -1,0 +1,30 @@
+.destacados-streaming-img{
+    background-image: url(../assets/images/streamings/disneyplus/wave-destacados-disney.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    padding-bottom: 60px;
+}
+.destacados-streaming-img {
+    margin: 0 auto;
+    text-align: center;
+}
+.destacados-streaming-img img{
+    max-width: 1440px;
+}
+.destacados-streamings-container{
+    padding: 100px 0 70px 0;
+}
+.destacados-streaming-txt{
+    width: 900px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    font-weight: 500;
+}
+.destacados-streaming-txt p{
+    font-size: 28px;
+
+}
+.destacados-streaming-txt p span{
+    font-weight: 600;
+}
