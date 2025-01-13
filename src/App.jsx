@@ -42,7 +42,6 @@ function App() {
             <Route path="/disneyplus" element={<Disneyplus />} />
         </Routes>
         </div>
-        <BannerTrivias />
         <Footer />
       </BrowserRouter>
     </LocationProvider>

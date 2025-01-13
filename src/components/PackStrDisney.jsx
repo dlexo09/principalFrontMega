@@ -2,17 +2,17 @@ import React, { useState, useEffect, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { serverAPIUrl } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from "../LocationContext";
-import "./PaquetesTarifarios.css";
 import "./Globales.css";
-import "./PaquetesStreamings.css";
+import "./PackStrDisney.css";
 
-const PaquetesTarifarios = () => {
+const PackStrDisney = () => {
   const { currentLocation } = useContext(LocationContext);
   const [paquetes, setPaquetes] = useState([]);
   const [selectedPack, setSelectedPack] = useState("triple");
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
   const [isCliente, setIsCliente] = useState(false); // Estado para "¿Eres cliente?"
   const promoValue = 60; // Definir la variable para el valor adicional
+  const [selectedPlan, setSelectedPlan] = useState("Premium"); // Estado para el plan seleccionado
 
   useEffect(() => {
     const fetchPaquetes = async () => {
@@ -68,16 +68,20 @@ const PaquetesTarifarios = () => {
         <h3 className="big-title mb-5">¿Ya eres cliente Mega?</h3>
         <div className="btn-container">
           <button
-            className={`btn mx-2 ${
-              isCliente ? "pack-btn-active" : "btn-outline-primary"
+            className={`pack-btn btn-lg mx-2 disney-cliente-btn ${
+              isCliente
+                ? "pack-btn-active disney-btn-color"
+                : "pack-btn-inactive"
             }`}
             onClick={() => setIsCliente(true)}
           >
             Sí
           </button>
           <button
-            className={`btn mx-2 bg-disney-color ${
-              !isCliente ? "btn-primary" : "btn-outline-primary"
+            className={`pack-btn btn-lg mx-2 disney-cliente-btn ${
+              !isCliente
+                ? "pack-btn-active disney-btn-color"
+                : "pack-btn-inactive "
             }`}
             onClick={() => setIsCliente(false)}
           >
@@ -87,15 +91,80 @@ const PaquetesTarifarios = () => {
       </div>
 
       {isCliente ? (
-        <div className="mt-4">
-          <p className="cliente-info">
-            ¡Elige el paquete ideal para disfrutar el mejor contenido para toda
-            la familia!
-          </p>
-        </div>
+        <>
+          <div className="mt-4">
+            <p className="cliente-info mt-5">
+              ¡Elige el paquete ideal para disfrutar el mejor contenido para
+              toda la familia!
+            </p>
+          </div>
+          <div className="container table-str-clients">
+            <table className="table">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">ESTÁNDAR</th>
+                  <th scope="col">PREMIUM</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="tr-gray">
+                  <td className="text-start br-str-table1">Familiar</td>
+                  <td><span></span></td>
+                  <td><span></span></td>
+
+                </tr>
+                <tr>
+                  <td className="text-start">Deportes</td>
+                  <td>ESPN 1, ESPN 3</td>
+                  <td>TODO ESPN</td>
+                </tr>
+                <tr className="tr-gray">
+                  <td className="text-start">Anuncios en VOD</td>
+                  <td>NO</td>
+                  <td>NO</td>
+                </tr>
+                <tr >
+                  <td className="text-start">Calidad de Video</td>
+                  <td>1080 MP</td>
+                  <td>UHD / HDR</td>
+                </tr>
+                <tr className="tr-gray">
+                  <td className="text-start">Dispositivos Simultáneos</td>
+                  <td>2</td>
+                  <td>4</td>
+                </tr>
+                <tr>
+                  <td className="text-start">Descargas</td>
+                  <td>Si</td>
+                  <td>Si</td>
+                </tr>
+                <tr className="tr-gray">
+                  <td className="text-start br-str-table3">Calidad de Audio</td>
+                  <td>STEREO 5.1</td>
+                  <td>ATMOS</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <div className="contrata-str-clients row d-flex justify-content-end">
+              <div className="col-md-4">
+
+              </div>
+              <div className="col-md-4 plans-contrata">
+                <img src="../src/assets/icons/disney/strm-icon.png" alt="" />
+                <button className=" btn-packs disney-btn-color btn-client-pos">¡Lo quiero!</button>
+              </div>
+              <div className="col-md-4 plans-contrata">
+                <img src="../src/assets/icons/disney/strm-icon.png" alt="" />
+                <button className=" btn-packs disney-btn-color btn-client-pos">¡Lo quiero!</button>
+              </div>
+            </div>
+          </div>
+        </>
       ) : (
         <div>
-          <p className="mb-5 title-especial">
+          <p className="mb-5 title-especial mt-5">
             ¡Elige el paquete ideal para disfrutar el mejor contenido para toda
             la familia!
           </p>
@@ -104,7 +173,7 @@ const PaquetesTarifarios = () => {
               type="button"
               className={`pack-btn ${
                 selectedPack === "triple"
-                  ? "pack-btn-active"
+                  ? "pack-btn-active disney-btn-color"
                   : "pack-btn-inactive"
               } btn-lg mx-2`}
               onClick={() => setSelectedPack("triple")}
@@ -117,7 +186,7 @@ const PaquetesTarifarios = () => {
               type="button"
               className={`pack-btn ${
                 selectedPack === "doble"
-                  ? "pack-btn-active"
+                  ? "pack-btn-active disney-btn-color"
                   : "pack-btn-inactive"
               } btn-lg mx-2`}
               onClick={() => setSelectedPack("doble")}
@@ -140,14 +209,17 @@ const PaquetesTarifarios = () => {
                 >
                   <div className="d-flex justify-content-center slider-gp">
                     {chunk.map((paquete, i) => (
-                      <div key={i} className="paquete-item card m-2">
+                      <div
+                        key={i}
+                        className="paquete-item paquete-item-disney card m-2"
+                      >
                         <div className="card-body">
                           <h2 className="card-title">
                             {paquete.simetria === 0
                               ? "INTERNET ILIMITADO"
                               : "INTERNET SIMÉTRICO"}
                           </h2>
-                          <p className="card-text velocidadPromo">
+                          <p className="card-text velocidadPromo velocidadPromo-disney">
                             {paquete.velocidadPromo} MEGAS
                           </p>
                           <p className="card-text tiempoVelocidadPromo">
@@ -176,11 +248,33 @@ const PaquetesTarifarios = () => {
                             Telefonia Fija
                           </p>
                           <div className="promoExtra">
-                            <img
-                              src={`${serverAPIUrl}/uploads/banners/promo-partner.png`}
-                              alt="Promo"
-                              style={{ height: "50px" }}
-                            />
+                            <div className="pack-str-container">
+                              <p className="card-servicio-txt servicio-m mb-2">
+                                SELECCIONA TU PLAN
+                              </p>
+                              <div className="pack-str-content d-flex flex-column justify-content-center">
+                                <button
+                                  className={`pack-btn-str ${
+                                    selectedPlan === "Premium"
+                                      ? "disney-btn-color"
+                                      : "pack-btn-inactive"
+                                  }`}
+                                  onClick={() => setSelectedPlan("Premium")}
+                                >
+                                  Premium
+                                </button>
+                                <button
+                                  className={`pack-btn-str ${
+                                    selectedPlan === "Estandar"
+                                      ? "disney-btn-color"
+                                      : "pack-btn-inactive"
+                                  }`}
+                                  onClick={() => setSelectedPlan("Estandar")}
+                                >
+                                  Estandar
+                                </button>
+                              </div>
+                            </div>
                             <p className="card-text price-card">
                               <span className="price-mxn">$</span>
                               {paquete.tarifaPromocional + promoValue}
@@ -191,20 +285,25 @@ const PaquetesTarifarios = () => {
                               x {paquete.tiempoVelocidaPromo} meses
                             </p>
                           </div>
-                          <button className="btn btn-packs btn-pack-card">
+                          <button className="btn btn-packs btn-pack-card disney-btn-color">
                             ¡Lo quiero!
                           </button>
 
                           {/* Icons cards */}
                           <img
                             className="icon-card-packs internet-icon"
-                            src="../src/assets/icons/internet-icon.png"
+                            src="../src/assets/icons/disney/internet-icon.png"
+                            alt="Icono Internet"
+                          />
+                          <img
+                            className="icon-card-packs str-icon"
+                            src="../src/assets/icons/disney/strm-icon.png"
                             alt="Icono Internet"
                           />
                           {selectedPack !== "doble" && (
                             <img
                               className="icon-card-packs tv-icon"
-                              src="../src/assets/icons/tv-icon.png"
+                              src="../src/assets/icons/disney/tv-icon.png"
                               alt="Icono TV"
                             />
                           )}
@@ -214,7 +313,7 @@ const PaquetesTarifarios = () => {
                                 ? "telefonia-icon-doble"
                                 : ""
                             }`}
-                            src="../src/assets/icons/telefonia-icon.png"
+                            src="../src/assets/icons/disney/telefonia-icon.png"
                             alt="Icono Telefonía"
                           />
                         </div>
@@ -225,13 +324,19 @@ const PaquetesTarifarios = () => {
               ))}
             </div>
             <div className="container packs-terminos">
-              <p className="promo-xview">
-                Incluyen <span>más de 30,000 hrs de contenido</span> en Xview+
+              <p className="promo-xview ">
+                Incluyen <span className="txt-disney-color">más de 30,000 hrs de contenido</span> en Xview+
               </p>
               <p>
-                Nota: Promoción válida domiciliando el pago a tarjeta. Tarifas
-                registradas ante el IFT. Aplican restricciones. Consulta
-                términos y condiciones <a href="">aquí.</a>
+                Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
+                <a className="txt-disney-color" href="">Tarifas registradas ante el IFT. </a>
+                Aplican restricciones. Consulta términos y condiciones{" "}
+                <a className="txt-disney-color"
+                  target="_blank"
+                  href="https://www.megacable.com.mx/terminos-y-condiciones"
+                >
+                  aquí.
+                </a>
               </p>
             </div>
             <button
@@ -265,4 +370,4 @@ const PaquetesTarifarios = () => {
   );
 };
 
-export default PaquetesTarifarios;
+export default PackStrDisney;

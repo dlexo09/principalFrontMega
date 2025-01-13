@@ -1,16 +1,16 @@
-import BannerStreaming from '../components/BannerStreaming';
-import DestacadosStreaming from '../components/DestacadosStreaming';
-import PaquetesStreamings from '../components/PaquetesStreamings';
-import ActivaCuentaStreaming from '../components/ActivaCuentaStreaming';
+import BannerStrDisney from '../components/BannerStrDisney';
+import DestacadoStrDisney from '../components/DestacadoStrDisney';
+import PackStrDisney from '../components/PackStrDisney';
+import ActivaCuentaDisney from '../components/ActivaCuentaDisney';
 import FAQStrDisney from '../components/FAQStrDisney';
 
 const Disneyplus = () => {
     return (
         <>
-            <BannerStreaming />
-            <DestacadosStreaming />
-            <PaquetesStreamings />
-            <ActivaCuentaStreaming />
+            <BannerStrDisney />
+            <DestacadoStrDisney />
+            <PackStrDisney />
+            <ActivaCuentaDisney />
             <FAQStrDisney />
         </>
 

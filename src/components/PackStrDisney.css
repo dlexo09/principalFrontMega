@@ -1,0 +1,90 @@
+.txt-disney-color{
+color: var(--disney-color) !important;
+}
+.disney-cliente-btn{
+    padding: 16px 0;
+}
+.disney-btn-color{
+    background-color: var(--disney-color);
+    color: #fff;
+
+}
+.disney-btn-color:hover{
+    background-color: #007987;
+    color: #fff;
+}
+.paquete-item-disney{
+    border-color: var(--disney-color);
+}
+.velocidadPromo-disney{
+    color: var(--disney-color);
+}
+.pack-btn-str{
+    width: 100%;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.35rem;
+    font-weight: 500;
+    line-height: 15px;
+    padding: 15px 0;
+    transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+}
+.pack-str-content{
+    background-color: #e5e5e5;
+    border-radius: 40px;
+    padding: 15px;
+}
+.str-icon{
+    bottom: 200px;
+  }
+.table>:not(caption)>*>*{
+    border: none;
+    background-color: transparent;
+    padding: 20px 50px;
+}
+ 
+.table-str-clients{
+    margin-top: 150px;
+    padding: 0;
+}
+.table .tr-gray {
+    background-color: #E5E5E5 !important;
+    border-radius: 50px !important;
+  }
+.br-str-table1{
+    border-radius: 50px 0 0 0;
+}
+.br-str-table2{
+    border-radius: 0 50px 0 0;
+}
+.br-str-table3{
+    border-radius: 0 0 0 50px;
+}
+.br-str-table4{
+    border-radius: 0 0 50px 0;
+}
+.contrata-str-clients{
+    gap: 30px;
+    margin-top: -560px;
+    margin-right: 0px;
+}
+.plans-contrata{
+    border: 2px solid var(--disney-color);
+    height:600px;
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    border-radius: 50px;
+}
+.plans-contrata img{
+    width: 80px;
+    margin: 0 auto;
+    margin-top: -50px;
+}
+.btn-client-pos{
+    position: absolute;
+    bottom: -30px;
+    left: 20%;
+}

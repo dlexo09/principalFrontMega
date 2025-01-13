@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './DestacadosStreaming.css';
+import './DestacadoStrDisney.css';
 
-const DestacadosStreaming = () => {
+const DestacadosStrDisney = () => {
     return (
         <>
         <div className="destacados-streamings-container">
@@ -17,4 +17,4 @@ const DestacadosStreaming = () => {
         </>
     );
 };
-export default DestacadosStreaming;
+export default DestacadosStrDisney;

@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './BannerStreaming.css';
+import './BannerStrDisney.css';
 
-const BannerStreaming = () => {
+const BannerStrDisney = () => {
     return (
         <>
 
@@ -32,4 +32,4 @@ const BannerStreaming = () => {
     );
 };
 
-export default BannerStreaming;
+export default BannerStrDisney;

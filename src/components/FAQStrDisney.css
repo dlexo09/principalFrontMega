@@ -1,46 +1,56 @@
-.faq-disney-accordion .accordion-item, .faq-disney-accordion .accordion-header{
+.faq-str-container{
+    margin-top: 200px;
+}
+.faq-global-accordion{
+    margin-top: 100px;
+}
+.faq-global-accordion .accordion-item, .faq-global-accordion .accordion-header{
     background-color: #ffffff;
 }
-.faq-disney-accordion .accordion-button::after {
+.faq-global-accordion .accordion-button::after {
     display: none;
   }
   
-  /* Agregar un ícono personalizado en el lado derecho */
-  .faq-disney-accordion .accordion-button::before {
-    content: "➕"; /* Cambiar por el ícono que desees */
+  .faq-global-accordion .accordion-button::before {
+    content: url(../assets/icons/acordeon-inactive.png); 
     font-size: 1.2rem;
     position: absolute;
-    right: 20px; /* Ajusta el espacio del borde derecho */
+    right: 20px; 
     transition: transform 0.3s ease, content 0.3s ease;
+    padding: 10px 13px;
+    border-radius: 50px;
+  }
+  .disney-accordion .accordion-button::before {
+    background-color: #008999;
   }
   
-  /* Cambiar el ícono al expandir */
-  .faq-disney-accordion .accordion-button:not(.collapsed)::before {
-    content: "➖"; /* Ícono de "menos" al expandir */
+
+  .faq-global-accordion .accordion-button:not(.collapsed)::before {
+    content: url(../assets/icons/acordeon-active.png); 
+    background-color: #fff;
   }
-  .faq-disney-accordion .accordion-button:not(.collapsed){
+  .faq-global-accordion .accordion-button:not(.collapsed){
     border-radius: 50px 50px 0 0 !important;
     font-weight: 600 !important;
   }
   
-  /* Opcional: Ajustar el espaciado del texto para evitar que se superponga con el ícono */
-  .faq-disney-accordion .accordion-button {
-    padding-right: 40px; /* Asegura suficiente espacio a la derecha */
+  
+  .faq-global-accordion .accordion-button {
+    padding-right: 40px;
   }
 
-  /* Estilo general del acordeón Disney */
-.faq-disney-accordion {
+.faq-global-accordion {
     background-color: #fff;
   }
   
-  .faq-disney-accordion .accordion-button {
+  .faq-global-accordion .accordion-button {
     font-weight: bold;
     color: #333;
     background-color: #ffffff;
     border: none;
   }
   
-  .faq-disney-accordion .accordion-button, .faq-disney-accordion .accordion-item:first-of-type > .accordion-header .accordion-button,  .faq-disney-accordion .accordion-item:last-of-type> .accordion-header .accordion-button.collapsed {
+  .faq-global-accordion .accordion-button, .faq-global-accordion .accordion-item:first-of-type > .accordion-header .accordion-button,  .faq-global-accordion .accordion-item:last-of-type> .accordion-header .accordion-button.collapsed {
     background-color: #F4F4F4;
     color: #121221;
     font-size: 18px;
@@ -48,18 +58,20 @@
     border-radius: 50px;
     margin-top: 20px;
     text-transform: none;
+    padding:  35px ;
   }
   
-  .faq-disney-accordion .accordion-body {
+  .faq-global-accordion .accordion-body {
     font-size: 0.95rem;
     padding: 20px 50px 40px 50px;
     background-color: #F4F4F4;
     border-radius: 0 0 50px 50px;
   }
-  .faq-disney-accordion .accordion-body ul{
+  .faq-global-accordion .accordion-body ul{
     list-style: disc;
     padding-left: 30px;
   }
- 
-  
-  
+.faq-legal {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}

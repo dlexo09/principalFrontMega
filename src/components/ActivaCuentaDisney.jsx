@@ -1,6 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import './ActivaCuentaStreaming.css';
+import './ActivaCuentaDisney.css';
 
 const ActivaCuentaStreaming = () => {
     return (

@@ -31,14 +31,13 @@ const Home = () => {
   return (
     <>
       {seccionesActivas.includes('BannerHome') && <BannerHome />}
-      {seccionesActivas.includes('CallToActionHome') && <CallToActionHome />}
-      {seccionesActivas.includes('PagoEnLinea') && <PagoEnLinea />}
       {seccionesActivas.includes('PaquetesTarifarios') && <PaquetesTarifarios />}
       {seccionesActivas.includes('MegaMovil') && <MegaMovil />}
       {seccionesActivas.includes('VentajasInternetMega') && <VentajasInternetMega />}
       {seccionesActivas.includes('BannerStreamingHome') && <BannerStreamingHome />}
       {seccionesActivas.includes('InternetSimetrico') && <InternetSimetrico />}
-      {seccionesActivas.includes('BannerAvisos') && <BannerAvisos />}
+      {seccionesActivas.includes('MegaMovil') && <TvInteractiva />}
+      {seccionesActivas.includes('PagoEnLinea') && <PagoEnLinea />}
     </>
   );
 };

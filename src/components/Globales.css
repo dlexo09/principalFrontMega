@@ -141,7 +141,7 @@ html, body{
   }
   .pack-btn-inactive {
     background-color: #e5e5e5;
-    font-weight: 400;
+    font-weight: 400 !important;
     color: #0f0d1d9f;
   }
 

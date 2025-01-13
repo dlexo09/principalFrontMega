@@ -4,9 +4,11 @@ import './FAQStrDisney.css';
 
 const FAQStrDisney = () => {
   return (
-    <div className="container my-5">
-      <h2 className="text-center mb-4">Preguntas Frecuentes</h2>
-      <div className="accordion faq-disney-accordion" id="faqAccordion">
+    <>
+    <div className="container faq-scontainer">
+    <h3 className='small-title text-center txt-disney-color'>CONOCE NUESTRAS</h3>
+      <h2 className="big-title text-center">Preguntas Frecuentes</h2>
+      <div className="accordion faq-global-accordion disney-accordion" id="faqAccordion">
       <div className="accordion-item">
           <h2 className="accordion-header" id="headingOne">
             <button
@@ -182,6 +184,12 @@ const FAQStrDisney = () => {
         </div>
       </div>
     </div>
+
+    <div className="faq-legal text-center">
+        <p>Ponemos a su disposición la actualización de nuestro aviso de privacidad <a className='txt-disney-color' target='_blank' href="https://www.megacable.com.mx/aviso-de-privacidad">Aquí</a></p>
+    </div>
+
+    </>
   );
 };
 
