@@ -24,3 +24,14 @@ width: 150px;
   .navbar-nav{
     gap: 20px;
   }
+  .navbar-expand-xl .navbar-nav .dropdown-menu{
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+
+  }
+  .dropdown-item:hover{
+    background-color: #000;
+    color: #fff;
+    border-radius: 5px;
+  }

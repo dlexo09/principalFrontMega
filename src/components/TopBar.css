@@ -72,17 +72,21 @@
 }
 .location-icon{
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-image:url(../assets/icons/location-icon.png) ;
+  width: 19px;
+  height: 25px;
+  background-image:url(../assets/icons/location-wl.png) ;
   margin-right: 10px;
+  background-position: top;
+  background-size: cover;
 }
 .down-icon{
   display: inline-block;
-  width: 20px;
-  height: 20px;
-  background-image:url(../assets/icons/down-icon.png) ;
+  width: 15px;
+  height: 7px;
+  background-image:url(../assets/icons/down-general-icon.png) ;
   margin-left: 50px;
+  margin-top: 8px;
+  background-size: cover;
 }
 .top-bar-ubicacion{
   gap: 20px;

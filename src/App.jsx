@@ -16,6 +16,7 @@ import Trivias from './views/Trivias'; // Importar el componente Trivias
 import TriviaDetail from './views/TriviaDetail'; // Importar el componente TriviaDetail
 import BannerTrivias from './components/BannerTrivias';
 import Footer from './components/Footer';
+import Disneyplus from './views/Disneyplus';
 import { LocationProvider } from './LocationContext';
 import './App.css';
 
@@ -38,7 +39,8 @@ function App() {
             <Route path="/wifi-ultra" element={<WifiUltra />} />
             <Route path="/trivias" element={<Trivias />} /> {/* Agregar la ruta para Trivias */}
             <Route path="/trivias/:endpoint" element={<TriviaDetail />} /> {/* Agregar la ruta dinámica para TriviaDetail */}
-          </Routes>
+            <Route path="/disneyplus" element={<Disneyplus />} />
+        </Routes>
         </div>
         <BannerTrivias />
         <Footer />
