@@ -23,11 +23,12 @@ color: var(--disney-color) !important;
     width: 100%;
     border: none;
     border-radius: 50px;
-    font-size: 1.35rem;
+    font-size: 1.2rem !important;
     font-weight: 500;
     line-height: 15px;
     padding: 15px 0;
     transition: background-color 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+    text-transform: uppercase;
 }
 .pack-str-content{
     background-color: #e5e5e5;

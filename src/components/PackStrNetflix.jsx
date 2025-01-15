@@ -12,7 +12,7 @@ const PackStrDisney = () => {
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
   const [isCliente, setIsCliente] = useState(false); // Estado para "¿Eres cliente?"
   const promoValue = 60; // Definir la variable para el valor adicional
-  const [selectedPlan, setSelectedPlan] = useState("Premium"); // Estado para el plan seleccionado
+  const [selectedPlan, setSelectedPlan] = useState("EstandarAnuncios"); // Estado para el plan seleccionado
 
   useEffect(() => {
     const fetchPaquetes = async () => {
@@ -103,62 +103,132 @@ const PackStrDisney = () => {
               <thead>
                 <tr>
                   <th scope="col"></th>
+                  <th scope="col">
+                    ESTÁNDAR
+                    <br />
+                    CON ANUNCIOS
+                  </th>
                   <th scope="col">ESTÁNDAR</th>
                   <th scope="col">PREMIUM</th>
                 </tr>
               </thead>
               <tbody>
-                <tr className="tr-gray">
-                  <td className="text-start br-str-table1">Familiar</td>
+                <tr className="tr-red">
+                  <td className="text-start br-str-table1 vm-td">Anuncios</td>
                   <td>
-                    <span></span>
+                    <span>Con anuncios;</span> todos los
+                    <br />
+                    juegos móviles y la
+                    <br />
+                    mayoría de las series y<br />
+                    películas están disponibles.
                   </td>
                   <td>
-                    <span></span>
+                    Juegos móviles, series y<br />
+                    películas;
+                    <span>
+                      sin publicidad
+                      <br />y sin límite
+                    </span>
+                  </td>
+                  <td>
+                    Juegos móviles, series y<br />
+                    películas;
+                    <span>
+                      sin
+                      <br />
+                      publicidad y sin límite
+                    </span>
                   </td>
                 </tr>
                 <tr>
-                  <td className="text-start">Deportes</td>
-                  <td>ESPN 1, ESPN 3</td>
-                  <td>TODO ESPN</td>
+                  <td className="text-start">
+                    Dispositivos
+                    <br />
+                    compatibles
+                  </td>
+                  <td>
+                    <span>2 dispositivos</span>
+                    <br />
+                    compatibles a la vez
+                  </td>
+                  <td>
+                    <span>2 dispositivos</span>
+                    <br />
+                    compatibles a la vez
+                  </td>
+                  <td>
+                    <span>6 dispositivos</span>
+                    <br />
+                    compatibles a la vez
+                  </td>
                 </tr>
-                <tr className="tr-gray">
-                  <td className="text-start">Anuncios en VOD</td>
-                  <td>NO</td>
-                  <td>NO</td>
-                </tr>
-                <tr>
+                <tr className="tr-red">
                   <td className="text-start">Calidad de Video</td>
-                  <td>1080 MP</td>
-                  <td>UHD / HDR</td>
-                </tr>
-                <tr className="tr-gray">
-                  <td className="text-start">Dispositivos Simultáneos</td>
-                  <td>2</td>
-                  <td>4</td>
+                  <td>1080p (Full HD)</td>
+                  <td>1080p (Full HD)</td>
+                  <td>4K (Ultra HD) + HDR</td>
                 </tr>
                 <tr>
                   <td className="text-start">Descargas</td>
-                  <td>Si</td>
-                  <td>Si</td>
+                  <td>
+                    <span>2 dispositivos</span>
+                    <br />
+                    compatibles a la vez
+                  </td>
+                  <td>
+                    <span>2 dispositivos</span>
+                    <br />
+                    compatibles a la vez
+                  </td>
+                  <td>
+                    <span>6 dispositivos</span>
+                    <br />
+                    compatibles a la vez
+                  </td>
                 </tr>
-                <tr className="tr-gray">
-                  <td className="text-start br-str-table3">Calidad de Audio</td>
-                  <td>STEREO 5.1</td>
-                  <td>ATMOS</td>
+                <tr className="tr-red">
+                  <td className="text-start">Miembros extra</td>
+                  <td></td>
+                  <td>
+                    <span>1 miembro extra</span> que
+                    <br />
+                    no viva contigo
+                  </td>
+                  <td>
+                    <span>2 miembro extra</span> que
+                    <br />
+                    no viva contigo
+                  </td>
+                </tr>
+
+                <tr>
+                  <td className="text-start br-str-table3">Audio espacial</td>
+                  <td></td>
+                  <td></td>
+                  <td>
+                    <span>Audio espacial</span>
+                    <br /> de Netflix
+                  </td>
                 </tr>
               </tbody>
             </table>
 
-            <div className="contrata-str-clients row d-flex justify-content-end">
-              <div className="col-md-4"></div>
-              <div className="col-md-4 plans-contrata-netflix">
+            <div className="contrata-str-netflix row d-flex justify-content-end">
+              <div className="col-md-"></div>
+              <div className="col-md-3 plans-contrata-netflix">
                 <img src="../src/assets/icons/netflix/strm-icon.png" alt="" />
                 <button className=" btn-packs netflix-btn-color btn-client-pos">
                   ¡Lo quiero!
                 </button>
               </div>
-              <div className="col-md-4 plans-contrata-netflix">
+              <div className="col-md-3 plans-contrata-netflix">
+                <img src="../src/assets/icons/netflix/strm-icon.png" alt="" />
+                <button className=" btn-packs netflix-btn-color btn-client-pos">
+                  ¡Lo quiero!
+                </button>
+              </div>
+              <div className="col-md-3 plans-contrata-netflix">
                 <img src="../src/assets/icons/netflix/strm-icon.png" alt="" />
                 <button className=" btn-packs netflix-btn-color btn-client-pos">
                   ¡Lo quiero!
@@ -180,16 +250,30 @@ const PackStrDisney = () => {
                   // Datos de prueba locales para esta sección
                   const datosPrueba = [
                     {
+                      titulo: (
+                        <>
+                          ESTÁNDAR<br />
+                          CON ANUNCIOS
+                        </>
+                      ),
+                      contenido: (
+                        <ul className="beneficios-pack-movile">
+                          <li>Con anuncios; todos los juegos móviles y la mayoría de las series y películas están disponibles. </li>
+                          <li>2 dispositivos compatibles a la vez</li>
+                          <li>1080p (Full HD)</li>
+                          <li>2 dispositivos compatibles a la vez</li>
+                        </ul>
+                      ),
+                    },
+                    {
                       titulo: "ESTÁNDAR",
                       contenido: (
                         <ul className="beneficios-pack-movile">
-                          <li>Familiar</li>
-                          <li>ESPN 1, ESPN 3</li>
-                          <li>Sin Anuncios en VOD</li>
-                          <li>Video 1080 MP</li>
-                          <li>2 Dispositivos Simultáneos</li>
-                          <li>Descargas Disponibles</li>
-                          <li>Audio STEREO 5.1</li>
+                          <li>Juegos móviles, series y películas; sin publicidad y sin límite</li>
+                          <li>2 dispositivos compatibles a la vez</li>
+                          <li>1080p (Full HD)</li>
+                          <li>2 dispositivos compatibles a la vez</li>
+                          <li>1 miembro extra que no viva contigo</li>
                         </ul>
                       ),
                     },
@@ -197,13 +281,12 @@ const PackStrDisney = () => {
                       titulo: "PREMIUM",
                       contenido: (
                         <ul className="beneficios-pack-movile">
-                          <li>Familiar</li>
-                          <li>TODO ESPN</li>
-                          <li>Sin Anuncios en VOD</li>
-                          <li>Video UHD / HDR</li>
-                          <li>4 Dispositivos Simultáneos</li>
-                          <li>Descargas Disponibles</li>
-                          <li>Audio ATMOS</li>
+                          <li>Juegos móviles, series y películas; sin publicidad y sin límite</li>
+                          <li>4 dispositivos compatibles a la vez</li>
+                          <li>4K (Ultra HD) + HDR</li>
+                          <li>6 dispositivos compatibles a la vez</li>
+                          <li>2 miembros extras que no vivan contigo</li>
+                          <li>Audio espacial de Netflix</li>
                         </ul>
                       ),
                     },
@@ -227,10 +310,12 @@ const PackStrDisney = () => {
                               {/* Accede a las propiedades del objeto "paquete" */}
                               <img
                                 className="str-icon-movile"
-                                src="../src/assets/icons/disney/strm-icon.png"
+                                src="../src/assets/icons/netflix/strm-icon.png"
                                 alt="Icono Disney"
                               />
-                              <h3 className="pack-movile-title">{paquete.titulo}</h3>
+                              <h3 className="pack-movile-title">
+                                {paquete.titulo}
+                              </h3>
                               <div className="text-start">
                                 {paquete.contenido}{" "}
                                 {/* Renderiza el contenido JSX */}
@@ -253,7 +338,7 @@ const PackStrDisney = () => {
                 data-bs-slide="prev"
               >
                 <span
-                  className="carousel-control-prev-icon prev-icon-disney"
+                  className="carousel-control-prev-icon prev-icon-netflix"
                   aria-hidden="true"
                 ></span>
                 <span className="visually-hidden">Previous</span>
@@ -265,7 +350,7 @@ const PackStrDisney = () => {
                 data-bs-slide="next"
               >
                 <span
-                  className="carousel-control-next-icon next-icon-disney"
+                  className="carousel-control-next-icon next-icon-netflix"
                   aria-hidden="true"
                 ></span>
                 <span className="visually-hidden">Next</span>
@@ -365,26 +450,59 @@ const PackStrDisney = () => {
                               <p className="card-servicio-txt servicio-m mb-2">
                                 SELECCIONA TU PLAN
                               </p>
-                              <div className="pack-str-content d-flex flex-column justify-content-center">
+                              <div className="pack-str-content pack-str-netflix d-flex flex-column justify-content-center">
                                 <button
-                                  className={`pack-btn-str ${
-                                    selectedPlan === "Premium"
+                                  className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
+                                    selectedPlan === "EstandarAnuncios"
                                       ? "netflix-btn-color"
-                                      : "pack-btn-inactive"
+                                      : "pack-btn-inactive pack-btn-inactive-netflix"
                                   }`}
-                                  onClick={() => setSelectedPlan("Premium")}
+                                  onClick={() =>
+                                    setSelectedPlan("EstandarAnuncios")
+                                  }
                                 >
-                                  Premium
+                                  <span className="pi1-hd plans-netflix-icon"></span>
+                                  <p>
+                                    Estándar
+                                    <br />
+                                    con anuncios <br />
+                                    <span className="plans-netflix-tv">
+                                      2 Pantallas
+                                    </span>
+                                  </p>
                                 </button>
+
                                 <button
-                                  className={`pack-btn-str ${
+                                  className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
                                     selectedPlan === "Estandar"
                                       ? "netflix-btn-color"
-                                      : "pack-btn-inactive"
+                                      : "pack-btn-inactive pack-btn-inactive-netflix"
                                   }`}
                                   onClick={() => setSelectedPlan("Estandar")}
                                 >
-                                  Estandar
+                                  <span className="pi2-2hd plans-netflix-icon"></span>
+                                  <p>
+                                    Estándar <br />
+                                    <span className="plans-netflix-tv">
+                                      2 Pantallas
+                                    </span>
+                                  </p>
+                                </button>
+                                <button
+                                  className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
+                                    selectedPlan === "Premium"
+                                      ? "netflix-btn-color"
+                                      : "pack-btn-inactive pack-btn-inactive-netflix"
+                                  }`}
+                                  onClick={() => setSelectedPlan("Premium")}
+                                >
+                                  <span className="pi3-4k plans-netflix-icon"></span>
+                                  <p>
+                                    Premium <br />
+                                    <span className="plans-netflix-tv">
+                                      2 Pantallas
+                                    </span>
+                                  </p>
                                 </button>
                               </div>
                             </div>

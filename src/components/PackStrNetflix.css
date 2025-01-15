@@ -15,6 +15,8 @@
     }
     .paquete-item-netflix{
         border-color: var(--netflix-color);
+        width: 280px;
+
     }
     .velocidadPromo-netflix{
         color: var(--netflix-color);
@@ -23,7 +25,7 @@
         width: 100%;
         border: none;
         border-radius: 50px;
-        font-size: 1.35rem;
+        font-size: 1.2rem !important;
         font-weight: 500;
         line-height: 15px;
         padding: 15px 0;
@@ -47,8 +49,8 @@
         margin-top: 150px;
         padding: 0;
     }
-    .table .tr-gray {
-        background-color: #E5E5E5 !important;
+    .table .tr-red {
+        background-color: #e5242125 !important;
         border-radius: 50px !important;
       }
     .br-str-table1{
@@ -63,15 +65,16 @@
     .br-str-table4{
         border-radius: 0 0 50px 0;
     }
-    .contrata-str-clients{
+
+    .contrata-str-netflix{
         gap: 30px;
-        margin-top: -560px;
+        margin-top: -710px;
         margin-right: 0px;
     }
     .plans-contrata-netflix{
         border: 2px solid var(--netflix-color);
-        height:600px;
-        width: 340px;
+        height:700px;
+        width: 315px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
@@ -106,41 +109,89 @@
         font-size: 16px;
         margin-bottom: 30px;
     }
+    .pi1-hd{
+        background-image: url(../assets/icons/netflix/pi1-hd.png);
+    }
+    .pi2-2hd{
+        background-image: url(../assets/icons/netflix/pi1-2hd.png);
+    }
+    .pi3-4k{
+        background-image: url(../assets/icons/netflix/pi3-4k.png);
+    }
+    .plans-netflix-icon{
+        display: inline-block;
+        height: 30px;
+        width: 60px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    .netflix-btn-plan{
+        font-size: 0.75rem !important;
+        line-height: 12px;
+    }
+    .pack-str-netflix{
+        padding: 10px;
+    }
+    .pack-btn-inactive-netflix .plans-netflix-icon {
+        filter: invert(55%) brightness(83%) saturate(0%);
+        opacity: 0.5;
+      }
+.plans-netflix-tv{
+    font-size: 0.62rem;
+}
+ .vm-td{
+   padding-top: 60px !important;
+  }
+
+  #carouselClienteMobile .carousel-control-prev-icon, #carouselClienteMobile .carousel-control-next-icon{
+    border-radius: 50px;
+    padding: 15px;
+}
+#carouselClienteMobile .prev-icon-netflix{
+    background-color: var(--netflix-color);
+}
+#carouselClienteMobile .next-icon-netflix{
+    background-color: var(--netflix-color);
+}
+.btn-pack-movil{
+    left: 20px;
+}
+@media screen and (max-width:400px) {
     .btn-pack-movil{
-        position: absolute;
-        bottom: -40px;
-        left: 18px;
+        left: 13px;
     }
-    @media screen and (max-width:767px) {
-        #carouselClienteMobile .carousel-control-prev-icon, #carouselClienteMobile .carousel-control-next-icon{
-            border-radius: 50px;
-            padding: 15px;
-        }
-        #carouselClienteMobile .prev-icon-disney{
-            background-color: var(--disney-color);
-        }
-        #carouselClienteMobile .next-icon-disney{
-            background-color: var(--disney-color);
-        }
+}
+    @media screen and (min-width:401px) and (max-width:767px) {
         .btn-pack-movil{
-            left: 12px;
+            left: 16px;
         }
     }
+
     @media screen and (min-width: 992px) and (max-width: 1199px){
-        .plans-contrata-netflix{
-            width:240px;
-        }
         .btn-client-pos{
-            left: 14%;
-            padding: 10px 30px;
+            left: 12%;
+        }
+        .plans-contrata-netflix{
+            width: 217px;
+            height: 900px;
+        }
+        .contrata-str-netflix{
+            margin-top: -910px;
+
         }
     }
     @media screen and (min-width: 1200px) and (max-width: 1399px){
-        .plans-contrata-netflix{
-            width:290px;
-        }
         .btn-client-pos{
-            left: 14%;
+            left: 12%;
+        }
+        .plans-contrata-netflix{
+            width: 267px;
+            height: 750px;
+        }
+        .contrata-str-netflix{
+            margin-top: -760px;
+
         }
     }
     

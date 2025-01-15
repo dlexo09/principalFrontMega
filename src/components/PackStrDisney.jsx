@@ -12,7 +12,7 @@ const PackStrDisney = () => {
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
   const [isCliente, setIsCliente] = useState(false); // Estado para "¿Eres cliente?"
   const promoValue = 60; // Definir la variable para el valor adicional
-  const [selectedPlan, setSelectedPlan] = useState("Premium"); // Estado para el plan seleccionado
+  const [selectedPlan, setSelectedPlan] = useState("Estandar"); // Estado para el plan seleccionado
 
   useEffect(() => {
     const fetchPaquetes = async () => {
@@ -366,6 +366,16 @@ const PackStrDisney = () => {
                                 SELECCIONA TU PLAN
                               </p>
                               <div className="pack-str-content d-flex flex-column justify-content-center">
+                              <button
+                                  className={`pack-btn-str ${
+                                    selectedPlan === "Estandar"
+                                      ? "disney-btn-color"
+                                      : "pack-btn-inactive"
+                                  }`}
+                                  onClick={() => setSelectedPlan("Estandar")}
+                                >
+                                  Estándar
+                                </button>
                                 <button
                                   className={`pack-btn-str ${
                                     selectedPlan === "Premium"
@@ -376,16 +386,7 @@ const PackStrDisney = () => {
                                 >
                                   Premium
                                 </button>
-                                <button
-                                  className={`pack-btn-str ${
-                                    selectedPlan === "Estandar"
-                                      ? "disney-btn-color"
-                                      : "pack-btn-inactive"
-                                  }`}
-                                  onClick={() => setSelectedPlan("Estandar")}
-                                >
-                                  Estandar
-                                </button>
+                                
                               </div>
                             </div>
                             <p className="card-text price-card">
