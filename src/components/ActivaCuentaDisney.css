@@ -1,6 +1,5 @@
 .activa-cuenta-strm-disney{
     background-image: url(../assets/images/streamings/disneyplus/wave-disney-activacion.png);
-
 }
 .activa-cuenta-strm-container{
     background-position: center;
@@ -51,13 +50,42 @@
     text-transform: uppercase;
     font-size: 16px;
 }
-.contrata-streaming h3{
+.title-strm-disney{
     font-size: 32px;
     font-weight: 400;
 }
-.contrata-streaming h3 span{
+.title-strm-disney span{
     font-weight: 600;
 }
 .active-strm-disney{
     color: var(--disney-color);
+}
+@media screen and (max-width: 767px){
+    .activa-cuenta-strm-disney{
+    background-image: url(../assets/images/general/wave-sht-general-movil.png);
+}  
+    .contrata-streaming p{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 1023px){
+    .activa-cuenta-strm-container{
+        margin: 0;
+        padding: 0 0 100px 0;
+    }
+    .btn-active-streaming{
+        width: 100%;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1399px){
+    .contrata-streaming{
+        gap: 5px;
+    }
+    
+    .contrata-streaming{
+        padding: 30px;
+    }
+    .title-strm-disney{
+        font-size: 28px;
+    }
 }
