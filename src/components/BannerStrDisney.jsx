@@ -8,20 +8,20 @@ const BannerStrDisney = () => {
 
         <div className="bannerStreaming-container d-flex">
             <div className="container-fluid bannerStreaming-content m-auto row d-flex align-items-center justify-content-evenly">
-                <div className="col-md-5 col-lg-3 order-2 order-lg-1">
+                <div className="col-md-5 col-xl-3 order-2 order-md-1">
                     <div className="streaming-logo">
                         <img className='w-100' src="../src/assets/images/streamings/disneyplus/disney-logo.png" alt="" />
                     </div>
 
-                    <div className="streaming-title text-white ps-lg-5">
-                        <h2>Todo esto y más<br />ya disponible</h2>
+                    <div className="streaming-title text-white ps-md-4 ps-lg-5 mt-4 mt-md-2 mt-xl-4">
+                        <h2>Todo esto y más <br /> ya disponible</h2>
                     </div>
 
-                    <div className="streaming-contratar ps-lg-5">
-                        <button className='btn-streaming btn-contratar-str-disney '>Contratar</button>
+                    <div className="streaming-contratar ps-md-4 ps-lg-5 mt-5 mt-md-4 mt-xl-5">
+                        <button className='btn-streaming-1'>Contratar</button>
                     </div>
                 </div>
-                <div className="col-md-7 col-lg-6 order-1 order-md-2">
+                <div className="col-md-7 col-xl-6 order-1 order-md-2">
                     <div className="streaming-cont-clasico">
                         <img className='w-100' src="../src/assets/images/streamings/banner-cont-clasico.png" alt="" />
                     </div>

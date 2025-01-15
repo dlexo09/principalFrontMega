@@ -14,16 +14,66 @@
     border: none;
     color: #fff;
     font-weight: 500;
-    margin-top: 50px;
-    width: 65%;
     text-transform: uppercase;
 }
 .streaming-title h2{
-    font-size: clamp(2rem, 1.4286rem + 1.1905vw, 2.5rem);
-    margin-top: 20px;
+    font-size: 32px;
 }
+
 .streaming-logo{
-    width: 400px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 767px){
+    .bannerStreaming-container{
+        height: auto;
+        padding: 50px 0;
+    }
+    .streaming-title h2{
+        text-align: center;
+    }
+    .streaming-contratar{
+        text-align: center;
+    }
+    .streaming-logo{
+        margin-top: 50px;
+    }
+    
+}
+@media screen and (max-width: 1023px){
+    .btn-streaming-1{
+        width: 90%;
+    }
+    
+}
+@media screen and (max-width: 1400px){
+    .bannerStreaming-container{
+        background-image: none;
+        background-image: linear-gradient(20deg, #02172A, #007783);
+    }
+    .bannerStreaming-container{
+        height: auto;
+        padding: 120px 0;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .streaming-title h2{
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 1450px){
+    .streaming-title h2{
+        font-size: 40px;
+        margin-top: 20px;
+    }
+    .streaming-logo{
+        width: 400px;
+    }
+    .btn-streaming-1{
+        width: 60%;
+    }
 }
 @media screen and (max-width: 500px){
 

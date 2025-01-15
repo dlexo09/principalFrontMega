@@ -88,3 +88,26 @@ color: var(--disney-color) !important;
     bottom: -30px;
     left: 20%;
 }
+
+@media screen and (min-width: 992px) and (max-width: 1199px){
+    .plans-contrata{
+        width:240px;
+    }
+    .btn-client-pos{
+        left: 14%;
+        padding: 10px 30px;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1399px){
+    .plans-contrata{
+        width:290px;
+    }
+    .btn-client-pos{
+        left: 14%;
+    }
+}
+
+
+
+
+
