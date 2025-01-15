@@ -1,0 +1,41 @@
+.destacados-str-max-img {
+    background-image: url(../assets/images/streamings/max/wave-destacados-max.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    padding-bottom: 60px;
+}
+
+.destacados-str-max-img img{
+    max-width: 1440px;
+}
+.destacados-str-max-container{ 
+    padding: 100px 0 70px 0;
+}
+.destacados-streaming-txt{
+    width: 900px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    font-weight: 500;
+}
+.destacados-streaming-txt p{
+    font-size: clamp(1.25rem, 1.1079rem + 0.5351vw, 1.75rem);
+
+}
+.destacados-streaming-txt p span{
+    font-weight: 600;
+}
+@media screen and (max-width: 767px){
+    .destacados-str-max-container{
+        padding: 70px 0 0 0;
+    }
+    .destacados-streaming-txt{
+        margin-bottom: 60px;
+    }
+}
+@media screen and (max-width: 1023px){
+    .destacados-streaming-txt{
+        width: 90%;
+    }
+    
+}

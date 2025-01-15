@@ -9,7 +9,7 @@ const ActivaCuentaNetflix = () => {
             <div className="container row d-flex align-items-center">
                 <div className="col-md-6 col-xl-7">
                     <p className='text-center d-md-none active-strm-netflix'><span>Para toda la familia</span></p>
-                    <h3 className='text-center title-strm-disney d-md-none mb-5'>¿Ya contrataste <span>Disney+?</span></h3>
+                    <h3 className='text-center title-strm-disney d-md-none mb-5'>¿Ya contrataste <span>Netflix?</span></h3>
                     <img className='w-100 mb-5 mb-md-0' src="../src/assets/images/streamings/netflix/netflix-pc-img.png" alt="" />
                 </div>
                 <div className="col-md-6 col-xl-5 contrata-streaming">

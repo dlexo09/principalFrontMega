@@ -1,0 +1,93 @@
+.str-max-container{
+    background-image: url(../assets/images/streamings/max/max-str-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 800px;
+}
+.str-netflix-logo img{
+    max-width: 400px;
+}
+.btn-contratar-str-max{
+    background-color: var(--max-color);
+}
+.btn-streaming{
+    border-radius: 50px;
+    padding: 20px 50px;
+    border: none;
+    color: #fff;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.streaming-title h2{
+    font-size: 32px;
+}
+
+@media screen and (max-width: 767px){
+    .bannerStreaming-container{
+        height: auto;
+        padding: 50px 0;
+    }
+    .streaming-title h2{
+        text-align: center;
+    }
+    .streaming-contratar{
+        text-align: center;
+    }
+    .str-netflix-logo{
+        display: flex;
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 1400px){
+    .str-max-container{
+        background-image: none;
+        background-image: linear-gradient(30deg, #000,#002BE7);
+    }
+    .str-max-container{
+        height: auto;
+        padding: 120px 0;
+    }
+    .str-netflix-logo img{
+        max-width: 90%; 
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .streaming-title h2{
+        font-size: 28px;
+    }
+}
+
+@media screen and (min-width: 1450px){
+    .streaming-title h2{
+        font-size: 40px;
+        margin-top: 20px;
+    }
+
+}
+@media screen and (min-width: 1920px){
+    .btn-streaming{
+        width: 60%;
+    }
+}
+@media screen and (max-width: 500px){
+
+    .streaming-title, .streaming-contratar{
+        text-align: center;
+    }
+}
+@media screen and (max-width: 1023px){
+    .str-max-container{
+        height: auto;
+        padding: 50px 0;
+    }
+    .btn-streaming{
+        width: 90%;
+    }
+
+}
+
+
+
+

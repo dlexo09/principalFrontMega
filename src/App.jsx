@@ -18,6 +18,7 @@ import BannerTrivias from './components/BannerTrivias';
 import Footer from './components/Footer';
 import Disneyplus from './views/Disneyplus';
 import Netflix from './views/Netflix';
+import Max from './views/Max';
 import { LocationProvider } from './LocationContext';
 import './App.css';
 
@@ -42,6 +43,7 @@ function App() {
             <Route path="/trivias/:endpoint" element={<TriviaDetail />} /> {/* Agregar la ruta dinámica para TriviaDetail */}
             <Route path="/disneyplus" element={<Disneyplus />} />
             <Route path="/netflix" element={<Netflix />} />
+            <Route path="/max" element={<Max />} />
         </Routes>
         </div>
         <Footer />

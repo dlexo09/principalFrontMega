@@ -19,7 +19,7 @@ const FAQStrNetflix = () => {
               aria-expanded="false"
               aria-controls="collapseOne"
             >
-              ¿Qué incluye Disney+ Estándar?
+              ¿Cómo asocio mi cuenta de Netflix a mi nuevo paquete de Mega?
             </button>
           </h2>
           <div
@@ -29,19 +29,7 @@ const FAQStrNetflix = () => {
             data-bs-parent="#faqAccordion"
           >
             <div className="accordion-body">
-                <p>Disney+ Estándar te trae Disney, Pixar, Marvel, Star Wars, National Geographic, ESPN y Star.</p>
-                <br />
-                <ul>
-                    <li>Acceso a los contenidos de los canales ESPN e ESPN3</li>
-                    <li>Video alta definición (1080p)</li>
-                    <li>Audio Stereo 5.1</li>
-                    <li>2 reproducciones simultáneas</li>
-                    <li>Con descarga de contenido</li>
-                    <li>7 perfiles personalizables</li>
-                    <li>Hasta 10 dispositivos</li>
-                </ul>
-                <br />
-                <p>*Los eventos en directo y deportivos incluyen publicidad como parte de cada transmisión, independientemente de tu plan.</p>
+                <p>Posterior a su contratación recibirá un link que lo re-direccionará a una página de Netflix para asociar su cuenta actual o crear una nueva cuenta.</p>
             </div>
           </div>
         </div>
@@ -56,7 +44,7 @@ const FAQStrNetflix = () => {
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              ¿Qué incluye Disney+ Premium?
+              ¿Si tengo una cuenta de Netflix puedo contratar y asociar el servicio a través de Mega?
             </button>
           </h2>
           <div
@@ -66,19 +54,7 @@ const FAQStrNetflix = () => {
             data-bs-parent="#faqAccordion"
           >
             <div className="accordion-body">
-                <p>Disney+ Premium te trae todo Disney, Pixar, Marvel, Star Wars, National Geographic, ESPN y Star.</p>
-                <br />
-                <ul>
-                    <li>Todos los canales de ESPN, torneos y eventos deportivos exclusivos.</li>
-                    <li>Video UHD/HDR</li>
-                    <li>Audio Atmos</li>
-                    <li>4 reproducciones simultáneas</li>
-                    <li>Con descarga de contenido</li>
-                    <li>7 perfiles personalizables</li>
-                    <li>Hasta 10 dispositivos</li>
-                </ul>
-                <br />
-                <p>*Los eventos en directo y deportivos incluyen publicidad como parte de cada transmisión, independientemente de tu plan.</p>
+                <p>Usted podrá asociar y conservar su cuenta actual ingresando su usuario y contraseña de Netflix al momento de la activación del paquete Mega + Netflix.</p>
             </div>
           </div>
         </div>
@@ -93,7 +69,7 @@ const FAQStrNetflix = () => {
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              ¿Dónde puedo ver Disney+?
+              ¿Mi cuenta actual de Netflix se asocia automáticamente a mi nuevo paquete de Mega + Netflix?
             </button>
           </h2>
           <div
@@ -103,7 +79,9 @@ const FAQStrNetflix = () => {
             data-bs-parent="#faqAccordion"
           >
             <div className="accordion-body">
-             <p>La aplicación de Disney+ está disponible en tu dispositivo móvil, navegador web, consola de videojuegos, decodificador y Smart TV. Puedes ver la lista completa de dispositivos compatibles en el <a target='_blank' href="https://help.disneyplus.com/es-MX/article/disneyplus-devices-supported">Centro de ayuda Disney</a></p>
+             <p>No, la vinculación del paquete de Mega con su cuenta actual de Netflix se realiza de forma manual mediante el proceso inicial de la activación del paquete Mega + Netflix.</p>
+              <br />
+              <p>Es responsabilidad total del cliente vincular su cuenta actual para evitar cargos duplicados con Netflix y con Mega.</p>
             </div>
           </div>
         </div>
@@ -118,7 +96,7 @@ const FAQStrNetflix = () => {
               aria-expanded="false"
               aria-controls="collapseFour"
             >
-              ¿Cómo funcionan los controles parentales de Disney+?
+              ¿Cómo cambio de paquete de Netflix?
             </button>
           </h2>
           <div
@@ -128,7 +106,7 @@ const FAQStrNetflix = () => {
             data-bs-parent="#faqAccordion"
           >
             <div className="accordion-body">
-             <p>Disney+ cuenta con varios controles parentales que los suscriptores pueden configurar para garantizar que cada perfil tenga una experiencia apropiada de acuerdo con la clasificación de contenido. Además, se puede configurar un PIN de perfil de 4 dígitos para restringir el acceso de otras personas a un determinado perfil. Los perfiles “Modo Junior” ofrecen una interfaz fácil de navegar que solo incluye contenido apto para todas las edades.</p>
+             <p>Podrá cambiar de paquete de Netflix en la página de internet de Netflix accediendo a su cuenta y dando click en “Cambiar plan” o puede cambiar de plan comunicándose al Call Center de Mega.</p>
             </div>
           </div>
         </div>
@@ -143,7 +121,7 @@ const FAQStrNetflix = () => {
               aria-expanded="false"
               aria-controls="collapseFive"
             >
-              ¿Qué pasará con Star+?
+              ¿Qué pasa con mi cuenta de Netflix si cancelo o cambio de paquete de Mega?
             </button>
           </h2>
           <div
@@ -153,7 +131,12 @@ const FAQStrNetflix = () => {
             data-bs-parent="#faqAccordion"
           >
             <div className="accordion-body">
-             <p>Desde el 26 de junio de 2024, el catálogo completo de Star+ pasará a Disney+. Los deportes de ESPN, las películas y series de Star+ y las historias de Disney+, todo en un solo lugar para aprovechar al máximo. Podrás usar Star+ hasta el 24 de julio de 2024; luego dejará de estar disponible pero recuerda que todo lo encontrarás en Disney+.</p>
+             <p>Si usted cancela, suspende o cambia el servicio de Mega se podrán presentar dos situaciones:</p>
+             <br />
+             <ul>
+              <li>La mensualidad pendiente con Netflix se cargará al segundo método de pago registrado en su perfil.</li>
+              <li>En dado caso de no tener un segundo método de pago deberá agregar un nuevo método de pago para realizar el pago correspondiente para que pueda seguir disfrutando de Netflix.</li>
+             </ul>
             </div>
           </div>
         </div>
@@ -178,10 +161,186 @@ const FAQStrNetflix = () => {
             data-bs-parent="#faqAccordion"
           >
             <div className="accordion-body">
-             <p>Ten en cuenta que los perfiles, Mi lista y el historial de visualización de Star+ no estarán disponibles en la aplicación de Disney+.</p>
+             <p>Deberá de comunicarse al Call Center de Netflix que lo asesorarán para vincular la cuenta correcta.</p>
             </div>
           </div>
         </div>
+
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingSeven">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseSeven"
+              aria-expanded="false"
+              aria-controls="collapseSeven"
+            >
+              Tengo problemas para vincular mi cuenta actual de Netflix con el paquete de Mega
+            </button>
+          </h2>
+          <div
+            id="collapseSeven"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingSeven"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+             <p>Si conoce el correo electrónico con la que está registrada su cuenta visite netflix.com/LoginHelp para re-establecer su contraseña.</p>
+              <br />
+              <p>Si usted está conectado a Netflix en otro dispositivo puede actualizar la información de su cuenta en “Configuraciones”. Si necesita soporte adicional podrá comunicarse a Servicio a Clientes de Netflix.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingEight">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseEight"
+              aria-expanded="false"
+              aria-controls="collapseEight"
+            >
+             ¿Cómo recupero mi usuario y contraseña de Netflix si lo olvidé?
+            </button>
+          </h2>
+          <div
+            id="collapseEight"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingEight"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+             <p>Verifique si está conectado al dispositivo que utilizó para vincular su cuenta, ya que podrá acceder a los detalles de su cuenta y consultar la información.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingNine">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseNine"
+              aria-expanded="false"
+              aria-controls="collapseNine"
+            >
+             ¿En dónde podré ver el contenido de Netflix?
+            </button>
+          </h2>
+          <div
+            id="collapseNine"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingNine"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+             <p>Podrá ver todo el contenido de Netflix en muchos dispositivos conectados a internet, tales como: decodificadores Xview y Xview+, Smart TVs, computadoras, consolas de videojuegos, smartphones y Tablets. Para obtener la lista completa visite: devices.netflix.com.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingTen">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTen"
+              aria-expanded="false"
+              aria-controls="collapseNine"
+            >
+             ¿En cuántas pantallas puedo ver Netflix simultáneamente?
+            </button>
+          </h2>
+          <div
+            id="collapseTen"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingTen"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+             <p>El número de pantallas que puede ver simultáneamente dependerá del paquete de Mega + Netflix que tenga contratado:</p>
+             <br />
+             <ul>
+              <li>El plan Básico podrá acceder en un dispositivo</li>
+              <li>El plan Estándar podrá acceder en dos dispositivos</li>
+              <li>El plan Estándar con anuncios podrá acceder en dos dispositivos</li>
+              <li>El plan Premium podrá acceder en cuatro dispositivos</li>
+             </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingEleven">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseEleven"
+              aria-expanded="false"
+              aria-controls="collapseEleven"
+            >
+             ¿Cómo configuro mi cuenta de Netflix?
+            </button>
+          </h2>
+          <div
+            id="collapseEleven"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingEleven"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+             <p>Usted puede administrar los detalles de su cuenta de Netflix en la siguiente liga netflix.com/Account, incluyendo:</p>
+             <br />
+             <ul>
+              <li>Configuración del Control Parental</li>
+              <li>Ajustar los Subtítulos</li>
+              <li>Actualizar la información de inicio de sesión de Netflix</li>
+              <li>Cambiar la configuración de idioma de Netflix</li>
+              <li>Administrar perfiles de Netflix</li>
+              <li>Administrar la configuración de reproducción</li>
+             </ul>
+             <br />
+             <p>Para soporte o mayor información de las configuraciones de Netflix visite <a target='_blank' href="https://help.netflix.com/es">help.netflix.com</a></p>
+            </div>
+          </div>
+        </div>
+
+        <div className="accordion-item">
+          <h2 className="accordion-header" id="headingTwelve">
+            <button
+              className="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwelve"
+              aria-expanded="false"
+              aria-controls="collapseNine"
+            >
+             ¿Cómo busco un título de programación en Netflix?
+            </button>
+          </h2>
+          <div
+            id="collapseTwelve"
+            className="accordion-collapse collapse"
+            aria-labelledby="headingTwelve"
+            data-bs-parent="#faqAccordion"
+          >
+            <div className="accordion-body">
+             <p>Es importante tener en cuenta que el contenido disponible en Netflix varía de un lugar a otro ya que Netflix trabaja con terceros para transmitir su contenido en la plataforma. En dado caso de que algún contenido no esté disponible en Netflix se puede deber a que los derechos de transmisión pueden no estar disponibles para su compra o pueden ser retenidos exclusivamente por otra compañía.</p>
+             <br />
+             <p>Aunque no hay un calendario establecido para adquirir nuevo contenido, Netflix constantemente esta adicionando nuevos títulos para que sus miembros puedan disfrutarlo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-5 text-center">
+        <p>Para soporte o mayor información de las configuraciones de Netflix visite <a className='txt-netflix-color' target='_blank' href="https://help.netflix.com/es">help.netflix.com</a></p>
+    </div>
       </div>
     </div>
 
