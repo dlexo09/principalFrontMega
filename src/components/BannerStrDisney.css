@@ -41,12 +41,7 @@
     }
     
 }
-@media screen and (max-width: 1023px){
-    .btn-streaming-1{
-        width: 90%;
-    }
-    
-}
+
 @media screen and (max-width: 1400px){
     .bannerStreaming-container{
         background-image: none;
@@ -71,7 +66,14 @@
     .streaming-logo{
         width: 400px;
     }
-    .btn-streaming-1{
+
+}
+@media screen and (min-width: 1920px){
+    .streaming-logo {
+        width: 90%;
+       margin: 0;
+    }
+    .btn-streaming{
         width: 60%;
     }
 }
@@ -99,7 +101,7 @@
         width: 90%;
     }
     .btn-streaming{
-        width: 100%;
+        width: 90%;
     }
 
 }

@@ -18,7 +18,7 @@ const BannerStrDisney = () => {
                     </div>
 
                     <div className="streaming-contratar ps-md-4 ps-lg-5 mt-5 mt-md-4 mt-xl-5">
-                        <button className='btn-streaming-1'>Contratar</button>
+                        <button className='btn-contratar-str-disney btn-streaming'>Contratar</button>
                     </div>
                 </div>
                 <div className="col-md-7 col-xl-6 order-1 order-md-2">
