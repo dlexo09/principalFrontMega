@@ -64,7 +64,7 @@ const NavBar = () => {
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a className="dropdown-item" href="/disneyplus">Disney+</a></li>
-                <li><a className="dropdown-item" href="#">Netflix</a></li>
+                <li><a className="dropdown-item" href="/netflix">Netflix</a></li>
                 <li><a className="dropdown-item" href="#">Amazon prime</a></li>
                 <li><a className="dropdown-item" href="#">Max</a></li>
                 <li><a className="dropdown-item" href="#">Paramount+</a></li>

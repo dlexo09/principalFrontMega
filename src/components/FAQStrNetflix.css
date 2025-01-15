@@ -1,0 +1,94 @@
+.faq-str-container{
+    margin-top: 200px;
+}
+.faq-global-accordion{
+    margin-top: 100px;
+}
+.faq-global-accordion .accordion-item, .faq-global-accordion .accordion-header{
+    background-color: #ffffff;
+}
+.faq-global-accordion .accordion-button::after {
+    display: none;
+  }
+  
+  .faq-global-accordion .accordion-button::before {
+    content: url(../assets/icons/acordeon-inactive.png); 
+    font-size: 1.2rem;
+    position: absolute;
+    right: 20px; 
+    transition: transform 0.3s ease, content 0.3s ease;
+    padding: 10px 13px;
+    border-radius: 50px;
+  }
+  .netflix-accordion .accordion-button::before {
+    background-color: var(--netflix-color);
+  }
+  
+
+  .faq-global-accordion .accordion-button:not(.collapsed)::before {
+    content: url(../assets/icons/acordeon-active.png); 
+    background-color: #fff;
+  }
+  .faq-global-accordion .accordion-button:not(.collapsed){
+    border-radius: 50px 50px 0 0 !important;
+    font-weight: 600 !important;
+  }
+  
+  
+  .faq-global-accordion .accordion-button {
+    padding-right: 40px;
+  }
+
+.faq-global-accordion {
+    background-color: #fff;
+  }
+  
+  .faq-global-accordion .accordion-button {
+    font-weight: bold;
+    color: #333;
+    background-color: #ffffff;
+    border: none;
+  }
+  
+  .faq-global-accordion .accordion-button, .faq-global-accordion .accordion-item:first-of-type > .accordion-header .accordion-button,  .faq-global-accordion .accordion-item:last-of-type> .accordion-header .accordion-button.collapsed {
+    background-color: #F4F4F4;
+    color: #121221;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 50px;
+    margin-top: 20px;
+    text-transform: none;
+    padding:  35px ;
+  }
+  
+  .faq-global-accordion .accordion-body {
+    font-size: 0.95rem;
+    padding: 20px 50px 40px 50px;
+    background-color: #F4F4F4;
+    border-radius: 0 0 50px 50px;
+  }
+  .faq-global-accordion .accordion-body ul{
+    list-style: disc;
+    padding-left: 30px;
+  }
+.faq-legal {
+    margin-top: 200px;
+    margin-bottom: 100px;
+}
+.faq-scontainer{
+    padding-top: 100px;
+}
+@media screen and (max-width: 767px){
+  .faq-global-accordion .accordion-button, .faq-global-accordion .accordion-item:first-of-type > .accordion-header .accordion-button, .faq-global-accordion .accordion-item:last-of-type> .accordion-header .accordion-button.collapsed{
+    padding: 28px 70px 28px 28px;
+    font-size: 16px;
+  }
+  .faq-scontainer{
+    padding-top: 100px;
+  }
+  .faq-legal{
+    margin-top: 100px;
+    padding: 0 20px;
+  }
+
+}
