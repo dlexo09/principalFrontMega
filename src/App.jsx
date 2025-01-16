@@ -19,6 +19,7 @@ import Footer from './components/Footer';
 import Disneyplus from './views/Disneyplus';
 import Netflix from './views/Netflix';
 import Max from './views/Max';
+import AmazonPrime from './views/AmazonPrime';
 import { LocationProvider } from './LocationContext';
 import './App.css';
 
@@ -44,6 +45,7 @@ function App() {
             <Route path="/disneyplus" element={<Disneyplus />} />
             <Route path="/netflix" element={<Netflix />} />
             <Route path="/max" element={<Max />} />
+            <Route path="/amazon" element={<AmazonPrime />} />
         </Routes>
         </div>
         <Footer />

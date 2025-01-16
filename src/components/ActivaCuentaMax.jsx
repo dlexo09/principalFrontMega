@@ -19,9 +19,12 @@ const ActivaCuentaMax = () => {
                     <p className='active-strm-p d-xl-none'>Activa tu cuenta ahora y disfruta de todo el contenido</p>
                     <button className='btn-active-streaming btn-active-max mt-3'>Activa tu cuenta <span className='open-page-wh'></span></button>
                 </div>
-
             </div>
         </div>
+
+        <div className="faq-legal text-center">
+        <p>Ponemos a su disposición la actualización de nuestro aviso de privacidad <a className='txt-max-color' target='_blank' href="https://www.megacable.com.mx/aviso-de-privacidad">Aquí</a></p>
+    </div>
         </>
     );
 };

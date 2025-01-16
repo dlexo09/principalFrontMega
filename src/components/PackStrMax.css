@@ -1,25 +1,25 @@
-.txt-netflix-color{
-    color: var(--netflix-color) !important;
+.txt-max-color{
+    color: var(--max-color) !important;
     }
     .disney-cliente-btn{
         padding: 16px 0;
     }
-    .netflix-btn-color{
-        background-color: var(--netflix-color);
+    .max-btn-color{
+        background-color: var(--max-color);
         color: #fff;
     
     }
-    .netflix-btn-color:hover{
-        background-color: #c91518;
+    .max-btn-color:hover{
+        background-color: #0428cb;
         color: #fff;
     }
-    .paquete-item-netflix{
-        border-color: var(--netflix-color);
+    .paquete-item-max{
+        border-color: var(--max-color);
         width: 280px;
 
     }
-    .velocidadPromo-netflix{
-        color: var(--netflix-color);
+    .velocidadPromo-max{
+        color: var(--max-color);
     }
     .pack-btn-str{
         width: 100%;
@@ -49,8 +49,8 @@
         margin-top: 150px;
         padding: 0;
     }
-    .table .tr-red {
-        background-color: #e5242125 !important;
+    .table .tr-blue {
+        background-color: #002ae725;
         border-radius: 50px !important;
       }
     .br-str-table1{
@@ -66,22 +66,22 @@
         border-radius: 0 0 50px 0;
     }
 
-    .contrata-str-netflix{
-        gap: 30px;
-        margin-top: -710px;
+    .contrata-str-max{
+        gap: 10px;
+        margin-top: -515px;
         margin-right: 0px;
     }
-    .plans-contrata-netflix{
-        border: 2px solid var(--netflix-color);
-        height:700px;
-        width: 315px;
+    .plans-contrata-max{
+        border: 2px solid var(--max-color);
+        height:520px;
+        width: 330px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         position: relative;
         border-radius: 50px;
     }
-    .plans-contrata-netflix img{
+    .plans-contrata-max img{
         width: 80px;
         margin: 0 auto;
         margin-top: -50px;
@@ -126,8 +126,8 @@
         background-position: center;
         background-repeat: no-repeat;
     }
-    .netflix-btn-plan{
-        font-size: 0.75rem !important;
+    .max-btn-plan{
+        font-size: 0.8rem !important;
         line-height: 12px;
     }
     .pack-str-netflix{
@@ -148,11 +148,11 @@
     border-radius: 50px;
     padding: 15px;
 }
-#carouselClienteMobile .prev-icon-netflix{
-    background-color: var(--netflix-color);
+#carouselClienteMobile .prev-icon-max{
+    background-color: var(--max-color);
 }
-#carouselClienteMobile .next-icon-netflix{
-    background-color: var(--netflix-color);
+#carouselClienteMobile .next-icon-max{
+    background-color: var(--max-color);
 }
 .btn-pack-movil{
     left: 20px;
@@ -175,27 +175,23 @@ table tr td span{
         .btn-client-pos{
             left: 12%;
         }
-        .plans-contrata-netflix{
-            width: 217px;
-            height: 900px;
+        .plans-contrata-max{
+            width: 230px;
+            height: 580px;
         }
-        .contrata-str-netflix{
-            margin-top: -910px;
+        .contrata-str-max{
+            margin-top: -560px;
+        }
 
-        }
     }
     @media screen and (min-width: 1200px) and (max-width: 1399px){
         .btn-client-pos{
             left: 12%;
         }
-        .plans-contrata-netflix{
-            width: 267px;
-            height: 750px;
+        .plans-contrata-max{
+            width: 280px;
         }
-        .contrata-str-netflix{
-            margin-top: -760px;
 
-        }
     }
     
     

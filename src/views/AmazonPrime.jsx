@@ -1,12 +1,12 @@
-import BannerStrMax from '../components/BannerStrMax';
+import BannerStrAmazonPrime from '../components/BannerStrAmazonPrime';
 import DestacadoStrMax from '../components/DestacadoStrMax';
 import PackStrMax from '../components/PackStrMax';
 import ActivaCuentaMax from '../components/ActivaCuentaMax';
 
-const Max = () => {
+const AmazonPrime = () => {
     return (
         <>
-            <BannerStrMax />
+            <BannerStrAmazonPrime />
             <DestacadoStrMax />
             <PackStrMax />
             <ActivaCuentaMax />
@@ -15,4 +15,4 @@ const Max = () => {
     );
 };
 
-export default Max;
+export default AmazonPrime;
