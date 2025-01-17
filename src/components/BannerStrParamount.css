@@ -1,15 +1,15 @@
-.str-prime-container{
-    background-image: url(../assets/images/streamings/amazon/amazon-prime-str-bg.jpg);
+.str-paramount-container{
+    background-image: url(../assets/images/streamings/paramount/paramount-str-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     height: 800px;
 }
-.str-prime-logo img{
+.str-paramount-logo img{
     max-width: 400px;
 }
-.btn-contratar-str-prime{
-    background-color: var(--prime-color);
+.btn-contratar-str-paramount{
+    background-color: var(--paramount-color);
 }
 .btn-streaming{
     border-radius: 50px;
@@ -34,22 +34,22 @@
     .streaming-contratar{
         text-align: center;
     }
-    .str-prime-logo{
+    .str-paramount-logo{
         display: flex;
         justify-content: center;
     }
 }
 
 @media screen and (max-width: 1400px){
-    .str-prime-container{
+    .str-paramount-container{
         background-image: none;
-        background-image: linear-gradient(30deg, #000,#0A79FF);
+        background-image: linear-gradient(45deg, #000048, #0064FF);
     }
-    .str-prime-container{
+    .str-paramount-container{
         height: auto;
         padding: 120px 0;
     }
-    .str-prime-logo img{
+    .str-paramount-logo img{
         max-width: 90%; 
     }
 }
@@ -78,7 +78,7 @@
     }
 }
 @media screen and (max-width: 1023px){
-    .str-max-container{
+    .str-paramount-container{
         height: auto;
         padding: 50px 0;
     }

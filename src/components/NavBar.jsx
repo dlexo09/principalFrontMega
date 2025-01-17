@@ -67,7 +67,7 @@ const NavBar = () => {
                 <li><a className="dropdown-item" href="/netflix">Netflix</a></li>
                 <li><a className="dropdown-item" href="/amazon">Amazon prime</a></li>
                 <li><a className="dropdown-item" href="/max">Max</a></li>
-                <li><a className="dropdown-item" href="#">Paramount+</a></li>
+                <li><a className="dropdown-item" href="/paramount+">Paramount+</a></li>
               </ul>
             </li>
             <li className="nav-item">

@@ -1,15 +1,17 @@
 import BannerStrAmazonPrime from '../components/BannerStrAmazonPrime';
-import DestacadoStrMax from '../components/DestacadoStrMax';
-import PackStrMax from '../components/PackStrMax';
-import ActivaCuentaMax from '../components/ActivaCuentaMax';
+import DestacadoStrAmazonPrime from '../components/DestacadoStrAmazonPrime';
+import PackStrAmazonPrime from '../components/PackStrAmazonPrime';
+import ActivaCuentaAmazonPrime from '../components/ActivaCuentaAmazonPrime';
+import FAQStrAmazonPrime from '../components/FAQStrAmazonPrime';
 
 const AmazonPrime = () => {
     return (
         <>
             <BannerStrAmazonPrime />
-            <DestacadoStrMax />
-            <PackStrMax />
-            <ActivaCuentaMax />
+            <DestacadoStrAmazonPrime />
+            <PackStrAmazonPrime />
+            <ActivaCuentaAmazonPrime />
+            <FAQStrAmazonPrime />
         </>
 
     );
