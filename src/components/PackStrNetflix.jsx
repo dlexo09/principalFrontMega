@@ -236,6 +236,9 @@ const PackStrDisney = () => {
               </div>
             </div>
           </div>
+          <div className="pack-client-legal mt-5">
+            <p className="pt-lg-5">*Aplican restricciones. Consulta términos y condiciones <a href="#">aquí</a></p>
+          </div>
 
           {/* **************** IS CLIENT MOVILE ************** */}
 
@@ -555,13 +558,16 @@ const PackStrDisney = () => {
               ))}
             </div>
             <div className="container packs-terminos">
-              <p className="promo-xview ">
+            {selectedPack !== "doble" && (
+                <p className="promo-xview ">
                 Incluyen{" "}
                 <span className="txt-netflix-color">
                   más de 30,000 hrs de contenido
                 </span>{" "}
                 en Xview+
               </p>
+              )}
+              
               <p>
                 Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
                 <a className="txt-netflix-color" href="">

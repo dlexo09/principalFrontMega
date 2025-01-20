@@ -12,7 +12,6 @@ const PackStrDisney = () => {
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
   const [isCliente, setIsCliente] = useState(false); // Estado para "¿Eres cliente?"
   const promoValue = 60; // Definir la variable para el valor adicional
-  const [selectedPlan, setSelectedPlan] = useState("Estandar"); // Estado para el plan seleccionado
 
   useEffect(() => {
     const fetchPaquetes = async () => {
@@ -152,13 +151,15 @@ const PackStrDisney = () => {
                   </div>
                 </div>
                  
-                <button className=" btn-packs prime-btn-color prime-btn-contrata btn-client-pos">
+                <button className=" btn-packs prime-btn-color prime-btn-contrata">
                   ¡Lo quiero!
                 </button>
             </div>
           </div>
 
-          
+          <div className="pack-client-legal mt-5">
+            <p className="pt-lg-5">*Aplican restricciones. Consulta términos y condiciones <a href="#">aquí</a></p>
+          </div>
 
           {/* **************** IS NOT CLIENT ************** */}
         </>
@@ -305,6 +306,7 @@ const PackStrDisney = () => {
               ))}
             </div>
             <div className="container packs-terminos">
+            {selectedPack !== "doble" && (
               <p className="promo-xview ">
                 Incluyen{" "}
                 <span className="txt-prime-color">
@@ -312,6 +314,8 @@ const PackStrDisney = () => {
                 </span>{" "}
                 en Xview+
               </p>
+              )}
+              
               <p>
                 Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
                 <a className="txt-prime-color" href="">

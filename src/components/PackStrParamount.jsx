@@ -110,11 +110,23 @@ const PackStrParamount = () => {
                     <li>Descarga la App y lleva el contenido de Paramount+ en todos tus dispositivos móviles</li>
                     <li>Podrás conectar 3 dispositivos simultáneamente</li>
                 </ul>
-
                 <button className=" btn-packs paramount-btn-color paramount-btn-contrata btn-client-pos">
                   ¡Lo quiero!
                 </button>
             </div>
+
+            <div className="paramount-programs d-flex justify-content-center align-items-center" >
+              <img src="../src/assets/images/streamings/paramount/paramount-originals-logo.png" alt="Paramount Plus Originals" />
+              <img src="../src/assets/images/streamings/paramount/showtime-logo.png" alt="Show Time" />
+              <img src="../src/assets/images/streamings/paramount/mtv-logo.png" alt="MTV" />
+              <img src="../src/assets/images/streamings/paramount/nikelodeon-logo.png" alt="Nikelodeon" />
+              <img src="../src/assets/images/streamings/paramount/nikjr-logo.png" alt="Nick Jr" />
+              <img src="../src/assets/images/streamings/paramount/smithsonian-logo.png" alt="Smithsonian Channel" />
+            </div>
+          </div>
+
+          <div className="pack-client-legal mt-5">
+            <p>*Aplican restricciones. Consulta términos y condiciones <a href="#">aquí</a></p>
           </div>
 
           
@@ -264,6 +276,7 @@ const PackStrParamount = () => {
               ))}
             </div>
             <div className="container packs-terminos">
+            {selectedPack !== "doble" && (
               <p className="promo-xview ">
                 Incluyen{" "}
                 <span className="txt-paramount-color">
@@ -271,6 +284,8 @@ const PackStrParamount = () => {
                 </span>{" "}
                 en Xview+
               </p>
+              )}
+              
               <p>
                 Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
                 <a className="txt-paramount-color" href="">

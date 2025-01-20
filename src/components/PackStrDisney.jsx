@@ -68,21 +68,19 @@ const PackStrDisney = () => {
         <h3 className="big-title mb-5">¿Ya eres cliente Mega?</h3>
         <div className="btn-container">
           <button
-            className={`pack-btn btn-lg mx-2 disney-cliente-btn ${
-              isCliente
+            className={`pack-btn btn-lg mx-2 disney-cliente-btn ${isCliente
                 ? "pack-btn-active disney-btn-color"
                 : "pack-btn-inactive"
-            }`}
+              }`}
             onClick={() => setIsCliente(true)}
           >
             Sí
           </button>
           <button
-            className={`pack-btn btn-lg mx-2 disney-cliente-btn ${
-              !isCliente
+            className={`pack-btn btn-lg mx-2 disney-cliente-btn ${!isCliente
                 ? "pack-btn-active disney-btn-color"
                 : "pack-btn-inactive "
-            }`}
+              }`}
             onClick={() => setIsCliente(false)}
           >
             No
@@ -272,6 +270,9 @@ const PackStrDisney = () => {
               </button>
             </div>
           </div>
+          <div className="pack-client-legal mt-5">
+            <p className="pt-lg-5">*Aplican restricciones. Consulta términos y condiciones <a href="#">aquí</a></p>
+          </div>
 
           {/* **************** IS NOT CLIENT ************** */}
         </>
@@ -284,11 +285,10 @@ const PackStrDisney = () => {
           <div className="d-flex justify-content-center mb-3 btn-container">
             <button
               type="button"
-              className={`pack-btn ${
-                selectedPack === "triple"
+              className={`pack-btn ${selectedPack === "triple"
                   ? "pack-btn-active disney-btn-color"
                   : "pack-btn-inactive"
-              } btn-lg mx-2`}
+                } btn-lg mx-2`}
               onClick={() => setSelectedPack("triple")}
             >
               TRIPLE PACK
@@ -297,11 +297,10 @@ const PackStrDisney = () => {
             </button>
             <button
               type="button"
-              className={`pack-btn ${
-                selectedPack === "doble"
+              className={`pack-btn ${selectedPack === "doble"
                   ? "pack-btn-active disney-btn-color"
                   : "pack-btn-inactive"
-              } btn-lg mx-2`}
+                } btn-lg mx-2`}
               onClick={() => setSelectedPack("doble")}
             >
               DOBLE PACK
@@ -366,27 +365,25 @@ const PackStrDisney = () => {
                                 SELECCIONA TU PLAN
                               </p>
                               <div className="pack-str-content d-flex flex-column justify-content-center">
-                              <button
-                                  className={`pack-btn-str ${
-                                    selectedPlan === "Estandar"
+                                <button
+                                  className={`pack-btn-str ${selectedPlan === "Estandar"
                                       ? "disney-btn-color"
                                       : "pack-btn-inactive"
-                                  }`}
+                                    }`}
                                   onClick={() => setSelectedPlan("Estandar")}
                                 >
                                   Estándar
                                 </button>
                                 <button
-                                  className={`pack-btn-str ${
-                                    selectedPlan === "Premium"
+                                  className={`pack-btn-str ${selectedPlan === "Premium"
                                       ? "disney-btn-color"
                                       : "pack-btn-inactive"
-                                  }`}
+                                    }`}
                                   onClick={() => setSelectedPlan("Premium")}
                                 >
                                   Premium
                                 </button>
-                                
+
                               </div>
                             </div>
                             <p className="card-text price-card">
@@ -422,11 +419,10 @@ const PackStrDisney = () => {
                             />
                           )}
                           <img
-                            className={`icon-card-packs telefonia-icon ${
-                              selectedPack === "doble"
+                            className={`icon-card-packs telefonia-icon ${selectedPack === "doble"
                                 ? "telefonia-icon-doble"
                                 : ""
-                            }`}
+                              }`}
                             src="../src/assets/icons/disney/telefonia-icon.png"
                             alt="Icono Telefonía"
                           />
@@ -438,13 +434,16 @@ const PackStrDisney = () => {
               ))}
             </div>
             <div className="container packs-terminos">
-              <p className="promo-xview ">
-                Incluyen{" "}
-                <span className="txt-disney-color">
-                  más de 30,000 hrs de contenido
-                </span>{" "}
-                en Xview+
-              </p>
+              {selectedPack !== "doble" && (
+                <p className="promo-xview ">
+                  Incluyen{" "}
+                  <span className="txt-disney-color">
+                    más de 30,000 hrs de contenido
+                  </span>{" "}
+                  en Xview+
+                </p>
+              )}
+
               <p>
                 Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
                 <a className="txt-disney-color" href="">

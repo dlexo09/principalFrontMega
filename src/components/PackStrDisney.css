@@ -23,7 +23,7 @@ color: var(--disney-color) !important;
     width: 100%;
     border: none;
     border-radius: 50px;
-    font-size: 1.2rem !important;
+    font-size: 1.2rem;
     font-weight: 500;
     line-height: 15px;
     padding: 15px 0;
