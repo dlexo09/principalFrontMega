@@ -12,7 +12,6 @@ const PackStrParamount = () => {
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
   const [isCliente, setIsCliente] = useState(false); // Estado para "¿Eres cliente?"
   const promoValue = 60; // Definir la variable para el valor adicional
-  const [selectedPlan, setSelectedPlan] = useState("Estandar"); // Estado para el plan seleccionado
 
   useEffect(() => {
     const fetchPaquetes = async () => {
@@ -93,23 +92,25 @@ const PackStrParamount = () => {
       {isCliente ? (
         <>
           <div className="mt-4">
-            <p className="cliente-info cliente-info-prime mt-5">
-              <span>Agrega Amazon Prime a tu paquete </span>
-              y recibe grandes beneficios como:
+            <p className="cliente-info cliente-info-paramount mt-5">
+            Si tienes
+              <span>Xview o Xview+</span> por Mega <br />
+              ¡Tienes <span>Paramount+</span> incluido en tu paquete!
             </p>
           </div>
-          
           <div className="container table-str-clients table-prime-clients">
               <div className="plans-contrata-paramount d-flex justify-content-center">
                 <div className="paramount-icon-container">
                   <img className="paramount-icon" src="../src/assets/icons/paramount/strm-icon-2.png" alt="" />
                 </div>
-                <div className="paramount-content">
-                    
-                </div>
+                <ul className="paramount-content">
+                    <li>Contenido exclusivo</li>
+                    <li>Contenido en idioma original</li>
+                    <li>Descarga de contenidos para disfrutarlos sin conexión a internet</li>
+                    <li>Descarga la App y lleva el contenido de Paramount+ en todos tus dispositivos móviles</li>
+                    <li>Podrás conectar 3 dispositivos simultáneamente</li>
+                </ul>
 
-                
-                 
                 <button className=" btn-packs paramount-btn-color paramount-btn-contrata btn-client-pos">
                   ¡Lo quiero!
                 </button>

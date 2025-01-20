@@ -48,7 +48,7 @@
     }
      
     .table-str-clients{
-        margin-top: 150px;
+        margin-top: 100px;
         padding: 0;
     }
     .table .tr-gray {
@@ -74,13 +74,13 @@
     }
     .plans-contrata-paramount{
         border: 2px solid var(--paramount-color);
-        max-width: 400px;
+        max-width: 350px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         position: relative;
         border-radius: 50px;
-        padding: 90px;
+        padding: 50px;
         margin: 0 auto;
     }
     .plans-contrata-paramount img{
@@ -98,8 +98,8 @@
         margin-top: 15px;
     }
     .paramount-icon-container{
-        margin-top: -140px;
-        margin-bottom: 50px;
+        margin-top: -100px;
+        margin-bottom: 30px;
     }
     .paramount-icon{
         width: 90px !important;
@@ -141,7 +141,7 @@
     .paramount-btn-contrata{
         left: 50%;
         transform: translateX(-50%);
-        padding: 10px 100px;
+        padding: 10px 30px;
     }
     .plan-content-prime{
         flex-wrap: wrap;
@@ -163,9 +163,24 @@
     .beneficio-prime-mega span{
         font-weight: 600 !important;
     }
+    .cliente-info-paramount{
+        font-size: 24px;
+        max-width: 550px;
+        margin: 0 auto;
+    }
+    .cliente-info-paramount span{
+        font-weight: 600;
+    }
+    .paramount-content{
+        list-style: disc;
+        text-align: left;
+    }
     @media screen and (max-width:500px){
         .beneficio-prime-mega{
             height: 180px;
+        }
+        .paramount-btn-contrata{
+            padding: 10px 25px;
         }
     }
     @media screen and (max-width:767px) {
