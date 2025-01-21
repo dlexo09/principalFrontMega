@@ -7,6 +7,7 @@
     --max-color:#002BE7;
     --prime-color:#0578FF;
     --paramount-color:#0064FF;
+    --tabs-section: #193FDE;
 }
 @font-face{
     font-family: 'Poppins';
@@ -161,3 +162,12 @@ html, body{
     }
     
   }
+
+/* TABS*/
+.title-tabs{
+    background-color: var(--tabs-section);
+    padding: 100px 0;
+    color: #fff;
+    font-size: clamp(2rem, 1.5743rem + 1.5842vw, 3rem);
+    font-weight: 300;
+}

@@ -1,0 +1,29 @@
+.tabs-container{
+    background-color: #193FDE;
+    text-transform: uppercase;
+}
+.tabs-general a.nav-link{
+    padding: 20px 80px;
+    border-radius: 30px 30px 0 0 !important;
+    color: #fff;
+    border: none;
+}
+.tabs-general a.nav-link.active{
+    color: #000 !important;
+   border-radius: 30px 30px 0 0 !important;
+    font-weight: 600;
+}
+.tabs-general 
+a.nav-link:hover{
+   color: #ffffffb7;
+}
+.nav-tabs .nav-link{
+    border: none;
+}
+@media screen and (max-width: 767px){
+    .tabs-general a.nav-link{
+        width: 90%;
+        padding: 20px 0;
+        text-align: center;
+    } 
+}

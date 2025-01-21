@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import TopBar from './components/TopBar';
 import NavBar from './components/NavBar';
 import Home from './views/Home';
+import Television from './views/Television';
 import PaquetesResidenciales from './views/PaquetesResidenciales';
 import Xview from './views/Xview';
 import FoxSports from './views/FoxSports';
@@ -48,6 +49,7 @@ function App() {
             <Route path="/max" element={<Max />} />
             <Route path="/amazon" element={<AmazonPrime />} />
             <Route path="/paramount+" element={<Paramount />} />
+            <Route path="/television/*" element={<Television />} />
         </Routes>
         </div>
         <Footer />

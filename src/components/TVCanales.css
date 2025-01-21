@@ -1,0 +1,106 @@
+.title-canales {
+  font-size: 32px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.canales-container {
+  padding: 100px 0;
+}
+.text-canales {
+font-size: clamp(1.125rem, 0.9653rem + 0.5941vw, 1.5rem);
+  margin-bottom: 100px;
+  margin-top: 50px;
+}
+.filtro-container {
+  background-color: #f2f2f2;
+  padding: 25px;
+  border-radius: var(--br-card);
+}
+.btn-filtro-canales {
+  border-radius: 50px;
+  width: 100%;
+  padding: 20px 10px;
+  border: none;
+}
+.btn-filtro-canales {
+  color: #727272;
+}
+.btn-filtro-canales.active {
+  background-color: var(--turquesa-btn);
+  font-weight: 600;
+  color: #000;
+}
+.btn-filtro-canales.active:hover {
+  background-color: var(--turquesa-btn);
+}
+.btn-filtro-canales:hover {
+  background-color: #00d7cc50;
+}
+
+.table-title-container .table-title-color {
+  background-color: #005ad1;
+  color: #fff;
+  border-radius: 30px 30px 0 0;
+  border: 2px solid #fff;
+}
+.table-title-container h3 {
+  padding: 20px 0;
+  text-align: center;
+  font-size: clamp(1rem, 0.8936rem + 0.396vw, 1.25rem);
+}
+.check-content {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+}
+.check-canal {
+  background-image: url(../assets/icons/check-circle.png);
+}
+.check-canal-lg {
+  background-image: url(../assets/icons/check-circle2.png);
+}
+.table-canales-container {
+  background-color: #c2d4ea30;
+  border-radius: 30px 0 30px 30px;
+}
+.table-canales-content {
+  border: 1px solid #fff;
+}
+.canales-selector-title {
+  font-weight: 600;
+  font-size: 18px;
+}
+.filtro-canales-content {
+  margin-top: 70px;
+}
+@media screen and (max-width: 767px){
+    .canales-container {
+        padding: 50px 0;
+      }
+      .table-title-container .table-title-color{
+        border: 1px solid #fff;
+      }
+      .table-title-container{
+        margin-top: 80px;
+      }
+
+      .text-canales{
+        margin-bottom: 0px;
+      }
+}
+@media screen and (max-width: 1024px) {
+  .filtro-container{
+    padding: 10px;
+    border-radius: 30px;
+  }
+  .btn-filtro-canales{
+    padding: 10px;
+  }
+  .table-title-container .table-title-color{
+    border-radius: 20px 20px 0 0;
+  }
+}
+
