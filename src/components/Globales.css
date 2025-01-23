@@ -171,3 +171,17 @@ html, body{
     font-size: clamp(2rem, 1.5743rem + 1.5842vw, 3rem);
     font-weight: 300;
 }
+.fw-title-tabs{
+    font-weight: 500;
+}
+
+/* Servicios */
+.small-title-services{
+    color: var(--blue-dark);
+    font-size: 20px;
+    text-transform: uppercase;
+}
+.big-title-services{
+    font-size: 40px;
+    font-weight: 400;
+}

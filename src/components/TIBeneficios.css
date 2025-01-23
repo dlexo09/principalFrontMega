@@ -1,0 +1,30 @@
+.beneficios-serv-container{
+  padding: 150px 0;
+  background-image: url(../assets/images/servicios/telefonia-ilimitada/wave-beneficios.png);
+  background-size: 100% 100%;
+  flex-wrap: wrap;
+}
+.beneficios-card-container{
+  margin-top: 80px;
+  gap: 20px;
+  padding-bottom: 50px;
+  flex-wrap: wrap;
+}
+.beneficio-card{
+  background-color: #fff;
+  height: 400px;
+  border-radius: 50px;
+  width: 40%;
+  padding: 60px;
+}
+@media screen and (max-width:767px) {
+  .beneficio-card{
+    width: 100%;
+  }
+}
+@media screen and (min-width:768px) and (max-width:1200px){
+  .beneficio-card{
+    width: 70%;
+    height: 350px;
+  }
+}
