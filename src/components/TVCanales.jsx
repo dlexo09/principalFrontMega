@@ -94,7 +94,7 @@ const Canales = () => {
                       <img
                         src={`${serverAPIUrl}uploads/canales/${canal.imagen}`}
                         alt={`${canal.imagen}`}
-                        className="img-fluid"
+                        className="img-fluid canal-logo"
                         style={{ maxHeight: "100px" }}
                       />
                     </div>

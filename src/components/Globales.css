@@ -8,6 +8,7 @@
     --prime-color:#0578FF;
     --paramount-color:#0064FF;
     --tabs-section: #193FDE;
+    --blue-gray:#C2D4EA;
 }
 @font-face{
     font-family: 'Poppins';
@@ -116,8 +117,6 @@ html, body{
     background-position: center;
     background-size: cover;
 }
-
-
 .btn-container {
     margin: auto;
     max-width: 450px;
@@ -182,6 +181,18 @@ html, body{
     text-transform: uppercase;
 }
 .big-title-services{
-    font-size: 40px;
+    font-size: 36px;
     font-weight: 400;
+    text-transform: uppercase;
+}
+
+/* Contenedores */
+.general-tabs-container{
+    padding: 150px 0;
+}
+
+@media screen and (max-width:767px){
+    .general-tabs-container{
+        padding: 50px 0;
+    }
 }

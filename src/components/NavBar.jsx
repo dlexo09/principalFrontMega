@@ -54,7 +54,7 @@ const NavBar = () => {
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">      
                 <li><a className="dropdown-item" href="/television">Televisión</a></li>
-                <li><a className="dropdown-item" href="#">Internet</a></li>
+                <li><a className="dropdown-item" href="/internet">Internet</a></li>
                 <li><a className="dropdown-item" href="/telefonia-ilimitada">Telefonía Ilimitada</a></li>
               </ul>
             </li>

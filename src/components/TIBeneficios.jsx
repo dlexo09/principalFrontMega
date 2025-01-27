@@ -6,7 +6,7 @@ import "./Globales.css";
 
 const TIBeneficios = () => {
   return (
-    <div className="d-flex flex-column align-items-center beneficios-serv-container">
+    <div className="d-flex flex-column align-items-center beneficios-serv-container general-tabs-container">
       <div className="text-center">
         <h3 className="small-title-services">Conoce nuestros</h3>
         <h2 className="big-title-services">Beneficios</h2>

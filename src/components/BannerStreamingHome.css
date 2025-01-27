@@ -14,7 +14,7 @@
   margin-bottom: 100px;
 }
 
-.swiper-slide {
+.streamings-home .swiper-slide {
   height: 350px;
   border-radius: 40px;
   box-shadow: 0 0 20px 2px #00000029;
@@ -74,7 +74,7 @@
   padding: 20px 0 !important;
 }
 
-.swiper-3d {
+.streamings-home .swiper-3d {
   width: 100%;
   padding: 20px 0;
 }

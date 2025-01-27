@@ -76,6 +76,9 @@ font-size: clamp(1.125rem, 0.9653rem + 0.5941vw, 1.5rem);
 .filtro-canales-content {
   margin-top: 70px;
 }
+.canal-logo{
+  width: 130px;
+}
 @media screen and (max-width: 767px){
     .canales-container {
         padding: 50px 0;
