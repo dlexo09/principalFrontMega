@@ -1,0 +1,38 @@
+.p-zw{
+    margin: 0 auto;
+    max-width: 700px;
+}
+.zw-pasos-container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 45px;
+    margin-top: 50px;
+}
+.zw-paso-content{
+    background-color: #fff;
+    width: 285px;
+    padding: 40px 20px;
+    border-radius: 25px;
+    height: 200px;
+    position: relative;
+}
+.zw-paso-content span{
+    background-color:#C2D4EA;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    position: absolute;
+    top: -30px;
+    left: 25px;
+    border: 8px solid #E7EEF7;
+}
+
+@media screen and (max-width:768px) {
+    .zw-paso-content{
+        width: 100%;
+        height: 100%;
+    }
+}
