@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./TopBar.css";
-import { serverAPIUrl } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from "../LocationContext"; // Ajusta la ruta según la ubicación de tu archivo LocationContext.js
 
 const TopBar = () => {
@@ -13,7 +13,7 @@ const TopBar = () => {
     const fetchLocations = async () => {
       if (locations.length === 0) {
         try {
-          const response = await fetch(`${serverAPIUrl}api/sucursales`);
+          const response = await fetch(`${serverAPILambda}api/sucursales`);
           const data = await response.json();
           setLocations(data);
           if (data.length > 0 && !currentLocation) {
@@ -45,7 +45,7 @@ const TopBar = () => {
             id="navbarNav"
           >
             <div className="top-bar-phone">
-              <a href="" className="d-flex align-item-center">
+              <a href="tel:+523396901234" className="d-flex align-item-center">
                 <span></span>33 9690 1234
               </a>
             </div>
@@ -66,8 +66,8 @@ const TopBar = () => {
             </ul>
 
             <div className="client-mega d-flex">
-              <a href="">Paga en línea</a>
-              <a href="">Iniciar sesión</a>
+              <a href="https://pagoenlinea.megacable.com.mx/" target="_blank" >Paga en línea</a>
+              <a href="https://sel.megacable.com.mx/" target="_blank">Mi cuenta MEGA</a>
             </div>
           </div>
         </div>
