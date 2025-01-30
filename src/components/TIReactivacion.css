@@ -1,5 +1,5 @@
 .bg-reactiva-container{
-    background-image: url(../assets/images/servicios/reactivacion/wave-reactivación.png);
+    background-image: url(../assets/images/servicios/reactivacion/wave-reactivacion.png);
     background-size: 100% 100%;
     flex-wrap: wrap;
   }
@@ -35,4 +35,10 @@
 }
 .contact-reac-card h4{
     font-size: 20px;
+}
+@media screen and (max-width: 767px){
+    .reac-q-user-action{
+        width: 100%;
+    }
+    
 }

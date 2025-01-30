@@ -9,7 +9,7 @@ const TabsComponent = ({ tabs, basePath }) => {
   return (
     <div className="tabs-container tabs-general">
       {/* Navegación de las tabs */}
-      <div className="nav nav-tabs justify-content-center">
+      <div className="nav nav-tabs justify-content-xl-center">
         {tabs.map((tab) => (
           <Link
             key={tab.id}
