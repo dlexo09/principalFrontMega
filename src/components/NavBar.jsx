@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './NavBar.css';
-import { serverAPIUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPIUrl, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 
 
 const NavBar = () => {
@@ -12,12 +12,14 @@ const NavBar = () => {
       <div className="container">
         {/* Logo */}
         <div className="navbar-logo">
+        <a href={serverUrl}>
           <img
             src="../src/assets/images/general/mega-logo.png"
             alt="Logo"
             className="logo-img"
           />
-        </div>
+        </a>
+      </div>
         <button
           className="navbar-toggler"
           type="button"
@@ -45,7 +47,7 @@ const NavBar = () => {
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a className="dropdown-item" href="/paquetesResidenciales">Residencial</a></li>
                 <li><a className="dropdown-item" href="https://empresas.megacable.com.mx/" target="_blank" rel="noopener noreferrer">Negocios</a></li>
-                <li><a className="dropdown-item" href="#" target="_blank" rel="noopener noreferrer">MCM</a></li>
+                <li><a className="dropdown-item" href="/mcm" target="_blank" rel="noopener noreferrer">MCM</a></li>
               </ul>
             </li>
             <li className="nav-item dropdown">
@@ -54,8 +56,8 @@ const NavBar = () => {
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">      
                 <li><a className="dropdown-item" href="/television">Televisión</a></li>
-                <li><a className="dropdown-item" href="#">Internet</a></li>
-                <li><a className="dropdown-item" href="#">Telefonía Ilimitada</a></li>
+                <li><a className="dropdown-item" href="/internet">Internet</a></li>
+                <li><a className="dropdown-item" href="/telefonia">Telefonía Ilimitada</a></li>
               </ul>
             </li>
             <li className="nav-item dropdown">
