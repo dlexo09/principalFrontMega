@@ -18,7 +18,7 @@ const BannerStreamingHome = () => {
         </p>
       </div>
 
-      <div className="container swiper-container">
+      <div className="container swiper-container streamings-home">
         <Swiper
           effect={'coverflow'}
           grabCursor={true}

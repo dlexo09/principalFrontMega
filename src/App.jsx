@@ -5,6 +5,8 @@ import TopBar from './components/TopBar';
 import NavBar from './components/NavBar';
 import Home from './views/Home';
 import Television from './views/Television';
+import TelefoniaIlimitada from './views/TelefoniaIlimitada';
+import Internet from './views/Internet';
 import PaquetesResidenciales from './views/PaquetesResidenciales';
 import Xview from './views/Xview';
 import FoxSports from './views/FoxSports';
@@ -50,6 +52,8 @@ function App() {
             <Route path="/amazon" element={<AmazonPrime />} />
             <Route path="/paramount+" element={<Paramount />} />
             <Route path="/television/*" element={<Television />} />
+            <Route path="/telefonia-ilimitada/*" element={<TelefoniaIlimitada />} />
+            <Route path="/internet/*" element={<Internet />} />
         </Routes>
         </div>
         <Footer />

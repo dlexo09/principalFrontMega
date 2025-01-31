@@ -1,29 +1,42 @@
-.tabs-container{
+.tabs-container {
     background-color: #193FDE;
     text-transform: uppercase;
 }
-.tabs-general a.nav-link{
-    padding: 20px 80px;
+
+.tabs-general a.nav-link {
+    padding: 20px 50px;
     border-radius: 30px 30px 0 0 !important;
     color: #fff;
     border: none;
 }
-.tabs-general a.nav-link.active{
+
+.tabs-general a.nav-link.active {
     color: #000 !important;
-   border-radius: 30px 30px 0 0 !important;
+    border-radius: 30px 30px 0 0 !important;
     font-weight: 600;
 }
-.tabs-general 
-a.nav-link:hover{
-   color: #ffffffb7;
+
+.tabs-general a.nav-link:hover {
+    color: #ffffffb7;
 }
-.nav-tabs .nav-link{
+
+.nav-tabs .nav-link {
     border: none;
 }
-@media screen and (max-width: 767px){
-    .tabs-general a.nav-link{
-        width: 90%;
-        padding: 20px 0;
+@media screen and (max-width: 1224px){
+    .nav-tabs {
+        overflow-x: auto; /* Habilita el scroll horizontal */
+        white-space: nowrap; /* Evita que las tabs se envuelvan */
+        flex-wrap: nowrap; /* Evita que las tabs se envuelvan */
+    }
+}
+@media screen and (max-width: 767px) {
+
+
+    .tabs-general a.nav-link {
+        width: auto; /* Ajusta el ancho automáticamente */
+        padding: 20px 40px; /* Ajusta el padding para móviles */
         text-align: center;
-    } 
+        display: inline-block; /* Asegura que las tabs estén en línea */
+    }
 }

@@ -1,0 +1,157 @@
+/* Estilos del botón */
+.recommendations-button {
+    background: var(--turquesa-btn);
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+    margin: 0 auto;
+    cursor: pointer;
+  }
+  
+  .recommendations-button span {
+    width: 16px;
+    height: 16px;
+    background-image: url(../assets/icons/acordeon-active-up.png);
+    background-position: center;
+    background-size: cover;
+  }
+  
+  /* Efecto hover en el botón */
+  .recommendations-button:hover {
+    background: #00c8be;
+    transform: translateY(-2px);
+  }
+  
+  /* Icono giratorio */
+  .transition-icon {
+    transition: transform 0.3s ease;
+  }
+  
+  .rotate {
+    transform: rotate(180deg); /* Rotación de 90 grados */
+  }
+  
+  /* Contenido desplegable */
+  .contenido-despegable-velocidad{
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+  }
+  
+  .contenido-despegable-velocidad.hidden {
+    opacity: 0;
+    max-height: 0;
+  }
+  
+  .contenido-despegable-velocidad.visible {
+    opacity: 1;
+    max-height: 1000px;
+  }
+  .rec-info-card{
+    background-color: #E7EEF7;
+    border-radius: 50px;
+    width: 650px;  
+    padding: 30px;
+  }
+  .rec-ethernet-container{
+    display: flex;
+    gap: 10px;
+  }
+  .rec-info-container{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  .rec-info-content{
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 40px 20px;
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  /* Estilos de las tarjetas */
+  .info-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    transition: all 0.3s ease;
+  }
+  
+  .info-card:hover {
+    transform: translateY(-5px);
+  }
+  .icon-rec-content img{
+    width: 100px;
+  }
+.mide-tu-velocidad{
+    margin-top: 100px;
+}
+.speed-pasos-crd{
+    background-color: #F2F2F2;
+    border-radius: 30px;
+    padding: 40px;
+    position: relative;
+}
+.speed-pasos-container{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.speed-pasos-crd span{
+    background-color: var(--turquesa-btn);
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    position: absolute;
+    top: -30px;
+    left: 35px;
+    border: 8px solid #fff;
+}
+.rec-info-content{
+    position: relative;
+}
+.rec-info-content span{
+    background-color:#C2D4EA;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    position: absolute;
+    top: -30px;
+    left: 25px;
+    border: 8px solid #E7EEF7;
+}
+@media screen and (max-width:1399px) {
+    .rec-info-container{
+        justify-content: center;
+      }
+      .contenido-despegable-velocidad.visible{
+        max-height: 100%;
+      }
+}
+@media screen and (max-width:767px){
+    .rec-ethernet-container{
+        flex-wrap: wrap;
+      }
+      .rec-info-card{
+        width: 90%;
+      }
+
+      .recommendations-button{
+        width: 90%;
+      }
+      .speed-pasos-container{
+        padding: 30px;
+      }
+      .rec-ethernet-container{
+        gap: 40px;
+      }
+}
