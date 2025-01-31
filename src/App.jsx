@@ -4,14 +4,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import TopBar from './components/TopBar';
 import NavBar from './components/NavBar';
 import Home from './views/Home';
+import Paquetes from './views/Paquetes';
 import Television from './views/Television';
 import TelefoniaIlimitada from './views/TelefoniaIlimitada';
 import Internet from './views/Internet';
-import PaquetesResidenciales from './views/PaquetesResidenciales';
+
 import Xview from './views/Xview';
 import FoxSports from './views/FoxSports';
 import AdultPack from './views/AdultPack';
-import Canales from './views/Canales';
 import MideVelocidad from './views/MideVelocidad';
 import Wifi from './views/Wifi';
 import WifiUltra from './views/WifiUltra';
@@ -36,11 +36,9 @@ function App() {
         <div style={{ marginTop: '0px' }}> {/* Ajusta el margen superior según sea necesario */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/paquetesResidenciales" element={<PaquetesResidenciales />} />
             <Route path="/xview" element={<Xview />} />
             <Route path="/foxSports" element={<FoxSports />} />
             <Route path="/adultPack" element={<AdultPack />} />
-            <Route path="/canales" element={<Canales />} />
             <Route path="/mideVelocidad" element={<MideVelocidad />} />
             <Route path="/wifi" element={<Wifi />} />
             <Route path="/wifi-ultra" element={<WifiUltra />} />
@@ -54,6 +52,7 @@ function App() {
             <Route path="/television/*" element={<Television />} />
             <Route path="/telefonia-ilimitada/*" element={<TelefoniaIlimitada />} />
             <Route path="/internet/*" element={<Internet />} />
+            <Route path="/paquetes/*" element={<Paquetes />} />
         </Routes>
         </div>
         <Footer />

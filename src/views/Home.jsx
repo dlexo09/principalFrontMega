@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import BannerHome from '../components/BannerHome';
 import CallToActionHome from '../components/CallToActionHome';  
 import PagoEnLinea from '../components/PagoEnLinea';
-import PaquetesResidenciales from '../views/PaquetesResidenciales';
 import PaquetesTarifarios from '../components/PaquetesTarifarios';
 import MegaMovil from '../components/MegaMovil';
 import VentajasInternetMega from '../components/VentajasInternetMega';

@@ -1,0 +1,43 @@
+.fc-banner-principal{
+    margin-top: -25px;
+}
+.tabs-general .nav-link.active[href*="full-connected"] {
+    background-color: #000 ;
+    color:#fff !important; 
+}
+.bg-container{
+    background-image: url(../assets/images/oferta/full-connected/main-bg.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+.fc-cta-container{
+    background-image: url(../assets/images/oferta/full-connected/form-p-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    padding: 15px 30px;
+    border-radius: 50px;
+    color: #fff;
+    gap: 150px;
+    max-width: 1150px;
+    margin: 100px auto;
+}
+.fc-cta-container form{
+    gap: 20px;
+}
+.fc-cta-container form input{
+    font-size: 20px;
+    border-radius: 50px;
+    border: none;
+}
+.fc-cta-container form input[type="tel"]{
+   padding: 10px 20px;
+   width: 300px;
+}
+.fc-cta-container form input[type="submit"]{
+    background-color: #FF7B00;
+    color: #fff;
+    width: 300px;
+}
