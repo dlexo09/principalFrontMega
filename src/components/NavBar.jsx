@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './NavBar.css';
-import { serverAPIUrl, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 
 
 const NavBar = () => {
@@ -33,13 +33,7 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
           <ul className="navbar-nav">
-            {/* home url
-            <li className="nav-item">
-            <Link className="nav-link active" aria-current="page" to="/">
-                <img src={`${serverAPIUrl}/uploads/assets/megacable-logo.svg`} alt="MegaLogo" className="mega-logo-navbar" />
-              </Link>
-            </li>
-             */}
+            
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Oferta

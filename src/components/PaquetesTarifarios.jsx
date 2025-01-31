@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { serverAPIUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext';
 import './PaquetesTarifarios.css';
 import './Globales.css';
@@ -16,7 +16,7 @@ const PaquetesTarifarios = () => {
     const fetchPaquetes = async () => {
       if (currentLocation) {
         try {
-          const response = await fetch(`${serverAPIUrl}api/${selectedPack}Pack/${currentLocation.idSucursal}`);
+          const response = await fetch(`${serverAPILambda}api/${selectedPack}Pack/${currentLocation.idSucursal}`);
           const data = await response.json();
           setPaquetes(data);
         } catch (error) {
@@ -100,7 +100,7 @@ const PaquetesTarifarios = () => {
                           <p className="card-servicio-txt">TV HD INTERACTIVA</p>
                           <p>
                             <img
-                              src={`${serverAPIUrl}${paquete.ruta}${paquete.archivo}`}
+                              src={`${serverUrl}src/assets/${paquete.ruta}${paquete.archivo}`}
                               alt="TV HD INTERACTIVA"
                               style={{ height: '30px' }}
                             />
@@ -112,7 +112,7 @@ const PaquetesTarifarios = () => {
                       <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
                       <div className="promoExtra">
                         <img
-                          src={`${serverAPIUrl}/uploads/banners/promo-partner.png`}
+                          src={`${serverUrl}src/assets/uploads/banners/promo-partner.png`}
                           alt="Promo"
                           style={{ height: '50px' }}
                         />

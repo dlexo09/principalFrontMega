@@ -1,8 +1,8 @@
-import React, { useEffect, useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./MegaMovil.css";
 import './Globales.css'
+import "./MegaMovil.css";
+
 
 const MegaMovil = () => {
     return (
@@ -13,12 +13,14 @@ const MegaMovil = () => {
                     <h3 className="secondary-title">¡La mejor cobertura<br /><span>sin cambiar tú número!</span> </h3>
                     <p className="mt-4 mt-lg-5 ">Descubre Mega Móvil y disfruta de minutos y SMS ilimitados en México, EE.UU y Canadá , junto con excelentes beneficios para cllientes.</p>
                     <div className="mt-4 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
-                    <button className="btn-action">Saber más <span className="open-page-icon"></span></button>
+                        <a href="https://megamovil.mx/" className="btn-action">
+                            Saber más <span className="open-page-icon"></span>
+                        </a>
                     </div>
                 </div>
                 <div className="col-12 col-lg-6 order-1 order-lg-2 ">
-                <h2 className="small-title d-block d-lg-none mb-4">Conéctate con Mega móvil</h2>
-                    <img className="img-fluid" src="../src/assets/images/home/megamovil-home-img.png" alt="" />
+                    <h2 className="small-title d-block d-lg-none mb-4">Conéctate con Mega móvil</h2>
+                    <img className="img-megamovil" src="../src/assets/images/home/megamovil-home-img.png" alt="" />
                 </div>
             </div>
         </>

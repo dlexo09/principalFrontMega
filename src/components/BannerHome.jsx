@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { serverAPIUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import './BannerHome.css';
 import './Globales.css'
 
@@ -11,7 +11,7 @@ const BannerHome = () => {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const response = await fetch(`${serverAPIUrl}api/bannerHero`);
+        const response = await fetch(`${serverAPILambda}api/bannerHero`);
         const data = await response.json();
         const now = new Date();
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -52,7 +52,7 @@ const BannerHome = () => {
           <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
             {/* Fondo del Slider */}
             <img 
-              src={`${serverAPIUrl}${banner.ruta}${banner.background}`} 
+              src={`${serverUrl}src/assets/${banner.ruta}${banner.background}`} 
               className="d-block w-100 banner-background" 
               alt={`Slide ${index + 1}`} 
             />
@@ -71,10 +71,10 @@ const BannerHome = () => {
 
                 {/* Columna Derecha: Imagen */}
                 <div className="order-2 order-md-1  d-none d-md-flex col-md-8 d-flex justify-content-end banner-principal-img">
-                  <img className='img-netflix' src={`${serverAPIUrl}${banner.ruta}${banner.imagenBanner}`} alt="" />
+                  <img className='img-netflix' src={`${serverUrl}src/assets/${banner.ruta}${banner.imagenBanner}`} alt="" />
                 </div>
                 <div className="order-1 order-md-2 d-md-none banner-principal-img-mov">
-                  <img className='img-netflix-movil' src={`${serverAPIUrl}${banner.ruta}${banner.imagenMobile}`} alt="" />
+                  <img className='img-netflix-movil' src={`${serverUrl}src/assets/${banner.ruta}${banner.imagenMobile}`} alt="" />
                 </div>
               </div>
             </div>

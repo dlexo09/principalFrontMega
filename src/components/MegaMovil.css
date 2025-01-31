@@ -1,6 +1,10 @@
 .megamovil-home {
     margin: 100px auto;
 }
+.img-megamovil {
+  max-width: 100%;
+  height: auto;
+}
 @media screen and (max-width: 768px) {
     .megamovil-home{
       margin-top: 0px;

@@ -19,8 +19,11 @@ const PagoEnLinea = () => {
                         <div className="pago-bancos">
                             <img src="../src/assets/images/home/pagos-tarjetas-img.png" alt="" />
                         </div>
+                        
                         <div className="mt-0 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
-                            <button className="btn-action">Paga aquí<span className="open-page-icon"></span></button>
+                            <a href="https://portalpagos.cloudsvc.megacable.com.mx/" className="btn-action">
+                                Paga aquí<span className="open-page-icon"></span>
+                            </a>
                         </div>
                     </div>
                 </div>
