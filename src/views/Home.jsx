@@ -3,8 +3,6 @@ import BannerHome from '../components/BannerHome';
 import CallToActionHome from '../components/CallToActionHome';  
 import PagoEnLinea from '../components/PagoEnLinea';
 import PaquetesTarifarios from '../components/PaquetesTarifarios';
-
-import PaquetesResidenciales from '../views/PaquetesResidenciales';
 import MegaMovil from '../components/MegaMovil';
 import VentajasInternetMega from '../components/VentajasInternetMega';
 import BannerStreamingHome from '../components/BannerStreamingHome';
@@ -40,6 +38,7 @@ const Home = () => {
       {seccionesActivas.includes('BannerStreamingHome') && <BannerStreamingHome />}
       {seccionesActivas.includes('InternetSimetrico') && <InternetSimetrico />}
       {seccionesActivas.includes('MegaMovil') && <TvInteractiva />}
+      {seccionesActivas.includes('BannerAvisos') && <BannerAvisos />}
       
     </>
   );

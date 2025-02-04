@@ -185,11 +185,11 @@ const Footer = () => {
           <div className="social-foter-container d-flex flex-md-column flex-lg-row mt-4 mt-md-0">
             <h3>Síguenos en:</h3>
             <div className="social-footer">
-              <a className='me-2' href=""><img src="../src/assets/icons/youtube-icon-footer.png" alt="" /></a>
-              <a href=""><img src="../src/assets/icons/x-icon-footer.png" alt="" /></a>
-              <a href=""><img src="../src/assets/icons/tiktok-icon-footer.png" alt="" /></a>
-              <a href=""><img src="../src/assets/icons/facebook-icon-footer.png" alt="" /></a>
-              <a href=""><img src="../src/assets/icons/instagram-icon-footer.png" alt="" /></a>
+              <a className='me-2' target='_BLANK' href="https://www.youtube.com/user/spotsmegacable"><img src="../src/assets/icons/youtube-icon-footer.png" alt="Youtube" /></a>
+              <a href="https://x.com/megacable?mx=2" target='_BLANK'><img src="../src/assets/icons/x-icon-footer.png" alt="X" /></a>
+              <a href="https://www.tiktok.com/@mega.mx" target='_BLANK'><img src="../src/assets/icons/tiktok-icon-footer.png" alt="Tiktock" /></a>
+              <a href="https://www.facebook.com/Megacable/" target='_BLANK'><img src="../src/assets/icons/facebook-icon-footer.png" alt="" /></a>
+              <a href="https://www.instagram.com/megacable/" target='_BLANK'><img src="../src/assets/icons/instagram-icon-footer.png" alt="" /></a>
             </div>
           </div>
         </div>

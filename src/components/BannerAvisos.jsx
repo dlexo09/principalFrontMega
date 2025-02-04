@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { serverAPIUrl } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPIUrl, serverUrl, serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
 import "./BannerAvisos.css";
 import "./Globales.css";
 
@@ -11,7 +9,7 @@ const BannerAvisos = () => {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const response = await fetch(`${serverAPIUrl}api/bannerFooter`);
+        const response = await fetch(`${serverAPILambda}api/bannerFooter`);
         const data = await response.json();
         const now = new Date();
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -65,7 +63,7 @@ const BannerAvisos = () => {
         </a>
       ) : (
         <img
-          src={`${serverAPIUrl}${banner.ruta}${banner.archivo}`}
+          src={`${serverUrl}/src/assets/${banner.ruta}${banner.archivo}`}
           className="d-block carousel-image"
           alt={`Slide ${index + 1}`}
         />

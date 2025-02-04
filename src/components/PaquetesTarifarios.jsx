@@ -56,7 +56,7 @@ const PaquetesTarifarios = () => {
   };
 
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
-
+  
   return (
     <div className="container paquetes-tarifarios text-center">
       <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
@@ -93,6 +93,14 @@ const PaquetesTarifarios = () => {
                       <p className="card-text velocidadPromo">{paquete.velocidadPromo} MEGAS</p>
                       <p className="card-text tiempoVelocidadPromo">
                         x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
+                      </p>
+                      
+                      <p>
+                            <img
+                              src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
+                              alt="IncluyeExtensor Wifi Ultra"
+                              style={{ height: '30px' }}
+                            />
                       </p>
 
                       {paquete.archivo && (

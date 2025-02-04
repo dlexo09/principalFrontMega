@@ -1,4 +1,3 @@
-import React, { useEffect, useState, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./TvInteractiva.css";
@@ -18,7 +17,7 @@ const TvInteractiva = () => {
                     <h3 className="secondary-title"><span>TV Interactiva</span> dónde quiera que estés en cualquier dispositivo.</h3>
                     <p className="mt-4 mt-lg-5 ">Con Xview+ accede a más de 30 000 horas de contenido, graba, pausa y retrocede tus programas favoritos. ¡Todo en un sólo lugar!</p>
                     <div className="mt-0 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
-                    <button className="btn-action mt-4 mt-lg-5">Saber más<span className="open-page-icon"></span></button>
+                    <a href="/TvInteractiva" className="btn-action mt-4 mt-lg-5">Saber más<span className="open-page-icon"></span></a>
                     </div>
                 </div>
             </div>

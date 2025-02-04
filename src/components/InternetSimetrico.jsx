@@ -14,7 +14,7 @@ const InternetSimetrico = () => {
             <h3 className="secondary-title is-title-s">Conéctate sin límites ¡Misma velocidad de <span>subida y bajada!</span></h3>
             <p className="mt-4 ps-5 pe-5 ps-md-0 pe-md-0 ">Eleva tu conexión y conoce nuestra red Fibra Óptica.</p>
             <div className="mt-0 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
-              <button className="btn-action mt-4 mt-lg-5">Saber más<span className="open-page-icon"></span></button>
+              <a href="/InternetSimetrico" className="btn-action mt-4 mt-lg-5">Saber más<span className="open-page-icon"></span></a>
             </div>
           </div>
           <div className="order-1 order-lg-2 internet-simetrico-img">
