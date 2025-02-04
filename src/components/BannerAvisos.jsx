@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { serverAPIUrl, serverUrl, serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverUrl, serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
 import "./BannerAvisos.css";
 import "./Globales.css";
 
@@ -56,7 +56,7 @@ const BannerAvisos = () => {
       {banner.link ? (
         <a href={banner.link} target="_blank" rel="noopener noreferrer">
           <img
-            src={`${serverAPIUrl}${banner.ruta}${banner.archivo}`}
+            src={`${serverUrl}/src/assets/${banner.ruta}${banner.archivo}`}
             className="d-block carousel-image"
             alt={`Slide ${index + 1}`}
           />

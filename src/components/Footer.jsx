@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { serverUrl, serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Footer.css';
 
@@ -61,7 +62,7 @@ const Footer = () => {
       {
         id: 1,
         title: 'Códigos de prácticas comerciales',
-        link: 'files/Codigo_Practicas_Comerciales.pdf',
+        link: `${serverUrl}/src/assets/files/Codigo_Practicas_Comerciales.pdf`,
       },
       {
         id: 2,
@@ -69,17 +70,17 @@ const Footer = () => {
         content: `
           <ul class="list-ct">
             <li class="list-ct-title">POSTPAGO</li>
-            <li class="list-ct-item"><a href="#link1" target="_blank" rel="noopener noreferrer">Telefonía por Cable</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Servicio y Equipo en Telefonía</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Mega Cable</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Myc Red</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/telefonia-cable_pospago.pdf" target="_blank" rel="noopener noreferrer">Telefonía por Cable</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/servicio-equipo_pospago.pdf" target="_blank" rel="noopener noreferrer">Servicio y Equipo en Telefonía</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/mega_pospago.pdf" target="_blank" rel="noopener noreferrer">Mega Cable</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/myc-red_pospago.pdf" target="_blank" rel="noopener noreferrer">Myc Red</a></li>
           </ul>
           <ul class="list-ct">
             <li class="list-ct-title">PREPAGO</li>
-            <li class="list-ct-item"><a href="#link1" target="_blank" rel="noopener noreferrer">Telefonía por Cable</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Servicio y Equipo en Telefonía</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Mega Cable</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Myc Red</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/telefonia-cable_prepago.pdf" target="_blank" rel="noopener noreferrer">Telefonía por Cable</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/servicio-equipo_prepago.pdf" target="_blank" rel="noopener noreferrer">Servicio y Equipo en Telefonía</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/mega_prepago.pdf" target="_blank" rel="noopener noreferrer">Mega Cable</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/myc-red_prepago.pdf" target="_blank" rel="noopener noreferrer">Myc Red</a></li>
           </ul>
         `,
       },
@@ -88,27 +89,27 @@ const Footer = () => {
         title: 'Legales',
         content: `
           <ul class="list-ct">
-            <li class="list-ct-item"><a href="#link1" target="_blank" rel="noopener noreferrer">Términos y Condiciones</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Internet</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Netflix</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Amazon Prime</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Disney+</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Términos y Condiciones de HBO Max</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Fox Sports Premium</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Términos y Condiciones de NBA League Pass</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Paramount+</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Adult Pack</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Video</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Aviso de Privacidad Visitantes</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Derechos de Usuario</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Código de Ética Megacable</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Código de Ética en Comercio Electrónico</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Contacto con Autoridades en Materia de Seguridad</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Ajustes de Tarifas</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Ajuste de Tarifas Mega móvil</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Penalidades</a></li>  
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Lineamientos Neutralidad de la Red</a></li>  
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Recepción de Guías Electrónicas de Programación</a></li>  
+            <li class="list-ct-item"><a href="/TerminosYCondiciones/" rel="noopener noreferrer">Términos y Condiciones</a></li>
+            <li class="list-ct-item"><a href="/TerminosYCondicionesInternet/" rel="noopener noreferrer">Términos y Condiciones de Internet</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/Netflix.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Netflix</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/AmazonPrime.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Amazon Prime</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/disney+.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Disney+</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/HBO_Max.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de HBO Max</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/Fox_Sports_Premium.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Fox Sports Premium</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/nba.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de NBA League Pass</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/Paramount+.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Paramount+</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/AdultPack.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Adult Pack</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/video.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Video</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/aviso_privacidad_visitantes.pdf" target="_blank" rel="noopener noreferrer">Aviso de Privacidad Visitantes</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/carta_derechos_de_usuario.pdf" target="_blank" rel="noopener noreferrer">Derechos de Usuario</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/codigo_etica.pdf" target="_blank" rel="noopener noreferrer">Código de Ética Megacable</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/codigo_etica_comercio_electronico.pdf" target="_blank" rel="noopener noreferrer">Código de Ética en Comercio Electrónico</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/aviso_legal_de_uso_del_portal_01.pdf" target="_blank" rel="noopener noreferrer">Contacto con Autoridades en Materia de Seguridad</a></li>
+            <li class="list-ct-item"><a href="/AjustesDeTarifas/" rel="noopener noreferrer">Ajustes de Tarifas</a></li>
+            <li class="list-ct-item"><a href="/AjustesDeTarifasMegamovil/" rel="noopener noreferrer">Ajuste de Tarifas Mega móvil</a></li>
+            <li class="list-ct-item"><a href="/PenalidadesEnInstalaciones" rel="noopener noreferrer">Penalidades</a></li>  
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/lineamientos_neutralidad_red.pdf" target="_blank" rel="noopener noreferrer">Lineamientos Neutralidad de la Red</a></li>  
+            <li class="list-ct-item"><a href="/guiasProgramacion" target="_blank" rel="noopener noreferrer">Recepción de Guías Electrónicas de Programación</a></li>  
             </ul>
         `,
       },
@@ -212,7 +213,7 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-6 ps-4">
             <ul className="list-ct">
-              <li className="list-ct-item"><a href="#link1" target="_blank" rel="noopener noreferrer">Relación con inversionistas</a></li>
+              <li className="list-ct-item"><a href="/src/assets/files/Codigo_Practicas_Comerciales.pdf" target="_blank" rel="noopener noreferrer">Relación con inversionistas</a></li>
               <li className="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Denuncias</a></li>
               <li className="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Responsabilidad Social</a></li>
             </ul>
