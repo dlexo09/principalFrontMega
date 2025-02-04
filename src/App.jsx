@@ -8,7 +8,6 @@ import Paquetes from './views/Paquetes';
 import Television from './views/Television';
 import TelefoniaIlimitada from './views/TelefoniaIlimitada';
 import Internet from './views/Internet';
-
 import Xview from './views/Xview';
 import FoxSports from './views/FoxSports';
 import AdultPack from './views/AdultPack';
@@ -24,6 +23,7 @@ import Netflix from './views/Netflix';
 import Max from './views/Max';
 import AmazonPrime from './views/AmazonPrime';
 import Paramount from './views/Paramount';
+import Ayuda from './views/Ayuda';
 import { LocationProvider } from './LocationContext';
 import './App.css';
 
@@ -53,6 +53,7 @@ function App() {
             <Route path="/telefonia-ilimitada/*" element={<TelefoniaIlimitada />} />
             <Route path="/internet/*" element={<Internet />} />
             <Route path="/paquetes/*" element={<Paquetes />} />
+            <Route path="/ayuda/*" element={<Ayuda />} />
         </Routes>
         </div>
         <Footer />

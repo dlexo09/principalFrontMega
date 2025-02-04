@@ -1,0 +1,718 @@
+import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./SOPPago.css";
+import "./Globales.css";
+
+// Datos de los comercios
+const comercios = [
+  {
+    id: 1,
+    name: "Soriana",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio1.png",
+    tipo: "conEstado",
+  },
+  {
+    id: 2,
+    name: "Chedraui",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio2.png",
+    tipo: "conEstado",
+  },
+  {
+    id: 3,
+    name: "BanCoppel",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio3.png",
+    tipo: "conEstado",
+  },
+  {
+    id: 4,
+    name: "Merza",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio4.png",
+    tipo: "conEstado",
+  },
+  {
+    id: 5,
+    name: "Lagunitas",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio5.png",
+    tipo: "conEstado",
+  },
+  {
+    id: 6,
+    name: "Alsuper",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio6.png",
+    tipo: "conEstado",
+  },
+  {
+    id: 7,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio7.png",
+    tipo: "conEstado",
+  },
+
+  {
+    id: 8,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio8.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 9,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio9.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 10,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio10.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 11,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio11.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 12,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio12.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 13,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio13.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 14,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio14.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 15,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio15.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 16,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio16.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 17,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio17.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 18,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio18.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 19,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio19.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 20,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio20.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 21,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio21.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 22,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio22.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 23,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio23.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 24,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio24.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 25,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio25.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 26,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio26.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 27,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio27.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 28,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio28.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 29,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio29.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 30,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio30.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 31,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio31.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 32,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio32.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 33,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio33.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 34,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio34.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 35,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio35.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 36,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio36.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 37,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio37.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 38,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio38.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 39,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio39.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 40,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio40.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 41,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio41.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 42,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio42.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 43,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio43.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 44,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio44.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 45,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio45.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 46,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio46.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 47,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio47.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 48,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio48.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 49,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio48.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 50,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio50.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 51,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio51.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 52,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio52.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 53,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio53.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 54,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio54.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 55,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio55.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 56,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio56.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 57,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio57.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 58,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio58.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 59,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio59.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 60,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio60.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 61,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio61.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 63,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio63.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 64,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio64.png",
+    tipo: "sinEstado",
+  },
+  {
+    id: 65,
+    name: "Ley",
+    image:
+      "../src/assets/images/soporte/formas-de-pago/comercios/comercio65.png",
+    tipo: "sinEstado",
+  },
+];
+
+// Componente para mostrar las imágenes de los comercios
+const ComerciosList = ({ tipo }) => {
+  // Filtrar los comercios según el tipo
+  const comerciosFiltrados = comercios.filter(
+    (comercio) => comercio.tipo === tipo
+  );
+
+  return (
+    <div className=" mt-4 d-flex comercio-logo-container justify-content-center align-items center">
+      {comerciosFiltrados.map((comercio) => (
+        <div key={comercio.id}>
+          <img
+            src={comercio.image}
+            alt={comercio.name}
+            className="img-fluid comercio-logo"
+          />
+        </div>
+      ))}
+    </div>
+  );
+};
+
+// Definimos el contenido de cada opción
+const options = {
+  app: {
+    label: "App",
+    content: (
+      <div className="container-fluid p-0 wave-bg-fdpago">
+        <div className="container">
+          <div className="row fdpago-app-container align-items-center justify-content-center">
+            <div className="col-lg-3 text-center">
+              <img
+                src="../src/assets/images/soporte/formas-de-pago/app-megacable.png"
+                alt="Megacable App"
+              />
+            </div>
+            <div className="col-lg-6">
+              <h2 className="secondary-title mb-4">
+                Descarga la<span> Megacable App!</span>
+              </h2>
+              <p>
+                Regístrate y realiza tu pago sin hacer filas, directamente desde
+                tu celular. Además recuerda que si domicilias tu pago a tarjeta
+                de crédito o débito, obtienes 10 Mbps adicionales en el internet
+                de tu casa.
+              </p>
+              <div className="btn-mega-apps mt-5 d-flex flex-md-row flex-column">
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://apps.apple.com/mx/app/megacable-app/id1466002118",
+                      "_blank"
+                    )
+                  }
+                  className="btn-packs"
+                >
+                  IOS
+                </button>
+                <button
+                  onClick={() =>
+                    window.open(
+                      "https://play.google.com/store/apps/details?id=mx.com.megacable&hl=es_MX",
+                      "_blank"
+                    )
+                  }
+                  className="btn-packs"
+                >
+                  Google Play
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  comercios: {
+    label: "Comercios",
+    content: (
+      <div className="container">
+        <h2 className="text-center small-secondary-title mb-4">
+          Para tu comodidad y para que ahorres tiempo, contamos con más de{" "}
+          <span>10,000 opciones</span> donde puedes realizar tu{" "}
+          <span>pago mensual</span> como:
+        </h2>
+
+        {/* Comercios con estado de cuenta */}
+        <h3 className="text-center small-title mt-5">Con estado de cuenta</h3>
+        <ComerciosList tipo="conEstado" />
+
+        {/* Comercios sin estado de cuenta */}
+        <h3 className="text-center small-title mt-5">Sin estado de cuenta</h3>
+        <ComerciosList tipo="sinEstado" />
+      </div>
+    ),
+  },
+  cargoAutomatico: {
+    label: "Cargo Automático",
+    content: (
+      <div className="container-fluid p-0 wave-bg-fdpago">
+        <div className="container">
+          <div className="row fdpago-ca-container align-items-center justify-content-center">
+            <div className="col-md-7 col-lg-4 text-center">
+              <img
+                className="fdpago-ca-img"
+                src="../src/assets/images/soporte/formas-de-pago/cargo-automatico.png"
+                alt="Megacable App"
+              />
+            </div>
+            <div className="col-lg-6">
+              <h2 className="secondary-title mb-4">
+                <span>Cargo Automático</span> a tu Tarjeta de Crédito o Débito
+              </h2>
+              <p>
+                Visita tu CIS más cercano o llama por teléfono, proporciona los
+                datos de tu tarjeta y mensualmente se te procesará tu pago de
+                forma automática y segura.
+              </p>
+              <div className="cc-cargo-autom mt-4 d-flex flex-md-row flex-column">
+                <img
+                  src="../src/assets/images/home/pagos-tarjetas-img.png"
+                  alt="Paypal, Visa, Master Card"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    ),
+  },
+  bancos: {
+    label: "Bancos",
+    content: (
+      <>
+        <div className="container-fluid bancos-fdp-container">
+          <div className="container">
+            <h3 className="text-center mb-5 secondary-title">
+              Nuestros Convenios
+            </h3>
+            <div className="bancos-conv-container d-flex align-items-center justify-content-center">
+              <div className="banco-conv">
+                <img
+                  src="../src/assets/images/soporte/formas-de-pago/bancos/santander-logo.png"
+                  alt=""
+                />
+                <h5 className="conv-num">1332</h5>
+              </div>
+              <div className="banco-conv">
+                <img
+                  src="../src/assets/images/soporte/formas-de-pago/bancos/scotiabank-logo.png"
+                  alt=""
+                />
+                <h5 className="conv-num">3356</h5>
+              </div>
+              <div className="banco-conv">
+                <img
+                  src="../src/assets/images/soporte/formas-de-pago/bancos/hsbc-logo.png"
+                  alt=""
+                />
+                <h5 className="conv-num">3535</h5>
+              </div>
+              <div className="banco-conv">
+                <img
+                  src="../src/assets/images/soporte/formas-de-pago/bancos/bbva-logo.png"
+                  alt=""
+                />
+                <h5 className="conv-num">801720</h5>
+              </div>
+              <div className="banco-conv">
+                <img
+                  src="../src/assets/images/soporte/formas-de-pago/bancos/citibanamex-logo.png"
+                  alt=""
+                />
+                <h5 className="conv-num">
+                  <br />
+                </h5>
+              </div>
+            </div>
+
+            <div className="row consulta-saldo-container justify-content-center align-items-center">
+              <div className="col-lg-6 order-2 order-lg-1 text-md-center text-lg-start">
+                  <p className="saldo-title">Puede consultar su saldo en:</p>
+                  <p className="saldo-subtitle">Mega App | Servicios en Línea</p>
+                  <p className="saldo-title mt-5">Tambien puede llamarnos a:</p>
+                  <p className="saldo-subtitle">tel: 33 9690 2222 | cc: 33 9690 0000</p>
+              
+              </div>
+              <div className="col-md-6 col-lg-3 order-1 order-lg-2  text-center mb-5 mb-lg-0">
+                <img src="../src/assets/images/soporte/formas-de-pago/app-mega.png" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </>
+    ),
+  },
+  pagoLinea: {
+    label: "Pago en Línea",
+    content: (
+      <div className="container">
+        <h2 className="text-center text-uppercase">Paga en Línea tus servicios de Mega</h2>
+      </div>
+    ),
+  },
+};
+
+// Componente para los botones del switch
+const SwitchButton = ({
+  option,
+  selectedOption,
+  handleOptionChange,
+  label,
+}) => (
+  <button
+    type="button"
+    className={`switch-general-btn switch-fdpago-btn ${
+      selectedOption === option ? "pack-btn-active" : "pack-btn-inactive"
+    } btn-lg mx-2`}
+    onClick={() => handleOptionChange(option)}
+  >
+    {label}
+  </button>
+);
+
+// Componente principal
+const TIPortabilidad = () => {
+  const [selectedOption, setSelectedOption] = useState("app");
+
+  const handleOptionChange = (option) => {
+    setSelectedOption(option);
+  };
+
+  return (
+    <div className="general-tabs-container">
+      <div className="text-center">
+        <h3 className="small-title-services">CONOCE NUESTRAS</h3>
+        <h2 className="big-title-services">Formas de pago</h2>
+      </div>
+
+      {/* Switch */}
+      <div className="container d-flex flex-column flex-md-row justify-content-center align-items-center mt-5 btn-container-sop">
+        {Object.entries(options).map(([option, { label }]) => (
+          <SwitchButton
+            key={option}
+            option={option}
+            selectedOption={selectedOption}
+            handleOptionChange={handleOptionChange}
+            label={label}
+          />
+        ))}
+      </div>
+
+      {/* Mostrar información dependiendo de la opción seleccionada */}
+      <div className="mt-5">{options[selectedOption].content}</div>
+    </div>
+  );
+};
+
+export default TIPortabilidad;

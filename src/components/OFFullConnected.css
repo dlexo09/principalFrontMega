@@ -1,3 +1,4 @@
+
 .fc-banner-principal{
     margin-top: -25px;
 }
@@ -24,20 +25,491 @@
     max-width: 1150px;
     margin: 100px auto;
 }
-.fc-cta-container form{
+.fc-cta-container form, .fc-cta-container-b form{
     gap: 20px;
 }
-.fc-cta-container form input{
+.fc-cta-container form input, .fc-cta-container-b form input{
     font-size: 20px;
     border-radius: 50px;
     border: none;
 }
-.fc-cta-container form input[type="tel"]{
+.fc-cta-container form input[type="tel"], .fc-cta-container-b form input[type="tel"]{
    padding: 10px 20px;
    width: 300px;
 }
-.fc-cta-container form input[type="submit"]{
+.fc-cta-container form input[type="submit"], .fc-cta-container-b form input[type="submit"]{
     background-color: #FF7B00;
     color: #fff;
     width: 300px;
+}
+.fch-carousel-container{
+    max-width: 900px;
+    margin: 0 auto !important;
+    margin-top: 150px !important;
+}
+.control-prev-fch img,
+.control-next-fch img {
+  width: 25px;
+  height: 25px;
+}
+
+.control-prev-fch {
+  left: 50px;
+}
+
+.control-next-fch {
+  right: 50px;
+}
+.fc-cta-container-b{
+    background-image: url(../assets/images/oferta/full-connected/form-p-bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom center;
+    padding: 15px 30px;
+    border-radius: 50px;
+    color: #fff;
+    max-width: 650px;
+    margin: 0px auto;
+}
+.fc-cta-container-g{
+    margin-top: 150px;
+    margin-bottom: 200px;
+}
+.garantia{
+    background-image: url(../assets/images/oferta/full-connected/footer-bg.png);
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+}
+.garantia-txt{
+    color: #fff;
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 100px;
+    padding-left: 150px;
+}
+.garantia-txt h2{
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.garantia-p{
+    font-size: 20px;
+}
+.garantia-p{
+    font-size: 20px;
+}
+.phone-atencion{
+    font-size: 32px;
+    margin-top: 10px;
+}
+
+/* Cards */
+.cards-titles-container{
+    background-color: #E9E9E9;
+    padding: 20px;
+    border-radius: 35px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+.cards-titles-content{
+    width: 120px;
+    text-align: center;
+}
+.cards-titles-content h2{
+    border-bottom: 2px solid #FF7B00;
+    padding: 20px 0;
+    font-size: 14px;
+}
+.cards-titles-container .cards-titles-content .spc-title{
+    padding: 40px 0;
+}
+.cards-titles-container .cards-titles-content .spci-title{
+    padding: 30px 0;
+}
+.cards-titles-container .cards-titles-content .sp-title{
+    padding: 25px 0;
+}
+
+.cards-container{
+    margin-top: 150px;
+}
+.cards-title{
+    text-align: center;
+    margin-top: 150px;
+}
+.cards-content{
+    display: flex;
+    gap: 50px;
+    margin-top: -680px;
+    justify-content: center;
+}
+.cards-title h2{
+    font-size: 32px;
+    text-transform: uppercase;
+}
+.cards-title img{
+    width: 500px;
+    margin-top: 5px;
+}
+.card-fch{
+    border: 3px solid #2A2148;
+    width: 300px;
+    border-radius: 35px;
+    background-color: #fff;
+}
+.header-blue{
+    background-color: #2A2148;
+    border-radius: 30px 30px 0 0;
+    color: #fff;
+}
+.card-header-fch{
+    text-align: center;
+    padding: 10px 30px;
+    border-bottom: 3px solid #2A2148;
+}
+.megas-img{
+width: 100%;
+}
+.card-body-fch{
+    padding: 0px 30px 65px 30px;
+    text-align: center;
+}
+.card-content{
+    border-bottom: 2px solid #FF7B00;
+    padding: 20px 0;
+}
+.card-content h3, .card-content h2, .card-content h4 {
+    font-family: "Kanit", sans-serif;
+}
+.card-content h3{
+    font-size: 24px;
+    font-style: italic;
+    font-weight: 500;
+}
+.card-content h4{
+    font-size: 28px;
+    font-weight: 700;
+    font-style: italic;
+    line-height: 24px;
+}
+.card-content h5{
+    font-size: 20px;
+    line-height: 24px;
+}
+.card-content h5 span{
+    color: #0096E1;
+}
+.cards-partners{
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+}
+.llamadas h3, .llamadas h4{
+    font-style: normal;
+    line-height: 30px;
+}
+.card-price {
+    padding-top: 20px;
+}
+.card-price .price-text{
+    font-size: 20px;
+    font-weight: 500;
+}
+.card-price .price-text span{
+    color: #FF7B00;
+}
+.card-price .price{
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 50px;
+}
+.card-price .price sup{
+    font-size: 20px;
+    font-weight: 300;
+}
+.card-price .price span{
+    font-size: 40px;
+}
+.sin-mesh{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-style: normal !important;
+    font-weight: 500 !important;
+}
+.normal-megas{
+    font-weight: 600;
+}
+.card-price .price .mes-text{
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 0;
+}
+.cards-titles-container .cards-titles-content .wth-border{
+    border: none;
+    padding: 30px 0;
+}
+.cards-legal{
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+    margin-top: 80px;
+    font-size: 12px;
+}
+/* Slider  */
+
+.owl-carousel .owl-item img{
+    width: 100%;
+}
+.slider-container{
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 200px;
+}
+
+.owl-nav {
+    position: absolute;
+    top: 50%; /* Centra las flechas verticalmente */
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Coloca las flechas en los extremos */
+    transform: translateY(-50%); /* Ajusta el centro exacto */
+    pointer-events: none; /* Asegura que las flechas no bloqueen los clics en el slider */
+  }
+  
+  .owl-nav button {
+    pointer-events: all; /* Permite hacer clic en los botones */
+    cursor: pointer;
+  }
+  
+  .owl-nav button.owl-prev {
+    position: relative;
+    left: 50px;
+  }
+  
+  .owl-nav button.owl-next {
+    position: relative;
+    right: 50px;
+  }
+  .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev, .owl-carousel button.owl-dot{
+    color: #FF7B00;
+    font-size: 50px;
+  }
+
+/* Formulario Secundario */
+.formulario-s{
+    margin-top: 150px;
+}
+.form__label-s{
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+}
+.form__capt-s{
+    display: flex;
+    background-image: url(../assets/images/oferta/full-connected/popup-bg.png);
+    background-position: top center;
+    background-size: cover;
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 50px;
+    color: #fff;
+    padding: 15px;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.form__input-s input{
+    padding: 15px 15px;
+    border: none;
+}
+.form__btn-s button, .form__input-s input{
+    border-radius: 50px;
+    font-size: 20px;
+}
+.form__btn-s button{
+    background-color: #FF7B00;
+    color: #fff;
+    border: none;
+    padding: 15px 90px;
+    cursor: pointer;
+}
+
+/* Popup */
+.card{
+    position: relative;
+}
+.btn_pop {
+    text-align: center;
+    margin-top: 20px;
+    position: absolute;
+    bottom: -35px;
+    left:36px;
+}
+
+.btn_popup {
+    background-color: #FF7B00;
+    border: 5px solid #fff;
+    padding: 15px 50px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #ffffff;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.btn_popup:hover {
+    background-color: #2A2148;
+}
+/* Estilos para el popup */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(42, 32, 72, 0.9) 10%, rgba(255, 255, 255, 0) 100%);
+    backdrop-filter: blur(5px); /* Aplica un desenfoque */
+    -webkit-backdrop-filter: blur(5px); /* Para soporte en navegadores WebKit */
+    /* Fondo radial con tu color */
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 30px;
+    width: 600px;
+    text-align: center;
+    position: relative;
+    margin: 0 20px;
+}
+
+.formulario__pop {
+    text-align: left;
+    padding: 0;
+    box-shadow: none;
+}
+
+.formulario__f{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 10px;
+}
+.btn__f{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+.btn__f input{
+    font-size: 20px;
+    border-radius: 50px;
+    border: 1px solid red;
+    padding: 8px 15px;
+    width: 48%;
+}
+.btn__f button{
+    background-color: #FF7B00;
+    color: #fff;
+    padding: 9px 80px;
+    cursor: pointer;
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    width: 48%;
+}
+
+/* Estilo para el botón de cerrar */
+.close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 32px;
+    cursor: pointer;
+}
+#phone-error{
+    color: #E11C71;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.header-blue {
+    background-color: #2A2148; /* Cambia este color según tu diseño */
+    color: white; /* Ajusta el color del texto si es necesario */
+    border-radius: 30px 30px 0 0 !important;
+  }
+
+
+@media screen and (max-width:1400px){
+    .cards-titles-container{
+        display: none;
+    }
+    .cards-content{
+        margin-top: 100px;
+    }
+}
+@media screen and (max-width:1125px){
+    .fc-cta-container, .fc-cta-container-b{
+        flex-direction: column;
+        gap: 20px;
+        max-width: 90%;
+        padding: 30px;
+    }
+}
+@media screen and (max-width:995px){
+    .cards-content{
+        flex-wrap: wrap;
+        gap:80px;
+    }
+}
+@media screen and (max-width:767px){
+    .garantia{
+        height: 500px;
+        background-position: 32% 100%;
+    }
+    .garantia-txt{
+        width: 100%;
+        padding-left: 20px;
+        padding-top: 350px;
+    }
+    .cards-title img{
+        width: 100%;
+    }
+
+    .fc-cta-container form{
+        flex-direction: column;
+        width: 100%;
+    }
+    .fc-cta-container form input{
+        width: 100% !important;
+    }
+    .fc-cta-container form input[type="submit"], .fc-cta-container-b form input[type="submit"]{
+        padding: 10px 0;
+    }
+    .cards-legal{
+        width: 100%;
+    }
+    .fch-carousel-container{
+        margin-top: 90px !important;
+    }
+    .control-prev-fch img, .control-next-fch img{
+        width: 10px;
+        height: 10px;
+    }
+    .fc-cta-container-g{
+        margin-top: 90px;
+        margin-bottom: 90px;
+    }
+    .fc-cta-container-b form{
+        flex-direction: column;
+    }
+    .garantia{
+        background-size: initial;
+    }
 }

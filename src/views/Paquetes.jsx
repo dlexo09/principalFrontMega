@@ -5,7 +5,7 @@ import OFResidencial from "../components/OFResidencial";
 import OFFullConnected from "../components/OFFullConnected";
 import '../components/Globales.css';
 
-const Internet = () => {
+const Paquetes = () => {
   const tabs = [
     { id: "residencial", label: "Residencial" },
     { id: "full-connected", label: "Full Connected" },
@@ -34,4 +34,4 @@ const Internet = () => {
   );
 };
 
-export default Internet;
+export default Paquetes;
