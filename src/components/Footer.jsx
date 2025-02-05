@@ -118,8 +118,8 @@ const Footer = () => {
         title: 'Cobertura Mega',
         content: `
           <ul class="list-ct">
-            <li class="list-ct-item"><a href="#link1" target="_blank" rel="noopener noreferrer">Verifica cobertura</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">CIS</a></li>
+            <li class="list-ct-item"><a href="https://cobertura.megacable.com.mx/" target="_blank" rel="noopener noreferrer">Verifica cobertura</a></li>
+            <li class="list-ct-item"><a href="/CIS" target="_blank" rel="noopener noreferrer">CIS</a></li>
            
           </ul>
         `,
@@ -131,12 +131,12 @@ const Footer = () => {
         title: 'Audio Contrato de servicios',
         content: `
           <ul class="list-ct">
-            <li class="list-ct-item"><a href="#link1" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Telefonía por Cable</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Servicio y Equipo en Telefonía</a></li>
-           <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Myc Red</a></li>
-           <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Megacable</a></li>
-           <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Telefonía Móvil Prepago</a></li>
-           <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Telefonía Móvil Postpago</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/audios/Telefonia_cable.mp3" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Telefonía por Cable</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/audios/Servicio_Equipo.mp3" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Servicio y Equipo en Telefonía</a></li>
+           <li class="list-ct-item"><a href="${serverUrl}/src/assets/audios/MycRed.mp3" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Myc Red</a></li>
+           <li class="list-ct-item"><a href="${serverUrl}/src/assets/audios/Megacable.mp3" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Megacable</a></li>
+           <li class="list-ct-item"><a href="${serverUrl}/src/assets/audios/Contrato_adhesion_movil_prepago.mp3" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Telefonía Móvil Prepago</a></li>
+           <li class="list-ct-item"><a href="${serverUrl}/src/assets/audios/Contrato_adhesion_movil_postpago.wav" target="_blank" rel="noopener noreferrer">Contrato de Adhesión Telefonía Móvil Postpago</a></li>
           </ul>
         `,
       },
@@ -145,27 +145,27 @@ const Footer = () => {
         title: 'Megacable TRIPLE PLAY',
         content: `
           <ul class="list-ct">
-            <li class="list-ct-item"><a href="#link1" target="_blank" rel="noopener noreferrer">Telefonía por Cable</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">SETIT</a></li>
-           <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Mega Cable</a></li>
-           <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Myc Red</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/contrato-adhesion_telecomunicaciones_telefonia-por-cable.pdf" target="_blank" rel="noopener noreferrer">Telefonía por Cable</a></li>
+            <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/contrato-adhesion_telecomunicaciones_setit.pdf" target="_blank" rel="noopener noreferrer">SETIT</a></li>
+           <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/contrato-adhesion_telecomunicaciones_mega-cable.pdf" target="_blank" rel="noopener noreferrer">Mega Cable</a></li>
+           <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/contrato-adhesion_telecomunicaciones_myc-red.pdf" target="_blank" rel="noopener noreferrer">Myc Red</a></li>
           </ul>
         `,
       },
       {
         id: 7,
         title: 'Aviso de Privacidad',
-        link: '#',
+        link: '/AvisoDePrivacidad/',
       },
       {
         id: 8,
         title: 'IFT - Instituto Federal de Telecomunicaciones',
         content: `
           <ul class="list-ct">
-            <li class="list-ct-item"><a href="#link1" target="_blank" rel="noopener noreferrer">IFT - Instituto Federal de Telecomunicaciones</a></li>
-            <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Buscador de tarifas IFT Instituto Federal de Telecomunicaciones</a></li>
-           <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Folios de registro de tarifas</a></li>
-           <li class="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Folios de poder sustancial</a></li>
+            <li class="list-ct-item"><a href="https://www.ift.org.mx/" target="_blank" rel="noopener noreferrer">IFT - Instituto Federal de Telecomunicaciones</a></li>
+            <li class="list-ct-item"><a href="https://tarifas.ift.org.mx/ift_visor/" target="_blank" rel="noopener noreferrer">Buscador de tarifas IFT Instituto Federal de Telecomunicaciones</a></li>
+           <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/Folios_de_Registros_DAC.xlsx" target="_blank" rel="noopener noreferrer">Folios de registro de tarifas</a></li>
+           <li class="list-ct-item"><a href="${serverUrl}/src/assets/files/Folios_registros_Poder-Sustancial.xlsx" target="_blank" rel="noopener noreferrer">Folios de poder sustancial</a></li>
           </ul>
         `,
       },
@@ -213,9 +213,9 @@ const Footer = () => {
         <div className="row">
           <div className="col-md-6 ps-4">
             <ul className="list-ct">
-              <li className="list-ct-item"><a href="/src/assets/files/Codigo_Practicas_Comerciales.pdf" target="_blank" rel="noopener noreferrer">Relación con inversionistas</a></li>
-              <li className="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Denuncias</a></li>
-              <li className="list-ct-item"><a href="#link2" target="_blank" rel="noopener noreferrer">Responsabilidad Social</a></li>
+              <li className="list-ct-item"><a href="https://inversionistas.megacable.com.mx/" target="_blank" rel="noopener noreferrer">Relación con inversionistas</a></li>
+              <li className="list-ct-item"><a href="https://escala.megacable.com.mx/" target="_blank" rel="noopener noreferrer">Denuncias</a></li>
+              <li className="list-ct-item"><a href="/esr/" target="_blank" rel="noopener noreferrer">Responsabilidad Social</a></li>
             </ul>
           </div>
           <div className="col-md-6 footer-logos d-flex flex-column flex-md-row justify-content-md-end align-items-center mt-5 mt-md-0">
