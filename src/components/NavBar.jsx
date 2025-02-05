@@ -39,7 +39,7 @@ const NavBar = () => {
                 Oferta
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="/paquetesResidenciales">Residencial</a></li>
+                <li><a className="dropdown-item" href="/paquetes">Residencial</a></li>
                 <li><a className="dropdown-item" href="https://empresas.megacable.com.mx/" target="_blank" rel="noopener noreferrer">Negocios</a></li>
                 <li><a className="dropdown-item" href="/mcm" target="_blank" rel="noopener noreferrer">MCM</a></li>
               </ul>
@@ -76,8 +76,8 @@ const NavBar = () => {
               <a className="nav-link" aria-current="page" href="#">Mega móvil</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">Soporte</a>
-            </li>
+              <a className="nav-link" aria-current="page" href="/ayuda">Ayuda</a>
+            </li> 
           </ul>
         </div>
 

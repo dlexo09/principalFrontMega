@@ -15,13 +15,13 @@ const INZonaWifi = () => {
 
   return (
     <>
-      <div className="general-tabs-container container">
+      <div className="container general-tabs-container container">
         <div className="text-center">
           <h2 className="small-title-services">MEGACABLE WIFI</h2>
           <h3 className="big-title-services">
             SITIOS CON ACCESO a MEGACABLE WIFI
           </h3>
-          <p className="p-zw mt-5">
+          <p className="p-zw mt-5 p-2">
             Si eres suscriptor Megacable y cuentas con el servicio de Internet
             podrás navegar gratis con Megacable WiFi en miles de sitios públicos
             a lo largo de nuestro país des

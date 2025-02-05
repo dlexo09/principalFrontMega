@@ -1,0 +1,23 @@
+.faq-content{
+    background-color: #F4F4F4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 50px;
+    padding: 10px 10px 10px 30px;
+    margin-top: 20px;
+}
+.faq-content h3{
+    font-size: 20px;
+}
+.faq-content a{
+    background-color: var(--turquesa-btn);
+    padding: 10px;
+    border-radius: 50px;
+}
+.faq-content a:hover{
+    background-color: #01c6bd;
+}
+.faq-content a img{
+    width: 25px;
+}

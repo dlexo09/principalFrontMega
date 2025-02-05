@@ -1,0 +1,257 @@
+.title-wu{
+    margin: 0 auto;
+    max-width: 700px !important;
+}
+.wifiultra-info{
+    border: 3px solid var(--blue-dark);
+    border-radius: var(--br-card);
+    padding: 50px;
+    margin-left: 100px;
+    position: relative;
+}
+.wifiultra-info-container{
+    margin-top: 100px;
+    align-items: center;
+}
+.wifiultra-info h3{
+    font-size: clamp(1.5rem, 1.2871rem + 0.7921vw, 2rem);
+    line-height: 35px;
+    font-weight: 600;
+}
+.wu-subtitle{
+    font-size: clamp(1.5rem, 1.2871rem + 0.7921vw, 2rem);
+    line-height: 35px;
+}
+.wu-subtitle span{
+    font-weight: 600;
+}
+.wu-price{
+    font-size: 72px;
+    font-weight: 700; 
+    color: var(--blue-dark);
+}
+.wu-price sup{
+    font-size: 20px;
+    top: -25px;
+    
+}
+.wu-price .price-simbol{
+    font-size: 48px;
+    color: var(--blue-dark);
+    font-weight: 700; 
+}
+.wu-price span{
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+}
+.wo-meses-promo{
+    font-size: 20px;
+    margin-top: -10px;
+    font-weight: 500;
+}
+.wu-caracteristicas{
+    border: 3px solid var(--blue-dark);
+    padding: 10px;
+    border-radius: 50px;
+    width: 160px;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    background-color: #fff;
+}
+.wifi-certificado{
+    top: 80px;
+    left: -80px;
+}
+.wifi-certificado img{
+    width: 100px;
+ 
+}
+.wifi-inteligente{
+    top: 230px;
+    left: -80px;
+}
+.wifi-inteligente img{
+    width: 60px;
+}
+.wu-btn{
+    font-size: 28px;
+    position: absolute;
+    bottom: -30px;
+}
+.wu-cta-container h3{
+    font-weight: 600;
+}
+.wu-cta-container{
+    background-color: var(--blue-gray);
+    border-radius: 50px;
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    gap: 150px;
+}
+.wu-cta-container form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+.wu-cta-container form .wu-user-tel{
+    border: none;
+    border-radius: 50px;
+    font-size: 20px;
+    padding: 10px 20px;
+    width: 300px;
+}
+.wu-modem-container{
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    margin-top: 150px;
+    justify-content: center;
+    align-items: center;
+}
+.wu-modem-content{
+    width: 700px;
+    border-radius: 30px;
+    background-color: #E7EEF7;
+    position: relative;
+    height: 200px;
+    padding: 20px 50px;
+}
+.wu-modem-content img{
+    position: absolute;
+}
+.wu-nokia{
+    left: 0;
+}
+.wu-zte{
+    right: 0;
+}
+.wu-huawei{
+    left: 0;
+}
+.wu-modem-title{
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.modem-gray{
+    background-color: #f2f2f2;
+}
+.wu-modem-container{
+    margin-bottom: 150px;
+}
+@media screen and (max-width:767px){
+    .wu-cta-container form{
+        flex-direction: column;
+        width: 100% ;
+        gap: 10px;
+    }
+    .wu-cta-container form .wu-user-tel{
+       width: 100%;
+    }
+    .wu-cta-container form input{
+        width: 100%;
+    }
+    .wu-modem-content{
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .wu-nokia, .wu-huawei, .wu-zte{
+        left: 50%;
+        transform: translateX(-50%);
+        top: -150px;
+        z-index: 100;
+    }
+    .wu-modem-container{
+        gap: 150px;
+        margin-top: 220px;
+    }
+
+    .wifiultra-info h3, .wu-subtitle{
+        line-height: 28px;
+    }
+    
+    .wifi-certificado img{
+        width: 50px;
+    }
+    .wifi-certificado{
+        left: -35px;
+        top: 60px;
+    }
+    .wifi-inteligente img{
+        width: 30px;
+    }
+    .wifi-inteligente{
+        left: -35px;
+        top: 200px;
+    }
+    .wu-caracteristicas{
+        width: 80px;
+        height: 50px;
+    }
+    .wifiultra-info-container{
+        margin-top: 40px;
+    }
+
+    .wu-cta-container{
+        margin-top: 100px;
+    }
+    .wu-modem-container{
+        margin-bottom: 100px;
+    }
+
+}
+@media screen and (max-width:1023px) {
+    .wu-cta-container{
+        flex-direction: column;
+        gap: 30px;
+    }
+    .wu-cta-container h3{
+        margin: 0;
+    }
+    .wifiultra-info{
+        margin: 0;
+    }
+
+    .wifiultra-info-container{
+        padding: 30px;
+    }
+    .wifiultra-info{
+        margin-top: 50px !important;
+    }
+}
+@media screen and (min-width:767px) and (max-width:1023px){
+    .wifiultra-info-container{
+        padding: 100px;
+    }
+    .wifiultra-info-container{
+        margin-top: 0;
+    }
+    .wu-cta-container{
+        margin-top: 80px;
+    }
+}
+@media screen and (min-width:1024px) and (max-width:1440px){
+    .wifi-certificado img{
+        width: 60px;
+    }
+
+    .wifi-inteligente img{
+        width: 40px;
+    }
+    .wu-caracteristicas{
+        width: 130px;
+        height: 70px;
+    }
+
+}

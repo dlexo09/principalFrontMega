@@ -1,0 +1,182 @@
+/* ********* General ********** */
+.btn-container-sop{
+background-color: #e5e5e5;
+padding: 10px;
+border-radius: 50px;
+}
+.sop-general-container{
+    margin-top: 100px;
+}
+/* ********* Formas de Pago ********** */
+.wave-bg-fdpago{
+    background-image: url(../assets/images/soporte/formas-de-pago/fdpago-wave.png);
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.btn-mega-apps{
+    gap: 20px;
+}
+.btn-mega-apps button{
+    width: 250px;
+    padding: 20px 0;
+}
+.fdpago-app-container{
+    gap: 150px;
+    padding: 100px 0;
+}
+.fdpago-app-container img{
+    width: 90%;
+}
+.switch-fdpago-btn{
+    padding: 20px 0;
+}
+@media screen and (max-width:1199px) {
+    .switch-fdpago-btn{
+        font-size: 18px;
+    }
+    .btn-container-sop{
+        padding: 15px;
+    }
+
+    .fdpago-app-container{
+        gap: 50px;
+    }
+}
+
+@media screen and (max-width:768px){
+    .fdpago-app-container img{
+        width: 300px;
+    }
+    .btn-mega-apps button{
+        width: 100%;
+    }
+    .wave-bg-fdpago{
+        background-image: url(../assets/images/home/waves-bg-1-movil.png);
+    }
+    .fdpago-app-container{
+        padding-bottom: 150px;
+        padding-top: 50px;
+    }
+}
+
+/* ********* COMERCIOS ********** */
+
+.small-secondary-title{
+    font-size: 28px;
+    font-weight: 300;
+    width: 1000px;
+    margin: 0 auto;
+}
+.small-secondary-title span{
+    font-weight: 600;
+}
+.comercio-logo{
+    width: 160px;
+}
+.comercio-logo-container{
+    flex-wrap: wrap;
+}
+@media screen and (max-width:768px){
+    .small-secondary-title{
+        width: 100%;
+    }
+}
+
+/* ********* CARGO AUTOMÁTICO ********** */
+.cc-cargo-autom img{
+    width: 300px;
+}
+.fdpago-ca-img{
+    width: 100%;
+}
+.fdpago-ca-container{
+    padding: 150px 0;
+    gap: 100px;
+}
+@media screen and (max-width:1199px) {
+    .fdpago-ca-container{
+        gap: 50px;
+    }
+}
+@media screen and (max-width:1023px){
+    .fdpago-ca-container{
+        padding-top: 50px;
+        padding-bottom: 150px;
+    }
+}
+
+/* ********* BANCOS ********** */
+.bancos-fdp-container{
+    padding-top: 50px;
+    padding-bottom: 200px;
+}
+.bancos-fdp-container{
+    background-image: url(../assets/images/soporte/formas-de-pago/fdpago-wave.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+}
+.bancos-conv-container{
+    flex-wrap: wrap;
+    gap: 20px;
+
+}
+.banco-conv{
+    background-color: #fff;
+    width: 230px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+}
+.banco-conv img{
+    width: 75%;
+    border-radius: 10px;
+}
+.conv-num{
+    margin-top: 10px;
+}
+.consulta-saldo-container{
+    margin-top: 100px;
+}
+.consulta-saldo-container img{
+    width: 80%;
+}
+.saldo-title{
+    font-size: clamp(1.5rem, 1.2871rem + 0.7921vw, 2rem);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.saldo-subtitle{
+    font-size: clamp(1.125rem, 0.8589rem + 0.9901vw, 1.75rem);
+    text-transform: uppercase;
+}
+@media screen and (max-width:767px){
+    .bancos-fdp-container{
+        background-image: url(../assets/images/home/waves-bg-1-movil.png);
+    }
+    .banco-conv{
+        width: 80%;
+        height: auto;
+    }
+}
+
+/* ********* PAGO EN LÍNEA ********** */
+.pagol-pasos-container{
+    gap: 50px;
+    margin-top: 80px;
+}
+.pagol-pasos-container .speed-pasos-crd{
+    width: 300px;
+}
+@media screen and (max-width:767px){
+    .pagol-pasos-container{
+        flex-direction: column;
+    }
+    .pagol-pasos-container .speed-pasos-crd{
+        width: 100%;
+    }
+}
