@@ -4,6 +4,9 @@ background-color: #e5e5e5;
 padding: 10px;
 border-radius: 50px;
 }
+.sop-general-container{
+    margin-top: 100px;
+}
 /* ********* Formas de Pago ********** */
 .wave-bg-fdpago{
     background-image: url(../assets/images/soporte/formas-de-pago/fdpago-wave.png);
@@ -58,9 +61,12 @@ border-radius: 50px;
 }
 
 /* ********* COMERCIOS ********** */
+
 .small-secondary-title{
     font-size: 28px;
-    font-weight: 400;
+    font-weight: 300;
+    width: 1000px;
+    margin: 0 auto;
 }
 .small-secondary-title span{
     font-weight: 600;
@@ -70,6 +76,11 @@ border-radius: 50px;
 }
 .comercio-logo-container{
     flex-wrap: wrap;
+}
+@media screen and (max-width:768px){
+    .small-secondary-title{
+        width: 100%;
+    }
 }
 
 /* ********* CARGO AUTOMÁTICO ********** */
@@ -97,7 +108,7 @@ border-radius: 50px;
 
 /* ********* BANCOS ********** */
 .bancos-fdp-container{
-    padding-top: 100px;
+    padding-top: 50px;
     padding-bottom: 200px;
 }
 .bancos-fdp-container{
@@ -150,5 +161,22 @@ border-radius: 50px;
     .banco-conv{
         width: 80%;
         height: auto;
+    }
+}
+
+/* ********* PAGO EN LÍNEA ********** */
+.pagol-pasos-container{
+    gap: 50px;
+    margin-top: 80px;
+}
+.pagol-pasos-container .speed-pasos-crd{
+    width: 300px;
+}
+@media screen and (max-width:767px){
+    .pagol-pasos-container{
+        flex-direction: column;
+    }
+    .pagol-pasos-container .speed-pasos-crd{
+        width: 100%;
     }
 }
