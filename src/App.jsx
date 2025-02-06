@@ -23,6 +23,7 @@ import Netflix from './views/Netflix';
 import Max from './views/Max';
 import AmazonPrime from './views/AmazonPrime';
 import Paramount from './views/Paramount';
+import FibraOptica from './views/FibraOptica';
 import Ayuda from './views/Ayuda';
 import { LocationProvider } from './LocationContext';
 import './App.css';
@@ -54,6 +55,7 @@ function App() {
             <Route path="/internet/*" element={<Internet />} />
             <Route path="/paquetes/*" element={<Paquetes />} />
             <Route path="/ayuda/*" element={<Ayuda />} />
+            <Route path="/fibra-optica/*" element={<FibraOptica />} />
         </Routes>
         </div>
         <Footer />
