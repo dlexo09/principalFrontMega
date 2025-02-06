@@ -1,259 +1,130 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./SOPPago.css";
+import "./SoporteOnline.css";
 import "./Globales.css";
-
-// Datos de los comercios
-const comercios = [
-  {
-    id: 1,
-    name: "Soriana",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio1.png",
-    tipo: "conEstado",
-  },
-
-];
-
-// Componente para mostrar las imágenes de los comercios
-const ComerciosList = ({ tipo }) => {
-  // Filtrar los comercios según el tipo
-  const comerciosFiltrados = comercios.filter(
-    (comercio) => comercio.tipo === tipo
-  );
-
-  return (
-    <div className=" mt-4 d-flex comercio-logo-container justify-content-center align-items center">
-      {comerciosFiltrados.map((comercio) => (
-        <div key={comercio.id}>
-          <img
-            src={comercio.image}
-            alt={comercio.name}
-            className="img-fluid comercio-logo"
-          />
-        </div>
-      ))}
-    </div>
-  );
-};
+import FAQSoporte from './FAQSoporte'; // Ajusta la ruta según tu estructura de archivos
 
 // Definimos el contenido de cada opción
+const faqTelevision = [
+  {
+    question: "¿Por qué no tengo señal en mi televisión?",
+    answer: (
+      <p>Primero, revisa que el cable coaxial esté bien conectado al decodificador y a la entrada de la televisión. Verifica también que el televisor esté en la entrada correcta (HDMI o AV). Si todo está conectado correctamente y sigue sin haber señal, prueba desconectar el decodificador de la corriente durante 30 segundos y vuelve a conectarlo. Si aún no tienes señal, verifica si hay interrupciones de servicio en tu área o comunícate con soporte técnico.</p>
+    ),
+  },
+  {
+    question: "¿Cómo reinicio mi decodificador?",
+    answer: (
+      <p>Para reiniciar el decodificador, desconéctalo de la corriente eléctrica y espera unos 30 segundos. Después, vuelve a enchufarlo y espera a que termine el proceso de inicio, lo que puede tardar entre 2 y 5 minutos. Durante este tiempo, el decodificador puede mostrar mensajes o luces que indican que está cargando el sistema. Si el reinicio no soluciona el problema, prueba restablecerlo desde el menú de configuración.</p>
+    ),
+  },
+  {
+    question: "¿Qué hago si mi servicio de Xview+ se congela constantemente?",
+    answer: (
+      <p>Cuando el servicio se congela, es probable que sea un problema de conexión a internet. Revisa la velocidad de tu red; para Xview+ se recomienda al menos 20 Mbps. Si estás conectado por Wi-Fi, considera usar cable Ethernet para mayor estabilidad. Reinicia tanto el módem como el decodificador. Si el problema sigue, verifica que no haya otros dispositivos consumiendo mucho ancho de banda en tu red.</p>
+    ),
+  },
+  {
+    question: "¿Por qué no puedo ver mis grabaciones en Xview+?",
+    answer: (
+      <p>Primero, asegúrate de que el decodificador tenga suficiente espacio disponible para almacenar las grabaciones. Si aparece un mensaje de error, puede que la grabación haya fallado. Intenta reiniciar el decodificador para actualizar la lista de grabaciones. Si el problema persiste, verifica si el dispositivo de almacenamiento está conectado correctamente o si necesita ser formateado desde el menú de configuración.</p>
+    ),
+  },
+  {
+    question: "¿Qué hago si no escucho sonido en algunos canales?",
+    answer: (
+      <p>Revisa que el volumen esté activado tanto en el decodificador como en el televisor. Cambia a otros canales para comprobar si el problema ocurre solo en uno. Si no escuchas sonido en ninguno, verifica las conexiones de audio. Si estás usando un sistema de sonido externo, revisa las configuraciones del dispositivo. También puedes restablecer el audio desde el menú del decodificador.</p>
+    ),
+  },
+  {
+    question: "¿Cómo soluciono problemas de conexión en la app Xview+?",
+    answer: (
+      <p>Primero, verifica que tu dispositivo esté conectado a una red Wi-Fi estable. Cierra la app y vuelve a abrirla. Si sigue sin funcionar, asegúrate de que tienes la versión más reciente instalada. Si el problema persiste, desinstala la aplicación y vuelve a instalarla desde la tienda de aplicaciones. También puedes probar reiniciando tu módem y el dispositivo donde usas la app.</p>
+    ),
+  },
+  {
+    question: "¿Qué hago si la guía de programación no carga o está desactualizada?",
+    answer: (
+      <p>Reinicia el decodificador para que la guía se actualice. Esto puede tardar unos minutos. Si sigue sin cargarse, verifica que el decodificador esté conectado a internet. En algunos casos, es necesario restablecer la configuración de red del decodificador para resolver el problema. Si esto no funciona, comunícate con soporte técnico para recibir asistencia.</p>
+    ),
+  },
+  {
+    question: "¿Por qué mi control remoto no responde?",
+    answer: (
+      <p>Cambia las baterías por unas nuevas y asegúrate de que estén bien colocadas. Si el control sigue sin responder, intenta sincronizarlo nuevamente con el decodificador siguiendo las instrucciones del manual. En algunos modelos, es necesario presionar simultáneamente ciertos botones para sincronizarlo. Si esto no funciona, contacta a soporte para obtener un control remoto de reemplazo.</p>
+    ),
+  },
+  {
+    question: "¿Cómo reporto una falla técnica en mi servicio de televisión?",
+    answer: (
+      <p>Puedes reportar una falla llamando al 33 9690 0000 o a traves nuestro WhatssApp <a href="https://api.whatsapp.com/send?phone=523396900001" target="_blank">33 9690 0001</a>. Si el fallo requiere atención técnica, el equipo de soporte agendará una visita para revisar tu equipo.</p>
+    ),
+  },
+  {
+    question: "¿Qué debo hacer si la imagen se ve distorsionada o pixelada?",
+    answer: (
+      <p>La imagen distorsionada suele deberse a una señal débil o interferencias. Revisa que los cables estén bien conectados y no tengan daños visibles. Si estás usando un divisor de señal (splitter), intenta conectar el cable directamente al decodificador. Reinicia el equipo para restablecer la señal. Si el problema persiste, solicita asistencia técnica.</p>
+    ),
+  },
+  
+];
+
+const faqInternet = [
+  {
+    question: "¿Cómo puedo mejorar la velocidad de mi internet?",
+    answer: (
+      <p>Para mejorar la velocidad de tu internet, asegúrate de que el router esté en una ubicación central y libre de obstáculos.</p>
+    ),
+  },
+  {
+    question: "¿Qué debo hacer si no tengo conexión a internet?",
+    answer: (
+      <p>Reinicia el router y verifica que todos los cables estén correctamente conectados.</p>
+    ),
+  },
+  // Agrega más preguntas y respuestas aquí
+];
+
+const faqTelefonia = [
+  {
+    question: "¿Cómo puedo solucionar problemas de llamadas no recibidas?",
+    answer: (
+      <p>Verifica que tu teléfono esté correctamente configurado y que no esté en modo avión.</p>
+    ),
+  },
+  {
+    question: "¿Qué debo hacer si no tengo señal en mi teléfono?",
+    answer: (
+      <p>Verifica que estés en un área con cobertura y que tu teléfono esté correctamente configurado.</p>
+    ),
+  },
+  // Agrega más preguntas y respuestas aquí
+];
+
 const options = {
   app: {
-    label: "App",
+    label: "Televisión",
     content: (
-      <div className="container-fluid p-0 wave-bg-fdpago">
-        <div className="container">
-          <div className="row fdpago-app-container align-items-center justify-content-center">
-            <div className="col-lg-3 text-center">
-              <img
-                src="../src/assets/images/soporte/formas-de-pago/app-megacable.png"
-                alt="Megacable App"
-              />
-            </div>
-            <div className="col-lg-6">
-              <h2 className="secondary-title mb-4">
-                Descarga la<span> Megacable App!</span>
-              </h2>
-              <p>
-                Regístrate y realiza tu pago sin hacer filas, directamente desde
-                tu celular. Además recuerda que si domicilias tu pago a tarjeta
-                de crédito o débito, obtienes 10 Mbps adicionales en el internet
-                de tu casa.
-              </p>
-              <div className="btn-mega-apps mt-5 d-flex flex-md-row flex-column">
-                <button
-                  onClick={() =>
-                    window.open(
-                      "https://apps.apple.com/mx/app/megacable-app/id1466002118",
-                      "_blank"
-                    )
-                  }
-                  className="btn-packs"
-                >
-                  IOS
-                </button>
-                <button
-                  onClick={() =>
-                    window.open(
-                      "https://play.google.com/store/apps/details?id=mx.com.megacable&hl=es_MX",
-                      "_blank"
-                    )
-                  }
-                  className="btn-packs"
-                >
-                  Google Play
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="container-fluid p-0">
+        <FAQSoporte faqs={faqTelevision} />
       </div>
     ),
   },
   comercios: {
-    label: "Comercios",
+    label: "Internet",
     content: (
       <div className="container sop-general-container">
-        <h2 className="text-center small-secondary-title mb-4">
-          Para tu comodidad y para que ahorres tiempo, contamos con más de{" "}
-          <span>10,000 opciones</span> donde puedes realizar tu{" "}
-          <span>pago mensual</span> como:
-        </h2>
-
-        {/* Comercios con estado de cuenta */}
-        <h3 className="text-center small-title mt-5">Con estado de cuenta</h3>
-        <ComerciosList tipo="conEstado" />
-
-        {/* Comercios sin estado de cuenta */}
-        <h3 className="text-center small-title mt-5">Sin estado de cuenta</h3>
-        <ComerciosList tipo="sinEstado" />
+        <FAQSoporte faqs={faqInternet} />
       </div>
     ),
   },
   cargoAutomatico: {
-    label: "Cargo Automático",
+    label: "Telefonía",
     content: (
-      <div className="container-fluid p-0 wave-bg-fdpago">
-        <div className="container">
-          <div className="row fdpago-ca-container align-items-center justify-content-center">
-            <div className="col-md-7 col-lg-4 text-center">
-              <img
-                className="fdpago-ca-img"
-                src="../src/assets/images/soporte/formas-de-pago/cargo-automatico.png"
-                alt="Megacable App"
-              />
-            </div>
-            <div className="col-lg-6">
-              <h2 className="secondary-title mb-4">
-                <span>Cargo Automático</span> a tu Tarjeta de Crédito o Débito
-              </h2>
-              <p>
-                Visita tu CIS más cercano o llama por teléfono, proporciona los
-                datos de tu tarjeta y mensualmente se te procesará tu pago de
-                forma automática y segura.
-              </p>
-              <div className="cc-cargo-autom mt-4 d-flex flex-md-row flex-column">
-                <img
-                  src="../src/assets/images/home/pagos-tarjetas-img.png"
-                  alt="Paypal, Visa, Master Card"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="container-fluid p-0">
+        <FAQSoporte faqs={faqTelefonia} />
       </div>
-    ),
-  },
-  bancos: {
-    label: "Bancos",
-    content: (
-      <>
-        <div className="container-fluid bancos-fdp-container">
-          <div className="container">
-            <h3 className="text-center mb-5 secondary-title">
-              Nuestros Convenios
-            </h3>
-            <div className="bancos-conv-container d-flex align-items-center justify-content-center">
-              <div className="banco-conv">
-                <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/santander-logo.png"
-                  alt=""
-                />
-                <h5 className="conv-num">1332</h5>
-              </div>
-              <div className="banco-conv">
-                <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/scotiabank-logo.png"
-                  alt=""
-                />
-                <h5 className="conv-num">3356</h5>
-              </div>
-              <div className="banco-conv">
-                <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/hsbc-logo.png"
-                  alt=""
-                />
-                <h5 className="conv-num">3535</h5>
-              </div>
-              <div className="banco-conv">
-                <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/bbva-logo.png"
-                  alt=""
-                />
-                <h5 className="conv-num">801720</h5>
-              </div>
-              <div className="banco-conv">
-                <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/citibanamex-logo.png"
-                  alt=""
-                />
-                <h5 className="conv-num">
-                  <br />
-                </h5>
-              </div>
-            </div>
-
-            <div className="row consulta-saldo-container justify-content-center align-items-center">
-              <div className="col-lg-6 order-2 order-lg-1 text-md-center text-lg-start">
-                <p className="saldo-title">Puede consultar su saldo en:</p>
-                <p className="saldo-subtitle">Mega App | Servicios en Línea</p>
-                <p className="saldo-title mt-5">Tambien puede llamarnos a:</p>
-                <p className="saldo-subtitle">tel: 33 9690 2222 | cc: 33 9690 0000</p>
-
-              </div>
-              <div className="col-md-6 col-lg-3 order-1 order-lg-2  text-center mb-5 mb-lg-0">
-                <img src="../src/assets/images/soporte/formas-de-pago/app-mega.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
-    ),
-  },
-  pagoLinea: {
-    label: "Pago en Línea",
-    content: (
-      <>
-        <div className="container sop-general-container">
-          <h2 className="text-center secondary-title">Paga en Línea tus servicios de Mega</h2>
-
-          <div className="d-flex justify-content-center pagol-pasos-container">
-            <div className="speed-pasos-crd">
-              <span>1</span>
-              <p>
-                Haz click <a target="_blank" href="https://pagoenlinea.megacable.com.mx/">aquí</a> o en el botón "Pago en Línea" para ingresar a la plataforma de pagos.
-              </p>
-            </div>
-            <div className="speed-pasos-crd">
-              <span>2</span>
-              <p>
-                Ingresa tu número de contrato de 10 dígitos y completa el captcha de seguridad.
-              </p>
-            </div>
-            <div className="speed-pasos-crd">
-              <span>3</span>
-              <p>
-                Proporciona los datos de tu tarjeta de crédito o débito para realizar el pago.
-              </p>
-            </div>
-          </div>
-          <div className="d-flex justify-content-center mt-5">
-          <button
-                  onClick={() =>
-                    window.open(
-                      "https://pagoenlinea.megacable.com.mx/",
-                      "_blank"
-                    )
-                  }
-                  className="btn-action"
-                >
-                  Pago en Línea <span className="open-page-icon"></span>
-                </button>
-          </div>
-        </div>
-      </>
     ),
   },
 };
@@ -276,7 +147,7 @@ const SwitchButton = ({
 );
 
 // Componente principal
-const SOPPago = () => {
+const SoporteOnline = () => {
   const [selectedOption, setSelectedOption] = useState("app");
 
   const handleOptionChange = (option) => {
@@ -286,8 +157,8 @@ const SOPPago = () => {
   return (
     <div className="general-tabs-container">
       <div className="text-center">
-        <h3 className="small-title-services">CONOCE NUESTRAS</h3>
-        <h2 className="big-title-services">Formas de pago</h2>
+        <h3 className="small-title-services">CONSULTA NUESTRA GUÍA</h3>
+        <h2 className="big-title-services">Soporte técnico</h2>
       </div>
 
       {/* Switch */}
@@ -309,4 +180,4 @@ const SOPPago = () => {
   );
 };
 
-export default SOPPago;
+export default SoporteOnline;
