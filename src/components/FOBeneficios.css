@@ -1,0 +1,82 @@
+.fobeneficios-container {
+  background-image: url(../assets/images/fibra-optica/beneficios-bg.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  padding-bottom: 150px;
+}
+
+.form-fob {
+  border: 1px solid #000;
+}
+.ventajas-simetrico-container {
+  gap: 20px;
+}
+.ventajas-simetrico-card {
+  background-color: var(--blue-gray);
+  border-radius: var(--br-card);
+  padding: 50px 30px 30px 30px;
+  position: relative;
+}
+.ventajas-simetrico-title {
+  margin-bottom: 70px;
+  font-size: 28px;
+  margin-top: 150px;
+}
+.ventajas-simetrico-card img {
+  position: absolute;
+  top: -25px;
+  left: 50px;
+}
+.mrg-title{
+    margin-bottom: 25px;
+}
+@media screen and (max-width: 1439px) {
+  .fobeneficios-container {
+    background-image: url(../assets/images/fibra-optica/fibra-optica-wave.png);
+  }
+  .comparative-table {
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .fobeneficios-container {
+    background-image: url(../assets/images/general/wave-sht-general-movil.png);
+  }
+  .con-mega,
+  .con-otros {
+    width: 95%;
+  }
+
+  .ventajas-simetrico-content {
+    padding: 0 40px;
+  }
+
+  .comparative-table {
+    flex-direction: column;
+  }
+  .ventajas-simetrico-title{
+    margin-top: 100px;
+  }
+}
+@media screen and (min-width: 1440px) and (max-width: 1920px) {
+  .comparative-table {
+    padding: 0 !important;
+  }
+  .fobeneficios-container {
+    padding-bottom: 90px;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 1920px) {
+  .comparative-table {
+    padding-bottom: 90px;
+    margin-top: 55px;
+  }
+}
+@media screen and (max-width: 1199px){
+    .ventajas-simetrico-container {
+        gap: 60px;
+      }
+}

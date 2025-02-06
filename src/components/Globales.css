@@ -66,6 +66,7 @@ html, body{
     font-size: clamp(2rem, 1.7114rem + 1.0738vw, 3rem);
     font-weight: 700;
     text-transform: initial;
+    line-height: 1.2;
 }
 .secondary-title{
     margin-top: 5px;
