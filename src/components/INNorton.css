@@ -1,0 +1,93 @@
+.paquete-item-innorton {
+width:33%;
+}
+.card-body-innorton .logo-servicio{
+    width: 130px;
+}
+.card-body-innorton{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between
+}
+.card-title-innorton{
+    font-size: 40px;
+    font-weight: 400;
+}
+.benefits-list{
+    margin-top: 40px;
+
+}
+.benefit-item .notron-logo-list{
+    width: 22px;
+    margin-right: 15px;
+}
+ .beneficio-extra{
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 26px;
+    margin-top: 50px;
+ }
+ .dispositivos-precio{
+    font-size: 12px;
+    font-weight: 500;
+ }
+ .precios-multiples, .precio-unico{
+    border: 2px solid #FFE01B;
+    padding: 10px;
+    border-radius: 30px;
+    margin-top: 50px;
+ }
+ .precio-varios{
+    margin-top: 20px;
+    font-size: 40px;
+    line-height: 20px;
+    font-weight: 700;
+ }
+ 
+ .dollar-icon{
+    font-size: 28px !important;
+    font-weight: 700;
+ }
+ .precio-varios .time-pago{
+    font-size: 16px ;
+    font-weight: 500;
+ }
+ .price-zone{
+    margin-bottom: 30px;
+    width: 100%;
+ }
+
+ @media screen and (max-width: 374px){
+    .precios-multiples{
+        flex-direction: column;
+    }
+ }
+@media screen and (max-width: 767px){
+    .paquete-item-innorton {
+        width:100%;
+        padding: 20px 0;
+        height: 850px;
+        }
+        .slider-innorton{
+            padding: 0 0 35px  0;
+        }
+        .precios-multiples{
+            margin-bottom: 30px;
+        }
+    
+}
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .paquete-item-innorton {
+        width:50%;
+        padding: 20px 0;
+        height: 850px;
+        }
+}
+@media screen and (min-width: 1024px) and (max-width: 1439px){
+    .paquete-item-innorton {
+        width:50%;
+        padding: 20px 0;
+        height: 770px;
+        }
+}

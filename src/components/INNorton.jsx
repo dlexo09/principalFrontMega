@@ -1,43 +1,18 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { serverAPIUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
-import { LocationContext } from '../LocationContext';
-import './PaquetesTarifarios.css';
+import './INNorton.css';
 import './Globales.css';
 
 const PaquetesTarifarios = () => {
-  const { currentLocation } = useContext(LocationContext);
-  const [paquetes, setPaquetes] = useState([]);
-  const [selectedPack, setSelectedPack] = useState('triple');
-  const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
-  const promoValue = 60; // Definir la variable para el valor adicional
+  const [chunkSize, setChunkSize] = useState(3);
 
-  useEffect(() => {
-    const fetchPaquetes = async () => {
-      if (currentLocation) {
-        try {
-          const response = await fetch(`${serverAPIUrl}api/${selectedPack}Pack/${currentLocation.idSucursal}`);
-          const data = await response.json();
-          setPaquetes(data);
-        } catch (error) {
-          console.error('Error fetching paquetes:', error);
-        }
-      }
-    };
-
-    fetchPaquetes();
-  }, [selectedPack, currentLocation]);
-
-  // Función para actualizar el chunkSize según el tamaño de la pantalla
   const updateChunkSize = () => {
-    if (window.innerWidth < 768) {
-      setChunkSize(1); // 1 tarjeta en pantallas pequeñas
-    } else if (window.innerWidth < 1024) {
-      setChunkSize(2); // 2 tarjetas en pantallas medianas
-    } else if (window.innerWidth < 1400) {
-      setChunkSize(3); // 3 tarjetas en pantallas medianas grandes
+    if (window.innerWidth < 1023) {
+      setChunkSize(1);
+    } else if (window.innerWidth < 1439) {
+      setChunkSize(2);
     } else {
-      setChunkSize(4); // 4 tarjetas en pantallas grandes
+      setChunkSize(3);
     }
   };
 
@@ -46,6 +21,63 @@ const PaquetesTarifarios = () => {
     window.addEventListener('resize', updateChunkSize);
     return () => window.removeEventListener('resize', updateChunkSize);
   }, []);
+
+  const paquetes = [
+    {
+      id: 1,
+      title: 'Security',
+      description: 'Seguridad en tus dispositivos como smartphones, tablets y equipos portátiles',
+      beneficios: [
+        'Aplicación móvil.',
+        'App lock.',
+        'Password manager.',
+        'Anti Virus, Malware, Phishing, Ransomware.',
+        'Búsqueda segura.',
+        'Detección Wi-Fi no segura.',
+        'PC / Laptop / Tablet / Celular.'
+      ],
+      beneficioextra: '',
+      precios: [
+        { precio: '40', dispositivos: '3 dispositivos', padres: '' },
+        { precio: '50', dispositivos: '5 dispositivos', padres: '' },
+        { precio: '60', dispositivos: '10 dispositivos', padres: '' },
+      ],
+    },
+    {
+      id: 2,
+      title: 'Family',
+      description: 'Protege a los tuyos de contenidos no deseados y controla el tiempo en el que navegan en internet',
+      beneficios: [
+        'Aplicación móvil.',
+        'Control Parental.',
+        'Bloqueo de sitios y contenido web.',
+        'Bloqueo de Aplicaciones no deseadas.',
+        'Control de tiempo.',
+        'Control de acceso a redes sociales.',
+        'Supervisión de aplicaciones móviles.',
+        'Historial de actividad.',
+        'Ubicación'
+      ],
+      beneficioextra: '',
+      precios: [{ precio: '30', dispositivos: '10 dispositivos', padres: '2 padres' }],
+    },
+    {
+      id: 3,
+      title: 'Secure VPN',
+      description: 'VPN Segura agrega una protección extra al momento de conectarse vía wifi',
+      beneficios: [
+        'Aplicación móvil.',
+        'Protección en wifi públicos.',
+        'Protección en Redes No Seguras.',
+        'Navegación anónima.',
+        'Bloqueo de seguimiento.',
+        'Conexión por IP extranjera.'
+      ],
+      beneficioextra: 'Virtual Private Network',
+      precios: [{ precio: '40', dispositivos: '5 dispositivos', padres: '' }],
+    }
+  ];
+
 
   const chunkArray = (array, size) => {
     const chunkedArr = [];
@@ -59,106 +91,65 @@ const PaquetesTarifarios = () => {
 
   return (
     <div className="container paquetes-tarifarios text-center">
-      <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
-      <p className="big-title mb-5 title-especial">¡Te instalamos sin costo!<sup>*</sup></p>
-      <div className="d-flex justify-content-center mb-3 btn-container">
-        <button
-          type="button"
-          className={`pack-btn ${selectedPack === 'triple' ? 'pack-btn-active' : 'pack-btn-inactive'} btn-lg mx-2`}
-          onClick={() => setSelectedPack('triple')}
-        >
-          TRIPLE PACK<br /><span>INTERNET + TV +   TELEFONÍA</span>
-        </button>
-        <button
-          type="button"
-          className={`pack-btn ${selectedPack === 'doble' ? 'pack-btn-active' : 'pack-btn-inactive'} btn-lg mx-2`}
-          onClick={() => setSelectedPack('doble')}
-        >
-          DOBLE PACK<br /><span>INTERNET + TELEFONÍA </span>
-        </button>
-        
-      </div>
-      <div className="d-flex justify-content-center mb-3">
-        <p>(Cliente nuevo)</p>
-      </div>
+      <h3 className="small-title-services">Contrata ya</h3>
+      <h2 className="big-title-services mb-5 title-especial">Tu servicio de Norton</h2>
       <div id="carouselPaquetes" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-inner">
           {chunkedPaquetes.map((chunk, index) => (
             <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
-              <div className="d-flex justify-content-center slider-gp">
-                {chunk.map((paquete, i) => (
-                  <div key={i} className="paquete-item card m-2">
-                    <div className="card-body">
-                      <h2 className="card-title">{paquete.simetria == 0 ? 'INTERNET ILIMITADO' : 'INTERNET SIMÉTRICO'}</h2>
-                      <p className="card-text velocidadPromo">{paquete.velocidadPromo} MEGAS</p>
-                      <p className="card-text tiempoVelocidadPromo">
-                        x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
-                      </p>
+              <div className="d-flex justify-content-center slider-gp slider-innorton">
+                {chunk.map((paquete) => (
+                  <div key={paquete.id} className="paquete-item paquete-item-innorton card m-2">
 
-                      {paquete.archivo && (
-                        <div className="xview-content">
-                          <p className="card-servicio-txt">TV HD INTERACTIVA</p>
-                          <p>
-                            <img
-                              src={`${serverAPIUrl}${paquete.ruta}${paquete.archivo}`}
-                              alt="TV HD INTERACTIVA"
-                              style={{ height: '30px' }}
-                            />
+
+
+                    <div className="card-body card-body-innorton text-center">
+
+                      <div className="header-zone">
+                        <img className='logo-servicio' src="../src/assets/images/servicios/internet/norton-logo.png" alt="" />
+                        <h2 className="card-title-innorton">{paquete.title}</h2>
+                        <p className="card-text-innorton mt-4">{paquete.description}</p>
+                        <ul className="text-start benefits-list">
+                          {paquete.beneficios.map((beneficio, i) => (
+                            <li key={i} className="benefit-item d-flex align-items-center mt-2"><img className='notron-logo-list' src="../src/assets/icons/servicios/internet/logo-norton-icon.png" alt="Norton incluye" />{beneficio}</li>
+                          ))}
+                        </ul>
+                        {paquete.beneficioextra && (
+                          <p className="beneficio-extra">
+                            {paquete.beneficioextra}
                           </p>
-                          <p className="card-text">{paquete.textoServicioCable}</p>
-                        </div>
-                      )}
-
-                      <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
-                      <div className="promoExtra">
-                        <img
-                          src={`${serverAPIUrl}/uploads/banners/promo-partner.png`}
-                          alt="Promo"
-                          style={{ height: '50px' }}
-                        />
-                        <p className="card-text price-card">
-                          <span className="price-mxn">$</span>
-                          {paquete.tarifaPromocional + promoValue}
-                          <sup>*</sup>
-                          <span className="time-crd">/mes</span>
-                        </p>
-                        <p className="card-text">x {paquete.tiempoVelocidaPromo} meses</p>
+                        )}
                       </div>
-                      <button className="btn btn-packs btn-pack-card">¡Lo quiero!</button>
 
-                      {/* Icons cards */}
-                      <img
-                        className="icon-card-packs internet-icon"
-                        src="../src/assets/icons/internet-icon.png"
-                        alt="Icono Internet"
-                      />
-                      {selectedPack !== 'doble' && (
-                        <img
-                          className="icon-card-packs tv-icon"
-                          src="../src/assets/icons/tv-icon.png"
-                          alt="Icono TV"
-                        />
-                      )}
-                      <img
-                        className={`icon-card-packs telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
-                        src="../src/assets/icons/telefonia-icon.png"
-                        alt="Icono Telefonía"
-                      />
+
+                      <div className="price-zone">
+                        {paquete.precios.length > 1 ? (
+                          <div className="precios-multiples d-flex justify-content-around align-items-center">
+                            {paquete.precios.map((p, i) => (
+                              <div key={i} className="precio-card-varios">
+                                <p className="precio-varios"><span className='dollar-icon'>$</span>{p.precio}<br /><span className='time-pago'>AL MES</span></p>
+                                {p.padres && <p className="detalles-precio">{p.padres}</p>}
+                                <p className="dispositivos-precio">{p.dispositivos}</p>
+                              </div>
+                            ))}
+                          </div>
+                        ) : (
+                          <div className="precio-unico mt-3">
+                            <p className="precio-varios"><span className='dollar-icon'>$</span>{paquete.precios[0].precio} <span className='dollar-icon'>AL MES</span></p>
+                            <p className="mt-2">{paquete.precios[0].dispositivos}</p>
+                            {paquete.precios[0].padres && <p className="detalles-precio">{paquete.precios[0].padres}</p>}
+                          </div>
+                        )}
+                      </div>
+
+
+                      <button className="btn btn-packs btn-pack-card mt-3">¡Lo quiero!</button>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
           ))}
-        </div>
-        <div className="container packs-terminos">
-          <p className="promo-xview">
-            Incluyen <span>más de 30,000 hrs de contenido</span> en Xview+
-          </p>
-          <p>
-            Nota: Promoción válida domiciliando el pago a tarjeta. Tarifas registradas ante el IFT. Aplican restricciones.
-            Consulta términos y condiciones <a href="">aquí.</a>
-          </p>
         </div>
         <button
           className="carousel-control-prev"

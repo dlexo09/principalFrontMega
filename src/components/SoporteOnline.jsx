@@ -72,34 +72,133 @@ const faqTelevision = [
 
 const faqInternet = [
   {
-    question: "¿Cómo puedo mejorar la velocidad de mi internet?",
+    question: "¿Por qué mi internet de Megacable está lento?",
     answer: (
-      <p>Para mejorar la velocidad de tu internet, asegúrate de que el router esté en una ubicación central y libre de obstáculos.</p>
+      <p>Revisa si hay muchos dispositivos conectados a la red al mismo tiempo, ya que esto puede reducir la velocidad. También verifica tu velocidad en <a href="https://www.speedtest.net/es" target="_blank">speedtest.net</a> para asegurarte de que corresponda con el plan contratado. Si la velocidad es baja, reinicia el módem desconectándolo por 30 segundos. Si el problema persiste, contacta a soporte técnico para revisar la conexión.</p>
     ),
   },
   {
-    question: "¿Qué debo hacer si no tengo conexión a internet?",
+    question: "¿Cómo reinicio mi módem?",
     answer: (
-      <p>Reinicia el router y verifica que todos los cables estén correctamente conectados.</p>
+      <p>Desconecta el módem de la corriente eléctrica y espera al menos 30 segundos antes de volver a conectarlo. Espera unos minutos a que las luces del módem se estabilicen. Si el problema persiste después del reinicio, revisa las luces del módem; si alguna parpadea en rojo, puede indicar un fallo en la conexión.</p>
     ),
   },
-  // Agrega más preguntas y respuestas aquí
+  {
+    question: "¿Por qué se corta mi conexión de internet con frecuencia?",
+    answer: (
+      <p>Los cortes de conexión pueden deberse a interferencias en la señal Wi-Fi, especialmente si el módem está lejos de tus dispositivos. Acércate al módem o usa un cable Ethernet para mayor estabilidad. Si la conexión sigue fallando, verifica si hay mantenimiento en tu área o contacta a soporte técnico.</p>
+    ),
+  },
+  {
+    question: "¿Cómo cambio la contraseña de mi red Wi-Fi?",
+    answer: (
+      <p>Accede a la configuración del módem escribiendo 192.168.0.1 en el navegador. Inicia sesión con tu usuario y contraseña de administrador (revisa la etiqueta del módem si no la sabes). En la sección de configuración inalámbrica, busca la opción para cambiar la contraseña y asegúrate de guardar los cambios.</p>
+    ),
+  },
+  {
+    question: "¿Por qué no puedo conectarme a mi red Wi-Fi?",
+    answer: (
+      <p>Primero, verifica que el módem esté encendido y funcionando correctamente. Revisa las luces del módem; si la de internet está apagada o en rojo, puede haber un fallo en el servicio. Si todo parece estar bien, olvida la red en tu dispositivo y vuelve a conectarte introduciendo la contraseña.</p>
+    ),
+  },
+  {
+    question: "¿Qué hago si mi módem no enciende?",
+    answer: (
+      <p>Asegúrate de que el módem esté correctamente conectado a la corriente. Prueba con otro enchufe para descartar que el problema sea el toma corriente. Si el módem sigue sin encender, es probable que el equipo necesite reemplazo. Comunícate con soporte técnico para solicitar asistencia.</p>
+    ),
+  },
+  {
+    question: "¿Cómo puedo mejorar la señal Wi-Fi en mi casa?",
+    answer: (
+      <p>Coloca el módem en una zona central, lejos de paredes gruesas o electrodomésticos que puedan causar interferencias. Si tu casa es grande, considera usar repetidores Wi-Fi o dispositivos Mesh para extender la señal. También verifica que no haya dispositivos desconocidos conectados a tu red.</p>
+    ),
+  },
+  {
+    question: "¿Por qué mi internet funciona solo en algunos dispositivos?",
+    answer: (
+      <p>Esto puede ocurrir si el dispositivo no está bien configurado o si la red asigna direcciones IP limitadas. Reinicia el módem y verifica si el dispositivo se conecta nuevamente. También asegúrate de que el dispositivo no tenga restricciones de red activadas.
+
+</p>
+    ),
+  },
+  {
+    question: "¿Cómo configuro el control parental en mi red Wi-Fi?",
+    answer: (
+      <p>Accede a la configuración del módem escribiendo 192.168.0.1 en tu navegador. En el menú de configuración, busca la opción de control parental. Desde ahí, puedes establecer horarios de acceso a internet y bloquear ciertas páginas para dispositivos específicos.</p>
+    ),
+  },
+  {
+    question: "¿Cómo reporto una falla en mi servicio de internet?",
+    answer: (
+      <p>Puedes reportar una falla llamando al 33 9690 0000 o a traves nuestro WhatssApp <a href="https://api.whatsapp.com/send?phone=523396900001" target="_blank">33 9690 0001</a>. Si el fallo requiere atención técnica, el equipo de soporte agendará una visita para revisar tu equipo.</p>
+    ),
+  },
+  
+ 
 ];
 
 const faqTelefonia = [
   {
-    question: "¿Cómo puedo solucionar problemas de llamadas no recibidas?",
+    question: "¿Por qué no puedo hacer llamadas desde mi línea de teléfono fijo?",
     answer: (
-      <p>Verifica que tu teléfono esté correctamente configurado y que no esté en modo avión.</p>
+      <p>Revisa que el teléfono esté correctamente conectado al módem y que el módem tenga encendida la luz de "Teléfono" o "Phone". Si la luz está apagada o parpadea, reinicia el módem. Desconéctalo durante 30 segundos y vuelve a conectarlo. Si el problema continúa, podría ser una falla en el servicio y debes comunicarte con soporte técnico.</p>
     ),
   },
   {
-    question: "¿Qué debo hacer si no tengo señal en mi teléfono?",
+    question: "¿Cómo reinicio mi servicio de telefonía?",
     answer: (
-      <p>Verifica que estés en un área con cobertura y que tu teléfono esté correctamente configurado.</p>
+      <p>Desconecta el módem de la corriente eléctrica y espera 30 segundos. Luego vuelve a conectarlo y espera unos minutos a que las luces se estabilicen. Verifica que la luz de "Teléfono" esté encendida. Si no funciona, contacta a soporte técnico para recibir asistencia.</p>
     ),
   },
-  // Agrega más preguntas y respuestas aquí
+  {
+    question: "¿Por qué no recibo llamadas entrantes?",
+    answer: (
+      <p>Asegúrate de que el cable del teléfono esté bien conectado al puerto de "Teléfono" en el módem. Verifica también que el servicio no esté bloqueado por configuraciones de desvío de llamadas o restricciones. Si todo está bien, prueba reiniciando el módem.</p>
+    ),
+  },
+  {
+    question: "¿Cómo configuro el buzón de voz?",
+    answer: (
+      <p>Para configurar el buzón de voz, marca el número correspondiente en tu línea (verifícalo en el manual del servicio o llamando a soporte). Sigue las instrucciones para crear tu contraseña y grabar un mensaje personalizado. Una vez configurado, puedes acceder al buzón desde tu línea o de forma remota.</p>
+    ),
+  },
+  {
+    question: "¿Por qué mi teléfono no suena cuando me llaman?",
+    answer: (
+      <p>Revisa que el volumen del timbre no esté apagado o muy bajo. Verifica también que el teléfono esté correctamente conectado al módem y que el servicio esté activo. Si el problema persiste, prueba con otro teléfono para descartar que el equipo esté fallando.</p>
+    ),
+  },
+  {
+    question: "¿Cómo activo el servicio de llamada en espera?",
+    answer: (
+      <p>El servicio de llamada en espera generalmente está activado por defecto. Para utilizarlo, presiona el botón de "Flash" o cuelga rápidamente para atender la segunda llamada. Si no funciona, verifica en la configuración de tu servicio o comunícate con soporte para activarlo.</p>
+    ),
+  },
+  {
+    question: "¿Por qué escucho ruido o interferencia en la línea?",
+    answer: (
+      <p>El ruido puede deberse a interferencias o a un problema con el cableado. Verifica que los cables estén en buen estado y correctamente conectados. Si el problema continúa, reinicia el módem y prueba con otro teléfono. Si el ruido persiste, contacta a soporte técnico para revisar tu línea.</p>
+    ),
+  },
+  {
+    question: "¿Qué hago si mi módem no tiene la luz de 'Teléfono' encendida?",
+    answer: (
+      <p>Si la luz de "Teléfono" está apagada, significa que el servicio no está disponible. Reinicia el módem y espera unos minutos. Si la luz sigue apagada, puede tratarse de una falla en el servicio, y deberás comunicarte con el centro de atención para que revisen tu línea.</p>
+    ),
+  },
+  {
+    question: "¿Cómo desvío las llamadas a otro número?",
+    answer: (
+      <p>Para activar el desvío de llamadas, marca el código correspondiente desde tu teléfono (consulta el manual del servicio). Ingresa el número al que deseas desviar las llamadas y cuelga. Para desactivarlo, marca el código de cancelación.</p>
+    ),
+  },
+  {
+    question: "¿Cómo reporto una falla en mi línea de teléfono?",
+    answer: (
+      <p>Puedes reportar una falla llamando al 33 9690 0000 o a traves nuestro WhatssApp <a href="https://api.whatsapp.com/send?phone=523396900001" target="_blank">33 9690 0001</a>. Si el fallo requiere atención técnica, el equipo de soporte agendará una visita para revisar tu equipo.</p>
+
+    ),
+  },
 ];
 
 const options = {

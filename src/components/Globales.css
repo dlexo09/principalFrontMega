@@ -110,6 +110,9 @@ html, body{
 .btn-packs:hover, .btn-action:hover{
     background-color: #01c6bd;
 }
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
+    background-color: #01c6bd;
+}
 .open-page-icon{
     display: inline-block;
     width: 20px;
@@ -186,6 +189,7 @@ html, body{
     font-weight: 400;
     text-transform: uppercase;
 }
+
 
 /* Contenedores */
 .general-tabs-container{
