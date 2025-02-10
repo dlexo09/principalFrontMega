@@ -66,6 +66,7 @@ html, body{
     font-size: clamp(2rem, 1.7114rem + 1.0738vw, 3rem);
     font-weight: 700;
     text-transform: initial;
+    line-height: 1.2;
 }
 .secondary-title{
     margin-top: 5px;
@@ -107,6 +108,9 @@ html, body{
     transition: background-color 0.2s ease-in-out;
 }
 .btn-packs:hover, .btn-action:hover{
+    background-color: #01c6bd;
+}
+.btn-check:checked+.btn, .btn.active, .btn.show, .btn:first-child:active, :not(.btn-check)+.btn:active{
     background-color: #01c6bd;
 }
 .open-page-icon{
@@ -185,6 +189,7 @@ html, body{
     font-weight: 400;
     text-transform: uppercase;
 }
+
 
 /* Contenedores */
 .general-tabs-container{

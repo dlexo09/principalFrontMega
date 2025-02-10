@@ -1,0 +1,3 @@
+.faqsoporte-accordion .accordion-button::before{
+    background-color: var(--turquesa-btn);
+}

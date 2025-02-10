@@ -1,700 +1,229 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./SOPPago.css";
+import "./SoporteOnline.css";
 import "./Globales.css";
+import FAQSoporte from './FAQSoporte'; // Ajusta la ruta según tu estructura de archivos
 
-// Datos de los comercios
-const comercios = [
+// Definimos el contenido de cada opción
+const faqTelevision = [
   {
-    id: 1,
-    name: "Soriana",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio1.png",
-    tipo: "conEstado",
+    question: "¿Por qué no tengo señal en mi televisión?",
+    answer: (
+      <p>Primero, revisa que el cable coaxial esté bien conectado al decodificador y a la entrada de la televisión. Verifica también que el televisor esté en la entrada correcta (HDMI o AV). Si todo está conectado correctamente y sigue sin haber señal, prueba desconectar el decodificador de la corriente durante 30 segundos y vuelve a conectarlo. Si aún no tienes señal, verifica si hay interrupciones de servicio en tu área o comunícate con soporte técnico.</p>
+    ),
   },
   {
-    id: 2,
-    name: "Chedraui",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio2.png",
-    tipo: "conEstado",
+    question: "¿Cómo reinicio mi decodificador?",
+    answer: (
+      <p>Para reiniciar el decodificador, desconéctalo de la corriente eléctrica y espera unos 30 segundos. Después, vuelve a enchufarlo y espera a que termine el proceso de inicio, lo que puede tardar entre 2 y 5 minutos. Durante este tiempo, el decodificador puede mostrar mensajes o luces que indican que está cargando el sistema. Si el reinicio no soluciona el problema, prueba restablecerlo desde el menú de configuración.</p>
+    ),
   },
   {
-    id: 3,
-    name: "BanCoppel",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio3.png",
-    tipo: "conEstado",
+    question: "¿Qué hago si mi servicio de Xview+ se congela constantemente?",
+    answer: (
+      <p>Cuando el servicio se congela, es probable que sea un problema de conexión a internet. Revisa la velocidad de tu red; para Xview+ se recomienda al menos 20 Mbps. Si estás conectado por Wi-Fi, considera usar cable Ethernet para mayor estabilidad. Reinicia tanto el módem como el decodificador. Si el problema sigue, verifica que no haya otros dispositivos consumiendo mucho ancho de banda en tu red.</p>
+    ),
   },
   {
-    id: 4,
-    name: "Merza",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio4.png",
-    tipo: "conEstado",
+    question: "¿Por qué no puedo ver mis grabaciones en Xview+?",
+    answer: (
+      <p>Primero, asegúrate de que el decodificador tenga suficiente espacio disponible para almacenar las grabaciones. Si aparece un mensaje de error, puede que la grabación haya fallado. Intenta reiniciar el decodificador para actualizar la lista de grabaciones. Si el problema persiste, verifica si el dispositivo de almacenamiento está conectado correctamente o si necesita ser formateado desde el menú de configuración.</p>
+    ),
   },
   {
-    id: 5,
-    name: "Lagunitas",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio5.png",
-    tipo: "conEstado",
+    question: "¿Qué hago si no escucho sonido en algunos canales?",
+    answer: (
+      <p>Revisa que el volumen esté activado tanto en el decodificador como en el televisor. Cambia a otros canales para comprobar si el problema ocurre solo en uno. Si no escuchas sonido en ninguno, verifica las conexiones de audio. Si estás usando un sistema de sonido externo, revisa las configuraciones del dispositivo. También puedes restablecer el audio desde el menú del decodificador.</p>
+    ),
   },
   {
-    id: 6,
-    name: "Alsuper",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio6.png",
-    tipo: "conEstado",
+    question: "¿Cómo soluciono problemas de conexión en la app Xview+?",
+    answer: (
+      <p>Primero, verifica que tu dispositivo esté conectado a una red Wi-Fi estable. Cierra la app y vuelve a abrirla. Si sigue sin funcionar, asegúrate de que tienes la versión más reciente instalada. Si el problema persiste, desinstala la aplicación y vuelve a instalarla desde la tienda de aplicaciones. También puedes probar reiniciando tu módem y el dispositivo donde usas la app.</p>
+    ),
   },
   {
-    id: 7,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio7.png",
-    tipo: "conEstado",
+    question: "¿Qué hago si la guía de programación no carga o está desactualizada?",
+    answer: (
+      <p>Reinicia el decodificador para que la guía se actualice. Esto puede tardar unos minutos. Si sigue sin cargarse, verifica que el decodificador esté conectado a internet. En algunos casos, es necesario restablecer la configuración de red del decodificador para resolver el problema. Si esto no funciona, comunícate con soporte técnico para recibir asistencia.</p>
+    ),
   },
+  {
+    question: "¿Por qué mi control remoto no responde?",
+    answer: (
+      <p>Cambia las baterías por unas nuevas y asegúrate de que estén bien colocadas. Si el control sigue sin responder, intenta sincronizarlo nuevamente con el decodificador siguiendo las instrucciones del manual. En algunos modelos, es necesario presionar simultáneamente ciertos botones para sincronizarlo. Si esto no funciona, contacta a soporte para obtener un control remoto de reemplazo.</p>
+    ),
+  },
+  {
+    question: "¿Cómo reporto una falla técnica en mi servicio de televisión?",
+    answer: (
+      <p>Puedes reportar una falla llamando al 33 9690 0000 o a traves nuestro WhatssApp <a href="https://api.whatsapp.com/send?phone=523396900001" target="_blank">33 9690 0001</a>. Si el fallo requiere atención técnica, el equipo de soporte agendará una visita para revisar tu equipo.</p>
+    ),
+  },
+  {
+    question: "¿Qué debo hacer si la imagen se ve distorsionada o pixelada?",
+    answer: (
+      <p>La imagen distorsionada suele deberse a una señal débil o interferencias. Revisa que los cables estén bien conectados y no tengan daños visibles. Si estás usando un divisor de señal (splitter), intenta conectar el cable directamente al decodificador. Reinicia el equipo para restablecer la señal. Si el problema persiste, solicita asistencia técnica.</p>
+    ),
+  },
+  
+];
 
+const faqInternet = [
   {
-    id: 8,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio8.png",
-    tipo: "sinEstado",
+    question: "¿Por qué mi internet de Megacable está lento?",
+    answer: (
+      <p>Revisa si hay muchos dispositivos conectados a la red al mismo tiempo, ya que esto puede reducir la velocidad. También verifica tu velocidad en <a href="https://www.speedtest.net/es" target="_blank">speedtest.net</a> para asegurarte de que corresponda con el plan contratado. Si la velocidad es baja, reinicia el módem desconectándolo por 30 segundos. Si el problema persiste, contacta a soporte técnico para revisar la conexión.</p>
+    ),
   },
   {
-    id: 9,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio9.png",
-    tipo: "sinEstado",
+    question: "¿Cómo reinicio mi módem?",
+    answer: (
+      <p>Desconecta el módem de la corriente eléctrica y espera al menos 30 segundos antes de volver a conectarlo. Espera unos minutos a que las luces del módem se estabilicen. Si el problema persiste después del reinicio, revisa las luces del módem; si alguna parpadea en rojo, puede indicar un fallo en la conexión.</p>
+    ),
   },
   {
-    id: 10,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio10.png",
-    tipo: "sinEstado",
+    question: "¿Por qué se corta mi conexión de internet con frecuencia?",
+    answer: (
+      <p>Los cortes de conexión pueden deberse a interferencias en la señal Wi-Fi, especialmente si el módem está lejos de tus dispositivos. Acércate al módem o usa un cable Ethernet para mayor estabilidad. Si la conexión sigue fallando, verifica si hay mantenimiento en tu área o contacta a soporte técnico.</p>
+    ),
   },
   {
-    id: 11,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio11.png",
-    tipo: "sinEstado",
+    question: "¿Cómo cambio la contraseña de mi red Wi-Fi?",
+    answer: (
+      <p>Accede a la configuración del módem escribiendo 192.168.0.1 en el navegador. Inicia sesión con tu usuario y contraseña de administrador (revisa la etiqueta del módem si no la sabes). En la sección de configuración inalámbrica, busca la opción para cambiar la contraseña y asegúrate de guardar los cambios.</p>
+    ),
   },
   {
-    id: 12,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio12.png",
-    tipo: "sinEstado",
+    question: "¿Por qué no puedo conectarme a mi red Wi-Fi?",
+    answer: (
+      <p>Primero, verifica que el módem esté encendido y funcionando correctamente. Revisa las luces del módem; si la de internet está apagada o en rojo, puede haber un fallo en el servicio. Si todo parece estar bien, olvida la red en tu dispositivo y vuelve a conectarte introduciendo la contraseña.</p>
+    ),
   },
   {
-    id: 13,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio13.png",
-    tipo: "sinEstado",
+    question: "¿Qué hago si mi módem no enciende?",
+    answer: (
+      <p>Asegúrate de que el módem esté correctamente conectado a la corriente. Prueba con otro enchufe para descartar que el problema sea el toma corriente. Si el módem sigue sin encender, es probable que el equipo necesite reemplazo. Comunícate con soporte técnico para solicitar asistencia.</p>
+    ),
   },
   {
-    id: 14,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio14.png",
-    tipo: "sinEstado",
+    question: "¿Cómo puedo mejorar la señal Wi-Fi en mi casa?",
+    answer: (
+      <p>Coloca el módem en una zona central, lejos de paredes gruesas o electrodomésticos que puedan causar interferencias. Si tu casa es grande, considera usar repetidores Wi-Fi o dispositivos Mesh para extender la señal. También verifica que no haya dispositivos desconocidos conectados a tu red.</p>
+    ),
   },
   {
-    id: 15,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio15.png",
-    tipo: "sinEstado",
+    question: "¿Por qué mi internet funciona solo en algunos dispositivos?",
+    answer: (
+      <p>Esto puede ocurrir si el dispositivo no está bien configurado o si la red asigna direcciones IP limitadas. Reinicia el módem y verifica si el dispositivo se conecta nuevamente. También asegúrate de que el dispositivo no tenga restricciones de red activadas.
+
+</p>
+    ),
   },
   {
-    id: 16,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio16.png",
-    tipo: "sinEstado",
+    question: "¿Cómo configuro el control parental en mi red Wi-Fi?",
+    answer: (
+      <p>Accede a la configuración del módem escribiendo 192.168.0.1 en tu navegador. En el menú de configuración, busca la opción de control parental. Desde ahí, puedes establecer horarios de acceso a internet y bloquear ciertas páginas para dispositivos específicos.</p>
+    ),
   },
   {
-    id: 17,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio17.png",
-    tipo: "sinEstado",
+    question: "¿Cómo reporto una falla en mi servicio de internet?",
+    answer: (
+      <p>Puedes reportar una falla llamando al 33 9690 0000 o a traves nuestro WhatssApp <a href="https://api.whatsapp.com/send?phone=523396900001" target="_blank">33 9690 0001</a>. Si el fallo requiere atención técnica, el equipo de soporte agendará una visita para revisar tu equipo.</p>
+    ),
+  },
+  
+ 
+];
+
+const faqTelefonia = [
+  {
+    question: "¿Por qué no puedo hacer llamadas desde mi línea de teléfono fijo?",
+    answer: (
+      <p>Revisa que el teléfono esté correctamente conectado al módem y que el módem tenga encendida la luz de "Teléfono" o "Phone". Si la luz está apagada o parpadea, reinicia el módem. Desconéctalo durante 30 segundos y vuelve a conectarlo. Si el problema continúa, podría ser una falla en el servicio y debes comunicarte con soporte técnico.</p>
+    ),
   },
   {
-    id: 18,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio18.png",
-    tipo: "sinEstado",
+    question: "¿Cómo reinicio mi servicio de telefonía?",
+    answer: (
+      <p>Desconecta el módem de la corriente eléctrica y espera 30 segundos. Luego vuelve a conectarlo y espera unos minutos a que las luces se estabilicen. Verifica que la luz de "Teléfono" esté encendida. Si no funciona, contacta a soporte técnico para recibir asistencia.</p>
+    ),
   },
   {
-    id: 19,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio19.png",
-    tipo: "sinEstado",
+    question: "¿Por qué no recibo llamadas entrantes?",
+    answer: (
+      <p>Asegúrate de que el cable del teléfono esté bien conectado al puerto de "Teléfono" en el módem. Verifica también que el servicio no esté bloqueado por configuraciones de desvío de llamadas o restricciones. Si todo está bien, prueba reiniciando el módem.</p>
+    ),
   },
   {
-    id: 20,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio20.png",
-    tipo: "sinEstado",
+    question: "¿Cómo configuro el buzón de voz?",
+    answer: (
+      <p>Para configurar el buzón de voz, marca el número correspondiente en tu línea (verifícalo en el manual del servicio o llamando a soporte). Sigue las instrucciones para crear tu contraseña y grabar un mensaje personalizado. Una vez configurado, puedes acceder al buzón desde tu línea o de forma remota.</p>
+    ),
   },
   {
-    id: 21,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio21.png",
-    tipo: "sinEstado",
+    question: "¿Por qué mi teléfono no suena cuando me llaman?",
+    answer: (
+      <p>Revisa que el volumen del timbre no esté apagado o muy bajo. Verifica también que el teléfono esté correctamente conectado al módem y que el servicio esté activo. Si el problema persiste, prueba con otro teléfono para descartar que el equipo esté fallando.</p>
+    ),
   },
   {
-    id: 22,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio22.png",
-    tipo: "sinEstado",
+    question: "¿Cómo activo el servicio de llamada en espera?",
+    answer: (
+      <p>El servicio de llamada en espera generalmente está activado por defecto. Para utilizarlo, presiona el botón de "Flash" o cuelga rápidamente para atender la segunda llamada. Si no funciona, verifica en la configuración de tu servicio o comunícate con soporte para activarlo.</p>
+    ),
   },
   {
-    id: 23,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio23.png",
-    tipo: "sinEstado",
+    question: "¿Por qué escucho ruido o interferencia en la línea?",
+    answer: (
+      <p>El ruido puede deberse a interferencias o a un problema con el cableado. Verifica que los cables estén en buen estado y correctamente conectados. Si el problema continúa, reinicia el módem y prueba con otro teléfono. Si el ruido persiste, contacta a soporte técnico para revisar tu línea.</p>
+    ),
   },
   {
-    id: 24,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio24.png",
-    tipo: "sinEstado",
+    question: "¿Qué hago si mi módem no tiene la luz de 'Teléfono' encendida?",
+    answer: (
+      <p>Si la luz de "Teléfono" está apagada, significa que el servicio no está disponible. Reinicia el módem y espera unos minutos. Si la luz sigue apagada, puede tratarse de una falla en el servicio, y deberás comunicarte con el centro de atención para que revisen tu línea.</p>
+    ),
   },
   {
-    id: 25,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio25.png",
-    tipo: "sinEstado",
+    question: "¿Cómo desvío las llamadas a otro número?",
+    answer: (
+      <p>Para activar el desvío de llamadas, marca el código correspondiente desde tu teléfono (consulta el manual del servicio). Ingresa el número al que deseas desviar las llamadas y cuelga. Para desactivarlo, marca el código de cancelación.</p>
+    ),
   },
   {
-    id: 26,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio26.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 27,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio27.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 28,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio28.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 29,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio29.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 30,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio30.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 31,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio31.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 32,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio32.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 33,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio33.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 34,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio34.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 35,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio35.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 36,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio36.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 37,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio37.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 38,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio38.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 39,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio39.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 40,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio40.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 41,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio41.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 42,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio42.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 43,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio43.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 44,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio44.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 45,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio45.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 46,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio46.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 47,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio47.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 48,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio48.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 49,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio48.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 50,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio50.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 51,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio51.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 52,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio52.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 53,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio53.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 54,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio54.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 55,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio55.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 56,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio56.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 57,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio57.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 58,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio58.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 59,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio59.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 60,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio60.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 61,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio61.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 63,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio63.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 64,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio64.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 65,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio65.png",
-    tipo: "sinEstado",
+    question: "¿Cómo reporto una falla en mi línea de teléfono?",
+    answer: (
+      <p>Puedes reportar una falla llamando al 33 9690 0000 o a traves nuestro WhatssApp <a href="https://api.whatsapp.com/send?phone=523396900001" target="_blank">33 9690 0001</a>. Si el fallo requiere atención técnica, el equipo de soporte agendará una visita para revisar tu equipo.</p>
+
+    ),
   },
 ];
 
-// Componente para mostrar las imágenes de los comercios
-const ComerciosList = ({ tipo }) => {
-  // Filtrar los comercios según el tipo
-  const comerciosFiltrados = comercios.filter(
-    (comercio) => comercio.tipo === tipo
-  );
-
-  return (
-    <div className=" mt-4 d-flex comercio-logo-container justify-content-center align-items center">
-      {comerciosFiltrados.map((comercio) => (
-        <div key={comercio.id}>
-          <img
-            src={comercio.image}
-            alt={comercio.name}
-            className="img-fluid comercio-logo"
-          />
-        </div>
-      ))}
-    </div>
-  );
-};
-
-// Definimos el contenido de cada opción
 const options = {
   app: {
-    label: "App",
+    label: "Televisión",
     content: (
-      <div className="container-fluid p-0 wave-bg-fdpago">
-        <div className="container">
-          <div className="row fdpago-app-container align-items-center justify-content-center">
-            <div className="col-lg-3 text-center">
-              <img
-                src="../src/assets/images/soporte/formas-de-pago/app-megacable.png"
-                alt="Megacable App"
-              />
-            </div>
-            <div className="col-lg-6">
-              <h2 className="secondary-title mb-4">
-                Descarga la<span> Megacable App!</span>
-              </h2>
-              <p>
-                Regístrate y realiza tu pago sin hacer filas, directamente desde
-                tu celular. Además recuerda que si domicilias tu pago a tarjeta
-                de crédito o débito, obtienes 10 Mbps adicionales en el internet
-                de tu casa.
-              </p>
-              <div className="btn-mega-apps mt-5 d-flex flex-md-row flex-column">
-                <button
-                  onClick={() =>
-                    window.open(
-                      "https://apps.apple.com/mx/app/megacable-app/id1466002118",
-                      "_blank"
-                    )
-                  }
-                  className="btn-packs"
-                >
-                  IOS
-                </button>
-                <button
-                  onClick={() =>
-                    window.open(
-                      "https://play.google.com/store/apps/details?id=mx.com.megacable&hl=es_MX",
-                      "_blank"
-                    )
-                  }
-                  className="btn-packs"
-                >
-                  Google Play
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="container-fluid p-0">
+        <FAQSoporte faqs={faqTelevision} />
       </div>
     ),
   },
   comercios: {
-    label: "Comercios",
+    label: "Internet",
     content: (
       <div className="container sop-general-container">
-        <h2 className="text-center small-secondary-title mb-4">
-          Para tu comodidad y para que ahorres tiempo, contamos con más de{" "}
-          <span>10,000 opciones</span> donde puedes realizar tu{" "}
-          <span>pago mensual</span> como:
-        </h2>
-
-        {/* Comercios con estado de cuenta */}
-        <h3 className="text-center small-title mt-5">Con estado de cuenta</h3>
-        <ComerciosList tipo="conEstado" />
-
-        {/* Comercios sin estado de cuenta */}
-        <h3 className="text-center small-title mt-5">Sin estado de cuenta</h3>
-        <ComerciosList tipo="sinEstado" />
+        <FAQSoporte faqs={faqInternet} />
       </div>
     ),
   },
   cargoAutomatico: {
-    label: "Cargo Automático",
+    label: "Telefonía",
     content: (
-      <div className="container-fluid p-0 wave-bg-fdpago">
-        <div className="container">
-          <div className="row fdpago-ca-container align-items-center justify-content-center">
-            <div className="col-md-7 col-lg-4 text-center">
-              <img
-                className="fdpago-ca-img"
-                src="../src/assets/images/soporte/formas-de-pago/cargo-automatico.png"
-                alt="Megacable App"
-              />
-            </div>
-            <div className="col-lg-6">
-              <h2 className="secondary-title mb-4">
-                <span>Cargo Automático</span> a tu Tarjeta de Crédito o Débito
-              </h2>
-              <p>
-                Visita tu CIS más cercano o llama por teléfono, proporciona los
-                datos de tu tarjeta y mensualmente se te procesará tu pago de
-                forma automática y segura.
-              </p>
-              <div className="cc-cargo-autom mt-4 d-flex flex-md-row flex-column">
-                <img
-                  src="../src/assets/images/home/pagos-tarjetas-img.png"
-                  alt="Paypal, Visa, Master Card"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+      <div className="container-fluid p-0">
+        <FAQSoporte faqs={faqTelefonia} />
       </div>
-    ),
-  },
-  bancos: {
-    label: "Bancos",
-    content: (
-      <>
-        <div className="container-fluid bancos-fdp-container">
-          <div className="container">
-            <h3 className="text-center mb-5 secondary-title">
-              Nuestros Convenios
-            </h3>
-            <div className="bancos-conv-container d-flex align-items-center justify-content-center">
-              <div className="banco-conv">
-                <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/santander-logo.png"
-                  alt=""
-                />
-                <h5 className="conv-num">1332</h5>
-              </div>
-              <div className="banco-conv">
-                <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/scotiabank-logo.png"
-                  alt=""
-                />
-                <h5 className="conv-num">3356</h5>
-              </div>
-              <div className="banco-conv">
-                <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/hsbc-logo.png"
-                  alt=""
-                />
-                <h5 className="conv-num">3535</h5>
-              </div>
-              <div className="banco-conv">
-                <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/bbva-logo.png"
-                  alt=""
-                />
-                <h5 className="conv-num">801720</h5>
-              </div>
-              <div className="banco-conv">
-                <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/citibanamex-logo.png"
-                  alt=""
-                />
-                <h5 className="conv-num">
-                  <br />
-                </h5>
-              </div>
-            </div>
-
-            <div className="row consulta-saldo-container justify-content-center align-items-center">
-              <div className="col-lg-6 order-2 order-lg-1 text-md-center text-lg-start">
-                <p className="saldo-title">Puede consultar su saldo en:</p>
-                <p className="saldo-subtitle">Mega App | Servicios en Línea</p>
-                <p className="saldo-title mt-5">Tambien puede llamarnos a:</p>
-                <p className="saldo-subtitle">tel: 33 9690 2222 | cc: 33 9690 0000</p>
-
-              </div>
-              <div className="col-md-6 col-lg-3 order-1 order-lg-2  text-center mb-5 mb-lg-0">
-                <img src="../src/assets/images/soporte/formas-de-pago/app-mega.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </>
-    ),
-  },
-  pagoLinea: {
-    label: "Pago en Línea",
-    content: (
-      <>
-        <div className="container sop-general-container">
-          <h2 className="text-center secondary-title">Paga en Línea tus servicios de Mega</h2>
-
-          <div className="d-flex justify-content-center pagol-pasos-container">
-            <div className="speed-pasos-crd">
-              <span>1</span>
-              <p>
-                Haz click <a target="_blank" href="https://pagoenlinea.megacable.com.mx/">aquí</a> o en el botón "Pago en Línea" para ingresar a la plataforma de pagos.
-              </p>
-            </div>
-            <div className="speed-pasos-crd">
-              <span>2</span>
-              <p>
-                Ingresa tu número de contrato de 10 dígitos y completa el captcha de seguridad.
-              </p>
-            </div>
-            <div className="speed-pasos-crd">
-              <span>3</span>
-              <p>
-                Proporciona los datos de tu tarjeta de crédito o débito para realizar el pago.
-              </p>
-            </div>
-          </div>
-          <div className="d-flex justify-content-center mt-5">
-          <button
-                  onClick={() =>
-                    window.open(
-                      "https://pagoenlinea.megacable.com.mx/",
-                      "_blank"
-                    )
-                  }
-                  className="btn-action"
-                >
-                  Pago en Línea <span className="open-page-icon"></span>
-                </button>
-          </div>
-        </div>
-      </>
     ),
   },
 };
@@ -717,7 +246,7 @@ const SwitchButton = ({
 );
 
 // Componente principal
-const SOPPago = () => {
+const SoporteOnline = () => {
   const [selectedOption, setSelectedOption] = useState("app");
 
   const handleOptionChange = (option) => {
@@ -727,8 +256,8 @@ const SOPPago = () => {
   return (
     <div className="general-tabs-container">
       <div className="text-center">
-        <h3 className="small-title-services">CONOCE NUESTRAS</h3>
-        <h2 className="big-title-services">Formas de pago</h2>
+        <h3 className="small-title-services">CONSULTA NUESTRA GUÍA</h3>
+        <h2 className="big-title-services">Soporte técnico</h2>
       </div>
 
       {/* Switch */}
@@ -750,4 +279,4 @@ const SOPPago = () => {
   );
 };
 
-export default SOPPago;
+export default SoporteOnline;
