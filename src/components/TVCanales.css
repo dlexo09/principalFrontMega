@@ -6,11 +6,6 @@
 .canales-container {
   padding: 100px 0;
 }
-.text-canales {
-font-size: clamp(1.125rem, 0.9653rem + 0.5941vw, 1.5rem);
-  margin-bottom: 100px;
-  margin-top: 50px;
-}
 .filtro-container {
   background-color: #f2f2f2;
   padding: 25px;

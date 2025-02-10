@@ -10,7 +10,7 @@ import '../components/Globales.css';
 
 const TelefoniaIlimitada = () => {
   const tabs = [
-    { id: "beneficios", label: "Beneficios" },
+    { id: "beneficios", label: "Oferta y beneficios" },
     { id: "costos-larga-distancia", label: "Costos y Larga Distancia" },
     { id: "portabilidad", label: "Portabilidad" },
     { id: "servicios-adicionales", label: "Servicios Adicionales" },

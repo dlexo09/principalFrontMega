@@ -37,7 +37,6 @@ function App() {
         <div style={{ marginTop: '0px' }}> {/* Ajusta el margen superior según sea necesario */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/xview" element={<Xview />} />
             <Route path="/foxSports" element={<FoxSports />} />
             <Route path="/adultPack" element={<AdultPack />} />
             <Route path="/mideVelocidad" element={<MideVelocidad />} />
@@ -56,6 +55,7 @@ function App() {
             <Route path="/paquetes/*" element={<Paquetes />} />
             <Route path="/ayuda/*" element={<Ayuda />} />
             <Route path="/fibra-optica/*" element={<FibraOptica />} />
+            <Route path="/xview/*" element={<Xview />} />
         </Routes>
         </div>
         <Footer />

@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom"; // Importa Navigate
 import TabsComponent from "../components/TabsComponent";
-import TVConoceServicio from "../components/TVConoceServicio";
+import TVConoceServicio from "../components/XVBeneficios";
 import TVCanales from "../components/TVCanales";
 import '../components/Globales.css';
 

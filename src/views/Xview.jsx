@@ -1,49 +1,46 @@
-import React from 'react';
-import PaquetesTarifarios from '../components/PaquetesTarifarios';
-
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom"; // Importa Navigate
+import TabsComponent from "../components/TabsComponent";
+import XVBeneficios from "../components/XVBeneficios";
+import XVConoce from "../components/XVConoce";
+import XVTutoriales from "../components/XVTutoriales";
+import TVCanales from "../components/TVCanales";
+import "../components/Globales.css";
 
 const Xview = () => {
+  const tabs = [
+    { id: "beneficios", label: "Oferta y Beneficios" },
+    { id: "conoce-xview", label: "Conoce Xview+" },
+    { id: "tutoriales", label: "Tutoriales" },
+    { id: "canales", label: "Canales" },
+  ];
   return (
     <>
-    <PaquetesTarifarios />
-      <section className="container-fluid p-0 back-xvie" id="xview-section">
-        {/*<!-- BANNER PRODUCTOS -->*/}
-        <div className="xview w-100 d-block position-relative">
-          <img src="images/xview/xview-bg2.png" className="w-100 d-block position-relative" alt="Xview Background" />
-          <div className="logo-xview w-100 d-flex justify-content-center">
-            <img src="images/xview/xview+.png" className="w-100 d-block" alt="Xview Logo" />
-          </div>
-          <div className="plataformas" style={{ alignContent: 'center' }}>
-            <div className="fox-slides mt-0 mb-0">
-              <div className="product-item">
-                <div className="frame-image w-100 d-flex justify-content-center">
-                  <img src="images/xview/netflix2.png" title="" className="d-block img-fluid plataforma" alt="Plataforma - Netflix" />
-                </div>
-              </div>
-              <div className="product-item">
-                <div className="frame-image w-100 d-flex justify-content-center">
-                  <img src="images/xview/amazonprime.png" title="" className="d-block img-fluid plataforma" alt="Plataforma - Amazon Prime" />
-                </div>
-              </div>
-              <div className="product-item">
-                <div className="frame-image w-100 d-flex justify-content-center">
-                  <img src="images/xview/max.png" title="" className="d-block img-fluid plataforma" alt="Plataforma - Max" />
-                </div>
-              </div>
-              <div className="product-item">
-                <div className="frame-image w-100 d-flex justify-content-center">
-                  <img src="images/xview/disney.png" title="" className="d-block img-fluid plataforma" alt="Plataforma - Disney+" />
-                </div>
-              </div>
-              <div className="product-item">
-                <div className="frame-image w-100 d-flex justify-content-center">
-                  <img src="images/xview/paramount.png" title="" className="d-block img-fluid plataforma" alt="Plataforma - Paramount+" />
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="container-fluid p-0">
+        <h1 className="text-center title-tabs">
+          <img
+            src="../src/assets/images/servicios/tv-interactiva/xview-logo.png"
+            alt="Xview+"
+          />
+          <br />
+          <span className="fw-title-tabs">TV INTERACTIVA</span>
+        </h1>
+
+        {/* Componente de tabs reutilizable */}
+        <TabsComponent tabs={tabs} basePath="/xview" />
+
+        {/* Renderizamos el contenido de las subrutas */}
+         <div className="tab-content mt-4">
+          <Routes>
+            {/* Redirige a la tab inicial si no se especifica ninguna subruta */}
+            <Route path="/" element={<Navigate to="beneficios" />} />
+            <Route path="beneficios" element={<XVBeneficios />} />
+            <Route path="canales" element={<TVCanales />} />
+            <Route path="conoce-xview" element={<XVConoce />} />
+            <Route path="tutoriales" element={<XVTutoriales />} />
+          </Routes>
         </div>
-      </section>
+      </div>
     </>
   );
 };

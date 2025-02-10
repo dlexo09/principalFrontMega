@@ -43,10 +43,6 @@ const Canales = () => {
   return (
     <div className="container-fluid canales-container">
       <h2 className="text-center mb-4 title-canales">Canales</h2>
-      <p className="text-center text-canales">
-        Estamos llegando a tu ciudad... <br />
-        ¡Espéralo! a través de tu cuenta de Gmail.
-      </p>
       <div className="row">
         {/* Columna izquierda: Botones de categorías */}
         <div className="col-md-3 pe-xl-3 filtro-canales-content">
