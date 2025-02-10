@@ -1,7 +1,5 @@
-import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import './TabsComponent.css';
-import './Globales.css';
 
 const TabsComponent = ({ tabs, basePath }) => {
   const location = useLocation();

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
-import { LocationContext } from '../LocationContext';
+import { LocationContext } from '../LocationContext'; //
 import './PaquetesTarifarios.css';
 import './Globales.css';
 
