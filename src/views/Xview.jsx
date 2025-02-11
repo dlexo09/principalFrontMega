@@ -5,6 +5,7 @@ import XVBeneficios from "../components/XVBeneficios";
 import XVConoce from "../components/XVConoce";
 import XVTutoriales from "../components/XVTutoriales";
 import TVCanales from "../components/TVCanales";
+import XVFAQ from "../components/XVFAQ";
 import "../components/Globales.css";
 
 const Xview = () => {
@@ -13,6 +14,7 @@ const Xview = () => {
     { id: "conoce-xview", label: "Conoce Xview+" },
     { id: "tutoriales", label: "Tutoriales" },
     { id: "canales", label: "Canales" },
+    { id: "preguntas-frecuentes", label: "Preguntas Frecuentes" },
   ];
   return (
     <>
@@ -35,10 +37,17 @@ const Xview = () => {
             {/* Redirige a la tab inicial si no se especifica ninguna subruta */}
             <Route path="/" element={<Navigate to="beneficios" />} />
             <Route path="beneficios" element={<XVBeneficios />} />
-            <Route path="canales" element={<TVCanales />} />
             <Route path="conoce-xview" element={<XVConoce />} />
             <Route path="tutoriales" element={<XVTutoriales />} />
+            <Route path="preguntas-frecuentes" element={<XVFAQ />} />
           </Routes>
+
+          <div className="container">
+          <Routes>
+            {/* Redirige a la tab inicial si no se especifica ninguna subruta */}
+            <Route path="canales" element={<TVCanales />} />
+          </Routes>
+          </div>
         </div>
       </div>
     </>
