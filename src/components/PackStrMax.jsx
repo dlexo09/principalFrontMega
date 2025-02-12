@@ -5,14 +5,14 @@ import { LocationContext } from "../LocationContext";
 import "./Globales.css";
 import "./PackStrMax.css";
 
-const PackStrDisney = () => {
+const PackStrMax = () => {
   const { currentLocation } = useContext(LocationContext);
   const [paquetes, setPaquetes] = useState([]);
   const [selectedPack, setSelectedPack] = useState("triple");
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
   const [isCliente, setIsCliente] = useState(false); // Estado para "¿Eres cliente?"
   const promoValue = 60; // Definir la variable para el valor adicional
-  const [selectedPlan, setSelectedPlan] = useState("BasicoAnuncios"); // Estado para el plan seleccionado
+  const [selectedPlan, setSelectedPlan] = useState({});
 
   useEffect(() => {
     const fetchPaquetes = async () => {
@@ -23,12 +23,19 @@ const PackStrDisney = () => {
           );
           const data = await response.json();
           setPaquetes(data);
+  
+          // Inicializar el estado selectedPlan con "BasicoAnuncios" para cada paquete
+          const initialSelectedPlan = {};
+          data.forEach((paquete, i) => {
+            initialSelectedPlan[paquete.id || i] = "BasicoAnuncios"; // Usa el ID del paquete o el índice
+          });
+          setSelectedPlan(initialSelectedPlan);
         } catch (error) {
           console.error("Error fetching paquetes:", error);
         }
       }
     };
-
+  
     fetchPaquetes();
   }, [selectedPack, currentLocation]);
 
@@ -393,48 +400,53 @@ const PackStrDisney = () => {
                                 SELECCIONA TU PLAN
                               </p>
                               <div className="pack-str-content pack-str-netflix d-flex flex-column justify-content-center">
-                                <button
-                                  className={`max-btn-plan d-flex justify-content-center align-items-center pack-btn-str ${
-                                    selectedPlan === "BasicoAnuncios"
-                                      ? "max-btn-color"
-                                      : "pack-btn-inactive"
-                                  }`}
-                                  onClick={() =>
-                                    setSelectedPlan("BasicoAnuncios")
-                                  }
-                                >
-                                  
-                                  <p>
-                                    Básico con anuncios
-                                  </p>
-                                </button>
+                              <button
+            className={`max-btn-plan d-flex justify-content-center align-items-center pack-btn-str ${
+              selectedPlan[paquete.id || i] === "BasicoAnuncios"
+                ? "max-btn-color"
+                : "pack-btn-inactive"
+            }`}
+            onClick={() =>
+              setSelectedPlan((prevState) => ({
+                ...prevState,
+                [paquete.id || i]: "BasicoAnuncios",
+              }))
+            }
+          >
+            <p>Básico con anuncios</p>
+          </button>
 
-                                <button
-                                  className={`max-btn-plan d-flex justify-content-center align-items-center pack-btn-str ${
-                                    selectedPlan === "Estandar"
-                                      ? "max-btn-color"
-                                      : "pack-btn-inactive"
-                                  }`}
-                                  onClick={() => setSelectedPlan("Estandar")}
-                                >
-                                  
-                                  <p>
-                                    Estándar
-                                  </p>
-                                </button>
-                                <button
-                                  className={`max-btn-plan d-flex justify-content-center align-items-center pack-btn-str ${
-                                    selectedPlan === "Premium"
-                                      ? "max-btn-color"
-                                      : "pack-btn-inactive"
-                                  }`}
-                                  onClick={() => setSelectedPlan("Premium")}
-                                >
-                                 
-                                  <p>
-                                  PLATINO
-                                  </p>
-                                </button>
+          <button
+            className={`max-btn-plan d-flex justify-content-center align-items-center pack-btn-str ${
+              selectedPlan[paquete.id || i] === "Estandar"
+                ? "max-btn-color"
+                : "pack-btn-inactive"
+            }`}
+            onClick={() =>
+              setSelectedPlan((prevState) => ({
+                ...prevState,
+                [paquete.id || i]: "Estandar",
+              }))
+            }
+          >
+            <p>Estándar</p>
+          </button>
+
+          <button
+            className={`max-btn-plan d-flex justify-content-center align-items-center pack-btn-str ${
+              selectedPlan[paquete.id || i] === "Premium"
+                ? "max-btn-color"
+                : "pack-btn-inactive"
+            }`}
+            onClick={() =>
+              setSelectedPlan((prevState) => ({
+                ...prevState,
+                [paquete.id || i]: "Premium",
+              }))
+            }
+          >
+            <p>PLATINO</p>
+          </button>
                               </div>
                             </div>
                             <p className="card-text price-card">
@@ -542,4 +554,4 @@ const PackStrDisney = () => {
   );
 };
 
-export default PackStrDisney;
+export default PackStrMax;

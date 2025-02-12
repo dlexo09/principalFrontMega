@@ -1,0 +1,105 @@
+.xview-beneficios-container{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 150px;
+}
+.xview-beneficios-container-b {
+  gap: 30px;
+  padding-bottom: 100px;
+}
+.xview-beneficios-container-b .xview-beneficio{
+  width: 100%;
+  max-width: 500px;
+
+}
+.xview-beneficio{
+    background-color: var(--blue-gray);
+    border-radius: 20px;
+    
+    text-align: center;
+}
+.xview-beneficio img{
+    width: 100%;
+    max-width: 120px;
+}
+.xview-beneficio h3{
+    font-size: 20px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.xview-beneficios-container {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    gap: 16px;
+    grid-template-areas:
+      "xviewb-vod xviewb-voz xviewb-busqueda"
+      "xviewb-vod xviewb-pausa xviewb-pausa"
+      "xviewb-perfiles xviewb-appm xviewb-apps"
+      "xviewb-regresa xviewb-graba xviewb-apps";
+  }
+  
+  /* Asignar cada elemento a un área */
+  .xviewb-vod { grid-area: xviewb-vod; }
+  .xviewb-voz { grid-area: xviewb-voz; }
+  .xviewb-busqueda { grid-area: xviewb-busqueda; }
+  .xviewb-pausa { grid-area: xviewb-pausa; }
+  .xviewb-perfiles { grid-area: xviewb-perfiles; }
+  .xviewb-appm { grid-area: xviewb-appm; }
+  .xviewb-regresa { grid-area: xviewb-regresa; }
+  .xviewb-graba { grid-area: xviewb-graba; }
+  .xviewb-apps { grid-area: xviewb-apps; }
+
+
+  .xviewb-vod{
+    background-image: url(../assets/images/servicios/tv-interactiva/xview-vod-img.png);
+    background-position: 100% 105%;
+    background-size: 100%; 
+    background-repeat: no-repeat;
+  }
+  .xview-beneficio-content{
+    padding: 30px;
+  }
+  .xviewb-apps{
+    background-image: url(../assets/images/servicios/tv-interactiva/xviewb-apps-img.png);
+    background-position: -70px 95%;
+    background-size: 95%; 
+    background-repeat: no-repeat;
+  }
+  @media screen and (min-width:768px) and (max-width:991px) {
+    .xview-beneficios-container {
+    grid-template-columns:repeat(2, 1fr);;
+    grid-template-areas:
+      "xviewb-vod xviewb-voz"
+      "xviewb-busqueda xviewb-perfiles"
+      "xviewb-pausa xviewb-pausa"
+      "xviewb-appm xviewb-apps"
+      "xviewb-regresa xviewb-graba";
+  }
+  }
+  @media screen and (max-width:991px){
+    .xviewb-apps,  .xviewb-vod{
+        background-image: none;
+      }
+  }
+  @media screen and (max-width:767px){
+    .xview-beneficios-container {
+        grid-template-columns:repeat(1, 1fr);;
+        grid-template-areas:
+          "xviewb-vod"
+          "xviewb-voz"
+          "xviewb-busqueda"
+          "xviewb-perfiles"
+          "xviewb-pausa"
+          "xviewb-pausa"
+          "xviewb-appm"
+          "xviewb-apps"
+          "xviewb-regresa"
+          "xviewb-graba";
+      }
+      .xview-beneficios-container{
+        margin-bottom: 100px ;
+    }
+  }

@@ -1,0 +1,30 @@
+.content-txt-sm {
+    width:100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.content-title-sm{
+    width:100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.xview-container{
+    background-image: url(../src/assets/images/soporte/formas-de-pago/fdpago-wave.png);
+    background-position: center;
+    background-size: 100% 100%;
+    padding: 150px 0;
+}
+.xview-container-b{
+    background-image: url(../src/assets/images/soporte/formas-de-pago/fdpago-wave.png);
+    background-position: center;
+    background-size: 100% 100%;
+    padding: 100px 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+@media screen and (max-width:767px){
+    .xview-container, .xview-container-b{
+        background-image: url(../src/assets/images/home/waves-bg-1-movil.png);
+    }
+    
+}

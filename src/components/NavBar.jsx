@@ -70,7 +70,10 @@ const NavBar = () => {
               <a className="nav-link" aria-current="page" href="/fibra-optica">Fibra óptica y simetria</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">Xview+</a>
+              <a className="nav-link" aria-current="page" href="/xviewplus">Xview+</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" aria-current="page" href="/xview">TV Interactiva</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" aria-current="page" href="#">Mega móvil</a>

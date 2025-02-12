@@ -121,7 +121,8 @@
 .title-especial{
   line-height: 40px;
 }
-@media screen and (max-width:600px) {
+
+@media screen and (max-width:767px) {
   .tarifario-title{
     width: 200px;
     margin: 0 auto;
@@ -133,12 +134,18 @@
   .packs-terminos {
     margin-top: 40px;
 }
+.slider-gp{
+  padding: 30px 0;
+}
 }
 @media screen and (max-width: 1024px){
   .paquetes-tarifarios {
-    padding: 100px 20px;
+    padding: 100px 0px;
   
   }
-  
-  
+}
+@media screen and (max-width:374px) {
+  .slider-gp{
+    padding: 20px;
+  }
 }

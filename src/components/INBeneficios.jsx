@@ -8,11 +8,11 @@ import PaquetesTarifarios from "../components/PaquetesTarifarios"; // ImportaciÃ
 const INBeneficios = () => {
   return (
     <div className="container">
-      {/* Banner agregado */}
+
       <PaquetesTarifarios />
       <div className="text-center mt-5 mb-5">
             <h2 className="small-title-services">INTERNET</h2>
-            <h3 className="big-title-services">CONOCE Sus beneficios</h3>
+            <h3 className="big-title-services">Conoce los beneficios</h3>
             
         </div>
 

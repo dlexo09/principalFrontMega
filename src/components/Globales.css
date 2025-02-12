@@ -106,6 +106,8 @@ html, body{
     justify-content: center;
     gap: 10px;
     transition: background-color 0.2s ease-in-out;
+    text-decoration: none;
+    color: #000;
 }
 .btn-packs:hover, .btn-action:hover{
     background-color: #01c6bd;
@@ -176,6 +178,9 @@ html, body{
 }
 .fw-title-tabs{
     font-weight: 500;
+}
+.title-tabs img{
+    max-width: 350px;
 }
 
 /* Servicios */

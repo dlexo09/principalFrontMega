@@ -8,6 +8,7 @@ import Paquetes from './views/Paquetes';
 import Television from './views/Television';
 import TelefoniaIlimitada from './views/TelefoniaIlimitada';
 import Internet from './views/Internet';
+import XviewPlus from './views/XviewPlus';
 import Xview from './views/Xview';
 import FoxSports from './views/FoxSports';
 import AdultPack from './views/AdultPack';
@@ -37,7 +38,6 @@ function App() {
         <div style={{ marginTop: '0px' }}> {/* Ajusta el margen superior según sea necesario */}
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/xview" element={<Xview />} />
             <Route path="/foxSports" element={<FoxSports />} />
             <Route path="/adultPack" element={<AdultPack />} />
             <Route path="/mideVelocidad" element={<MideVelocidad />} />
@@ -56,6 +56,8 @@ function App() {
             <Route path="/paquetes/*" element={<Paquetes />} />
             <Route path="/ayuda/*" element={<Ayuda />} />
             <Route path="/fibra-optica/*" element={<FibraOptica />} />
+            <Route path="/xviewplus/*" element={<XviewPlus />} />
+            <Route path="/xview/*" element={<Xview />} />
         </Routes>
         </div>
         <Footer />

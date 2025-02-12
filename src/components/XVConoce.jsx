@@ -1,0 +1,53 @@
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
+import "./XVPConoce.css";
+import "./Globales.css";
+import "./BannerStreamingHome.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/navigation";
+import { EffectCoverflow, Navigation } from "swiper/modules";
+
+const XVConoce = () => {
+  return (
+    <>
+      <div className="container-fluid xview-container-b">
+        <div className="container">
+          <div className="row align-items-center">
+            <div className="col-xl-5 text-center text-xl-start">
+              <h3 className="small-title-services">Xview TV Interactiva</h3>
+              <h2 className="big-title-services">
+                Disfruta de una experiencia de TV interactiva
+              </h2>
+              <div className="d-block d-xl-none">
+                <img
+                  className="w-100"
+                  src="../src/assets/images/servicios/tv-interactiva/caja-xview.png"
+                  alt=""
+                />
+              </div>
+              <p className="mt-4">
+                Disfruta de tus contenidos favoritos con las funciones
+                interactivas de Xview. Pausa, regresa, reinicia o graba
+                cualquier programa en vivo en canales interactivos y accede a un
+                catálogo de series y películas On Demand sin costo adicional.
+              </p>
+            </div>
+
+            <div className="col-md-7 d-none d-xl-block">
+              <img
+                className="w-100"
+                src="../src/assets/images/servicios/tv-interactiva/caja-xview.png"
+                alt=""
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default XVConoce;

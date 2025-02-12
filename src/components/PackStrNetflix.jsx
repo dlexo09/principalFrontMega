@@ -5,14 +5,14 @@ import { LocationContext } from "../LocationContext";
 import "./Globales.css";
 import "./PackStrNetflix.css";
 
-const PackStrDisney = () => {
+const PackStrNetflix = () => {
   const { currentLocation } = useContext(LocationContext);
   const [paquetes, setPaquetes] = useState([]);
   const [selectedPack, setSelectedPack] = useState("triple");
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
   const [isCliente, setIsCliente] = useState(false); // Estado para "¿Eres cliente?"
   const promoValue = 60; // Definir la variable para el valor adicional
-  const [selectedPlan, setSelectedPlan] = useState("EstandarAnuncios"); // Estado para el plan seleccionado
+  const [selectedPlan, setSelectedPlan] = useState({});
 
   useEffect(() => {
     const fetchPaquetes = async () => {
@@ -23,12 +23,19 @@ const PackStrDisney = () => {
           );
           const data = await response.json();
           setPaquetes(data);
+  
+          // Inicializar el estado selectedPlan con "EstandarAnuncios" para cada paquete
+          const initialSelectedPlan = {};
+          data.forEach((paquete, i) => {
+            initialSelectedPlan[paquete.id || i] = "EstandarAnuncios"; // Usa el ID del paquete o el índice
+          });
+          setSelectedPlan(initialSelectedPlan);
         } catch (error) {
           console.error("Error fetching paquetes:", error);
         }
       }
     };
-
+  
     fetchPaquetes();
   }, [selectedPack, currentLocation]);
 
@@ -454,59 +461,67 @@ const PackStrDisney = () => {
                                 SELECCIONA TU PLAN
                               </p>
                               <div className="pack-str-content pack-str-netflix d-flex flex-column justify-content-center">
-                                <button
-                                  className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
-                                    selectedPlan === "EstandarAnuncios"
-                                      ? "netflix-btn-color"
-                                      : "pack-btn-inactive pack-btn-inactive-netflix"
-                                  }`}
-                                  onClick={() =>
-                                    setSelectedPlan("EstandarAnuncios")
-                                  }
-                                >
-                                  <span className="pi1-hd plans-netflix-icon"></span>
-                                  <p>
-                                    Estándar
-                                    <br />
-                                    con anuncios <br />
-                                    <span className="plans-netflix-tv">
-                                      2 Pantallas
-                                    </span>
-                                  </p>
-                                </button>
+                              <button
+            className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
+              selectedPlan[paquete.id || i] === "EstandarAnuncios"
+                ? "netflix-btn-color"
+                : "pack-btn-inactive pack-btn-inactive-netflix"
+            }`}
+            onClick={() =>
+              setSelectedPlan((prevState) => ({
+                ...prevState,
+                [paquete.id || i]: "EstandarAnuncios",
+              }))
+            }
+          >
+            <span className="pi1-hd plans-netflix-icon"></span>
+            <p>
+              Estándar
+              <br />
+              con anuncios <br />
+              <span className="plans-netflix-tv">2 Pantallas</span>
+            </p>
+          </button>
 
-                                <button
-                                  className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
-                                    selectedPlan === "Estandar"
-                                      ? "netflix-btn-color"
-                                      : "pack-btn-inactive pack-btn-inactive-netflix"
-                                  }`}
-                                  onClick={() => setSelectedPlan("Estandar")}
-                                >
-                                  <span className="pi2-2hd plans-netflix-icon"></span>
-                                  <p>
-                                    Estándar <br />
-                                    <span className="plans-netflix-tv">
-                                      2 Pantallas
-                                    </span>
-                                  </p>
-                                </button>
-                                <button
-                                  className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
-                                    selectedPlan === "Premium"
-                                      ? "netflix-btn-color"
-                                      : "pack-btn-inactive pack-btn-inactive-netflix"
-                                  }`}
-                                  onClick={() => setSelectedPlan("Premium")}
-                                >
-                                  <span className="pi3-4k plans-netflix-icon"></span>
-                                  <p>
-                                    Premium <br />
-                                    <span className="plans-netflix-tv">
-                                      2 Pantallas
-                                    </span>
-                                  </p>
-                                </button>
+          <button
+            className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
+              selectedPlan[paquete.id || i] === "Estandar"
+                ? "netflix-btn-color"
+                : "pack-btn-inactive pack-btn-inactive-netflix"
+            }`}
+            onClick={() =>
+              setSelectedPlan((prevState) => ({
+                ...prevState,
+                [paquete.id || i]: "Estandar",
+              }))
+            }
+          >
+            <span className="pi2-2hd plans-netflix-icon"></span>
+            <p>
+              Estándar <br />
+              <span className="plans-netflix-tv">2 Pantallas</span>
+            </p>
+          </button>
+
+          <button
+            className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
+              selectedPlan[paquete.id || i] === "Premium"
+                ? "netflix-btn-color"
+                : "pack-btn-inactive pack-btn-inactive-netflix"
+            }`}
+            onClick={() =>
+              setSelectedPlan((prevState) => ({
+                ...prevState,
+                [paquete.id || i]: "Premium",
+              }))
+            }
+          >
+            <span className="pi3-4k plans-netflix-icon"></span>
+            <p>
+              Premium <br />
+              <span className="plans-netflix-tv">2 Pantallas</span>
+            </p>
+          </button>
                               </div>
                             </div>
                             <p className="card-text price-card">
@@ -614,4 +629,4 @@ const PackStrDisney = () => {
   );
 };
 
-export default PackStrDisney;
+export default PackStrNetflix;
