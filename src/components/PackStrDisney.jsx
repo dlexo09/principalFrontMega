@@ -12,7 +12,15 @@ const PackStrDisney = () => {
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
   const [isCliente, setIsCliente] = useState(false); // Estado para "¿Eres cliente?"
   const promoValue = 60; // Definir la variable para el valor adicional
-  const [selectedPlan, setSelectedPlan] = useState("Estandar"); // Estado para el plan seleccionado
+
+  const [selectedPlan, setSelectedPlan] = useState({}); // Estado para el plan seleccionado
+  
+  const handlePlanChange = (paqueteId, plan) => {
+    setSelectedPlan(prevState => ({
+      ...prevState,
+      [paqueteId]: plan,
+    }));
+  };
 
   useEffect(() => {
     const fetchPaquetes = async () => {
@@ -23,12 +31,19 @@ const PackStrDisney = () => {
           );
           const data = await response.json();
           setPaquetes(data);
+  
+          // Inicializar el estado selectedPlan con "Estandar" para cada paquete
+          const initialSelectedPlan = {};
+          data.forEach((paquete, i) => {
+            initialSelectedPlan[paquete.id || i] = "Estandar"; // Usa el ID del paquete o el índice
+          });
+          setSelectedPlan(initialSelectedPlan);
         } catch (error) {
           console.error("Error fetching paquetes:", error);
         }
       }
     };
-
+  
     fetchPaquetes();
   }, [selectedPack, currentLocation]);
 
@@ -68,19 +83,21 @@ const PackStrDisney = () => {
         <h3 className="big-title mb-5">¿Ya eres cliente Mega?</h3>
         <div className="btn-container">
           <button
-            className={`pack-btn btn-lg mx-2 disney-cliente-btn ${isCliente
+            className={`pack-btn btn-lg mx-2 disney-cliente-btn ${
+              isCliente
                 ? "pack-btn-active disney-btn-color"
                 : "pack-btn-inactive"
-              }`}
+            }`}
             onClick={() => setIsCliente(true)}
           >
             Sí
           </button>
           <button
-            className={`pack-btn btn-lg mx-2 disney-cliente-btn ${!isCliente
+            className={`pack-btn btn-lg mx-2 disney-cliente-btn ${
+              !isCliente
                 ? "pack-btn-active disney-btn-color"
                 : "pack-btn-inactive "
-              }`}
+            }`}
             onClick={() => setIsCliente(false)}
           >
             No
@@ -228,7 +245,9 @@ const PackStrDisney = () => {
                                 src="../src/assets/icons/disney/strm-icon.png"
                                 alt="Icono Disney"
                               />
-                              <h3 className="pack-movile-title">{paquete.titulo}</h3>
+                              <h3 className="pack-movile-title">
+                                {paquete.titulo}
+                              </h3>
                               <div className="text-start">
                                 {paquete.contenido}{" "}
                                 {/* Renderiza el contenido JSX */}
@@ -271,7 +290,10 @@ const PackStrDisney = () => {
             </div>
           </div>
           <div className="pack-client-legal mt-5">
-            <p className="pt-lg-5">*Aplican restricciones. Consulta términos y condiciones <a href="#">aquí</a></p>
+            <p className="pt-lg-5">
+              *Aplican restricciones. Consulta términos y condiciones{" "}
+              <a href="#">aquí</a>
+            </p>
           </div>
 
           {/* **************** IS NOT CLIENT ************** */}
@@ -285,10 +307,11 @@ const PackStrDisney = () => {
           <div className="d-flex justify-content-center mb-3 btn-container">
             <button
               type="button"
-              className={`pack-btn ${selectedPack === "triple"
+              className={`pack-btn ${
+                selectedPack === "triple"
                   ? "pack-btn-active disney-btn-color"
                   : "pack-btn-inactive"
-                } btn-lg mx-2`}
+              } btn-lg mx-2`}
               onClick={() => setSelectedPack("triple")}
             >
               TRIPLE PACK
@@ -297,10 +320,11 @@ const PackStrDisney = () => {
             </button>
             <button
               type="button"
-              className={`pack-btn ${selectedPack === "doble"
+              className={`pack-btn ${
+                selectedPack === "doble"
                   ? "pack-btn-active disney-btn-color"
                   : "pack-btn-inactive"
-                } btn-lg mx-2`}
+              } btn-lg mx-2`}
               onClick={() => setSelectedPack("doble")}
             >
               DOBLE PACK
@@ -365,25 +389,24 @@ const PackStrDisney = () => {
                                 SELECCIONA TU PLAN
                               </p>
                               <div className="pack-str-content d-flex flex-column justify-content-center">
-                                <button
-                                  className={`pack-btn-str ${selectedPlan === "Estandar"
-                                      ? "disney-btn-color"
-                                      : "pack-btn-inactive"
-                                    }`}
-                                  onClick={() => setSelectedPlan("Estandar")}
-                                >
-                                  Estándar
-                                </button>
-                                <button
-                                  className={`pack-btn-str ${selectedPlan === "Premium"
-                                      ? "disney-btn-color"
-                                      : "pack-btn-inactive"
-                                    }`}
-                                  onClick={() => setSelectedPlan("Premium")}
-                                >
-                                  Premium
-                                </button>
-
+                              <button
+            className={`pack-btn-str ${selectedPlan[paquete.id || i] === "Estandar"
+                ? "disney-btn-color"
+                : "pack-btn-inactive"
+              }`}
+            onClick={() => handlePlanChange(paquete.id || i, "Estandar")}
+          >
+            Estándar
+          </button>
+          <button
+            className={`pack-btn-str ${selectedPlan[paquete.id || i] === "Premium"
+                ? "disney-btn-color"
+                : "pack-btn-inactive"
+              }`}
+            onClick={() => handlePlanChange(paquete.id || i, "Premium")}
+          >
+            Premium
+          </button>
                               </div>
                             </div>
                             <p className="card-text price-card">
@@ -419,10 +442,11 @@ const PackStrDisney = () => {
                             />
                           )}
                           <img
-                            className={`icon-card-packs telefonia-icon ${selectedPack === "doble"
+                            className={`icon-card-packs telefonia-icon ${
+                              selectedPack === "doble"
                                 ? "telefonia-icon-doble"
                                 : ""
-                              }`}
+                            }`}
                             src="../src/assets/icons/disney/telefonia-icon.png"
                             alt="Icono Telefonía"
                           />

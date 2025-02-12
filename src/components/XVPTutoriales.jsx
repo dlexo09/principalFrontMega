@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./XVTutoriales.css";
+import "./XVPTutoriales.css";
 import "./Globales.css";
 
 const funcionalidades = [
@@ -91,7 +91,7 @@ const funcionalidades = [
   },
 ];
 
-const XVTutoriales = () => {
+const XVPTutoriales = () => {
   const [videoActual, setVideoActual] = useState("");
   const [funcionalidadActiva, setFuncionalidadActiva] = useState("");
 
@@ -175,4 +175,4 @@ const XVTutoriales = () => {
   );
 };
 
-export default XVTutoriales;
+export default XVPTutoriales;

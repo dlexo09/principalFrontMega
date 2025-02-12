@@ -1,14 +1,11 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom"; // Importa Navigate
 import TabsComponent from "../components/TabsComponent";
-import TVConoceServicio from "../components/XVBeneficios";
-import TVCanales from "../components/TVCanales";
 import '../components/Globales.css';
 
 const Television = () => {
   const tabs = [
-    { id: "conoce-nuestro-servicio", label: "Conoce nuestro servicio" },
-    { id: "canales", label: "Canales" },
+    { id: "xviwe-o-tv-interactiva", label: "Xview o TV Interactiva" },
   ];
 
   return (
@@ -22,9 +19,8 @@ const Television = () => {
         <div className="tab-content mt-4">
           <Routes>
             {/* Redirige a la tab inicial si no se especifica ninguna subruta */}
-            <Route path="/" element={<Navigate to="conoce-nuestro-servicio" />} />
-            <Route path="conoce-nuestro-servicio" element={<TVConoceServicio />} />
-            <Route path="canales" element={<TVCanales />} />
+            <Route path="/" element={<Navigate to="xviwe-o-tv-interactiva" />} />
+
           </Routes>
         </div>
       </div>
