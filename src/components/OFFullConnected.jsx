@@ -1,14 +1,28 @@
-import React, { useState } from "react";
+import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./OFFullConnected.css";
 import "./Globales.css";
 
-const Card = ({ megas, velocidad, tvs, canales, precio, precioPromo, partners, mesh, onClick, isSpecial }) => (
+const Card = ({
+  megas,
+  velocidad,
+  tvs,
+  canales,
+  precio,
+  precioPromo,
+  partners,
+  mesh,
+  isSpecial,
+}) => (
   <div className="card-fch">
-    <div className={`card-header-fch ${isSpecial ? 'header-blue' : ''}`}>
+    <div className={`card-header-fch ${isSpecial ? "header-blue" : ""}`}>
       <p>&nbsp;</p>
-      <img className="megas-img" src={`../src/assets/images/oferta/full-connected/${megas}megas.png`} alt={`${megas} MEGAS`} />
+      <img
+        className="megas-img"
+        src={`../src/assets/images/oferta/full-connected/${megas}megas.png`}
+        alt={`${megas} MEGAS`}
+      />
       <p>DE VELOCIDAD</p>
     </div>
     <div className="card-body-fch">
@@ -30,7 +44,11 @@ const Card = ({ megas, velocidad, tvs, canales, precio, precioPromo, partners, m
       </div>
       <div className="card-content cards-partners">
         {partners.map((partner, index) => (
-          <img key={index} src={`../src/assets/images/oferta/full-connected/${partner}-logo.png`} alt={`${partner} Logo`} />
+          <img
+            key={index}
+            src={`../src/assets/images/oferta/full-connected/${partner}-logo.png`}
+            alt={`${partner} Logo`}
+          />
         ))}
       </div>
       <div className="card-content llamadas">
@@ -41,22 +59,31 @@ const Card = ({ megas, velocidad, tvs, canales, precio, precioPromo, partners, m
       <div className="card-price">
         <p className="price-text">POR SÓLO</p>
         <p className="price">
-          <span>$</span>{precio}<sup>*</sup>
+          <span>$</span>
+          {precio}
+          <sup>*</sup>
         </p>
         <p className="price-text">
-          {precioPromo ? <><b>${precioPromo}</b> AL MES X 6 MESES</> : <>AL MES <span>TARIFA FIJA</span></>}
+          {precioPromo ? (
+            <>
+              <b>${precioPromo}</b> AL MES X 6 MESES
+            </>
+          ) : (
+            <>
+              AL MES <span>TARIFA FIJA</span>
+            </>
+          )}
         </p>
       </div>
-    </div>
-    <div className="btn_pop">
-      <button className="btn_popup open-popup-btn" onClick={onClick}>¡Lo quiero!</button>
+
+      <div className="btn_pop">
+        <button className="btn_popup">¡Lo quiero!</button>
+      </div>
     </div>
   </div>
 );
 
 const OFFullConnected = () => {
-  const [showPopup, setShowPopup] = useState(false);
-
   const cardsData = [
     {
       megas: 1000,
@@ -66,8 +93,9 @@ const OFFullConnected = () => {
       precio: 1000,
       partners: ["max", "paramount"],
       mesh: "1 EXTENSOR",
-      isSpecial: true
+      isSpecial: true,
     },
+    /*
     {
       megas: 500,
       velocidad: "500 MEGAS",
@@ -86,13 +114,22 @@ const OFFullConnected = () => {
       precioPromo: 550,
       partners: ["paramount"]
     }
+      */
   ];
 
   return (
     <>
       <div className="container-fluid p-0 fc-banner-principal">
-        <img className="w-100 d-none d-md-block" src="../src/assets/images/oferta/full-connected/full-connected-banner.png" alt="" />
-        <img className="w-100 d-md-none" src="../src/assets/images/oferta/full-connected/banner-fch-movil.png" alt="" />
+        <img
+          className="w-100 d-none d-md-block"
+          src="../src/assets/images/oferta/full-connected/full-connected-banner.png"
+          alt=""
+        />
+        <img
+          className="w-100 d-md-none"
+          src="../src/assets/images/oferta/full-connected/banner-fch-movil.png"
+          alt=""
+        />
 
         <div className="bg-container">
           <div className="fc-cta-container d-flex justify-content-center align-items-center">
@@ -106,17 +143,40 @@ const OFFullConnected = () => {
           <div className="container cards-container">
             <div className="cards-title">
               <h2>Elige tu paquete</h2>
-              <img src="../src/assets/images/oferta/full-connected/fch-logo.png" alt="Full Connected Home Logo" />
+              <img
+                src="../src/assets/images/oferta/full-connected/fch-logo.png"
+                alt="Full Connected Home Logo"
+              />
             </div>
 
             <div className="cards-titles-container">
               <div className="cards-titles-content">
-                <h2>Internet</h2>
-                <h2 className="spc-title">TECNOLOGÍA</h2><br />
-                <h2>XVIEW+<br />TV<br />INTERACTIVE <br /><br /></h2>
-                <h2 className="spci-title">EXTENSOR<br />WIFI ULTRA</h2>
-                <h2 className="sp-title">APPS<br />INCLUIDAS</h2>
-                <h2 className="wth-border">TELEFONÍA<br />FIJA</h2>
+                <h2>INTERNET</h2>
+                <h2 className="spc-title">TECNOLOGÍA</h2>
+                <br />
+                <h2>
+                  XVIEW+
+                  <br />
+                  TV
+                  <br />
+                  INTERACTIVE <br />
+                  <br />
+                </h2>
+                <h2 className="spci-title">
+                  EXTENSOR
+                  <br />
+                  WIFI ULTRA
+                </h2>
+                <h2 className="sp-title">
+                  APPS
+                  <br />
+                  INCLUIDAS
+                </h2>
+                <h2 className="wth-border">
+                  TELEFONÍA
+                  <br />
+                  FIJA
+                </h2>
               </div>
               <div className="cards-titles-space"></div>
             </div>
@@ -124,7 +184,7 @@ const OFFullConnected = () => {
             {/* CARDS */}
             <div className="cards-content">
               {cardsData.map((card, index) => (
-                <Card key={index} {...card} onClick={() => setShowPopup(true)} />
+                <Card key={index} {...card} />
               ))}
             </div>
             <div className="cards-legal">
@@ -134,40 +194,19 @@ const OFFullConnected = () => {
                 términos y condiciones aquí.
               </p>
             </div>
-
-            {showPopup && (
-              <div id="popup" className={`popup ${showPopup ? 'show' : ''}`}>
-                <div className="popup-content">
-                  <span className="close-popup" onClick={() => setShowPopup(false)}>&times;</span>
-                  <div className="formContainer__pop">
-                    <form className="formulario__f formulario__pop miFormulario">
-                      <div className="label__f">
-                        <label htmlFor="phone">¡Quiero contratar!</label>
-                      </div>
-                      <div className="btn__f">
-                        <input
-                          type="text"
-                          placeholder="Tu teléfono"
-                          className="inp"
-                          aria-required="true"
-                          autoComplete="off"
-                          maxLength="14"
-                          id="phone"
-                          name="phone"
-                        />
-                        <button id="tel-megamovil-f" type="submit" className="enviarForm">¡Llámame!</button>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            )}
           </div>
 
-          <div id="fch-beneficios" className="fch-carousel-container carousel slide" data-bs-ride="carousel">
+          <div
+            id="fch-beneficios"
+            className="fch-carousel-container carousel slide"
+            data-bs-ride="carousel"
+          >
             <div className="carousel-inner">
               {[1, 2, 3].map((slide, index) => (
-                <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
+                <div
+                  key={index}
+                  className={`carousel-item ${index === 0 ? "active" : ""}`}
+                >
                   <img
                     src={`../src/assets/images/oferta/full-connected/full-connected_sl-${slide}.png`}
                     className="d-block w-100"
@@ -177,16 +216,32 @@ const OFFullConnected = () => {
               ))}
             </div>
 
-            <button className="carousel-control-prev control-prev-fch" type="button" data-bs-target="#fch-beneficios" data-bs-slide="prev">
-              <img src="../src/assets/icons/oferta/control-prev-fch.png" alt="Previous" />
+            <button
+              className="carousel-control-prev control-prev-fch"
+              type="button"
+              data-bs-target="#fch-beneficios"
+              data-bs-slide="prev"
+            >
+              <img
+                src="../src/assets/icons/oferta/control-prev-fch.png"
+                alt="Previous"
+              />
             </button>
-            <button className="carousel-control-next control-next-fch" type="button" data-bs-target="#fch-beneficios" data-bs-slide="next">
-              <img src="../src/assets/icons/oferta/control-next-fch.png" alt="Next" />
+            <button
+              className="carousel-control-next control-next-fch"
+              type="button"
+              data-bs-target="#fch-beneficios"
+              data-bs-slide="next"
+            >
+              <img
+                src="../src/assets/icons/oferta/control-next-fch.png"
+                alt="Next"
+              />
             </button>
           </div>
 
           <div className="text-center fc-cta-container-g">
-            <h3>¡QUIERO CONTRATAR!</h3>
+            <h3 className="mb-3">¡QUIERO CONTRATAR!</h3>
             <div className="fc-cta-container-b d-flex justify-content-center align-items-center">
               <form className="d-flex" action="">
                 <input type="tel" />
