@@ -17,7 +17,7 @@ const CallToActionHome = () => {
   };
 
   return (
-    <div className="call-to-action-home">
+    <div className="call-to-action-home" id="CallToActionHome">
       <form onSubmit={handleSubmit} className="d-flex align-items-center justify-content-center">
         <label className="text-white me-3">QUIERO CONTRATAR Y DESEO QUE ME LLAMEN</label>
         <input

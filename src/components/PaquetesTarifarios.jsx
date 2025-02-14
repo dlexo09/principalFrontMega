@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext'; //
 import './PaquetesTarifarios.css';
-import './Globales.css';
 
 const PaquetesTarifarios = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -27,6 +26,12 @@ const PaquetesTarifarios = () => {
 
     fetchPaquetes();
   }, [selectedPack, currentLocation]);
+
+  /* SELECT t1.*, t2.sucursalName, t3.nombreTipoPaquete 
+FROM `tarifario` AS t1
+LEFT JOIN sucursal AS t2 on t1.idSucursal = t2.idSucursal
+LEFT JOIN tipodepaquete AS t3 on t1.idTipoPaquete = t3.idTipoPaquete
+LEFT JOIN serviciocable AS t4 on t1.idServicioCable = t4.idServicioCable;*/
 
   // Función para actualizar el chunkSize según el tamaño de la pantalla
   const updateChunkSize = () => {

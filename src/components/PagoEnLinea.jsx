@@ -1,13 +1,10 @@
 import React from 'react';
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import './PagoEnLinea.css';
-import "./Globales.css";
 
 const PagoEnLinea = () => {
     return (
         <>
-            <div className="container-fluid pago-en-linea">
+            <div className="container-fluid pago-en-linea" id="PagoEnLinea">
                 <div className="container d-flex flex-column flex-lg-row align-items-center pago-en-linea-content">
                     <div className="pago-img order-2 order-lg-1 d-flex justify-content-center">
                         <img src="../src/assets/images/home/paga-en-linea-img.png" alt="" />
