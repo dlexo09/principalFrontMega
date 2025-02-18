@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useContext } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext'; //
 import './PaquetesTarifarios.css';
@@ -11,7 +10,12 @@ const PaquetesTarifarios = () => {
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
   const promoValue = 60; // Definir la variable para el valor adicional
 
+
+
   useEffect(() => {
+
+    console.log("Current Location:", currentLocation); // Imprimir el valor de currentLocation
+
     const fetchPaquetes = async () => {
       if (currentLocation) {
         try {
