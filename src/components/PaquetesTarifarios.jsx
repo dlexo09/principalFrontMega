@@ -65,7 +65,7 @@ LEFT JOIN serviciocable AS t4 on t1.idServicioCable = t4.idServicioCable;*/
   };
 
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
-  
+
   return (
     <div className="container paquetes-tarifarios text-center">
       <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
@@ -85,7 +85,7 @@ LEFT JOIN serviciocable AS t4 on t1.idServicioCable = t4.idServicioCable;*/
         >
           DOBLE PACK<br /><span>INTERNET + TELEFONÍA </span>
         </button>
-        
+
       </div>
       <div className="d-flex justify-content-center mb-3">
         <p>(Cliente nuevo)</p>
@@ -103,13 +103,13 @@ LEFT JOIN serviciocable AS t4 on t1.idServicioCable = t4.idServicioCable;*/
                       <p className="card-text tiempoVelocidadPromo">
                         x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
                       </p>
-                      
+
                       <p>
-                            <img
-                              src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
-                              alt="IncluyeExtensor Wifi Ultra"
-                              style={{ height: '30px' }}
-                            />
+                        <img
+                          src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
+                          alt="IncluyeExtensor Wifi Ultra"
+                          style={{ height: '30px' }}
+                        />
                       </p>
 
                       {paquete.archivo && (
@@ -168,6 +168,15 @@ LEFT JOIN serviciocable AS t4 on t1.idServicioCable = t4.idServicioCable;*/
             </div>
           ))}
         </div>
+
+        <div className="d-flex justify-content-center mb-3">
+          <br />
+          <p>
+            <img src="../src/assets/images/home/full_connected_home.png" alt="Full Connected" class="img-fluid fullconnect-img" />
+          </p>
+          
+        </div>
+
         <div className="container packs-terminos">
           <p className="promo-xview">
             Incluyen <span>más de 30,000 hrs de contenido</span> en Xview+
