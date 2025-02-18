@@ -8,12 +8,13 @@ const PaquetesTarifarios = () => {
   const [paquetes, setPaquetes] = useState([]);
   const [selectedPack, setSelectedPack] = useState('triple');
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
+  const [fullConnectedData, setFullConnectedData] = useState([]);
   const promoValue = 60; // Definir la variable para el valor adicional
+  const idSucursal = currentLocation?.idSucursal; // Obtener el idSucursal de currentLocation
 
-
+  console.log("ID sucursal", idSucursal); // Imprimir el valor de idSucursal
 
   useEffect(() => {
-
     console.log("Current Location:", currentLocation); // Imprimir el valor de currentLocation
 
     const fetchPaquetes = async () => {
@@ -31,13 +32,20 @@ const PaquetesTarifarios = () => {
     fetchPaquetes();
   }, [selectedPack, currentLocation]);
 
-  /* SELECT t1.*, t2.sucursalName, t3.nombreTipoPaquete 
-FROM `tarifario` AS t1
-LEFT JOIN sucursal AS t2 on t1.idSucursal = t2.idSucursal
-LEFT JOIN tipodepaquete AS t3 on t1.idTipoPaquete = t3.idTipoPaquete
-LEFT JOIN serviciocable AS t4 on t1.idServicioCable = t4.idServicioCable;*/
+  useEffect(() => {
+    const fetchFullConnectedData = async () => {
+      try {
+        const response = await fetch(`${serverAPILambda}api/fullConnected`);
+        const data = await response.json();
+        setFullConnectedData(data);
+      } catch (error) {
+        console.error('Error fetching full connected data:', error);
+      }
+    };
 
-  // Función para actualizar el chunkSize según el tamaño de la pantalla
+    fetchFullConnectedData();
+  }, []);
+
   const updateChunkSize = () => {
     if (window.innerWidth < 768) {
       setChunkSize(1); // 1 tarjeta en pantallas pequeñas
@@ -66,6 +74,8 @@ LEFT JOIN serviciocable AS t4 on t1.idServicioCable = t4.idServicioCable;*/
 
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
 
+  const isFullConnectedVisible = fullConnectedData.some(item => item.idSucursal === idSucursal && item.status === 1);
+
   return (
     <div className="container paquetes-tarifarios text-center">
       <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
@@ -85,7 +95,6 @@ LEFT JOIN serviciocable AS t4 on t1.idServicioCable = t4.idServicioCable;*/
         >
           DOBLE PACK<br /><span>INTERNET + TELEFONÍA </span>
         </button>
-
       </div>
       <div className="d-flex justify-content-center mb-3">
         <p>(Cliente nuevo)</p>
@@ -169,13 +178,17 @@ LEFT JOIN serviciocable AS t4 on t1.idServicioCable = t4.idServicioCable;*/
           ))}
         </div>
 
-        <div className="d-flex justify-content-center mb-3">
-          <br />
-          <p>
-            <img src="../src/assets/images/home/full_connected_home.png" alt="Full Connected" class="img-fluid fullconnect-img" />
-          </p>
-          
-        </div>
+        {isFullConnectedVisible && (
+          <div className="d-flex justify-content-center mb-3" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
+            <p>
+              <img
+                src="../src/assets/images/home/full_connected_home.png"
+                alt="Full Connected"
+                className="img-fluid fullconnect-img"
+              />
+            </p>
+          </div>
+        )}
 
         <div className="container packs-terminos">
           <p className="promo-xview">
