@@ -1,8 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./VentajasInternetMega.css";
-import './Globales.css'
 
 const VentajasInternetMega = () => {
     return (

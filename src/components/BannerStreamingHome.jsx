@@ -1,13 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Navigation } from 'swiper/modules';
+import { serverAPILambda } from '../config'; // Importar serverAPIUrl
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation'; // Importar estilos de navegación
-import { EffectCoverflow, Navigation } from 'swiper/modules';
-
 import './BannerStreamingHome.css';
 
 const BannerStreamingHome = () => {
+  const [cards, setCards] = useState([]);
+
+  useEffect(() => {
+    const fetchCards = async () => {
+      try {
+        const response = await fetch(`${serverAPILambda}api/cardStreaming`);
+        const data = await response.json();
+        const currentDate = new Date();
+
+        const filteredCards = data.filter(card => {
+          const fhInicio = new Date(card.fhInicio);
+          const fhFin = new Date(card.fhFin);
+          return card.status === 1 && currentDate >= fhInicio && currentDate <= fhFin;
+        });
+
+        setCards(filteredCards);
+      } catch (error) {
+        console.error('Error fetching card streaming data:', error);
+      }
+    };
+
+    fetchCards();
+  }, []);
+
+  const slidesPerView = cards.length < 3 ? cards.length : 3;
+  const loop = cards.length >= 3;
+
   return (
     <>
       <div className="banner-streaming-home text-center">
@@ -23,8 +50,8 @@ const BannerStreamingHome = () => {
           effect={'coverflow'}
           grabCursor={true}
           centeredSlides={true} 
-          loop={true}
-          slidesPerView={3} 
+          loop={loop}
+          slidesPerView={slidesPerView} 
           spaceBetween={-60} 
           navigation={{
             nextEl: '.swiper-button-next',
@@ -45,55 +72,33 @@ const BannerStreamingHome = () => {
               spaceBetween: 0,
             },
             768: {
-              slidesPerView: 3,
+              slidesPerView: slidesPerView,
               spaceBetween: -200,
             },
             1440: {
-              slidesPerView: 3,
+              slidesPerView: slidesPerView,
               spaceBetween: -60,
             },
           }}
         >
-          <SwiperSlide>
-            <div className="swiper-img-container netflix-item">
-              <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                <img src="../src/assets/images/home/netflix-logo.png" alt="Netflix" />
-                <a href="/ActivaCuentaNetflix" className="hidden-button btn-action">Activar ahora</a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="swiper-img-container disney-item">
-              <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                <img src="../src/assets/images/home/disney-logo.png" alt="Disney" />
-                <a href="/ActivaCuentaDisney" className="hidden-button btn-action">Activar ahora</a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="swiper-img-container paramount-item">
-              <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                <img src="../src/assets/images/home/paramount-logo.png" alt="Paramount" />
-                <a href="/ActivaCuentaParamount" className="hidden-button btn-action">Activar ahora</a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="swiper-img-container prime-item">
-              <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                <img src="../src/assets/images/home/prime-logo.png" alt="Prime" />
-                <a href="/ActivaCuentaAmazonPrime" className="hidden-button btn-action">Activar ahora</a>
-              </div>
-            </div>
-          </SwiperSlide>
-          <SwiperSlide>
-            <div className="swiper-img-container max-item">
-              <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                <img src="../src/assets/images/home/max-logo.png" alt="Max" />
-                <a href="/ActivaCuentaMax" className="hidden-button btn-action">Activar ahora</a>
-              </div>
-            </div>
-          </SwiperSlide>
+          {cards.map(card => {
+            const backgroundStyle = card.backgroundCard
+              ? { backgroundColor: card.backgroundCard }
+              : card.backgroundImageCard
+              ? { backgroundImage: `url(../src/assets/images/home/${card.backgroundImageCard})` }
+              : { backgroundColor: '#000' };
+
+            return (
+              <SwiperSlide key={card.idCardStreaming}>
+                <div className="swiper-img-container" style={backgroundStyle}>
+                  <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
+                    <img src={`../src/assets/images/home/${card.logoCard}`} alt={card.nameCard} />
+                    <a href={card.linkButton} className="hidden-button btn-action">{card.textButton}</a>
+                  </div>
+                </div>
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
 
         {/* Botones de navegación */}

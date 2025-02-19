@@ -31,8 +31,8 @@ const Home = () => {
     <>
       {seccionesActivas.includes('BannerHome') && <BannerHome />}
       {seccionesActivas.includes('CallToActionHome') && <CallToActionHome />}
-      {seccionesActivas.includes('PagoEnLinea') && <PagoEnLinea />}
       {seccionesActivas.includes('PaquetesTarifarios') && <PaquetesTarifarios />}
+      {seccionesActivas.includes('PagoEnLinea') && <PagoEnLinea />}
       {seccionesActivas.includes('MegaMovil') && <MegaMovil />}
       {seccionesActivas.includes('VentajasInternetMega') && <VentajasInternetMega />}
       {seccionesActivas.includes('BannerStreamingHome') && <BannerStreamingHome />}
