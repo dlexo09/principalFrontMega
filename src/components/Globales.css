@@ -83,7 +83,11 @@ html, body{
     font-size: 18px;
     font-weight: 600;
 }
-
+.big-title-container-sm{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
 /* Botones */
 .btn-packs{
