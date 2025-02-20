@@ -58,7 +58,7 @@ const BannerStreamingHome = () => {
             <div className="swiper-img-container netflix-item">
               <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
                 <img src="../src/assets/images/home/netflix-logo.png" alt="Netflix" />
-                <a href="/ActivaCuentaNetflix" className="hidden-button btn-action">Activar ahora</a>
+                <a href="/netflix" className="hidden-button btn-action">¡Contrátalo ahora!</a>
               </div>
             </div>
           </SwiperSlide>
@@ -66,7 +66,7 @@ const BannerStreamingHome = () => {
             <div className="swiper-img-container disney-item">
               <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
                 <img src="../src/assets/images/home/disney-logo.png" alt="Disney" />
-                <a href="/ActivaCuentaDisney" className="hidden-button btn-action">Activar ahora</a>
+                <a href="/disneyplus" className="hidden-button btn-action">¡Contrátalo ahora!</a>
               </div>
             </div>
           </SwiperSlide>
@@ -74,7 +74,7 @@ const BannerStreamingHome = () => {
             <div className="swiper-img-container paramount-item">
               <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
                 <img src="../src/assets/images/home/paramount-logo.png" alt="Paramount" />
-                <a href="/ActivaCuentaParamount" className="hidden-button btn-action">Activar ahora</a>
+                <a href="/paramount+" className="hidden-button btn-action">¡Conócelo ahora!</a>
               </div>
             </div>
           </SwiperSlide>
@@ -82,7 +82,7 @@ const BannerStreamingHome = () => {
             <div className="swiper-img-container prime-item">
               <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
                 <img src="../src/assets/images/home/prime-logo.png" alt="Prime" />
-                <a href="/ActivaCuentaAmazonPrime" className="hidden-button btn-action">Activar ahora</a>
+                <a href="/amazon" className="hidden-button btn-action">¡Contrátalo ahora!</a>
               </div>
             </div>
           </SwiperSlide>
@@ -90,10 +90,11 @@ const BannerStreamingHome = () => {
             <div className="swiper-img-container max-item">
               <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
                 <img src="../src/assets/images/home/max-logo.png" alt="Max" />
-                <a href="/ActivaCuentaMax" className="hidden-button btn-action">Activar ahora</a>
+                <a href="/max" className="hidden-button btn-action">¡Contrátalo ahora!</a>
               </div>
             </div>
           </SwiperSlide>
+          
         </Swiper>
 
         {/* Botones de navegación */}

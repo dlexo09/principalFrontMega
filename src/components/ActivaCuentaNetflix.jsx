@@ -17,7 +17,7 @@ const ActivaCuentaNetflix = () => {
                     <h3 className='d-none d-md-block title-strm-disney'>¿Ya contrataste <span>Netflix?</span></h3>
                     <p className='active-strm-p d-none d-xl-block'>Activa tu cuenta ahora y disfruta de<br />todo el contenido</p>
                     <p className='active-strm-p d-xl-none'>Activa tu cuenta ahora y disfruta de todo el contenido</p>
-                    <button className='btn-active-streaming btn-active-netflix mt-3'>Activa tu cuenta <span className='open-page-wh'></span></button>
+                    <a href='activa-netflix' className='btn-active-streaming btn-active-netflix mt-3'>Activa tu cuenta <span className='open-page-wh'></span></a>
                 </div>
 
             </div>

@@ -54,6 +54,9 @@ p, h1, h2, h3{
 html, body{
     overflow-x: hidden !important;
 }
+a{
+    text-decoration: none;
+}
 
 /*Titulos*/
 .small-title{
