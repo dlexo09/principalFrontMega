@@ -1,7 +1,7 @@
 import React from 'react';
 import '../components/Globales.css';
 import './ActivarCuenta.css';
-import '../components/ActivaCuentaNetflix.css';
+
 
 const ActivarCuenta = ({ title, children }) => {
   return (
