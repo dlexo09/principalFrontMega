@@ -179,7 +179,7 @@ const PaquetesTarifarios = () => {
         </div>
 
         {isFullConnectedVisible && (
-          <div className="d-flex justify-content-center mb-3" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
+          <div className="d-flex justify-content-center mb-3">
             <p>
               <img
                 src="../src/assets/images/home/full_connected_home.png"
