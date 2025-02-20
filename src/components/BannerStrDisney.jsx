@@ -14,7 +14,7 @@ const BannerStrDisney = () => {
                     </div>
 
                     <div className="streaming-title text-white ps-md-4 ps-lg-5 mt-4 mt-md-2 mt-xl-4">
-                        <h2>Todo esto y más <br /> ya disponible</h2>
+                        <h1>Todo esto y más <br /> ya disponible</h1>
                     </div>
 
                     <div className="streaming-contratar ps-md-4 ps-lg-5 mt-5 mt-md-4 mt-xl-5">

@@ -14,7 +14,7 @@ const BannerStrNetflix = () => {
                     </div>
 
                     <div className="streaming-title text-white mt-4 mt-md-3 mt-lg-4 mt-xl-5">
-                        <h2>Películas y series ilimitadas y mucho más</h2>
+                        <h1>Películas y series ilimitadas y mucho más</h1>
                     </div>
 
                     <div className="streaming-contratar mt-5 mt-md-4 mt-xl-5">

@@ -14,7 +14,7 @@ const BannerStrMax = () => {
                     </div>
 
                     <div className="streaming-title text-white mt-4 mt-md-3 mt-lg-4 mt-xl-5">
-                        <h2>mucho más que ver</h2>
+                        <h1>mucho más que ver</h1>
                     </div>
 
                     <div className="streaming-contratar mt-5 mt-md-4 mt-xl-5">
