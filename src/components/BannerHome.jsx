@@ -63,7 +63,7 @@ const BannerHome = () => {
               <div className="container g-4 g-md-0 row text-white d-flex justify-content-center justify-content-md-betwwen align-items-center banner-sup-container">
                 {/* Columna Izquierda: Texto */}
                 <div className="col-md-4 text-column order-2 order-md-1 text-center text-md-start">
-                  <h2 className="mb-3 secondary-title banner-title">{`${banner.title}`}</h2>
+                  <h1 className="mb-3 secondary-title banner-title">{`${banner.title}`}</h1>
                   <div className="mt-4 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
                     <a href={`${banner.linkButton}`} className="btn-action pe-5 ps-5">{`${banner.textButton}`}</a>
                     </div>

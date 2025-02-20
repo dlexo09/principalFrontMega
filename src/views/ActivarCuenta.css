@@ -1,0 +1,110 @@
+.pda-info-card {
+    background-color: #E7EEF7;
+    border-radius: 50px;
+    width: 100%;
+    padding: 30px;
+    display: flex;
+    column-gap: 20px;
+    row-gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.pda-info-content {
+    position: relative;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 40px 20px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 380px;
+}
+
+.pda-info-content span {
+    background-color: #C2D4EA;
+    padding: 5px 15px;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 50px;
+    position: absolute;
+    top: -30px;
+    left: 25px;
+    border: 8px solid #E7EEF7;
+}
+.activar-cuenta-container{
+    background-image: url(../assets/images/home/waves-bg-1.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 50px;
+   padding-top: 50px;
+   padding-bottom: 150px;
+}
+.activar-cuenta-logo img{
+    width: 100%;
+    max-width: 350px;
+}
+.activar-cuenta_form{
+    background-color: #fff;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 25px;
+}
+.activar-cuenta_form form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    row-gap: 20px;
+    width: 100%;
+}
+.activar-cuenta_input img{
+    width: 100%;
+    max-width: 30px;
+
+}
+.activar-cuenta_input{
+    border: 2px solid #3a67fb3b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+.activar-cuenta_input:focus-within{
+    border: 2px solid #3a67fb !important;
+}
+.activar-cuenta_input input{
+    width: 90%;
+    padding: 15px;
+    border: none;
+    outline: none;
+}
+.activar-cuenta_tutorial{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding-bottom: 100px;
+}
+
+.activar-cuenta_tutorial iframe{
+    width: 100%;
+    height: 500px;
+    border-radius: 50px;
+}
+
+@media screen and (max-width: 767px){
+    .activar-cuenta-container{
+        background-image: url(../assets/images/general/wave-sht-general-movil.png);
+    }
+    .pasos-atc-button span{
+        width: 30px;
+        height: 20px;
+    }
+    .activar-cuenta_tutorial iframe{
+        height: 300px;
+    }
+    
+}

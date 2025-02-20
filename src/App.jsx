@@ -30,6 +30,9 @@ import AmazonPrime from './views/AmazonPrime';
 import Paramount from './views/Paramount';
 import FibraOptica from './views/FibraOptica';
 import Ayuda from './views/Ayuda';
+import ActivaNetflix from './views/ActivaNetflix';
+import ActivaAmazon from './views/ActivaAmazon';
+import ActivaDisneyplus from './views/ActivaDisneyplus';
 import { LocationProvider } from './LocationContext';
 import './App.css';
 
@@ -62,6 +65,9 @@ function App() {
             <Route path="/fibra-optica/*" element={<FibraOptica />} />
             <Route path="/xviewplus/*" element={<XviewPlus />} />
             <Route path="/xview/*" element={<Xview />} />
+            <Route path="/activa-netflix" element={<ActivaNetflix />} />
+            <Route path="/activa-amazon" element={<ActivaAmazon />} />
+            <Route path="/activa-disneyplus" element={<ActivaDisneyplus/>} />
         </Routes>
         </div>
         <Footer />
