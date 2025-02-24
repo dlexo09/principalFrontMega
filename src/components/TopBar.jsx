@@ -1,6 +1,4 @@
 import React, { useEffect, useState, useContext } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./TopBar.css";
 import { serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from "../LocationContext"; // Ajusta la ruta según la ubicación de tu archivo LocationContext.js
@@ -17,7 +15,27 @@ const TopBar = () => {
           const data = await response.json();
           setLocations(data);
           if (data.length > 0 && !currentLocation) {
-            setCurrentLocation(data[0]);
+            // Obtener la ubicación del usuario
+            if (navigator.geolocation) {
+              navigator.geolocation.getCurrentPosition((position) => {
+                const userLat = position.coords.latitude;
+                const userLng = position.coords.longitude;
+
+                // Calcular la distancia entre la ubicación del usuario y cada sucursal
+                const closestLocation = data.reduce((prev, curr) => {
+                  const prevDistance = getDistance(userLat, userLng, prev.latitud, prev.longitud);
+                  const currDistance = getDistance(userLat, userLng, curr.latitud, curr.longitud);
+                  return prevDistance < currDistance ? prev : curr;
+                });
+
+                setCurrentLocation(closestLocation);
+              }, (error) => {
+                console.error("Error getting user location:", error);
+                setCurrentLocation(data[0]);
+              });
+            } else {
+              setCurrentLocation(data[0]);
+            }
           }
         } catch (error) {
           console.error("Error fetching locations:", error);
@@ -33,6 +51,20 @@ const TopBar = () => {
       (location) => location.sucursalName === e.target.value
     );
     setCurrentLocation(selectedLocation);
+  };
+
+  // Función para calcular la distancia entre dos puntos usando la fórmula de Haversine
+  const getDistance = (lat1, lng1, lat2, lng2) => {
+    const toRad = (value) => (value * Math.PI) / 180;
+    const R = 6371; // Radio de la Tierra en km
+    const dLat = toRad(lat2 - lat1);
+    const dLng = toRad(lng2 - lng1);
+    const a =
+      Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
+      Math.sin(dLng / 2) * Math.sin(dLng / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+    return R * c; // Distancia en km
   };
 
   return (
@@ -51,7 +83,7 @@ const TopBar = () => {
             </div>
 
             <ul className="top-bar-ubicacion d-flex align-items-center">
-            <p className="text-light">Cambiar ubicación:</p>
+              <p className="text-light">Cambiar ubicación:</p>
               <li className="nav-item">
                 <button
                   type="button"
