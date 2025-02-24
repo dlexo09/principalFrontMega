@@ -1,6 +1,6 @@
 import BannerStrParamount from '../components/BannerStrParamount';
 import DestacadoStrParamount from '../components/DestacadoStrParamount';
-import PackStrParamount from '../components/PackStrParamount';
+import ParamountBeneficios from '../components/ParamountBeneficios';
 import ActivaCuentaParamount from '../components/ActivaCuentaParamount';
 
 const Paramount = () => {
@@ -8,7 +8,7 @@ const Paramount = () => {
         <>
             <BannerStrParamount />
             <DestacadoStrParamount />
-            <PackStrParamount />
+            <ParamountBeneficios />
             <ActivaCuentaParamount />
         </>
 

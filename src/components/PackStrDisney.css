@@ -107,11 +107,7 @@ color: var(--disney-color) !important;
     font-size: 16px;
     margin-bottom: 30px;
 }
-.btn-pack-movil{
-    position: absolute;
-    bottom: -40px;
-    left: 18px;
-}
+
 @media screen and (max-width:767px) {
     #carouselClienteMobile .carousel-control-prev-icon, #carouselClienteMobile .carousel-control-next-icon{
         border-radius: 50px;
@@ -122,9 +118,6 @@ color: var(--disney-color) !important;
     }
     #carouselClienteMobile .next-icon-disney{
         background-color: var(--disney-color);
-    }
-    .btn-pack-movil{
-        left: 12px;
     }
 }
 @media screen and (min-width: 992px) and (max-width: 1199px){

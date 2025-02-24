@@ -10,7 +10,7 @@ import '../components/Globales.css';
 
 const Internet = () => {
   const tabs = [
-    { id: "beneficios", label: "Oferta y beneficios" },
+    { id: "beneficios", label: "beneficios" },
     { id: "mide-tu-velocidad", label: "Mide tu velocidad" },
     { id: "zona-wifi", label: "Zona Wifi" },
     { id: "wifi-ultra", label: "Extensor Wifi" },

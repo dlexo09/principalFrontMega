@@ -18,7 +18,7 @@ const BannerStrParamount = () => {
                     </div>
 
                     <div className="streaming-contratar mt-5 mt-md-4 mt-xl-5">
-                        <button className='btn-contratar-str-paramount btn-streaming'>Contratar</button>
+                        <a href='activa-paramount+' className='btn-contratar-str-paramount btn-streaming'>Activa tu cuenta</a>
                     </div>
                 </div>
                 <div className="col-md-7 col-xl-6 order-1 order-md-2">

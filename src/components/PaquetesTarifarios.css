@@ -110,13 +110,13 @@
   top: 35px;
 }
 .tv-icon{
-  top: 160px;
+  top: 200px;
 }
 .telefonia-icon{
-  top: 265px;
+  top: 320px;
 }
 .telefonia-icon-doble {
-  top: 130px; /* Ajusta la posición según sea necesario */
+  top: 195px; /* Ajusta la posición según sea necesario */
 }
 .title-especial{
   line-height: 40px;
@@ -126,6 +126,17 @@
   max-width: 500px;
   padding-top: 70px;
 }
+.full-connected-container{
+  position: relative;
+}
+.full-connected-container button{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 270px;
+}
+
 
 @media screen and (max-width:767px) {
   .tarifario-title{

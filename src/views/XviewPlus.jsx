@@ -10,7 +10,7 @@ import "../components/Globales.css";
 
 const Xview = () => {
   const tabs = [
-    { id: "beneficios", label: "Oferta y Beneficios" },
+    { id: "beneficios", label: "Beneficios" },
     { id: "conoce-xviewplus", label: "Conoce Xview+" },
     { id: "tutoriales", label: "Tutoriales" },
     { id: "canales", label: "Canales" },

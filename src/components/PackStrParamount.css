@@ -116,11 +116,7 @@
         font-size: 16px;
         margin-bottom: 30px;
     }
-    .btn-pack-movil{
-        position: absolute;
-        bottom: -40px;
-        left: 18px;
-    }
+
     .membresia-paramount{
         background-color: var(--paramount-color);
         border-radius: 50px;
@@ -193,9 +189,6 @@
         #carouselClienteMobile .next-icon-disney{
             background-color: var(--disney-color);
         }
-        .btn-pack-movil{
-            left: 12px;
-        }
         .prime-btn-contrata{
            width: 50%;
            padding: 10px;
@@ -207,6 +200,11 @@
         }
         .plans-contrata-prime img{
             width: 100%;
+        }
+    }
+    @media screen and (max-width: 1023px){
+        .paramount-programs{
+            margin-bottom: 100px;
         }
     }
     

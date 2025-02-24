@@ -3,15 +3,11 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./TIBeneficios.css";
 import "./Globales.css";
-import PaquetesTarifarios from "../components/PaquetesTarifarios"; // Importación
 
 const TIBeneficios = () => {
   return (
     <>
-    <PaquetesTarifarios />
-    
-    
-    <div className="d-flex flex-column align-items-center beneficios-serv-container">
+    <div className="d-flex flex-column align-items-center beneficios-serv-container general-tabs-container">
       <div className="text-center">
         <h3 className="small-title-services">Telefonía ilimitada</h3>
         <h2 className="big-title-services">Conoce los beneficios</h2>

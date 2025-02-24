@@ -9,15 +9,15 @@ const ActivaCuentaParamount = () => {
             <div className="container row d-flex align-items-center">
                 <div className="col-md-6 col-xl-7">
                     <p className='text-center d-md-none active-strm-paramount'><span>Para toda la familia</span></p>
-                    <h3 className='text-center title-strm-prime d-md-none mb-5'>¿Ya contrataste <span>Paramount+?</span></h3>
+                    <h3 className='text-center title-strm-prime d-md-none mb-5'>¡Ya tienes <span>Paramount+</span> Cortesia de <span>Mega!</span></h3>
                     <img className='w-100 mb-5 mb-md-0' src="../src/assets/images/streamings/paramount/paramount-pc-img.png" alt="" />
                 </div>
                 <div className="col-md-6 col-xl-5 contrata-streaming">
                     <p className='d-none d-md-block active-strm-paramount'><span>Para toda la familia</span></p>
-                    <h3 className='d-none d-md-block title-strm-paramount'>¿Ya contrataste <span>Paramount+?</span></h3>
+                    <h3 className='d-none d-md-block title-strm-paramount'>¡Ya tienes <span>Paramount+</span> Cortesia de <span>Mega!</span></h3>
                     <p className='active-strm-p d-none d-xl-block'>Activa tu cuenta ahora y disfruta de<br />todo el contenido</p>
                     <p className='active-strm-p d-xl-none'>Activa tu cuenta ahora y disfruta de todo el contenido</p>
-                    <button className='btn-active-streaming btn-active-prime mt-3'>Activa tu cuenta <span className='open-page-wh'></span></button>
+                    <a href='activa-paramount+' className='btn-active-streaming btn-active-paramount mt-3'>Activa tu cuenta <span className='open-page-wh'></span></a>
                 </div>
             </div>
         </div>

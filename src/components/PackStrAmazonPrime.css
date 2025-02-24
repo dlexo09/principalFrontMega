@@ -110,11 +110,6 @@
         font-size: 16px;
         margin-bottom: 30px;
     }
-    .btn-pack-movil{
-        position: absolute;
-        bottom: -40px;
-        left: 18px;
-    }
     .membresia-prime{
         background-color: var(--prime-color);
         border-radius: 50px;
@@ -134,7 +129,7 @@
     .prime-btn-contrata{
         left: 50%;
         transform: translateX(-50%);
-        padding: 10px 100px;
+        padding: 10px 0;
         position: absolute;
         bottom: -30px;
     }
@@ -174,13 +169,15 @@
         #carouselClienteMobile .next-icon-disney{
             background-color: var(--disney-color);
         }
-        .btn-pack-movil{
-            left: 12px;
-        }
         .prime-btn-contrata{
            width: 50%;
            padding: 10px;
         }
+        .table-prime-clients{
+            padding: 0 20px !important;
+        }
+        
+            
     }
     @media screen and (max-width:1200px){
         .plans-contrata-prime{

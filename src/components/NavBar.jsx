@@ -76,7 +76,10 @@ const NavBar = () => {
               <a className="nav-link" aria-current="page" href="/xview">TV Interactiva</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="#">Mega móvil</a>
+              <a className="nav-link" aria-current="page" href="/tv">TV</a>
+            </li>
+            <li className="nav-item">
+              <a className="nav-link" aria-current="page">Mega móvil</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" aria-current="page" href="/ayuda">Ayuda</a>

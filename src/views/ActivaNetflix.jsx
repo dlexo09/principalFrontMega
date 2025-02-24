@@ -69,6 +69,9 @@ const ActivaNetflix = () => {
                 Descarga la app en tus dispositivos móviles y disfruta del mejor contenido. Y si tienes Xview+ también podrás ver el contenido a través de tu convertidor
               </p>
             </div>
+
+            <p>Si necesitas ayuda personalizada comunícate con nosotros al número <b>33 9690 0000</b> o envíanos un Whatsapp al <a href="https://api.whatsapp.com/send?phone=523396900001" target="_blank">33 9690 0001</a></p>
+
           </div>
         </div>
       </div>
