@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import React, { useEffect, useState, useContext } from 'react';
 import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { LocationContext } from '../LocationContext'; // Ajusta la ruta según la ubicación de tu archivo LocationContext.js
 import './BannerHome.css';
 import './Globales.css'
 
 const BannerHome = () => {
+  const { currentLocation } = useContext(LocationContext);
   const [banners, setBanners] = useState([]);
 
   useEffect(() => {
@@ -20,14 +20,26 @@ const BannerHome = () => {
           const endDate = new Date(new Date(banner.fhFin).setHours(23, 59, 59, 999));
           return banner.status === 1 && startDate <= today && endDate >= today;
         });
-        setBanners(activeBanners);
+
+        // Obtener permisos para cada banner
+        const bannersWithPermissions = await Promise.all(activeBanners.map(async (banner) => {
+          const permisoResponse = await fetch(`${serverAPILambda}api/permisosSucursal?objetoName=BannerHome&idObjeto=${banner.idBannerHome}&idSucursal=${currentLocation.idSucursal}`);
+          const permisoData = await permisoResponse.json();
+          return permisoData.length > 0 ? banner : null;
+        }));
+
+        // Filtrar banners con permisos
+        const filteredBanners = bannersWithPermissions.filter(banner => banner !== null);
+        setBanners(filteredBanners);
       } catch (error) {
         console.error('Error fetching banners:', error);
       }
     };
 
-    fetchBanners();
-  }, []);
+    if (currentLocation) {
+      fetchBanners();
+    }
+  }, [currentLocation]);
 
   return (
     <div id="carouselExampleIndicators" className="carousel slide banner-home-container" data-bs-ride="carousel">
