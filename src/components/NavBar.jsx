@@ -1,7 +1,3 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import './NavBar.css';
 import { serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 
