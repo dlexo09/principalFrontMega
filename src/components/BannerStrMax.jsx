@@ -18,7 +18,7 @@ const BannerStrMax = () => {
                     </div>
 
                     <div className="streaming-contratar mt-5 mt-md-4 mt-xl-5">
-                        <button className='btn-contratar-str-max btn-streaming'>Contratar</button>
+                        <a href='https://auth.megacable.com.mx/realms/mega/protocol/openid-connect/auth?client_id=sel&redirect_uri=https%3A%2F%2Fsel.megacable.com.mx%2F&state=dcaa9fe2-f238-4170-a203-4dc97bc189cf&response_mode=fragment&response_type=code&scope=openid&nonce=7067ea3f-fe27-4d3f-8ce6-d82ff298acd7' className='btn-contratar-str-max btn-streaming'>Contratar</a>
                     </div>
                 </div>
                 <div className="col-md-7 col-xl-6 order-1 order-md-2">

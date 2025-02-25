@@ -117,7 +117,7 @@ const PaquetesTarifarios = () => {
                         <img
                           src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
                           alt="IncluyeExtensor Wifi Ultra"
-                          style={{ height: '30px' }}
+                          style={{ height: '40px', marginTop: '20px' }}
                         />
                       </p>
 
@@ -179,7 +179,7 @@ const PaquetesTarifarios = () => {
         </div>
 
         {isFullConnectedVisible && (
-          <div className="d-flex justify-content-center mb-3">
+          <div className="d-flex justify-content-center mb-3 full-connected-container">
             <p>
               <img
                 src="../src/assets/images/home/full_connected_home.png"
@@ -187,6 +187,7 @@ const PaquetesTarifarios = () => {
                 className="img-fluid fullconnect-img"
               />
             </p>
+            <button className="btn btn-packs btn-pack-card">¡Lo quiero!</button>
           </div>
         )}
 

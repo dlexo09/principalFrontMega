@@ -17,7 +17,7 @@ const ActivaCuentaMax = () => {
                     <h3 className='d-none d-md-block title-strm-disney'>¿Ya contrataste <span>Max?</span></h3>
                     <p className='active-strm-p d-none d-xl-block'>Activa tu cuenta ahora y disfruta de<br />todo el contenido</p>
                     <p className='active-strm-p d-xl-none'>Activa tu cuenta ahora y disfruta de todo el contenido</p>
-                    <a href='https://auth.max.com/login?_referrer=eyJlbGVtZW50IjoiQnV0dG9uIiwic2NyZWVuTmFtZSI6IlZlciBwZWzDrWN1bGFzIHkgc2VyaWVzIG9ubGluZSB8ICBNYXggIiwic2NyZWVuVVJJIjoiaHR0cHM6Ly93d3cubWF4LmNvbS9teC9lcyIsImxvY2F0aW9uIjoiSG9tZXBhZ2UvVmVyIHBlbMOtY3VsYXMgeSBzZXJpZXMgb25saW5lIHwgIE1heCB8YmFuZHwyMDY5MjUiLCJsb2NhdGlvblBvc2l0aW9uIjowLCJ0YXJnZXRUZXh0IjoiSW5ncmVzYSJ9' target="_blank" className='btn-active-streaming btn-active-max mt-3'>Activa tu cuenta <span className='open-page-wh'></span></a>
+                    <a href='activa-max' className='btn-active-streaming btn-active-max mt-3'>Activa tu cuenta <span className='open-page-wh'></span></a>
                 </div>
             </div>
         </div>

@@ -14,6 +14,7 @@ import TelefoniaIlimitada from './views/TelefoniaIlimitada';
 import Internet from './views/Internet';
 import XviewPlus from './views/XviewPlus';
 import Xview from './views/Xview';
+import TVMega from './views/TVMega';
 import FoxSports from './views/FoxSports';
 import AdultPack from './views/AdultPack';
 import MideVelocidad from './views/MideVelocidad';
@@ -33,6 +34,8 @@ import Ayuda from './views/Ayuda';
 import ActivaNetflix from './views/ActivaNetflix';
 import ActivaAmazon from './views/ActivaAmazon';
 import ActivaDisneyplus from './views/ActivaDisneyplus';
+import ActivaParamount from './views/ActivaParamount';
+import ActivaMax from './views/ActivaMax';
 import { LocationProvider } from './LocationContext';
 import './App.css';
 
@@ -65,9 +68,12 @@ function App() {
             <Route path="/fibra-optica/*" element={<FibraOptica />} />
             <Route path="/xviewplus/*" element={<XviewPlus />} />
             <Route path="/xview/*" element={<Xview />} />
+            <Route path="/tv/*" element={<TVMega />} />
             <Route path="/activa-netflix" element={<ActivaNetflix />} />
             <Route path="/activa-amazon" element={<ActivaAmazon />} />
             <Route path="/activa-disneyplus" element={<ActivaDisneyplus/>} />
+            <Route path="/activa-paramount+" element={<ActivaParamount/>} />
+            <Route path="/activa-max" element={<ActivaMax/>} />
         </Routes>
         </div>
         <Footer />

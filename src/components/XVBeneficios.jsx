@@ -8,9 +8,7 @@ import PaquetesTarifarios from "./PaquetesTarifarios";
 const XVBeneficios = () => {
   return (
     <>
-      <PaquetesTarifarios />
-
-      <div className="container">
+      <div className="container general-tabs-container">
         <div className="text-center">
           <h3 className="small-title-services">TV Interactiva</h3>
           <h2 className="big-title-services">Conoce las funcionalidades</h2>

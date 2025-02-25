@@ -73,7 +73,7 @@ a{
 }
 .secondary-title{
     margin-top: 5px;
-    font-size: 2.5rem;
+    font-size: clamp(1.8rem, 1.502rem + 1.1089vw, 2.5rem);
     font-weight: 300;
 }
 .secondary-title span{
@@ -97,9 +97,10 @@ a{
     background-color: var(--turquesa-btn);
     border-radius: 50px;
     font-size: 1.3rem;
-    padding: 10px 50px;
+    padding: 10px 0;
     font-weight: 500;
     border: none;
+    width: 250px;
 }
 .btn-action{
     background-color: var(--turquesa-btn);
@@ -161,6 +162,13 @@ a{
     font-weight: 400 !important;
     color: #0f0d1d9f;
   }
+  .btn-pack-movil{
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 230px;
+  }
 
   @media screen and (max-width: 500px){
     .btn-container{
@@ -214,5 +222,11 @@ a{
     .small-title-services{
         margin-bottom: 15px;
     }
+}
+@media screen and (min-width:768px) and (max-width:1200px){
+    .btn-client-pos{
+        width: 200px !important;
+    }
+    
 }
 
