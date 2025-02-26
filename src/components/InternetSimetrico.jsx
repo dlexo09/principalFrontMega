@@ -1,111 +1,63 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { LocationContext } from '../LocationContext'; // Importa LocationContext
 import { serverAPILambda } from '../config'; // Importar serverAPIUrl
-import "./TvInteractiva.css";
-import "./Globales.css";
 
-const TvInteractiva = () => {
+import "./InternetSimetrico.css";
+
+const InternetSimetrico = () => {
   const { currentLocation } = useContext(LocationContext);
-  const [cuentaXview, setCuentaXview] = useState(0);
+  const [isSimetrico, setIsSimetrico] = useState(false);
 
   useEffect(() => {
-    const fetchTvData = async () => {
+    const fetchSimetricoData = async () => {
       try {
-        const response = await fetch(`${serverAPILambda}api/tv`);
+        const response = await fetch(`${serverAPILambda}api/simetricoSucursal`);
         const data = await response.json();
         const sucursalData = data.find(item => item.idSucursal === currentLocation?.idSucursal);
 
         if (sucursalData) {
-          setCuentaXview(sucursalData.cuentaXview);
+          setIsSimetrico(true);
         } else {
-          setCuentaXview(0);
+          setIsSimetrico(false);
         }
       } catch (error) {
-        console.error('Error fetching TV data:', error);
-        setCuentaXview(0);
+        console.error('Error fetching simetrico data:', error);
       }
     };
 
     if (currentLocation) {
-      fetchTvData();
+      fetchSimetricoData();
     }
   }, [currentLocation]);
 
-  const renderContent = () => {
-    switch (cuentaXview) {
-      case 0:
-        return (
-          <>
-            <h3 className="secondary-title"><span>Televisión Digital</span> dónde quiera que estés en cualquier dispositivo.</h3>
-            <p className="mt-4 mt-lg-5 ">Accede a tus programas favoritos en cualquier momento y lugar.</p>
-          </>
-        );
-      case 1:
-        return (
-          <>
-            <h3 className="secondary-title"><span>TV Interactiva</span> dónde quiera que estés en cualquier dispositivo.</h3>
-            <p className="mt-4 mt-lg-5 ">Con Xview accede a más de 30 000 horas de contenido, graba, pausa y retrocede tus programas favoritos. ¡Todo en un sólo lugar!</p>
-          </>
-        );
-      case 2:
-        return (
-          <>
-            <h3 className="secondary-title"><span>TV Interactiva</span> dónde quiera que estés en cualquier dispositivo.</h3>
-            <p className="mt-4 mt-lg-5 ">Con Xview+ accede a más de 30 000 horas de contenido, graba, pausa y retrocede tus programas favoritos. ¡Todo en un sólo lugar!</p>
-          </>
-        );
-      default:
-        return (
-          <>
-            <h3 className="secondary-title"><span>Televisión Digital</span> dónde quiera que estés en cualquier dispositivo.</h3>
-            <p className="mt-4 mt-lg-5 ">Accede a tus programas favoritos en cualquier momento y lugar.</p>
-          </>
-        );
-    }
-  };
-
-  const getTitle = () => {
-    switch (cuentaXview) {
-      case 0:
-        return "Televisión Digital";
-      case 1:
-      case 2:
-        return "TV Interactiva";
-      default:
-        return "Televisión Digital";
-    }
-  };
-
-  const getLink = () => {
-    switch (cuentaXview) {
-      case 0:
-        return "/television";
-      case 1:
-        return "/xview/beneficios";
-      case 2:
-        return "/xviewplus/beneficios";
-      default:
-        return "/television";
-    }
-  };
-
   return (
-    <div className="tv-interactiva-container container-fluid">
-      <div className="text-center text-lg-start tv-interactiva-content row d-flex align-items-center container">
-        <div className="col-12 col-lg-6 tv-interactiva-img">
-          <h2 className="small-title d-block d-lg-none mb-4">{getTitle()}</h2>
-          <img src="../src/assets/images/home/tv-interactiva-img.png" alt="" />
-        </div>
-        <div className="col-12 col-lg-6 tv-interactiva-txt">
-          <h2 className="small-title d-none d-lg-block">{getTitle()}</h2>
-          {renderContent()}
-          <div className="mt-0 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
-            <a href={getLink()} className="btn-action mt-4 mt-lg-5">Saber más<span className="open-page-icon"></span></a>
+    <>
+      <div className="internet-simetrico">
+        <div className="internet-simetrico-content d-flex align-items-center">
+          <div className="order-2 order-lg-1 internet-simetrico-txt">
+            <h2 className="small-title d-none d-lg-block">{isSimetrico ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
+            <h3 className="secondary-title is-title-s">
+              {isSimetrico ? (
+                <>Conéctate sin límites ¡Misma velocidad de <span>subida y bajada!</span></>
+              ) : (
+                <>Conéctate sin límites ¡Disfruta de nuestra red de alta velocidad!</>
+              )}
+            </h3>
+            <p className="mt-4 ps-5 pe-5 ps-md-0 pe-md-0 ">
+              {isSimetrico ? 'Eleva tu conexión y conoce nuestra red Fibra Óptica.' : 'Accede a una conexión estable y rápida en todo momento.'}
+            </p>
+            <div className="mt-0 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
+              <a href="/InternetSimetrico" className="btn-action mt-4 mt-lg-5">Saber más<span className="open-page-icon"></span></a>
+            </div>
+          </div>
+          <div className="order-1 order-lg-2 internet-simetrico-img">
+            <h2 className="small-title d-block d-lg-none title-movil">{isSimetrico ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
+            <img src="../src/assets/images/home/internet-simetrico-img.jpg" alt="" />
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
-export default TvInteractiva;
+export default InternetSimetrico;
