@@ -187,7 +187,7 @@ const PaquetesTarifarios = () => {
                 className="img-fluid fullconnect-img"
               />
             </p>
-            <button className="btn btn-packs btn-pack-card">¡Lo quiero!</button>
+            <button className="btn btn-packs btn-pack-card">¡Quiero fullconnect!</button>
           </div>
         )}
 
