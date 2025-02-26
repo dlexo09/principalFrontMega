@@ -11,6 +11,8 @@ import './BannerStreamingHome.css';
 const BannerStreamingHome = () => {
   const { currentLocation } = useContext(LocationContext);
   const [cards, setCards] = useState([]);
+  const [slidesPerView, setSlidesPerView] = useState(3);
+  const [loop, setLoop] = useState(true);
 
   useEffect(() => {
     const fetchCards = async () => {
@@ -35,6 +37,10 @@ const BannerStreamingHome = () => {
         // Filtrar cards con permisos
         const filteredCardsWithPermissions = cardsWithPermissions.filter(card => card !== null);
         setCards(filteredCardsWithPermissions);
+
+        // Ajustar dinámicamente la configuración de Swiper
+        setSlidesPerView(filteredCardsWithPermissions.length < 3 ? filteredCardsWithPermissions.length : 3);
+        setLoop(filteredCardsWithPermissions.length >= 3);
       } catch (error) {
         console.error('Error fetching card streaming data:', error);
       }
@@ -44,9 +50,6 @@ const BannerStreamingHome = () => {
       fetchCards();
     }
   }, [currentLocation]);
-
-  const slidesPerView = cards.length < 3 ? cards.length : 3;
-  const loop = cards.length >= 3;
 
   return (
     <>
@@ -65,14 +68,14 @@ const BannerStreamingHome = () => {
           centeredSlides={true} 
           loop={loop}
           slidesPerView={slidesPerView} 
-          spaceBetween={-60} 
+          spaceBetween={cards.length < 3 ? 0 : -60} 
           navigation={{
             nextEl: '.swiper-button-next',
             prevEl: '.swiper-button-prev',
           }} 
           coverflowEffect={{
             rotate: 0,
-            stretch: 100,
+            stretch: cards.length < 3 ? 0 : 100,
             depth: 200,
             modifier: 1.5,
             slideShadows: false,
@@ -86,11 +89,11 @@ const BannerStreamingHome = () => {
             },
             768: {
               slidesPerView: slidesPerView,
-              spaceBetween: -200,
+              spaceBetween: cards.length < 3 ? 0 : -200,
             },
             1440: {
               slidesPerView: slidesPerView,
-              spaceBetween: -60,
+              spaceBetween: cards.length < 3 ? 0 : -60,
             },
           }}
         >

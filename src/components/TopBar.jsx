@@ -11,7 +11,7 @@ const TopBar = () => {
     const fetchLocations = async () => {
       if (locations.length === 0) {
         try {
-          const response = await fetch(`${serverAPILambda}api/sucursales`);
+          const response = await fetch(`${serverAPILambda}api/sucursales`);//cambio para pruebas
           const data = await response.json();
           setLocations(data);
           if (data.length > 0 && !currentLocation) {
