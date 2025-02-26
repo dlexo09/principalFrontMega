@@ -1,13 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
 import { serverAPILambda } from '../config'; // Importar serverAPIUrl
+import { LocationContext } from '../LocationContext'; // Importar LocationContext
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation'; // Importar estilos de navegación
 import './BannerStreamingHome.css';
 
 const BannerStreamingHome = () => {
+  const { currentLocation } = useContext(LocationContext);
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -23,14 +25,25 @@ const BannerStreamingHome = () => {
           return card.status === 1 && currentDate >= fhInicio && currentDate <= fhFin;
         });
 
-        setCards(filteredCards);
+        // Obtener permisos para cada card
+        const cardsWithPermissions = await Promise.all(filteredCards.map(async (card) => {
+          const permisoResponse = await fetch(`${serverAPILambda}api/permisosSucursal?objetoName=CardStreamingHome&idObjeto=${card.idCardStreaming}&idSucursal=${currentLocation.idSucursal}`);
+          const permisoData = await permisoResponse.json();
+          return permisoData.length > 0 ? card : null;
+        }));
+
+        // Filtrar cards con permisos
+        const filteredCardsWithPermissions = cardsWithPermissions.filter(card => card !== null);
+        setCards(filteredCardsWithPermissions);
       } catch (error) {
         console.error('Error fetching card streaming data:', error);
       }
     };
 
-    fetchCards();
-  }, []);
+    if (currentLocation) {
+      fetchCards();
+    }
+  }, [currentLocation]);
 
   const slidesPerView = cards.length < 3 ? cards.length : 3;
   const loop = cards.length >= 3;
