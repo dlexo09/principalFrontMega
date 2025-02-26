@@ -37,7 +37,7 @@ const Home = () => {
       {seccionesActivas.includes('VentajasInternetMega') && <VentajasInternetMega />}
       {seccionesActivas.includes('BannerStreamingHome') && <BannerStreamingHome />}
       {seccionesActivas.includes('InternetSimetrico') && <InternetSimetrico />}
-      {seccionesActivas.includes('MegaMovil') && <TvInteractiva />}
+      {seccionesActivas.includes('TvInteractiva') && <TvInteractiva />}
       {seccionesActivas.includes('BannerAvisos') && <BannerAvisos />}
       
     </>
