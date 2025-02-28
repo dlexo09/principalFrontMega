@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BannerHome from '../components/BannerHome';
 import CallToActionHome from '../components/CallToActionHome';  
-// import PaquetesTarifarios from '../components/PaquetesTarifarios';
+import PaquetesTarifarios from '../components/PaquetesTarifarios';
 import PagoEnLinea from '../components/PagoEnLinea';
 import MegaMovil from '../components/MegaMovil';
 import VentajasInternetMega from '../components/VentajasInternetMega';
@@ -31,7 +31,7 @@ const Home = () => {
     <>
       {seccionesActivas.includes('BannerHome') && <BannerHome />}
       {seccionesActivas.includes('CallToActionHome') && <CallToActionHome />}
-      {/* {seccionesActivas.includes('PaquetesTarifarios') && <PaquetesTarifarios />} */}
+      {seccionesActivas.includes('PaquetesTarifarios') && <PaquetesTarifarios />}
       {seccionesActivas.includes('PagoEnLinea') && <PagoEnLinea />}
       {seccionesActivas.includes('MegaMovil') && <MegaMovil />}
       {seccionesActivas.includes('VentajasInternetMega') && <VentajasInternetMega />}
