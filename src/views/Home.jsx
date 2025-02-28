@@ -8,7 +8,7 @@ import VentajasInternetMega from '../components/VentajasInternetMega';
 import BannerStreamingHome from '../components/BannerStreamingHome';
 import InternetSimetrico from '../components/InternetSimetrico';
 import TvInteractiva from '../components/TvInteractiva';
-// import BannerAvisos from '../components/BannerAvisos';
+import BannerAvisos from '../components/BannerAvisos';
 import { serverAPILambda, serverAPIUrl } from '../config'; // Importar serverAPIUrl
 
 const Home = () => {
@@ -38,7 +38,7 @@ const Home = () => {
       {seccionesActivas.includes('BannerStreamingHome') && <BannerStreamingHome />}
       {seccionesActivas.includes('InternetSimetrico') && <InternetSimetrico />}
       {seccionesActivas.includes('TvInteractiva') && <TvInteractiva />}
-      {/* {seccionesActivas.includes('BannerAvisos') && <BannerAvisos />} */}
+      {seccionesActivas.includes('BannerAvisos') && <BannerAvisos />}
       
     </>
   );
