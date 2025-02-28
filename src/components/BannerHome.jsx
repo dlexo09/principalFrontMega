@@ -13,6 +13,8 @@ const BannerHome = () => {
       try {
         const response = await fetch(`${serverAPILambda}api/bannerHero`);
         const data = await response.json();
+        // console.log('API Response (bannerHero):', data); // Agregar console.log para depurar
+
         const now = new Date();
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
         const activeBanners = data.filter(banner => {
@@ -25,6 +27,7 @@ const BannerHome = () => {
         const bannersWithPermissions = await Promise.all(activeBanners.map(async (banner) => {
           const permisoResponse = await fetch(`${serverAPILambda}api/permisosSucursal?objetoName=BannerHome&idObjeto=${banner.idBannerHome}&idSucursal=${currentLocation.idSucursal}`);
           const permisoData = await permisoResponse.json();
+          // console.log(`API Response (permisosSucursal) for banner ${banner.idBannerHome}:`, permisoData); // Agregar console.log para depurar
           return permisoData.length > 0 ? banner : null;
         }));
 

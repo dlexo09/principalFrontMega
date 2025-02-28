@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { serverUrl, serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
 import "./BannerAvisos.css";
-import "./Globales.css";
 
 const BannerAvisos = () => {
   const [banners, setBanners] = useState([]);
