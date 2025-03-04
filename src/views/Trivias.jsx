@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { serverAPIUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPIUrl, serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 
 const Trivias = () => {
   const [banners, setBanners] = useState([]);
@@ -9,7 +9,7 @@ const Trivias = () => {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const response = await fetch(`${serverAPIUrl}api/trivias/`);
+        const response = await fetch(`${serverAPILambda}api/trivias/`);
         const data = await response.json();
         const now = new Date();
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
@@ -47,10 +47,10 @@ const Trivias = () => {
           <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
             {banner.urlEndPoint ? (
               <a href={`/trivias/${banner.urlEndPoint}`} target="_blank" rel="noopener noreferrer">
-                <img src={`${serverAPIUrl}${banner.rutaPrincipal}${banner.archivoPrincipal}`} className="d-block w-100" alt={`Slide ${index + 1}`} />
+                <img src={`${serverUrl}src/assets/uploads/bannerTrivias/${banner.archivoPrincipal}`} className="d-block w-100" alt={`Slide ${index + 1}`} />
               </a>
             ) : (
-              <img src={`${serverAPIUrl}${banner.rutaPrincipal}${banner.archivoPrincipal}`} className="d-block w-100" alt={`Slide ${index + 1}`} />
+              <img src={`${serverUrl}src/assets/uploads/bannerTrivias/${banner.archivoPrincipal}`} className="d-block w-100" alt={`Slide ${index + 1}`} />
             )}
           </div>
         ))}
