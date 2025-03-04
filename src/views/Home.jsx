@@ -9,6 +9,7 @@ import BannerStreamingHome from '../components/BannerStreamingHome';
 import InternetSimetrico from '../components/InternetSimetrico';
 import TvInteractiva from '../components/TvInteractiva';
 import BannerAvisos from '../components/BannerAvisos';
+import BannerTrivias from '../components/BannerTrivias';
 import { serverAPILambda, serverAPIUrl } from '../config'; // Importar serverAPIUrl
 
 const Home = () => {
@@ -39,6 +40,7 @@ const Home = () => {
       {seccionesActivas.includes('InternetSimetrico') && <InternetSimetrico />}
       {seccionesActivas.includes('TvInteractiva') && <TvInteractiva />}
       {seccionesActivas.includes('BannerAvisos') && <BannerAvisos />}
+      {seccionesActivas.includes('BannerTrivias') && <BannerTrivias />}
       
     </>
   );
