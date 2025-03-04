@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { serverUrl, serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { LocationContext } from "../LocationContext"; // Importar LocationContext
 import "./BannerAvisos.css";
 
 const BannerAvisos = () => {
+  const { currentLocation } = useContext(LocationContext);
   const [banners, setBanners] = useState([]);
 
   useEffect(() => {
@@ -17,14 +19,26 @@ const BannerAvisos = () => {
           const endDate = new Date(new Date(banner.fhFin).setHours(23, 59, 59, 999));
           return banner.status === 1 && startDate <= today && endDate >= today;
         });
-        setBanners(activeBanners);
+
+        // Obtener permisos para cada banner
+        const bannersWithPermissions = await Promise.all(activeBanners.map(async (banner) => {
+          const permisoResponse = await fetch(`${serverAPILambda}api/permisosSucursal?objetoName=BannerAvisosHome&idObjeto=${banner.idBanner}&idSucursal=${currentLocation.idSucursal}`);
+          const permisoData = await permisoResponse.json();
+          return permisoData.length > 0 ? banner : null;
+        }));
+
+        // Filtrar banners con permisos
+        const filteredBanners = bannersWithPermissions.filter(banner => banner !== null);
+        setBanners(filteredBanners);
       } catch (error) {
         console.error("Error fetching banners:", error);
       }
     };
 
-    fetchBanners();
-  }, []);
+    if (currentLocation) {
+      fetchBanners();
+    }
+  }, [currentLocation]);
 
   return (
     <>
@@ -47,30 +61,29 @@ const BannerAvisos = () => {
           ))}
         </div>
         <div className="carousel-inner carrousel-avisos">
-  {banners.map((banner, index) => (
-    <div
-      key={index}
-      className={`carousel-item ${index === 0 ? "active" : ""}`}
-    >
-      {banner.link ? (
-        <a href={banner.link} target="_blank" rel="noopener noreferrer">
-          <img
-            src={`${serverUrl}/src/assets/${banner.ruta}${banner.archivo}`}
-            className="d-block carousel-image"
-            alt={`Slide ${index + 1}`}
-          />
-        </a>
-      ) : (
-        <img
-          src={`${serverUrl}/src/assets/${banner.ruta}${banner.archivo}`}
-          className="d-block carousel-image"
-          alt={`Slide ${index + 1}`}
-        />
-      )}
-    </div>
-  ))}
-</div>
-
+          {banners.map((banner, index) => (
+            <div
+              key={index}
+              className={`carousel-item ${index === 0 ? "active" : ""}`}
+            >
+              {banner.link ? (
+                <a href={banner.link} target="_blank" rel="noopener noreferrer">
+                  <img
+                    src={`${serverUrl}/src/assets/uploads/bannerHomeFooter/${banner.archivo}`}
+                    className="d-block carousel-image"
+                    alt={`Slide ${index + 1}`}
+                  />
+                </a>
+              ) : (
+                <img
+                  src={`${serverUrl}/src/assets/uploads/bannerHomeFooter/${banner.archivo}`}
+                  className="d-block carousel-image"
+                  alt={`Slide ${index + 1}`}
+                />
+              )}
+            </div>
+          ))}
+        </div>
 
         <button
           className="carousel-control-prev"
