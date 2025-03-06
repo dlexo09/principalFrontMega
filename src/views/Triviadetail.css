@@ -66,3 +66,20 @@
   font-size: 18px;
   font-weight: 400;
 }
+.form-open-faq{
+  height: 80px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .datos-trivia {
+    background-image: url(/src/assets/images/home/waves-bg-1-movil.png);
+  }
+   .form-check{
+    width: 100%;
+   }
+   .datos-personales-trivia{
+    padding: 20px;
+   }
+  
+}

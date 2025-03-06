@@ -1,24 +1,40 @@
 .banner-trivias {
-  background-color: #f8f9fa; /* Fondo claro */
+  background-color: #E7EEF7; /* Fondo claro */
   text-align: center;
   color: #333;
-  margin: 20px 0;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 50px;
+  margin: 0 auto;
+  height: 200px;
+  margin-bottom: 150px;
+  position: relative;
 }
-
-.banner-trivias p {
-  margin-bottom: 10px;
+.trivias-icon{
+  position: absolute;
+  left: -75px;
+  width: 160px;
 }
-
-.banner-trivias a {
-  color: #080000;
-  text-decoration: none;
+.trivias-icon img{
+  width: 100%;
 }
+@media screen and (max-width: 1023px){
+  .trivias-icon{
+    left: 50%;
+    transform: translateX(-50%);
+    top: -80px;
+    width: 130px;
+  }
+  .banner-trivias {
+    height: 250px;
+    row-gap: 20px;
+    max-width: 500px;
+  }
 
-.banner-trivias a:hover {
-  text-decoration: underline;
 }
-
-.mega-logo {
-  width: 350px;
-  height: auto;
+@media screen and (max-width: 767px){
+  .banner-trivias {
+    margin-top: 150px;
+    margin-bottom: 100px;
+  }
 }

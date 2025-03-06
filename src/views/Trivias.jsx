@@ -72,7 +72,7 @@ const Trivias = () => {
               ></button>
             ))}
           </div>
-          <div className="carousel-inner">
+          <div className="carousel-inner carrousel-trivias">
             {banners.map((banner, index) => (
               <div
                 key={index}
@@ -80,9 +80,12 @@ const Trivias = () => {
               >
                 <img
                   src={`${serverUrl}src/assets/uploads/bannerTrivias/${banner.archivoPrincipal}`}
-                  className="d-block w-100"
+                  className="d-block w-100 d-none d-md-block"
                   alt={`Slide ${index + 1}`}
                 />
+                {/* Imagen para mobil */}
+                <img src="../src/assets/uploads/bannerTrivias/banner-trivias-mov.png" className="w-100 d-md-none" alt="" />
+              
               </div>
             ))}
           </div>

@@ -54,7 +54,7 @@ const TriviaDetail = () => {
   return (
     <ActivarCuenta mainTitle="PARTICIPA" title="Y GANA">
       <div className="pt-5 trivias-container">
-        <div className="text-center">
+        <div className="text-center ps-4 pe-4 ps-lg-0 pe-lg-0">
           <h2 className="small-title-services">GANA INCREÍBLES PREMIOS</h2>
           <h3 className="big-title-services big-title-container-sm">
             ¡Participa, Regístrate y Responde las Preguntas para Ganar!
@@ -62,19 +62,21 @@ const TriviaDetail = () => {
         </div>
 
         <div className="row mt-5">
-          <div className="col-12 align-items-center d-flex">
+          <div className="col-12 align-items-center d-flex ps-4 pe-4 ps-lg-0 pe-lg-0">
             <img
               src={`${serverAPIUrl}${trivia.rutaPrincipal}${trivia.archivoPrincipal}`}
-              className="trivia-banner img-fluid"
+              className="trivia-banner img-fluid d-none d-md-block"
               alt="Trivia Banner"
             />
+            {/* Imagen para mobil */}
+            <img src="../src/assets/uploads/bannerTrivias/banner-trivias-mov.png" className="w-100 d-md-none" alt="" />
           </div>
 
           <h1>{trivia.titulo}</h1>
           <p>{trivia.descripcion}</p>
 
           <form>
-            <div className="datos-trivia">
+            <div className="datos-trivia ps-4 pe-4 ps-lg-0 pe-lg-0">
               <div className="text-center mb-5">
                 <h3 className="big-title-services text-center">
                   Datos personales
@@ -83,7 +85,7 @@ const TriviaDetail = () => {
               </div>
               <div className="container datos-personales-trivia">
                 <div className="row ">
-                  <div className="col-6 ">
+                  <div className="col-md-6 ">
                     {/* Aquí puedes agregar los campos del formulario según sea necesario */}
                     <div className="mb-3">
                       <label htmlFor="nombre" className="form-label form-label-datos">
@@ -125,7 +127,7 @@ const TriviaDetail = () => {
                     </div>
                   </div>
 
-                  <div className="col-6">
+                  <div className="col-md-6">
                     {/* Aquí puedes agregar los campos del formulario según sea necesario */}
                     <div className="mb-3">
                       <label htmlFor="edad" className="form-label form-label-datos">
@@ -172,7 +174,7 @@ const TriviaDetail = () => {
 
             {/* ******** TRIVIA ******** */}
             <div className="container datos-personales-trivia">
-              <div className="text-center mb-5">
+              <div className="text-center mb-3 mb-lg-5">
                 <h3 className="big-title-services text-center">GIVE AWAY</h3>
               </div>
               <div className="col-12">
@@ -183,7 +185,7 @@ const TriviaDetail = () => {
                       {pregunta.tipoPregunta === 2 ? (
                         <input
                           type="text"
-                          className="form-control"
+                          className="form-control form-open-faq"
                           name={`pregunta_${pregunta.idTriviasPreguntas}`}
                           required
                         />
@@ -231,10 +233,13 @@ const TriviaDetail = () => {
                   ))}
                 </div>
               </div>
-
-              <button type="submit" className="btn btn-primary">
+              
+              <div className="text-center mt-5">
+              <button type="submit" className="btn btn-packs">
                 Enviar
               </button>
+              </div>
+              
             </div>
           </form>
         </div>
