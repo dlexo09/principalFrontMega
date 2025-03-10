@@ -101,3 +101,15 @@
         margin-bottom: 100px ;
     }
   }
+
+  /* Estilos para el popup */
+
+.video-popup-content iframe{
+  width: 900px;
+  height: 500px;
+  border-radius: 30px;
+}
+.video-popup-content{
+  background-color: transparent;
+}
+

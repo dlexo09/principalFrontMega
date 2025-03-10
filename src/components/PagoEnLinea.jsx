@@ -6,7 +6,7 @@ const PagoEnLinea = () => {
         <>
             <div className="container-fluid pago-en-linea" id="PagoEnLinea">
                 <div className="container d-flex flex-column flex-lg-row align-items-center pago-en-linea-content">
-                    <div className="pago-img order-2 order-lg-1 d-flex justify-content-center">
+                    <div className="pago-img order-2 order-lg-1 d-flex justify-content-center d-none d-lg-flex">
                         <img src="../src/assets/images/home/paga-en-linea-img.png" alt="" />
                     </div>
                     <div className='text-center text-lg-start order-1 order-lg-2 flex-column pago-text'>
@@ -25,7 +25,7 @@ const PagoEnLinea = () => {
                     </div>
                 </div>
             </div>
-            <div className="wave-vector">
+            <div className="wave-vector d-none d-lg-block">
                 <img src="../src/assets/images/home/pago-vector.png" alt="" />
             </div>
         </>

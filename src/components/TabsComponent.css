@@ -31,12 +31,22 @@
     }
 }
 @media screen and (max-width: 767px) {
-
-
     .tabs-general a.nav-link {
         width: auto; /* Ajusta el ancho automáticamente */
         padding: 20px 40px; /* Ajusta el padding para móviles */
         text-align: center;
         display: inline-block; /* Asegura que las tabs estén en línea */
     }
+    .nav-tabs{
+        flex-direction: column;
+        padding: 20px;
+    }
+    .tabs-general a.nav-link.active{
+        border-radius: 50px !important;
+    }
+    .tabs-general a.nav-link{
+        color: #ffffffb0;
+    }
+
 }
+

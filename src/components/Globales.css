@@ -210,11 +210,69 @@ a{
     text-transform: uppercase;
 }
 
+/* Flechas */
+.next-btn-prz:after, .prev-btn-prz:after{
+    background-color: #00d7cc90;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+.next-btn-prz, .swiper-rtl .next-btn-prz{
+    left: 30px !important;
+    
+}
+.prev-btn-prz, .swiper-rtl .prev-btn-prz{
+    right: 30px !important;
+    
+}
+
+/* Btn tutorial */
+.btn-tutorial{
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto;
+}
 
 /* Contenedores */
 .general-tabs-container{
-    padding: 150px 0;
+    padding: 80px 0;
 }
+
+.video-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .video-popup-content {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  video {
+    max-width: 100%;
+    max-height: 80vh;
+  }
 @media screen and (max-width:767px){
     .general-tabs-container{
         padding: 50px 0;
@@ -222,11 +280,19 @@ a{
     .small-title-services{
         margin-bottom: 15px;
     }
+    .title-tabs{
+       display: none;
+    }
 }
 @media screen and (min-width:768px) and (max-width:1200px){
     .btn-client-pos{
         width: 200px !important;
     }
-    
+    .xview-beneficio-content{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
 }
 

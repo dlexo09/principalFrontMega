@@ -487,7 +487,7 @@ const options = {
       <div className="container-fluid p-0 wave-bg-fdpago">
         <div className="container">
           <div className="row fdpago-app-container align-items-center justify-content-center">
-            <div className="col-lg-3 text-center">
+            <div className="col-lg-3 text-center d-none d-lg-block">
               <img
                 src="../src/assets/images/soporte/formas-de-pago/app-megacable.png"
                 alt="Megacable App"
@@ -559,7 +559,7 @@ const options = {
       <div className="container-fluid p-0 wave-bg-fdpago">
         <div className="container">
           <div className="row fdpago-ca-container align-items-center justify-content-center">
-            <div className="col-md-7 col-lg-4 text-center">
+            <div className="col-md-7 col-lg-4 text-center d-none d-lg-block">
               <img
                 className="fdpago-ca-img"
                 src="../src/assets/images/soporte/formas-de-pago/cargo-automatico.png"
@@ -644,7 +644,7 @@ const options = {
                 <p className="saldo-subtitle">tel: 33 9690 2222 | cc: 33 9690 0000</p>
 
               </div>
-              <div className="col-md-6 col-lg-3 order-1 order-lg-2  text-center mb-5 mb-lg-0">
+              <div className="col-md-6 col-lg-3 order-1 order-lg-2  text-center mb-5 mb-lg-0 d-none d-lg-block">
                 <img src="../src/assets/images/soporte/formas-de-pago/app-mega.png" alt="" />
               </div>
             </div>

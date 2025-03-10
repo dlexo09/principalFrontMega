@@ -194,9 +194,7 @@
   .int-simetrico-img img {
     width: 70%;
   }
-  .int-simetrico-txt {
-    width: 100%;
-  }
+  
   .fored-cards-presentation {
     grid-template-columns: repeat(1, 1fr);
     height: auto;
@@ -208,6 +206,15 @@
     flex-direction: column;
     padding: 25px;
   }
+  .int-simetrico-card{
+  width: 100%;
+  }
+  .int-simetrico-container{
+    margin-top: 20px;
+  }
+  .fibra-presentation {
+    background-image: url(../assets/images/general/wave-sht-general-movil.png);
+  }
 }
 @media screen and (min-width: 767px) and (max-width: 900px) {
   .fored-cards-presentation {
@@ -216,5 +223,15 @@
   }
   .fibra-presentation-content {
     max-width: 100%;
+  }
+}
+@media screen and (min-width: 767px) and (max-width: 991px){
+  .int-simetrico-img img{
+    width: 60%;
+  }
+}
+@media screen and (max-width: 1023px){
+  .int-simetrico-txt {
+    width: 100%;
   }
 }

@@ -7,7 +7,7 @@ const BannerTrivias = () => {
     <div className="container">
 
     
-    <div className="banner-trivias d-flex justify-content-center  justify-content-lg-evenly align-items-center flex-column flex-lg-row">
+    <div className="banner-trivias d-flex justify-content-center justify-content-lg-evenly align-items-center flex-column flex-lg-row">
         <div className="trivias-icon">
         <img src="../src/assets/images/home/participa-gana.png" alt="" />
         </div>

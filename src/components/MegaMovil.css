@@ -5,7 +5,7 @@
   max-width: 100%;
   height: auto;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .megamovil-home{
       margin-top: 0px;
       row-gap: 50px;
@@ -13,5 +13,19 @@
     .text-p{
         padding-right: 0 !important;
     }
+    .megamovil-home{
+      margin-top: 80px;
+      margin-bottom: 60px;
+    }
+    .pago-bancos img{
+      width: 225px;
+    }
+    
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1023px) {
+.img-megamovil{
+  max-width: 70%;
+}
     
   }

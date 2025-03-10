@@ -100,6 +100,7 @@
 @media screen and (max-width:767px) {
     .sim-util-container{
         padding: 30px;
+        margin-top: 0px;
     }
     .foqe-container{
         background-image: url(../assets/images/general/wave-sht-general-movil.png);

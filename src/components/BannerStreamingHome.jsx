@@ -7,6 +7,7 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation'; // Importar estilos de navegación
 import './BannerStreamingHome.css';
+import './Globales.css';
 
 const BannerStreamingHome = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -70,8 +71,8 @@ const BannerStreamingHome = () => {
           slidesPerView={slidesPerView} 
           spaceBetween={cards.length < 3 ? 0 : -60} 
           navigation={{
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: '.swiper-button-next next-btn-prz',
+            prevEl: '.swiper-button-prev prev-btn-prz',
           }} 
           coverflowEffect={{
             rotate: 0,
@@ -118,8 +119,8 @@ const BannerStreamingHome = () => {
         </Swiper>
 
         {/* Botones de navegación */}
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
+        <div className="swiper-button-prev next-btn-prz"></div>
+        <div className="swiper-button-next prev-btn-prz"></div>
       </div>
     </>
   );

@@ -108,14 +108,14 @@
 }
 
 
-@media (max-width: 500px) {
+@media (max-width: 767px) {
   .swiper_container {
     height: auto;
-
   }
 
   .swiper-container {
     position: relative;
+    margin-bottom: 50px;
   }
 
   .swiper-slide {
@@ -143,6 +143,9 @@
   .swiper-3d {
     width: 100%;
 
+  }
+  .banner-streaming-home{
+    margin-top: 100px;
   }
 }
 

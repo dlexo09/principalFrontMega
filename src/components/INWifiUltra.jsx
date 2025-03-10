@@ -21,12 +21,22 @@ const INWifiUltra = () => {
 
         <div className="row wifiultra-info-container">
           <div className="col-lg-4 order-3 order-lg-1 d-flex flex-column justify-content-center align-items-center text-center wifiultra-info">
+          <img
+          className="mb-4 d-md-none"
+                src="../src/assets/images/servicios/internet/wifi-certificado.png"
+                alt=""
+              />
             <h3>
               Internet rápido
               <br />
               en todos tus dispositivos
             </h3>
-            <p className="mt-5 wu-subtitle">
+            <img
+            className="mb-4 mt-5 d-md-none"
+                src="../src/assets/images/servicios/internet/wifi-inteligente.png"
+                alt=""
+              />
+            <p className="mt-md-5 wu-subtitle">
               <span>
                 Conexión
                 <br />
@@ -59,10 +69,15 @@ const INWifiUltra = () => {
 
           <div className="d-none d-lg-flex order-2 order-md-2 col-md-1"></div>
 
-          <div className="oreder-1 order-lg-3 col-lg-5 col-xl-6">
+          <div className="oreder-1 order-lg-3 col-lg-5 col-xl-6 text-center">
             <img
-              className="w-100 p-0"
+              className="w-100 p-0 d-none d-lg-block"
               src="../src/assets/images/servicios/internet/wifiultra-con-logo.png"
+              alt="Wifi ultra"
+            />
+            <img
+              className="w-100 p-0 d-lg-none logo-wifi-ultra"
+              src="../src/assets/images/servicios/internet/wifi-ultra-logo.png"
               alt="Wifi ultra"
             />
           </div>
