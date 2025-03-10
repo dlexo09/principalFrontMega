@@ -181,22 +181,20 @@ const PaquetesTarifarios = () => {
                                 <p className="card-text">de peliculas y series</p>
                               </>
                             )}
-                            
+
                           </div>
                         )}
 
                         <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
                         <div className="promoExtra">
-                          {promos
-                            .filter(promo => promo.dondeAplica === 1 || (promo.dondeAplica === 2 && selectedPack === 'doble') || (promo.dondeAplica === 3 && selectedPack === 'triple'))
-                            .map((promo, index) => (
-                              <img
-                                key={index}
-                                src={`/public/uploads/cardTarifarioStreaming/${promo.logo}`}
-                                alt={promo.nameStreaming}
-                                style={{ height: '50px' }}
-                              />
-                            ))}
+                          {promos.map((promo, index) => (
+                            <img
+                              key={index}
+                              src={`/public/uploads/cardTarifarioStreaming/${promo.logo}`}
+                              alt={promo.nameStreaming}
+                              style={{ height: '50px' }}
+                            />
+                          ))}
                           <p className="card-text price-card">
                             <span className="price-mxn">$</span>
                             {paquete.tarifaPromocional + totalPromoValue}
@@ -205,8 +203,7 @@ const PaquetesTarifarios = () => {
                           </p>
                           {paquete.tarifaPromocionalTemp > 0 && (
                             <p className="card-text">x {paquete.tarifaPromocionalTemp} meses</p>
-                          )}
-                        </div>
+                          )}                        </div>
                         <button className="btn btn-packs btn-pack-card">¡Lo quiero!</button>
 
                         {/* Icons cards */}
