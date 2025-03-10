@@ -104,75 +104,99 @@ const PaquetesTarifarios = () => {
           {chunkedPaquetes.map((chunk, index) => (
             <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
               <div className="d-flex justify-content-center slider-gp">
-                {chunk.map((paquete, i) => (
-                  <div key={i} className="paquete-item card m-2">
-                    <div className="card-body">
-                      <h2 className="card-title">{paquete.simetria == 0 ? 'INTERNET ILIMITADO' : 'INTERNET SIMÉTRICO'}</h2>
-                      <p className="card-text velocidadPromo">{paquete.velocidadPromo} MEGAS</p>
-                      <p className="card-text tiempoVelocidadPromo">
-                        x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
-                      </p>
+                {chunk.map((paquete, i) => {
+                  const velocidad = paquete.velocidadPromo === 0 ? paquete.velocidadInternet : paquete.velocidadPromo;
+                  return (
+                    <div key={i} className="paquete-item card m-2">
+                      <div className="card-body">
+                        <h2 className="card-title">{paquete.idTipoRed == 3 ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
+                        <p className="card-text velocidadPromo">
+                          {velocidad} MEGAS
+                        </p>
+                        {paquete.tiempoVelocidaPromo > 0 ? (
+                          <p className="card-text tiempoVelocidadPromo">
+                            x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
+                          </p>
+                        ) : paquete.tarifaPromocionalTemp > 0 ? (
+                          <p className="card-text tiempoVelocidadPromo">
+                            x {paquete.tarifaPromocionalTemp} meses<sup>*</sup>
+                          </p>
+                        ) : (
+                          <p className="card-text tiempoVelocidadPromo"></p>
+                        )}
 
-                      <p>
-                        <img
-                          src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
-                          alt="IncluyeExtensor Wifi Ultra"
-                          style={{ height: '40px', marginTop: '20px' }}
-                        />
-                      </p>
-
-                      {paquete.archivo && (
-                        <div className="xview-content">
-                          <p className="card-servicio-txt">TV HD INTERACTIVA</p>
+                        {velocidad >= 200 && (
                           <p>
                             <img
-                              src={`${serverUrl}src/assets/${paquete.ruta}${paquete.archivo}`}
-                              alt="TV HD INTERACTIVA"
-                              style={{ height: '30px' }}
+                              src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
+                              alt="IncluyeExtensor Wifi Ultra"
+                              style={{ height: '40px', marginTop: '20px' }}
                             />
                           </p>
-                          <p className="card-text">{paquete.textoServicioCable}</p>
+                        )}
+
+                        {paquete.archivo && (
+                          <div className="xview-content">
+                            {paquete.idTipoPaquete === 2 ? (
+                              <>
+                                {paquete.nameServicioCable.includes('HD') ? (
+                                  <p className="card-servicio-txt">TV HD INTERACTIVA</p>
+                                ) : (
+                                  <p className="card-servicio-txt">TV INTERACTIVA</p>
+                                )}
+                              </>
+                            ) : (paquete.idTipoPaquete === 3 || paquete.idTipoPaquete === 4) && (
+                              <p>
+                                <img
+                                  src={`${serverUrl}src/assets/img/${paquete.logo}`}
+                                  alt="TV HD INTERACTIVA"
+                                  style={{ height: '30px' }}
+                                />
+                              </p>
+                            )}
+                            <p className="card-text">{paquete.textoServicioCable}</p>
+                          </div>
+                        )}
+
+                        <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
+                        <div className="promoExtra">
+                          <img
+                            src={`${serverUrl}src/assets/uploads/banners/promo-partner.png`}
+                            alt="Promo"
+                            style={{ height: '50px' }}
+                          />
+                          <p className="card-text price-card">
+                            <span className="price-mxn">$</span>
+                            {paquete.tarifaPromocional + promoValue}
+                            <sup>*</sup>
+                            <span className="time-crd">/mes</span>
+                          </p>
+                          <p className="card-text">x {paquete.tiempoVelocidaPromo} meses</p>
                         </div>
-                      )}
+                        <button className="btn btn-packs btn-pack-card">¡Lo quiero!</button>
 
-                      <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
-                      <div className="promoExtra">
+                        {/* Icons cards */}
                         <img
-                          src={`${serverUrl}src/assets/uploads/banners/promo-partner.png`}
-                          alt="Promo"
-                          style={{ height: '50px' }}
+                          className="icon-card-packs internet-icon"
+                          src="../src/assets/icons/internet-icon.png"
+                          alt="Icono Internet"
                         />
-                        <p className="card-text price-card">
-                          <span className="price-mxn">$</span>
-                          {paquete.tarifaPromocional + promoValue}
-                          <sup>*</sup>
-                          <span className="time-crd">/mes</span>
-                        </p>
-                        <p className="card-text">x {paquete.tiempoVelocidaPromo} meses</p>
+                        {selectedPack !== 'doble' && (
+                          <img
+                            className="icon-card-packs tv-icon"
+                            src="../src/assets/icons/tv-icon.png"
+                            alt="Icono TV"
+                          />
+                        )}
+                        <img
+                          className={`icon-card-packs telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
+                          src="../src/assets/icons/telefonia-icon.png"
+                          alt="Icono Telefonía"
+                        />
                       </div>
-                      <button className="btn btn-packs btn-pack-card">¡Lo quiero!</button>
-
-                      {/* Icons cards */}
-                      <img
-                        className="icon-card-packs internet-icon"
-                        src="../src/assets/icons/internet-icon.png"
-                        alt="Icono Internet"
-                      />
-                      {selectedPack !== 'doble' && (
-                        <img
-                          className="icon-card-packs tv-icon"
-                          src="../src/assets/icons/tv-icon.png"
-                          alt="Icono TV"
-                        />
-                      )}
-                      <img
-                        className={`icon-card-packs telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
-                        src="../src/assets/icons/telefonia-icon.png"
-                        alt="Icono Telefonía"
-                      />
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           ))}
