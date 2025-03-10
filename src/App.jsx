@@ -36,6 +36,7 @@ import ActivaAmazon from './views/ActivaAmazon';
 import ActivaDisneyplus from './views/ActivaDisneyplus';
 import ActivaParamount from './views/ActivaParamount';
 import ActivaMax from './views/ActivaMax';
+import DetallePaquete from './views/DetallePaquete';
 import { LocationProvider } from './LocationContext';
 import './App.css';
 
@@ -74,6 +75,7 @@ function App() {
             <Route path="/activa-disneyplus" element={<ActivaDisneyplus/>} />
             <Route path="/activa-paramount+" element={<ActivaParamount/>} />
             <Route path="/activa-max" element={<ActivaMax/>} />
+            <Route path="/detallePaquete/:idContrata" element={<DetallePaquete/>} />
         </Routes>
         </div>
         <Footer />

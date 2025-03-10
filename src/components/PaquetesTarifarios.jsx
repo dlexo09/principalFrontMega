@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext'; //
 import './PaquetesTarifarios.css';
@@ -12,6 +13,7 @@ const PaquetesTarifarios = () => {
   const [promos, setPromos] = useState([]);
   const promoValue = 0; // Definir la variable para el valor adicional
   const idSucursal = currentLocation?.idSucursal; // Obtener el idSucursal de currentLocation
+  const navigate = useNavigate(); // Hook para redirigir
 
   console.log("ID sucursal", idSucursal); // Imprimir el valor de idSucursal
 
@@ -90,6 +92,10 @@ const PaquetesTarifarios = () => {
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
 
   const isFullConnectedVisible = fullConnectedData.some(item => item.idSucursal === idSucursal && item.status === 1);
+
+  const handleButtonClick = (idContrata) => {
+    navigate(`/detallePaquete/${idContrata}`);
+  };
 
   return (
     <div className="container paquetes-tarifarios text-center">
@@ -181,7 +187,7 @@ const PaquetesTarifarios = () => {
                                 <p className="card-text">de peliculas y series</p>
                               </>
                             )}
-                            
+
                           </div>
                         )}
 
@@ -207,7 +213,7 @@ const PaquetesTarifarios = () => {
                             <p className="card-text">x {paquete.tarifaPromocionalTemp} meses</p>
                           )}
                         </div>
-                        <button className="btn btn-packs btn-pack-card">¡Lo quiero!</button>
+                        <button className="btn btn-packs btn-pack-card" onClick={() => handleButtonClick(paquete.idContrata)}>¡Lo quiero!</button>
 
                         {/* Icons cards */}
                         <img

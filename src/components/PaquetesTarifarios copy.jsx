@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useHistory } from 'react-router-dom';
 import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext'; //
 import './PaquetesTarifarios.css';
@@ -88,9 +89,11 @@ const PaquetesTarifarios = () => {
   };
 
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
-
   const isFullConnectedVisible = fullConnectedData.some(item => item.idSucursal === idSucursal && item.status === 1);
+  const handleButtonClick = (idContrata) => {
+    history.push(`/detallePaquete/${idContrata}`);
 
+  };
   return (
     <div className="container paquetes-tarifarios text-center">
       <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
@@ -181,20 +184,22 @@ const PaquetesTarifarios = () => {
                                 <p className="card-text">de peliculas y series</p>
                               </>
                             )}
-
+                            
                           </div>
                         )}
 
                         <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
                         <div className="promoExtra">
-                          {promos.map((promo, index) => (
-                            <img
-                              key={index}
-                              src={`/public/uploads/cardTarifarioStreaming/${promo.logo}`}
-                              alt={promo.nameStreaming}
-                              style={{ height: '50px' }}
-                            />
-                          ))}
+                          {promos
+                            .filter(promo => promo.dondeAplica === 1 || (promo.dondeAplica === 2 && selectedPack === 'doble') || (promo.dondeAplica === 3 && selectedPack === 'triple'))
+                            .map((promo, index) => (
+                              <img
+                                key={index}
+                                src={`/public/uploads/cardTarifarioStreaming/${promo.logo}`}
+                                alt={promo.nameStreaming}
+                                style={{ height: '50px' }}
+                              />
+                            ))}
                           <p className="card-text price-card">
                             <span className="price-mxn">$</span>
                             {paquete.tarifaPromocional + totalPromoValue}
@@ -203,8 +208,10 @@ const PaquetesTarifarios = () => {
                           </p>
                           {paquete.tarifaPromocionalTemp > 0 && (
                             <p className="card-text">x {paquete.tarifaPromocionalTemp} meses</p>
-                          )}                        </div>
-                        <button className="btn btn-packs btn-pack-card">¡Lo quiero!</button>
+                          )}
+                        </div>
+                        <button className="btn btn-packs btn-pack-card" onClick={() => handleButtonClick(paquete.idContrata)}>¡Lo quiero!</button>
+
 
                         {/* Icons cards */}
                         <img
