@@ -9,6 +9,7 @@ const PaquetesTarifarios = () => {
   const [selectedPack, setSelectedPack] = useState('triple');
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
   const [fullConnectedData, setFullConnectedData] = useState([]);
+  const [promos, setPromos] = useState([]);
   const promoValue = 60; // Definir la variable para el valor adicional
   const idSucursal = currentLocation?.idSucursal; // Obtener el idSucursal de currentLocation
 
@@ -44,6 +45,20 @@ const PaquetesTarifarios = () => {
     };
 
     fetchFullConnectedData();
+  }, []);
+
+  useEffect(() => {
+    const fetchPromos = async () => {
+      try {
+        const response = await fetch('http://localhost:3000/dev/api/promoEspecialHome/');
+        const data = await response.json();
+        setPromos(data);
+      } catch (error) {
+        console.error('Error fetching promos:', error);
+      }
+    };
+
+    fetchPromos();
   }, []);
 
   const updateChunkSize = () => {
@@ -106,6 +121,7 @@ const PaquetesTarifarios = () => {
               <div className="d-flex justify-content-center slider-gp">
                 {chunk.map((paquete, i) => {
                   const velocidad = paquete.velocidadPromo === 0 ? paquete.velocidadInternet : paquete.velocidadPromo;
+                  const totalPromoValue = promos.reduce((acc, promo) => acc + promo.costoMensualPromo, promoValue);
                   return (
                     <div key={i} className="paquete-item card m-2">
                       <div className="card-body">
@@ -140,34 +156,48 @@ const PaquetesTarifarios = () => {
                             {paquete.idTipoPaquete === 2 ? (
                               <>
                                 {paquete.nameServicioCable.includes('HD') ? (
-                                  <p className="card-servicio-txt">TV HD INTERACTIVA</p>
+                                  <>
+                                  <p className="card-servicio-txt">Televisión HD</p>
+                                  <p className="card-text">{paquete.textoServicioCable}</p>
+                                  </>
                                 ) : (
-                                  <p className="card-servicio-txt">TV INTERACTIVA</p>
+                                  <>
+                                  <p className="card-servicio-txt">Televisión</p>
+                                  <p className="card-text">{paquete.textoServicioCable}</p>
+                                  </>
                                 )}
                               </>
                             ) : (paquete.idTipoPaquete === 3 || paquete.idTipoPaquete === 4) && (
+                              <>
                               <p>
                                 <img
                                   src={`${serverUrl}src/assets/img/${paquete.logo}`}
-                                  alt="TV HD INTERACTIVA"
+                                  alt="TV INTERACTIVA"
                                   style={{ height: '30px' }}
                                 />
                               </p>
+                              <p className="card-text">Más de 130 canales </p>
+                              <p className="card-text">+ De 30,000 horas</p>
+                              <p className="card-text">de peliculas y series</p>
+                              </>
                             )}
-                            <p className="card-text">{paquete.textoServicioCable}</p>
+                            
                           </div>
                         )}
 
                         <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
                         <div className="promoExtra">
-                          <img
-                            src={`${serverUrl}src/assets/uploads/banners/promo-partner.png`}
-                            alt="Promo"
-                            style={{ height: '50px' }}
-                          />
+                          {promos.map((promo, index) => (
+                            <img
+                              key={index}
+                              src={`/public/uploads/cardTarifarioStreaming/${promo.logo}`}
+                              alt={promo.nameStreaming}
+                              style={{ height: '50px' }}
+                            />
+                          ))}
                           <p className="card-text price-card">
                             <span className="price-mxn">$</span>
-                            {paquete.tarifaPromocional + promoValue}
+                            {paquete.tarifaPromocional + totalPromoValue}
                             <sup>*</sup>
                             <span className="time-crd">/mes</span>
                           </p>
