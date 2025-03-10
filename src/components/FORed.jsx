@@ -157,7 +157,7 @@ const FORed = () => {
             />
           </div>
 
-            <div className=" row int-simetrico-cards">
+            <div className=" row int-simetrico-cards text-center text-md-start">
               <div className="col-lg-5 int-simetrico-card">
                 <img
                   src="../src/assets/icons/fibra-optica/internet-simetrico.png"

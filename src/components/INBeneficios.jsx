@@ -30,7 +30,7 @@ const INBeneficios = () => {
             <h3>Cobertura amplia</h3>
             <p>Su red está disponible en diversas ciudades y áreas de México, lo que asegura conectividad en zonas urbanas y suburbanas.</p>
         </div>
-        <div className="beneficio-img-content">
+        <div className="beneficio-img-content d-none d-xl-block m-auto">
             <img src="../src/assets/images/servicios/internet/wifiultra-modem.png" alt="" />
         </div>
 

@@ -149,6 +149,7 @@
 .wu-modem-container{
     margin-bottom: 150px;
 }
+
 @media screen and (max-width:767px){
     .wu-cta-container form{
         flex-direction: column;
@@ -209,6 +210,16 @@
     .wu-modem-container{
         margin-bottom: 100px;
     }
+    .logo-wifi-ultra{
+        width: 200px !important;
+        margin-bottom: 20px;
+    }
+    .wu-caracteristicas{
+        display: none;
+    }
+    .wifiultra-info{
+        padding: 50px 20px;
+    }
 
 }
 @media screen and (max-width:1023px) {
@@ -224,11 +235,12 @@
     }
 
     .wifiultra-info-container{
-        padding: 30px;
+        padding: 15px;
     }
     .wifiultra-info{
         margin-top: 50px !important;
     }
+
 }
 @media screen and (min-width:767px) and (max-width:1023px){
     .wifiultra-info-container{
@@ -240,6 +252,10 @@
     .wu-cta-container{
         margin-top: 80px;
     }
+    .logo-wifi-ultra{
+        width: 250px !important;
+    }
+    
 }
 @media screen and (min-width:1024px) and (max-width:1440px){
     .wifi-certificado img{

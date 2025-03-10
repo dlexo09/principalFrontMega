@@ -2,7 +2,7 @@
   background-color: #000000;
   margin-bottom: 0;
   width: 100%;
-  display: none;
+
 }
 
 .navbar-custom .navbar-brand,
@@ -96,8 +96,6 @@
   vertical-align: 15px;
 }
 @media screen and (min-width: 900px) {
-  .top-bar-container {
-    display: block;
-  }
+ 
   
 }

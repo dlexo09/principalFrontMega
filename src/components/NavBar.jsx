@@ -27,7 +27,7 @@ const NavBar = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div className="collapse navbar-collapse justify-content-end mt-4" id="navbarNav">
           <ul className="navbar-nav">
             
             <li className="nav-item dropdown">
@@ -69,7 +69,7 @@ const NavBar = () => {
               <a className="nav-link" aria-current="page" href="/xviewplus">Xview+</a>
             </li>
             <li className="nav-item">
-              <a className="nav-link" aria-current="page" href="/xview">TV Interactiva</a>
+              <a className="nav-link" aria-current="page" href="/xview">Xview</a>
             </li>
             <li className="nav-item">
               <a className="nav-link" aria-current="page" href="/tv">TV</a>
@@ -79,6 +79,13 @@ const NavBar = () => {
             </li>
             <li className="nav-item">
               <a className="nav-link" aria-current="page" href="/ayuda">Ayuda</a>
+            </li> 
+            {/* Movil */}
+            <li className="nav-item">
+              <a className="nav-link d-xl-none" target='_blank' aria-current="page" href="https://pagoenlinea.megacable.com.mx/">Paga en Línea</a>
+            </li> 
+            <li className="nav-item">
+              <a className="nav-link d-xl-none" target='_blank' aria-current="page" href="https://sel.megacable.com.mx/">Mi cuenta Mega</a>
             </li> 
           </ul>
         </div>

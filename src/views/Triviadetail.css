@@ -1,5 +1,85 @@
 /* filepath: /c:/xampp/htdocs/Front-react-bostrap-vite/my-react-app/src/views/TriviaDetail.css */
-.trivia-banner {
-    width: 100%;
-    height: auto;
+.datos-trivia {
+  background-image: url(/src/assets/images/home/waves-bg-1.png);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  padding: 100px 0 100px 0;
+}
+.datos-personales-trivia {
+  background-color: #fff;
+  padding: 30px;
+  max-width: 800px;
+  border-radius: 30px;
+  margin: 0 auto;
+}
+
+.trivia-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+.form-check {
+  width: 48%;
+  border: 1px solid #d9d9d9;
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer; /* Añadir cursor pointer para indicar que es clickeable */
+}
+
+.form-check-input {
+  margin-right: 10px;
+}
+
+.form-check-input:checked + .form-check-label {
+  border-color: #007bff; /* Cambia esto al color que desees */
+}
+
+.form-check-input:checked + .form-check-label .form-check {
+  border-color: #007bff; /* Cambia esto al color que desees */
+}
+
+.form-check-label {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.form-check.active {
+  border-color: #007bff; /* Cambia esto al color que desees */
+  background-color: rgba(0, 82, 255, 0.1) !important;
+}
+.form-label {
+  font-size: 20px;
+  margin-top: 25px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.form-label-datos{
+  margin-top: 0px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: 400;
+}
+.form-open-faq{
+  height: 80px;
+}
+
+
+@media screen and (max-width: 767px) {
+  .datos-trivia {
+    background-image: url(/src/assets/images/home/waves-bg-1-movil.png);
   }
+   .form-check{
+    width: 100%;
+   }
+   .datos-personales-trivia{
+    padding: 20px;
+   }
+  
+}

@@ -154,7 +154,7 @@ const FOBeneficios = () => {
       <div className="container">
         <form
           onSubmit={handleSubmit}
-          className="container fored-formulario-p"
+          className="container"
           id="miFormulario"
         >
           <div className="form__label-p text-center">

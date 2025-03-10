@@ -1,0 +1,27 @@
+.carouselTrivias img, .trivia-banner{
+    border-radius: 50px;
+}
+.trivia-banner{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.btn-trivias{
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    gap: 30px;
+}
+.trivias-container{
+    padding-bottom: 100px;
+}
+.legal-trivia{
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 767px){
+    .carouselTrivias img, .trivia-banner{
+        border-radius: 20px;
+    }
+
+}

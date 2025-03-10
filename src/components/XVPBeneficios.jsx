@@ -1,11 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./XVPBeneficios.css";
 import "./Globales.css";
-import PaquetesTarifarios from "../components/PaquetesTarifarios";
+import VideoPopup from "./VideoPopup"; // Importa el componente VideoPopup
+
+
+
 
 const XVPBeneficios = () => {
+
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [videoUrl, setVideoUrl] = useState("");
+
+  // Función para convertir la URL de YouTube
+  const convertYouTubeUrlToEmbed = (url) => {
+    const videoId = url.split("v=")[1].split("&")[0];
+    return `https://www.youtube.com/embed/${videoId}`;
+  };
+
+  // Función para abrir el popup
+  const openPopup = (url) => {
+    const embedUrl = convertYouTubeUrlToEmbed(url); // Convertir la URL
+    setVideoUrl(embedUrl);
+    setIsPopupOpen(true);
+  };
+
+  // Función para cerrar el popup
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setVideoUrl("");
+  };
+
+
   return (
     <>
       <div className="container general-tabs-container">
@@ -26,6 +54,14 @@ const XVPBeneficios = () => {
               Accede a más de 20,000 horas de series, películas, novelas,
               deportes y más, para verlos en el momento que tú quieras.
             </p>
+            <button
+                className="btn btn-action btn-tutorial mt-4"
+                onClick={() =>
+                  openPopup("https://www.youtube.com/watch?v=fhKrsjRQixw")
+                }
+              >
+                Ver tutorial <span className="open-page-icon"></span>
+              </button>
             </div>
           </div>
 
@@ -41,6 +77,7 @@ const XVPBeneficios = () => {
                 búsquedas integradas de contenidos, así como sintonizar canales
                 o ir a alguna sección solo con decirlo.
               </p>
+              <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
             </div>
           </div>
 
@@ -56,6 +93,7 @@ const XVPBeneficios = () => {
                 Apps el contenido que desees y te indicará en donde puedes
                 disfrutarlo.
               </p>
+            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
             </div>
           </div>
 
@@ -72,6 +110,8 @@ const XVPBeneficios = () => {
                 Empieza a ver un programa desde el inicio, aunque ya haya
                 comenzado.
               </p>
+            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+
             </div>
           </div>
 
@@ -86,6 +126,8 @@ const XVPBeneficios = () => {
                 Crea hasta 10 perfiles para cada miembro de tu familia para
                 recibir recomendaciones personalizadas de contenido.
               </p>
+            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+              
             </div>
           </div>
 
@@ -100,6 +142,8 @@ const XVPBeneficios = () => {
                 Descarga la nueva app de Xview Plus y lleva tu programación en
                 vivo con funciones interactivas y el contenido On Demand
               </p>
+            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+
             </div>
           </div>
 
@@ -114,6 +158,8 @@ const XVPBeneficios = () => {
                 Regresa hasta 48 hrs. tus canales interactivos favoritos para
                 disfrutar de un programa que ya pasó.
               </p>
+            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+
             </div>
           </div>
 
@@ -128,6 +174,8 @@ const XVPBeneficios = () => {
                 Graba los programas en vivo de los canales interactivos (Función
                 disponible a partir de Básico)
               </p>
+            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+
             </div>
           </div>
 
@@ -143,10 +191,13 @@ const XVPBeneficios = () => {
                 través de la tienda de Google Play integrada en tu caja y verlas
                 en tu TV
               </p>
+            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+
             </div>
           </div>
         </div>
       </div>
+      {isPopupOpen && <VideoPopup videoUrl={videoUrl} onClose={closePopup} />}
     </>
   );
 };

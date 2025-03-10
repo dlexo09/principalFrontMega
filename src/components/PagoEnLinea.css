@@ -75,7 +75,7 @@
   }
 
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 767px){
   .pago-bancos img{
     width: 90%; 
   }
@@ -94,7 +94,13 @@
   }
   .pago-title{
     font-size: 2.5rem;
-
   }
-  
+  }
+  @media screen and (max-width: 1023px){
+    .pago-en-linea{
+      padding: 100px 0;
+    }
+    .pago-en-linea {
+      background-image: url(../assets/images/home/waves-bg-1.png);
+    }
   }

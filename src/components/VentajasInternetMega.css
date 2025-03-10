@@ -25,28 +25,34 @@
     width: 100px;
     margin-bottom: 30px;
 }
-@media screen and (max-width: 500px){
+@media screen and (max-width: 767px){
     .ventajas-title{
         width: 230px;
         margin: 0 auto;
         margin-bottom: 20px;
     }
+    .ventaja-internet-card{
+        width: 95%;
+    }
+    .ventajasInternerMega{
+        padding:100px 0 150px 0;
+    }
 }
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1023px){
     .ventajas-internet-cards{
         flex-wrap: wrap;
         margin-top: 50px;
     }
     .ventajasInternerMega{
-        padding:20px 0 200px 0;
-    }
-    .ventaja-internet-card{
-        width: 250px;
-    }
-
-    .ventajasInternerMega{
-        background-image: url(../assets/images/home/waves-bg-1-movil.png);
-        
+        background-image: url(../assets/images/home/waves-bg-1-movil.png);    
     }
     
+}
+@media screen and (min-width: 767px) and (max-width: 1023px){
+    .ventaja-internet-card{
+        width: 45%;
+    }
+    .ventajasInternerMega{
+        padding:20px 0 200px 0;
+    }
 }

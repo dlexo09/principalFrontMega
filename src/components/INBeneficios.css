@@ -48,7 +48,7 @@
     }
     .be-gr-espcial{
         grid-column: 2 / 3;
-        grid-row: 3 / 3;
+        grid-row: 3 / 2;
     }
     .beneficio-card-content{
         height: 350px;
@@ -64,7 +64,7 @@
     }
     .be-gr-espcial{
         grid-column: 2 / 3;
-        grid-row: 3 / 3;
+        grid-row: 3 / 2;
     }
 }
 @media screen and (max-width:767px){

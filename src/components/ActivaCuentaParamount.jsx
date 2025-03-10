@@ -7,14 +7,14 @@ const ActivaCuentaParamount = () => {
         <>
         <div className="container-fluid activa-cuenta-strm-container activa-cuenta-strm-paramount d-flex justify-content-center">
             <div className="container row d-flex align-items-center">
-                <div className="col-md-6 col-xl-7">
-                    <p className='text-center d-md-none active-strm-paramount'><span>Para toda la familia</span></p>
-                    <h3 className='text-center title-strm-prime d-md-none mb-5'>¡Ya tienes <span>Paramount+</span> Cortesia de <span>Mega!</span></h3>
-                    <img className='w-100 mb-5 mb-md-0' src="../src/assets/images/streamings/paramount/paramount-pc-img.png" alt="" />
+                <div className="col-lg-6 col-xl-7">
+                    <p className='text-center d-lg-none active-strm-paramount'><span>Para toda la familia</span></p>
+                    <h3 className='text-center title-strm-prime d-lg-none mb-5'>¡Ya tienes <span>Paramount+</span> Cortesia de <span>Mega!</span></h3>
+                    <img className='w-100 mb-5 mb-md-0 d-none d-lg-block' src="../src/assets/images/streamings/paramount/paramount-pc-img.png" alt="" />
                 </div>
-                <div className="col-md-6 col-xl-5 contrata-streaming">
-                    <p className='d-none d-md-block active-strm-paramount'><span>Para toda la familia</span></p>
-                    <h3 className='d-none d-md-block title-strm-paramount'>¡Ya tienes <span>Paramount+</span> Cortesia de <span>Mega!</span></h3>
+                <div className="col-lg-6 col-xl-5 contrata-streaming">
+                    <p className='d-none d-lg-block active-strm-paramount'><span>Para toda la familia</span></p>
+                    <h3 className='d-none d-lg-block title-strm-paramount'>¡Ya tienes <span>Paramount+</span> Cortesia de <span>Mega!</span></h3>
                     <p className='active-strm-p d-none d-xl-block'>Activa tu cuenta ahora y disfruta de<br />todo el contenido</p>
                     <p className='active-strm-p d-xl-none'>Activa tu cuenta ahora y disfruta de todo el contenido</p>
                     <a href='activa-paramount+' className='btn-active-streaming btn-active-paramount mt-3'>Activa tu cuenta <span className='open-page-wh'></span></a>

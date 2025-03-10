@@ -686,7 +686,10 @@ const faqTelefonia = [
 
 const options = {
   FAQGeneral: {
-    label: "General",
+    label: <div>
+      <img className="sop-icon d-md-none" src="../src/assets/icons/soporte/general-icon.png" alt="" />
+      <p className="d-none d-md-block">General</p>
+    </div>,
     content: (
       <div className="container-fluid p-0">
         <FAQSoporte faqs={faqGeneral} />
@@ -694,7 +697,10 @@ const options = {
     ),
   },
   FAQTelevision: {
-    label: "Televisión",
+    label: <div>
+          <img className="sop-icon d-md-none" src="../src/assets/icons/soporte/tv-icon.png" alt="" />
+          <p className="d-none d-md-block">Televisión</p>
+          </div>,
     content: (
       <div className="container-fluid p-0">
         <FAQSoporte faqs={faqTelevision} />
@@ -702,7 +708,10 @@ const options = {
     ),
   },
   FAQInternet: {
-    label: "Internet",
+    label: <div>
+      <img className="sop-icon d-md-none" src="../src/assets/icons/soporte/internet-icon.png" alt="" />
+      <p className="d-none d-md-block">Internet</p>
+      </div>,
     content: (
       <div className="container sop-general-container">
         <FAQSoporte faqs={faqInternet} />
@@ -710,7 +719,10 @@ const options = {
     ),
   },
   FAQTelefonia: {
-    label: "Telefonía",
+    label: <div>
+          <img className="sop-icon d-md-none" src="../src/assets/icons/soporte/telefonia-icon.png" alt="" />
+          <p className="d-none d-md-block">Telefonía</p>
+          </div>,
     content: (
       <div className="container-fluid p-0">
         <FAQSoporte faqs={faqTelefonia} />
@@ -753,7 +765,7 @@ const SoporteOnline = () => {
       </div>
 
       {/* Switch */}
-      <div className="container d-flex flex-column flex-md-row justify-content-center align-items-center mt-5 btn-container-sop">
+      <div className="container d-flex justify-content-center align-items-center mt-5 btn-container-sop">
         {Object.entries(options).map(([option, { label }]) => (
           <SwitchButton
             key={option}

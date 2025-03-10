@@ -11,28 +11,41 @@ const TopBar = () => {
     const fetchLocations = async () => {
       if (locations.length === 0) {
         try {
-          const response = await fetch(`${serverAPILambda}api/sucursales`);//cambio para pruebas
+          const response = await fetch(`${serverAPILambda}api/sucursales`); //cambio para pruebas
           const data = await response.json();
           setLocations(data);
           if (data.length > 0 && !currentLocation) {
             // Obtener la ubicación del usuario
             if (navigator.geolocation) {
-              navigator.geolocation.getCurrentPosition((position) => {
-                const userLat = position.coords.latitude;
-                const userLng = position.coords.longitude;
+              navigator.geolocation.getCurrentPosition(
+                (position) => {
+                  const userLat = position.coords.latitude;
+                  const userLng = position.coords.longitude;
 
-                // Calcular la distancia entre la ubicación del usuario y cada sucursal
-                const closestLocation = data.reduce((prev, curr) => {
-                  const prevDistance = getDistance(userLat, userLng, prev.latitud, prev.longitud);
-                  const currDistance = getDistance(userLat, userLng, curr.latitud, curr.longitud);
-                  return prevDistance < currDistance ? prev : curr;
-                });
+                  // Calcular la distancia entre la ubicación del usuario y cada sucursal
+                  const closestLocation = data.reduce((prev, curr) => {
+                    const prevDistance = getDistance(
+                      userLat,
+                      userLng,
+                      prev.latitud,
+                      prev.longitud
+                    );
+                    const currDistance = getDistance(
+                      userLat,
+                      userLng,
+                      curr.latitud,
+                      curr.longitud
+                    );
+                    return prevDistance < currDistance ? prev : curr;
+                  });
 
-                setCurrentLocation(closestLocation);
-              }, (error) => {
-                console.error("Error getting user location:", error);
-                setCurrentLocation(data[0]);
-              });
+                  setCurrentLocation(closestLocation);
+                },
+                (error) => {
+                  console.error("Error getting user location:", error);
+                  setCurrentLocation(data[0]);
+                }
+              );
             } else {
               setCurrentLocation(data[0]);
             }
@@ -61,8 +74,10 @@ const TopBar = () => {
     const dLng = toRad(lng2 - lng1);
     const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
-      Math.cos(toRad(lat1)) * Math.cos(toRad(lat2)) *
-      Math.sin(dLng / 2) * Math.sin(dLng / 2);
+      Math.cos(toRad(lat1)) *
+        Math.cos(toRad(lat2)) *
+        Math.sin(dLng / 2) *
+        Math.sin(dLng / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return R * c; // Distancia en km
   };
@@ -71,35 +86,41 @@ const TopBar = () => {
     <>
       <nav className="navbar navbar-expand-lg navbar-custom top-bar-container">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#"></a>
+          <a className="navbar-brand d-none d-md-block" href="#"></a>
           <div
-            className="container top-bar collapse navbar-collapse d-flex justify-content-between align-item-center"
+            className="container top-bar d-flex justify-content-md-between justify-content-center  align-item-center"
             id="navbarNav"
           >
-            <div className="top-bar-phone">
+            <div className="top-bar-phone d-lg-flex d-none align-items-center">
               <a href="tel:+523396901234" className="d-flex align-item-center">
                 <span></span>33 9690 1234
               </a>
             </div>
 
             <ul className="top-bar-ubicacion d-flex align-items-center">
-              <p className="text-light">Cambiar ubicación:</p>
+              <p className="text-light d-md-block d-none">Cambiar ubicación:</p>
               <li className="nav-item">
                 <button
                   type="button"
                   className="btn top-bar-location d-flex align-item-center"
                   data-bs-toggle="modal"
                   data-bs-target="#locationModal"
-                > <span className="location-icon"></span>
+                >
+                  {" "}
+                  <span className="location-icon"></span>
                   {currentLocation?.sucursalName || "Seleccionar Sucursal"}
                   <span className="down-icon"></span>
                 </button>
               </li>
             </ul>
 
-            <div className="client-mega d-flex">
-              <a href="https://pagoenlinea.megacable.com.mx/" target="_blank" >Paga en línea</a>
-              <a href="https://sel.megacable.com.mx/" target="_blank">Mi cuenta MEGA</a>
+            <div className="client-mega d-md-flex d-none align-items-center">
+              <a href="https://pagoenlinea.megacable.com.mx/" target="_blank">
+                Paga en línea
+              </a>
+              <a href="https://sel.megacable.com.mx/" target="_blank">
+                Mi cuenta MEGA
+              </a>
             </div>
           </div>
         </div>
