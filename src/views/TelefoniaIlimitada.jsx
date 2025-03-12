@@ -6,7 +6,6 @@ import TICostos from "../components/TICostos";
 import TIPortabilidad from "../components/TIPortabilidad";
 import TIServiciosA from "../components/TIServiciosA";
 import TIReactivacion from "../components/TIReactivacion";
-import '../components/Globales.css';
 
 const TelefoniaIlimitada = () => {
   const tabs = [

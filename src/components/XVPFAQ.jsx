@@ -1,8 +1,5 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./XVPFAQ.css";
-import "./Globales.css";
 import FAQSoporte from './FAQSoporte'; // Ajusta la ruta según tu estructura de archivos
 
 // Definimos todas las preguntas frecuentes en una sola lista

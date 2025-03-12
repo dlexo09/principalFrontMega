@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPILambda } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext'; // Ajusta la ruta según la ubicación de tu archivo LocationContext.js
 import './BannerHome.css';
-import './Globales.css'
 
 const BannerHome = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -67,7 +66,7 @@ const BannerHome = () => {
           <div key={index} className={`carousel-item ${index === 0 ? 'active' : ''}`}>
             {/* Fondo del Slider */}
             <img 
-              src={`${serverUrl}src/assets/${banner.ruta}${banner.background}`} 
+              src={`/${banner.ruta}${banner.background}`} 
               className="d-block w-100 banner-background" 
               alt={`Slide ${index + 1}`} 
             />
@@ -86,10 +85,10 @@ const BannerHome = () => {
 
                 {/* Columna Derecha: Imagen */}
                 <div className="order-2 order-md-1  d-none d-md-flex col-md-8 d-flex justify-content-end banner-principal-img">
-                  <img className='img-netflix' src={`${serverUrl}src/assets/${banner.ruta}${banner.imagenBanner}`} alt="" />
+                  <img className='img-netflix' src={`/${banner.ruta}${banner.imagenBanner}`} alt="" />
                 </div>
                 <div className="order-1 order-md-2 d-md-none banner-principal-img-mov">
-                  <img className='img-netflix-movil' src={`${serverUrl}src/assets/${banner.ruta}${banner.imagenMobile}`} alt="" />
+                  <img className='img-netflix-movil' src={`/${banner.ruta}${banner.imagenMobile}`} alt="" />
                 </div>
               </div>
             </div>

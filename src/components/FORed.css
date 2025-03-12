@@ -1,6 +1,6 @@
 /* CARDS */
 .fibra-presentation {
-  background-image: url(../assets/images/fibra-optica/fibra-optica-wave.png);
+  background-image: url(/img/fibra-optica/fibra-optica-wave.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -213,7 +213,7 @@
     margin-top: 20px;
   }
   .fibra-presentation {
-    background-image: url(../assets/images/general/wave-sht-general-movil.png);
+    background-image: url(/img/general/wave-sht-general-movil.png);
   }
 }
 @media screen and (min-width: 767px) and (max-width: 900px) {

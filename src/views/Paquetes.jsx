@@ -2,8 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { LocationContext } from '../LocationContext'; // Importa LocationContext
 import { Routes, Route, Navigate } from "react-router-dom"; // Importa Navigate
 import { serverAPILambda } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
-
-
 import TabsComponent from "../components/TabsComponent";
 import OFResidencial from "../components/OFResidencial";
 import OFFullConnected from "../components/OFFullConnected";

@@ -1,5 +1,5 @@
 .fobeneficios-container {
-  background-image: url(../assets/images/fibra-optica/beneficios-bg.png);
+  background-image: url(/img/fibra-optica/beneficios-bg.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
   padding-bottom: 150px;
@@ -32,7 +32,7 @@
 }
 @media screen and (max-width: 1439px) {
   .fobeneficios-container {
-    background-image: url(../assets/images/fibra-optica/fibra-optica-wave.png);
+    background-image: url(/img/fibra-optica/fibra-optica-wave.png);
   }
   .comparative-table {
     justify-content: center;
@@ -43,7 +43,7 @@
 }
 @media screen and (max-width: 767px) {
   .fobeneficios-container {
-    background-image: url(../assets/images/general/wave-sht-general-movil.png);
+    background-image: url(/img/general/wave-sht-general-movil.png);
   }
   .con-mega,
   .con-otros {

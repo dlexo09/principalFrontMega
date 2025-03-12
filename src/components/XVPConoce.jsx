@@ -1,19 +1,15 @@
 import React from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./XVPConoce.css";
-import "./Globales.css";
 import './BannerStreamingHome.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { EffectCoverflow, Navigation } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation';
-import { EffectCoverflow, Navigation } from 'swiper/modules';
 
 const XVPConoce = () => {
   return (
     <>
-
       <div className="container-fluid xview-container">
         <div className="container">
           <div className="row">
@@ -23,10 +19,10 @@ const XVPConoce = () => {
                 TODOS TUS CONTENIDOS EN UN MISMO LUGAR Y EN 4K
               </h2>
               <div className="d-block d-xl-none">
-              <img className="w-100" src="../src/assets/images/servicios/tv-interactiva/caja-xviewplus.png" alt="" />
+              <img className="w-100" src="/img/servicios/tv-interactiva/caja-xviewplus.png" alt="" />
             </div>
               <p className="mt-4">
-                Xview Plus es la nueva plataforma de video de Megacable con una
+                Xview Plus es la nueva plataforma de video de Megacable con una
                 guía interactiva más intuitiva y fácil de usar, que reúne todos
                 tus contenidos en un solo lugar en alta definición, para que veas
                 lo que quieras, donde y cuando quieras en tu televisión o
@@ -38,7 +34,7 @@ const XVPConoce = () => {
             </div>
 
             <div className="col-md-7 d-none d-xl-block">
-              <img className="w-100" src="../src/assets/images/servicios/tv-interactiva/caja-xviewplus.png" alt="" />
+              <img className="w-100" src="/img/servicios/tv-interactiva/caja-xviewplus.png" alt="" />
             </div>
 
           </div>
@@ -92,35 +88,35 @@ const XVPConoce = () => {
           <SwiperSlide>
             <div className="swiper-img-container netflix-item">
               <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                <img src="../src/assets/images/home/netflix-logo.png" alt="Netflix" />
+                <img src="/img/home/netflix-logo.png" alt="Netflix" />
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="swiper-img-container disney-item">
               <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                <img src="../src/assets/images/home/disney-logo.png" alt="Disney" />
+                <img src="/img/home/disney-logo.png" alt="Disney" />
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="swiper-img-container paramount-item">
               <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                <img src="../src/assets/images/home/paramount-logo.png" alt="Paramount" />
+                <img src="/img/home/paramount-logo.png" alt="Paramount" />
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="swiper-img-container prime-item">
               <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                <img src="../src/assets/images/home/prime-logo.png" alt="Prime" />
+                <img src="/img/home/prime-logo.png" alt="Prime" />
               </div>
             </div>
           </SwiperSlide>
           <SwiperSlide>
             <div className="swiper-img-container max-item">
               <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                <img src="../src/assets/images/home/max-logo.png" alt="Max" />
+                <img src="/img/home/max-logo.png" alt="Max" />
               </div>
             </div>
           </SwiperSlide>
@@ -130,6 +126,7 @@ const XVPConoce = () => {
         <div className="swiper-button-prev"></div>
         <div className="swiper-button-next"></div>
       </div>
+
 
     </>
   );

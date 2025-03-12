@@ -17,7 +17,7 @@
   .recommendations-button span {
     width: 16px;
     height: 16px;
-    background-image: url(../assets/icons/acordeon-active-up.png);
+    background-image: url(/icons/acordeon-active-up.png);
     background-position: center;
     background-size: cover;
   }

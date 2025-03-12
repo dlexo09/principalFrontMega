@@ -16,7 +16,7 @@ const Card = ({
       <p>&nbsp;</p>
       <img
         className="megas-img"
-        src={`../src/assets/images/oferta/full-connected/${megas}megas.png`}
+        src={`/img/oferta/full-connected/${megas}megas.png`}
         alt={`${megas} MEGAS`}
       />
       <p>DE VELOCIDAD</p>
@@ -42,7 +42,7 @@ const Card = ({
         {partners.map((partner, index) => (
           <img
             key={index}
-            src={`../src/assets/images/oferta/full-connected/${partner}-logo.png`}
+            src={`/img/oferta/full-connected/${partner}-logo.png`}
             alt={`${partner} Logo`}
           />
         ))}
@@ -91,26 +91,7 @@ const OFFullConnected = () => {
       mesh: "1 EXTENSOR",
       isSpecial: true,
     },
-    /*
-    {
-      megas: 500,
-      velocidad: "500 MEGAS",
-      tvs: "1 TV",
-      canales: "MÁS DE 80 CANALES",
-      precio: 750,
-      precioPromo: 650,
-      partners: ["paramount"]
-    },
-    {
-      megas: 300,
-      velocidad: "300 MEGAS",
-      tvs: "1 TV",
-      canales: "MÁS DE 80 CANALES",
-      precio: 650,
-      precioPromo: 550,
-      partners: ["paramount"]
-    }
-      */
+   
   ];
 
   return (
@@ -118,12 +99,12 @@ const OFFullConnected = () => {
       <div className="container-fluid p-0 fc-banner-principal">
         <img
           className="w-100 d-none d-md-block"
-          src="../src/assets/images/oferta/full-connected/full-connected-banner.png"
+          src="/img/oferta/full-connected/full-connected-banner.png"
           alt=""
         />
         <img
           className="w-100 d-md-none"
-          src="../src/assets/images/oferta/full-connected/banner-fch-movil.png"
+          src="/img/oferta/full-connected/banner-fch-movil.png"
           alt=""
         />
 
@@ -140,7 +121,7 @@ const OFFullConnected = () => {
             <div className="cards-title">
               <h2>Elige tu paquete</h2>
               <img
-                src="../src/assets/images/oferta/full-connected/fch-logo.png"
+                src="/img/oferta/full-connected/fch-logo.png"
                 alt="Full Connected Home Logo"
               />
             </div>
@@ -204,7 +185,7 @@ const OFFullConnected = () => {
                   className={`carousel-item ${index === 0 ? "active" : ""}`}
                 >
                   <img
-                    src={`../src/assets/images/oferta/full-connected/full-connected_sl-${slide}.png`}
+                    src={`/img/oferta/full-connected/full-connected_sl-${slide}.png`}
                     className="d-block w-100"
                     alt="..."
                   />
@@ -219,7 +200,7 @@ const OFFullConnected = () => {
               data-bs-slide="prev"
             >
               <img
-                src="../src/assets/icons/oferta/control-prev-fch.png"
+                src="/icons/oferta/control-prev-fch.png"
                 alt="Previous"
               />
             </button>
@@ -230,7 +211,7 @@ const OFFullConnected = () => {
               data-bs-slide="next"
             >
               <img
-                src="../src/assets/icons/oferta/control-next-fch.png"
+                src="/icons/oferta/control-next-fch.png"
                 alt="Next"
               />
             </button>

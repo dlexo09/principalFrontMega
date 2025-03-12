@@ -6,7 +6,6 @@ import XVConoce from "../components/XVPConoce";
 import XVTutoriales from "../components/XVPTutoriales";
 import TVCanales from "../components/TVCanales";
 import XVFAQ from "../components/XVPFAQ";
-import "../components/Globales.css";
 
 const Xview = () => {
   const tabs = [
@@ -21,7 +20,7 @@ const Xview = () => {
       <div className="container-fluid p-0">
         <h1 className="text-center title-tabs">
           <img
-            src="../src/assets/images/servicios/tv-interactiva/xviewplus-logo.png"
+            src="/img/servicios/tv-interactiva/xviewplus-logo.png"
             alt="Xview+"
           />
           <br />

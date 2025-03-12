@@ -12,7 +12,7 @@
   }
   
   .faq-global-accordion .accordion-button::before {
-    content: url(../assets/icons/acordeon-inactive.png); 
+    content: url(/icons/acordeon-inactive.png); 
     font-size: 1.2rem;
     position: absolute;
     right: 20px; 
@@ -26,7 +26,7 @@
   
 
   .faq-global-accordion .accordion-button:not(.collapsed)::before {
-    content: url(../assets/icons/acordeon-active.png); 
+    content: url(/icons/acordeon-active.png); 
     background-color: #fff;
   }
   .faq-global-accordion .accordion-button:not(.collapsed){

@@ -121,15 +121,15 @@
 }
 
 .pi1-hd {
-    background-image: url(../assets/icons/netflix/pi1-hd.png);
+    background-image: url(/icons/netflix/pi1-hd.png);
 }
 
 .pi2-2hd {
-    background-image: url(../assets/icons/netflix/pi1-2hd.png);
+    background-image: url(/icons/netflix/pi1-2hd.png);
 }
 
 .pi3-4k {
-    background-image: url(../assets/icons/netflix/pi3-4k.png);
+    background-image: url(/icons/netflix/pi3-4k.png);
 }
 
 .plans-netflix-icon {

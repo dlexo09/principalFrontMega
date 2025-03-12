@@ -10,7 +10,7 @@ import InternetSimetrico from '../components/InternetSimetrico';
 import TvInteractiva from '../components/TvInteractiva';
 import BannerAvisos from '../components/BannerAvisos';
 import BannerTrivias from '../components/BannerTrivias';
-import { serverAPILambda, serverAPIUrl } from '../config'; // Importar serverAPIUrl
+import { serverAPILambda } from '../config'; // Importar serverAPIUrl
 
 const Home = () => {
   const [seccionesActivas, setSeccionesActivas] = useState([]);

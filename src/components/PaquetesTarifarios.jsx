@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPILambda } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext'; //
 import './PaquetesTarifarios.css';
 
@@ -150,7 +150,7 @@ const PaquetesTarifarios = () => {
                         {velocidad >= 200 && (
                           <p>
                             <img
-                              src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
+                              src={`/img/extensor_wifi_ultra.png`}
                               alt="IncluyeExtensor Wifi Ultra"
                               style={{ height: '40px', marginTop: '20px' }}
                             />
@@ -177,7 +177,7 @@ const PaquetesTarifarios = () => {
                               <>
                                 <p>
                                   <img
-                                    src={`${serverUrl}src/assets/img/${paquete.logo}`}
+                                    src={`/img/${paquete.logo}`}
                                     alt="TV INTERACTIVA"
                                     style={{ height: '30px' }}
                                   />
@@ -198,7 +198,7 @@ const PaquetesTarifarios = () => {
                             .map((promo, index) => (
                               <img
                                 key={index}
-                                src={`/public/uploads/cardTarifarioStreaming/${promo.logo}`}
+                                src={`/uploads/cardTarifarioStreaming/${promo.logo}`}
                                 alt={promo.nameStreaming}
                                 style={{ height: '50px' }}
                               />
@@ -218,19 +218,19 @@ const PaquetesTarifarios = () => {
                         {/* Icons cards */}
                         <img
                           className="icon-card-packs internet-icon"
-                          src="../src/assets/icons/internet-icon.png"
+                          src="/icons/internet-icon.png"
                           alt="Icono Internet"
                         />
                         {selectedPack !== 'doble' && (
                           <img
                             className="icon-card-packs tv-icon"
-                            src="../src/assets/icons/tv-icon.png"
+                            src="/icons/tv-icon.png"
                             alt="Icono TV"
                           />
                         )}
                         <img
                           className={`icon-card-packs telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
-                          src="../src/assets/icons/telefonia-icon.png"
+                          src="/icons/telefonia-icon.png"
                           alt="Icono Telefonía"
                         />
                       </div>
@@ -246,7 +246,7 @@ const PaquetesTarifarios = () => {
           <div className="d-flex justify-content-center mb-3 full-connected-container">
             <p>
               <img
-                src="../src/assets/images/home/full_connected_home.png"
+                src="/img/home/full_connected_home.png"
                 alt="Full Connected"
                 className="img-fluid fullconnect-img"
               />

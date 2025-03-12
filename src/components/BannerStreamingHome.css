@@ -59,7 +59,7 @@
 }
 
 .disney-item {
-  background-image: url(../assets/images/home/bg-disney.jpg);
+  background-image: url(/img/home/bg-disney.jpg);
 }
 
 .swiper-3d .swiper-slide-shadow-left {

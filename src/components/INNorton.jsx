@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './INNorton.css';
-import './Globales.css';
 
 const PaquetesTarifarios = () => {
   const [chunkSize, setChunkSize] = useState(3);
@@ -106,12 +104,13 @@ const PaquetesTarifarios = () => {
                     <div className="card-body card-body-innorton text-center">
 
                       <div className="header-zone">
-                        <img className='logo-servicio' src="../src/assets/images/servicios/internet/norton-logo.png" alt="" />
+                        <img className='logo-servicio' src="/img/servicios/internet/norton-logo.png" alt="" />
                         <h2 className="card-title-innorton">{paquete.title}</h2>
                         <p className="card-text-innorton mt-4">{paquete.description}</p>
                         <ul className="text-start benefits-list">
                           {paquete.beneficios.map((beneficio, i) => (
-                            <li key={i} className="benefit-item d-flex align-items-center mt-2"><img className='notron-logo-list' src="../src/assets/icons/servicios/internet/logo-norton-icon.png" alt="Norton incluye" />{beneficio}</li>
+                            <li key={i} className="benefit-item d-flex align-items-center mt-2">
+                            <img className='notron-logo-list' src="/icons/servicios/internet/logo-norton-icon.png" alt="Norton incluye" />{beneficio}</li>
                           ))}
                         </ul>
                         {paquete.beneficioextra && (

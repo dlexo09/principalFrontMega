@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./TIReactivacion.css";
-import "./Globales.css";
 
 const TIReactivacion = () => {
   return (
@@ -23,7 +20,7 @@ const TIReactivacion = () => {
         <div className="contacto-reactivacion d-flex justify-content-center mt-5">
           <div className="contact-reac-card">
             <img
-              src="../src/assets/icons/servicios/reactivacion/contact-reac-tel.png"
+              src="/icons/servicios/reactivacion/contact-reac-tel.png"
               alt=""
             />
             <h4>Teléfono</h4>
@@ -32,7 +29,7 @@ const TIReactivacion = () => {
 
           <div className="contact-reac-card">
             <img
-              src="../src/assets/icons/servicios/reactivacion/contact-react-mail.png"
+              src="/icons/servicios/reactivacion/contact-react-mail.png"
               alt=""
             />
             <h4>Correo</h4>
@@ -41,7 +38,7 @@ const TIReactivacion = () => {
 
           <div className="contact-reac-card">
             <img
-              src="../src/assets/icons/servicios/reactivacion/contact-react-suc.png"
+              src="/icons/servicios/reactivacion/contact-react-suc.png"
               alt=""
             />
             <h4>Acude a tu CIS más cercano</h4>

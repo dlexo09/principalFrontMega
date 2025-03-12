@@ -94,7 +94,7 @@ const TvInteractiva = () => {
       <div className="text-center text-lg-start tv-interactiva-content row d-flex align-items-center container">
         <div className="col-12 col-lg-6 tv-interactiva-img">
           <h2 className="small-title d-block d-lg-none mb-4">{getTitle()}</h2>
-          <img src="../src/assets/images/home/tv-interactiva-img.png" alt="" />
+          <img src="/img/home/tv-interactiva-img.png" alt="" />
         </div>
         <div className="col-12 col-lg-6 tv-interactiva-txt">
           <h2 className="small-title d-none d-lg-block">{getTitle()}</h2>

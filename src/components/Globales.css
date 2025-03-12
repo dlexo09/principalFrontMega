@@ -127,7 +127,7 @@ a{
     display: inline-block;
     width: 18px;
     height: 18px;
-    background-image: url(../assets/icons/next-page-icon.png);
+    background-image: url(/icons/next-page-icon.png);
     background-position: center;
     background-size: cover;
 }

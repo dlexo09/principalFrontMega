@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./INVelocidad.css";
-import "./Globales.css";
 
 const INVelocidad = () => {
   // Estado para manejar si el botón está activo
@@ -48,7 +45,7 @@ const INVelocidad = () => {
             <div className="rec-info-card">
               <div className="icon-rec-content d-flex justify-content-center">
                 <img
-                  src="../src/assets/icons/servicios/internet/ethernet.png"
+                  src="/icons/servicios/internet/ethernet.png"
                   alt=""
                 />
               </div>
@@ -81,7 +78,7 @@ const INVelocidad = () => {
             <div className="rec-info-card">
               <div className="icon-rec-content d-flex justify-content-center">
                 <img
-                  src="../src/assets/icons/servicios/internet/wifi.png"
+                  src="/icons/servicios/internet/wifi.png"
                   alt=""
                 />
               </div>

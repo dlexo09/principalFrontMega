@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./TIPortabilidad.css";
-import "./Globales.css";
 
 const TIPortabilidad = () => {
   const [selectedOption, setSelectedOption] = useState("fisica"); // Estado para manejar la selección
@@ -62,7 +59,7 @@ const TIPortabilidad = () => {
                 <p className="bg-gray-lth">
                   Llena el <span>formato de Solicitud de Portabilidad.</span>
                   <br />
-                  <a href="">Descarga aquí</a>
+                  <a href="/files/servicios/telefonia-ilimitada/Formato_Portabilidad.pdf" target="_blank">Descarga aquí</a>
                 </p>
                 <p className="bg-blue-lth">
                   <span>Copia de identificación oficial</span> (INE, Cartilla,
@@ -86,7 +83,7 @@ const TIPortabilidad = () => {
                 <p className="bg-blue-lth br-req-top">
                   Llena el formato de Solicitud de Portabilidad.
                   <br />
-                  <a href="">Descarga aquí</a>
+                  <a href="/files/servicios/telefonia-ilimitada/Formato_Portabilidad.pdf" target="_blank">Descarga aquí</a>
                 </p>
                 <p className="bg-gray-lth">
                   <span>Copia de identificación oficial</span> (INE, Cartilla,
@@ -113,7 +110,7 @@ const TIPortabilidad = () => {
       </div>
 
       <div className="formato-descarga-btn d-flex justify-content-center text-center mt-5">
-        <button className="btn-action btn-action-requ">Formato de portabilidad</button>
+        <a href="/files/servicios/telefonia-ilimitada/Formato_Portabilidad.pdf" target="_blank" className="btn-action btn-action-requ">Formato de portabilidad</a>
       </div>
     </div>
   );

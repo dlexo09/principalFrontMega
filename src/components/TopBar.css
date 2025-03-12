@@ -38,7 +38,7 @@
   display: inline-block;
   width: 15px;
   height: 23px;
-  background-image: url(../assets/icons/phone-icon.png);
+  background-image: url(/icons/phone-icon.png);
   background-position: center;
   background-repeat: no-repeat;
   margin-right: 8px;
@@ -74,7 +74,7 @@
   display: inline-block;
   width: 19px;
   height: 25px;
-  background-image:url(../assets/icons/location-wl.png) ;
+  background-image:url(/icons/location-wl.png) ;
   margin-right: 10px;
   background-position: top;
   background-size: cover;
@@ -83,7 +83,7 @@
   display: inline-block;
   width: 15px;
   height: 7px;
-  background-image:url(../assets/icons/down-general-icon.png) ;
+  background-image:url(/icons/down-general-icon.png) ;
   margin-left: 50px;
   margin-top: 8px;
   background-size: cover;

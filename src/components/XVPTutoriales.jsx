@@ -1,8 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./XVPTutoriales.css";
-import "./Globales.css";
 
 const funcionalidades = [
   {
@@ -10,84 +7,84 @@ const funcionalidades = [
     nombre: "Descubre",
     tipo: "video",
     videoUrl: "https://www.youtube.com/watch?v=rUtL41OwLk8&t=1s",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-logo.png",
+    img: "/icons/servicios/tv-interactiva/xviewb-logo.png",
   },
   {
     id: "regresa",
     nombre: "Regresa",
     tipo: "video",
     videoUrl: "https://www.youtube.com/watch?v=L0gqpdb9o0Y",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-regresa-wh.png",
+    img: "/icons/servicios/tv-interactiva/xviewb-regresa-wh.png",
   },
   {
     id: "regresaPausa",
     nombre: "Regresa/Pausa",
     tipo: "video",
     videoUrl: "https://www.youtube.com/watch?v=M8rj9z0JVCU",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-pausa.png",
+    img: "/icons/servicios/tv-interactiva/xviewb-pausa.png",
   },
   {
     id: "graba",
     nombre: "Graba",
     tipo: "video",
     videoUrl: "https://www.youtube.com/watch?v=mzUf3NJoqv0",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-graba.png",
+    img: "/icons/servicios/tv-interactiva/xviewb-graba.png",
   },
   {
     id: "seriesPeliculas",
     nombre: "Series y Películas",
     tipo: "video",
     videoUrl: "https://www.youtube.com/watch?v=fhKrsjRQixw",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-vod.png",
+    img: "/icons/servicios/tv-interactiva/xviewb-vod.png",
   },
   {
     id: "configuracionGmail",
     nombre: "Configuración Cuenta Gmail",
     tipo: "pdf",
-    archivoUrl: "../src/assets/files/servicios/tv-interactiva/configuracion-gmail.pdf",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-gmail.png",
+    archivoUrl: "/files/servicios/tv-interactiva/configuracion-gmail.pdf",
+    img: "/icons/servicios/tv-interactiva/xviewb-gmail.png",
   },
   {
     id: "controlVoz",
     nombre: "Control de Voz",
     tipo: "video",
     videoUrl: "https://www.youtube.com/watch?v=HtgZwBUWlMg",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-voz.png",
+    img: "/icons/servicios/tv-interactiva/xviewb-voz.png",
   },
   {
     id: "motorBusqueda",
     nombre: "Motor de Búsqueda",
     tipo: "video",
     videoUrl: "https://www.youtube.com/watch?v=hAWQUTPrsG8",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-busqueda.png",
+    img: "/icons/servicios/tv-interactiva/xviewb-busqueda.png",
   },
   {
     id: "descargaApps",
     nombre: "Descarga de Apps",
     tipo: "video",
     videoUrl: "https://www.youtube.com/watch?v=lkI56nla0O8",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-apps.png",
+    img: "/icons/servicios/tv-interactiva/xviewb-apps.png",
   },
   {
     id: "appMovil",
     nombre: "App Xview+ Móvil",
     tipo: "video",
     videoUrl: "https://www.youtube.com/watch?v=qH76P7jI8YA",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-appm.png",
+    img: "/icons/servicios/tv-interactiva/xviewb-appm.png",
   },
   {
     id: "perfiles",
     nombre: "Perfiles",
     tipo: "video",
     videoUrl: "https://www.youtube.com/watch?v=9B1KpKgvc40",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-perfiles.png",
+    img: "/icons/servicios/tv-interactiva/xviewb-perfiles.png",
   },
   {
     id: "controles",
     nombre: "Controles",
     tipo: "pdf", // Este elemento es un PDF
-    archivoUrl: "../src/assets/files/servicios/tv-interactiva/control-xview.pdf",
-    img: "../src/assets/icons/servicios/tv-interactiva/xviewb-controles.png",
+    archivoUrl: "/files/servicios/tv-interactiva/control-xview.pdf",
+    img: "/icons/servicios/tv-interactiva/xviewb-controles.png",
   },
 ];
 
@@ -163,7 +160,7 @@ const XVPTutoriales = () => {
               <div className="btn-video-container">
                 <img
                   className="btn-video"
-                  src="../src/assets/icons/acordeon-inactive.png"
+                  src="/icons/acordeon-inactive.png"
                   alt=""
                 />
               </div>

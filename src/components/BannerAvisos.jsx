@@ -69,14 +69,14 @@ const BannerAvisos = () => {
               {banner.link ? (
                 <a href={banner.link} target="_blank" rel="noopener noreferrer">
                   <img
-                    src={`${serverUrl}/src/assets/uploads/bannerHomeFooter/${banner.archivo}`}
+                    src={`/uploads/bannerHomeFooter/${banner.archivo}`}
                     className="d-block carousel-image"
                     alt={`Slide ${index + 1}`}
                   />
                 </a>
               ) : (
                 <img
-                  src={`${serverUrl}/src/assets/uploads/bannerHomeFooter/${banner.archivo}`}
+                  src={`/uploads/bannerHomeFooter/${banner.archivo}`}
                   className="d-block carousel-image"
                   alt={`Slide ${index + 1}`}
                 />
@@ -84,6 +84,7 @@ const BannerAvisos = () => {
             </div>
           ))}
         </div>
+
 
         <button
           className="carousel-control-prev"
@@ -117,6 +118,7 @@ const BannerAvisos = () => {
           disposición la actualización de nuestro aviso de privacidad{" "}
           <a href="">Aquí</a>
         </p>
+        
       </div>
     </>
   );

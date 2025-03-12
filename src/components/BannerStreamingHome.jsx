@@ -7,7 +7,6 @@ import 'swiper/css';
 import 'swiper/css/effect-coverflow';
 import 'swiper/css/navigation'; // Importar estilos de navegación
 import './BannerStreamingHome.css';
-import './Globales.css';
 
 const BannerStreamingHome = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -102,14 +101,14 @@ const BannerStreamingHome = () => {
             const backgroundStyle = card.backgroundCard
               ? { backgroundColor: card.backgroundCard }
               : card.backgroundImageCard
-              ? { backgroundImage: `url(../src/assets/images/home/${card.backgroundImageCard})` }
+              ? { backgroundImage: `url(/img/home/${card.backgroundImageCard})` }
               : { backgroundColor: '#000' };
 
             return (
               <SwiperSlide key={card.idCardStreaming}>
                 <div className="swiper-img-container" style={backgroundStyle}>
                   <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                    <img src={`../src/assets/images/home/${card.logoCard}`} alt={card.nameCard} />
+                    <img src={`/img/home/${card.logoCard}`} alt={card.nameCard} />
                     <a href={card.linkButton} className="hidden-button btn-action">{card.textButton}</a>
                   </div>
                 </div>

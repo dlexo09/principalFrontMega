@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./INZonaWifi.css";
-import "./Globales.css";
 
 const INZonaWifi = () => {
   // Estado para manejar si el botón está activo
@@ -51,7 +48,7 @@ const INZonaWifi = () => {
             <div className="rec-info-card">
               <div className="icon-rec-content d-flex justify-content-center">
                 <img
-                  src="../src/assets/icons/servicios/internet/registrate.png"
+                  src="/icons/servicios/internet/registrate.png"
                   alt=""
                 />
               </div>
@@ -95,7 +92,7 @@ const INZonaWifi = () => {
             <div className="rec-info-card">
               <div className="icon-rec-content d-flex justify-content-center">
                 <img
-                  src="../src/assets/icons/servicios/internet/conectate.png"
+                  src="/icons/servicios/internet/conectate.png"
                   alt=""
                 />
               </div>
@@ -127,7 +124,7 @@ const INZonaWifi = () => {
         {/* Speedtest */}
         <div className="mide-tu-velocidad row align-items-center ">
           <div className="col-xl-9">
-            <img className="w-100" src="../src/assets/images/servicios/internet/mapa-zw.jpg" alt="" />
+            <img className="w-100" src="/img/servicios/internet/mapa-zw.jpg" alt="" />
           </div>
           <div className="col-xl-3 speed-pasos-container">
             <div className="speed-pasos-crd">

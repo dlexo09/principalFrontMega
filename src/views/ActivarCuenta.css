@@ -32,7 +32,7 @@
     border: 8px solid #E7EEF7;
 }
 .activar-cuenta-container{
-    background-image: url(../assets/images/home/waves-bg-1.png);
+    background-image: url(/img/home/waves-bg-1.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
@@ -100,7 +100,7 @@ margin-top: 100px;
 
 @media screen and (max-width: 767px){
     .activar-cuenta-container{
-        background-image: url(../assets/images/general/wave-sht-general-movil.png);
+        background-image: url(/img/general/wave-sht-general-movil.png);
     }
     .pasos-atc-button span{
         width: 30px;

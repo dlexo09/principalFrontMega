@@ -6,7 +6,6 @@ import INVelocidad from "../components/INVelocidad";
 import INZonaWifi from "../components/INZonaWifi";
 import INWifiUltra from "../components/INWifiUltra";
 import INNorton from "../components/INNorton";
-import '../components/Globales.css';
 
 const Internet = () => {
   const tabs = [

@@ -1,5 +1,5 @@
 .foqe-container{
-    background-image: url(../assets/images/fibra-optica/fibra-optica-wave.png);
+    background-image: url(/img/fibra-optica/fibra-optica-wave.png);
     background-size: 100% 100%;
     background-repeat: no-repeat;
     padding-bottom: 150px;
@@ -38,7 +38,7 @@
     padding-bottom: 50px;
   }
   .beneficios-fibra{
-    background-image: url(assets/img/beneficios-bg.png);
+    background-image: url(/img/beneficios-bg.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
   
@@ -103,7 +103,7 @@
         margin-top: 0px;
     }
     .foqe-container{
-        background-image: url(../assets/images/general/wave-sht-general-movil.png);
+        background-image: url(/img/general/wave-sht-general-movil.png);
 
     }
 }

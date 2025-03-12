@@ -9,7 +9,7 @@ border-radius: 50px;
 }
 /* ********* Formas de Pago ********** */
 .wave-bg-fdpago{
-    background-image: url(../assets/images/soporte/formas-de-pago/fdpago-wave.png);
+    background-image: url(/img/soporte/formas-de-pago/fdpago-wave.png);
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
@@ -52,7 +52,7 @@ border-radius: 50px;
         width: 100%;
     }
     .wave-bg-fdpago{
-        background-image: url(../assets/images/home/waves-bg-1-movil.png);
+        background-image: url(/img/home/waves-bg-1-movil.png);
     }
     .fdpago-app-container{
         padding-bottom: 150px;
@@ -112,7 +112,7 @@ border-radius: 50px;
     padding-bottom: 200px;
 }
 .bancos-fdp-container{
-    background-image: url(../assets/images/soporte/formas-de-pago/fdpago-wave.png);
+    background-image: url(/img/soporte/formas-de-pago/fdpago-wave.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-position: center;
@@ -156,7 +156,7 @@ border-radius: 50px;
 }
 @media screen and (max-width:767px){
     .bancos-fdp-container{
-        background-image: url(../assets/images/home/waves-bg-1-movil.png);
+        background-image: url(/img/home/waves-bg-1-movil.png);
     }
     .banco-conv{
         width: 80%;

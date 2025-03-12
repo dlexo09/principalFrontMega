@@ -1,5 +1,5 @@
 .activa-cuenta-strm-max{
-    background-image: url(../assets/images/streamings/max/wave-max-activacion.png);
+    background-image: url(/img/streamings/max/wave-max-activacion.png);
 }
 .activa-cuenta-strm-container{
     background-position: center;
@@ -33,7 +33,7 @@
     display: inline-block;
     width: 20px;
     height: 20px;
-    background-image: url(../assets/icons/open-page-wh.png);
+    background-image: url(/icons/open-page-wh.png);
     background-position: center;
     background-size: cover;
 }
@@ -63,7 +63,7 @@
 }
 @media screen and (max-width: 767px){
     .activa-cuenta-strm-max{
-    background-image: url(../assets/images/streamings/max/wave-sht-general-movil.png);
+    background-image: url(/img/streamings/max/wave-sht-general-movil.png);
 }  
     .contrata-streaming p{
         text-align: center;

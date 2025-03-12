@@ -1,5 +1,5 @@
 .funcionalidades-container-general{
-    background-image: url(../assets/images/servicios/tv-interactiva/funcionalidades-wave.png);
+    background-image: url(/img/servicios/tv-interactiva/funcionalidades-wave.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -78,7 +78,7 @@
   }
   @media screen and (max-width:767px){
     .funcionalidades-container-general{
-        background-image: url(../assets/images/general/wave-sht-general-movil.png);
+        background-image: url(/img/general/wave-sht-general-movil.png);
         padding-bottom: 300px;
     }
   }

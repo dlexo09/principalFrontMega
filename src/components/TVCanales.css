@@ -52,10 +52,10 @@
   display: inline-block;
 }
 .check-canal {
-  background-image: url(../assets/icons/check-circle.png);
+  background-image: url(/icons/check-circle.png);
 }
 .check-canal-lg {
-  background-image: url(../assets/icons/check-circle2.png);
+  background-image: url(/icons/check-circle2.png);
 }
 .table-canales-container {
   background-color: #c2d4ea30;

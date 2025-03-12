@@ -50,7 +50,7 @@ const NavBar = () => {
         <div className="navbar-logo">
           <a href={serverUrl}>
             <img
-              src="../src/assets/images/general/mega-logo.png"
+              src="/img/general/mega-logo.png"
               alt="Logo"
               className="logo-img"
             />

@@ -109,7 +109,8 @@ color: var(--disney-color) !important;
 }
 
 @media screen and (max-width:767px) {
-    #carouselClienteMobile .carousel-control-prev-icon, #carouselClienteMobile .carousel-control-next-icon{
+    #carouselClienteMobile .carousel-control-prev-icon, #carouselClienteMobile 
+    .carousel-control-next-icon{
         border-radius: 50px;
         padding: 15px;
     }

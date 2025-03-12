@@ -52,7 +52,7 @@
 
 
   .xviewb-vod{
-    background-image: url(../assets/images/servicios/tv-interactiva/xview-vod-img.png);
+    background-image: url(/img/servicios/tv-interactiva/xview-vod-img.png);
     background-position: 100% 105%;
     background-size: 100%; 
     background-repeat: no-repeat;
@@ -61,7 +61,7 @@
     padding: 30px;
   }
   .xviewb-apps{
-    background-image: url(../assets/images/servicios/tv-interactiva/xviewb-apps-img.png);
+    background-image: url(/img/servicios/tv-interactiva/xviewb-apps-img.png);
     background-position: -70px 95%;
     background-size: 95%; 
     background-repeat: no-repeat;

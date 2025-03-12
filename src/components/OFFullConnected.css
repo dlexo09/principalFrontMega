@@ -7,14 +7,14 @@
     color:#fff !important; 
 }
 .bg-container{
-    background-image: url(../assets/images/oferta/full-connected/main-bg.png);
+    background-image: url(/img/oferta/full-connected/main-bg.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
 }
 .fc-cta-container{
-    background-image: url(../assets/images/oferta/full-connected/form-p-bg.jpg);
+    background-image: url(/img/oferta/full-connected/form-p-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
@@ -61,7 +61,7 @@
   right: 50px;
 }
 .fc-cta-container-b{
-    background-image: url(../assets/images/oferta/full-connected/form-p-bg.jpg);
+    background-image: url(/img/oferta/full-connected/form-p-bg.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom center;
@@ -76,7 +76,7 @@
     margin-bottom: 200px;
 }
 .garantia{
-    background-image: url(../assets/images/oferta/full-connected/footer-bg.png);
+    background-image: url(/img/oferta/full-connected/footer-bg.png);
     background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -302,7 +302,7 @@ width: 100%;
 }
 .form__capt-s{
     display: flex;
-    background-image: url(../assets/images/oferta/full-connected/popup-bg.png);
+    background-image: url(/img/oferta/full-connected/popup-bg.png);
     background-position: top center;
     background-size: cover;
     max-width: 600px;

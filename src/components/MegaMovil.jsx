@@ -17,7 +17,7 @@ const MegaMovil = () => {
                 </div>
                 <div className="col-12 col-lg-6 order-1 order-lg-2 ">
                     <h2 className="small-title d-block d-lg-none mb-4">Conéctate con Mega móvil</h2>
-                    <img className="img-megamovil" src="../src/assets/images/home/megamovil-home-img.png" alt="" />
+                    <img className="img-megamovil" src="/img/home/megamovil-home-img.png" alt="" />
                 </div>
             </div>
         </>

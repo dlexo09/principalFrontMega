@@ -9,13 +9,13 @@
     margin: 0 auto;
 }
 .xview-container{
-    background-image: url(../src/assets/images/soporte/formas-de-pago/fdpago-wave.png);
+    background-image: url(/img/soporte/formas-de-pago/fdpago-wave.png);
     background-position: center;
     background-size: 100% 100%;
     padding: 150px 0;
 }
 .xview-container-b{
-    background-image: url(../src/assets/images/soporte/formas-de-pago/fdpago-wave.png);
+    background-image: url(/img/soporte/formas-de-pago/fdpago-wave.png);
     background-position: center;
     background-size: 100% 100%;
     padding: 100px 0;
@@ -24,7 +24,7 @@
 }
 @media screen and (max-width:767px){
     .xview-container, .xview-container-b{
-        background-image: url(../src/assets/images/home/waves-bg-1-movil.png);
+        background-image: url(/img/home/waves-bg-1-movil.png);
     }
     
 }

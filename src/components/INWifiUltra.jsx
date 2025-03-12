@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./INWifiUltra.css";
-import "./Globales.css";
 
 const INWifiUltra = () => {
   return (
@@ -23,7 +20,7 @@ const INWifiUltra = () => {
           <div className="col-lg-4 order-3 order-lg-1 d-flex flex-column justify-content-center align-items-center text-center wifiultra-info">
           <img
           className="mb-4 d-md-none"
-                src="../src/assets/images/servicios/internet/wifi-certificado.png"
+                src="/img/servicios/internet/wifi-certificado.png"
                 alt=""
               />
             <h3>
@@ -33,7 +30,7 @@ const INWifiUltra = () => {
             </h3>
             <img
             className="mb-4 mt-5 d-md-none"
-                src="../src/assets/images/servicios/internet/wifi-inteligente.png"
+                src="/img/servicios/internet/wifi-inteligente.png"
                 alt=""
               />
             <p className="mt-md-5 wu-subtitle">
@@ -53,13 +50,13 @@ const INWifiUltra = () => {
 
             <div className="wu-caracteristicas wifi-certificado">
               <img
-                src="../src/assets/images/servicios/internet/wifi-certificado.png"
+                src="/img/servicios/internet/wifi-certificado.png"
                 alt=""
               />
             </div>
             <div className="wu-caracteristicas  wifi-inteligente">
               <img
-                src="../src/assets/images/servicios/internet/wifi-inteligente.png"
+                src="/img/servicios/internet/wifi-inteligente.png"
                 alt=""
               />
             </div>
@@ -72,12 +69,12 @@ const INWifiUltra = () => {
           <div className="oreder-1 order-lg-3 col-lg-5 col-xl-6 text-center">
             <img
               className="w-100 p-0 d-none d-lg-block"
-              src="../src/assets/images/servicios/internet/wifiultra-con-logo.png"
+              src="/img/servicios/internet/wifiultra-con-logo.png"
               alt="Wifi ultra"
             />
             <img
               className="w-100 p-0 d-lg-none logo-wifi-ultra"
-              src="../src/assets/images/servicios/internet/wifi-ultra-logo.png"
+              src="/img/servicios/internet/wifi-ultra-logo.png"
               alt="Wifi ultra"
             />
           </div>
@@ -95,7 +92,7 @@ const INWifiUltra = () => {
           <div className="wu-modem-content d-flex align-items-center justify-content-end">
             <img
               className="wu-nokia"
-              src="../src/assets/images/servicios/internet/nokia-beacon.png"
+              src="/img/servicios/internet/nokia-beacon.png"
               alt=""
             />
             <h3 className="wu-modem-title">Nokia Beacon1.1</h3>
@@ -103,7 +100,7 @@ const INWifiUltra = () => {
           <div className="wu-modem-content modem-gray d-flex align-items-md-center justify-content-end justify-content-md-start">
             <img
               className="wu-zte"
-              src="../src/assets/images/servicios/internet/ZTE-H199A.png"
+              src="/img/servicios/internet/ZTE-H199A.png"
               alt=""
             />
             <h3 className="wu-modem-title">Nokia Beacon1.1</h3>
@@ -111,7 +108,7 @@ const INWifiUltra = () => {
           <div className="wu-modem-content d-flex align-items-center justify-content-end">
             <img
               className="wu-huawei"
-              src="../src/assets/images/servicios/internet/HUAWEI-WA8021V5.png"
+              src="/img/servicios/internet/HUAWEI-WA8021V5.png"
               alt=""
             />
             <h3 className="wu-modem-title">HUAWEI WA8021V5</h3>

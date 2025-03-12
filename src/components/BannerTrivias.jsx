@@ -9,7 +9,7 @@ const BannerTrivias = () => {
     
     <div className="banner-trivias d-flex justify-content-center justify-content-lg-evenly align-items-center flex-column flex-lg-row">
         <div className="trivias-icon">
-        <img src="../src/assets/images/home/participa-gana.png" alt="" />
+        <img src="/img/home/participa-gana.png" alt="" />
         </div>
       <h2 className="secondary-title ms-4">PARTICIPA Y GANA</h2>
       <a href="/trivias" className="btn btn-action">

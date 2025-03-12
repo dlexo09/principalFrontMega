@@ -1,5 +1,5 @@
 .pago-en-linea {
-  background-image: url(../assets/images/home/paga-en-linea-wave.png);
+  background-image: url(/img/home/paga-en-linea-wave.png);
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
@@ -101,6 +101,6 @@
       padding: 100px 0;
     }
     .pago-en-linea {
-      background-image: url(../assets/images/home/waves-bg-1.png);
+      background-image: url(/images/home/waves-bg-1.png);
     }
   }

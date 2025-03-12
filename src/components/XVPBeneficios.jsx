@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./XVPBeneficios.css";
-import "./Globales.css";
 import VideoPopup from "./VideoPopup"; // Importa el componente VideoPopup
 
 
@@ -46,7 +43,7 @@ const XVPBeneficios = () => {
           <div className="xview-beneficio xviewb-vod">
             <div className="xview-beneficio-content">
             <img
-              src="../src/assets/icons/servicios/tv-interactiva/xviewb-vod.png"
+              src="/icons/servicios/tv-interactiva/xviewb-vod.png"
               alt="VOD"
             />
             <h3>VOD</h3>
@@ -68,14 +65,14 @@ const XVPBeneficios = () => {
           <div className="xview-beneficio xviewb-voz">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewb-voz.png"
+                src="/icons/servicios/tv-interactiva/xviewb-voz.png"
                 alt="Control de Voz"
               />
               <h3>Control de Voz</h3>
               <p>
-                Con tu nuevo control remoto de voz de Xview Plus podrás realizar
-                búsquedas integradas de contenidos, así como sintonizar canales
-                o ir a alguna sección solo con decirlo.
+                Con tu nuevo control remoto de voz de Xview Plus podrás realizar
+                búsquedas integradas de contenidos, así como sintonizar canales
+                o ir a alguna sección solo con decirlo.
               </p>
               <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
             </div>
@@ -84,13 +81,13 @@ const XVPBeneficios = () => {
           <div className="xview-beneficio xviewb-busqueda">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewb-busqueda.png"
+                src="/icons/servicios/tv-interactiva/xviewb-busqueda.png"
                 alt="Motor de Búsqueda"
               />
               <h3>Motor de Búsqueda</h3>
               <p>
-                Con una sola consulta, Xview Plus buscará en las principales
-                Apps el contenido que desees y te indicará en donde puedes
+                Con una sola consulta, Xview Plus buscará en las principales
+                Apps el contenido que desees y te indicará en donde puedes
                 disfrutarlo.
               </p>
             <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
@@ -100,7 +97,7 @@ const XVPBeneficios = () => {
           <div className="xview-beneficio xviewb-pausa">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewb-pausa.png"
+                src="/icons/servicios/tv-interactiva/xviewb-pausa.png"
                 alt="Pausa y reinicia"
               />
               <h3>Pausa y reinicia</h3>
@@ -118,12 +115,12 @@ const XVPBeneficios = () => {
           <div className="xview-beneficio xviewb-perfiles">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewb-perfiles.png"
+                src="/icons/servicios/tv-interactiva/xviewb-perfiles.png"
                 alt="Perfiles"
               />
               <h3>Perfiles</h3>
               <p>
-                Crea hasta 10 perfiles para cada miembro de tu familia para
+                Crea hasta 10 perfiles para cada miembro de tu familia para
                 recibir recomendaciones personalizadas de contenido.
               </p>
             <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
@@ -134,12 +131,12 @@ const XVPBeneficios = () => {
           <div className="xview-beneficio xviewb-appm">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewb-appm.png"
+                src="/icons/servicios/tv-interactiva/xviewb-appm.png"
                 alt="App Xview+ Móvil"
               />
               <h3>App Xview+ Móvil</h3>
               <p>
-                Descarga la nueva app de Xview Plus y lleva tu programación en
+                Descarga la nueva app de Xview Plus y lleva tu programación en
                 vivo con funciones interactivas y el contenido On Demand
               </p>
             <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
@@ -150,7 +147,7 @@ const XVPBeneficios = () => {
           <div className="xview-beneficio xviewb-regresa">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewb-regresa.png"
+                src="/icons/servicios/tv-interactiva/xviewb-regresa.png"
                 alt="Regresa"
               />
               <h3>Regresa</h3>
@@ -166,7 +163,7 @@ const XVPBeneficios = () => {
           <div className="xview-beneficio xviewb-graba">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewb-graba.png"
+                src="/icons/servicios/tv-interactiva/xviewb-graba.png"
                 alt="Graba"
               />
               <h3>Graba</h3>
@@ -182,13 +179,13 @@ const XVPBeneficios = () => {
           <div className="xview-beneficio xviewb-apps">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewb-apps.png"
+                src="/icons/servicios/tv-interactiva/xviewb-apps.png"
                 alt="Descarga Apps"
               />
               <h3>Descarga Apps</h3>
               <p>
-                Con Xview Plus podrás descargar tus aplicaciones favoritas a
-                través de la tienda de Google Play integrada en tu caja y verlas
+                Con Xview Plus podrás descargar tus aplicaciones favoritas a
+                través de la tienda de Google Play integrada en tu caja y verlas
                 en tu TV
               </p>
             <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
