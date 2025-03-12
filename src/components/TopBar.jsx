@@ -64,6 +64,9 @@ const TopBar = () => {
       (location) => location.sucursalName === e.target.value
     );
     setCurrentLocation(selectedLocation);
+
+    // Simular clic en el botón de cierre del modal
+    document.querySelector('#locationModal .btn-close').click();
   };
 
   // Función para calcular la distancia entre dos puntos usando la fórmula de Haversine
@@ -139,12 +142,7 @@ const TopBar = () => {
               <h5 className="modal-title" id="locationModalLabel">
                 Seleccionar Sucursal
               </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
             </div>
             <div className="modal-body">
               <select
@@ -163,13 +161,13 @@ const TopBar = () => {
               </select>
             </div>
             <div className="modal-footer">
-              <button
+              {/* <button
                 type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
