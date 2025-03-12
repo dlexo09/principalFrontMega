@@ -12,6 +12,7 @@ const Disneyplus = () => {
             <PackStrDisney />
             <ActivaCuentaDisney />
             <FAQStrDisney />
+            
         </>
 
     );

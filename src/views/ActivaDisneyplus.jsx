@@ -79,18 +79,18 @@ const ActivaDisneyplus = () => {
       <div className="activar-cuenta-container">
         <div className="container">
           <div className="text-center activar-cuenta-logo">
-            <img src="../src/assets/images/streamings/disneyplus/mega-disney-logo.png" alt="" />
+            <img src="/img/streamings/disneyplus/mega-disney-logo.png" alt="" />
             <p className='mt-4'>Tu usuario y contraseña lo encontrarás en el SMS o mail que recibiste</p>
 
           </div>
           <div className="activar-cuenta_form mt-5">
             <form action="">
               <div className="activar-cuenta_input">
-                <img src="../src/assets/images/general/user-icon.png" alt="" />
+                <img src="/img/general/user-icon.png" alt="" />
                 <input type="text" placeholder="Correo Electrónico / Celular" />
               </div>
               <div className="activar-cuenta_input">
-                <img src="../src/assets/images/general/pass-icon.png" alt="" />
+                <img src="/img/general/pass-icon.png" alt="" />
                 <input type="password" placeholder="Contraseña" />
               </div>
 

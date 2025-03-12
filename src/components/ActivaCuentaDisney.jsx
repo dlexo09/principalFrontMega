@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './ActivaCuentaDisney.css';
 
 const ActivaCuentaStreaming = () => {
@@ -10,7 +9,7 @@ const ActivaCuentaStreaming = () => {
                 <div className="col-lg-6 col-xl-7">
                     <p className='text-center d-lg-none active-strm-disney'><span>Para toda la familia</span></p>
                     <h3 className='text-center title-strm-disney d-lg-none mb-5'>¿Ya contrataste <span>Disney+?</span></h3>
-                    <img className='w-100 mb-5 mb-md-0 d-none d-lg-block' src="../src/assets/images/streamings/disneyplus/disney-pc-img.png" alt="" />
+                    <img className='w-100 mb-5 mb-md-0 d-none d-lg-block' src="/img/streamings/disneyplus/disney-pc-img.png" alt="" />
                 </div>
                 <div className="col-lg-6 col-xl-5 contrata-streaming">
                     <p className='d-none d-lg-block active-strm-disney'><span>Para toda la familia</span></p>
