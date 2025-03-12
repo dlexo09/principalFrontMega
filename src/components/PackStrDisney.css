@@ -15,6 +15,7 @@ color: var(--disney-color) !important;
 }
 .paquete-item-disney{
     border-color: var(--disney-color);
+    
 }
 .velocidadPromo-disney{
     color: var(--disney-color);

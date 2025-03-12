@@ -17,7 +17,7 @@ const Ayuda = () => {
 
   return (
     <div className="container-fluid p-0">
-      <h1 className="text-center title-tabs">FIBRA ÓPTICA<br /><span className="fw-title-tabs">Y SIMETRIA</span></h1>
+      <h4 className="text-center title-tabs">FIBRA ÓPTICA<br /><span className="fw-title-tabs">Y SIMETRIA</span></h4>
       {/* Componente de tabs reutilizable */}
       <TabsComponent tabs={tabs} basePath="/fibra-optica" />
 

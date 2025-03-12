@@ -17,7 +17,7 @@ const INVelocidad = () => {
 
   return (
     <>
-      <div className="general-tabs-container container">
+      <div className="general-tabs-container container pe-2 ps-2 pe-md-none ps-md-none">
         <div className="text-center">
           <h2 className="small-title-services">MIDE TU VELOCIDAD</h2>
           <h3 className="big-title-services">

@@ -77,7 +77,14 @@ const XVPBeneficios = () => {
                 búsquedas integradas de contenidos, así como sintonizar canales
                 o ir a alguna sección solo con decirlo.
               </p>
-              <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+              <button
+                className="btn btn-action btn-tutorial mt-4"
+                onClick={() =>
+                  openPopup("https://www.youtube.com/watch?v=HtgZwBUWlMg")
+                }
+              >
+                Ver tutorial <span className="open-page-icon"></span>
+              </button>
             </div>
           </div>
 
@@ -93,7 +100,14 @@ const XVPBeneficios = () => {
                 Apps el contenido que desees y te indicará en donde puedes
                 disfrutarlo.
               </p>
-            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+              <button
+                className="btn btn-action btn-tutorial mt-4"
+                onClick={() =>
+                  openPopup("https://www.youtube.com/watch?v=hAWQUTPrsG8")
+                }
+              >
+                Ver tutorial <span className="open-page-icon"></span>
+              </button>
             </div>
           </div>
 
@@ -110,7 +124,14 @@ const XVPBeneficios = () => {
                 Empieza a ver un programa desde el inicio, aunque ya haya
                 comenzado.
               </p>
-            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+              <button
+                className="btn btn-action btn-tutorial mt-4"
+                onClick={() =>
+                  openPopup("https://www.youtube.com/watch?v=M8rj9z0JVCU")
+                }
+              >
+                Ver tutorial <span className="open-page-icon"></span>
+              </button>
 
             </div>
           </div>
@@ -126,7 +147,14 @@ const XVPBeneficios = () => {
                 Crea hasta 10 perfiles para cada miembro de tu familia para
                 recibir recomendaciones personalizadas de contenido.
               </p>
-            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+              <button
+                className="btn btn-action btn-tutorial mt-4"
+                onClick={() =>
+                  openPopup("https://www.youtube.com/watch?v=9B1KpKgvc40")
+                }
+              >
+                Ver tutorial <span className="open-page-icon"></span>
+              </button>
               
             </div>
           </div>
@@ -142,7 +170,14 @@ const XVPBeneficios = () => {
                 Descarga la nueva app de Xview Plus y lleva tu programación en
                 vivo con funciones interactivas y el contenido On Demand
               </p>
-            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+              <button
+                className="btn btn-action btn-tutorial mt-4"
+                onClick={() =>
+                  openPopup("https://www.youtube.com/watch?v=qH76P7jI8YA")
+                }
+              >
+                Ver tutorial <span className="open-page-icon"></span>
+              </button>
 
             </div>
           </div>
@@ -158,7 +193,14 @@ const XVPBeneficios = () => {
                 Regresa hasta 48 hrs. tus canales interactivos favoritos para
                 disfrutar de un programa que ya pasó.
               </p>
-            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+              <button
+                className="btn btn-action btn-tutorial mt-4"
+                onClick={() =>
+                  openPopup("https://www.youtube.com/watch?v=L0gqpdb9o0Y")
+                }
+              >
+                Ver tutorial <span className="open-page-icon"></span>
+              </button>
 
             </div>
           </div>
@@ -174,7 +216,14 @@ const XVPBeneficios = () => {
                 Graba los programas en vivo de los canales interactivos (Función
                 disponible a partir de Básico)
               </p>
-            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+              <button
+                className="btn btn-action btn-tutorial mt-4"
+                onClick={() =>
+                  openPopup("https://www.youtube.com/watch?v=mzUf3NJoqv0")
+                }
+              >
+                Ver tutorial <span className="open-page-icon"></span>
+              </button>
 
             </div>
           </div>
@@ -191,7 +240,14 @@ const XVPBeneficios = () => {
                 través de la tienda de Google Play integrada en tu caja y verlas
                 en tu TV
               </p>
-            <a className="btn btn-action btn-tutorial mt-4">Ver tutorial <span className="open-page-icon"></span></a>
+              <button
+                className="btn btn-action btn-tutorial mt-4"
+                onClick={() =>
+                  openPopup("https://www.youtube.com/watch?v=lkI56nla0O8")
+                }
+              >
+                Ver tutorial <span className="open-page-icon"></span>
+              </button>
 
             </div>
           </div>

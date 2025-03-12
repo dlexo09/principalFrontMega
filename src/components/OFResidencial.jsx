@@ -3,7 +3,9 @@ import PaquetesTarifarios from "../components/PaquetesTarifarios"; // ImportaciÃ
 
 const OFResidencial = () => {
   return (
+    <div className="general-tabs-container">
       <PaquetesTarifarios />
+    </div>
   );
 };
 

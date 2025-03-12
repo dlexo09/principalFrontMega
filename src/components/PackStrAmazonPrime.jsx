@@ -33,14 +33,12 @@ const PackStrDisney = () => {
 
   // Función para actualizar el chunkSize según el tamaño de la pantalla
   const updateChunkSize = () => {
-    if (window.innerWidth < 768) {
-      setChunkSize(1); // 1 tarjeta en pantallas pequeñas
-    } else if (window.innerWidth < 1024) {
-      setChunkSize(2); // 2 tarjetas en pantallas medianas
+if (window.innerWidth < 1024) {
+      setChunkSize(1); // 2 tarjetas en pantallas medianas
     } else if (window.innerWidth < 1400) {
-      setChunkSize(3); // 3 tarjetas en pantallas medianas grandes
+      setChunkSize(2); // 3 tarjetas en pantallas medianas grandes
     } else {
-      setChunkSize(4); // 4 tarjetas en pantallas grandes
+      setChunkSize(3); // 4 tarjetas en pantallas grandes
     }
   };
 
@@ -273,24 +271,24 @@ const PackStrDisney = () => {
 
                           {/* Icons cards */}
                           <img
-                            className="icon-card-packs internet-icon"
+                            className="icon-card-packs internet-icon d-none d-md-block"
                             src="../src/assets/icons/amazon/internet-icon.png"
                             alt="Icono Internet"
                           />
                           <img
-                            className="icon-card-packs str-icon str-icon-prime"
+                            className="icon-card-packs str-icon str-icon-prime d-none d-md-block"
                             src="../src/assets/icons/amazon/strm-icon.png"
                             alt="Icono Internet"
                           />
                           {selectedPack !== "doble" && (
                             <img
-                              className="icon-card-packs tv-icon"
+                              className="icon-card-packs tv-icon d-none d-md-block"
                               src="../src/assets/icons/amazon/tv-icon.png"
                               alt="Icono TV"
                             />
                           )}
                           <img
-                            className={`icon-card-packs telefonia-icon ${
+                            className={`icon-card-packs telefonia-icon d-none d-md-block ${
                               selectedPack === "doble"
                                 ? "telefonia-icon-doble"
                                 : ""

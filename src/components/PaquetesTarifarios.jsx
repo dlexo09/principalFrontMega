@@ -64,14 +64,12 @@ const PaquetesTarifarios = () => {
   }, []);
 
   const updateChunkSize = () => {
-    if (window.innerWidth < 768) {
-      setChunkSize(1); // 1 tarjeta en pantallas pequeñas
-    } else if (window.innerWidth < 1024) {
-      setChunkSize(2); // 2 tarjetas en pantallas medianas
+    if (window.innerWidth < 1024) {
+      setChunkSize(1); // 2 tarjetas en pantallas medianas
     } else if (window.innerWidth < 1400) {
-      setChunkSize(3); // 3 tarjetas en pantallas medianas grandes
+      setChunkSize(2); // 3 tarjetas en pantallas medianas grandes
     } else {
-      setChunkSize(4); // 4 tarjetas en pantallas grandes
+      setChunkSize(3); // 4 tarjetas en pantallas grandes
     }
   };
 
@@ -98,7 +96,7 @@ const PaquetesTarifarios = () => {
   };
 
   return (
-    <div className="container paquetes-tarifarios text-center">
+    <div className="container pad-container paquetes-tarifarios text-center">
       <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
       <p className="big-title mb-5 title-especial">¡Te instalamos sin costo!<sup>*</sup></p>
       <div className="d-flex justify-content-center mb-3 btn-container">
@@ -129,110 +127,113 @@ const PaquetesTarifarios = () => {
                   const velocidad = paquete.velocidadPromo === 0 ? paquete.velocidadInternet : paquete.velocidadPromo;
                   const totalPromoValue = promos.reduce((acc, promo) => acc + promo.costoMensualPromo, promoValue);
                   return (
-                    <div key={i} className="paquete-item card m-2">
+                    <div key={i} className={`paquete-item paquete-general-item card m-2 ${selectedPack === 'doble' ? 'paquete-item-doble' : 'paquete-item-triple'}`}>
                       <div className="card-body">
-                        <h2 className="card-title">{paquete.idTipoRed == 3 ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
-                        <p className="card-text velocidadPromo">
-                          {velocidad} MEGAS
-                        </p>
-                        {paquete.tiempoVelocidaPromo > 0 ? (
-                          <p className="card-text tiempoVelocidadPromo">
-                            x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
+                        <div className="paquete-header">
+                          <h2 className="card-title">{paquete.idTipoRed == 3 ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
+                          <p className="card-text velocidadPromo">
+                            {velocidad} MEGAS
                           </p>
-                        ) : paquete.tarifaPromocionalTemp > 0 ? (
-                          <p className="card-text tiempoVelocidadPromo">
-                            x {paquete.tarifaPromocionalTemp} meses<sup>*</sup>
-                          </p>
-                        ) : (
-                          <p className="card-text tiempoVelocidadPromo"></p>
-                        )}
+                          {paquete.tiempoVelocidaPromo > 0 ? (
+                            <p className="card-text tiempoVelocidadPromo">
+                              x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
+                            </p>
+                          ) : paquete.tarifaPromocionalTemp > 0 ? (
+                            <p className="card-text tiempoVelocidadPromo">
+                              x {paquete.tarifaPromocionalTemp} meses<sup>*</sup>
+                            </p>
+                          ) : (
+                            <p className="card-text tiempoVelocidadPromo"></p>
+                          )}
 
-                        {velocidad >= 200 && (
-                          <p>
-                            <img
-                              src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
-                              alt="IncluyeExtensor Wifi Ultra"
-                              style={{ height: '40px', marginTop: '20px' }}
-                            />
-                          </p>
-                        )}
-
-                        {paquete.archivo && (
-                          <div className="xview-content">
-                            {paquete.idTipoPaquete === 2 ? (
-                              <>
-                                {paquete.nameServicioCable.includes('HD') ? (
-                                  <>
-                                    <p className="card-servicio-txt">Televisión HD</p>
-                                    <p className="card-text">{paquete.textoServicioCable}</p>
-                                  </>
-                                ) : (
-                                  <>
-                                    <p className="card-servicio-txt">Televisión</p>
-                                    <p className="card-text">{paquete.textoServicioCable}</p>
-                                  </>
-                                )}
-                              </>
-                            ) : (paquete.idTipoPaquete === 3 || paquete.idTipoPaquete === 4) && (
-                              <>
-                                <p>
-                                  <img
-                                    src={`${serverUrl}src/assets/img/${paquete.logo}`}
-                                    alt="TV INTERACTIVA"
-                                    style={{ height: '30px' }}
-                                  />
-                                </p>
-                                <p className="card-text">Más de 130 canales </p>
-                                <p className="card-text">+ De 30,000 horas</p>
-                                <p className="card-text">de peliculas y series</p>
-                              </>
-                            )}
-
-                          </div>
-                        )}
-
-                        <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
-                        <div className="promoExtra">
-                          {promos
-                            .filter(promo => promo.dondeAplica === 1 || (promo.dondeAplica === 2 && selectedPack === 'doble') || (promo.dondeAplica === 3 && selectedPack === 'triple'))
-                            .map((promo, index) => (
+                          {velocidad >= 200 && (
+                            <p>
                               <img
-                                key={index}
-                                src={`/public/uploads/cardTarifarioStreaming/${promo.logo}`}
-                                alt={promo.nameStreaming}
-                                style={{ height: '50px' }}
+                                src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
+                                alt="IncluyeExtensor Wifi Ultra"
+                                style={{ height: '40px', marginTop: '20px' }}
                               />
-                            ))}
-                          <p className="card-text price-card">
-                            <span className="price-mxn">$</span>
-                            {paquete.tarifaPromocional + totalPromoValue}
-                            <sup>*</sup>
-                            <span className="time-crd">/mes</span>
-                          </p>
-                          {paquete.tarifaPromocionalTemp > 0 && (
-                            <p className="card-text">x {paquete.tarifaPromocionalTemp} meses</p>
+                            </p>
                           )}
                         </div>
-                        <button className="btn btn-packs btn-pack-card" onClick={() => handleButtonClick(paquete.idContrata)}>¡Lo quiero!</button>
 
-                        {/* Icons cards */}
-                        <img
-                          className="icon-card-packs internet-icon"
-                          src="../src/assets/icons/internet-icon.png"
-                          alt="Icono Internet"
-                        />
-                        {selectedPack !== 'doble' && (
+                        <div className="paquete-body">
+                          {paquete.archivo && (
+                            <div className="xview-content">
+                              {paquete.idTipoPaquete === 2 ? (
+                                <>
+                                  {paquete.nameServicioCable.includes('HD') ? (
+                                    <>
+                                      <p className="card-servicio-txt">Televisión HD</p>
+                                      <p className="card-text">{paquete.textoServicioCable}</p>
+                                    </>
+                                  ) : (
+                                    <>
+                                      <p className="card-servicio-txt">Televisión</p>
+                                      <p className="card-text">{paquete.textoServicioCable}</p>
+                                    </>
+                                  )}
+                                </>
+                              ) : (paquete.idTipoPaquete === 3 || paquete.idTipoPaquete === 4) && (
+                                <>
+                                  <p>
+                                    <img
+                                      src={`${serverUrl}src/assets/img/${paquete.logo}`}
+                                      alt="TV INTERACTIVA"
+                                      style={{ height: '60px' }}
+                                    />
+                                  </p>
+                                  <p className="card-text">Más de 130 canales </p>
+                                  <p className="card-text">+ De 30,000 horas</p>
+                                  <p className="card-text">de peliculas y series</p>
+                                </>
+                              )}
+                            </div>
+                          )}
+
+                          <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
+                          <div className="promoExtra">
+                            {promos
+                              .filter(promo => promo.dondeAplica === 1 || (promo.dondeAplica === 2 && selectedPack === 'doble') || (promo.dondeAplica === 3 && selectedPack === 'triple'))
+                              .map((promo, index) => (
+                                <img
+                                  key={index}
+                                  src={`/public/uploads/cardTarifarioStreaming/${promo.logo}`}
+                                  alt={promo.nameStreaming}
+                                  style={{ height: '50px' }}
+                                />
+                              ))}
+                            <p className="card-text price-card">
+                              <span className="price-mxn">$</span>
+                              {paquete.tarifaPromocional + totalPromoValue}
+                              <sup>*</sup>
+                              <span className="time-crd">/mes</span>
+                            </p>
+                            {paquete.tarifaPromocionalTemp > 0 && (
+                              <p className="card-text">x {paquete.tarifaPromocionalTemp} meses</p>
+                            )}
+                          </div>
+                          <button className="btn btn-packs btn-pack-card" onClick={() => handleButtonClick(paquete.idContrata)}>¡Lo quiero!</button>
+
+                          {/* Icons cards */}
                           <img
-                            className="icon-card-packs tv-icon"
-                            src="../src/assets/icons/tv-icon.png"
-                            alt="Icono TV"
+                            className="icon-card-packs internet-icon d-none d-md-block"
+                            src="../src/assets/icons/internet-icon.png"
+                            alt="Icono Internet"
                           />
-                        )}
-                        <img
-                          className={`icon-card-packs telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
-                          src="../src/assets/icons/telefonia-icon.png"
-                          alt="Icono Telefonía"
-                        />
+                          {selectedPack !== 'doble' && (
+                            <img
+                              className="icon-card-packs tv-icon d-none d-md-block"
+                              src="../src/assets/icons/tv-icon.png"
+                              alt="Icono TV"
+                            />
+                          )}
+                          <img
+                            className={`icon-card-packs d-none d-md-block telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
+                            src="../src/assets/icons/telefonia-icon.png"
+                            alt="Icono Telefonía"
+                          />
+                        </div>
                       </div>
                     </div>
                   );
@@ -241,31 +242,8 @@ const PaquetesTarifarios = () => {
             </div>
           ))}
         </div>
-
-        {isFullConnectedVisible && (
-          <div className="d-flex justify-content-center mb-3 full-connected-container">
-            <p>
-              <img
-                src="../src/assets/images/home/full_connected_home.png"
-                alt="Full Connected"
-                className="img-fluid fullconnect-img"
-              />
-            </p>
-            <button className="btn btn-packs btn-pack-card">¡Quiero fullconnect!</button>
-          </div>
-        )}
-
-        <div className="container packs-terminos">
-          <p className="promo-xview">
-            Incluyen <span>más de 30,000 hrs de contenido</span> en Xview+
-          </p>
-          <p>
-            Nota: Promoción válida domiciliando el pago a tarjeta. Tarifas registradas ante el IFT. Aplican restricciones.
-            Consulta términos y condiciones <a href="">aquí.</a>
-          </p>
-        </div>
         <button
-          className="carousel-control-prev"
+          className="carousel-control-prev packs-prev"
           type="button"
           data-bs-target="#carouselPaquetes"
           data-bs-slide="prev"
@@ -274,7 +252,7 @@ const PaquetesTarifarios = () => {
           <span className="visually-hidden">Previous</span>
         </button>
         <button
-          className="carousel-control-next"
+          className="carousel-control-next packs-next"
           type="button"
           data-bs-target="#carouselPaquetes"
           data-bs-slide="next"
@@ -282,6 +260,29 @@ const PaquetesTarifarios = () => {
           <span className="carousel-control-next-icon" aria-hidden="true"></span>
           <span className="visually-hidden">Next</span>
         </button>
+      </div>
+
+      {isFullConnectedVisible && (
+        <div className="d-flex justify-content-center mb-3 full-connected-container">
+          <p>
+            <img
+              src="../src/assets/images/home/full_connected_home.png"
+              alt="Full Connected"
+              className="img-fluid fullconnect-img"
+            />
+          </p>
+          <button className="btn btn-packs btn-pack-card">¡Quiero fullconnect!</button>
+        </div>
+      )}
+
+      <div className="container packs-terminos">
+        <p className="promo-xview">
+          Incluyen <span>más de 30,000 hrs de contenido</span> en Xview+
+        </p>
+        <p>
+          Nota: Promoción válida domiciliando el pago a tarjeta. Tarifas registradas ante el IFT. Aplican restricciones.
+          Consulta términos y condiciones <a href="">aquí.</a>
+        </p>
       </div>
     </div>
   );

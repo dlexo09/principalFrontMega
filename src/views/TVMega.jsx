@@ -11,10 +11,10 @@ const Xview = () => {
   return (
     <>
       <div className="container-fluid p-0">
-        <h1 className="text-center title-tabs">
+        <h4 className="text-center title-tabs">
           <br />
           <span className="fw-title-tabs">TELEVISIÓN</span>
-        </h1>
+        </h4>
 
 
 

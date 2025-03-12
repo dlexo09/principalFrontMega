@@ -10,7 +10,7 @@ const Television = () => {
 
   return (
     <div className="container-fluid p-0">
-      <h1 className="text-center title-tabs">TV INTERACTIVA</h1>
+      <h4 className="text-center title-tabs">TV INTERACTIVA</h4>
       {/* Componente de tabs reutilizable */}
       <TabsComponent tabs={tabs} basePath="/television" />
 
