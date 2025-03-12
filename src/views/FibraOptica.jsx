@@ -5,8 +5,6 @@ import FORed from "../components/FORed";
 import FOQueEs from "../components/FOQueEs";
 import FOBeneficios from "../components/FOBeneficios";
 
-import '../components/Globales.css';
-
 const Ayuda = () => {
   const tabs = [
     { id: "nuestra-red", label: "Nuestra Red" },

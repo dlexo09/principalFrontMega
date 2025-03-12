@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./FOBeneficios.css";
-import "./Globales.css";
 
 const FOBeneficios = () => {
   const [phone, setPhone] = useState("");
@@ -34,39 +31,39 @@ const FOBeneficios = () => {
       {/* tabla CON MEGA */}
       <div className="con-mega">
         <h2 className="comparative-title">
-          CON <img src="../src/assets/icons/fibra-optica/logo_mega_horizontal.png" alt="Megacable logo" />
+          CON <img src="/icons/fibra-optica/logo_mega_horizontal.png" alt="Megacable logo" />
         </h2>
         <div className="beneficios-mega">
           <div className="txt-b-content beneficio-blue txt-border-top">
-            <img src="../src/assets/icons/fibra-optica/check-blue.png" alt="" />
+            <img src="/icons/fibra-optica/check-blue.png" alt="" />
             <p>
               <span className="txt-blue-table">¡Nuestra red es nueva!</span> ¡Estrénala!
             </p>
           </div>
 
           <div className="txt-b-content beneficio-white">
-            <img src="../src/assets/icons/fibra-optica/check-blue.png" alt="" />
+            <img src="/icons/fibra-optica/check-blue.png" alt="" />
             <p>
               <span className="txt-blue-table">¡Sin plazos forzosos!</span> En costo de cableado y equipo
             </p>
           </div>
 
           <div className="txt-b-content beneficio-blue">
-            <img src="../src/assets/icons/fibra-optica/check-blue.png" alt="" />
+            <img src="/icons/fibra-optica/check-blue.png" alt="" />
             <p>
               Instalamos con tramos cortos <span className="txt-blue-table">más estabilidad y menos interferencias</span>
             </p>
           </div>
 
           <div className="txt-b-content beneficio-white">
-            <img src="../src/assets/icons/fibra-optica/check-blue.png" alt="" />
+            <img src="/icons/fibra-optica/check-blue.png" alt="" />
             <p>
               <span>¡Nuestro internet es realmente inmediato!</span> navega sin topes y a la máxima velocidad sin limitaciones
             </p>
           </div>
 
           <div className="txt-b-content beneficio-blue">
-            <img src="../src/assets/icons/fibra-optica/check-blue.png" alt="" />
+            <img src="/icons/fibra-optica/check-blue.png" alt="" />
             <p>
               <span>Atención con más de 300 sucursales</span> a tu servicio y un Call Center Nacional{" "}
               <span className="txt-blue-table">para atenderte en todo momento</span>
@@ -74,7 +71,7 @@ const FOBeneficios = () => {
           </div>
 
           <div className="txt-b-content beneficio-white">
-            <img src="../src/assets/icons/fibra-optica/check-blue.png" alt="" />
+            <img src="/icons/fibra-optica/check-blue.png" alt="" />
             <p>
               <br />
               <span>No cobramos</span> activación, instalación ni anualidad
@@ -84,7 +81,7 @@ const FOBeneficios = () => {
           </div>
 
           <div className="txt-b-content beneficio-blue txt-border-button">
-            <img src="../src/assets/icons/fibra-optica/check-blue.png" alt="" />
+            <img src="/icons/fibra-optica/check-blue.png" alt="" />
             <p>
               <span>Premiamos</span> a nuestros clientes leales
             </p>
@@ -96,22 +93,22 @@ const FOBeneficios = () => {
       <div className="con-otros">
         <h2 className="comparative-title mrg-title">CON LOS OTROS</h2>
         <div className="txt-b-content beneficio-grey txt-border-top">
-          <img src="../src/assets/icons/fibra-optica/wht-icon.png" alt="" />
+          <img src="/icons/fibra-optica/wht-icon.png" alt="" />
           <p>Su red ya es vieja.</p>
         </div>
 
         <div className="txt-b-content beneficio-white">
-          <img src="../src/assets/icons/fibra-optica/wht-icon.png" alt="" />
+          <img src="/icons/fibra-optica/wht-icon.png" alt="" />
           <p>Ellos tiran hasta 600 mts para llegar a tu casa, sacrificando la estabilidad</p>
         </div>
 
         <div className="txt-b-content beneficio-grey">
-          <img src="../src/assets/icons/fibra-optica/wht-icon.png" alt="" />
+          <img src="/icons/fibra-optica/wht-icon.png" alt="" />
           <p>Con ellos firmas un plazo de 18 meses por el costo del cableado y la ONT</p>
         </div>
 
         <div className="txt-b-content beneficio-white">
-          <img src="../src/assets/icons/fibra-optica/wht-icon.png" alt="" />
+          <img src="/icons/fibra-optica/wht-icon.png" alt="" />
           <p>
             Allá tienen tope. Evita quedarte a mitad de tu serie o que se caiga tu conferencia porque “te terminaste tus
             datos”
@@ -119,7 +116,7 @@ const FOBeneficios = () => {
         </div>
 
         <div className="txt-b-content beneficio-grey">
-          <img src="../src/assets/icons/fibra-optica/wht-icon.png" alt="" />
+          <img src="/icons/fibra-optica/wht-icon.png" alt="" />
           <p>
             <br />
             Ellos solo atienden por teléfono
@@ -129,7 +126,7 @@ const FOBeneficios = () => {
         </div>
 
         <div className="txt-b-content beneficio-white">
-          <img src="../src/assets/icons/fibra-optica/wht-icon.png" alt="" />
+          <img src="/icons/fibra-optica/wht-icon.png" alt="" />
           <p>
             Allá te cobran $450 de activación del servicio y hasta $1,350 por la instalación y a plazo forzoso. Y por
             anualidad te hacen cargo de $130!
@@ -137,19 +134,12 @@ const FOBeneficios = () => {
         </div>
 
         <div className="txt-b-content beneficio-grey txt-border-button">
-          <img src="../src/assets/icons/fibra-optica/wht-icon.png" alt="" />
+          <img src="/icons/fibra-optica/wht-icon.png" alt="" />
           <p>No te premian</p>
         </div>
       </div>
     </div>
       </div>
-
-
-
-        
-
-
-
 
       <div className="container">
         <form
@@ -190,7 +180,7 @@ const FOBeneficios = () => {
         <div className="row justify-content-center ventajas-simetrico-container">
           <div className=" col-md-5 col-xl-3 ventajas-simetrico-card">
             <img
-              src="../src/assets/icons/fibra-optica/vdis-num-1.png"
+              src="/icons/fibra-optica/vdis-num-1.png"
               alt="Uno"
             />
             <h4>Ventaja Frente al Internet Tradicional</h4>
@@ -202,7 +192,7 @@ const FOBeneficios = () => {
           </div>
           <div className="col-md-5 col-xl-3 ventajas-simetrico-card">
             <img
-              src="../src/assets/icons/fibra-optica/vdis-num-2.png"
+              src="/icons/fibra-optica/vdis-num-2.png"
               alt="Dos"
             />
             <h4>Menor Latencia</h4>
@@ -214,7 +204,7 @@ const FOBeneficios = () => {
           </div>
           <div className="col-md-5 col-xl-3 ventajas-simetrico-card">
             <img
-              src="../src/assets/icons/fibra-optica/vdis-num-3.png"
+              src="/icons/fibra-optica/vdis-num-3.png"
               alt="Tres"
             />
             <h4>Mejora en Videollamadas y Streaming</h4>

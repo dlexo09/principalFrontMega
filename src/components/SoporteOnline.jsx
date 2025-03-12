@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./SoporteOnline.css";
-import "./Globales.css";
 import FAQSoporte from "./FAQSoporte";
 
 const faqGeneral = [
@@ -687,7 +684,7 @@ const faqTelefonia = [
 const options = {
   FAQGeneral: {
     label: <div>
-      <img className="sop-icon d-md-none" src="../src/assets/icons/soporte/general-icon.png" alt="" />
+      <img className="sop-icon d-md-none" src="/icons/soporte/general-icon.png" alt="" />
       <p className="d-none d-md-block">General</p>
     </div>,
     content: (
@@ -698,7 +695,7 @@ const options = {
   },
   FAQTelevision: {
     label: <div>
-          <img className="sop-icon d-md-none" src="../src/assets/icons/soporte/tv-icon.png" alt="" />
+          <img className="sop-icon d-md-none" src="/icons/soporte/tv-icon.png" alt="" />
           <p className="d-none d-md-block">Televisión</p>
           </div>,
     content: (
@@ -709,7 +706,7 @@ const options = {
   },
   FAQInternet: {
     label: <div>
-      <img className="sop-icon d-md-none" src="../src/assets/icons/soporte/internet-icon.png" alt="" />
+      <img className="sop-icon d-md-none" src="/icons/soporte/internet-icon.png" alt="" />
       <p className="d-none d-md-block">Internet</p>
       </div>,
     content: (
@@ -720,7 +717,7 @@ const options = {
   },
   FAQTelefonia: {
     label: <div>
-          <img className="sop-icon d-md-none" src="../src/assets/icons/soporte/telefonia-icon.png" alt="" />
+          <img className="sop-icon d-md-none" src="/icons/soporte/telefonia-icon.png" alt="" />
           <p className="d-none d-md-block">Telefonía</p>
           </div>,
     content: (

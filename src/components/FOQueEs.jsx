@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import "./FOQueEs.css";
-import "./Globales.css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { EffectCoverflow, Navigation } from "swiper/modules";
+import "./FOQueEs.css";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation"; // Importar estilos de navegación
-import { EffectCoverflow, Navigation } from "swiper/modules";
 
 const FOQueEs = () => {
   const [activeService, setActiveService] = useState(null); // Estado para controlar el popup
@@ -31,35 +28,35 @@ const FOQueEs = () => {
       title: "Inmunidad a interferencias electromagnéticas",
       description:
         "A diferencia de los cables de cobre, que son susceptibles a interferencias electromagnéticas, la fibra óptica no se ve afectada por ellas.",
-      image: "../src/assets/icons/fibra-optica/inmunidad-interferencias.png",
+      image: "/icons/fibra-optica/inmunidad-interferencias.png",
     },
     {
       id: 2,
       title: "Latencia Baja",
       description:
         "La fibra óptica ofrece una latencia muy baja. Esto es crucial en aplicaciones que requieren una respuesta en tiempo real, como videoconferencias y juegos en línea.",
-      image: "../src/assets/icons/fibra-optica/latencia-baja.png",
+      image: "/icons/fibra-optica/latencia-baja.png",
     },
     {
       id: 3,
       title: "Larga Distancia",
       description:
         "La señal de fibra óptica puede viajar largas distancias sin degradación de la señal. Esto es fundamental para las redes de larga distancia y las comunicaciones intercontinentales.",
-      image: "../src/assets/icons/fibra-optica/larga-distancia.png",
+      image: "/icons/fibra-optica/larga-distancia.png",
     },
     {
       id: 4,
       title: "Seguridad",
       description:
         "Es más segura que otros medios de transmisión, ya que es difícil interceptar la información al no generar radiación electromagnética que pueda ser captada por dispositivos externos.",
-      image: "../src/assets/icons/fibra-optica/seguridad.png",
+      image: "/icons/fibra-optica/seguridad.png",
     },
     {
       id: 5,
       title: "Delgadez y Ligereza",
       description:
         "Los cables de fibra óptica son extremadamente delgados y ligeros en comparación con otros cables de transmisión, lo que facilita su instalación y gestión.",
-      image: "../src/assets/icons/fibra-optica/delgadez-ligereza.png",
+      image: "/icons/fibra-optica/delgadez-ligereza.png",
     },
   ];
 
@@ -178,7 +175,7 @@ const FOQueEs = () => {
             <div className="col-md-5 col-lg-4 col-xl-3 simetria-util-card">
               <div className="text-center mb-4">
                 <img
-                  src="../src/assets/icons/fibra-optica/videollamadas.png"
+                  src="/icons/fibra-optica/videollamadas.png"
                   alt="Videollamadas"
                 />
               </div>
@@ -191,7 +188,7 @@ const FOQueEs = () => {
             <div className="col-md-5 col-lg-4 col-xl-3 simetria-util-card">
               <div className="text-center mb-4">
                 <img
-                  src="../src/assets/icons/fibra-optica/servicios-nube.png"
+                  src="/icons/fibra-optica/servicios-nube.png"
                   alt="Servicios en la nube"
                 />
               </div>
@@ -204,7 +201,7 @@ const FOQueEs = () => {
             <div className="col-md-5 col-lg-4  col-xl-3 simetria-util-card">
               <div className="text-center mb-4">
                 <img
-                  src="../src/assets/icons/fibra-optica/videojuegos.png"
+                  src="/icons/fibra-optica/videojuegos.png"
                   alt="Videojuegos"
                 />
               </div>

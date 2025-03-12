@@ -4,7 +4,6 @@ import TabsComponent from "../components/TabsComponent";
 import SOPPago from "../components/SOPPago";
 import SOPCIS from "../components/SOPCIS";
 import SoporteOnline from "../components/SoporteOnline";
-import '../components/Globales.css';
 
 const Ayuda = () => {
   const tabs = [

@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./FORed.css";
-import "./Globales.css";
 
 const FORed = () => {
   const [phone, setPhone] = useState("");
@@ -33,7 +30,7 @@ const FORed = () => {
             <div className="fored-card-presentation card-b">
               <div className="fored-icon-card">
                 <img
-                  src="../src/assets/icons/fibra-optica/mayores-velocidades.png"
+                  src="/icons/fibra-optica/mayores-velocidades.png"
                   alt="Velocidad"
                 />
               </div>
@@ -52,7 +49,7 @@ const FORed = () => {
             <div className="fored-card-presentation">
               <div className="fored-icon-card">
                 <img
-                  src="../src/assets/icons/fibra-optica/equipo-ultima-generacion.png"
+                  src="/icons/fibra-optica/equipo-ultima-generacion.png"
                   alt="Equipo"
                 />
               </div>
@@ -67,7 +64,7 @@ const FORed = () => {
             <div className="fored-card-presentation">
               <div className="fored-icon-card">
                 <img
-                  src="../src/assets/icons/fibra-optica/mayor-velocidad-subida.png"
+                  src="/icons/fibra-optica/mayor-velocidad-subida.png"
                   alt="Velocidad de subida"
                 />
               </div>
@@ -79,7 +76,7 @@ const FORed = () => {
             <div className="fored-card-presentation">
               <div className="fored-icon-card">
                 <img
-                  src="../src/assets/icons/fibra-optica/velocidades-simetricas.png"
+                  src="/icons/fibra-optica/velocidades-simetricas.png"
                   alt="Velocidad simétrica"
                 />
               </div>
@@ -91,7 +88,7 @@ const FORed = () => {
             <div className="fored-card-presentation">
               <div className="fored-icon-card">
                 <img
-                  src="../src/assets/icons/fibra-optica/mejor-estabilidad.png"
+                  src="/icons/fibra-optica/mejor-estabilidad.png"
                   alt="Estabilidad"
                 />
               </div>
@@ -152,7 +149,7 @@ const FORed = () => {
 
             <div className="mt-5 d-block d-lg-none col-lg-6 col-xl-7 int-simetrico-img mb-md-5 mb-xl-0">
             <img
-              src="../src/assets/images/fibra-optica/conectate-sin-limites.png"
+              src="/img/fibra-optica/conectate-sin-limites.png"
               alt="Internet simétrico"
             />
           </div>
@@ -160,7 +157,7 @@ const FORed = () => {
             <div className=" row int-simetrico-cards text-center text-md-start">
               <div className="col-lg-5 int-simetrico-card">
                 <img
-                  src="../src/assets/icons/fibra-optica/internet-simetrico.png"
+                  src="/icons/fibra-optica/internet-simetrico.png"
                   alt="Internet simétrico"
                 />
                 <h4 className="mt-4 mb-3">INTERNET SIMÉTRICO</h4>
@@ -171,7 +168,7 @@ const FORed = () => {
               </div>
               <div className="col-lg-5 int-simetrico-card">
                 <img
-                  src="../src/assets/icons/fibra-optica/internet-asimetrico.png"
+                  src="/icons/fibra-optica/internet-asimetrico.png"
                   alt="Internet asimétrico"
                 />
                 <h4 className="mt-4 mb-3">INTERNET ASIMÉTRICO</h4>
@@ -185,7 +182,7 @@ const FORed = () => {
 
           <div className="d-none d-lg-block col-lg-6 col-xl-7 int-simetrico-img mb-md-5 mb-xl-0">
             <img
-              src="../src/assets/images/fibra-optica/conectate-sin-limites.png"
+              src="/img/fibra-optica/conectate-sin-limites.png"
               alt="Internet simétrico"
             />
           </div>

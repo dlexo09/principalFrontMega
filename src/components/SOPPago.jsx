@@ -1,8 +1,5 @@
 import React, { useState } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./SOPPago.css";
-import "./Globales.css";
 
 // Datos de los comercios
 const comercios = [
@@ -10,49 +7,49 @@ const comercios = [
     id: 1,
     name: "Soriana",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio1.png",
+      "/img/soporte/formas-de-pago/comercios/comercio1.png",
     tipo: "conEstado",
   },
   {
     id: 2,
     name: "Chedraui",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio2.png",
+      "/img/soporte/formas-de-pago/comercios/comercio2.png",
     tipo: "conEstado",
   },
   {
     id: 3,
     name: "BanCoppel",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio3.png",
+      "/img/soporte/formas-de-pago/comercios/comercio3.png",
     tipo: "conEstado",
   },
   {
     id: 4,
     name: "Merza",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio4.png",
+      "/img/soporte/formas-de-pago/comercios/comercio4.png",
     tipo: "conEstado",
   },
   {
     id: 5,
     name: "Lagunitas",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio5.png",
+      "/img/soporte/formas-de-pago/comercios/comercio5.png",
     tipo: "conEstado",
   },
   {
     id: 6,
     name: "Alsuper",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio6.png",
+      "/img/soporte/formas-de-pago/comercios/comercio6.png",
     tipo: "conEstado",
   },
   {
     id: 7,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio7.png",
+      "/img/soporte/formas-de-pago/comercios/comercio7.png",
     tipo: "conEstado",
   },
 
@@ -60,399 +57,399 @@ const comercios = [
     id: 8,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio8.png",
+      "/img/soporte/formas-de-pago/comercios/comercio8.png",
     tipo: "sinEstado",
   },
   {
     id: 9,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio9.png",
+      "/img/soporte/formas-de-pago/comercios/comercio9.png",
     tipo: "sinEstado",
   },
   {
     id: 10,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio10.png",
+      "/img/soporte/formas-de-pago/comercios/comercio10.png",
     tipo: "sinEstado",
   },
   {
     id: 11,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio11.png",
+      "/img/soporte/formas-de-pago/comercios/comercio11.png",
     tipo: "sinEstado",
   },
   {
     id: 12,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio12.png",
+      "/img/soporte/formas-de-pago/comercios/comercio12.png",
     tipo: "sinEstado",
   },
   {
     id: 13,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio13.png",
+      "/img/soporte/formas-de-pago/comercios/comercio13.png",
     tipo: "sinEstado",
   },
   {
     id: 14,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio14.png",
+      "/img/soporte/formas-de-pago/comercios/comercio14.png",
     tipo: "sinEstado",
   },
   {
     id: 15,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio15.png",
+      "/img/soporte/formas-de-pago/comercios/comercio15.png",
     tipo: "sinEstado",
   },
   {
     id: 16,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio16.png",
+      "/img/soporte/formas-de-pago/comercios/comercio16.png",
     tipo: "sinEstado",
   },
   {
     id: 17,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio17.png",
+      "/img/soporte/formas-de-pago/comercios/comercio17.png",
     tipo: "sinEstado",
   },
   {
     id: 18,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio18.png",
+      "/img/soporte/formas-de-pago/comercios/comercio18.png",
     tipo: "sinEstado",
   },
   {
     id: 19,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio19.png",
+      "/img/soporte/formas-de-pago/comercios/comercio19.png",
     tipo: "sinEstado",
   },
   {
     id: 20,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio20.png",
+      "/img/soporte/formas-de-pago/comercios/comercio20.png",
     tipo: "sinEstado",
   },
   {
     id: 21,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio21.png",
+      "/img/soporte/formas-de-pago/comercios/comercio21.png",
     tipo: "sinEstado",
   },
   {
     id: 22,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio22.png",
+      "/img/soporte/formas-de-pago/comercios/comercio22.png",
     tipo: "sinEstado",
   },
   {
     id: 23,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio23.png",
+      "/img/soporte/formas-de-pago/comercios/comercio23.png",
     tipo: "sinEstado",
   },
   {
     id: 24,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio24.png",
+      "/img/soporte/formas-de-pago/comercios/comercio24.png",
     tipo: "sinEstado",
   },
   {
     id: 25,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio25.png",
+      "/img/soporte/formas-de-pago/comercios/comercio25.png",
     tipo: "sinEstado",
   },
   {
     id: 26,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio26.png",
+      "/img/soporte/formas-de-pago/comercios/comercio26.png",
     tipo: "sinEstado",
   },
   {
     id: 27,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio27.png",
+      "/img/soporte/formas-de-pago/comercios/comercio27.png",
     tipo: "sinEstado",
   },
   {
     id: 28,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio28.png",
+      "/img/soporte/formas-de-pago/comercios/comercio28.png",
     tipo: "sinEstado",
   },
   {
     id: 29,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio29.png",
+      "/img/soporte/formas-de-pago/comercios/comercio29.png",
     tipo: "sinEstado",
   },
   {
     id: 30,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio30.png",
+      "/img/soporte/formas-de-pago/comercios/comercio30.png",
     tipo: "sinEstado",
   },
   {
     id: 31,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio31.png",
+      "/img/soporte/formas-de-pago/comercios/comercio31.png",
     tipo: "sinEstado",
   },
   {
     id: 32,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio32.png",
+      "/img/soporte/formas-de-pago/comercios/comercio32.png",
     tipo: "sinEstado",
   },
   {
     id: 33,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio33.png",
+      "/img/soporte/formas-de-pago/comercios/comercio33.png",
     tipo: "sinEstado",
   },
   {
     id: 34,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio34.png",
+      "/img/soporte/formas-de-pago/comercios/comercio34.png",
     tipo: "sinEstado",
   },
   {
     id: 35,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio35.png",
+      "/img/soporte/formas-de-pago/comercios/comercio35.png",
     tipo: "sinEstado",
   },
   {
     id: 36,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio36.png",
+      "/img/soporte/formas-de-pago/comercios/comercio36.png",
     tipo: "sinEstado",
   },
   {
     id: 37,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio37.png",
+      "/img/soporte/formas-de-pago/comercios/comercio37.png",
     tipo: "sinEstado",
   },
   {
     id: 38,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio38.png",
+      "/img/soporte/formas-de-pago/comercios/comercio38.png",
     tipo: "sinEstado",
   },
   {
     id: 39,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio39.png",
+      "/img/soporte/formas-de-pago/comercios/comercio39.png",
     tipo: "sinEstado",
   },
   {
     id: 40,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio40.png",
+      "/img/soporte/formas-de-pago/comercios/comercio40.png",
     tipo: "sinEstado",
   },
   {
     id: 41,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio41.png",
+      "/img/soporte/formas-de-pago/comercios/comercio41.png",
     tipo: "sinEstado",
   },
   {
     id: 42,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio42.png",
+      "/img/soporte/formas-de-pago/comercios/comercio42.png",
     tipo: "sinEstado",
   },
   {
     id: 43,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio43.png",
+      "/img/soporte/formas-de-pago/comercios/comercio43.png",
     tipo: "sinEstado",
   },
   {
     id: 44,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio44.png",
+      "/img/soporte/formas-de-pago/comercios/comercio44.png",
     tipo: "sinEstado",
   },
   {
     id: 45,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio45.png",
+      "/img/soporte/formas-de-pago/comercios/comercio45.png",
     tipo: "sinEstado",
   },
   {
     id: 46,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio46.png",
+      "/img/soporte/formas-de-pago/comercios/comercio46.png",
     tipo: "sinEstado",
   },
   {
     id: 47,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio47.png",
+      "/img/soporte/formas-de-pago/comercios/comercio47.png",
     tipo: "sinEstado",
   },
   {
     id: 48,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio48.png",
+      "/img/soporte/formas-de-pago/comercios/comercio48.png",
     tipo: "sinEstado",
   },
   {
     id: 49,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio48.png",
+      "/img/soporte/formas-de-pago/comercios/comercio48.png",
     tipo: "sinEstado",
   },
   {
     id: 50,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio50.png",
+      "/img/soporte/formas-de-pago/comercios/comercio50.png",
     tipo: "sinEstado",
   },
   {
     id: 51,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio51.png",
+      "/img/soporte/formas-de-pago/comercios/comercio51.png",
     tipo: "sinEstado",
   },
   {
     id: 52,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio52.png",
+      "/img/soporte/formas-de-pago/comercios/comercio52.png",
     tipo: "sinEstado",
   },
   {
     id: 53,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio53.png",
+      "/img/soporte/formas-de-pago/comercios/comercio53.png",
     tipo: "sinEstado",
   },
   {
     id: 54,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio54.png",
+      "/img/soporte/formas-de-pago/comercios/comercio54.png",
     tipo: "sinEstado",
   },
   {
     id: 55,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio55.png",
+      "/img/soporte/formas-de-pago/comercios/comercio55.png",
     tipo: "sinEstado",
   },
   {
     id: 56,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio56.png",
+      "/img/soporte/formas-de-pago/comercios/comercio56.png",
     tipo: "sinEstado",
   },
   {
     id: 57,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio57.png",
+      "/img/soporte/formas-de-pago/comercios/comercio57.png",
     tipo: "sinEstado",
   },
   {
     id: 58,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio58.png",
+      "/img/soporte/formas-de-pago/comercios/comercio58.png",
     tipo: "sinEstado",
   },
   {
     id: 59,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio59.png",
+      "/img/soporte/formas-de-pago/comercios/comercio59.png",
     tipo: "sinEstado",
   },
   {
     id: 60,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio60.png",
+      "/img/soporte/formas-de-pago/comercios/comercio60.png",
     tipo: "sinEstado",
   },
   {
     id: 61,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio61.png",
+      "/img/soporte/formas-de-pago/comercios/comercio61.png",
     tipo: "sinEstado",
   },
   {
     id: 63,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio63.png",
+      "/img/soporte/formas-de-pago/comercios/comercio63.png",
     tipo: "sinEstado",
   },
   {
     id: 64,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio64.png",
+      "/img/soporte/formas-de-pago/comercios/comercio64.png",
     tipo: "sinEstado",
   },
   {
     id: 65,
     name: "Ley",
     image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio65.png",
+      "/img/soporte/formas-de-pago/comercios/comercio65.png",
     tipo: "sinEstado",
   },
 ];
@@ -489,7 +486,7 @@ const options = {
           <div className="row fdpago-app-container align-items-center justify-content-center">
             <div className="col-lg-3 text-center d-none d-lg-block">
               <img
-                src="../src/assets/images/soporte/formas-de-pago/app-megacable.png"
+                src="/img/soporte/formas-de-pago/app-megacable.png"
                 alt="Megacable App"
               />
             </div>
@@ -562,7 +559,7 @@ const options = {
             <div className="col-md-7 col-lg-4 text-center d-none d-lg-block">
               <img
                 className="fdpago-ca-img"
-                src="../src/assets/images/soporte/formas-de-pago/cargo-automatico.png"
+                src="/img/soporte/formas-de-pago/cargo-automatico.png"
                 alt="Megacable App"
               />
             </div>
@@ -577,7 +574,7 @@ const options = {
               </p>
               <div className="cc-cargo-autom mt-4 d-flex flex-md-row flex-column">
                 <img
-                  src="../src/assets/images/home/pagos-tarjetas-img.png"
+                  src="/img/home/pagos-tarjetas-img.png"
                   alt="Paypal, Visa, Master Card"
                 />
               </div>
@@ -599,35 +596,35 @@ const options = {
             <div className="bancos-conv-container d-flex align-items-center justify-content-center">
               <div className="banco-conv">
                 <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/santander-logo.png"
+                  src="/img/soporte/formas-de-pago/bancos/santander-logo.png"
                   alt=""
                 />
                 <h5 className="conv-num">1332</h5>
               </div>
               <div className="banco-conv">
                 <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/scotiabank-logo.png"
+                  src="/img/soporte/formas-de-pago/bancos/scotiabank-logo.png"
                   alt=""
                 />
                 <h5 className="conv-num">3356</h5>
               </div>
               <div className="banco-conv">
                 <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/hsbc-logo.png"
+                  src="/img/soporte/formas-de-pago/bancos/hsbc-logo.png"
                   alt=""
                 />
                 <h5 className="conv-num">3535</h5>
               </div>
               <div className="banco-conv">
                 <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/bbva-logo.png"
+                  src="/img/soporte/formas-de-pago/bancos/bbva-logo.png"
                   alt=""
                 />
                 <h5 className="conv-num">801720</h5>
               </div>
               <div className="banco-conv">
                 <img
-                  src="../src/assets/images/soporte/formas-de-pago/bancos/citibanamex-logo.png"
+                  src="/img/soporte/formas-de-pago/bancos/citibanamex-logo.png"
                   alt=""
                 />
                 <h5 className="conv-num">
@@ -645,7 +642,7 @@ const options = {
 
               </div>
               <div className="col-md-6 col-lg-3 order-1 order-lg-2  text-center mb-5 mb-lg-0 d-none d-lg-block">
-                <img src="../src/assets/images/soporte/formas-de-pago/app-mega.png" alt="" />
+                <img src="/img/soporte/formas-de-pago/app-mega.png" alt="" />
               </div>
             </div>
           </div>
