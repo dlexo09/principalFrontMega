@@ -1,0 +1,185 @@
+.paquetes-tarifarios {
+  padding-top: 150px;
+  padding-bottom: 150px;
+
+}
+
+.paquete-item {
+  background-color: #fff;
+  border: 2px solid var(--disney-color);
+  border-radius: var(--br-card);
+  padding: 15px;
+  text-align: center;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+
+
+.card-title {
+  font-size: clamp(1.1rem, 1.0333rem + 0.1389vw, 1.2rem);
+  font-weight: 600;
+}
+.btn-outline-dark {
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+.packs-terminos{
+  font-size: 14px;
+  line-height: 16px;
+  margin-top: 70px;
+}
+.velocidadPromo{
+  font-size: clamp(1.7rem, 1.5rem + 0.4167vw, 2rem);
+  color: var(--disney-color);
+
+  font-weight: 700;
+  line-height: 1.6rem;
+}
+.tiempoVelocidadPromo{
+  margin-top: 5px;
+  font-size: 1rem;
+}
+.tiempoVelocidadPromo sup{
+  vertical-align: 1px;
+  font-size: 0.5rem;
+}
+.slider-gp{
+  gap: 30px;
+}
+.xview-content, .promoExtra{
+  margin-top: 30px;
+}
+.promoExtra, .promoExtra img{
+  width: 100%;
+}
+.servicio-m{
+  margin-top: 40px;
+}
+.card-servicio-txt{
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.xview-content img{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.price-card{
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 20px;
+  margin-top: 50px;
+}
+.price-card .time-crd{
+  font-size: 1rem;
+  font-weight: 400;
+}
+.price-card .price-mxn{
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+.slider-gp{
+  padding :30px;
+}
+.promo-xview{
+  font-size: clamp(1.3rem, 0.9537rem + 1.2886vw, 2.5rem);
+  font-weight: 600;
+  line-height: 1.7rem;
+  margin-bottom: 20px;
+
+}
+.promo-xview span{
+  color: var(--blue-dark);
+}
+.card-body{
+  position: relative;
+}
+.btn-pack-card{
+  position: absolute;
+  bottom: -50px;
+  width: 100%;
+  right: 0;
+  z-index: 999;
+}
+.icon-card-packs{
+  position: absolute;
+  width: 45px;
+  left: -42px;
+}
+.internet-icon{
+  top: 35px;
+}
+.tv-icon{
+  top: 200px;
+}
+.telefonia-icon{
+  top: 320px;
+}
+.telefonia-icon-doble {
+  top: 195px; /* Ajusta la posición según sea necesario */
+}
+.title-especial{
+  line-height: 40px;
+}
+
+.fullconnect-img {
+  max-width: 500px;
+  padding-top: 70px;
+}
+.full-connected-container{
+  position: relative;
+}
+.full-connected-container button{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 270px;
+}
+
+.disney-btn-color{
+  background-color: var(--disney-color);
+  color: #fff;
+
+}
+.disney-btn-color:hover{
+  background-color: #007987;
+  color: #fff;
+}
+.paquete-item-disney{
+  border-color: var(--disney-color);
+}
+.velocidadPromo-disney{
+  color: var(--disney-color);
+}
+.txt-disney-color{
+  color: var(--disney-color) !important;
+  }
+
+
+@media screen and (max-width:767px) {
+  .tarifario-title{
+    width: 200px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+  }
+  .paquetes-tarifarios {
+    vertical-align: 5px;
+  }
+  .packs-terminos {
+    margin-top: 40px;
+}
+.slider-gp{
+  padding: 30px 0;
+}
+}
+@media screen and (max-width: 1024px){
+  .paquetes-tarifarios {
+    padding: 100px 0px;
+  
+  }
+}
+@media screen and (max-width:374px) {
+  .slider-gp{
+    padding: 20px;
+  }
+}

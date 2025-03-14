@@ -1,18 +1,20 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
-import { serverAPILambda, serverUrl } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
-import { LocationContext } from '../LocationContext'; //
+import { useNavigate } from 'react-router-dom';
+import { serverAPILambda } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { LocationContext } from '../LocationContext';
 import './PaquetesTarifarios.css';
 
-const PaquetesTarifarios = () => {
+const PaquetesTarifariosDisney = () => {
   const { currentLocation } = useContext(LocationContext);
   const [paquetes, setPaquetes] = useState([]);
   const [selectedPack, setSelectedPack] = useState('triple');
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
-  const [fullConnectedData, setFullConnectedData] = useState([]);
   const [promos, setPromos] = useState([]);
+  const [extraPromos, setExtraPromos] = useState([]);
+  const [selectedPromo, setSelectedPromo] = useState({});
   const promoValue = 0; // Definir la variable para el valor adicional
   const idSucursal = currentLocation?.idSucursal; // Obtener el idSucursal de currentLocation
+  const navigate = useNavigate(); // Hook para redirigir
 
   console.log("ID sucursal", idSucursal); // Imprimir el valor de idSucursal
 
@@ -35,20 +37,6 @@ const PaquetesTarifarios = () => {
   }, [selectedPack, currentLocation]);
 
   useEffect(() => {
-    const fetchFullConnectedData = async () => {
-      try {
-        const response = await fetch(`${serverAPILambda}api/fullConnected`);
-        const data = await response.json();
-        setFullConnectedData(data);
-      } catch (error) {
-        console.error('Error fetching full connected data:', error);
-      }
-    };
-
-    fetchFullConnectedData();
-  }, []);
-
-  useEffect(() => {
     const fetchPromos = async () => {
       try {
         const response = await fetch(`${serverAPILambda}api/promoEspecialHome/`);
@@ -60,6 +48,20 @@ const PaquetesTarifarios = () => {
     };
 
     fetchPromos();
+  }, []);
+
+  useEffect(() => {
+    const fetchExtraPromos = async () => {
+      try {
+        const response = await fetch(`${serverAPILambda}api/extraPromoDisney`);
+        const data = await response.json();
+        setExtraPromos(data);
+      } catch (error) {
+        console.error('Error fetching extra promos:', error);
+      }
+    };
+
+    fetchExtraPromos();
   }, []);
 
   const updateChunkSize = () => {
@@ -89,29 +91,35 @@ const PaquetesTarifarios = () => {
   };
 
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
-  const isFullConnectedVisible = fullConnectedData.some(item => item.idSucursal === idSucursal && item.status === 1);
-  const handleButtonClick = (idContrata) => {
-    history.push(`/detallePaquete/${idContrata}`);
 
+  const handleButtonClick = (idContrata) => {
+    navigate(`/detallePaquete/${idContrata}`);
   };
+
+  const handlePromoChange = (uniqueId, promo) => {
+    setSelectedPromo(prevState => ({
+      ...prevState,
+      [uniqueId]: promo,
+    }));
+  };
+
   return (
     <div className="container paquetes-tarifarios text-center">
-      <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
-      <p className="big-title mb-5 title-especial">¡Te instalamos sin costo!<sup>*</sup></p>
+
       <div className="d-flex justify-content-center mb-3 btn-container">
         <button
           type="button"
-          className={`pack-btn ${selectedPack === 'triple' ? 'pack-btn-active' : 'pack-btn-inactive'} btn-lg mx-2`}
+          className={`pack-btn ${selectedPack === 'triple' ? 'pack-btn-active disney-btn-color' : 'pack-btn-inactive'} btn-lg mx-2`}
           onClick={() => setSelectedPack('triple')}
         >
-          TRIPLE PACK<br /><span>INTERNET + TV +   TELEFONÍA</span>
+          TRIPLE PACK<br /><span>INTERNET + TV + TELEFONÍA</span>
         </button>
         <button
           type="button"
-          className={`pack-btn ${selectedPack === 'doble' ? 'pack-btn-active' : 'pack-btn-inactive'} btn-lg mx-2`}
+          className={`pack-btn ${selectedPack === 'doble' ? 'pack-btn-active disney-btn-color' : 'pack-btn-inactive'} btn-lg mx-2`}
           onClick={() => setSelectedPack('doble')}
         >
-          DOBLE PACK<br /><span>INTERNET + TELEFONÍA </span>
+          DOBLE PACK<br /><span>INTERNET + TELEFONÍA</span>
         </button>
       </div>
       <div className="d-flex justify-content-center mb-3">
@@ -124,14 +132,13 @@ const PaquetesTarifarios = () => {
               <div className="d-flex justify-content-center slider-gp">
                 {chunk.map((paquete, i) => {
                   const velocidad = paquete.velocidadPromo === 0 ? paquete.velocidadInternet : paquete.velocidadPromo;
-                  const totalPromoValue = promos.reduce((acc, promo) => acc + promo.costoMensualPromo, promoValue);
+                  const uniqueId = `${paquete.id}-${i}`;
+                  const selectedPromoCost = selectedPromo[uniqueId]?.costoMensual || 0;
                   return (
-                    <div key={i} className="paquete-item card m-2">
+                    <div key={i} className="paquete-item paquete-item-disney card m-2">
                       <div className="card-body">
                         <h2 className="card-title">{paquete.idTipoRed == 3 ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
-                        <p className="card-text velocidadPromo">
-                          {velocidad} MEGAS
-                        </p>
+                        <p className="card-text velocidadPromo velocidadPromo-disney">{velocidad} MEGAS</p>
                         {paquete.tiempoVelocidaPromo > 0 ? (
                           <p className="card-text tiempoVelocidadPromo">
                             x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
@@ -147,7 +154,7 @@ const PaquetesTarifarios = () => {
                         {velocidad >= 200 && (
                           <p>
                             <img
-                              src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
+                              src={`/img/extensor_wifi_ultra.png`}
                               alt="IncluyeExtensor Wifi Ultra"
                               style={{ height: '40px', marginTop: '20px' }}
                             />
@@ -174,7 +181,7 @@ const PaquetesTarifarios = () => {
                               <>
                                 <p>
                                   <img
-                                    src={`${serverUrl}src/assets/img/${paquete.logo}`}
+                                    src={`/img/${paquete.logo}`}
                                     alt="TV INTERACTIVA"
                                     style={{ height: '30px' }}
                                   />
@@ -184,25 +191,28 @@ const PaquetesTarifarios = () => {
                                 <p className="card-text">de peliculas y series</p>
                               </>
                             )}
-                            
                           </div>
                         )}
 
                         <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
                         <div className="promoExtra">
-                          {promos
-                            .filter(promo => promo.dondeAplica === 1 || (promo.dondeAplica === 2 && selectedPack === 'doble') || (promo.dondeAplica === 3 && selectedPack === 'triple'))
-                            .map((promo, index) => (
-                              <img
-                                key={index}
-                                src={`/public/uploads/cardTarifarioStreaming/${promo.logo}`}
-                                alt={promo.nameStreaming}
-                                style={{ height: '50px' }}
-                              />
-                            ))}
+                          <div className="pack-str-container">
+                            <p className="card-servicio-txt servicio-m mb-2">SELECCIONA TU PLAN</p>
+                            <div className="pack-str-content d-flex flex-column justify-content-center">
+                              {extraPromos.map(promo => (
+                                <button
+                                  key={promo.idStreaming}
+                                  className={`pack-btn-str ${selectedPromo[uniqueId]?.idStreaming === promo.idStreaming ? "disney-btn-color" : "pack-btn-inactive"}`}
+                                  onClick={() => handlePromoChange(uniqueId, promo)}
+                                >
+                                  {promo.textButtonCard}
+                                </button>
+                              ))}
+                            </div>
+                          </div>
                           <p className="card-text price-card">
                             <span className="price-mxn">$</span>
-                            {paquete.tarifaPromocional + totalPromoValue}
+                            {paquete.tarifaPromocional + promoValue + selectedPromoCost}
                             <sup>*</sup>
                             <span className="time-crd">/mes</span>
                           </p>
@@ -212,23 +222,27 @@ const PaquetesTarifarios = () => {
                         </div>
                         <button className="btn btn-packs btn-pack-card" onClick={() => handleButtonClick(paquete.idContrata)}>¡Lo quiero!</button>
 
-
                         {/* Icons cards */}
                         <img
                           className="icon-card-packs internet-icon"
-                          src="../src/assets/icons/internet-icon.png"
+                          src="/icons/disney/internet-icon.png"
                           alt="Icono Internet"
+                        />
+                        <img
+                          className="icon-card-packs str-icon"
+                          src="/icons/disney/strm-icon.png"
+                          alt="Icono Disney"
                         />
                         {selectedPack !== 'doble' && (
                           <img
                             className="icon-card-packs tv-icon"
-                            src="../src/assets/icons/tv-icon.png"
+                            src="/icons/disney/tv-icon.png"
                             alt="Icono TV"
                           />
                         )}
                         <img
                           className={`icon-card-packs telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
-                          src="../src/assets/icons/telefonia-icon.png"
+                          src="/icons/disney/telefonia-icon.png"
                           alt="Icono Telefonía"
                         />
                       </div>
@@ -240,28 +254,32 @@ const PaquetesTarifarios = () => {
           ))}
         </div>
 
-        {isFullConnectedVisible && (
-          <div className="d-flex justify-content-center mb-3 full-connected-container">
-            <p>
-              <img
-                src="../src/assets/images/home/full_connected_home.png"
-                alt="Full Connected"
-                className="img-fluid fullconnect-img"
-              />
-            </p>
-            <button className="btn btn-packs btn-pack-card">¡Quiero fullconnect!</button>
-          </div>
-        )}
-
         <div className="container packs-terminos">
-          <p className="promo-xview">
-            Incluyen <span>más de 30,000 hrs de contenido</span> en Xview+
-          </p>
-          <p>
-            Nota: Promoción válida domiciliando el pago a tarjeta. Tarifas registradas ante el IFT. Aplican restricciones.
-            Consulta términos y condiciones <a href="">aquí.</a>
-          </p>
-        </div>
+                  {selectedPack !== "doble" && (
+                    <p className="promo-xview ">
+                      Incluyen{" "}
+                      <span className="txt-disney-color">
+                        más de 30,000 hrs de contenido
+                      </span>{" "}
+                      en Xview+
+                    </p>
+                  )}
+
+                  <p>
+                    Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
+                    <a className="txt-disney-color" href="">
+                      Tarifas registradas ante el IFT.{" "}
+                    </a>
+                    Aplican restricciones. Consulta términos y condiciones{" "}
+                    <a
+                      className="txt-disney-color"
+                      target="_blank"
+                      href="https://www.megacable.com.mx/terminos-y-condiciones"
+                    >
+                      aquí.
+                    </a>
+                  </p>
+                </div>
         <button
           className="carousel-control-prev"
           type="button"
@@ -285,4 +303,4 @@ const PaquetesTarifarios = () => {
   );
 };
 
-export default PaquetesTarifarios;
+export default PaquetesTarifariosDisney;
