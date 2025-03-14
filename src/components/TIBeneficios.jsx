@@ -4,7 +4,7 @@ import "./TIBeneficios.css";
 const TIBeneficios = () => {
   return (
     <>
-    <div className="d-flex flex-column align-items-center beneficios-serv-container general-tabs-container">
+    <div className="d-flex flex-column align-items-center beneficios-serv-container general-tabs-container ps-1 pe-1 ps-md-none pe-md-none">
       <div className="text-center">
         <h3 className="small-title-services">Telefonía ilimitada</h3>
         <h2 className="big-title-services">Conoce los beneficios</h2>

@@ -16,7 +16,7 @@ const PackStrDisney = () => {
   const [selectedPromo, setSelectedPromo] = useState({}); // Estado para la promoción seleccionada
 
   const handlePlanChange = (paqueteId, plan) => {
-    setSelectedPlan(prevState => ({
+    setSelectedPlan((prevState) => ({
       ...prevState,
       [paqueteId]: plan,
     }));
@@ -39,6 +39,7 @@ const PackStrDisney = () => {
           const data = await response.json();
           setPaquetes(data);
 
+
           // Inicializar el estado selectedPlan con "Estandar" para cada paquete
           const initialSelectedPlan = {};
           data.forEach((paquete, i) => {
@@ -50,6 +51,7 @@ const PackStrDisney = () => {
         }
       }
     };
+
 
     fetchPaquetes();
   }, [selectedPack, currentLocation]);

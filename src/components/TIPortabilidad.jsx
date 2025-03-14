@@ -49,7 +49,7 @@ const TIPortabilidad = () => {
       <div className="mt-5">
         {selectedOption === "fisica" && (
           <div className="container ">
-            <div className="text-center persona-select-container">
+            <div className="text-center persona-select-container ps-2 pe-2 ps-md-none pe-md-none"> 
               <h3>Personas físicas</h3>
               <div className="requisitos-persona">
                 <p className="bg-blue-lth br-req-top">
@@ -77,7 +77,7 @@ const TIPortabilidad = () => {
 
         {selectedOption === "moral" && (
           <div className="container ">
-            <div className="text-center persona-select-container">
+            <div className="text-center persona-select-container ps-2 pe-2 ps-md-none pe-md-none">
               <h3>Personas morales</h3>
               <div className="requisitos-persona">
                 <p className="bg-blue-lth br-req-top">

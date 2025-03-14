@@ -159,16 +159,6 @@
         }
     }
     @media screen and (max-width:767px) {
-        #carouselClienteMobile .carousel-control-prev-icon, #carouselClienteMobile .carousel-control-next-icon{
-            border-radius: 50px;
-            padding: 15px;
-        }
-        #carouselClienteMobile .prev-icon-disney{
-            background-color: var(--disney-color);
-        }
-        #carouselClienteMobile .next-icon-disney{
-            background-color: var(--disney-color);
-        }
         .prime-btn-contrata{
            width: 50%;
            padding: 10px;
@@ -177,7 +167,6 @@
             padding: 0 20px !important;
         }
         
-            
     }
     @media screen and (max-width:1200px){
         .plans-contrata-prime{

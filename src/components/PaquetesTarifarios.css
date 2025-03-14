@@ -145,8 +145,9 @@
   top: 45%;
   transform: translateY(50%);
   background-color: var(--turquesa-btn);
-  height: 40px;
-  width: 40px;
+  height: 35px;
+  width: 35px;
+  padding: 4px;
   border-radius: 50px;
 }
 .card-body{

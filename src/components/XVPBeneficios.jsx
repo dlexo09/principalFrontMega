@@ -33,7 +33,7 @@ const XVPBeneficios = () => {
 
   return (
     <>
-      <div className="container general-tabs-container">
+      <div className="container general-tabs-container pe-3 ps-3 pe-md-0 ps-md-0">
         <div className="text-center">
           <h3 className="small-title-services">TV Interactiva</h3>
           <h2 className="big-title-services">Conoce las funcionalidades</h2>

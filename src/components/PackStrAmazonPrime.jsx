@@ -33,7 +33,7 @@ const PackStrDisney = () => {
 
   // Función para actualizar el chunkSize según el tamaño de la pantalla
   const updateChunkSize = () => {
-if (window.innerWidth < 1024) {
+    if (window.innerWidth < 1024) {
       setChunkSize(1); // 2 tarjetas en pantallas medianas
     } else if (window.innerWidth < 1400) {
       setChunkSize(2); // 3 tarjetas en pantallas medianas grandes
@@ -59,7 +59,7 @@ if (window.innerWidth < 1024) {
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
 
   return (
-    <div className="container paquetes-tarifarios text-center">
+    <div className="container paquetes-tarifarios text-center  paquetes-tarifarios-strm">
       <div className="cliente-question mb-4">
         <h3 className="small-title txt-prime-color">EL MEJOR PLAN PARA TI</h3>
         <h3 className="big-title mb-5">¿Ya eres cliente Mega?</h3>
@@ -91,72 +91,115 @@ if (window.innerWidth < 1024) {
         <>
           <div className="mt-4">
             <p className="cliente-info cliente-info-prime mt-5">
-              <span>Agrega Amazon Prime a tu paquete </span>
-              y recibe grandes beneficios como:
+              <span>Agrega Amazon Prime a tu paquete </span>y recibe grandes
+              beneficios como:
             </p>
           </div>
-          
+
           <div className="container table-str-clients table-prime-clients">
-              <div className="plans-contrata-prime d-flex justify-content-center">
-                <div className="prime-icon-container">
-                  <img className="prime-icon" src="../src/assets/icons/amazon/strm-icon.png" alt="" />
+            <div className="plans-contrata-prime d-flex justify-content-center">
+              <div className="prime-icon-container">
+                <img
+                  className="prime-icon"
+                  src="../src/assets/icons/amazon/strm-icon.png"
+                  alt=""
+                />
+              </div>
+              <div className="row d-flex plan-content-prime">
+                <div className="col-md-4 col-g-6">
+                  <img
+                    src="../src/assets/images/streamings/amazon/amazon-compras.png"
+                    alt="Amazon Compras"
+                  />
+                  <h3>Amazon compras</h3>
+                  <p>
+                    Compra miles de artículos con envíos gratis y entregas más
+                    rápidas además de ofertas exclusivas.
+                  </p>
                 </div>
-                <div className="row d-flex plan-content-prime">
-                  <div className="col-md-4 col-g-6">
-                    <img src="../src/assets/images/streamings/amazon/amazon-compras.png" alt="Amazon Compras" />
-                    <h3>Amazon compras</h3>
-                    <p>Compra miles de artículos con envíos gratis y entregas más rápidas además de ofertas exclusivas.</p>
-                  </div>
-                  <div className="col-md-4">
-                    <img src="../src/assets/images/streamings/amazon/prime-video.png" alt="Prime Video" />
-                    <h3>Prime video</h3>
-                    <p>Las mejores series, películas y contenido exclusivo; además descárgalos y disfrútalos cuando quieras.</p>
-                  </div>
-                  <div className="col-md-4">
-                    <img src=" ../src/assets/images/streamings/amazon/la-casa-de-chivas.png" alt="La casa de las chivas" />
-                    <h3>La casa de las chivas</h3>
-                    <p>Disfruta de todos los partidos de local de las chivas</p>
-                  </div>
+                <div className="col-md-4">
+                  <img
+                    src="../src/assets/images/streamings/amazon/prime-video.png"
+                    alt="Prime Video"
+                  />
+                  <h3>Prime video</h3>
+                  <p>
+                    Las mejores series, películas y contenido exclusivo; además
+                    descárgalos y disfrútalos cuando quieras.
+                  </p>
                 </div>
+                <div className="col-md-4">
+                  <img
+                    src=" ../src/assets/images/streamings/amazon/la-casa-de-chivas.png"
+                    alt="La casa de las chivas"
+                  />
+                  <h3>La casa de las chivas</h3>
+                  <p>Disfruta de todos los partidos de local de las chivas</p>
+                </div>
+              </div>
 
-                <div className="row d-flex plan-content-prime">
-                  <div className="col-md-4">
-                    <img src="../src/assets/images/streamings/amazon/amazon-music.png" alt="Amazon Music" />
-                    <h3>Amazon Music</h3>
-                    <p>Escucha más de dos millones de canciones y podcast sin interrupciones y descargas ilimitadas.</p>
-                  </div>
-                  <div className="col-md-4">
-                    <img src="../src/assets/images/streamings/amazon/prime-gamming.png" alt="Prime Gaming" />
-                    <h3>Prime Gaming</h3>
-                    <p>¡Juegos gratis cada mes! recompensas exclusivas y una suscripción a Twich.</p>
-                  </div>
-                  <div className="col-md-4">
-                    <img src="../src/assets/images/streamings/amazon/rappi-pro.png" alt="" />
-                    <h3>Rappi Pro</h3>
-                    <p>12 meses de envíos con descuentos exclusivos en restaurantes y supermercados.</p>
-                  </div>
+              <div className="row d-flex plan-content-prime">
+                <div className="col-md-4">
+                  <img
+                    src="../src/assets/images/streamings/amazon/amazon-music.png"
+                    alt="Amazon Music"
+                  />
+                  <h3>Amazon Music</h3>
+                  <p>
+                    Escucha más de dos millones de canciones y podcast sin
+                    interrupciones y descargas ilimitadas.
+                  </p>
                 </div>
+                <div className="col-md-4">
+                  <img
+                    src="../src/assets/images/streamings/amazon/prime-gamming.png"
+                    alt="Prime Gaming"
+                  />
+                  <h3>Prime Gaming</h3>
+                  <p>
+                    ¡Juegos gratis cada mes! recompensas exclusivas y una
+                    suscripción a Twich.
+                  </p>
+                </div>
+                <div className="col-md-4">
+                  <img
+                    src="../src/assets/images/streamings/amazon/rappi-pro.png"
+                    alt=""
+                  />
+                  <h3>Rappi Pro</h3>
+                  <p>
+                    12 meses de envíos con descuentos exclusivos en restaurantes
+                    y supermercados.
+                  </p>
+                </div>
+              </div>
 
-                <div className="d-flex plan-content-prime align-items-center justify-content-center">
-                  <div className="beneficio-prime-mega">
-                    <p><span>10 MB adicionales </span>durante toda la permanencia con el servicio activo*</p>
-                  </div>
-                  <div className="beneficio-prime-mega">
-                    <p>Realiza tus pagos con un solo proveedor</p>
-                  </div>
-                  <div className="beneficio-prime-mega">
-                    <p>Tarifa preferencial en tu membresía</p>
-                  </div>
+              <div className="d-flex plan-content-prime align-items-center justify-content-center">
+                <div className="beneficio-prime-mega">
+                  <p>
+                    <span>10 MB adicionales </span>durante toda la permanencia
+                    con el servicio activo*
+                  </p>
                 </div>
-                 
-                <button className=" btn-packs prime-btn-color prime-btn-contrata">
-                  ¡Lo quiero!
-                </button>
+                <div className="beneficio-prime-mega">
+                  <p>Realiza tus pagos con un solo proveedor</p>
+                </div>
+                <div className="beneficio-prime-mega">
+                  <p>Tarifa preferencial en tu membresía</p>
+                </div>
+              </div>
+
+              <button className=" btn-packs prime-btn-color prime-btn-contrata">
+                ¡Lo quiero!
+              </button>
             </div>
           </div>
 
           <div className="pack-client-legal mt-5">
-            <p className="pt-lg-5">*Aplican restricciones. Consulta términos y condiciones <a href="#">aquí</a></p>
+            <p className="pt-lg-5">
+              *Aplican restricciones. Consulta términos y condiciones{" "}
+              <a href="#">aquí</a>
+            </p>
           </div>
 
           {/* **************** IS NOT CLIENT ************** */}
@@ -252,7 +295,10 @@ if (window.innerWidth < 1024) {
                                 Membresía
                               </p>
                               <div className="membresia-prime">
-                                <img src="../src/assets/images/streamings/amazon/amazon-prime-logo.png" alt="" />
+                                <img
+                                  src="../src/assets/images/streamings/amazon/amazon-prime-logo.png"
+                                  alt=""
+                                />
                               </div>
                             </div>
                             <p className="card-text price-card">
@@ -303,17 +349,43 @@ if (window.innerWidth < 1024) {
                 </div>
               ))}
             </div>
-            <div className="container packs-terminos">
-            {selectedPack !== "doble" && (
-              <p className="promo-xview ">
-                Incluyen{" "}
-                <span className="txt-prime-color">
-                  más de 30,000 hrs de contenido
-                </span>{" "}
-                en Xview+
-              </p>
+            
+            <button
+              className="carousel-control-prev packs-prev prime-btn-color"
+              type="button"
+              data-bs-target="#carouselPaquetes"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next packs-next prime-btn-color"
+              type="button"
+              data-bs-target="#carouselPaquetes"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div className="container packs-terminos">
+              {selectedPack !== "doble" && (
+                <p className="promo-xview ">
+                  Incluyen{" "}
+                  <span className="txt-prime-color">
+                    más de 30,000 hrs de contenido
+                  </span>{" "}
+                  en Xview+
+                </p>
               )}
-              
+
               <p>
                 Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
                 <a className="txt-prime-color" href="">
@@ -329,31 +401,6 @@ if (window.innerWidth < 1024) {
                 </a>
               </p>
             </div>
-            <button
-              className="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselPaquetes"
-              data-bs-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselPaquetes"
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
         </div>
       )}
     </div>

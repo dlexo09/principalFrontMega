@@ -13,15 +13,15 @@ import { EffectCoverflow, Navigation } from "swiper/modules";
 const XVConoce = () => {
   return (
     <>
-      <div className="container-fluid xview-container-b">
+      <div className="container-fluid xview-container">
         <div className="container">
           <div className="row align-items-center">
-            <div className="col-xl-5 text-center text-xl-start">
+            <div className="col-lg-7 col-xl-5 text-center text-lg-start">
               <h3 className="small-title-services">Xview TV Interactiva</h3>
               <h2 className="big-title-services">
                 Disfruta de una experiencia de TV interactiva
               </h2>
-              <div className="d-block d-xl-none">
+              <div className="d-block d-lg-none">
                 <img
                   className="w-100"
                   src="../src/assets/images/servicios/tv-interactiva/caja-xview.png"
@@ -36,7 +36,7 @@ const XVConoce = () => {
               </p>
             </div>
 
-            <div className="col-md-7 d-none d-xl-block">
+            <div className="col-lg-5 col-xl-7 d-none d-lg-block">
               <img
                 className="w-100"
                 src="../src/assets/images/servicios/tv-interactiva/caja-xview.png"

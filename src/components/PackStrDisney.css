@@ -110,17 +110,29 @@ color: var(--disney-color) !important;
 }
 
 @media screen and (max-width:767px) {
-    #carouselClienteMobile .carousel-control-prev-icon, #carouselClienteMobile 
-    .carousel-control-next-icon{
-        border-radius: 50px;
-        padding: 15px;
+    .paquetes-tarifarios{
+        padding: 50px 0;
     }
-    #carouselClienteMobile .prev-icon-disney{
-        background-color: var(--disney-color);
+    .faq-scontainer{
+        padding-top: 50px !important;
+        padding-left: 20px;
+        padding-right: 20px;
     }
-    #carouselClienteMobile .next-icon-disney{
-        background-color: var(--disney-color);
+    .faq-global-accordion{
+        margin-top: 50px !important;
     }
+    .faq-global-accordion .accordion-body{
+        padding: 0px 30px 30px 30px!important;
+    }
+}
+.prev-icon-disney{
+    background-color: var(--disney-color);
+}
+.next-icon-disney{
+    background-color: var(--disney-color);
+}
+.carrousel-streaming-mov{
+    padding-top: 20px;
 }
 @media screen and (min-width: 992px) and (max-width: 1199px){
     .plans-contrata{

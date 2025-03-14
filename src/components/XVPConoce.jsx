@@ -42,7 +42,7 @@ const XVPConoce = () => {
       </div>
 
       {/* swiper */}
-      <div className="banner-streaming-home text-center">
+      <div className="banner-streaming-home text-center banner-strm-apps-xvp ps-3 pe-3 ps-md-0 pe-md-0"> 
         <h2 className="big-title-services content-title-sm ">Disfruta de tus Apps Favoritas desde Xview+</h2>
         <p className="content-txt-sm mt-4">
           Con Xview+ puedes descargar tus plataformas de streaming favoritas directamente desde Google Play. Convierte tu televisor en un centro de entretenimiento completo, con una gran variedad de apps disponibles para ti.
@@ -123,8 +123,8 @@ const XVPConoce = () => {
         </Swiper>
 
         {/* Botones de navegación */}
-        <div className="swiper-button-prev"></div>
-        <div className="swiper-button-next"></div>
+        <div className="swiper-button-prev serv-prev xv-prev carousel-control-prev"></div>
+        <div className="swiper-button-next serv-next xv-next carousel-control-next"></div>
       </div>
 
 

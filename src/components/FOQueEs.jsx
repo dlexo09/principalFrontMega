@@ -68,7 +68,7 @@ const FOQueEs = () => {
             <div className="text-center">
               <h2 className="small-title-services">fibra óptica</h2>
               <h3 className="big-title-services">¿QUé es la fibra óptica?</h3>
-              <p className="mt-5">
+              <p className="mt-4">
                 La fibra óptica de Megacable ofrece una conexión a internet de
                 alta velocidad, con tecnología que garantiza una transmisión más
                 rápida y estable hasta tu hogar. Además, permite disfrutar de
@@ -129,8 +129,8 @@ const FOQueEs = () => {
               </Swiper>
 
               {/* Botones de navegación */}
-              <div className="swiper-button-prev"></div>
-              <div className="swiper-button-next"></div>
+              <div className="swiper-button-prev serv-prev carousel-control-prev"></div>
+              <div className="swiper-button-next serv-next carousel-control-next"></div>
             </div>
 
             <form
