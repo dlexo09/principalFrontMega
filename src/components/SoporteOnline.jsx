@@ -713,7 +713,7 @@ const options = {
       <p className="d-none d-md-block">Internet</p>
       </div>,
     content: (
-      <div className="container sop-general-container">
+      <div className="container">
         <FAQSoporte faqs={faqInternet} />
       </div>
     ),
@@ -765,7 +765,8 @@ const SoporteOnline = () => {
       </div>
 
       {/* Switch */}
-      <div className="container d-flex justify-content-center align-items-center mt-5 btn-container-sop">
+      <div className="ps-3 pe-3 ps-md-0 pe-md-0">
+      <div className="container d-flex justify-content-center align-items-center mt-5 btn-container-sop ">
         {Object.entries(options).map(([option, { label }]) => (
           <SwitchButton
             key={option}
@@ -776,7 +777,7 @@ const SoporteOnline = () => {
           />
         ))}
       </div>
-
+      </div>
       {/* Mostrar información dependiendo de la opción seleccionada */}
       <div className="mt-5">{options[selectedOption].content}</div>
     </div>

@@ -197,7 +197,7 @@ const OFFullConnected = () => {
             className="fch-carousel-container carousel slide"
             data-bs-ride="carousel"
           >
-            <div className="carousel-inner">
+            <div className="carousel-inner carrousel-fch">
               {[1, 2, 3].map((slide, index) => (
                 <div
                   key={index}
