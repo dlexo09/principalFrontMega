@@ -18,7 +18,7 @@ const Internet = () => {
 
   return (
     <div className="container-fluid p-0">
-      <h1 className="text-center title-tabs">INTERNET</h1>
+      <h4 className="text-center title-tabs">INTERNET</h4>
       {/* Componente de tabs reutilizable */}
       <TabsComponent tabs={tabs} basePath="/internet" />
 

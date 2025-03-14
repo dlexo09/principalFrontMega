@@ -88,7 +88,7 @@ const PaquetesTarifarios = () => {
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
 
   return (
-    <div className="container paquetes-tarifarios text-center">
+    <div className="container general-tabs-container text-center pe-3 ps-3 pe-md-none ps-md-none">
       <h3 className="small-title-services">Contrata ya</h3>
       <h2 className="big-title-services mb-5 title-especial">Tu servicio de Norton</h2>
       <div id="carouselPaquetes" className="carousel slide" data-bs-ride="carousel">

@@ -17,14 +17,14 @@ const Xview = () => {
   return (
     <>
       <div className="container-fluid p-0">
-        <h1 className="text-center title-tabs">
+        <h4 className="text-center title-tabs">
           <img
             src="../src/assets/images/servicios/tv-interactiva/xview-logo.png"
             alt="Xview+"
           />
           <br />
           <span className="fw-title-tabs">TV INTERACTIVA</span>
-        </h1>
+        </h4>
 
         {/* Componente de tabs reutilizable */}
         <TabsComponent tabs={tabs} basePath="/xview" />

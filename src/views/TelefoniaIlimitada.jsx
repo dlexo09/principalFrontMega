@@ -18,7 +18,7 @@ const TelefoniaIlimitada = () => {
 
   return (
     <div className="container-fluid p-0">
-      <h1 className="text-center title-tabs">TELEFONÍA<br /><span className="fw-title-tabs">ILIMITADA</span></h1>
+      <h4 className="text-center title-tabs">TELEFONÍA<br /><span className="fw-title-tabs">ILIMITADA</span></h4>
       {/* Componente de tabs reutilizable */}
       <TabsComponent tabs={tabs} basePath="/telefonia-ilimitada" />
 

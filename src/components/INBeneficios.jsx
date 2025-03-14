@@ -3,7 +3,7 @@ import "./INBeneficios.css";
 
 const INBeneficios = () => {
   return (
-    <div className="container general-tabs-container">
+    <div className="container general-tabs-container pe-2 ps-2 pe-md-none ps-md-none">
       <div className="text-center mb-5">
             <h2 className="small-title-services">INTERNET</h2>
             <h3 className="big-title-services">Conoce los beneficios</h3>

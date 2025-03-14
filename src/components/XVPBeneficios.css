@@ -102,6 +102,48 @@
     }
   }
 
+
+/* popup video */
+  .video-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .video-popup-content {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+  }
+  
+  video {
+    max-width: 100%;
+    max-height: 80vh;
+  }
+  .close-btn{
+    color: #ffffff;
+  }
+
   /* Estilos para el popup */
 
 .video-popup-content iframe{
@@ -112,4 +154,17 @@
 .video-popup-content{
   background-color: transparent;
 }
+@media screen and (min-width:768px) and (max-width:991px){
+  .video-popup-content iframe{
+    max-width: 650px;
+    height: 400px;
+  }
+}
+@media screen and (max-width:767px){
+  .video-popup-content iframe{
+    max-width: 100%;
+    height: 300px;
+  }
+}
+
 

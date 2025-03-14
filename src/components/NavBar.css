@@ -35,3 +35,6 @@ width: 150px;
     color: #fff;
     border-radius: 5px;
   }
+  .navbar-container {
+    position: sticky;
+  }

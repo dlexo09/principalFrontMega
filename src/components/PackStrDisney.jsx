@@ -70,14 +70,12 @@ const PackStrDisney = () => {
 
   // Función para actualizar el chunkSize según el tamaño de la pantalla
   const updateChunkSize = () => {
-    if (window.innerWidth < 768) {
-      setChunkSize(1); // 1 tarjeta en pantallas pequeñas
-    } else if (window.innerWidth < 1024) {
-      setChunkSize(2); // 2 tarjetas en pantallas medianas
+    if (window.innerWidth < 1024) {
+      setChunkSize(1); // 2 tarjetas en pantallas medianas
     } else if (window.innerWidth < 1400) {
-      setChunkSize(3); // 3 tarjetas en pantallas medianas grandes
+      setChunkSize(2); // 3 tarjetas en pantallas medianas grandes
     } else {
-      setChunkSize(4); // 4 tarjetas en pantallas grandes
+      setChunkSize(3); // 4 tarjetas en pantallas grandes
     }
   };
 

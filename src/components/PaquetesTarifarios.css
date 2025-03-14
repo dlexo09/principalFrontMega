@@ -11,12 +11,13 @@
   padding: 15px;
   text-align: center;
   transition: border-color 0.3s, box-shadow 0.3s;
+  width: 100%;
 }
 
 
 
 .card-title {
-  font-size: clamp(1.1rem, 1.0333rem + 0.1389vw, 1.2rem);
+  font-size: 24px;
   font-weight: 600;
 }
 .btn-outline-dark {
@@ -28,7 +29,7 @@
   margin-top: 70px;
 }
 .velocidadPromo{
-  font-size: clamp(1.7rem, 1.5rem + 0.4167vw, 2rem);
+  font-size: 43px;
   color: var(--blue-dark);
   font-weight: 700;
   line-height: 1.6rem;
@@ -49,6 +50,7 @@
 }
 .promoExtra, .promoExtra img{
   width: 100%;
+
 }
 .servicio-m{
   margin-top: 40px;
@@ -95,9 +97,10 @@
 .btn-pack-card{
   position: absolute;
   bottom: -50px;
-  width: 100%;
-  right: 0;
+  width: 80%;
+  right: 50%;
   z-index: 999;
+  transform: translateX(50%);
 }
 .icon-card-packs{
   position: absolute;
@@ -108,16 +111,19 @@
   top: 35px;
 }
 .tv-icon{
-  top: 200px;
+  top: 210px;
 }
 .telefonia-icon{
-  top: 320px;
+  top: 380px;
 }
 .telefonia-icon-doble {
   top: 195px; /* Ajusta la posición según sea necesario */
 }
 .title-especial{
   line-height: 40px;
+}
+.paquete-item{
+  width: 330px;
 }
 
 .fullconnect-img {
@@ -135,6 +141,23 @@
   width: 270px;
 }
 
+.packs-prev, .packs-next{
+  top: 45%;
+  transform: translateY(50%);
+  background-color: var(--turquesa-btn);
+  height: 40px;
+  width: 40px;
+  border-radius: 50px;
+}
+.card-body{
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+}
+.paquete-body{
+padding-bottom: 15px;
+}
 
 @media screen and (max-width:767px) {
   .tarifario-title{
@@ -151,11 +174,22 @@
 .slider-gp{
   padding: 30px 0;
 }
+
+.fullconnect-img{
+padding-top: 0;
 }
-@media screen and (max-width: 1024px){
+
+}
+@media screen and (max-width: 1023px){
   .paquetes-tarifarios {
     padding: 100px 0px;
-  
+    
+  }
+  .paquete-item-triple{
+    height: 770px;
+  }
+  .paquete-item-doble{
+    height: 535px;
   }
 }
 @media screen and (max-width:374px) {

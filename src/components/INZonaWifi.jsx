@@ -12,7 +12,7 @@ const INZonaWifi = () => {
 
   return (
     <>
-      <div className="container general-tabs-container container">
+      <div className="container general-tabs-container container pe-2 ps-2 pe-md-none ps-md-none">
         <div className="text-center">
           <h2 className="small-title-services">MEGACABLE WIFI</h2>
           <h3 className="big-title-services">
@@ -123,8 +123,8 @@ const INZonaWifi = () => {
 
         {/* Speedtest */}
         <div className="mide-tu-velocidad row align-items-center ">
-          <div className="col-xl-9">
-            <img className="w-100" src="/img/servicios/internet/mapa-zw.jpg" alt="" />
+          <div className="col-xl-9 pe-4 ps-4 pe-md-none ps-md-none">
+            <img className="w-100 pe-2 ps-2 pb-md-5 pt-xl-none ps-md-none pe-md-none" src="../src/assets/images/servicios/internet/mapa-zw.jpg" alt="" />
           </div>
           <div className="col-xl-3 speed-pasos-container">
             <div className="speed-pasos-crd">
