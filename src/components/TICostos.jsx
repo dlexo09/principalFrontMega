@@ -6,7 +6,7 @@ import "./Globales.css";
 
 const TICostos = () => {
   return (
-    <div className="general-tabs-container">
+    <div className="general-tabs-container ps-1 pe-1 ps-md-0 pe-md-0"> 
       <div className="text-center">
         <h3 className="small-title-services">CONOCE NUESTRAS TARIFAS</h3>
         <h2 className="big-title-services">LARGA DISTANCIA INTERNACIONAL</h2>

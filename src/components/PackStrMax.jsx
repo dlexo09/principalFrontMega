@@ -68,7 +68,7 @@ const PackStrMax = () => {
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
 
   return (
-    <div className="container paquetes-tarifarios text-center">
+    <div className="container paquetes-tarifarios text-center  paquetes-tarifarios-strm">
       <div className="cliente-question mb-4">
         <h3 className="small-title txt-max-color">EL MEJOR PLAN PARA TI</h3>
         <h3 className="big-title mb-5">Por ser cliente Mega</h3>
@@ -152,19 +152,19 @@ const PackStrMax = () => {
           </div>
         </div>
       </div>
-      <div className="pack-client-legal mt-5">
+      <div className="pack-client-legal mt-5 d-none d-lg-block">
         <p className="pt-lg-5">*Aplican restricciones. Consulta términos y condiciones <a href="#">aquí</a></p>
       </div>
 
       {/* **************** IS CLIENT MOVILE ************** */}
 
-      <div className="carousel-container d-lg-none mt-5">
+      <div className="carousel-container d-lg-none mb-5 mt-5">
         <div
           id="carouselClienteMobile"
-          className="carousel slide"
+          className="carousel slide "
           data-bs-ride="carousel"
         >
-          <div className="carousel-inner">
+          <div className="carousel-inner pt-3 ">
             {(() => {
               // Datos de prueba locales para esta sección
               const datosPrueba = [
@@ -235,30 +235,33 @@ const PackStrMax = () => {
             })()}
           </div>
           <button
-            className="carousel-control-prev"
+            className="carousel-control-prev packs-prev prev-icon-max "
             type="button"
             data-bs-target="#carouselClienteMobile"
             data-bs-slide="prev"
           >
             <span
-              className="carousel-control-prev-icon prev-icon-max"
+              className="carousel-control-prev-icon "
               aria-hidden="true"
             ></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
-            className="carousel-control-next"
+            className="carousel-control-next packs-prev prev-icon-max"
             type="button"
             data-bs-target="#carouselClienteMobile"
             data-bs-slide="next"
           >
             <span
-              className="carousel-control-next-icon next-icon-max"
+              className="carousel-control-next-icon"
               aria-hidden="true"
             ></span>
             <span className="visually-hidden">Next</span>
           </button>
         </div>
+      </div>
+      <div className="pack-client-legal d-lg-none"> 
+        <p className="pt-lg-5">*Aplican restricciones. Consulta términos y condiciones <a href="#">aquí</a></p>
       </div>
     </div>
   );

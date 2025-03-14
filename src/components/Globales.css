@@ -225,6 +225,8 @@ a{
     
 }
 
+
+
 /* Btn tutorial */
 .btn-tutorial{
     width: 100%;
@@ -236,11 +238,16 @@ a{
 .general-tabs-container{
     padding: 70px 0;
 }
-.pad-container{
-    padding: 15px !important;
-  }
 
-
+.carousel-control-next{
+    right: 10px;
+}
+.carousel-control-prev{
+    left: 10px;
+}
+.paquetes-tarifarios-strm{
+   padding-top: 50px !important;
+}
 
 @media screen and (max-width:767px){
     .general-tabs-container{
@@ -256,6 +263,7 @@ a{
       /* Streamings */
 
 }
+
 @media screen and (min-width:768px) and (max-width:1200px){
     .btn-client-pos{
         width: 200px !important;
@@ -273,4 +281,5 @@ a{
         margin: 0 auto;
       }
 }
+
 

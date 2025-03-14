@@ -19,8 +19,6 @@
 
 .paquete-item-netflix {
     border-color: var(--netflix-color);
-    width: 330px;
-
 }
 
 .velocidadPromo-netflix {
@@ -161,17 +159,11 @@
     padding-top: 60px !important;
 }
 
-#carouselClienteMobile .carousel-control-prev-icon,
-#carouselClienteMobile .carousel-control-next-icon {
-    border-radius: 50px;
-    padding: 15px;
-}
-
-#carouselClienteMobile .prev-icon-netflix {
+.prev-icon-netflix {
     background-color: var(--netflix-color);
 }
 
-#carouselClienteMobile .next-icon-netflix {
+ .next-icon-netflix {
     background-color: var(--netflix-color);
 }
 

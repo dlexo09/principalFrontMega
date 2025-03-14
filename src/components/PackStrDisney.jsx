@@ -14,9 +14,9 @@ const PackStrDisney = () => {
   const promoValue = 60; // Definir la variable para el valor adicional
 
   const [selectedPlan, setSelectedPlan] = useState({}); // Estado para el plan seleccionado
-  
+
   const handlePlanChange = (paqueteId, plan) => {
-    setSelectedPlan(prevState => ({
+    setSelectedPlan((prevState) => ({
       ...prevState,
       [paqueteId]: plan,
     }));
@@ -31,7 +31,7 @@ const PackStrDisney = () => {
           );
           const data = await response.json();
           setPaquetes(data);
-  
+
           // Inicializar el estado selectedPlan con "Estandar" para cada paquete
           const initialSelectedPlan = {};
           data.forEach((paquete, i) => {
@@ -43,7 +43,7 @@ const PackStrDisney = () => {
         }
       }
     };
-  
+
     fetchPaquetes();
   }, [selectedPack, currentLocation]);
 
@@ -75,7 +75,7 @@ const PackStrDisney = () => {
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
 
   return (
-    <div className="container paquetes-tarifarios text-center">
+    <div className="container paquetes-tarifarios text-center paquetes-tarifarios-strm">
       <div className="cliente-question mb-4">
         <h3 className="small-title txt-disney-color">EL MEJOR PLAN PARA TI</h3>
         <h3 className="big-title mb-5">¿Ya eres cliente Mega?</h3>
@@ -188,7 +188,7 @@ const PackStrDisney = () => {
               className="carousel slide"
               data-bs-ride="carousel"
             >
-              <div className="carousel-inner">
+              <div className="carousel-inner carrousel-streaming-mov">
                 {(() => {
                   // Datos de prueba locales para esta sección
                   const datosPrueba = [
@@ -262,25 +262,25 @@ const PackStrDisney = () => {
                 })()}
               </div>
               <button
-                className="carousel-control-prev"
+                className="carousel-control-prev packs-prev prev-icon-disney"
                 type="button"
                 data-bs-target="#carouselClienteMobile"
                 data-bs-slide="prev"
               >
                 <span
-                  className="carousel-control-prev-icon prev-icon-disney"
+                  className="carousel-control-prev-icon"
                   aria-hidden="true"
                 ></span>
                 <span className="visually-hidden">Previous</span>
               </button>
               <button
-                className="carousel-control-next"
+                className="carousel-control-next packs-next next-icon-disney"
                 type="button"
                 data-bs-target="#carouselClienteMobile"
                 data-bs-slide="next"
               >
                 <span
-                  className="carousel-control-next-icon next-icon-disney"
+                  className="carousel-control-next-icon "
                   aria-hidden="true"
                 ></span>
                 <span className="visually-hidden">Next</span>
@@ -332,20 +332,20 @@ const PackStrDisney = () => {
           </div>
           <div
             id="carouselPaquetes"
-            className="carousel slide"
+            className="carousel slide carrousel-disney"
             data-bs-ride="carousel"
           >
-            <div className="carousel-inner">
+            <div className="carousel-inner ">
               {chunkedPaquetes.map((chunk, index) => (
                 <div
                   key={index}
                   className={`carousel-item ${index === 0 ? "active" : ""}`}
                 >
-                  <div className="d-flex justify-content-center slider-gp">
+                  <div className="d-flex justify-content-center slider-gp ">
                     {chunk.map((paquete, i) => (
                       <div
                         key={i}
-                        className="paquete-item paquete-item-disney card m-2"
+                        className="paquete-item paquete-item-disney card m-2 "
                       >
                         <div className="card-body">
                           <h2 className="card-title">
@@ -387,24 +387,33 @@ const PackStrDisney = () => {
                                 SELECCIONA TU PLAN
                               </p>
                               <div className="pack-str-content d-flex flex-column justify-content-center">
-                              <button
-            className={`pack-btn-str ${selectedPlan[paquete.id || i] === "Estandar"
-                ? "disney-btn-color"
-                : "pack-btn-inactive"
-              }`}
-            onClick={() => handlePlanChange(paquete.id || i, "Estandar")}
-          >
-            Estándar
-          </button>
-          <button
-            className={`pack-btn-str ${selectedPlan[paquete.id || i] === "Premium"
-                ? "disney-btn-color"
-                : "pack-btn-inactive"
-              }`}
-            onClick={() => handlePlanChange(paquete.id || i, "Premium")}
-          >
-            Premium
-          </button>
+                                <button
+                                  className={`pack-btn-str ${
+                                    selectedPlan[paquete.id || i] === "Estandar"
+                                      ? "disney-btn-color"
+                                      : "pack-btn-inactive"
+                                  }`}
+                                  onClick={() =>
+                                    handlePlanChange(
+                                      paquete.id || i,
+                                      "Estandar"
+                                    )
+                                  }
+                                >
+                                  Estándar
+                                </button>
+                                <button
+                                  className={`pack-btn-str ${
+                                    selectedPlan[paquete.id || i] === "Premium"
+                                      ? "disney-btn-color"
+                                      : "pack-btn-inactive"
+                                  }`}
+                                  onClick={() =>
+                                    handlePlanChange(paquete.id || i, "Premium")
+                                  }
+                                >
+                                  Premium
+                                </button>
                               </div>
                             </div>
                             <p className="card-text price-card">
@@ -455,34 +464,9 @@ const PackStrDisney = () => {
                 </div>
               ))}
             </div>
-            <div className="container packs-terminos">
-              {selectedPack !== "doble" && (
-                <p className="promo-xview ">
-                  Incluyen{" "}
-                  <span className="txt-disney-color">
-                    más de 30,000 hrs de contenido
-                  </span>{" "}
-                  en Xview+
-                </p>
-              )}
 
-              <p>
-                Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
-                <a className="txt-disney-color" href="">
-                  Tarifas registradas ante el IFT.{" "}
-                </a>
-                Aplican restricciones. Consulta términos y condiciones{" "}
-                <a
-                  className="txt-disney-color"
-                  target="_blank"
-                  href="https://www.megacable.com.mx/terminos-y-condiciones"
-                >
-                  aquí.
-                </a>
-              </p>
-            </div>
             <button
-              className="carousel-control-prev"
+              className="carousel-control-prev packs-prev prev-icon-disney"
               type="button"
               data-bs-target="#carouselPaquetes"
               data-bs-slide="prev"
@@ -494,7 +478,7 @@ const PackStrDisney = () => {
               <span className="visually-hidden">Previous</span>
             </button>
             <button
-              className="carousel-control-next"
+              className="carousel-control-next packs-next next-icon-disney"
               type="button"
               data-bs-target="#carouselPaquetes"
               data-bs-slide="next"
@@ -505,6 +489,32 @@ const PackStrDisney = () => {
               ></span>
               <span className="visually-hidden">Next</span>
             </button>
+          </div>
+          <div className="container packs-terminos">
+            {selectedPack !== "doble" && (
+              <p className="promo-xview ">
+                Incluyen{" "}
+                <span className="txt-disney-color">
+                  más de 30,000 hrs de contenido
+                </span>{" "}
+                en Xview+
+              </p>
+            )}
+
+            <p>
+              Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
+              <a className="txt-disney-color" href="">
+                Tarifas registradas ante el IFT.{" "}
+              </a>
+              Aplican restricciones. Consulta términos y condiciones{" "}
+              <a
+                className="txt-disney-color"
+                target="_blank"
+                href="https://www.megacable.com.mx/terminos-y-condiciones"
+              >
+                aquí.
+              </a>
+            </p>
           </div>
         </div>
       )}

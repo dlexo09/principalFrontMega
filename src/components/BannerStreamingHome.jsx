@@ -119,8 +119,8 @@ const BannerStreamingHome = () => {
         </Swiper>
 
         {/* Botones de navegación */}
-        <div className="swiper-button-prev next-btn-prz"></div>
-        <div className="swiper-button-next prev-btn-prz"></div>
+        <div className="swiper-button-prev serv-prev xv-prev carousel-control-prev"></div>
+        <div className="swiper-button-next serv-next xv-next carousel-control-next"></div>
       </div>
     </>
   );

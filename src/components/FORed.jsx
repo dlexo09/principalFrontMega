@@ -19,7 +19,7 @@ const FORed = () => {
   return (
     <div className="general-tabs-container">
       <div className="fibra-presentation">
-        <div className="text-center">
+        <div className="text-center ps-2 pe-2 ps-md-0 pe-md-0">
           <h2 className="small-title-services">
             Fibra óptica directo a tu hogar
           </h2>
@@ -28,7 +28,7 @@ const FORed = () => {
             óptica que llega hasta tu hogar.
           </h3>
         </div>
-        <div className="fibra-presentation-content">
+        <div className="fibra-presentation-content ps-2 pe-2 ps-md-0 pe-md-0">
           <div className="container fored-cards-presentation">
             <div className="fored-card-presentation card-b">
               <div className="fored-icon-card">
@@ -104,13 +104,13 @@ const FORed = () => {
 
         <form
           onSubmit={handleSubmit}
-          className="container fored-formulario-p"
+          className="container fored-formulario-p ps-3 pe-3 ps-md-0 pe-md-0"
           id="miFormulario"
         >
           <div className="form__label-p text-center">
             <label htmlFor="phone">SOLICITA TU CAMBIO</label>
           </div>
-          <div className="form__capt-p">
+          <div className="form__capt-p ">
             <div className="form__input">
               <input
                 type="text"
@@ -138,7 +138,6 @@ const FORed = () => {
       <div className="container int-simetrico-container ">
         <div className="row align-items-lg-end align-items-xl-center">
           <div className="col-lg-6 col-xl-5 int-simetrico-content">
-            
             <div className="int-simetrico-txt text-center text-lg-start">
               <h3 className="small-title">Internet simétrico</h3>
               <p className="big-title text-uppercase">
@@ -151,13 +150,13 @@ const FORed = () => {
             </div>
 
             <div className="mt-5 d-block d-lg-none col-lg-6 col-xl-7 int-simetrico-img mb-md-5 mb-xl-0">
-            <img
-              src="../src/assets/images/fibra-optica/conectate-sin-limites.png"
-              alt="Internet simétrico"
-            />
-          </div>
+              <img
+                src="../src/assets/images/fibra-optica/conectate-sin-limites.png"
+                alt="Internet simétrico"
+              />
+            </div>
 
-            <div className=" row int-simetrico-cards text-center text-md-start">
+            <div className=" row int-simetrico-cards text-center text-md-start ps-3 pe-3 ps-md-0 pe-md-0">
               <div className="col-lg-5 int-simetrico-card">
                 <img
                   src="../src/assets/icons/fibra-optica/internet-simetrico.png"

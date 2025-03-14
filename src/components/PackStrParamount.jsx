@@ -2,9 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { serverAPIUrl } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from "../LocationContext";
-import "./Globales.css";
 import "./PackStrParamount.css";
-
+import "./Globales.css";
 const PackStrParamount = () => {
   const { currentLocation } = useContext(LocationContext);
   const [paquetes, setPaquetes] = useState([]);

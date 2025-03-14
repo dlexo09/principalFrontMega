@@ -367,11 +367,11 @@ const TIServiciosA = () => {
 
   return (
     <>
-      <div className="general-tabs-container">
+      <div className="general-tabs-container ps-3 pe-3 ps-md-none pe-md-none">
         <div className="text-center titles-adserv">
           <h3 className="small-title-services">Conoce nuestro servicio</h3>
           <h2 className="big-title-services">SERVICIOS ADICIONALES</h2>
-          <p className="mt-5">
+          <p className="mt-4">
             Complementa tu servicio de Telefonía Fija Mega con las soluciones
             digitales que tenemos para ti.
           </p>
@@ -435,8 +435,8 @@ const TIServiciosA = () => {
           </Swiper>
 
           {/* Botones de navegación */}
-          <div className="swiper-button-prev"></div>
-          <div className="swiper-button-next"></div>
+          <div className="swiper-button-prev serv-prev carousel-control-prev"></div>
+          <div className="swiper-button-next serv-next carousel-control-next"></div>
         </div>
       </div>
 

@@ -2,8 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { serverAPIUrl } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from "../LocationContext";
-import "./Globales.css";
 import "./PackStrNetflix.css";
+import "./Globales.css";
 
 const PackStrNetflix = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -23,7 +23,7 @@ const PackStrNetflix = () => {
           );
           const data = await response.json();
           setPaquetes(data);
-  
+
           // Inicializar el estado selectedPlan con "EstandarAnuncios" para cada paquete
           const initialSelectedPlan = {};
           data.forEach((paquete, i) => {
@@ -35,13 +35,13 @@ const PackStrNetflix = () => {
         }
       }
     };
-  
+
     fetchPaquetes();
   }, [selectedPack, currentLocation]);
 
   // Función para actualizar el chunkSize según el tamaño de la pantalla
   const updateChunkSize = () => {
-  if (window.innerWidth < 1024) {
+    if (window.innerWidth < 1024) {
       setChunkSize(1); // 2 tarjetas en pantallas medianas
     } else if (window.innerWidth < 1400) {
       setChunkSize(2); // 3 tarjetas en pantallas medianas grandes
@@ -67,7 +67,7 @@ const PackStrNetflix = () => {
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
 
   return (
-    <div className="container paquetes-tarifarios text-center">
+    <div className="container paquetes-tarifarios text-center  paquetes-tarifarios-strm">
       <div className="cliente-question mb-4">
         <h3 className="small-title txt-netflix-color">EL MEJOR PLAN PARA TI</h3>
         <h3 className="big-title mb-5">¿Ya eres cliente Mega?</h3>
@@ -241,8 +241,11 @@ const PackStrNetflix = () => {
               </div>
             </div>
           </div>
-          <div className="pack-client-legal mt-5">
-            <p className="pt-lg-5">*Aplican restricciones. Consulta términos y condiciones <a href="#">aquí</a></p>
+          <div className="pack-client-legal mt-5 d-none d-lg-block">
+            <p className="pt-lg-5">
+              *Aplican restricciones. Consulta términos y condiciones{" "}
+              <a href="#">aquí</a>
+            </p>
           </div>
 
           {/* **************** IS CLIENT MOVILE ************** */}
@@ -253,20 +256,24 @@ const PackStrNetflix = () => {
               className="carousel slide"
               data-bs-ride="carousel"
             >
-              <div className="carousel-inner">
+              <div className="carousel-inner carrousel-streaming-mov ">
                 {(() => {
                   // Datos de prueba locales para esta sección
                   const datosPrueba = [
                     {
                       titulo: (
                         <>
-                          ESTÁNDAR<br />
+                          ESTÁNDAR
+                          <br />
                           CON ANUNCIOS
                         </>
                       ),
                       contenido: (
                         <ul className="beneficios-pack-movile">
-                          <li>Con anuncios; todos los juegos móviles y la mayoría de las series y películas están disponibles. </li>
+                          <li>
+                            Con anuncios; todos los juegos móviles y la mayoría
+                            de las series y películas están disponibles.{" "}
+                          </li>
                           <li>2 dispositivos compatibles a la vez</li>
                           <li>1080p (Full HD)</li>
                           <li>2 dispositivos compatibles a la vez</li>
@@ -277,7 +284,10 @@ const PackStrNetflix = () => {
                       titulo: "ESTÁNDAR",
                       contenido: (
                         <ul className="beneficios-pack-movile">
-                          <li>Juegos móviles, series y películas; sin publicidad y sin límite</li>
+                          <li>
+                            Juegos móviles, series y películas; sin publicidad y
+                            sin límite
+                          </li>
                           <li>2 dispositivos compatibles a la vez</li>
                           <li>1080p (Full HD)</li>
                           <li>2 dispositivos compatibles a la vez</li>
@@ -289,7 +299,10 @@ const PackStrNetflix = () => {
                       titulo: "PREMIUM",
                       contenido: (
                         <ul className="beneficios-pack-movile">
-                          <li>Juegos móviles, series y películas; sin publicidad y sin límite</li>
+                          <li>
+                            Juegos móviles, series y películas; sin publicidad y
+                            sin límite
+                          </li>
                           <li>4 dispositivos compatibles a la vez</li>
                           <li>4K (Ultra HD) + HDR</li>
                           <li>6 dispositivos compatibles a la vez</li>
@@ -312,7 +325,7 @@ const PackStrNetflix = () => {
                         {chunk.map((paquete, i) => (
                           <div
                             key={i}
-                            className="paquete-item paquete-item-netflix card m-2"
+                            className="paquete-item paquete-item-netflix card mt-2"
                           >
                             <div className="card-body card-body-movile">
                               {/* Accede a las propiedades del objeto "paquete" */}
@@ -340,29 +353,35 @@ const PackStrNetflix = () => {
                 })()}
               </div>
               <button
-                className="carousel-control-prev"
+                className="carousel-control-prev packs-prev prev-icon-netflix"
                 type="button"
                 data-bs-target="#carouselClienteMobile"
                 data-bs-slide="prev"
               >
                 <span
-                  className="carousel-control-prev-icon prev-icon-netflix"
+                  className="carousel-control-prev-icon "
                   aria-hidden="true"
                 ></span>
                 <span className="visually-hidden">Previous</span>
               </button>
               <button
-                className="carousel-control-next"
+                className="carousel-control-next packs-next next-icon-netflix"
                 type="button"
                 data-bs-target="#carouselClienteMobile"
                 data-bs-slide="next"
               >
                 <span
-                  className="carousel-control-next-icon next-icon-netflix"
+                  className="carousel-control-next-icon"
                   aria-hidden="true"
                 ></span>
                 <span className="visually-hidden">Next</span>
               </button>
+            </div>
+            <div className="pack-client-legal mt-5 ">
+              <p className="pt-lg-5">
+                *Aplican restricciones. Consulta términos y condiciones{" "}
+                <a href="#">aquí</a>
+              </p>
             </div>
           </div>
 
@@ -459,67 +478,74 @@ const PackStrNetflix = () => {
                                 SELECCIONA TU PLAN
                               </p>
                               <div className="pack-str-content pack-str-netflix d-flex flex-column justify-content-center">
-                              <button
-            className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
-              selectedPlan[paquete.id || i] === "EstandarAnuncios"
-                ? "netflix-btn-color"
-                : "pack-btn-inactive pack-btn-inactive-netflix"
-            }`}
-            onClick={() =>
-              setSelectedPlan((prevState) => ({
-                ...prevState,
-                [paquete.id || i]: "EstandarAnuncios",
-              }))
-            }
-          >
-            <span className="pi1-hd plans-netflix-icon"></span>
-            <p>
-              Estándar
-              <br />
-              con anuncios <br />
-              <span className="plans-netflix-tv">2 Pantallas</span>
-            </p>
-          </button>
+                                <button
+                                  className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
+                                    selectedPlan[paquete.id || i] ===
+                                    "EstandarAnuncios"
+                                      ? "netflix-btn-color"
+                                      : "pack-btn-inactive pack-btn-inactive-netflix"
+                                  }`}
+                                  onClick={() =>
+                                    setSelectedPlan((prevState) => ({
+                                      ...prevState,
+                                      [paquete.id || i]: "EstandarAnuncios",
+                                    }))
+                                  }
+                                >
+                                  <span className="pi1-hd plans-netflix-icon"></span>
+                                  <p>
+                                    Estándar
+                                    <br />
+                                    con anuncios <br />
+                                    <span className="plans-netflix-tv">
+                                      2 Pantallas
+                                    </span>
+                                  </p>
+                                </button>
 
-          <button
-            className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
-              selectedPlan[paquete.id || i] === "Estandar"
-                ? "netflix-btn-color"
-                : "pack-btn-inactive pack-btn-inactive-netflix"
-            }`}
-            onClick={() =>
-              setSelectedPlan((prevState) => ({
-                ...prevState,
-                [paquete.id || i]: "Estandar",
-              }))
-            }
-          >
-            <span className="pi2-2hd plans-netflix-icon"></span>
-            <p>
-              Estándar <br />
-              <span className="plans-netflix-tv">2 Pantallas</span>
-            </p>
-          </button>
+                                <button
+                                  className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
+                                    selectedPlan[paquete.id || i] === "Estandar"
+                                      ? "netflix-btn-color"
+                                      : "pack-btn-inactive pack-btn-inactive-netflix"
+                                  }`}
+                                  onClick={() =>
+                                    setSelectedPlan((prevState) => ({
+                                      ...prevState,
+                                      [paquete.id || i]: "Estandar",
+                                    }))
+                                  }
+                                >
+                                  <span className="pi2-2hd plans-netflix-icon"></span>
+                                  <p>
+                                    Estándar <br />
+                                    <span className="plans-netflix-tv">
+                                      2 Pantallas
+                                    </span>
+                                  </p>
+                                </button>
 
-          <button
-            className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
-              selectedPlan[paquete.id || i] === "Premium"
-                ? "netflix-btn-color"
-                : "pack-btn-inactive pack-btn-inactive-netflix"
-            }`}
-            onClick={() =>
-              setSelectedPlan((prevState) => ({
-                ...prevState,
-                [paquete.id || i]: "Premium",
-              }))
-            }
-          >
-            <span className="pi3-4k plans-netflix-icon"></span>
-            <p>
-              Premium <br />
-              <span className="plans-netflix-tv">2 Pantallas</span>
-            </p>
-          </button>
+                                <button
+                                  className={`text-start netflix-btn-plan d-flex justify-content-start align-items-center pack-btn-str ${
+                                    selectedPlan[paquete.id || i] === "Premium"
+                                      ? "netflix-btn-color"
+                                      : "pack-btn-inactive pack-btn-inactive-netflix"
+                                  }`}
+                                  onClick={() =>
+                                    setSelectedPlan((prevState) => ({
+                                      ...prevState,
+                                      [paquete.id || i]: "Premium",
+                                    }))
+                                  }
+                                >
+                                  <span className="pi3-4k plans-netflix-icon"></span>
+                                  <p>
+                                    Premium <br />
+                                    <span className="plans-netflix-tv">
+                                      2 Pantallas
+                                    </span>
+                                  </p>
+                                </button>
                               </div>
                             </div>
                             <p className="card-text price-card">
@@ -570,17 +596,43 @@ const PackStrNetflix = () => {
                 </div>
               ))}
             </div>
-            <div className="container packs-terminos">
-            {selectedPack !== "doble" && (
+
+            <button
+              className="carousel-control-prev packs-next next-icon-netflix"
+              type="button"
+              data-bs-target="#carouselPaquetes"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next packs-next next-icon-netflix"
+              type="button"
+              data-bs-target="#carouselPaquetes"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
+            </button>
+          </div>
+          <div className="container packs-terminos">
+              {selectedPack !== "doble" && (
                 <p className="promo-xview ">
-                Incluyen{" "}
-                <span className="txt-netflix-color">
-                  más de 30,000 hrs de contenido
-                </span>{" "}
-                en Xview+
-              </p>
+                  Incluyen{" "}
+                  <span className="txt-netflix-color">
+                    más de 30,000 hrs de contenido
+                  </span>{" "}
+                  en Xview+
+                </p>
               )}
-              
+
               <p>
                 Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
                 <a className="txt-netflix-color" href="">
@@ -596,31 +648,6 @@ const PackStrNetflix = () => {
                 </a>
               </p>
             </div>
-            <button
-              className="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselPaquetes"
-              data-bs-slide="prev"
-            >
-              <span
-                className="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Previous</span>
-            </button>
-            <button
-              className="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselPaquetes"
-              data-bs-slide="next"
-            >
-              <span
-                className="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span className="visually-hidden">Next</span>
-            </button>
-          </div>
         </div>
       )}
     </div>

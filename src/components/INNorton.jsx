@@ -152,7 +152,7 @@ const PaquetesTarifarios = () => {
           ))}
         </div>
         <button
-          className="carousel-control-prev"
+          className="carousel-control-prev packs-prev"
           type="button"
           data-bs-target="#carouselPaquetes"
           data-bs-slide="prev"
@@ -161,7 +161,7 @@ const PaquetesTarifarios = () => {
           <span className="visually-hidden">Previous</span>
         </button>
         <button
-          className="carousel-control-next"
+          className="carousel-control-next packs-next"
           type="button"
           data-bs-target="#carouselPaquetes"
           data-bs-slide="next"
