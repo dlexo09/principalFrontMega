@@ -16,10 +16,10 @@ const PaquetesTarifariosDisney = () => {
   const idSucursal = currentLocation?.idSucursal; // Obtener el idSucursal de currentLocation
   const navigate = useNavigate(); // Hook para redirigir
 
-  console.log("ID sucursal", idSucursal); // Imprimir el valor de idSucursal
+  //console.log("ID sucursal", idSucursal); // Imprimir el valor de idSucursal
 
   useEffect(() => {
-    console.log("Current Location:", currentLocation); // Imprimir el valor de currentLocation
+    //console.log("Current Location:", currentLocation); // Imprimir el valor de currentLocation
 
     const fetchPaquetes = async () => {
       if (currentLocation) {
@@ -56,13 +56,25 @@ const PaquetesTarifariosDisney = () => {
         const response = await fetch(`${serverAPILambda}api/extraPromoDisney`);
         const data = await response.json();
         setExtraPromos(data);
+
+        // Seleccionar por defecto el botón con el promoCost más barato
+        const initialSelectedPromo = {};
+        data.forEach((promo) => {
+          paquetes.forEach((paquete, i) => {
+            const uniqueId = `${paquete.id}-${i}`;
+            if (!initialSelectedPromo[uniqueId] || promo.costoMensual < initialSelectedPromo[uniqueId].costoMensual) {
+              initialSelectedPromo[uniqueId] = promo;
+            }
+          });
+        });
+        setSelectedPromo(initialSelectedPromo);
       } catch (error) {
         console.error('Error fetching extra promos:', error);
       }
     };
 
     fetchExtraPromos();
-  }, []);
+  }, [paquetes]);
 
   const updateChunkSize = () => {
     if (window.innerWidth < 768) {

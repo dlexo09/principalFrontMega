@@ -15,7 +15,7 @@ const PaquetesTarifarios = () => {
   const idSucursal = currentLocation?.idSucursal; // Obtener el idSucursal de currentLocation
   const navigate = useNavigate(); // Hook para redirigir
 
-  console.log("ID sucursal", idSucursal); // Imprimir el valor de idSucursal
+  //console.log("ID sucursal", idSucursal); // Imprimir el valor de idSucursal
 
   useEffect(() => {
     console.log("Current Location:", currentLocation); // Imprimir el valor de currentLocation
