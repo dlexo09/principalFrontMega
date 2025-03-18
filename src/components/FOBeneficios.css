@@ -2,7 +2,9 @@
   background-image: url(../assets/images/fibra-optica/beneficios-bg.png);
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  padding-bottom: 150px;
+  padding-bottom: 100px;
+  padding-top: 70px;
+  margin-top: 150px;
 }
 
 .form-fob {
@@ -12,7 +14,7 @@
   gap: 20px;
 }
 .ventajas-simetrico-card {
-  background-color: var(--blue-gray);
+  background-color:#fff;
   border-radius: var(--br-card);
   padding: 50px 30px 30px 30px;
   position: relative;
@@ -20,7 +22,6 @@
 .ventajas-simetrico-title {
   margin-bottom: 70px;
   font-size: 28px;
-  margin-top: 150px;
 }
 .ventajas-simetrico-card img {
   position: absolute;
@@ -30,6 +31,36 @@
 .mrg-title{
     margin-bottom: 25px;
 }
+.comparative-table-container{
+  width: 100%;
+  max-width: 1850px;
+  margin: 0 auto;
+  margin-bottom: 150px;
+}
+.comparative-table-img{
+  width: 100%;
+  max-width: 900px;
+}
+.comparative-table-img img{
+  width: 100%;
+}
+.table-gp{
+  gap: 30px;
+}
+.beneficios-mega{
+  border: 1px solid #aac1df;
+  border-radius: 25px;
+}
+.con-otros-beneficios{
+  border-radius: 25px;
+  border: 1px solid #e4e4e5;
+}
+@media screen and (min-width:1920px){
+  .comparative-table-img{
+    display: block;
+  }
+
+}
 @media screen and (max-width: 1439px) {
   .fobeneficios-container {
     background-image: url(../assets/images/fibra-optica/fibra-optica-wave.png);
@@ -37,13 +68,25 @@
   .comparative-table {
     justify-content: center;
     align-items: center;
-    gap: 50px;
     width: 100%;
+  }
+}
+@media screen and (max-width: 1919px) {
+  .table-gp{
+    justify-content: center;
+  }
+  .comparative-table-img{
+    display: none;
+  }
+  .comparative-table-container{
+    margin-bottom:70px;
   }
 }
 @media screen and (max-width: 767px) {
   .fobeneficios-container {
     background-image: url(../assets/images/general/wave-sht-general-movil.png);
+    margin-top: 20px;
+    padding-top: 10px;
   }
   .con-mega,
   .con-otros {
@@ -60,6 +103,11 @@
   .ventajas-simetrico-title{
     margin-top: 100px;
   }
+  .comparative-table{
+    margin-top: 50px;
+    padding-bottom: 15px;
+  }
+
 }
 @media screen and (min-width: 1440px) and (max-width: 1920px) {
   .comparative-table {
@@ -68,6 +116,7 @@
   .fobeneficios-container {
     padding-bottom: 90px;
   }
+
 }
 @media screen and (min-width: 767px) and (max-width: 1920px) {
   .comparative-table {

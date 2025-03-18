@@ -1,9 +1,10 @@
 //import React, { useState } from "react";
 import PaquetesTarifarios from "../components/PaquetesTarifarios"; // Importación
+import "../components/Globales.css";
 
 const OFResidencial = () => {
   return (
-    <div className="general-tabs-container">
+    <div className="oferta-residencial-container">
       <PaquetesTarifarios />
     </div>
   );

@@ -65,7 +65,7 @@
   .rec-info-container{
     display: flex;
     justify-content: space-between;
-    gap: 20px;
+    gap: 4px;
     flex-wrap: wrap;
   }
   .rec-info-content{
@@ -136,6 +136,9 @@
       .contenido-despegable-velocidad.visible{
         max-height: 100%;
       }
+      .rec-info-container{
+        row-gap: 20px ;
+      }
 }
 @media screen and (max-width:767px){
     .rec-ethernet-container{
@@ -154,4 +157,5 @@
       .rec-ethernet-container{
         gap: 40px;
       }
+
 }

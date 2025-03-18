@@ -138,11 +138,14 @@ const OFFullConnected = () => {
 
           <div className="container cards-container">
             <div className="cards-title">
-              <h2>Elige tu paquete</h2>
+              <p className="small-title fch-p">Elige tu paquete</p>
+              {/*  
               <img
                 src="../src/assets/images/oferta/full-connected/fch-logo.png"
                 alt="Full Connected Home Logo"
               />
+              */}
+              <h1 className="text-uppercase">Full Connected Home</h1>
             </div>
 
             <div className="cards-titles-container">
@@ -197,6 +200,13 @@ const OFFullConnected = () => {
             className="fch-carousel-container carousel slide"
             data-bs-ride="carousel"
           >
+            <div className="cards-title mb-5">
+            <img
+                src="../src/assets/images/oferta/full-connected/fch-logo.png"
+                alt="Full Connected Home Logo"
+              />
+            </div>
+             
             <div className="carousel-inner carrousel-fch">
               {[1, 2, 3].map((slide, index) => (
                 <div

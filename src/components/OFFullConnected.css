@@ -373,7 +373,9 @@ width: 100%;
     width: 75%;
     margin: 0 auto;
 }
-
+.fch-p{
+    color: #ff7b02;
+}
 @media screen and (max-width:1125px){
     .fc-cta-container, .fc-cta-container-b{
         flex-direction: column;

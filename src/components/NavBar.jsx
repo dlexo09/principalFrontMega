@@ -35,7 +35,7 @@ const NavBar = () => {
                 Oferta
               </a>
               <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a className="dropdown-item" href="/paquetes">Residencial</a></li>
+                <li><a className="dropdown-item" href="/oferta">Residencial</a></li>
                 <li><a className="dropdown-item" href="https://empresas.megacable.com.mx/" target="_blank" rel="noopener noreferrer">Negocios</a></li>
                 <li><a className="dropdown-item" href="/mcm" target="_blank" rel="noopener noreferrer">MCM</a></li>
               </ul>

@@ -8,7 +8,7 @@ import "./components/Globales.css";
 import TopBar from './components/TopBar';
 import NavBar from './components/NavBar';
 import Home from './views/Home';
-import Paquetes from './views/Paquetes';
+import OfertaResidencial from './views/OFRecidencial';
 import Television from './views/Television';
 import TelefoniaIlimitada from './views/TelefoniaIlimitada';
 import Internet from './views/Internet';
@@ -64,7 +64,7 @@ function App() {
             <Route path="/television/*" element={<Television />} />
             <Route path="/telefonia-ilimitada/*" element={<TelefoniaIlimitada />} />
             <Route path="/internet/*" element={<Internet />} />
-            <Route path="/paquetes/*" element={<Paquetes />} />
+            <Route path="/oferta/*" element={<OfertaResidencial />} />
             <Route path="/ayuda/*" element={<Ayuda />} />
             <Route path="/fibra-optica/*" element={<FibraOptica />} />
             <Route path="/xviewplus/*" element={<XviewPlus />} />
