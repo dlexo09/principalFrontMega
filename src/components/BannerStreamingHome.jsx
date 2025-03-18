@@ -54,8 +54,8 @@ const BannerStreamingHome = () => {
   return (
     <>
       <div className="banner-streaming-home text-center">
-        <h3 className="small-title mb-3 mb-md-0">TODO EN UN SOLO LUGAR</h3>
-        <h2 className="big-title">¡Agrega más entretenimiento!</h2>
+        <h2 className="small-title mb-3 mb-md-0">TODO EN UN SOLO LUGAR</h2>
+        <p className="big-title">¡Agrega más entretenimiento!</p>
         <p className="txt-wht">
           Si eres cliente, disfruta de la comodidad de gestionar todas tus suscripciones desde un solo lugar, ¡simplifica tus pagos y obtén más beneficios!
         </p>
@@ -70,8 +70,8 @@ const BannerStreamingHome = () => {
           slidesPerView={slidesPerView} 
           spaceBetween={cards.length < 3 ? 0 : -60} 
           navigation={{
-            nextEl: '.swiper-button-next next-btn-prz',
-            prevEl: '.swiper-button-prev prev-btn-prz',
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
           }} 
           coverflowEffect={{
             rotate: 0,

@@ -42,9 +42,9 @@ const Paquetes = () => {
 
   return (
     <div className="container-fluid p-0">
-      <h1 className="text-center title-tabs">OFERTA<br /><span className="fw-title-tabs">RESIDENCIAL</span></h1>
+      <h4 className="text-center title-tabs">OFERTA<br /><span className="fw-title-tabs">RESIDENCIAL</span></h4>
       {/* Componente de tabs reutilizable */}
-      <TabsComponent tabs={tabs} basePath="/paquetes" />
+      <TabsComponent tabs={tabs} basePath="/oferta" />
 
       <div className="container-fluid m-0 p-0">
         {/* Renderizamos el contenido de las subrutas */}

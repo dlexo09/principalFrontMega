@@ -4,8 +4,8 @@ const VentajasInternetMega = () => {
     return (
         <>
             <div className="container-fluid ventajasInternerMega">
-                <h3 className="small-title text-center ventajas-title">CALIDAD, COMODIDAD Y SATISFACCIÓN</h3>
-                <h2 className="big-title text-center">Ventajas de elegir nuestro internet</h2>
+                <h2 className="small-title text-center ventajas-title">CALIDAD, COMODIDAD Y SATISFACCIÓN</h2>
+                <p className="big-title text-center">Ventajas de elegir nuestro internet</p>
                 <div className="container ventajas-internet-cards d-flex justify-content-center">
                     <div className="ventaja-internet-card">
                         <img src="/icons/router-icon.png" alt="" />

@@ -490,7 +490,7 @@ const options = {
                 alt="Megacable App"
               />
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6 ps-3 pe-3 ps-md-0 pe-md-0">
               <h2 className="secondary-title mb-4">
                 Descarga la<span> Megacable App!</span>
               </h2>
@@ -638,8 +638,9 @@ const options = {
                 <p className="saldo-title">Puede consultar su saldo en:</p>
                 <p className="saldo-subtitle">Mega App | Servicios en Línea</p>
                 <p className="saldo-title mt-5">Tambien puede llamarnos a:</p>
-                <p className="saldo-subtitle">tel: 33 9690 2222 | cc: 33 9690 0000</p>
-
+                <p className="saldo-subtitle">
+                  tel: 33 9690 2222 | cc: 33 9690 0000
+                </p>
               </div>
               <div className="col-md-6 col-lg-3 order-1 order-lg-2  text-center mb-5 mb-lg-0 d-none d-lg-block">
                 <img src="/img/soporte/formas-de-pago/app-mega.png" alt="" />
@@ -655,40 +656,46 @@ const options = {
     content: (
       <>
         <div className="container sop-general-container">
-          <h2 className="text-center secondary-title">Paga en Línea tus servicios de Mega</h2>
+          <h2 className="text-center secondary-title">
+            Paga en Línea tus servicios de Mega
+          </h2>
 
           <div className="d-flex justify-content-center pagol-pasos-container">
             <div className="speed-pasos-crd">
               <span>1</span>
               <p>
-                Haz click <a target="_blank" href="https://pagoenlinea.megacable.com.mx/">aquí</a> o en el botón "Pago en Línea" para ingresar a la plataforma de pagos.
+                Haz click{" "}
+                <a target="_blank" href="https://pagoenlinea.megacable.com.mx/">
+                  aquí
+                </a>{" "}
+                o en el botón "Pago en Línea" para ingresar a la plataforma de
+                pagos.
               </p>
             </div>
             <div className="speed-pasos-crd">
               <span>2</span>
               <p>
-                Ingresa tu número de contrato de 10 dígitos y completa el captcha de seguridad.
+                Ingresa tu número de contrato de 10 dígitos y completa el
+                captcha de seguridad.
               </p>
             </div>
             <div className="speed-pasos-crd">
               <span>3</span>
               <p>
-                Proporciona los datos de tu tarjeta de crédito o débito para realizar el pago.
+                Proporciona los datos de tu tarjeta de crédito o débito para
+                realizar el pago.
               </p>
             </div>
           </div>
           <div className="d-flex justify-content-center mt-5">
-          <button
-                  onClick={() =>
-                    window.open(
-                      "https://pagoenlinea.megacable.com.mx/",
-                      "_blank"
-                    )
-                  }
-                  className="btn-action"
-                >
-                  Pago en Línea <span className="open-page-icon"></span>
-                </button>
+            <button
+              onClick={() =>
+                window.open("https://pagoenlinea.megacable.com.mx/", "_blank")
+              }
+              className="btn-action"
+            >
+              Pago en Línea <span className="open-page-icon"></span>
+            </button>
           </div>
         </div>
       </>
@@ -705,8 +712,9 @@ const SwitchButton = ({
 }) => (
   <button
     type="button"
-    className={`switch-general-btn switch-fdpago-btn ${selectedOption === option ? "pack-btn-active" : "pack-btn-inactive"
-      } btn-lg mx-2`}
+    className={`switch-general-btn switch-fdpago-btn ${
+      selectedOption === option ? "pack-btn-active" : "pack-btn-inactive"
+    } btn-lg mx-2`}
     onClick={() => handleOptionChange(option)}
   >
     {label}
@@ -729,16 +737,18 @@ const SOPPago = () => {
       </div>
 
       {/* Switch */}
-      <div className="container d-flex flex-column flex-md-row justify-content-center align-items-center mt-5 btn-container-sop">
-        {Object.entries(options).map(([option, { label }]) => (
-          <SwitchButton
-            key={option}
-            option={option}
-            selectedOption={selectedOption}
-            handleOptionChange={handleOptionChange}
-            label={label}
-          />
-        ))}
+      <div className="ps-3 pe-3 ps-md-0 pe-md-0">
+        <div className="container d-flex flex-column flex-md-row justify-content-center align-items-center mt-5 btn-container-sop">
+          {Object.entries(options).map(([option, { label }]) => (
+            <SwitchButton
+              key={option}
+              option={option}
+              selectedOption={selectedOption}
+              handleOptionChange={handleOptionChange}
+              label={label}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Mostrar información dependiendo de la opción seleccionada */}

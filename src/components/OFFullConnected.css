@@ -369,8 +369,13 @@ width: 100%;
     margin-top: 200px;
     max-width: 600px;
 }
-
-
+.carrousel-fch{
+    width: 75%;
+    margin: 0 auto;
+}
+.fch-p{
+    color: #ff7b02;
+}
 @media screen and (max-width:1125px){
     .fc-cta-container, .fc-cta-container-b{
         flex-direction: column;
@@ -434,5 +439,14 @@ width: 100%;
     }
     .cards-content{
         margin-top: 100px;
+    }
+    .carrousel-fch{
+        width: 90%;
+    }
+    .control-next-fch{
+        right: 8px;
+    }
+    .control-prev-fch{
+        left: 8px;
     }
 }

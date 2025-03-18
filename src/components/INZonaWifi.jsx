@@ -129,7 +129,7 @@ const INZonaWifi = () => {
           <div className="col-xl-3 speed-pasos-container">
             <div className="speed-pasos-crd">
               <p>
-              La Red Megacable WiFi la podrás encontrar en los principales establecimientos de tu ciudad como Centros Comerciales, Restaurantes, Estadios, Parques, Cafeterías, Hospitales, Sitios Públicos, CIS de Megacable y en muchas zonas más.
+              La Red Megacable WiFi la podrás encontrar en los principales establecimientos de tu ciudad como Centros Comerciales, Restaurantes, Estadios, Parques, Cafeterías, Hospitales, Sitios Públicos, CIS de Megacable y en muchas zonas más.
               </p>
             </div>
           </div>

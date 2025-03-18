@@ -75,6 +75,7 @@ a{
     margin-top: 5px;
     font-size: clamp(1.8rem, 1.502rem + 1.1089vw, 2.5rem);
     font-weight: 300;
+    line-height: 55px;
 }
 .secondary-title span{
     font-weight: 600;
@@ -210,22 +211,6 @@ a{
     text-transform: uppercase;
 }
 
-/* Flechas */
-.next-btn-prz:after, .prev-btn-prz:after{
-    background-color: #00d7cc90;
-    padding: 10px 15px;
-    border-radius: 50px;
-}
-.next-btn-prz, .swiper-rtl .next-btn-prz{
-    left: 30px !important;
-    
-}
-.prev-btn-prz, .swiper-rtl .prev-btn-prz{
-    right: 30px !important;
-    
-}
-
-
 
 /* Btn tutorial */
 .btn-tutorial{
@@ -260,8 +245,12 @@ a{
     .title-tabs{
        display: none;
     }
-      /* Streamings */
-
+    .secondary-title{
+        line-height: 40px;
+    }
+}
+.oferta-residencial-container{
+    margin-top: -80px;
 }
 
 @media screen and (min-width:768px) and (max-width:1200px){

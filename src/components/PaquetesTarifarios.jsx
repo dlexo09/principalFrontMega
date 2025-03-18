@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { serverAPILambda } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext'; //
 import './PaquetesTarifarios.css';
-
 const PaquetesTarifarios = () => {
   const { currentLocation } = useContext(LocationContext);
   const [paquetes, setPaquetes] = useState([]);

@@ -28,7 +28,6 @@ const Ayuda = () => {
             <Route path="nuestra-red" element={<FORed />} />
             <Route path="que-es" element={<FOQueEs />} />
             <Route path="beneficios" element={<FOBeneficios />} />
-
           </Routes>
         </div>
       </div>
