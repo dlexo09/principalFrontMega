@@ -1,8 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { serverAPIUrl } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from "../LocationContext";
-import "./Globales.css";
 import "./PackStrMax.css";
 
 const PackStrMax = () => {
@@ -10,7 +8,7 @@ const PackStrMax = () => {
   const [paquetes, setPaquetes] = useState([]);
   const [selectedPack, setSelectedPack] = useState("triple");
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
-  const promoValue = 60; // Definir la variable para el valor adicional
+  const promoValue = 0; // Definir la variable para el valor adicional
   const [selectedPlan, setSelectedPlan] = useState({});
 
   useEffect(() => {
@@ -139,13 +137,13 @@ const PackStrMax = () => {
         <div className="contrata-str-max row d-flex justify-content-end">
           <div className="col-md-"></div>
           <div className="col-md-3 plans-contrata-max">
-            <img src="../src/assets/icons/max/strm-icon.png" alt="" />
+            <img src="/icons/max/strm-icon.png" alt="" />
             <button className=" btn-packs max-btn-color btn-client-pos">
               ¡Lo quiero!
             </button>
           </div>
           <div className="col-md-3 plans-contrata-max">
-            <img src="../src/assets/icons/max/strm-icon.png" alt="" />
+            <img src="/icons/max/strm-icon.png" alt="" />
             <button className=" btn-packs max-btn-color btn-client-pos">
               ¡Lo quiero!
             </button>
@@ -213,8 +211,8 @@ const PackStrMax = () => {
                           {/* Accede a las propiedades del objeto "paquete" */}
                           <img
                             className="str-icon-movile"
-                            src="../src/assets/icons/max/strm-icon.png"
-                            alt="Icono Disney"
+                            src="/icons/max/strm-icon.png"
+                            alt="Icono Max"
                           />
                           <h3 className="pack-movile-title">
                             {paquete.titulo}

@@ -100,15 +100,15 @@
         margin-bottom: 30px;
     }
     .pi1-hd{
-        background-image: url(/icons/netflix/pi1-hd.png);
+        background-image: url(/icons/max/pi1-hd.png);
     }
     .pi2-2hd{
-        background-image: url(/icons/netflix/pi1-2hd.png);
+        background-image: url(/icons/max/pi1-2hd.png);
     }
     .pi3-4k{
-        background-image: url(/icons/netflix/pi3-4k.png);
+        background-image: url(/icons/max/pi3-4k.png);
     }
-    .plans-netflix-icon{
+    .plans-max-icon{
         display: inline-block;
         height: 30px;
         width: 60px;
@@ -120,14 +120,14 @@
         font-size: 0.8rem !important;
         line-height: 12px;
     }
-    .pack-str-netflix{
+    .pack-str-max{
         padding: 10px;
     }
-    .pack-btn-inactive-netflix .plans-netflix-icon {
+    .pack-btn-inactive-max .plans-max-icon {
         filter: invert(55%) brightness(83%) saturate(0%);
         opacity: 0.5;
       }
-.plans-netflix-tv{
+.plans-max-tv{
     font-size: 0.62rem;
 }
  .vm-td{
