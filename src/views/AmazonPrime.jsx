@@ -13,7 +13,6 @@ const AmazonPrime = () => {
             <ActivaCuentaAmazonPrime />
             <FAQStrAmazonPrime />
         </>
-
     );
 };
 

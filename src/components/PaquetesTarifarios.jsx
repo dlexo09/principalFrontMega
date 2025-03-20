@@ -17,7 +17,7 @@ const PaquetesTarifarios = () => {
   //console.log("ID sucursal", idSucursal); // Imprimir el valor de idSucursal
 
   useEffect(() => {
-    console.log("Current Location:", currentLocation); // Imprimir el valor de currentLocation
+    //console.log("Current Location:", currentLocation); // Imprimir el valor de currentLocation
 
     const fetchPaquetes = async () => {
       if (currentLocation) {

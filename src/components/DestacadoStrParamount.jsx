@@ -1,5 +1,4 @@
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './DestacadoStrParamount.css';
 
 const DestacadosStrParamount = () => {
@@ -13,8 +12,8 @@ const DestacadosStrParamount = () => {
                 </p>
             </div>
             <div className="destacados-str-paramount-img container-fluid d-flex justify-content-center">
-                <img className='w-100 d-none d-md-block' src="../src/assets/images/streamings/paramount/destacados-paramount.png" alt="" />
-                <img className='w-100 d-md-none' src="../src/assets/images/streamings/paramount/destacados-paramount-movil.png" alt="" />
+                <img className='w-100 d-none d-md-block' src="/img/streamings/paramount/destacados-paramount.png" alt="" />
+                <img className='w-100 d-md-none' src="/img/streamings/paramount/destacados-paramount-movil.png" alt="" />
             </div>
         </div>
         </>

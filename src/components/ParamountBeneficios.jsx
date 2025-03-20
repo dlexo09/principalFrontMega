@@ -1,5 +1,3 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./Globales.css";
 import "./PackStrParamount.css";
 
 const ParamountBeneficios = () => {
@@ -17,7 +15,7 @@ const ParamountBeneficios = () => {
             <div className="paramount-icon-container">
               <img
                 className="paramount-icon"
-                src="../src/assets/icons/paramount/strm-icon-2.png"
+                src="/icons/paramount/strm-icon-2.png"
                 alt=""
               />
             </div>
@@ -32,27 +30,27 @@ const ParamountBeneficios = () => {
 
           <div className="paramount-programs d-flex justify-content-center align-items-center">
             <img
-              src="../src/assets/images/streamings/paramount/paramount-originals-logo.png"
+              src="/img/streamings/paramount/paramount-originals-logo.png"
               alt="Paramount Plus Originals"
             />
             <img
-              src="../src/assets/images/streamings/paramount/showtime-logo.png"
+              src="/img/streamings/paramount/showtime-logo.png"
               alt="Show Time"
             />
             <img
-              src="../src/assets/images/streamings/paramount/mtv-logo.png"
+              src="/img/streamings/paramount/mtv-logo.png"
               alt="MTV"
             />
             <img
-              src="../src/assets/images/streamings/paramount/nikelodeon-logo.png"
+              src="/img/streamings/paramount/nikelodeon-logo.png"
               alt="Nickelodeon"
             />
             <img
-              src="../src/assets/images/streamings/paramount/nikjr-logo.png"
+              src="/img/streamings/paramount/nikjr-logo.png"
               alt="Nick Jr"
             />
             <img
-              src="../src/assets/images/streamings/paramount/smithsonian-logo.png"
+              src="/img/streamings/paramount/smithsonian-logo.png"
               alt="Smithsonian Channel"
             />
           </div>

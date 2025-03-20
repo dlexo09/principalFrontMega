@@ -42,7 +42,7 @@ const TopBar = () => {
                   setCurrentLocation(closestLocation);
                 },
                 (error) => {
-                  console.error("Error getting user location:", error);
+                  //console.error("Error getting user location:", error);
                   setCurrentLocation(data[0]);
                 }
               );
@@ -51,7 +51,7 @@ const TopBar = () => {
             }
           }
         } catch (error) {
-          console.error("Error fetching locations:", error);
+          //console.error("Error fetching locations:", error);
         }
       }
     };
@@ -78,9 +78,9 @@ const TopBar = () => {
     const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(toRad(lat1)) *
-        Math.cos(toRad(lat2)) *
-        Math.sin(dLng / 2) *
-        Math.sin(dLng / 2);
+      Math.cos(toRad(lat2)) *
+      Math.sin(dLng / 2) *
+      Math.sin(dLng / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return R * c; // Distancia en km
   };
@@ -148,13 +148,14 @@ const TopBar = () => {
               <select
                 className="form-select"
                 onChange={handleLocationChange}
-                value={currentLocation?.sucursalName || ""}
+                value={currentLocation?.sucursalName || "Seleccionar sucursal"} // Valor por defecto "0"
               >
+                {/* Opción por defecto */}
+                <option value="1" disabled>
+                  Seleccionar Sucursal
+                </option>
                 {locations.map((location) => (
-                  <option
-                    key={location.idSucursal}
-                    value={location.sucursalName}
-                  >
+                  <option key={location.idSucursal} value={location.sucursalName}>
                     {location.sucursalName}
                   </option>
                 ))}
