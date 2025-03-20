@@ -106,7 +106,7 @@ const PaquetesTarifarios = () => {
                     <div className="card-body card-body-innorton text-center">
 
                       <div className="header-zone">
-                        <img className='logo-servicio' src="../src/assets/images/servicios/internet/norton-logo.png" alt="" />
+                        <img className='logo-servicio' src="../src/assets/images/servicios/internet/norton-logo.png" alt="Norton" />
                         <h2 className="card-title-innorton">{paquete.title}</h2>
                         <p className="card-text-innorton mt-4">{paquete.description}</p>
                         <ul className="text-start benefits-list">

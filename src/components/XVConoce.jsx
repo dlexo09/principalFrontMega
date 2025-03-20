@@ -25,7 +25,7 @@ const XVConoce = () => {
                 <img
                   className="w-100"
                   src="../src/assets/images/servicios/tv-interactiva/caja-xview.png"
-                  alt=""
+                  alt="Xview"
                 />
               </div>
               <p className="mt-4">
@@ -40,7 +40,7 @@ const XVConoce = () => {
               <img
                 className="w-100"
                 src="../src/assets/images/servicios/tv-interactiva/caja-xview.png"
-                alt=""
+                alt="Xview"
               />
             </div>
           </div>

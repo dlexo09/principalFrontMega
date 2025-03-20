@@ -11,8 +11,8 @@ const DestacadosStrDisney = () => {
             el deporte de <span>ESPN</span> y las series y películas de <span>Star.</span></p>
             </div>
             <div className="destacados-streaming-img container-fluid d-flex justify-content-center">
-                <img className='w-100 d-none d-md-block' src="../src/assets/images/streamings/disneyplus/destacados-disney.png" alt="" />
-                <img className='w-100 d-md-none' src="../src/assets/images/streamings/disneyplus/destacados-disney-movil.png" alt="" />
+                <img className='w-100 d-none d-md-block' src="../src/assets/images/streamings/disneyplus/destacados-disney.png" alt="Disney Plus Destacados" />
+                <img className='w-100 d-md-none' src="../src/assets/images/streamings/disneyplus/destacados-disney-movil.png" alt="Disney Plus Destacados" />
             </div>
         </div>
         </>

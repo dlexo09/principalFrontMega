@@ -10,7 +10,7 @@ const BannerStrDisney = () => {
             <div className="container-fluid bannerStreaming-content m-auto row d-flex align-items-center justify-content-evenly">
                 <div className="col-md-5 col-xl-3 order-2 order-md-1">
                     <div className="streaming-logo">
-                        <img className='w-100' src="../src/assets/images/streamings/disneyplus/disney-logo.png" alt="" />
+                        <img className='w-100' src="../src/assets/images/streamings/disneyplus/disney-logo.png" alt="Disney+ logo" />
                     </div>
 
                     <div className="streaming-title text-white ps-md-4 ps-lg-5 mt-4 mt-md-2 mt-xl-4">
@@ -23,7 +23,7 @@ const BannerStrDisney = () => {
                 </div>
                 <div className="col-md-7 col-xl-6 order-1 order-md-2">
                     <div className="streaming-cont-clasico">
-                        <img className='w-100' src="../src/assets/images/streamings/banner-cont-clasico.png" alt="" />
+                        <img className='w-100' src="../src/assets/images/streamings/banner-cont-clasico.png" alt="Disney Plus" />
                     </div>
                 </div>
             </div>

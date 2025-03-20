@@ -24,7 +24,7 @@ const INWifiUltra = () => {
           <img
           className="mb-4 d-md-none"
                 src="../src/assets/images/servicios/internet/wifi-certificado.png"
-                alt=""
+                alt="Certificado wifi 6"
               />
             <h3>
               Internet rápido
@@ -34,7 +34,7 @@ const INWifiUltra = () => {
             <img
             className="mb-4 mt-5 d-md-none"
                 src="../src/assets/images/servicios/internet/wifi-inteligente.png"
-                alt=""
+                alt="Wifi inteligente"
               />
             <p className="mt-md-5 wu-subtitle">
               <span>
@@ -54,13 +54,13 @@ const INWifiUltra = () => {
             <div className="wu-caracteristicas wifi-certificado">
               <img
                 src="../src/assets/images/servicios/internet/wifi-certificado.png"
-                alt=""
+                alt="Wifi certificado"
               />
             </div>
             <div className="wu-caracteristicas  wifi-inteligente">
               <img
                 src="../src/assets/images/servicios/internet/wifi-inteligente.png"
-                alt=""
+                alt="Wifi inteligente"
               />
             </div>
 
@@ -96,7 +96,7 @@ const INWifiUltra = () => {
             <img
               className="wu-nokia"
               src="../src/assets/images/servicios/internet/nokia-beacon.png"
-              alt=""
+              alt="Nokia Beacon1.1"
             />
             <h3 className="wu-modem-title">Nokia Beacon1.1</h3>
           </div>
@@ -104,15 +104,15 @@ const INWifiUltra = () => {
             <img
               className="wu-zte"
               src="../src/assets/images/servicios/internet/ZTE-H199A.png"
-              alt=""
+              alt="ZTE H199A"
             />
-            <h3 className="wu-modem-title">Nokia Beacon1.1</h3>
+            <h3 className="wu-modem-title">ZTE H199A</h3>
           </div>
           <div className="wu-modem-content d-flex align-items-center justify-content-end">
             <img
               className="wu-huawei"
               src="../src/assets/images/servicios/internet/HUAWEI-WA8021V5.png"
-              alt=""
+              alt="Hiawei WA8021V5"
             />
             <h3 className="wu-modem-title">HUAWEI WA8021V5</h3>
           </div>

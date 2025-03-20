@@ -33,7 +33,7 @@ const FOBeneficios = () => {
           <div className="comparative-table-img">
             <img
               src="../src/assets/images/fibra-optica/FOYS-tabla-comp-img.png"
-              alt="eje"
+              alt="Beneficios Fibra Óptica Megacable"
             />
           </div>
 

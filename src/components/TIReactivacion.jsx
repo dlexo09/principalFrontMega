@@ -24,7 +24,7 @@ const TIReactivacion = () => {
           <div className="contact-reac-card">
             <img
               src="../src/assets/icons/servicios/reactivacion/contact-reac-tel.png"
-              alt=""
+              alt="Teléfono Icono"
             />
             <h4>Teléfono</h4>
             <p>33 9690 0000</p>
@@ -33,7 +33,7 @@ const TIReactivacion = () => {
           <div className="contact-reac-card">
             <img
               src="../src/assets/icons/servicios/reactivacion/contact-react-mail.png"
-              alt=""
+              alt="Correo Icono"
             />
             <h4>Correo</h4>
             <p>portabilidad@megacable.com.mx</p>
@@ -42,7 +42,7 @@ const TIReactivacion = () => {
           <div className="contact-reac-card">
             <img
               src="../src/assets/icons/servicios/reactivacion/contact-react-suc.png"
-              alt=""
+              alt="Cis Icono"
             />
             <h4>Acude a tu CIS más cercano</h4>
             <p>

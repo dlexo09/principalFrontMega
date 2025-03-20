@@ -34,7 +34,7 @@ const FORed = () => {
               <div className="fored-icon-card">
                 <img
                   src="../src/assets/icons/fibra-optica/mayores-velocidades.png"
-                  alt="Velocidad"
+                  alt="Mayores velocidades"
                 />
               </div>
               <div className="fored-texts-p">
@@ -53,7 +53,7 @@ const FORed = () => {
               <div className="fored-icon-card">
                 <img
                   src="../src/assets/icons/fibra-optica/equipo-ultima-generacion.png"
-                  alt="Equipo"
+                  alt="Equipo de última generación"
                 />
               </div>
               <div className="fored-texts-p">
@@ -68,7 +68,7 @@ const FORed = () => {
               <div className="fored-icon-card">
                 <img
                   src="../src/assets/icons/fibra-optica/mayor-velocidad-subida.png"
-                  alt="Velocidad de subida"
+                  alt="Mayor velocidad de subida"
                 />
               </div>
               <div className="fored-texts-p">
@@ -80,7 +80,7 @@ const FORed = () => {
               <div className="fored-icon-card">
                 <img
                   src="../src/assets/icons/fibra-optica/velocidades-simetricas.png"
-                  alt="Velocidad simétrica"
+                  alt="Velocidades Simétricas"
                 />
               </div>
               <div className="fored-texts-p">
@@ -92,7 +92,7 @@ const FORed = () => {
               <div className="fored-icon-card">
                 <img
                   src="../src/assets/icons/fibra-optica/mejor-estabilidad.png"
-                  alt="Estabilidad"
+                  alt="Mejor Estabilidad"
                 />
               </div>
               <div className="fored-texts-p">
@@ -185,7 +185,7 @@ const FORed = () => {
           <div className="d-none d-lg-block col-lg-6 col-xl-7 int-simetrico-img mb-md-5 mb-xl-0">
             <img
               src="../src/assets/images/fibra-optica/conectate-sin-limites.png"
-              alt="Internet simétrico"
+              alt="Internet simétrico Modem"
             />
           </div>
         </div>

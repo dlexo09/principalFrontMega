@@ -119,12 +119,12 @@ const OFFullConnected = () => {
         <img
           className="w-100 d-none d-md-block"
           src="../src/assets/images/oferta/full-connected/full-connected-banner.png"
-          alt=""
+          alt="Full Connected Home"
         />
         <img
           className="w-100 d-md-none"
           src="../src/assets/images/oferta/full-connected/banner-fch-movil.png"
-          alt=""
+          alt="Full Connected Home"
         />
 
         <div className="bg-container">
@@ -203,7 +203,7 @@ const OFFullConnected = () => {
             <div className="cards-title mb-5">
             <img
                 src="../src/assets/images/oferta/full-connected/fch-logo.png"
-                alt="Full Connected Home Logo"
+                alt="Full Connected Home"
               />
             </div>
              
@@ -216,7 +216,7 @@ const OFFullConnected = () => {
                   <img
                     src={`../src/assets/images/oferta/full-connected/full-connected_sl-${slide}.png`}
                     className="d-block w-100"
-                    alt="..."
+                    alt="Full entretenimiento, Full cobertura, Full control, Full Velocidad"
                   />
                 </div>
               ))}

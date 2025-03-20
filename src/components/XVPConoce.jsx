@@ -23,7 +23,7 @@ const XVPConoce = () => {
                 TODOS TUS CONTENIDOS EN UN MISMO LUGAR Y EN 4K
               </h2>
               <div className="d-block d-xl-none">
-              <img className="w-100" src="../src/assets/images/servicios/tv-interactiva/caja-xviewplus.png" alt="" />
+              <img className="w-100" src="../src/assets/images/servicios/tv-interactiva/caja-xviewplus.png" alt="Xview+" />
             </div>
               <p className="mt-4">
                 Xview Plus es la nueva plataforma de video de Megacable con una
@@ -38,7 +38,7 @@ const XVPConoce = () => {
             </div>
 
             <div className="col-md-7 d-none d-xl-block">
-              <img className="w-100" src="../src/assets/images/servicios/tv-interactiva/caja-xviewplus.png" alt="" />
+              <img className="w-100" src="../src/assets/images/servicios/tv-interactiva/caja-xviewplus.png" alt="Xview+" />
             </div>
 
           </div>

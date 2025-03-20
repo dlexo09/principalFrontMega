@@ -52,7 +52,7 @@ const InternetSimetrico = () => {
           </div>
           <div className="order-1 order-lg-2 internet-simetrico-img">
             <h2 className="small-title d-block d-lg-none title-movil">{isSimetrico ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
-            <img src="../src/assets/images/home/internet-simetrico-img.jpg" alt="" />
+            <img src="../src/assets/images/home/internet-simetrico-img.jpg" alt="Internet Megacable" />
           </div>
         </div>
       </div>

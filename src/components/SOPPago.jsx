@@ -58,399 +58,393 @@ const comercios = [
 
   {
     id: 8,
-    name: "Ley",
+    name: "Financiera Bienestar",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio8.png",
     tipo: "sinEstado",
   },
   {
     id: 9,
-    name: "Ley",
+    name: "7-Eleven",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio9.png",
     tipo: "sinEstado",
   },
   {
     id: 10,
-    name: "Ley",
+    name: "Farmacias benavides",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio10.png",
     tipo: "sinEstado",
   },
   {
     id: 11,
-    name: "Ley",
+    name: "Walmart",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio11.png",
     tipo: "sinEstado",
   },
   {
     id: 12,
-    name: "Ley",
+    name: "Bodega Aurrera",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio12.png",
     tipo: "sinEstado",
   },
   {
     id: 13,
-    name: "Ley",
+    name: "Suburbia",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio13.png",
     tipo: "sinEstado",
   },
   {
     id: 14,
-    name: "Ley",
+    name: "Six",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio14.png",
     tipo: "sinEstado",
   },
   {
     id: 15,
-    name: "Ley",
+    name: "Fundación Dondé",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio15.png",
     tipo: "sinEstado",
   },
   {
     id: 16,
-    name: "Ley",
+    name: "Kiosko",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio16.png",
     tipo: "sinEstado",
   },
   {
     id: 17,
-    name: "Ley",
+    name: "Waldo's",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio17.png",
     tipo: "sinEstado",
   },
   {
     id: 18,
-    name: "Ley",
+    name: "Sam's Club",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio18.png",
     tipo: "sinEstado",
   },
   {
     id: 19,
-    name: "Ley",
+    name: "Fasti",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio19.png",
     tipo: "sinEstado",
   },
   {
     id: 20,
-    name: "Ley",
+    name: "MTC",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio20.png",
     tipo: "sinEstado",
   },
   {
     id: 21,
-    name: "Ley",
+    name: "Oxxo",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio21.png",
     tipo: "sinEstado",
   },
   {
     id: 22,
-    name: "Ley",
+    name: "Apin by Oxxo",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio22.png",
     tipo: "sinEstado",
   },
   {
     id: 23,
-    name: "Ley",
+    name: "Farmacia Zamora Super",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio23.png",
     tipo: "sinEstado",
   },
   {
     id: 24,
-    name: "Ley",
+    name: "Yastás",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio24.png",
     tipo: "sinEstado",
   },
   {
     id: 25,
-    name: "Ley",
+    name: "Quiubo",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio25.png",
     tipo: "sinEstado",
   },
   {
     id: 26,
-    name: "Ley",
+    name: "Sys Tienda",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio26.png",
     tipo: "sinEstado",
   },
   {
     id: 27,
-    name: "Ley",
+    name: "Yomp",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio27.png",
     tipo: "sinEstado",
   },
   {
     id: 28,
-    name: "Ley",
+    name: "Yza Farmacias",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio28.png",
     tipo: "sinEstado",
   },
   {
     id: 29,
-    name: "Ley",
+    name: "FarmaCon",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio29.png",
     tipo: "sinEstado",
   },
   {
     id: 30,
-    name: "Ley",
+    name: "Farmacias moderna",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio30.png",
     tipo: "sinEstado",
   },
   {
     id: 31,
-    name: "Ley",
+    name: "Generix Farmacia",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio31.png",
     tipo: "sinEstado",
   },
   {
     id: 32,
-    name: "Ley",
+    name: "Cashi",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio32.png",
     tipo: "sinEstado",
   },
   {
     id: 33,
-    name: "Ley",
+    name: "Farmacias del ahorro",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio33.png",
     tipo: "sinEstado",
   },
   {
     id: 34,
-    name: "Ley",
+    name: "San Pablo Farmacia",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio34.png",
     tipo: "sinEstado",
   },
   {
     id: 35,
-    name: "Ley",
+    name: "Smart",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio35.png",
     tipo: "sinEstado",
   },
   {
     id: 36,
-    name: "Ley",
+    name: "Aramak",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio36.png",
     tipo: "sinEstado",
   },
   {
     id: 37,
-    name: "Ley",
+    name: "Punto de venta",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio37.png",
     tipo: "sinEstado",
   },
   {
     id: 38,
-    name: "Ley",
+    name: "Abarrotes Dunosusa",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio38.png",
     tipo: "sinEstado",
   },
   {
     id: 39,
-    name: "Ley",
+    name: "San Borja San Isidro Farmacia",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio39.png",
     tipo: "sinEstado",
   },
   {
     id: 40,
-    name: "Ley",
+    name: "Neto",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio40.png",
     tipo: "sinEstado",
   },
   {
     id: 41,
-    name: "Ley",
+    name: "Tony super papelerias",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio41.png",
     tipo: "sinEstado",
   },
   {
     id: 42,
-    name: "Ley",
+    name: "Ya",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio42.png",
     tipo: "sinEstado",
   },
   {
     id: 43,
-    name: "Ley",
+    name: "Paga Todo",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio43.png",
     tipo: "sinEstado",
   },
   {
     id: 44,
-    name: "Ley",
+    name: "suBodega",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio44.png",
     tipo: "sinEstado",
   },
   {
     id: 45,
-    name: "Ley",
+    name: "Walmart Express",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio45.png",
     tipo: "sinEstado",
   },
   {
     id: 46,
-    name: "Ley",
+    name: "Go Mart",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio46.png",
     tipo: "sinEstado",
   },
   {
     id: 47,
-    name: "Ley",
+    name: "Bankaool",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio47.png",
     tipo: "sinEstado",
   },
   {
     id: 48,
-    name: "Ley",
+    name: "Pago Rápido",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio48.png",
     tipo: "sinEstado",
   },
+  
   {
     id: 49,
-    name: "Ley",
-    image:
-      "../src/assets/images/soporte/formas-de-pago/comercios/comercio48.png",
-    tipo: "sinEstado",
-  },
-  {
-    id: 50,
-    name: "Ley",
+    name: "Paynom",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio50.png",
     tipo: "sinEstado",
   },
   {
-    id: 51,
-    name: "Ley",
+    id: 50,
+    name: "Mavi",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio51.png",
     tipo: "sinEstado",
   },
   {
-    id: 52,
-    name: "Ley",
+    id: 51,
+    name: "Asturiano",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio52.png",
     tipo: "sinEstado",
   },
   {
-    id: 53,
-    name: "Ley",
+    id: 52,
+    name: "NetPay",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio53.png",
     tipo: "sinEstado",
   },
   {
-    id: 54,
-    name: "Ley",
+    id: 53,
+    name: "Circle",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio54.png",
     tipo: "sinEstado",
   },
   {
-    id: 55,
-    name: "Ley",
+    id: 54,
+    name: "Farmacias San Francisco de Asis",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio55.png",
     tipo: "sinEstado",
   },
   {
-    id: 56,
-    name: "Ley",
+    id: 55,
+    name: "Extra",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio56.png",
     tipo: "sinEstado",
   },
   {
-    id: 57,
-    name: "Ley",
+    id: 56,
+    name: "Union",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio57.png",
     tipo: "sinEstado",
   },
   {
-    id: 58,
-    name: "Ley",
+    id: 57,
+    name: "Farmatodo",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio58.png",
     tipo: "sinEstado",
   },
   {
-    id: 59,
-    name: "Ley",
+    id: 58,
+    name: "Ualá",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio59.png",
     tipo: "sinEstado",
   },
   {
-    id: 60,
-    name: "Ley",
+    id: 59,
+    name: "Plata",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio60.png",
     tipo: "sinEstado",
   },
   {
-    id: 61,
-    name: "Ley",
+    id: 60,
+    name: "Odessa",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio61.png",
     tipo: "sinEstado",
   },
   {
-    id: 63,
-    name: "Ley",
+    id: 61,
+    name: "Liverpool",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio63.png",
     tipo: "sinEstado",
   },
   {
-    id: 64,
-    name: "Ley",
+    id: 62,
+    name: "Mercado Pago",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio64.png",
     tipo: "sinEstado",
   },
   {
-    id: 65,
-    name: "Ley",
+    id: 63,
+    name: "Tiendas bbb",
     image:
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio65.png",
     tipo: "sinEstado",
@@ -465,12 +459,12 @@ const ComerciosList = ({ tipo }) => {
   );
 
   return (
-    <div className=" mt-4 d-flex comercio-logo-container justify-content-center align-items center">
+    <div className="mt-4 d-flex comercio-logo-container justify-content-center align-items-center">
       {comerciosFiltrados.map((comercio) => (
         <div key={comercio.id}>
           <img
             src={comercio.image}
-            alt={comercio.name}
+            alt={`${comercio.name}`} // Usar el name dinámicamente como alt
             className="img-fluid comercio-logo"
           />
         </div>
@@ -563,7 +557,7 @@ const options = {
               <img
                 className="fdpago-ca-img"
                 src="../src/assets/images/soporte/formas-de-pago/cargo-automatico.png"
-                alt="Megacable App"
+                alt="Cargo automático a tu tarjeta de crédito o débito"
               />
             </div>
             <div className="col-lg-6">
@@ -600,35 +594,35 @@ const options = {
               <div className="banco-conv">
                 <img
                   src="../src/assets/images/soporte/formas-de-pago/bancos/santander-logo.png"
-                  alt=""
+                  alt="Santander 1332"
                 />
                 <h5 className="conv-num">1332</h5>
               </div>
               <div className="banco-conv">
                 <img
                   src="../src/assets/images/soporte/formas-de-pago/bancos/scotiabank-logo.png"
-                  alt=""
+                  alt="Scotiabank 3356"
                 />
                 <h5 className="conv-num">3356</h5>
               </div>
               <div className="banco-conv">
                 <img
                   src="../src/assets/images/soporte/formas-de-pago/bancos/hsbc-logo.png"
-                  alt=""
+                  alt="HSBC 3535"
                 />
                 <h5 className="conv-num">3535</h5>
               </div>
               <div className="banco-conv">
                 <img
                   src="../src/assets/images/soporte/formas-de-pago/bancos/bbva-logo.png"
-                  alt=""
+                  alt="BBVA 801720"
                 />
                 <h5 className="conv-num">801720</h5>
               </div>
               <div className="banco-conv">
                 <img
                   src="../src/assets/images/soporte/formas-de-pago/bancos/citibanamex-logo.png"
-                  alt=""
+                  alt="Citibanamex"
                 />
                 <h5 className="conv-num">
                   <br />
@@ -648,7 +642,7 @@ const options = {
               <div className="col-md-6 col-lg-3 order-1 order-lg-2  text-center mb-5 mb-lg-0 d-none d-lg-block">
                 <img
                   src="../src/assets/images/soporte/formas-de-pago/app-mega.png"
-                  alt=""
+                  alt="Mega App"
                 />
               </div>
             </div>

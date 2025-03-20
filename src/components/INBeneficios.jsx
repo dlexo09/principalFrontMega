@@ -26,21 +26,21 @@ const INBeneficios = () => {
             <p>Ofrecemos planes de internet de alta velocidad, ideales para streaming, gaming, videollamadas y navegación fluida.</p>
         </div>
         <div className="beneficio-card-content">
-            <img  src="../src/assets/icons/servicios/internet/cobertura-amplia.png" alt="Opciones de pago flexibles" />
+            <img  src="../src/assets/icons/servicios/internet/cobertura-amplia.png" alt="Cobertura amplia" />
             <h3>Cobertura amplia</h3>
             <p>Su red está disponible en diversas ciudades y áreas de México, lo que asegura conectividad en zonas urbanas y suburbanas.</p>
         </div>
         <div className="beneficio-img-content d-none d-xl-block m-auto">
-            <img src="../src/assets/images/servicios/internet/wifiultra-modem.png" alt="" />
+            <img src="../src/assets/images/servicios/internet/wifiultra-modem.png" alt="Internet Megacable" />
         </div>
 
         <div className="beneficio-card-content">
-            <img src="../src/assets/icons/servicios/internet/atenicion-27-7.png" alt="Opciones de pago flexibles" />
+            <img src="../src/assets/icons/servicios/internet/atenicion-27-7.png" alt="Atención al cliente 24/7" />
             <h3>Atención al Cliente 24/7</h3>
             <p>Soporte técnico y atención al cliente disponibles en cualquier momento para resolver problemas o dudas.</p>
         </div>
         <div className="beneficio-card-content be-gr-espcial">
-            <img src="../src/assets/icons/servicios/internet/acceso-wifi.png" alt="Opciones de pago flexibles" />
+            <img src="../src/assets/icons/servicios/internet/acceso-wifi.png" alt="Acceso a Megacable Wi-Fi" />
             <h3>Acceso a Megacable Wi-Fi</h3>
             <p>Usuarios de internet pueden disfrutar de acceso a puntos de Wi-Fi públicos de Megacable en varias ubicaciones.</p>
         </div>

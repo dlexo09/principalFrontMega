@@ -149,7 +149,7 @@ const PaquetesTarifarios = () => {
                             <p>
                               <img
                                 src={`${serverUrl}src/assets/img/extensor_wifi_ultra.png`}
-                                alt="IncluyeExtensor Wifi Ultra"
+                                alt="Extensor Wifi Ultra Incluido"
                                 style={{ height: '40px', marginTop: '20px' }}
                               />
                             </p>
@@ -218,7 +218,7 @@ const PaquetesTarifarios = () => {
                           <img
                             className="icon-card-packs internet-icon d-none d-md-block"
                             src="../src/assets/icons/internet-icon.png"
-                            alt="Icono Internet"
+                            alt="Internet Icono"
                           />
                           {selectedPack !== 'doble' && (
                             <img
@@ -230,7 +230,7 @@ const PaquetesTarifarios = () => {
                           <img
                             className={`icon-card-packs d-none d-md-block telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
                             src="../src/assets/icons/telefonia-icon.png"
-                            alt="Icono Telefonía"
+                            alt="Telefonía Icono"
                           />
                         </div>
                       </div>
@@ -266,7 +266,7 @@ const PaquetesTarifarios = () => {
           <p>
             <img
               src="../src/assets/images/home/full_connected_home.png"
-              alt="Full Connected"
+              alt="Full Connected Home"
               className="img-fluid fullconnect-img"
             />
           </p>

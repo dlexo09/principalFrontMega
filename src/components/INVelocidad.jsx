@@ -49,7 +49,7 @@ const INVelocidad = () => {
               <div className="icon-rec-content d-flex justify-content-center">
                 <img
                   src="../src/assets/icons/servicios/internet/ethernet.png"
-                  alt=""
+                  alt="Ethermet"
                 />
               </div>
               <h3 className="text-center">ETHERNET</h3>
@@ -82,7 +82,7 @@ const INVelocidad = () => {
               <div className="icon-rec-content d-flex justify-content-center">
                 <img
                   src="../src/assets/icons/servicios/internet/wifi.png"
-                  alt=""
+                  alt="Wifi"
                 />
               </div>
               <h3 className="text-center">WIFI</h3>
