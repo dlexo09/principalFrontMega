@@ -1,5 +1,4 @@
 import React from 'react';
-import '../components/Globales.css';
 import './ActivarCuenta.css';
 
 const ActivarCuenta = ({ title, mainTitle = "ACTIVA", children }) => {

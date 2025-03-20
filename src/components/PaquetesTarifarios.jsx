@@ -70,7 +70,7 @@ const PaquetesTarifarios = () => {
     } else if (window.innerWidth < 1400) {
       setChunkSize(3); // 3 tarjetas en pantallas medianas grandes
     } else {
-      setChunkSize(4); // 4 tarjetas en pantallas grandes
+      setChunkSize(3); // 4 tarjetas en pantallas grandes
     }
   };
 

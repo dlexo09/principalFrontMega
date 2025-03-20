@@ -64,7 +64,7 @@ const PaquetesTarifariosNetflix = () => {
       if (window.innerWidth < 768) setChunkSize(1);
       else if (window.innerWidth < 1024) setChunkSize(2);
       else if (window.innerWidth < 1400) setChunkSize(3);
-      else setChunkSize(4);
+      else setChunkSize(3);
     };
     updateChunkSize();
     window.addEventListener("resize", updateChunkSize);
