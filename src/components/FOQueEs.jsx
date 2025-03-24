@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./FOQueEs.css";
@@ -65,6 +66,14 @@ const FOQueEs = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Fibra Óptica Megacable | Alta Velocidad, Seguridad y Conexión Estable</title>
+
+        <meta
+          name="description"
+          content="Disfruta de internet de alta velocidad con la fibra óptica de Megacable. Conexión segura, estable y velocidades simétricas para una experiencia sin interrupciones. ¡Conéctate a la tecnología de última generación!"
+        />
+      </Helmet>
       <div className="general-tabs-container container-fluid">
         <div className="foqe-container">
           <div className="container">

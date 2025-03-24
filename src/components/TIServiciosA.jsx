@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Helmet } from "react-helmet-async";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/navigation"; // Importar estilos de navegación
@@ -256,104 +257,187 @@ const TIServiciosA = () => {
     },
     5: {
       title: "Número privado",
-      content:
+      content: (
         <>
-        <p>Tu número no aparecerá en el identificador de llamadas del teléfono destino cuando realices llamadas desde tu línea Megafón.</p>
-        <p className="pop-subtitles">Activación del servicio</p>
-        <ol>
-          <li>Marque desde su línea Megafón #81#</li>
-          <li>Escuchará el siguiente mensaje "Su servicio adicional ha sido desactivado, gracias". <br />Cuelgue su auricular para terminar el proceso.</li>
-        </ol>
-        <p>Nota: En caso de no efectuar correctamente su activación, escuchará "Lo sentimos, usted no ha podido desactivar el servicio adicional indicado. Intentelo nuevamente"</p>
-        <br />
-        <p>Es posible que al tener activo este servicio, al realizar una llamada al extranjero, el operador receptor de la llamada no la acepte. Si es el caso, se recomienda la desactivación de este servicio y realizar la llamada nuevamente.</p>
-        </>,
+          <p>
+            Tu número no aparecerá en el identificador de llamadas del teléfono
+            destino cuando realices llamadas desde tu línea Megafón.
+          </p>
+          <p className="pop-subtitles">Activación del servicio</p>
+          <ol>
+            <li>Marque desde su línea Megafón #81#</li>
+            <li>
+              Escuchará el siguiente mensaje "Su servicio adicional ha sido
+              desactivado, gracias". <br />
+              Cuelgue su auricular para terminar el proceso.
+            </li>
+          </ol>
+          <p>
+            Nota: En caso de no efectuar correctamente su activación, escuchará
+            "Lo sentimos, usted no ha podido desactivar el servicio adicional
+            indicado. Intentelo nuevamente"
+          </p>
+          <br />
+          <p>
+            Es posible que al tener activo este servicio, al realizar una
+            llamada al extranjero, el operador receptor de la llamada no la
+            acepte. Si es el caso, se recomienda la desactivación de este
+            servicio y realizar la llamada nuevamente.
+          </p>
+        </>
+      ),
     },
     6: {
       title: "Opción Número Privado",
-      content:
+      content: (
         <>
-        <ul>
-          <li>Si desea que la persona a quien llama, vea en su identificador de llamadas su número Megafón, marque *82 seguido inmediatamente del teléfono que desea llamar.</li>
-          <li>Cuelgue su auricular para terminar el proceso.</li>
-          <li>Esta función es por llamada, si no marca antes *82, su número telefónico no será visible para las personas que llame.</li>
-        </ul>
-        </>,
+          <ul>
+            <li>
+              Si desea que la persona a quien llama, vea en su identificador de
+              llamadas su número Megafón, marque *82 seguido inmediatamente del
+              teléfono que desea llamar.
+            </li>
+            <li>Cuelgue su auricular para terminar el proceso.</li>
+            <li>
+              Esta función es por llamada, si no marca antes *82, su número
+              telefónico no será visible para las personas que llame.
+            </li>
+          </ul>
+        </>
+      ),
     },
     7: {
       title: "Bloqueo de Llamadas Anónimas",
-      content:
+      content: (
         <>
-       <p className="pop-subtitles">Activación del servicio</p>
-       <ol>
-        <li>Marque desde su línea Megafón *87</li>
-        <li>Escuchara el siguiente mensaje "Su nuevo servicio ha sido activado con éxito y está listo para ser utilizado". <br />Cuelgue el auricular para terminar el proceso.</li>
-       </ol>
-       <p>Nota: en caso de no efectuar correctamente su activación, escuchara: "Lo sentimos, su servicio no fue activado de manera correcta. Intente nuevamente".</p>
-       <p className="pop-subtitles">Desactivación del servicio</p>
-       <ol>
-        <li>Marque desde su línea Megafón #87</li>
-        <li>Escuchara el siguiente mensaje "Su servicio adicional ha sido desactivado. Gracias". <br />Cuelgue su auricular para terminar el proceso.
-        </li>
-       </ol>
-       <p>Nota: En caso de no efectuar correctamente su activación, escuchara "Lo sentimos, usted no ha podido desactivar el servicio adicional indicado; inténtelo nuevamente".</p>
-       <br />
-       
-        </>,
+          <p className="pop-subtitles">Activación del servicio</p>
+          <ol>
+            <li>Marque desde su línea Megafón *87</li>
+            <li>
+              Escuchara el siguiente mensaje "Su nuevo servicio ha sido activado
+              con éxito y está listo para ser utilizado". <br />
+              Cuelgue el auricular para terminar el proceso.
+            </li>
+          </ol>
+          <p>
+            Nota: en caso de no efectuar correctamente su activación, escuchara:
+            "Lo sentimos, su servicio no fue activado de manera correcta.
+            Intente nuevamente".
+          </p>
+          <p className="pop-subtitles">Desactivación del servicio</p>
+          <ol>
+            <li>Marque desde su línea Megafón #87</li>
+            <li>
+              Escuchara el siguiente mensaje "Su servicio adicional ha sido
+              desactivado. Gracias". <br />
+              Cuelgue su auricular para terminar el proceso.
+            </li>
+          </ol>
+          <p>
+            Nota: En caso de no efectuar correctamente su activación, escuchara
+            "Lo sentimos, usted no ha podido desactivar el servicio adicional
+            indicado; inténtelo nuevamente".
+          </p>
+          <br />
+        </>
+      ),
     },
     8: {
       title: "Bloqueo de Llamadas Entrantes",
-      content:
+      content: (
         <>
-       <p>Con esta característica cuando alguien llame a su línea escuchará tono de ocupado y su aparato nunca timbrará, esta función queda activa de manera permanente hasta que sea desactivada.</p>
-       <p className="pop-subtitles">Activación del servicio</p>
-       <ol>
-        <li>Marque desde su línea Megafón *78</li>
-        <li>Escuchara el siguiente mensaje "Su nuevo servicio ha sido activado con éxito y está listo para ser utilizado". <br />Cuelgue el auricular para terminar el proceso.</li>
-       </ol>
-       <p>Nota: en caso de no efectuar correctamente su activación, escuchara: "Lo sentimos, su servicio no fue activado de manera correcta. Intente nuevamente".</p>
-       <p className="pop-subtitles">Desactivación del servicio</p>
-       <ol>
-        <li>Marque desde su línea Megafón #78</li>
-        <li>Escuchara el siguiente mensaje "Su servicio adicional ha sido desactivado. Gracias" <br />Cuelgue su auricular para terminar el proceso.</li>
-       </ol>
-       <p>
-       Nota: En caso de no efectuar correctamente su activación, escuchara "Lo sentimos, usted no ha podido desactivar el servicio adicional indicado; inténtelo nuevamente".</p>
-        </>,
+          <p>
+            Con esta característica cuando alguien llame a su línea escuchará
+            tono de ocupado y su aparato nunca timbrará, esta función queda
+            activa de manera permanente hasta que sea desactivada.
+          </p>
+          <p className="pop-subtitles">Activación del servicio</p>
+          <ol>
+            <li>Marque desde su línea Megafón *78</li>
+            <li>
+              Escuchara el siguiente mensaje "Su nuevo servicio ha sido activado
+              con éxito y está listo para ser utilizado". <br />
+              Cuelgue el auricular para terminar el proceso.
+            </li>
+          </ol>
+          <p>
+            Nota: en caso de no efectuar correctamente su activación, escuchara:
+            "Lo sentimos, su servicio no fue activado de manera correcta.
+            Intente nuevamente".
+          </p>
+          <p className="pop-subtitles">Desactivación del servicio</p>
+          <ol>
+            <li>Marque desde su línea Megafón #78</li>
+            <li>
+              Escuchara el siguiente mensaje "Su servicio adicional ha sido
+              desactivado. Gracias" <br />
+              Cuelgue su auricular para terminar el proceso.
+            </li>
+          </ol>
+          <p>
+            Nota: En caso de no efectuar correctamente su activación, escuchara
+            "Lo sentimos, usted no ha podido desactivar el servicio adicional
+            indicado; inténtelo nuevamente".
+          </p>
+        </>
+      ),
     },
     9: {
       title: "Llamada en espera",
-      content:
+      content: (
         <>
-        <ul>
-          <li>Cuando tengas ocupada tu línea podrás contestar otra llamada.</li>
-          <li>Tomar la llamada entrante sin cortar la primera:
-          Presiona FLASH + el número 2</li>
-          <li>Regresar la primera llamada sin cortar la segunda:
-          Vuelva a presionar FLASH + el número 2.</li>
-          <li>Cortar la primera llamada y quedarse solo con la entrante:
-          Vuelva a presionar FLASH + el número 1.</li>
-          <li>Para ACTIVAR el servicio, solicítelo marcando al 050 desde tu línea.</li>
-          <li>Para desactivarlo acude a cualquiera de nuestros CIS.</li>
-        </ul>
-        </>,
+          <ul>
+            <li>
+              Cuando tengas ocupada tu línea podrás contestar otra llamada.
+            </li>
+            <li>
+              Tomar la llamada entrante sin cortar la primera: Presiona FLASH +
+              el número 2
+            </li>
+            <li>
+              Regresar la primera llamada sin cortar la segunda: Vuelva a
+              presionar FLASH + el número 2.
+            </li>
+            <li>
+              Cortar la primera llamada y quedarse solo con la entrante: Vuelva
+              a presionar FLASH + el número 1.
+            </li>
+            <li>
+              Para ACTIVAR el servicio, solicítelo marcando al 050 desde tu
+              línea.
+            </li>
+            <li>Para desactivarlo acude a cualquiera de nuestros CIS.</li>
+          </ul>
+        </>
+      ),
     },
     10: {
       title: "Bloqueo de destinos",
-      content:
+      content: (
         <>
-       <ul>
-        <li>Bloquea las llamadas a celular con prefijo 044 y 045 así como las llamadas de Larga Distancia Nacional y/o Internacional; sin ningún costo.</li>
-        <li>Para activar el servicio Solicítalo marcando 050 desde tu línea.</li>
-       </ul>
-        </>,
+          <ul>
+            <li>
+              Bloquea las llamadas a celular con prefijo 044 y 045 así como las
+              llamadas de Larga Distancia Nacional y/o Internacional; sin ningún
+              costo.
+            </li>
+            <li>
+              Para activar el servicio Solicítalo marcando 050 desde tu línea.
+            </li>
+          </ul>
+        </>
+      ),
     },
     11: {
       title: "Línea Adicional",
-      content:
+      content: (
         <>
-       <p>Línea telefónica con número independiente con una mensualidad adicional de $65 pesos.</p>
-        </>,
+          <p>
+            Línea telefónica con número independiente con una mensualidad
+            adicional de $65 pesos.
+          </p>
+        </>
+      ),
     },
   };
 
@@ -367,6 +451,15 @@ const TIServiciosA = () => {
 
   return (
     <>
+      <Helmet>
+        <title>
+          Servicios Adicionales | Megacable | Mejora Tu Telefonía Ilimitada
+        </title>
+        <meta
+          name="description"
+          content="Complementa tu servicio de Telefonía Ilimitada Mega con funciones avanzadas y soluciones digitales. Descubre servicios adicionales que mejoran tu experiencia de llamadas."
+        />
+      </Helmet>
       <div className="general-tabs-container ps-3 pe-3 ps-md-none pe-md-none">
         <div className="text-center titles-adserv">
           <h3 className="small-title-services">Conoce nuestro servicio</h3>

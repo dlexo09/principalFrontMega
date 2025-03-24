@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./TIBeneficios.css";
@@ -7,6 +8,10 @@ import "./Globales.css";
 const TIBeneficios = () => {
   return (
     <>
+    <Helmet>
+    <title>Telefonía Ilimitada Megacable | Habla sin Límites y Disfruta de una Conexión Ininterrumpida</title>
+    <meta name="description" content="Descubre los beneficios de la telefonía Ilimitada de Megacable para tu casa u oficina. Disfruta de llamadas ilimitadas a números fijos y celulares, cobertura nacional e internacional, y conexión sin interrupciones. ¡Conoce todo lo que te ofrece Megacable!" />
+    </Helmet>
     <div className="d-flex flex-column align-items-center beneficios-serv-container general-tabs-container ps-1 pe-1 ps-md-none pe-md-none">
       <div className="text-center">
         <h3 className="small-title-services">Telefonía ilimitada</h3>

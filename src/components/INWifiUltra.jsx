@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./INWifiUltra.css";
@@ -7,6 +8,10 @@ import "./Globales.css";
 const INWifiUltra = () => {
   return (
     <>
+      <Helmet>
+      <title>WiFi Ultra Megacable | Extiende Tu Señal WiFi y Disfruta de Internet en Todo Tu Hogar</title>
+      <meta name="description" content="Amplía tu señal WiFi con WiFi Ultra de Megacable. Conéctate sin interrupciones en cada rincón de tu hogar y disfruta de Internet de alta velocidad en todos tus dispositivos." />
+      </Helmet>
       <div className="container ps-3 ps-md-0 pe-3 pe-md-0 general-tabs-container">
         <div className="text-center">
           <h2 className="small-title-services">CONOCE NUESTRO EXTENSOR WIFI</h2>

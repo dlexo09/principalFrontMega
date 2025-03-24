@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./SOPPago.css";
@@ -343,7 +344,7 @@ const comercios = [
       "../src/assets/images/soporte/formas-de-pago/comercios/comercio48.png",
     tipo: "sinEstado",
   },
-  
+
   {
     id: 49,
     name: "Paynom",
@@ -459,17 +460,19 @@ const ComerciosList = ({ tipo }) => {
   );
 
   return (
-    <div className="mt-4 d-flex comercio-logo-container justify-content-center align-items-center">
-      {comerciosFiltrados.map((comercio) => (
-        <div key={comercio.id}>
-          <img
-            src={comercio.image}
-            alt={`${comercio.name}`} // Usar el name dinámicamente como alt
-            className="img-fluid comercio-logo"
-          />
-        </div>
-      ))}
-    </div>
+    <>
+      <div className="mt-4 d-flex comercio-logo-container justify-content-center align-items-center">
+        {comerciosFiltrados.map((comercio) => (
+          <div key={comercio.id}>
+            <img
+              src={comercio.image}
+              alt={`${comercio.name}`} // Usar el name dinámicamente como alt
+              className="img-fluid comercio-logo"
+            />
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
@@ -730,6 +733,17 @@ const SOPPago = () => {
   };
 
   return (
+    <>
+          <Helmet>
+        <title>
+        Formas de Pago | Megacable | Opciones Disponibles para Pagar Tu Servicio
+        </title>
+        <meta
+          name="description"
+          content="Descubre las diversas formas de pago que Megacable ofrece: desde la app, en comercios, mediante cargo automático, en bancos y pago en línea. Facilita tus pagos y mantén tus servicios siempre activos."
+        />
+      </Helmet>
+    
     <div className="general-tabs-container">
       <div className="text-center">
         <h3 className="small-title-services">CONOCE NUESTRAS</h3>
@@ -754,6 +768,7 @@ const SOPPago = () => {
       {/* Mostrar información dependiendo de la opción seleccionada */}
       <div className="mt-5">{options[selectedOption].content}</div>
     </div>
+    </>
   );
 };
 

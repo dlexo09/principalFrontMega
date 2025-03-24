@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./INZonaWifi.css";
@@ -15,6 +16,10 @@ const INZonaWifi = () => {
 
   return (
     <>
+      <Helmet>
+      <title>WiFi Gratis | Zona WiFi Megacable | Acceso Rápido en Lugares Públicos</title>
+      <meta name="description" content="Navega gratis con Megacable WiFi en miles de lugares públicos. Accede a Internet de alta velocidad sin costo, exclusivo para suscriptores. ¡Conéctate desde tus dispositivos y disfruta de WiFi gratuito cerca de ti!" />
+      </Helmet>
       <div className="container general-tabs-container container pe-2 ps-2 pe-md-none ps-md-none">
         <div className="text-center">
           <h2 className="small-title-services">MEGACABLE WIFI</h2>
@@ -24,7 +29,7 @@ const INZonaWifi = () => {
           <p className="p-zw mt-5 p-2">
             Si eres suscriptor Megacable y cuentas con el servicio de Internet
             podrás navegar gratis con Megacable WiFi en miles de sitios públicos
-            a lo largo de nuestro país des
+            a lo largo de nuestro país desde cualquier dispositivo.
           </p>
         </div>
 

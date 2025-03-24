@@ -1,17 +1,13 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./XVPBeneficios.css";
 import "./Globales.css";
 import VideoPopup from "./VideoPopup"; // Importa el componente VideoPopup
-import FAQSoporte from './FAQSoporte';
-
-
-
+import FAQSoporte from "./FAQSoporte";
 
 const XVPBeneficios = () => {
-
-
   const [isPopupOpen, setIsPopupOpen] = useState(false);
   const [videoUrl, setVideoUrl] = useState("");
 
@@ -34,95 +30,192 @@ const XVPBeneficios = () => {
     setVideoUrl("");
   };
 
-  {/* Movil */}
+  {
+    /* Movil */
+  }
   const faqXview = [
     {
-        question: "VOD",
-        answer: (
-            <div className="faq-answer">
-              <p>Accede a más de 20,000 horas de series, películas, novelas, deportes y más, para verlos en el momento que tú quieras.</p>
-              <iframe src="https://www.youtube.com/embed/fhKrsjRQixw?si=F5Ceb9-_TFUMySPd" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        ),
-    },
-    {
-        question: "Control de Voz",
-        answer: (
-          <div className="faq-answer">
-              <p>Con tu nuevo control remoto de voz de Xview Plus podrás realizar búsquedas integradas de contenidos, así como sintonizar canales o ir a alguna sección solo con decirlo.</p>
-              <iframe src="https://www.youtube.com/embed/HtgZwBUWlMg?si=nqizd_eZNV-MZtAm" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-        ),
-    },
-    {
-        question: "Motor de Búsqueda",
-        answer: (
-          <div className="faq-answer">
-          <p>Con una sola consulta, Xview Plus buscará en las principales Apps el contenido que desees y te indicará en donde puedes disfrutarlo.</p>
-          <iframe src="https://www.youtube.com/embed/hAWQUTPrsG8?si=xtfcXYIRUx_sUjbt" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      question: "VOD",
+      answer: (
+        <div className="faq-answer">
+          <p>
+            Accede a más de 20,000 horas de series, películas, novelas, deportes
+            y más, para verlos en el momento que tú quieras.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/fhKrsjRQixw?si=F5Ceb9-_TFUMySPd"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-        ),
+      ),
     },
     {
-        question: "Perfiles",
-        answer: (
-          <div className="faq-answer">
-          <p>Crea hasta 10 perfiles para cada miembro de tu familia para recibir recomendaciones personalizadas de contenido.</p>
-          <iframe src="https://www.youtube.com/embed/9B1KpKgvc40?si=pCR3J43Y5oZDvrNg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      question: "Control de Voz",
+      answer: (
+        <div className="faq-answer">
+          <p>
+            Con tu nuevo control remoto de voz de Xview Plus podrás realizar
+            búsquedas integradas de contenidos, así como sintonizar canales o ir
+            a alguna sección solo con decirlo.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/HtgZwBUWlMg?si=nqizd_eZNV-MZtAm"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-        ),
+      ),
     },
     {
-        question: "Pausa y reinicia",
-        answer: (
-          <div className="faq-answer">
-          <p>Detén tu programa en vivo y retómalo justo donde te quedaste, en el momento que quieras para que no te pierdas ningún detalle. Empieza a ver un programa desde el inicio, aunque ya haya comenzado.</p>
-          <iframe src="https://www.youtube.com/embed/M8rj9z0JVCU?si=cbWMitPAVWD1QP_X" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      question: "Motor de Búsqueda",
+      answer: (
+        <div className="faq-answer">
+          <p>
+            Con una sola consulta, Xview Plus buscará en las principales Apps el
+            contenido que desees y te indicará en donde puedes disfrutarlo.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/hAWQUTPrsG8?si=xtfcXYIRUx_sUjbt"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-        ),
+      ),
     },
     {
-        question: "App Xview+ Móvil",
-        answer: (
-          <div className="faq-answer">
-          <p>Descarga la nueva app de Xview Plus y lleva tu programación en vivo con funciones interactivas y el contenido On Demand.</p>
-          <iframe src="https://www.youtube.com/embed/qH76P7jI8YA?si=JV-b7OlLXXZ66j_2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      question: "Perfiles",
+      answer: (
+        <div className="faq-answer">
+          <p>
+            Crea hasta 10 perfiles para cada miembro de tu familia para recibir
+            recomendaciones personalizadas de contenido.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/9B1KpKgvc40?si=pCR3J43Y5oZDvrNg"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-        ),
+      ),
     },
     {
-        question: "Descarga Apps",
-        answer: (
-          <div className="faq-answer">
-          <p>Con Xview Plus podrás descargar tus aplicaciones favoritas a través de la tienda de Google Play integrada en tu caja y verlas en tu TV.</p>
-          <iframe src="https://www.youtube.com/embed/lkI56nla0O8?si=Pu5MhE5olkC1v9fL" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      question: "Pausa y reinicia",
+      answer: (
+        <div className="faq-answer">
+          <p>
+            Detén tu programa en vivo y retómalo justo donde te quedaste, en el
+            momento que quieras para que no te pierdas ningún detalle. Empieza a
+            ver un programa desde el inicio, aunque ya haya comenzado.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/M8rj9z0JVCU?si=cbWMitPAVWD1QP_X"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-        ),
+      ),
     },
     {
-        question: "Regresa",
-        answer: (
-          <div className="faq-answer">
-          <p>Regresa hasta 48 hrs. tus canales interactivos favoritos para disfrutar de un programa que ya pasó.</p>
-          <iframe src="https://www.youtube.com/embed/L0gqpdb9o0Y?si=1U21EX8t-0b4Ih7Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      question: "App Xview+ Móvil",
+      answer: (
+        <div className="faq-answer">
+          <p>
+            Descarga la nueva app de Xview Plus y lleva tu programación en vivo
+            con funciones interactivas y el contenido On Demand.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/qH76P7jI8YA?si=JV-b7OlLXXZ66j_2"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-        ),
+      ),
     },
     {
-        question: "Graba",
-        answer: (
-          <div className="faq-answer">
-          <p>Graba los programas en vivo de los canales interactivos (Función disponible a partir de Básico)</p>
-          <iframe src="https://www.youtube.com/embed/mzUf3NJoqv0?si=2XHUo9G0uNIdg6ie" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      question: "Descarga Apps",
+      answer: (
+        <div className="faq-answer">
+          <p>
+            Con Xview Plus podrás descargar tus aplicaciones favoritas a través
+            de la tienda de Google Play integrada en tu caja y verlas en tu TV.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/lkI56nla0O8?si=Pu5MhE5olkC1v9fL"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
         </div>
-        ),
+      ),
     },
-];
-
+    {
+      question: "Regresa",
+      answer: (
+        <div className="faq-answer">
+          <p>
+            Regresa hasta 48 hrs. tus canales interactivos favoritos para
+            disfrutar de un programa que ya pasó.
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/L0gqpdb9o0Y?si=1U21EX8t-0b4Ih7Q"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      ),
+    },
+    {
+      question: "Graba",
+      answer: (
+        <div className="faq-answer">
+          <p>
+            Graba los programas en vivo de los canales interactivos (Función
+            disponible a partir de Básico)
+          </p>
+          <iframe
+            src="https://www.youtube.com/embed/mzUf3NJoqv0?si=2XHUo9G0uNIdg6ie"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+          ></iframe>
+        </div>
+      ),
+    },
+  ];
 
   return (
     <>
-    {/* FUNCIONALIDADES PC */}
+      <Helmet>
+      <title>Beneficios de Xview+ | Megacable | VOD, Control de Voz, Grabación y Más</title>
+      <meta name="description" content="Descubre los beneficios de Xview+: Accede a más de 20,000 horas de contenido, controla tu TV con voz, graba programas y disfruta de una experiencia personalizada con perfiles y la app móvil. ¡Lleva el entretenimiento a otro nivel con Megacable!" />
+      </Helmet>
+      {/* FUNCIONALIDADES PC */}
       <div className="container general-tabs-container pe-3 ps-3 pe-md-0 ps-md-0 d-none d-md-block">
         <div className="text-center">
           <h3 className="small-title-services">TV Interactiva</h3>
@@ -132,16 +225,16 @@ const XVPBeneficios = () => {
         <div className="xview-beneficios-container">
           <div className="xview-beneficio xviewb-vod">
             <div className="xview-beneficio-content">
-            <img
-              src="../src/assets/icons/servicios/tv-interactiva/xviewb-vod.png"
-              alt="VOD"
-            />
-            <h3>VOD</h3>
-            <p>
-              Accede a más de 20,000 horas de series, películas, novelas,
-              deportes y más, para verlos en el momento que tú quieras.
-            </p>
-            <button
+              <img
+                src="../src/assets/icons/servicios/tv-interactiva/xviewb-vod.png"
+                alt="VOD"
+              />
+              <h3>VOD</h3>
+              <p>
+                Accede a más de 20,000 horas de series, películas, novelas,
+                deportes y más, para verlos en el momento que tú quieras.
+              </p>
+              <button
                 className="btn btn-action btn-tutorial mt-4"
                 onClick={() =>
                   openPopup("https://www.youtube.com/watch?v=fhKrsjRQixw")
@@ -219,7 +312,6 @@ const XVPBeneficios = () => {
               >
                 Ver tutorial <span className="open-page-icon"></span>
               </button>
-
             </div>
           </div>
 
@@ -242,7 +334,6 @@ const XVPBeneficios = () => {
               >
                 Ver tutorial <span className="open-page-icon"></span>
               </button>
-              
             </div>
           </div>
 
@@ -265,7 +356,6 @@ const XVPBeneficios = () => {
               >
                 Ver tutorial <span className="open-page-icon"></span>
               </button>
-
             </div>
           </div>
 
@@ -288,7 +378,6 @@ const XVPBeneficios = () => {
               >
                 Ver tutorial <span className="open-page-icon"></span>
               </button>
-
             </div>
           </div>
 
@@ -311,7 +400,6 @@ const XVPBeneficios = () => {
               >
                 Ver tutorial <span className="open-page-icon"></span>
               </button>
-
             </div>
           </div>
 
@@ -335,27 +423,24 @@ const XVPBeneficios = () => {
               >
                 Ver tutorial <span className="open-page-icon"></span>
               </button>
-
             </div>
           </div>
         </div>
         {isPopupOpen && <VideoPopup videoUrl={videoUrl} onClose={closePopup} />}
       </div>
 
-
-
       {/* FUNCIONALIDADES MOVIL */}
       <div className="general-tabs-container d-md-none">
-      <div className="text-center">
+        <div className="text-center">
           <h3 className="small-title-services">TV Interactiva</h3>
           <h2 className="big-title-services">Conoce las funcionalidades</h2>
         </div>
 
-            {/* Mostrar todas las preguntas frecuentes */}
-            <div className="container-fluid p-0 mt-5">
-                <FAQSoporte faqs={faqXview} />
-            </div>
+        {/* Mostrar todas las preguntas frecuentes */}
+        <div className="container-fluid p-0 mt-5">
+          <FAQSoporte faqs={faqXview} />
         </div>
+      </div>
     </>
   );
 };

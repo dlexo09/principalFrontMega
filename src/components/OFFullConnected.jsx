@@ -119,7 +119,7 @@ const OFFullConnected = () => {
     <>
     <Helmet>
     <title>Full connected | Megacable | Televisión, Telefonía e Internet</title>
-    <meta name="description" content="Full Connected Home te ofrece todos los servicios en un solo lugar: internet de alta velocidad, TV por cable, telefonía y datos móviles. Disfruta una conexión estable para home office, clases en línea y gaming." />
+    <meta name="description" content="Full Connected Home te ofrece todos los servicios en un solo lugar: Internet de alta velocidad, Televisión por cable y Telefonía Ilimitada. Disfruta una conexión estable para home office, clases en línea y gaming." />
     </Helmet>
       <div className="container-fluid p-0 fc-banner-principal">
         <img

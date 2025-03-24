@@ -32,8 +32,8 @@ const Home = () => {
   return (
     <>
     <Helmet>
-    <title>Megacable | Internet de Alta Velocidad, TV por Cable y Telefonía | ¡Contrata Ahora!</title>
-<meta name="description" content="Contrata Internet de alta velocidad con fibra óptica, Televisión y Telefonía en un solo lugar. ¡Conéctate sin interrupciones, encuentra el paquete ideal para ti y descubre nuestras increíbles promociones!" />
+      <title>Megacable | Internet de Alta Velocidad, TV por Cable y Telefonía | ¡Contrata Ahora!</title>
+      <meta name="description" content="Contrata Internet de alta velocidad con fibra óptica, Televisión y Telefonía en un solo lugar. ¡Conéctate sin interrupciones, encuentra el paquete ideal para ti y descubre nuestras increíbles promociones!" />
     </Helmet>
       {seccionesActivas.includes('BannerHome') && <BannerHome />}
       {seccionesActivas.includes('CallToActionHome') && <CallToActionHome />}

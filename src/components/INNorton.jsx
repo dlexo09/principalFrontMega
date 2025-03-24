@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from "react-helmet-async";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './INNorton.css';
 import './Globales.css';
@@ -90,6 +91,11 @@ const PaquetesTarifarios = () => {
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
 
   return (
+    <>
+    <Helmet>
+    <title>Norton Antivirus | Megacable | Protege tus Dispositivos de Amenazas</title>
+    <meta name="description" content="Protege tus dispositivos con Norton Antivirus, disponible con Megacable. Disfruta de protección avanzada contra virus, spyware y ataques cibernéticos. ¡No esperes más, protege tus datos!" />
+    </Helmet>
     <div className="container general-tabs-container text-center pe-3 ps-3 pe-md-none ps-md-none">
       <h3 className="small-title-services">Contrata ya</h3>
       <h2 className="big-title-services mb-5 title-especial">Tu servicio de Norton</h2>
@@ -171,6 +177,7 @@ const PaquetesTarifarios = () => {
         </button>
       </div>
     </div>
+    </>
   );
 };
 
