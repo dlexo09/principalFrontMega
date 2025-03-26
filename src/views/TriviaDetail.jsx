@@ -9,21 +9,26 @@ const TriviaDetail = () => {
   const [trivia, setTrivia] = useState(null);
   const [preguntas, setPreguntas] = useState([]);
   const [selectedOptions, setSelectedOptions] = useState({});
+  const [personalData, setPersonalData] = useState({
+    nombreUsuario: "",
+    telefonoUsuario: "",
+    numeroContrato: "",
+    ciudad: "",
+    nombreEnContrato: "",
+  });
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchTriviaData = async () => {
       try {
-        // Llamada a la primera API para obtener los datos de la trivia
         const triviaResponse = await fetch(`${serverAPILambda}api/trivias/data?id=${endpoint}`);
-        console.log(triviaResponse);
         const triviaDataArray = await triviaResponse.json();
-    
+
         if (triviaDataArray.length > 0) {
-          const triviaData = triviaDataArray[0]; // Acceder al primer elemento del array
+          const triviaData = triviaDataArray[0];
+          // console.log("Datos de trivia:", triviaData); // Verificar los datos de trivia
           setTrivia(triviaData);
-    
-          // Esperar a que la trivia cargue antes de llamar a la segunda API
+
           if (triviaData.idTriviaConfig) {
             const preguntasResponse = await fetch(
               `${serverAPILambda}api/triviaspreguntas/data?id=${triviaData.idTriviaConfig}`
@@ -40,7 +45,7 @@ const TriviaDetail = () => {
       } catch (error) {
         console.error("Error fetching trivia or preguntas:", error);
       } finally {
-        setLoading(false); // Finalizar la carga
+        setLoading(false);
       }
     };
 
@@ -54,12 +59,89 @@ const TriviaDetail = () => {
     }));
   };
 
+  const handlePersonalDataChange = (e) => {
+    const { name, value } = e.target;
+    setPersonalData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    //console.log("idTriviaConfig:", trivia.idTriviaConfig); // Verificar el valor
+
+    // Validar que todas las preguntas tengan una respuesta
+    const respuestas = preguntas.map((pregunta) => ({
+      idPregunta: pregunta.idTriviasPreguntas,
+      respuesta: selectedOptions[pregunta.idTriviasPreguntas] || "", // Respuesta seleccionada o texto ingresado
+    }));
+
+    const preguntasSinRespuesta = respuestas
+      .filter((respuesta) => {
+        const pregunta = preguntas.find((p) => p.idTriviasPreguntas === respuesta.idPregunta);
+        if (pregunta.tipoPregunta === 2) {
+          // Validar preguntas abiertas (tipoPregunta = 2)
+          return !respuesta.respuesta.trim(); // Considerar vacía si solo tiene espacios
+        }
+        // Validar preguntas de opciones (tipoPregunta = 1)
+        return !respuesta.respuesta;
+      })
+      .map((respuesta) => respuesta.idPregunta); // Obtener los IDs de las preguntas sin respuesta
+
+    if (preguntasSinRespuesta.length > 0) {
+      alert(`Por favor, responde todas las preguntas. Faltan las siguientes preguntas: ${preguntasSinRespuesta.join(", ")}`);
+      return;
+    }
+
+    // Validar datos personales
+    if (!personalData.nombreUsuario || !personalData.telefonoUsuario) {
+      alert("Por favor, completa todos los campos personales.");
+      return;
+    }
+
+    const payload = {
+      idTriviaConfig: trivia.idTriviaConfig,
+      respuestas,
+      ...personalData,
+    };
+
+    try {
+      //console.log("Payload enviado:", JSON.stringify(payload, null, 2)); // Verificar el payload
+
+      const response = await fetch(`${serverAPILambda}api/respuestas`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+      if (response.ok) {
+        alert("Respuestas enviadas exitosamente.");
+      } else {
+        console.error("Error al enviar las respuestas:", data.error);
+        alert("Hubo un error al enviar las respuestas.");
+      }
+    } catch (error) {
+      console.error("Error al enviar las respuestas:", error);
+      alert("Hubo un error al enviar las respuestas.");
+    }
+  };
+
   if (loading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="loading-container">
+        <p>Cargando trivia, por favor espera...</p>
+        <div className="spinner"></div>
+      </div>
+    );
   }
 
   if (!trivia) {
-    return <div>Error: No se pudo cargar la trivia.</div>;
+    return <div>Error: No se pudo cargar la trivia. Por favor, inténtalo más tarde.</div>;
   }
 
   return (
@@ -71,6 +153,9 @@ const TriviaDetail = () => {
           preguntas={preguntas}
           selectedOptions={selectedOptions}
           handleOptionChange={handleOptionChange}
+          handlePersonalDataChange={handlePersonalDataChange}
+          personalData={personalData}
+          handleSubmit={handleSubmit}
         />
       </div>
     </ActivarCuenta>
@@ -78,48 +163,43 @@ const TriviaDetail = () => {
 };
 
 // Componente para el encabezado
-const Header = ({ trivia }) => {
-  if (!trivia || !trivia.bannerPrincipal || !trivia.bannerMovil) {
-    return null; // No renderizar nada si los datos no están disponibles
-  }
-
-  return (
-    <div className="text-center ps-4 pe-4 ps-lg-0 pe-lg-0">
-      <h2 className="small-title-services">GANA INCREÍBLES PREMIOS</h2>
-      <h3 className="big-title-services big-title-container-sm">
-        ¡Participa, Regístrate y Responde las Preguntas para Ganar!
-      </h3>
-      <div className="row mt-5">
-        <div className="col-12 align-items-center d-flex ps-4 pe-4 ps-lg-0 pe-lg-0">
-          {/* Imagen del banner principal */}
-          <img
-            src={`/uploads/bannerTrivias/${trivia.bannerPrincipal}`}
-            className="trivia-banner img-fluid d-none d-md-block"
-            alt="Trivia Banner"
-          />
-          {/* Imagen del banner móvil */}
-          <img
-            src={`/uploads/bannerTrivias/${trivia.bannerMovil}`}
-            className="w-100 d-md-none"
-            alt="Trivia Banner Mobile"
-          />
-        </div>
-        {/* Título y descripción de la trivia */}
-        <h1>{trivia.titulo}</h1>
-        <p>{trivia.descripcion}</p>
+const Header = ({ trivia }) => (
+  <div className="text-center ps-4 pe-4 ps-lg-0 pe-lg-0">
+    <h2 className="small-title-services">GANA INCREÍBLES PREMIOS</h2>
+    <h3 className="big-title-services big-title-container-sm">
+      ¡Participa, Regístrate y Responde las Preguntas para Ganar!
+    </h3>
+    <div className="row mt-5">
+      <div className="col-12 align-items-center d-flex ps-4 pe-4 ps-lg-0 pe-lg-0">
+        <img
+          src={`/uploads/bannerTrivias/${trivia.bannerPrincipal}`}
+          className="trivia-banner img-fluid d-none d-md-block"
+          alt="Trivia Banner"
+        />
+        <img
+          src={`/uploads/bannerTrivias/${trivia.bannerMovil}`}
+          className="w-100 d-md-none"
+          alt="Trivia Banner Mobile"
+        />
       </div>
+      <h1>{trivia.titulo}</h1>
+      <p>{trivia.descripcion}</p>
     </div>
-  );
-};
+  </div>
+);
+
 // Componente para el formulario de trivia
-const TriviaForm = ({ trivia, preguntas, selectedOptions, handleOptionChange }) => (
-  <form>
-    <PersonalDataForm />
-    <TriviaQuestions
-      preguntas={preguntas}
-      selectedOptions={selectedOptions}
-      handleOptionChange={handleOptionChange}
-    />
+const TriviaForm = ({
+  preguntas,
+  selectedOptions,
+  handleOptionChange,
+  handlePersonalDataChange,
+  personalData,
+  handleSubmit,
+}) => (
+  <form onSubmit={handleSubmit}>
+    <PersonalDataForm personalData={personalData} handlePersonalDataChange={handlePersonalDataChange} />
+    <TriviaQuestions preguntas={preguntas} selectedOptions={selectedOptions} handleOptionChange={handleOptionChange} />
     <div className="text-center mt-5">
       <button type="submit" className="btn btn-packs">
         Enviar
@@ -129,7 +209,7 @@ const TriviaForm = ({ trivia, preguntas, selectedOptions, handleOptionChange }) 
 );
 
 // Componente para los datos personales
-const PersonalDataForm = () => (
+const PersonalDataForm = ({ personalData, handlePersonalDataChange }) => (
   <div className="datos-trivia ps-4 pe-4 ps-lg-0 pe-lg-0">
     <div className="text-center mb-5">
       <h3 className="big-title-services text-center">Datos personales</h3>
@@ -138,19 +218,62 @@ const PersonalDataForm = () => (
     <div className="container datos-personales-trivia">
       <div className="row">
         <div className="col-md-6">
-          <InputField label="Nombre completo" id="nombre" type="text" />
-          <InputField label="Teléfono" id="telefono" type="number" />
-          <InputField label="Nombre del titular del contrato" id="titular" type="text" />
+          <InputField
+            label="Nombre completo"
+            id="nombreUsuario" // Cambiado para que coincida con el estado
+            name="nombreUsuario" // Cambiado para que coincida con el estado
+            type="text"
+            value={personalData.nombreUsuario}
+            onChange={handlePersonalDataChange}
+          />
+          <InputField
+            label="Teléfono"
+            id="telefonoUsuario" // Cambiado para que coincida con el estado
+            name="telefonoUsuario" // Cambiado para que coincida con el estado
+            type="number"
+            value={personalData.telefonoUsuario}
+            onChange={handlePersonalDataChange}
+          />
+          <InputField
+            label="Nombre del titular del contrato"
+            id="nombreEnContrato" // Cambiado para que coincida con el estado
+            name="nombreEnContrato" // Cambiado para que coincida con el estado
+            type="text"
+            value={personalData.nombreEnContrato}
+            onChange={handlePersonalDataChange}
+          />
         </div>
         <div className="col-md-6">
-          <InputField label="Edad" id="edad" type="number" />
-          <InputField label="Número de contrato" id="contrato" type="text" />
-          <InputField label="Ciudad" id="ciudad" type="text" />
+          <InputField
+            label="Edad"
+            id="edad" // Cambiado para que coincida con el estado
+            name="edad" // Cambiado para que coincida con el estado
+            type="number"
+            value={personalData.edad || ""} // Manejar valores iniciales no definidos
+            onChange={handlePersonalDataChange}
+          />
+          <InputField
+            label="Número de contrato"
+            id="numeroContrato" // Cambiado para que coincida con el estado
+            name="numeroContrato" // Cambiado para que coincida con el estado
+            type="text"
+            value={personalData.numeroContrato}
+            onChange={handlePersonalDataChange}
+          />
+          <InputField
+            label="Ciudad"
+            id="ciudad" // Cambiado para que coincida con el estado
+            name="ciudad" // Cambiado para que coincida con el estado
+            type="text"
+            value={personalData.ciudad}
+            onChange={handlePersonalDataChange}
+          />
         </div>
       </div>
     </div>
   </div>
 );
+
 
 // Componente para las preguntas de la trivia
 const TriviaQuestions = ({ preguntas, selectedOptions, handleOptionChange }) => (
@@ -164,13 +287,17 @@ const TriviaQuestions = ({ preguntas, selectedOptions, handleOptionChange }) => 
           <div key={index} className="mb-3">
             <label className="form-label">{pregunta.pregunta}</label>
             {pregunta.tipoPregunta === 2 ? (
-              <input
-                type="text"
+              // Pregunta abierta (textarea)
+              <textarea
                 className="form-control form-open-faq"
                 name={`pregunta_${pregunta.idTriviasPreguntas}`}
-                required
+                id={`pregunta_${pregunta.idTriviasPreguntas}`}
+                value={selectedOptions[pregunta.idTriviasPreguntas] || ""} // Manejar valor inicial vacío
+                onChange={(e) => handleOptionChange(pregunta.idTriviasPreguntas, e.target.value)}
+                required={pregunta.preguntaObligatoria === 1} // Marcar como obligatorio si corresponde
               />
             ) : (
+              // Pregunta de opciones (radio buttons)
               <div className="trivia-options">
                 {[pregunta.a, pregunta.b, pregunta.c, pregunta.d].map((opcion, idx) => (
                   <div
@@ -187,7 +314,7 @@ const TriviaQuestions = ({ preguntas, selectedOptions, handleOptionChange }) => 
                       value={opcion}
                       checked={selectedOptions[pregunta.idTriviasPreguntas] === opcion}
                       onChange={() => handleOptionChange(pregunta.idTriviasPreguntas, opcion)}
-                      required
+                      required={pregunta.preguntaObligatoria === 1} // Marcar como obligatorio si corresponde
                     />
                     <label
                       className="form-check-label"
@@ -207,12 +334,20 @@ const TriviaQuestions = ({ preguntas, selectedOptions, handleOptionChange }) => 
 );
 
 // Componente reutilizable para los campos de entrada
-const InputField = ({ label, id, type }) => (
+const InputField = ({ label, id, type, value, onChange }) => (
   <div className="mb-3">
     <label htmlFor={id} className="form-label form-label-datos">
       {label}
     </label>
-    <input type={type} className="form-control activar-cuenta_input" id={id} name={id} required />
+    <input
+      type={type}
+      className="form-control activar-cuenta_input"
+      id={id}
+      name={id}
+      value={value}
+      onChange={onChange}
+      required
+    />
   </div>
 );
 
