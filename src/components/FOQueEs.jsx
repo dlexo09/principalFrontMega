@@ -78,8 +78,8 @@ const FOQueEs = () => {
         <div className="foqe-container">
           <div className="container">
             <div className="text-center">
-              <h2 className="small-title-services">fibra óptica</h2>
-              <h3 className="big-title-services">¿QUé es la fibra óptica?</h3>
+              <h1 className="small-title-services">Fibra Óptica</h1>
+              <h2 className="big-title-services">¿QUé es la fibra óptica?</h2>
               <p className="mt-4">
                 La fibra óptica de Megacable ofrece una conexión a internet de
                 alta velocidad, con tecnología que garantiza una transmisión más
@@ -130,7 +130,7 @@ const FOQueEs = () => {
                     <div className="swiper-adservices-content sa-item foqe-item ">
                       <div className="text-center swiper-adservices-conten d-flex align-items-center flex-column justify-content-center">
                         <img src={service.image} alt={service.title} />
-                        <h4 className="mt-4">{service.title}</h4>{" "}
+                        <h3 className="mt-4">{service.title}</h3>{" "}
                         {/* Título de la tarjeta */}
                         <p className="mt-2">{service.description}</p>{" "}
                         {/* Descripción de la tarjeta */}
@@ -182,7 +182,7 @@ const FOQueEs = () => {
         </div>
 
         <div className="container sim-util-container">
-          <h3 className="text-center">LA SIMETRÍA ES ÚTIL CUANDO</h3>
+          <h2 className="text-center">LA SIMETRÍA ES ÚTIL CUANDO</h2>
           <div className="row mt-5 justify-content-center simetria-util-container">
             <div className="col-md-5 col-lg-4 col-xl-3 simetria-util-card">
               <div className="text-center mb-4">
@@ -191,7 +191,7 @@ const FOQueEs = () => {
                   alt="Videollamadas"
                 />
               </div>
-              <h4>Videollamadas</h4>
+              <h3>Videollamadas</h3>
               <p>
                 Brinda una resolución de calidad en la imagen, la señal no
                 fluctúa, es mucho más rápida la transferencia de datos.
@@ -204,7 +204,7 @@ const FOQueEs = () => {
                   alt="Servicios en la nube"
                 />
               </div>
-              <h4>Servicios en la nube</h4>
+              <h3>Servicios en la nube</h3>
               <p>
                 La velocidad de subida permite disponer de forma eficiente tus
                 servicios en la nube.
@@ -217,7 +217,7 @@ const FOQueEs = () => {
                   alt="Videojuegos"
                 />
               </div>
-              <h4>Videojuegos</h4>
+              <h3>Videojuegos</h3>
               <p>
                 Permite que la respuesta de los comandos del juego lleguen más
                 rápido que el adversario.

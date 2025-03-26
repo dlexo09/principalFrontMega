@@ -36,13 +36,13 @@ const InternetSimetrico = () => {
         <div className="internet-simetrico-content d-flex align-items-center">
           <div className="order-2 order-lg-1 internet-simetrico-txt">
             <h2 className="small-title d-none d-lg-block">{isSimetrico ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
-            <p className="secondary-title is-title-s">
+            <h3 className="secondary-title is-title-s">
               {isSimetrico ? (
                 <>Conéctate sin límites ¡Misma velocidad de <span>subida y bajada!</span></>
               ) : (
                 <>Conéctate sin límites ¡Disfruta de nuestra red de alta velocidad!</>
               )}
-            </p>
+            </h3>
             <p className="mt-4 ps-5 pe-5 ps-md-0 pe-md-0 ">
               {isSimetrico ? 'Eleva tu conexión y conoce nuestra red Fibra Óptica.' : 'Accede a una conexión estable y rápida en todo momento.'}
             </p>

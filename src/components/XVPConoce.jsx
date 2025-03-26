@@ -22,7 +22,7 @@ const XVPConoce = () => {
         <div className="container">
           <div className="row">
             <div className="col-xl-5 text-center text-xl-start">
-              <h3 className="small-title-services">Xview+ TV Interactiva</h3>
+              <h1 className="small-title-services">Xview+ TV Interactiva</h1>
               <h2 className="big-title-services">
                 TODOS TUS CONTENIDOS EN UN MISMO LUGAR Y EN 4K
               </h2>

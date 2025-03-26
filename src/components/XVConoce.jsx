@@ -27,7 +27,7 @@ const XVConoce = () => {
         <div className="container">
           <div className="row align-items-center">
             <div className="col-lg-7 col-xl-5 text-center text-lg-start">
-              <h3 className="small-title-services">Xview TV Interactiva</h3>
+              <h1 className="small-title-services">Xview TV Interactiva</h1>
               <h2 className="big-title-services">
                 Disfruta de una experiencia de TV interactiva
               </h2>

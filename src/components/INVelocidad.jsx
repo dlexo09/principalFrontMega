@@ -18,16 +18,22 @@ const INVelocidad = () => {
 
   return (
     <>
-          <Helmet>
-          <title>Mide tu Velocidad de Internet | Megacable | Test de Velocidad</title>
-          <meta name="description" content="Mide la velocidad de tu internet Megacable al instante. Conoce tu velocidad de descarga y subida. ¡Realiza el test ahora y conoce el estado real de tu red!" />
-          </Helmet>
+      <Helmet>
+        <title>
+          Mide tu Velocidad de Internet | Megacable | Test de Velocidad
+        </title>
+        <meta
+          name="description"
+          content="Mide la velocidad de tu internet Megacable al instante. Conoce tu velocidad de descarga y subida. ¡Realiza el test ahora y conoce el estado real de tu red!"
+        />
+      </Helmet>
+
       <div className="general-tabs-container container pe-2 ps-2 pe-md-none ps-md-none">
         <div className="text-center">
-          <h2 className="small-title-services">MIDE TU VELOCIDAD</h2>
-          <h3 className="big-title-services">
+          <h1 className="small-title-services">MIDE TU VELOCIDAD</h1>
+          <h2 className="big-title-services">
             ¡Conoce la velocidad de tu internet!
-          </h3>
+          </h2>
         </div>
 
         {/* Botón con icono giratorio */}
@@ -60,21 +66,21 @@ const INVelocidad = () => {
               <h3 className="text-center">ETHERNET</h3>
               <div className="rec-ethernet-container mt-5">
                 <div className="rec-info-content">
-                    <span>1</span>
+                  <span>1</span>
                   <p>
                     Conecta directamente el cable de red entre tu computadora y
                     el módem.
                   </p>
                 </div>
                 <div className="rec-info-content">
-                <span>2</span>
+                  <span>2</span>
                   <p>
                     Cierra las páginas de internet o programas que hagan uso de
                     la red de tu computadora.
                   </p>
                 </div>
                 <div className="rec-info-content">
-                <span>3</span>
+                  <span>3</span>
                   <p>
                     Desconecta tus demás dispositivos (tablet/Smartphone) que
                     estén conectados a tu internet.
@@ -93,7 +99,7 @@ const INVelocidad = () => {
               <h3 className="text-center">WIFI</h3>
               <div className="rec-ethernet-container mt-5">
                 <div className="rec-info-content">
-                <span>1</span>
+                  <span>1</span>
                   <p>
                     Apaga el WiFi de tus demás dispositivos (Smart TV/ Consolas/
                     tablet/ Smartphone) que estén conectados a tu internet; y en
@@ -102,7 +108,7 @@ const INVelocidad = () => {
                   </p>
                 </div>
                 <div className="rec-info-content">
-                <span>2</span>
+                  <span>2</span>
                   <p>
                     Si tu módem es de Doble Banda (cuenta con 2 nombres de red),
                     conéctate a la red con terminación _5 para obtener una
@@ -110,7 +116,7 @@ const INVelocidad = () => {
                   </p>
                 </div>
                 <div className="rec-info-content">
-                <span>3</span>
+                  <span>3</span>
                   <p>Acerca tu dispositivo al módem (sin obstáculos).</p>
                 </div>
               </div>
@@ -130,21 +136,21 @@ const INVelocidad = () => {
           </div>
           <div className="col-xl-3 speed-pasos-container">
             <div className="speed-pasos-crd">
-                <span>1</span>
+              <span>1</span>
               <p>
                 Realiza un par de veces la prueba para tener mayor
                 confiabilidad.
               </p>
             </div>
             <div className="speed-pasos-crd">
-            <span>2</span>
+              <span>2</span>
               <p>
                 Los Megabits por segundo (Mbps) corresponde a la velocidad
                 máxima de transferencia de datos (Mbps).
               </p>
             </div>
             <div className="speed-pasos-crd">
-            <span>3</span>
+              <span>3</span>
               <p>
                 Los Mbps podrán variar según las condiciones técnicas del
                 dispositivo, cantidad de equipos conectados, navegación en horas

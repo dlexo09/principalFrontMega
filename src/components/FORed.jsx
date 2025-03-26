@@ -28,16 +28,17 @@ const FORed = () => {
           content="Disfruta de Internet con Fibra Óptica de Megacable: velocidades simétricas, mayor estabilidad y hasta 1 GB de velocidad. Conéctate con la mejor tecnología y equipo de última generación para tu hogar."
         />
       </Helmet>
+
       <div className="general-tabs-container">
         <div className="fibra-presentation">
           <div className="text-center ps-2 pe-2 ps-md-0 pe-md-0">
-            <h2 className="small-title-services">
+            <h1 className="small-title-services">
               Fibra óptica directo a tu hogar
-            </h2>
-            <h3 className="big-title-services title-descr">
+            </h1>
+            <h2 className="big-title-services title-descr">
               Ahora tus servicios están respaldados por una nueva red de fibra
               óptica que llega hasta tu hogar.
-            </h3>
+            </h2>
           </div>
           <div className="fibra-presentation-content ps-2 pe-2 ps-md-0 pe-md-0">
             <div className="container fored-cards-presentation">
@@ -154,7 +155,7 @@ const FORed = () => {
           <div className="row align-items-lg-end align-items-xl-center">
             <div className="col-lg-6 col-xl-5 int-simetrico-content">
               <div className="int-simetrico-txt text-center text-lg-start">
-                <h3 className="small-title">Internet simétrico</h3>
+                <h2 className="small-title">Internet simétrico</h2>
                 <p className="big-title text-uppercase">
                   ¡Conéctate sin límites!
                 </p>

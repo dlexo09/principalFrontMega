@@ -47,8 +47,11 @@ const Canales = () => {
       <title>Canales | Megacable | Disfruta de tu Contenido Favorito</title>
       <meta name="description" content="Lista de canales disponibles en Megacable. Disfruta de tus programas, películas y deportes favoritos, con acceso a contenido exclusivo desde tu televisión o dispositivos móviles."></meta>
       </Helmet>
-      <div className="container-fluid canales-container">
-        <h2 className="text-center mb-4 title-canales">Canales</h2>
+      <div className="container-fluid general-tabs-container ">
+        <h1 className="text-center small-title-services">Canales</h1>
+        <div className="text-center mb-5">
+        <h2 class="big-title-services">Conoce la lista de canales de tu TV</h2>
+        </div>
         <div className="row">
           {/* Columna izquierda: Botones de categorías */}
           <div className="col-md-3 pe-xl-3 filtro-canales-content">

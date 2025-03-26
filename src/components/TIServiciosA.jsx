@@ -462,7 +462,7 @@ const TIServiciosA = () => {
       </Helmet>
       <div className="general-tabs-container ps-3 pe-3 ps-md-none pe-md-none">
         <div className="text-center titles-adserv">
-          <h3 className="small-title-services">Conoce nuestro servicio</h3>
+          <h1 className="small-title-services">Conoce nuestro servicio</h1>
           <h2 className="big-title-services">SERVICIOS ADICIONALES</h2>
           <p className="mt-4">
             Complementa tu servicio de Telefonía Fija Mega con las soluciones
@@ -511,7 +511,7 @@ const TIServiciosA = () => {
                 <div className="swiper-adservices-content sa-item">
                   <div className="text-center swiper-adservices-conten d-flex align-items-center flex-column justify-content-center">
                     <img src={service.image} alt={service.title} />
-                    <h4 className="mt-4">{service.title}</h4>{" "}
+                    <h3 className="mt-4">{service.title}</h3>{" "}
                     {/* Título de la tarjeta */}
                     <p className="mt-2">{service.description}</p>{" "}
                     {/* Descripción de la tarjeta */}

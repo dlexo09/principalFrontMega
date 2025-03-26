@@ -218,7 +218,7 @@ const XVPBeneficios = () => {
       {/* FUNCIONALIDADES PC */}
       <div className="container general-tabs-container pe-3 ps-3 pe-md-0 ps-md-0 d-none d-md-block">
         <div className="text-center">
-          <h3 className="small-title-services">TV Interactiva</h3>
+          <h1 className="small-title-services">TV Interactiva</h1>
           <h2 className="big-title-services">Conoce las funcionalidades</h2>
         </div>
 

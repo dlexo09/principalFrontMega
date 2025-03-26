@@ -14,10 +14,10 @@ const INWifiUltra = () => {
       </Helmet>
       <div className="container ps-3 ps-md-0 pe-3 pe-md-0 general-tabs-container">
         <div className="text-center">
-          <h2 className="small-title-services">CONOCE NUESTRO EXTENSOR WIFI</h2>
-          <h3 className="big-title-services title-wu">
+          <h1 className="small-title-services">CONOCE NUESTRO EXTENSOR WIFI</h1>
+          <h2 className="big-title-services title-wu">
             ¿Tu WIFI no llega a cada rincón de tu casa o negocio?
-          </h3>
+          </h2>
           <p className="mt-5">
             Solucionado con un Extensor MESH de WIFI que logra una mejor
             cobertura de Internet

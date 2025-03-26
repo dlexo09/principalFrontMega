@@ -15,8 +15,8 @@ const TIReactivacion = () => {
       <div className="general-tabs-container">
         <div className="bg-reactiva-container">
           <div className="container text-center ps-2 pe-2 ps-md-none pe-md-none">
-            <h3 className="small-title-services">Conoce nuestro</h3>
-            <h2 className="big-title-services">SERVICIO DE REACTIVACIÓN</h2>
+            <h1 className="small-title-services">Servicio de reactivación</h1>
+            <h2 className="big-title-services">Reactivación de Servicio de Telefonía Megacable</h2>
             <p className="mt-4">
               ¿Cancelaste el servicio de teléfono con otra compañía y te
               interesa recuperar tu número para usarlo en MEGA?

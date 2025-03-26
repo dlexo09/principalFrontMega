@@ -20,12 +20,13 @@ const INZonaWifi = () => {
       <title>WiFi Gratis | Zona WiFi Megacable | Acceso Rápido en Lugares Públicos</title>
       <meta name="description" content="Navega gratis con Megacable WiFi en miles de lugares públicos. Accede a Internet de alta velocidad sin costo, exclusivo para suscriptores. ¡Conéctate desde tus dispositivos y disfruta de WiFi gratuito cerca de ti!" />
       </Helmet>
+
       <div className="container general-tabs-container container pe-2 ps-2 pe-md-none ps-md-none">
         <div className="text-center">
-          <h2 className="small-title-services">MEGACABLE WIFI</h2>
-          <h3 className="big-title-services">
+          <h1 className="small-title-services">MEGACABLE WIFI</h1>
+          <h2 className="big-title-services">
             SITIOS CON ACCESO a MEGACABLE WIFI
-          </h3>
+          </h2>
           <p className="p-zw mt-5 p-2">
             Si eres suscriptor Megacable y cuentas con el servicio de Internet
             podrás navegar gratis con Megacable WiFi en miles de sitios públicos

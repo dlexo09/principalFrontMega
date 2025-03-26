@@ -25,8 +25,8 @@ const TIPortabilidad = () => {
 
       <div className="general-tabs-container">
         <div className="text-center">
-          <h3 className="small-title-services">CONOCE NUESTROS SERVICIOS</h3>
-          <h2 className="big-title-services">PORTABILIDAD</h2>
+          <h1 className="small-title-services">Portabilidad</h1>
+          <h2 className="big-title-services">CONOCE NUESTROS SERVICIOS</h2>
           <p className="mt-4 container txt-portabilidad">
             Sin importar de qué compañía vengas, conserva tu actual número
             telefónico al realizar tu cambio a Telefonía Fija Mega, obteniendo

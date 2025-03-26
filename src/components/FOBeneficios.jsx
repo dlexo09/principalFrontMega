@@ -30,10 +30,10 @@ const FOBeneficios = () => {
         <div className="container-fluid">
           <div className="container">
             <div className="text-center">
-              <h2 className="small-title-services">fibra óptica</h2>
-              <h3 className="big-title-services">
+              <h1 className="small-title-services">fibra óptica</h1>
+              <h2 className="big-title-services">
                 BENEFICIOS DE LA FIBRA ÓPTICA CON MEGA
-              </h3>
+              </h2>
             </div>
           </div>
 
@@ -48,13 +48,13 @@ const FOBeneficios = () => {
             <div className="comparative-table table-gp">
               {/* tabla CON MEGA */}
               <div className="con-mega">
-                <h2 className="comparative-title">
+                <h3 className="comparative-title">
                   CON{" "}
                   <img
                     src="../src/assets/icons/fibra-optica/logo_mega_horizontal.png"
                     alt="Megacable logo"
                   />
-                </h2>
+                </h3>
                 <div className="beneficios-mega">
                   <div className="txt-b-content beneficio-blue txt-border-top">
                     <img
@@ -148,7 +148,7 @@ const FOBeneficios = () => {
 
               {/* tabla CON LOS OTROS */}
               <div className="con-otros">
-                <h2 className="comparative-title mrg-title">CON LOS OTROS</h2>
+                <h3 className="comparative-title mrg-title">CON LOS OTROS</h3>
                 <div className="con-otros-beneficios">
                   <div className="txt-b-content beneficio-grey txt-border-top">
                     <img
@@ -263,16 +263,16 @@ const FOBeneficios = () => {
 
         <div className="fobeneficios-container">
           <div className="container ventajas-simetrico-content">
-            <h4 className="text-center ventajas-simetrico-title text-uppercase">
+            <h2 className="text-center ventajas-simetrico-title text-uppercase">
               Ventajas del internet simétrico
-            </h4>
+            </h2>
             <div className="row justify-content-center ventajas-simetrico-container">
               <div className=" col-md-5 col-xl-3 ventajas-simetrico-card">
                 <img
                   src="../src/assets/icons/fibra-optica/vdis-num-1.png"
                   alt="Uno"
                 />
-                <h4 className="mb-4">Ventaja Frente al Internet Tradicional</h4>
+                <h3 className="mb-4">Ventaja Frente al Internet Tradicional</h3>
                 <p>
                   Su principal ventaja es la velocidad de subida. Ofrece la
                   misma velocidad de subida y de bajada, por lo que la simetría
@@ -284,7 +284,7 @@ const FOBeneficios = () => {
                   src="../src/assets/icons/fibra-optica/vdis-num-2.png"
                   alt="Dos"
                 />
-                <h4 className="mb-4">Menor Latencia</h4>
+                <h3 className="mb-4">Menor Latencia</h3>
                 <p>
                   La menor latencia gracias a la red de Fibra óptica en conjunto
                   con la velocidad simétrica permite respuestas de red más
@@ -297,7 +297,7 @@ const FOBeneficios = () => {
                   src="../src/assets/icons/fibra-optica/vdis-num-3.png"
                   alt="Tres"
                 />
-                <h4 className="mb-4">Mejora en Videollamadas y Streaming</h4>
+                <h3 className="mb-4">Mejora en Videollamadas y Streaming</h3>
                 <p>
                   La velocidad simétrica permite mejorar la calidad de las
                   videollamadas (en imagen y sonido), ver vídeos en directo sin
