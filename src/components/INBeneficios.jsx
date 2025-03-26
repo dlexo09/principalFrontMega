@@ -9,10 +9,11 @@ const INBeneficios = () => {
         <title>Internet Megacable | Rápido, Estable y con la Mejor Cobertura</title>
         <meta name="description" content="Conéctate con el Internet más rápido y estable de Megacable. Fibra óptica, baja latencia y máxima velocidad para navegar, jugar y trabajar sin límites." />
       </Helmet>
+
       <div className="container general-tabs-container pe-2 ps-2 pe-md-none ps-md-none">
         <div className="text-center mb-5">
-          <h2 className="small-title-services">INTERNET</h2>
-          <h3 className="big-title-services">Conoce los beneficios</h3>
+          <h1 className="small-title-services">INTERNET</h1>
+          <h2 className="big-title-services">Conoce los beneficios</h2>
         </div>
 
       <div className="container beneficios-int-container">

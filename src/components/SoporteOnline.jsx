@@ -757,7 +757,7 @@ const SoporteOnline = () => {
   return (
     <div className="general-tabs-container">
       <div className="text-center">
-        <h3 className="small-title-services">CONSULTA NUESTRA GUÍA</h3>
+        <h1 className="small-title-services">CONSULTA NUESTRA GUÍA</h1>
         <h2 className="big-title-services">Soporte técnico</h2>
       </div>
 

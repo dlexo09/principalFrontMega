@@ -750,8 +750,8 @@ const SOPPago = () => {
     
     <div className="general-tabs-container">
       <div className="text-center">
-        <h3 className="small-title-services">CONOCE NUESTRAS</h3>
-        <h2 className="big-title-services">Formas de pago</h2>
+        <h1 className="small-title-services">Formas de Pago</h1>
+        <h2 className="big-title-services title-wu">¿Cómo pagar tu servicio? Conoce todas las opciones</h2>
       </div>
 
       {/* Switch */}

@@ -2,7 +2,9 @@
   background-color: #000000;
   margin-bottom: 0;
   width: 100%;
-
+  position: fixed;
+  top: 0;
+  z-index: 1000;
 }
 
 .navbar-custom .navbar-brand,

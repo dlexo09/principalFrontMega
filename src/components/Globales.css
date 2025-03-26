@@ -53,6 +53,7 @@ p, h1, h2, h3, h4{
 }
 html, body{
     overflow-x: hidden !important;
+    margin-top: 130px;
 }
 a{
     text-decoration: none;

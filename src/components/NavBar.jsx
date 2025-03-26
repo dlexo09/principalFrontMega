@@ -44,7 +44,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="navbar navbar-expand-xl navbar-custom navbar-container">
+    <nav className="navbar navbar-expand-xl navbar-custom navbar-container nav-menu">
       <div className="container">
         {/* Logo */}
         <div className="navbar-logo">

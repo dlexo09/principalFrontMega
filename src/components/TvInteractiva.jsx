@@ -36,28 +36,28 @@ const TvInteractiva = () => {
       case 0:
         return (
           <>
-            <p className="secondary-title"><span>Televisión Digital</span> dónde quiera que estés en cualquier dispositivo.</p>
+            <h3 className="secondary-title"><span>Televisión Digital</span> dónde quiera que estés en cualquier dispositivo.</h3>
             <p className="mt-4 mt-lg-5 ">Accede a tus programas favoritos en cualquier momento y lugar.</p>
           </>
         );
       case 1:
         return (
           <>
-            <p className="secondary-title"><span>TV Interactiva</span> dónde quiera que estés en cualquier dispositivo.</p>
+            <h3 className="secondary-title"><span>TV Interactiva</span> dónde quiera que estés en cualquier dispositivo.</h3>
             <p className="mt-4 mt-lg-5 ">Con Xview accede a más de 30 000 horas de contenido, graba, pausa y retrocede tus programas favoritos. ¡Todo en un sólo lugar!</p>
           </>
         );
       case 2:
         return (
           <>
-            <p className="secondary-title"><span>TV Interactiva</span> dónde quiera que estés en cualquier dispositivo.</p>
+            <h3 className="secondary-title"><span>TV Interactiva</span> dónde quiera que estés en cualquier dispositivo.</h3>
             <p className="mt-4 mt-lg-5 ">Con Xview+ accede a más de 30 000 horas de contenido, graba, pausa y retrocede tus programas favoritos. ¡Todo en un sólo lugar!</p>
           </>
         );
       default:
         return (
           <>
-            <p className="secondary-title"><span>Televisión Digital</span> dónde quiera que estés en cualquier dispositivo.</p>
+            <h3 className="secondary-title"><span>Televisión Digital</span> dónde quiera que estés en cualquier dispositivo.</h3>
             <p className="mt-4 mt-lg-5 ">Accede a tus programas favoritos en cualquier momento y lugar.</p>
           </>
         );

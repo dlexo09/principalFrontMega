@@ -15,7 +15,7 @@ const XVBeneficios = () => {
           </Helmet>
       <div className="container general-tabs-container ps-3 pe-3 ps-md-0 pe-md-0">
         <div className="text-center">
-          <h3 className="small-title-services">TV Interactiva</h3>
+          <h1 className="small-title-services">TV Interactiva</h1>
           <h2 className="big-title-services">Conoce las funcionalidades</h2>
         </div>
 

@@ -13,6 +13,9 @@
 .ventajas-simetrico-container {
   gap: 20px;
 }
+.ventajas-simetrico-container h3{
+  font-size: 24px;
+}
 .ventajas-simetrico-card {
   background-color:#fff;
   border-radius: var(--br-card);

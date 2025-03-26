@@ -117,7 +117,8 @@ const PaquetesTarifariosDisney = () => {
 
   return (
     <div className="container paquetes-tarifarios text-center">
-
+      <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
+      <h3 className="big-title mb-5 title-especial">¡Te instalamos sin costo!<sup>*</sup></h3>
       <div className="d-flex justify-content-center mb-3 btn-container">
         <button
           type="button"
