@@ -4,7 +4,7 @@ import { serverUrl } from '../config'; // Ajusta la ruta según la ubicación de
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-xl navbar-custom navbar-container">
+    <nav className="navbar navbar-expand-xl navbar-custom navbar-container nav-menu">
       <div className="container">
         {/* Logo */}
         <div className="navbar-logo">
