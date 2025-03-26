@@ -1,4 +1,6 @@
+import { Helmet } from "react-helmet-async";
 import "./OFFullConnected.css";
+
 
 const Card = ({
   megas,
@@ -96,16 +98,20 @@ const OFFullConnected = () => {
 
   return (
     <>
+    <Helmet>
+    <title>Full connected | Megacable | Televisión, Telefonía e Internet</title>
+    <meta name="description" content="Full Connected Home te ofrece todos los servicios en un solo lugar: Internet de alta velocidad, Televisión por cable y Telefonía Ilimitada. Disfruta una conexión estable para home office, clases en línea y gaming." />
+    </Helmet>
       <div className="container-fluid p-0 fc-banner-principal">
         <img
           className="w-100 d-none d-md-block"
           src="/img/oferta/full-connected/full-connected-banner.png"
-          alt=""
+          alt="Full Connected Home"
         />
         <img
           className="w-100 d-md-none"
           src="/img/oferta/full-connected/banner-fch-movil.png"
-          alt=""
+          alt="Full Connected Home"
         />
 
         <div className="bg-container">
@@ -183,8 +189,8 @@ const OFFullConnected = () => {
           >
             <div className="cards-title mb-5">
             <img
-                src="../src/assets/images/oferta/full-connected/fch-logo.png"
-                alt="Full Connected Home Logo"
+                src="/img/oferta/full-connected/fch-logo.png"
+                alt="Full Connected Home"
               />
             </div>
              
@@ -197,7 +203,7 @@ const OFFullConnected = () => {
                   <img
                     src={`/img/oferta/full-connected/full-connected_sl-${slide}.png`}
                     className="d-block w-100"
-                    alt="..."
+                    alt="Full entretenimiento, Full cobertura, Full control, Full Velocidad"
                   />
                 </div>
               ))}

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "./INVelocidad.css";
 
 const INVelocidad = () => {
@@ -14,6 +15,10 @@ const INVelocidad = () => {
 
   return (
     <>
+          <Helmet>
+          <title>Mide tu Velocidad de Internet | Megacable | Test de Velocidad</title>
+          <meta name="description" content="Mide la velocidad de tu internet Megacable al instante. Conoce tu velocidad de descarga y subida. ¡Realiza el test ahora y conoce el estado real de tu red!" />
+          </Helmet>
       <div className="general-tabs-container container pe-2 ps-2 pe-md-none ps-md-none">
         <div className="text-center">
           <h2 className="small-title-services">MIDE TU VELOCIDAD</h2>
@@ -46,7 +51,7 @@ const INVelocidad = () => {
               <div className="icon-rec-content d-flex justify-content-center">
                 <img
                   src="/icons/servicios/internet/ethernet.png"
-                  alt=""
+                  alt="Ethernet"
                 />
               </div>
               <h3 className="text-center">ETHERNET</h3>
@@ -79,7 +84,7 @@ const INVelocidad = () => {
               <div className="icon-rec-content d-flex justify-content-center">
                 <img
                   src="/icons/servicios/internet/wifi.png"
-                  alt=""
+                  alt="Wifi"
                 />
               </div>
               <h3 className="text-center">WIFI</h3>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./XVPConoce.css";
@@ -13,6 +14,15 @@ import { EffectCoverflow, Navigation } from "swiper/modules";
 const XVConoce = () => {
   return (
     <>
+      <Helmet>
+        <title>
+          Conoce Xview | TV Interactiva de Megacable
+        </title>
+        <meta
+          name="description"
+          content="Descubre Xview de Megacable: una plataforma interactiva con todos tus contenidos en un solo lugar. Disfruta de la mejor experiencia de TV en tu televisor o dispositivo móvil."
+        ></meta>
+      </Helmet>
       <div className="container-fluid xview-container">
         <div className="container">
           <div className="row align-items-center">
@@ -25,7 +35,7 @@ const XVConoce = () => {
                 <img
                   className="w-100"
                   src="../src/assets/images/servicios/tv-interactiva/caja-xview.png"
-                  alt=""
+                  alt="Xview"
                 />
               </div>
               <p className="mt-4">
@@ -40,7 +50,7 @@ const XVConoce = () => {
               <img
                 className="w-100"
                 src="../src/assets/images/servicios/tv-interactiva/caja-xview.png"
-                alt=""
+                alt="Xview"
               />
             </div>
           </div>

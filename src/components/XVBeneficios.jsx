@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./XVPBeneficios.css";
@@ -8,6 +9,10 @@ import PaquetesTarifarios from "./PaquetesTarifarios";
 const XVBeneficios = () => {
   return (
     <>
+    <Helmet>
+          <title>Beneficios de Xview | Megacable | VOD, Pausa, Grabación y Más</title>
+          <meta name="description" content="Descubre los beneficios de Xview: Accede a más de 20,000 horas de contenido, graba programas y disfruta de la experiencia. ¡Lleva el entretenimiento a otro nivel con Megacable!" />
+          </Helmet>
       <div className="container general-tabs-container ps-3 pe-3 ps-md-0 pe-md-0">
         <div className="text-center">
           <h3 className="small-title-services">TV Interactiva</h3>

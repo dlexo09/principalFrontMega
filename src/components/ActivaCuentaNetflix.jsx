@@ -18,7 +18,6 @@ const ActivaCuentaNetflix = () => {
                     <p className='active-strm-p d-xl-none'>Activa tu cuenta ahora y disfruta de todo el contenido</p>
                     <a href='activa-netflix' className='btn-active-streaming btn-active-netflix mt-3'>Activa tu cuenta <span className='open-page-wh'></span></a>
                 </div>
-
             </div>
         </div>
         </>

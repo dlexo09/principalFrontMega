@@ -128,8 +128,9 @@ const PaquetesTarifarios = () => {
                   const velocidad = paquete.velocidadPromo === 0 ? paquete.velocidadInternet : paquete.velocidadPromo;
                   const totalPromoValue = promos.reduce((acc, promo) => acc + promo.costoMensualPromo, promoValue);
                   return (
-                    <div key={i} className="paquete-item card m-2">
+                    <div key={i} className={`paquete-item paquete-general-item card m-2 ${selectedPack === 'doble' ? 'paquete-item-doble' : 'paquete-item-triple'}`}>
                       <div className="card-body">
+                      <div className="paquete-header">
                         <h2 className="card-title">{paquete.idTipoRed == 3 ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
                         <p className="card-text velocidadPromo">
                           {velocidad} MEGAS
@@ -146,16 +147,17 @@ const PaquetesTarifarios = () => {
                           <p className="card-text tiempoVelocidadPromo"></p>
                         )}
 
-                        {velocidad >= 200 && (
-                          <p>
-                            <img
-                              src={`/img/extensor_wifi_ultra.png`}
-                              alt="IncluyeExtensor Wifi Ultra"
-                              style={{ height: '40px', marginTop: '20px' }}
-                            />
-                          </p>
-                        )}
-
+                          {velocidad >= 200 && (
+                            <p>
+                              <img
+                                src={`/img/extensor_wifi_ultra.png`}
+                                alt="Extensor Wifi Ultra Incluido"
+                                style={{ height: '40px', marginTop: '20px' }}
+                              />
+                            </p>
+                          )}
+                        </div>
+                        <div className="paquete-body">
                         {paquete.archivo && (
                           <div className="xview-content">
                             {paquete.idTipoPaquete === 2 ? (
@@ -178,7 +180,7 @@ const PaquetesTarifarios = () => {
                                   <img
                                     src={`/img/${paquete.logo}`}
                                     alt="TV INTERACTIVA"
-                                    style={{ height: '30px' }}
+                                    style={{ height: '60px' }}
                                   />
                                 </p>
                                 <p className="card-text">Más de 130 canales </p>
@@ -234,6 +236,7 @@ const PaquetesTarifarios = () => {
                         />
                       </div>
                     </div>
+                    </div>
                   );
                 })}
               </div>
@@ -246,7 +249,7 @@ const PaquetesTarifarios = () => {
             <p>
               <img
                 src="/img/home/full_connected_home.png"
-                alt="Full Connected"
+                alt="Full Connected Home"
                 className="img-fluid fullconnect-img"
               />
             </p>

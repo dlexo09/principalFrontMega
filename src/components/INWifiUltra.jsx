@@ -1,9 +1,14 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "./INWifiUltra.css";
 
 const INWifiUltra = () => {
   return (
     <>
+      <Helmet>
+      <title>WiFi Ultra Megacable | Extiende Tu Señal WiFi y Disfruta de Internet en Todo Tu Hogar</title>
+      <meta name="description" content="Amplía tu señal WiFi con WiFi Ultra de Megacable. Conéctate sin interrupciones en cada rincón de tu hogar y disfruta de Internet de alta velocidad en todos tus dispositivos." />
+      </Helmet>
       <div className="container ps-3 ps-md-0 pe-3 pe-md-0 general-tabs-container">
         <div className="text-center">
           <h2 className="small-title-services">CONOCE NUESTRO EXTENSOR WIFI</h2>
@@ -21,7 +26,7 @@ const INWifiUltra = () => {
           <img
           className="mb-4 d-md-none"
                 src="/img/servicios/internet/wifi-certificado.png"
-                alt=""
+                alt="Certificado wifi 6"
               />
             <h3>
               Internet rápido
@@ -31,7 +36,7 @@ const INWifiUltra = () => {
             <img
             className="mb-4 mt-5 d-md-none"
                 src="/img/servicios/internet/wifi-inteligente.png"
-                alt=""
+                alt="Wifi inteligente"
               />
             <p className="mt-md-5 wu-subtitle">
               <span>
@@ -51,13 +56,13 @@ const INWifiUltra = () => {
             <div className="wu-caracteristicas wifi-certificado">
               <img
                 src="/img/servicios/internet/wifi-certificado.png"
-                alt=""
+                alt="Wifi certificado"
               />
             </div>
             <div className="wu-caracteristicas  wifi-inteligente">
               <img
                 src="/img/servicios/internet/wifi-inteligente.png"
-                alt=""
+                alt="Wifi inteligente"
               />
             </div>
 
@@ -93,7 +98,7 @@ const INWifiUltra = () => {
             <img
               className="wu-nokia"
               src="/img/servicios/internet/nokia-beacon.png"
-              alt=""
+              alt="Nokia Beacon1.1"
             />
             <h3 className="wu-modem-title">Nokia Beacon1.1</h3>
           </div>
@@ -101,15 +106,15 @@ const INWifiUltra = () => {
             <img
               className="wu-zte"
               src="/img/servicios/internet/ZTE-H199A.png"
-              alt=""
+              alt="ZTE H199A"
             />
-            <h3 className="wu-modem-title">Nokia Beacon1.1</h3>
+            <h3 className="wu-modem-title">ZTE H199A</h3>
           </div>
           <div className="wu-modem-content d-flex align-items-center justify-content-end">
             <img
               className="wu-huawei"
               src="/img/servicios/internet/HUAWEI-WA8021V5.png"
-              alt=""
+              alt="Hiawei WA8021V5"
             />
             <h3 className="wu-modem-title">HUAWEI WA8021V5</h3>
           </div>

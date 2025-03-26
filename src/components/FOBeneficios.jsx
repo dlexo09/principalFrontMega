@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "./FOBeneficios.css";
 
 const FOBeneficios = () => {
@@ -15,24 +16,31 @@ const FOBeneficios = () => {
   };
 
   return (
-    <div className="general-tabs-container">
-      <div className="container-fluid">
-        <div className="container">
-          <div className="text-center">
-            <h2 className="small-title-services">fibra óptica</h2>
-            <h3 className="big-title-services">
-              BENEFICIOS DE LA FIBRA ÓPTICA CON MEGA
-            </h3>
-          </div>
-        </div>
+    <>
+      <Helmet>
+      <title>Beneficios de la Fibra Óptica Mega | Internet Simétrico, Rápido y Sin Límites</title>
+      <meta name="description" content="Descubre los beneficios de la fibra óptica con Megacable: internet simétrico, sin límites de velocidad, instalación sin costos adicionales y atención personalizada. ¡Navega con estabilidad y máxima velocidad sin interrupciones!" />
 
-        <div className="comparative-table-container d-flex justify-content-center align-items-center">
-          <div className="comparative-table-img">
-            <img
-              src="/img/fibra-optica/FOYS-tabla-comp-img.png"
-              alt="eje"
-            />
+      </Helmet>
+
+      <div className="general-tabs-container">
+        <div className="container-fluid">
+          <div className="container">
+            <div className="text-center">
+              <h2 className="small-title-services">fibra óptica</h2>
+              <h3 className="big-title-services">
+                BENEFICIOS DE LA FIBRA ÓPTICA CON MEGA
+              </h3>
+            </div>
           </div>
+
+          <div className="comparative-table-container d-flex justify-content-center align-items-center">
+            <div className="comparative-table-img">
+              <img
+                src="/img/fibra-optica/FOYS-tabla-comp-img.png"
+                alt="Beneficios Fibra Óptica Megacable"
+              />
+            </div>
 
           <div className="comparative-table table-gp">
             {/* tabla CON MEGA */}
@@ -298,6 +306,7 @@ const FOBeneficios = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

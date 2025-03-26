@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "./INZonaWifi.css";
 
 const INZonaWifi = () => {
@@ -12,6 +13,10 @@ const INZonaWifi = () => {
 
   return (
     <>
+      <Helmet>
+      <title>WiFi Gratis | Zona WiFi Megacable | Acceso Rápido en Lugares Públicos</title>
+      <meta name="description" content="Navega gratis con Megacable WiFi en miles de lugares públicos. Accede a Internet de alta velocidad sin costo, exclusivo para suscriptores. ¡Conéctate desde tus dispositivos y disfruta de WiFi gratuito cerca de ti!" />
+      </Helmet>
       <div className="container general-tabs-container container pe-2 ps-2 pe-md-none ps-md-none">
         <div className="text-center">
           <h2 className="small-title-services">MEGACABLE WIFI</h2>
@@ -21,7 +26,7 @@ const INZonaWifi = () => {
           <p className="p-zw mt-5 p-2">
             Si eres suscriptor Megacable y cuentas con el servicio de Internet
             podrás navegar gratis con Megacable WiFi en miles de sitios públicos
-            a lo largo de nuestro país des
+            a lo largo de nuestro país desde cualquier dispositivo.
           </p>
         </div>
 
@@ -49,14 +54,14 @@ const INZonaWifi = () => {
               <div className="icon-rec-content d-flex justify-content-center">
                 <img
                   src="/icons/servicios/internet/registrate.png"
-                  alt=""
+                  alt="Registrate"
                 />
               </div>
               <h3 className="text-center">REGÍSTRATE</h3>
               <div className="zw-pasos-container mt-5 mb-4">
                 <div className="zw-paso-content">
                 <span>1</span>
-                  <p>Si eres cliente de Internet Megacable da click aquí.</p>
+                  <p>Si eres cliente de Internet Megacable da click aquí.</p>
                 </div>
                 <div className="zw-paso-content">
                 <span>2</span>
@@ -68,7 +73,7 @@ const INZonaWifi = () => {
                 <div className="zw-paso-content">
                 <span>3</span>
                   <p>
-                    Recibirás un correo a la dirección que ingresaste con una
+                    Recibirás un correo a la dirección que ingresaste con una
                     liga.
                   </p>
                 </div>
@@ -82,8 +87,8 @@ const INZonaWifi = () => {
                 <div className="zw-paso-content">
                 <span>5</span>
                   <p>
-                    Se abrirá la página de servicios en línea de
-                    tu contrato, has finalizado tu registro.
+                    Se abrirá la página de servicios en línea de
+                    tu contrato, has finalizado tu registro.
                   </p>
                 </div>
               </div>
@@ -93,14 +98,14 @@ const INZonaWifi = () => {
               <div className="icon-rec-content d-flex justify-content-center">
                 <img
                   src="/icons/servicios/internet/conectate.png"
-                  alt=""
+                  alt="Conéctate"
                 />
               </div>
               <h3 className="text-center">CONÉCTATE</h3>
               <div className="zw-pasos-container mt-5 mb-4">
                 <div className="zw-paso-content">
                 <span>1</span>
-                  <p>Si eres cliente de Internet Megacable da click aquí.</p>
+                  <p>Si eres cliente de Internet Megacable da click aquí.</p>
                 </div>
                 <div className="zw-paso-content">
                 <span>2</span>
@@ -112,7 +117,7 @@ const INZonaWifi = () => {
                 <div className="zw-paso-content">
                 <span>3</span>
                   <p>
-                    Recibirás un correo a la dirección que ingresaste con una
+                    Recibirás un correo a la dirección que ingresaste con una
                     liga.
                   </p>
                 </div>
@@ -129,7 +134,7 @@ const INZonaWifi = () => {
           <div className="col-xl-3 speed-pasos-container">
             <div className="speed-pasos-crd">
               <p>
-              La Red Megacable WiFi la podrás encontrar en los principales establecimientos de tu ciudad como Centros Comerciales, Restaurantes, Estadios, Parques, Cafeterías, Hospitales, Sitios Públicos, CIS de Megacable y en muchas zonas más.
+              La Red Megacable WiFi la podrás encontrar en los principales establecimientos de tu ciudad como Centros Comerciales, Restaurantes, Estadios, Parques, Cafeterías, Hospitales, Sitios Públicos, CIS de Megacable y en muchas zonas más.
               </p>
             </div>
           </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import "./XVPConoce.css";
 import './BannerStreamingHome.css';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -10,6 +11,10 @@ import 'swiper/css/navigation';
 const XVPConoce = () => {
   return (
     <>
+      <Helmet>
+      <title>Conoce Xview+ | TV Interactiva de Megacable | Todos tus Contenidos en 4K</title>
+      <meta name="description" content="Descubre Xview+ de Megacable: una plataforma interactiva con todos tus contenidos en un solo lugar y en calidad 4K. Disfruta de la mejor experiencia de TV en tu televisor o dispositivo móvil."></meta>
+      </Helmet>
       <div className="container-fluid xview-container">
         <div className="container">
           <div className="row">
@@ -19,7 +24,7 @@ const XVPConoce = () => {
                 TODOS TUS CONTENIDOS EN UN MISMO LUGAR Y EN 4K
               </h2>
               <div className="d-block d-xl-none">
-              <img className="w-100" src="/img/servicios/tv-interactiva/caja-xviewplus.png" alt="" />
+              <img className="w-100" src="/img/servicios/tv-interactiva/caja-xviewplus.png" alt="Xview+" />
             </div>
               <p className="mt-4">
                 Xview Plus es la nueva plataforma de video de Megacable con una
@@ -34,7 +39,7 @@ const XVPConoce = () => {
             </div>
 
             <div className="col-md-7 d-none d-xl-block">
-              <img className="w-100" src="/img/servicios/tv-interactiva/caja-xviewplus.png" alt="" />
+              <img className="w-100" src="/img/servicios/tv-interactiva/caja-xviewplus.png" alt="Xview+" />
             </div>
 
           </div>

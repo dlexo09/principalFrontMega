@@ -7,6 +7,8 @@ import INZonaWifi from "../components/INZonaWifi";
 import INWifiUltra from "../components/INWifiUltra";
 import INNorton from "../components/INNorton";
 
+
+
 const Internet = () => {
   const tabs = [
     { id: "beneficios", label: "beneficios" },

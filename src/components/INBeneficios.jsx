@@ -1,13 +1,18 @@
 import React from "react";
+import { Helmet } from "react-helmet-async";
 import "./INBeneficios.css";
 
 const INBeneficios = () => {
   return (
-    <div className="container general-tabs-container pe-2 ps-2 pe-md-none ps-md-none">
-      <div className="text-center mb-5">
-            <h2 className="small-title-services">INTERNET</h2>
-            <h3 className="big-title-services">Conoce los beneficios</h3>
-            
+    <>
+      <Helmet>
+        <title>Internet Megacable | Rápido, Estable y con la Mejor Cobertura</title>
+        <meta name="description" content="Conéctate con el Internet más rápido y estable de Megacable. Fibra óptica, baja latencia y máxima velocidad para navegar, jugar y trabajar sin límites." />
+      </Helmet>
+      <div className="container general-tabs-container pe-2 ps-2 pe-md-none ps-md-none">
+        <div className="text-center mb-5">
+          <h2 className="small-title-services">INTERNET</h2>
+          <h3 className="big-title-services">Conoce los beneficios</h3>
         </div>
 
       <div className="container beneficios-int-container">
@@ -38,10 +43,14 @@ const INBeneficios = () => {
         <div className="beneficio-card-content be-gr-espcial">
             <img src="/icons/servicios/internet/acceso-wifi.png" alt="Opciones de pago flexibles" />
             <h3>Acceso a Megacable Wi-Fi</h3>
-            <p>Usuarios de internet pueden disfrutar de acceso a puntos de Wi-Fi públicos de Megacable en varias ubicaciones.</p>
+            <p>
+              Usuarios de internet pueden disfrutar de acceso a puntos de Wi-Fi
+              públicos de Megacable en varias ubicaciones.
+            </p>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

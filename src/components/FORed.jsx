@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet-async";
 import "./FORed.css";
 
 const FORed = () => {
@@ -14,76 +15,86 @@ const FORed = () => {
     setPhone(value);
   };
   return (
-    <div className="general-tabs-container">
-      <div className="fibra-presentation">
-        <div className="text-center ps-2 pe-2 ps-md-0 pe-md-0">
-          <h2 className="small-title-services">
-            Fibra óptica directo a tu hogar
-          </h2>
-          <h3 className="big-title-services title-descr">
-            Ahora tus servicios están respaldados por una nueva red de fibra
-            óptica que llega hasta tu hogar.
-          </h3>
-        </div>
-        <div className="fibra-presentation-content ps-2 pe-2 ps-md-0 pe-md-0">
-          <div className="container fored-cards-presentation">
-            <div className="fored-card-presentation card-b">
-              <div className="fored-icon-card">
-                <img
-                  src="/icons/fibra-optica/mayores-velocidades.png"
-                  alt="Velocidad"
-                />
+    <>
+      <Helmet>
+        <title>
+          Fibra Óptica | Megacable | Conexión Rápida y Estable para Tu Hogar
+        </title>
+        <meta
+          name="description"
+          content="Disfruta de Internet con Fibra Óptica de Megacable: velocidades simétricas, mayor estabilidad y hasta 1 GB de velocidad. Conéctate con la mejor tecnología y equipo de última generación para tu hogar."
+        />
+      </Helmet>
+      <div className="general-tabs-container">
+        <div className="fibra-presentation">
+          <div className="text-center ps-2 pe-2 ps-md-0 pe-md-0">
+            <h2 className="small-title-services">
+              Fibra óptica directo a tu hogar
+            </h2>
+            <h3 className="big-title-services title-descr">
+              Ahora tus servicios están respaldados por una nueva red de fibra
+              óptica que llega hasta tu hogar.
+            </h3>
+          </div>
+          <div className="fibra-presentation-content ps-2 pe-2 ps-md-0 pe-md-0">
+            <div className="container fored-cards-presentation">
+              <div className="fored-card-presentation card-b">
+                <div className="fored-icon-card">
+                  <img
+                    src="/icons/fibra-optica/mayores-velocidades.png"
+                    alt="Mayores velocidades"
+                  />
+                </div>
+                <div className="fored-texts-p">
+                  <p>
+                    ¡Mayores
+                    <br />
+                    Velocidades!
+                  </p>
+                  <p className="txt-crd1">200, 350, 500MB</p>
+                  <p className="mt-2">Y HASTA</p>
+                  <p className="txt-crd3">1 GB</p>
+                </div>
               </div>
-              <div className="fored-texts-p">
-                <p>
-                  ¡Mayores
-                  <br />
-                  Velocidades!
-                </p>
-                <p className="txt-crd1">200, 350, 500MB</p>
-                <p className="mt-2">Y HASTA</p>
-                <p className="txt-crd3">1 GB</p>
-              </div>
-            </div>
 
-            <div className="fored-card-presentation">
-              <div className="fored-icon-card">
-                <img
-                  src="/icons/fibra-optica/equipo-ultima-generacion.png"
-                  alt="Equipo"
-                />
+              <div className="fored-card-presentation">
+                <div className="fored-icon-card">
+                  <img
+                    src="/icons/fibra-optica/equipo-ultima-generacion.png"
+                    alt="Equipo de última generación"
+                  />
+                </div>
+                <div className="fored-texts-p">
+                  <p>
+                    Un equipo de última generación con mejor cobertura de señal
+                    WiFi
+                  </p>
+                </div>
               </div>
-              <div className="fored-texts-p">
-                <p>
-                  Un equipo de última generación con mejor cobertura de señal
-                  WiFi
-                </p>
-              </div>
-            </div>
 
-            <div className="fored-card-presentation">
-              <div className="fored-icon-card">
-                <img
-                  src="/icons/fibra-optica/mayor-velocidad-subida.png"
-                  alt="Velocidad de subida"
-                />
+              <div className="fored-card-presentation">
+                <div className="fored-icon-card">
+                  <img
+                    src="/icons/fibra-optica/mayor-velocidad-subida.png"
+                    alt="Mayor velocidad de subida"
+                  />
+                </div>
+                <div className="fored-texts-p">
+                  <p>Mayor velocidad de subida (upload) automáticamente.</p>
+                </div>
               </div>
-              <div className="fored-texts-p">
-                <p>Mayor velocidad de subida (upload) automáticamente.</p>
-              </div>
-            </div>
 
-            <div className="fored-card-presentation">
-              <div className="fored-icon-card">
-                <img
-                  src="/icons/fibra-optica/velocidades-simetricas.png"
-                  alt="Velocidad simétrica"
-                />
+              <div className="fored-card-presentation">
+                <div className="fored-icon-card">
+                  <img
+                    src="/icons/fibra-optica/velocidades-simetricas.png"
+                    alt="Velocidades Simétricas"
+                  />
+                </div>
+                <div className="fored-texts-p">
+                  <p>Velocidades simétricas de subida y bajada</p>
+                </div>
               </div>
-              <div className="fored-texts-p">
-                <p>Velocidades simétricas de subida y bajada</p>
-              </div>
-            </div>
 
             <div className="fored-card-presentation">
               <div className="fored-icon-card">
@@ -99,52 +110,56 @@ const FORed = () => {
           </div>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="container fored-formulario-p ps-3 pe-3 ps-md-0 pe-md-0"
-          id="miFormulario"
-        >
-          <div className="form__label-p text-center">
-            <label htmlFor="phone">SOLICITA TU CAMBIO</label>
-          </div>
-          <div className="form__capt-p ">
-            <div className="form__input">
-              <input
-                type="text"
-                placeholder="Tu teléfono"
-                className="inp"
-                value={phone}
-                onChange={handlePhoneChange}
-                maxLength="14"
-                id="phone"
-                name="phone"
-                required
-              />
+          <form
+            onSubmit={handleSubmit}
+            className="container fored-formulario-p ps-3 pe-3 ps-md-0 pe-md-0"
+            id="miFormulario"
+          >
+            <div className="form__label-p text-center">
+              <label htmlFor="phone">SOLICITA TU CAMBIO</label>
             </div>
-            <div className="form__btn-p">
-              <button type="submit" id="tel-megamovil-f" className="enviarForm">
-                <b>LLÁMAME</b>
-              </button>
+            <div className="form__capt-p ">
+              <div className="form__input">
+                <input
+                  type="text"
+                  placeholder="Tu teléfono"
+                  className="inp"
+                  value={phone}
+                  onChange={handlePhoneChange}
+                  maxLength="14"
+                  id="phone"
+                  name="phone"
+                  required
+                />
+              </div>
+              <div className="form__btn-p">
+                <button
+                  type="submit"
+                  id="tel-megamovil-f"
+                  className="enviarForm"
+                >
+                  <b>LLÁMAME</b>
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
-      </div>
+          </form>
+        </div>
 
-      {/*----------------------------------------------------------------*/}
+        {/*----------------------------------------------------------------*/}
 
-      <div className="container int-simetrico-container ">
-        <div className="row align-items-lg-end align-items-xl-center">
-          <div className="col-lg-6 col-xl-5 int-simetrico-content">
-            <div className="int-simetrico-txt text-center text-lg-start">
-              <h3 className="small-title">Internet simétrico</h3>
-              <p className="big-title text-uppercase">
-                ¡Conéctate sin límites!
-              </p>
-              <p className="descr-sub">
-                Conoce más sobre nuestros planes de fibra óptica y eleva tu
-                conexión
-              </p>
-            </div>
+        <div className="container int-simetrico-container ">
+          <div className="row align-items-lg-end align-items-xl-center">
+            <div className="col-lg-6 col-xl-5 int-simetrico-content">
+              <div className="int-simetrico-txt text-center text-lg-start">
+                <h3 className="small-title">Internet simétrico</h3>
+                <p className="big-title text-uppercase">
+                  ¡Conéctate sin límites!
+                </p>
+                <p className="descr-sub">
+                  Conoce más sobre nuestros planes de fibra óptica y eleva tu
+                  conexión
+                </p>
+              </div>
 
             <div className="mt-5 d-block d-lg-none col-lg-6 col-xl-7 int-simetrico-img mb-md-5 mb-xl-0">
             <img
@@ -179,15 +194,16 @@ const FORed = () => {
             </div>
           </div>
 
-          <div className="d-none d-lg-block col-lg-6 col-xl-7 int-simetrico-img mb-md-5 mb-xl-0">
-            <img
-              src="/img/fibra-optica/conectate-sin-limites.png"
-              alt="Internet simétrico"
-            />
+            <div className="d-none d-lg-block col-lg-6 col-xl-7 int-simetrico-img mb-md-5 mb-xl-0">
+              <img
+                src="/img/fibra-optica/conectate-sin-limites.png"
+                alt="Internet simétrico Modem"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
