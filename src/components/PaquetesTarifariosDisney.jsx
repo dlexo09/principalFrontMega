@@ -9,11 +9,9 @@ const PaquetesTarifariosDisney = () => {
   const [paquetes, setPaquetes] = useState([]);
   const [selectedPack, setSelectedPack] = useState('triple');
   const [chunkSize, setChunkSize] = useState(4); // Nuevo estado para chunkSize
-  const [promos, setPromos] = useState([]);
   const [extraPromos, setExtraPromos] = useState([]);
   const [selectedPromo, setSelectedPromo] = useState({});
   const promoValue = 0; // Definir la variable para el valor adicional
-  const idSucursal = currentLocation?.idSucursal; // Obtener el idSucursal de currentLocation
   const navigate = useNavigate(); // Hook para redirigir
 
   //console.log("ID sucursal", idSucursal); // Imprimir el valor de idSucursal
@@ -77,12 +75,10 @@ const PaquetesTarifariosDisney = () => {
   }, [paquetes]);
 
   const updateChunkSize = () => {
-    if (window.innerWidth < 768) {
-      setChunkSize(1); // 1 tarjeta en pantallas pequeñas
-    } else if (window.innerWidth < 1024) {
-      setChunkSize(2); // 2 tarjetas en pantallas medianas
+    if (window.innerWidth < 1024) {
+      setChunkSize(1); // 2 tarjetas en pantallas medianas
     } else if (window.innerWidth < 1400) {
-      setChunkSize(3); // 3 tarjetas en pantallas medianas grandes
+      setChunkSize(2); // 3 tarjetas en pantallas medianas grandes
     } else {
       setChunkSize(3); // 4 tarjetas en pantallas grandes
     }
@@ -116,7 +112,7 @@ const PaquetesTarifariosDisney = () => {
   };
 
   return (
-    <div className="container paquetes-tarifarios text-center">
+    <div className="container pad-container paquetes-tarifarios text-center">
       <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
       <h3 className="big-title mb-5 title-especial">¡Te instalamos sin costo!<sup>*</sup></h3>
       <div className="d-flex justify-content-center mb-3 btn-container">
@@ -237,24 +233,24 @@ const PaquetesTarifariosDisney = () => {
 
                         {/* Icons cards */}
                         <img
-                          className="icon-card-packs internet-icon"
+                          className="icon-card-packs internet-icon d-none d-md-block"
                           src="/icons/disney/internet-icon.png"
                           alt="Icono Internet"
                         />
                         <img
-                          className="icon-card-packs str-icon"
+                          className="icon-card-packs str-icon d-none d-md-block"
                           src="/icons/disney/strm-icon.png"
                           alt="Icono Disney"
                         />
                         {selectedPack !== 'doble' && (
                           <img
-                            className="icon-card-packs tv-icon"
+                            className="icon-card-packs tv-icon d-none d-md-block"
                             src="/icons/disney/tv-icon.png"
                             alt="Icono TV"
                           />
                         )}
                         <img
-                          className={`icon-card-packs telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
+                          className={`icon-card-packs d-none d-md-block telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
                           src="/icons/disney/telefonia-icon.png"
                           alt="Icono Telefonía"
                         />
@@ -266,35 +262,8 @@ const PaquetesTarifariosDisney = () => {
             </div>
           ))}
         </div>
-
-        <div className="container packs-terminos">
-                  {selectedPack !== "doble" && (
-                    <p className="promo-xview ">
-                      Incluyen{" "}
-                      <span className="txt-disney-color">
-                        más de 30,000 hrs de contenido
-                      </span>{" "}
-                      en Xview+
-                    </p>
-                  )}
-
-                  <p>
-                    Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
-                    <a className="txt-disney-color" href="">
-                      Tarifas registradas ante el IFT.{" "}
-                    </a>
-                    Aplican restricciones. Consulta términos y condiciones{" "}
-                    <a
-                      className="txt-disney-color"
-                      target="_blank"
-                      href="https://www.megacable.com.mx/terminos-y-condiciones"
-                    >
-                      aquí.
-                    </a>
-                  </p>
-                </div>
         <button
-          className="carousel-control-prev"
+          className="carousel-control-prev packs-prev"
           type="button"
           data-bs-target="#carouselPaquetes"
           data-bs-slide="prev"
@@ -303,7 +272,7 @@ const PaquetesTarifariosDisney = () => {
           <span className="visually-hidden">Previous</span>
         </button>
         <button
-          className="carousel-control-next"
+          className="carousel-control-next packs-next"
           type="button"
           data-bs-target="#carouselPaquetes"
           data-bs-slide="next"
@@ -312,6 +281,34 @@ const PaquetesTarifariosDisney = () => {
           <span className="visually-hidden">Next</span>
         </button>
       </div>
+
+      <div className="container packs-terminos">
+        {selectedPack !== "doble" && (
+          <p className="promo-xview ">
+            Incluyen{" "}
+            <span className="txt-disney-color">
+              más de 30,000 hrs de contenido
+            </span>{" "}
+            en Xview+
+          </p>
+        )}
+
+        <p>
+          Nota: Promoción válida domiciliando el pago a tarjeta.{" "}
+          <a className="txt-disney-color" href="">
+            Tarifas registradas ante el IFT.{" "}
+          </a>
+          Aplican restricciones. Consulta términos y condiciones{" "}
+          <a
+            className="txt-disney-color"
+            target="_blank"
+            href="https://www.megacable.com.mx/terminos-y-condiciones"
+          >
+            aquí.
+          </a>
+        </p>
+      </div>
+
     </div>
   );
 };
