@@ -75,9 +75,8 @@ const Canales = () => {
           <div className="col-md-3 pe-xl-3 filtro-canales-content">
             <div className="btn-group-vertical w-100 filtro-container">
               <button
-                className={` btn-filtro-canales mb-2 ${
-                  !categoriaSeleccionada && "active"
-                }`}
+                className={` btn-filtro-canales mb-2 ${!categoriaSeleccionada && "active"
+                  }`}
                 onClick={() => setCategoriaSeleccionada("")}
               >
                 Todas
@@ -85,9 +84,8 @@ const Canales = () => {
               {categorias.map((categoria) => (
                 <button
                   key={categoria}
-                  className={` btn-filtro-canales mb-2 ${
-                    categoriaSeleccionada === categoria && "active"
-                  }`}
+                  className={` btn-filtro-canales mb-2 ${categoriaSeleccionada === categoria && "active"
+                    }`}
                   onClick={() => setCategoriaSeleccionada(categoria)}
                 >
                   {categoria}
@@ -118,7 +116,7 @@ const Canales = () => {
                     src={`../uploads/canales/${canal.imagenCanal}`}
                     alt={`${canal.canal}`}
                     className="img-fluid canal-logo"
-                    style={{ maxHeight: "100px" }}
+                    style={{ maxHeight: "75px", objectFit: "contain" }}
                   />
                 </div>
                 <div className="col-3 p-2 d-flex justify-content-center align-items-center canales-selector-title">
