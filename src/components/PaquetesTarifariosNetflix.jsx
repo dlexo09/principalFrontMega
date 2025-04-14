@@ -152,10 +152,6 @@ const PaquetesTarifariosNetflix = () => {
                           <p className="card-text tiempoVelocidadPromo">
                             x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
                           </p>
-                        ) : paquete.tarifaPromocionalTemp > 0 ? (
-                          <p className="card-text tiempoVelocidadPromo">
-                            x {paquete.tarifaPromocionalTemp} meses<sup>*</sup>
-                          </p>
                         ) : (
                           <p className="card-text tiempoVelocidadPromo"></p>
                         )}
@@ -221,7 +217,7 @@ const PaquetesTarifariosNetflix = () => {
                           </div>
                           <p className="card-text price-card">
                             <span className="price-mxn">$</span>
-                            {paquete.tarifaPromocional + promoValue + selectedPromoCost}
+                            {Math.round(Number(paquete.tarifaPromocional) + Number(promoValue) + Number(selectedPromoCost))}
                             <sup>*</sup>
                             <span className="time-crd">/mes</span>
                           </p>
