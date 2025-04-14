@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./TopBar.css";
-import { serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
-import { LocationContext } from "../LocationContext"; // Ajusta la ruta según la ubicación de tu archivo LocationContext.js
+import { serverAPILambda } from "../config";
+import { LocationContext } from "../LocationContext";
 
 const TopBar = () => {
   const { currentLocation, setCurrentLocation } = useContext(LocationContext);
@@ -11,18 +11,24 @@ const TopBar = () => {
     const fetchLocations = async () => {
       if (locations.length === 0) {
         try {
-          const response = await fetch(`${serverAPILambda}api/sucursales`); //cambio para pruebas
+          const response = await fetch(`${serverAPILambda}api/sucursales`);
           const data = await response.json();
           setLocations(data);
-          if (data.length > 0 && !currentLocation) {
-            // Obtener la ubicación del usuario
+
+          // Verificar si hay una ubicación guardada en localStorage
+          const savedLocation = localStorage.getItem("selectedLocation");
+          if (savedLocation) {
+            const parsedLocation = JSON.parse(savedLocation);
+            setCurrentLocation(parsedLocation);
+          } else if (data.length > 0 && !currentLocation) {
+            // Si no hay ubicación guardada, usar geolocalización
             if (navigator.geolocation) {
               navigator.geolocation.getCurrentPosition(
                 (position) => {
                   const userLat = position.coords.latitude;
                   const userLng = position.coords.longitude;
 
-                  // Calcular la distancia entre la ubicación del usuario y cada sucursal
+                  // Calcular la ubicación más cercana
                   const closestLocation = data.reduce((prev, curr) => {
                     const prevDistance = getDistance(
                       userLat,
@@ -42,16 +48,15 @@ const TopBar = () => {
                   setCurrentLocation(closestLocation);
                 },
                 (error) => {
-                  //console.error("Error getting user location:", error);
-                  setCurrentLocation(data[0]);
+                  setCurrentLocation(data[0]); // Usar la primera sucursal como predeterminada
                 }
               );
             } else {
-              setCurrentLocation(data[0]);
+              setCurrentLocation(data[0]); // Usar la primera sucursal si no hay geolocalización
             }
           }
         } catch (error) {
-          //console.error("Error fetching locations:", error);
+          console.error("Error fetching locations:", error);
         }
       }
     };
@@ -65,8 +70,11 @@ const TopBar = () => {
     );
     setCurrentLocation(selectedLocation);
 
+    // Guardar la ubicación seleccionada en localStorage
+    localStorage.setItem("selectedLocation", JSON.stringify(selectedLocation));
+
     // Simular clic en el botón de cierre del modal
-    document.querySelector('#locationModal .btn-close').click();
+    document.querySelector("#locationModal .btn-close").click();
   };
 
   // Función para calcular la distancia entre dos puntos usando la fórmula de Haversine
@@ -78,9 +86,9 @@ const TopBar = () => {
     const a =
       Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.cos(toRad(lat1)) *
-      Math.cos(toRad(lat2)) *
-      Math.sin(dLng / 2) *
-      Math.sin(dLng / 2);
+        Math.cos(toRad(lat2)) *
+        Math.sin(dLng / 2) *
+        Math.sin(dLng / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return R * c; // Distancia en km
   };
@@ -91,7 +99,7 @@ const TopBar = () => {
         <div className="container-fluid">
           <a className="navbar-brand d-none d-md-block" href="#"></a>
           <div
-            className="container top-bar d-flex justify-content-md-between justify-content-center  align-item-center"
+            className="container top-bar d-flex justify-content-md-between justify-content-center align-item-center"
             id="navbarNav"
           >
             <div className="top-bar-phone d-lg-flex d-none align-items-center">
@@ -142,34 +150,33 @@ const TopBar = () => {
               <h5 className="modal-title" id="locationModalLabel">
                 Seleccionar Sucursal
               </h5>
-              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close" ></button>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
             </div>
             <div className="modal-body">
               <select
                 className="form-select"
                 onChange={handleLocationChange}
-                value={currentLocation?.sucursalName || "Seleccionar sucursal"} // Valor por defecto "0"
+                value={currentLocation?.sucursalName || "Seleccionar sucursal"}
               >
-                {/* Opción por defecto */}
                 <option value="1" disabled>
                   Seleccionar Sucursal
                 </option>
                 {locations.map((location) => (
-                  <option key={location.idSucursal} value={location.sucursalName}>
+                  <option
+                    key={location.idSucursal}
+                    value={location.sucursalName}
+                  >
                     {location.sucursalName}
                   </option>
                 ))}
               </select>
             </div>
-            <div className="modal-footer">
-              {/* <button
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                Close
-              </button> */}
-            </div>
+            <div className="modal-footer"></div>
           </div>
         </div>
       </div>
