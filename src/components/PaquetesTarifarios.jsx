@@ -48,7 +48,7 @@ const PaquetesTarifarios = () => {
   useEffect(() => {
     const fetchPromos = async () => {
       try {
-        const response = await fetch(`${serverAPILambda}api/promoEspecialHome/`);
+        const response = await fetch(`${serverAPILambda}api/promoEspecialHome`);
         const data = await response.json();
         setPromos(data);
       } catch (error) {
