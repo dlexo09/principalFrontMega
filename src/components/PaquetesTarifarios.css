@@ -1,7 +1,7 @@
+/* ESTILOS GENERALES (se mantienen) */
 .paquetes-tarifarios {
   padding-top: 150px;
   padding-bottom: 150px;
-
 }
 
 .paquete-item {
@@ -11,90 +11,94 @@
   padding: 15px;
   text-align: center;
   transition: border-color 0.3s, box-shadow 0.3s;
-  width: 100%;
+  width: 330px; /* Tamaño fijo para las tarjetas */
+  height: auto;
+  margin: 0 auto; /* Centrado horizontal */
 }
 
-
-
+/* ESTILOS DE TARJETA (se mantienen) */
 .card-title {
-  font-size: 24px;
+  font-size: clamp(1.25rem, 1.1436rem + 0.396vw, 1.5rem);
   font-weight: 600;
 }
-.btn-outline-dark {
-  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
-}
-.packs-terminos{
-  font-size: 14px;
-  line-height: 16px;
-  margin-top: 70px;
-}
-.velocidadPromo{
-  font-size: 43px;
+
+.velocidadPromo {
+  font-size: clamp(2.25rem, 2.0637rem + 0.6931vw, 2.6875rem);
   color: var(--blue-dark);
   font-weight: 700;
   line-height: 1.6rem;
 }
-.tiempoVelocidadPromo{
+
+.tiempoVelocidadPromo {
   margin-top: 5px;
   font-size: 1rem;
 }
-.tiempoVelocidadPromo sup{
+
+.tiempoVelocidadPromo sup {
   vertical-align: 1px;
   font-size: 0.5rem;
 }
-.slider-gp{
-  gap: 30px;
-}
-.xview-content, .promoExtra{
+
+.xview-content, .promoExtra {
   margin-top: 30px;
 }
-.promoExtra, .promoExtra img{
-  width: 100%;
 
+.promoExtra, .promoExtra img {
+  width: 100%;
 }
-.servicio-m{
+
+.servicio-m {
   margin-top: 40px;
 }
-.card-servicio-txt{
+
+.card-servicio-txt {
   font-size: 1.2rem;
   font-weight: 500;
   text-transform: uppercase;
 }
-.xview-content img{
+
+.xview-content img {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-.price-card{
+
+.price-card {
   font-size: 3rem;
   font-weight: 700;
   line-height: 20px;
   margin-top: 50px;
 }
-.price-card .time-crd{
+
+.price-card .time-crd {
   font-size: 1rem;
   font-weight: 400;
 }
-.price-card .price-mxn{
+
+.price-card .price-mxn {
   font-size: 2.2rem;
   font-weight: 600;
 }
-.slider-gp{
-  padding :30px;
-}
-.promo-xview{
+
+.promo-xview {
   font-size: clamp(1.3rem, 0.9537rem + 1.2886vw, 2.5rem);
   font-weight: 600;
   line-height: 1.7rem;
   margin-bottom: 20px;
-
 }
-.promo-xview span{
+
+.promo-xview span {
   color: var(--blue-dark);
 }
-.card-body{
+
+.card-body {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
 }
-.btn-pack-card{
+
+.btn-pack-card {
   position: absolute;
   bottom: -50px;
   width: 80%;
@@ -102,38 +106,41 @@
   z-index: 99;
   transform: translateX(50%);
 }
-.icon-card-packs{
+
+/* ICONOS (se mantienen) */
+.icon-card-packs {
   position: absolute;
   width: 45px;
   left: -42px;
 }
-.internet-icon{
+
+.internet-icon {
   top: 35px;
 }
-.tv-icon{
+
+.tv-icon {
   top: 210px;
 }
-.telefonia-icon{
-  top: 380px;
-}
-.telefonia-icon-doble {
-  top: 195px; /* Ajusta la posición según sea necesario */
-}
-.title-especial{
-  line-height: 40px;
-}
-.paquete-item{
-  width: 330px;
+
+.telefonia-icon {
+  top: 355px !important;
 }
 
+.telefonia-icon-doble {
+  top: 175px !important;
+}
+
+/* FULL CONNECTED (se mantiene) */
 .fullconnect-img {
   max-width: 500px;
   padding-top: 70px;
 }
-.full-connected-container{
+
+.full-connected-container {
   position: relative;
 }
-.full-connected-container button{
+
+.full-connected-container button {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -141,60 +148,75 @@
   width: 270px;
 }
 
-.packs-prev, .packs-next{
+/* CONTROLES DE SWIPER (modificado para Swiper) */
+.packs-prev, .packs-next {
+  position: absolute;
   top: 45%;
-  transform: translateY(50%);
+  transform: translateY(-50%);
   background-color: var(--turquesa-btn);
   height: 35px;
   width: 35px;
   padding: 4px;
   border-radius: 50px;
-}
-.card-body{
+  border: none;
+  color: white;
+  z-index: 10;
+  cursor: pointer;
   display: flex;
-  flex-direction: column;
-  align-items: space-between;
-  justify-content: space-between;
-}
-.paquete-body{
-padding-bottom: 15px;
+  align-items: center;
+  justify-content: center;
 }
 
-@media screen and (max-width:767px) {
-  .tarifario-title{
+.packs-prev {
+  left: 0;
+}
+
+.packs-next {
+  right: 0;
+}
+
+/* CONTENEDOR SWIPER */
+.swiper-container {
+  padding: 0 40px; /* Espacio para los controles */
+  position: relative;
+}
+
+.swiper-wrapper {
+  padding: 30px 0; /* Espacio para las sombras */
+  
+}
+.swiper-general-container .my-swiper{
+  padding-bottom: 50px !important;
+}
+
+/* ESTILOS RESPONSIVE (se mantienen con ajustes) */
+@media screen and (max-width: 767px) {
+  .tarifario-title {
     width: 200px;
     margin: 0 auto;
     margin-bottom: 20px;
   }
+  
   .paquetes-tarifarios {
     vertical-align: 5px;
   }
+  
   .packs-terminos {
     margin-top: 40px;
-}
-.slider-gp{
-  padding: 30px 0;
+  }
+  
+  .fullconnect-img {
+    padding-top: 0;
+  }
+  
+  .swiper-wrapper {
+    padding: 30px 0;
+  }
 }
 
-.fullconnect-img{
-padding-top: 0;
-}
-
-}
-@media screen and (max-width: 1023px){
+@media screen and (max-width: 1023px) {
   .paquetes-tarifarios {
     padding: 100px 0px;
-    
   }
-  .paquete-item-triple{
-    height: 770px;
-  }
-  .paquete-item-doble{
-    height: 535px;
-  }
-}
-@media screen and (max-width:374px) {
-  .slider-gp{
-    padding: 20px;
-  }
+  
 }

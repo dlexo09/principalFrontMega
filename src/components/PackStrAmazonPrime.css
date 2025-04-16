@@ -24,12 +24,9 @@
         border-radius: 40px;
         padding: 15px;
     }
-    .str-icon{
-        bottom: 200px;
-      }
-      .str-icon-prime{
-        bottom: 150px;
-      }
+    .str-icon-amazon{
+        bottom: 160px;
+    }
     .table>:not(caption)>*>*{
         border: none;
         background-color: transparent;

@@ -167,10 +167,12 @@
     background-color: var(--netflix-color);
 }
 
-
-
 table tr td span {
     font-weight: 600;
+}
+.netflix-cliente-btn{
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
 }
 
 @media screen and (min-width: 992px) and (max-width: 1199px) {
