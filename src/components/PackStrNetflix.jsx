@@ -251,20 +251,20 @@ const ClienteCarousel = () => {
   ];
 
   return (
-    <div className="carousel-container d-lg-none mt-5">
+    <div className="carousel-container d-lg-none mt-5 d-flex justify-content-center">
       <div
         id="carouselClienteMobile"
         className="carousel slide"
         data-bs-ride="carousel"
       >
-        <div className="carousel-inner">
+        <div className="carousel-inner pt-5 pb-5 ">
           {datosPrueba.map((paquete, index) => (
             <div
               key={index}
               className={`carousel-item ${index === 0 ? "active" : ""}`}
             >
-              <div className="paquete-item paquete-item-netflix card m-2">
-                <div className="card-body card-body-movile">
+              <div className="paquete-item paquete-item-netflix card m-2 ">
+                <div className="card-body card-body-movile ">
                   <img
                     className="str-icon-movile"
                     src="/icons/netflix/strm-icon.png"
@@ -281,25 +281,25 @@ const ClienteCarousel = () => {
           ))}
         </div>
         <button
-          className="carousel-control-prev packs-prev prev-icon-netflix"
+          className="carousel-control-prev packs-prev"
           type="button"
           data-bs-target="#carouselClienteMobile"
           data-bs-slide="prev"
         >
           <span
-            className="carousel-control-prev-icon prev-icon-netflix"
+            className="carousel-control-prev-icon"
             aria-hidden="true"
           ></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
-          className="carousel-control-next packs-next next-icon-netflix"
+          className="carousel-control-next packs-next"
           type="button"
           data-bs-target="#carouselClienteMobile"
           data-bs-slide="next"
         >
           <span
-            className="carousel-control-next-icon next-icon-netflix"
+            className="carousel-control-next-icon"
             aria-hidden="true"
           ></span>
           <span className="visually-hidden">Next</span>

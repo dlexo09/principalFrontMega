@@ -201,7 +201,7 @@ const PackStrMax = () => {
                   key={index}
                   className={`carousel-item ${index === 0 ? "active" : ""}`}
                 >
-                  <div className="d-flex justify-content-center slider-gp">
+                  <div className="d-flex justify-content-center slider-gp pt-5 pb-5">
                     {chunk.map((paquete, i) => (
                       <div
                         key={i}
@@ -233,19 +233,19 @@ const PackStrMax = () => {
             })()}
           </div>
           <button
-            className="carousel-control-prev packs-prev prev-icon-max "
+            className="carousel-control-prev packs-prev"
             type="button"
             data-bs-target="#carouselClienteMobile"
             data-bs-slide="prev"
           >
             <span
-              className="carousel-control-prev-icon "
+              className="carousel-control-prev-icon"
               aria-hidden="true"
             ></span>
             <span className="visually-hidden">Previous</span>
           </button>
           <button
-            className="carousel-control-next packs-prev prev-icon-max"
+            className="carousel-control-next packs-next"
             type="button"
             data-bs-target="#carouselClienteMobile"
             data-bs-slide="next"

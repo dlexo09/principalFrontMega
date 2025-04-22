@@ -40,7 +40,7 @@
 }
 
 .xview-content, .promoExtra {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .promoExtra, .promoExtra img {
@@ -109,13 +109,17 @@
 
 /* ICONOS (se mantienen) */
 .icon-card-packs {
-  position: absolute;
-  width: 45px;
-  left: -42px;
+  width: 40px;
 }
-
+.container-packs-swiper{
+  padding-bottom: 10px;
+}
+.icons-pack-container{
+  gap: 10px;
+  margin-bottom: 10px;
+}
 .internet-icon {
-  top: 35px;
+  top: -70px;
 }
 
 .tv-icon {
@@ -132,7 +136,7 @@
 
 /* FULL CONNECTED (se mantiene) */
 .fullconnect-img {
-  max-width: 500px;
+  max-width: 510px;
   padding-top: 70px;
 }
 
@@ -151,7 +155,7 @@
 /* CONTROLES DE SWIPER (modificado para Swiper) */
 .packs-prev, .packs-next {
   position: absolute;
-  top: 45%;
+  top: 50%;
   transform: translateY(-50%);
   background-color: var(--turquesa-btn);
   height: 35px;
@@ -168,11 +172,11 @@
 }
 
 .packs-prev {
-  left: 0;
+  left: -20px;
 }
 
 .packs-next {
-  right: 0;
+  right: -20px;
 }
 
 /* CONTENEDOR SWIPER */
@@ -189,7 +193,20 @@
   padding-bottom: 50px !important;
 }
 
-/* ESTILOS RESPONSIVE (se mantienen con ajustes) */
+
+@media screen and (max-width: 374px) {
+  .fullconnect-img {
+    max-width: 430px;
+  }
+  .paquete-item{
+    max-width: 290px !important;
+  }
+  .full-connected-container button{
+    bottom: 5px;
+  }
+  
+} 
+
 @media screen and (max-width: 767px) {
   .tarifario-title {
     width: 200px;
@@ -212,6 +229,20 @@
   .swiper-wrapper {
     padding: 30px 0;
   }
+  .packs-prev {
+    left: 5px;
+  }
+  
+  .packs-next {
+    right: 5px;
+  }
+  .pago-en-linea{
+    padding: 30px 0 !important;
+  }
+  .banner-streaming-home {
+    margin-top: 50px !important;
+}
+
 }
 
 @media screen and (max-width: 1023px) {

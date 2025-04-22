@@ -82,18 +82,18 @@ const PaquetesTarifariosNetflix = () => {
   const ajustarAlturas = () => {
     const items = document.querySelectorAll(".my-swiper .paquete-item-netflix");
     let maxHeight = 0;
-  
+
     // Resetear alturas
     items.forEach((item) => {
       item.style.height = "auto";
     });
-  
+
     // Calcular altura máxima
     items.forEach((item) => {
       const height = item.offsetHeight;
       if (height > maxHeight) maxHeight = height;
     });
-  
+
     // Aplicar altura máxima
     items.forEach((item) => {
       item.style.height = `${maxHeight}px`;
@@ -121,7 +121,7 @@ const PaquetesTarifariosNetflix = () => {
     <div className="container pad-container paquetes-tarifarios text-center">
       <h2 className="small-title tarifario-title">Elige el paquete ideal para ti</h2>
       <h3 className="big-title mb-5 title-especial">¡Te instalamos sin costo!<sup>*</sup></h3>
-      
+
       <div className="d-flex justify-content-center mb-3 btn-container">
         <button
           type="button"
@@ -138,7 +138,7 @@ const PaquetesTarifariosNetflix = () => {
           DOBLE PACK<br /><span>INTERNET + TELEFONÍA</span>
         </button>
       </div>
-      
+
       <div className="d-flex justify-content-center mb-3">
         <p>(Cliente nuevo)</p>
       </div>
@@ -153,6 +153,7 @@ const PaquetesTarifariosNetflix = () => {
           spaceBetween={20}
           slidesPerView={slidesPerView}
           onSlideChange={ajustarAlturas}
+          centeredSlides={paquetes.length === 1}
           onResize={ajustarAlturas}
           className="my-swiper"
         >
@@ -161,33 +162,58 @@ const PaquetesTarifariosNetflix = () => {
             const uniqueId = `${paquete.idContrata}-${i}`;
             const selectedPromoCost = selectedPromo[uniqueId]?.costoMensual || 0;
             const showExtensor = velocidad >= 200;
-            
+
             return (
               <SwiperSlide key={uniqueId}>
-                <div className="d-flex justify-content-center">
+                <div className="icons-pack-container d-flex justify-content-center">
+                  <img
+                    className="icon-card-packs internet-icon d-md-block"
+                    src="/icons/netflix/internet-icon.png"
+                    alt="Icono Internet"
+                  />
+                  
+                  {selectedPack !== 'doble' && (
+                    <img
+                      className="icon-card-packs tv-icon d-md-block"
+                      src="/icons/netflix/tv-icon.png"
+                      alt="Icono TV"
+                    />
+                  )}
+                  <img
+                    className={`icon-card-packs d-md-block telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
+                    src="/icons/netflix/telefonia-icon.png"
+                    alt="Icono Telefonía"
+                  />
+                  <img
+                    className="icon-card-packs str-icon d-md-block"
+                    src="/icons/netflix/strm-icon.png"
+                    alt="Icono Netflix"
+                  />
+                </div>
+                <div className="d-flex justify-content-center container-packs-swiper h-100">
                   <div className={`paquete-item paquete-item-netflix card ${selectedPack === 'doble' ? 'paquete-item-doble' : 'paquete-item-triple'}`}>
                     <div className="card-body">
                       <div className="paquete-header">
                         <h2 className="card-title">{paquete.idTipoRed == 3 ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
                         <p className="card-text velocidadPromo velocidadPromo-netflix">{velocidad} MEGAS</p>
-                        
+
                         {paquete.tiempoVelocidaPromo > 0 && (
                           <p className="card-text tiempoVelocidadPromo">
                             x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
                           </p>
                         )}
 
-                        
-                          {showExtensor && (
-                            <p>
-                              <img
-                                src="/img/extensor_wifi_ultra.png"
-                                alt="IncluyeExtensor Wifi Ultra"
-                                style={{ height: '40px', marginTop: '20px' }}
-                              />
-                            </p>
-                          )}
-                     
+
+                        {showExtensor && (
+                          <p>
+                            <img
+                              src="/img/extensor_wifi_ultra.png"
+                              alt="IncluyeExtensor Wifi Ultra"
+                              style={{ height: '40px', marginTop: '20px' }}
+                            />
+                          </p>
+                        )}
+
                       </div>
 
                       <div className="paquete-body">
@@ -252,28 +278,7 @@ const PaquetesTarifariosNetflix = () => {
                         </div>
                         <button className="btn btn-packs btn-pack-card" onClick={() => handleButtonClick(paquete.idContrata)}>¡Lo quiero!</button>
 
-                        <img
-                          className="icon-card-packs internet-icon d-none d-md-block"
-                          src="/icons/netflix/internet-icon.png"
-                          alt="Icono Internet"
-                        />
-                        <img
-                          className="icon-card-packs str-icon d-none d-md-block"
-                          src="/icons/netflix/strm-icon.png"
-                          alt="Icono Netflix"
-                        />
-                        {selectedPack !== 'doble' && (
-                          <img
-                            className="icon-card-packs tv-icon d-none d-md-block"
-                            src="/icons/netflix/tv-icon.png"
-                            alt="Icono TV"
-                          />
-                        )}
-                        <img
-                          className={`icon-card-packs d-none d-md-block telefonia-icon ${selectedPack === 'doble' ? 'telefonia-icon-doble' : ''}`}
-                          src="/icons/netflix/telefonia-icon.png"
-                          alt="Icono Telefonía"
-                        />
+
                       </div>
                     </div>
                   </div>

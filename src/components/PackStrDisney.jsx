@@ -170,10 +170,10 @@ const ClienteCarousel = () => {
     <div className="carousel-container d-lg-none mt-5">
       <div
         id="carouselClienteMobile"
-        className="carousel slide"
+        className="carousel slide d-flex justify-content-center"
         data-bs-ride="carousel"
       >
-        <div className="carousel-inner">
+        <div className="carousel-inner pt-5 pb-5">
           {datosPrueba.map((paquete, index) => (
             <div
               key={index}
@@ -197,25 +197,25 @@ const ClienteCarousel = () => {
           ))}
         </div>
         <button
-          className="carousel-control-prev"
+          className="carousel-control-prev packs-prev"
           type="button"
           data-bs-target="#carouselClienteMobile"
           data-bs-slide="prev"
         >
           <span
-            className="carousel-control-prev-icon prev-icon-disney"
+            className="carousel-control-prev-icon"
             aria-hidden="true"
           ></span>
           <span className="visually-hidden">Previous</span>
         </button>
         <button
-          className="carousel-control-next"
+          className="carousel-control-next packs-next"
           type="button"
           data-bs-target="#carouselClienteMobile"
           data-bs-slide="next"
         >
           <span
-            className="carousel-control-next-icon next-icon-disney"
+            className="carousel-control-next-icon"
             aria-hidden="true"
           ></span>
           <span className="visually-hidden">Next</span>

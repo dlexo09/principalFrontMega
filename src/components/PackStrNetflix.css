@@ -19,6 +19,7 @@
 
 .paquete-item-netflix {
     border-color: var(--netflix-color);
+    height: 400px;
 }
 
 .velocidadPromo-netflix {

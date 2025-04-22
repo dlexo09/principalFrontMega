@@ -78,24 +78,24 @@ const PaquetesTarifarios = () => {
     const ajustarAlturas = () => {
       const items = document.querySelectorAll(".swiper .paquete-item");
       let maxHeight = 0;
-    
+
       // Reset heights
       items.forEach((item) => {
         item.style.height = "auto"; // Resetea la altura
       });
-    
+
       // Get max height
       items.forEach((item) => {
         const height = item.offsetHeight;
         if (height > maxHeight) maxHeight = height;
       });
-    
+
       // Apply max height
       items.forEach((item) => {
         item.style.height = `${maxHeight}px`; // Ajusta la altura de todos al máximo
       });
     };
-    
+
 
     // Ejecutar al montar y cuando cambien los paquetes
     setTimeout(() => {
@@ -118,9 +118,8 @@ const PaquetesTarifarios = () => {
       <div className="d-flex justify-content-center mb-3 btn-container">
         <button
           type="button"
-          className={`pack-btn ${
-            selectedPack === "triple" ? "pack-btn-active" : "pack-btn-inactive"
-          } btn-lg mx-2`}
+          className={`pack-btn ${selectedPack === "triple" ? "pack-btn-active" : "pack-btn-inactive"
+            } btn-lg mx-2`}
           onClick={() => setSelectedPack("triple")}
         >
           TRIPLE PACK
@@ -129,9 +128,8 @@ const PaquetesTarifarios = () => {
         </button>
         <button
           type="button"
-          className={`pack-btn ${
-            selectedPack === "doble" ? "pack-btn-active" : "pack-btn-inactive"
-          } btn-lg mx-2`}
+          className={`pack-btn ${selectedPack === "doble" ? "pack-btn-active" : "pack-btn-inactive"
+            } btn-lg mx-2`}
           onClick={() => setSelectedPack("doble")}
         >
           DOBLE PACK
@@ -144,7 +142,7 @@ const PaquetesTarifarios = () => {
       </div>
 
       {/* Carrusel con Swiper manteniendo las clases originales */}
-      <div className="position-relative">
+      <div className="position-relative ">
         <Swiper
           modules={[Navigation]}
           navigation={{
@@ -164,13 +162,34 @@ const PaquetesTarifarios = () => {
               centeredSlides: false,
             }
           }}
-          className="carousel slide"
+          className="carousel slide "
         >
           {paquetes.map((paquete, index) => (
             <SwiperSlide key={index}>
-              <div className="d-flex justify-content-center h-100">
-                <div className={`paquete-item paquete-general-item card ${selectedPack === "doble" ? "paquete-item-doble" : "paquete-item-triple"}`} 
-                     style={{ width: '100%', maxWidth: '350px' }}>
+              <div className="icons-pack-container d-flex justify-content-center">
+                <img
+                  className="icon-card-packs internet-icon d-md-block"
+                  src="/icons/internet-icon.png"
+                  alt="Icono Internet"
+                />
+                {selectedPack !== "doble" && (
+                  <img
+                    className="icon-card-packs tv-icon  d-md-block"
+                    src="/icons/tv-icon.png"
+                    alt="Icono TV"
+                  />
+                )}
+                <img
+                  className={`icon-card-packs  d-md-block telefonia-icon ${selectedPack === "doble" ? "telefonia-icon-doble" : ""
+                    }`}
+                  src="/icons/telefonia-icon.png"
+                  alt="Icono Telefonía"
+                />
+              </div>
+
+              <div className="d-flex justify-content-center container-packs-swiper h-100">
+                <div className={`paquete-item paquete-general-item card ${selectedPack === "doble" ? "paquete-item-doble" : "paquete-item-triple"}`}
+                  style={{ width: '100%', maxWidth: '340px' }}>
                   <div className="card-body">
                     <div className="paquete-header">
                       <h2 className="card-title">
@@ -195,14 +214,14 @@ const PaquetesTarifarios = () => {
                       {(paquete.velocidadPromo === 0
                         ? paquete.velocidadInternet
                         : paquete.velocidadPromo) >= 200 && (
-                        <p>
-                          <img
-                            src="/img/extensor_wifi_ultra.png"
-                            alt="Extensor Wifi Ultra Incluido"
-                            style={{ height: "40px", marginTop: "20px" }}
-                          />
-                        </p>
-                      )}
+                          <p>
+                            <img
+                              src="/img/extensor_wifi_ultra.png"
+                              alt="Extensor Wifi Ultra Incluido"
+                              style={{ height: "40px", marginTop: "20px" }}
+                            />
+                          </p>
+                        )}
                     </div>
                     <div className="paquete-body">
                       {paquete.archivo && (
@@ -276,12 +295,12 @@ const PaquetesTarifarios = () => {
                           <span className="price-mxn">$</span>
                           {Math.round(
                             Number(paquete.tarifaPromocional) +
-                              Number(
-                                promos.reduce(
-                                  (acc, promo) => acc + promo.costoMensualPromo,
-                                  promoValue
-                                )
+                            Number(
+                              promos.reduce(
+                                (acc, promo) => acc + promo.costoMensualPromo,
+                                promoValue
                               )
+                            )
                           )}
                           <sup>*</sup>
                           <span className="time-crd">/mes</span>
@@ -299,25 +318,7 @@ const PaquetesTarifarios = () => {
                         ¡Lo quiero!
                       </button>
 
-                      <img
-                        className="icon-card-packs internet-icon d-none d-md-block"
-                        src="/icons/internet-icon.png"
-                        alt="Icono Internet"
-                      />
-                      {selectedPack !== "doble" && (
-                        <img
-                          className="icon-card-packs tv-icon d-none d-md-block"
-                          src="/icons/tv-icon.png"
-                          alt="Icono TV"
-                        />
-                      )}
-                      <img
-                        className={`icon-card-packs d-none d-md-block telefonia-icon ${
-                          selectedPack === "doble" ? "telefonia-icon-doble" : ""
-                        }`}
-                        src="/icons/telefonia-icon.png"
-                        alt="Icono Telefonía"
-                      />
+
                     </div>
                   </div>
                 </div>
