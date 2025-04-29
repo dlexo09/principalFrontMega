@@ -23,7 +23,7 @@ const XVBeneficios = () => {
           <div className="xview-beneficio">
             <div className="xview-beneficio-content">
             <img
-              src="../src/assets/icons/servicios/tv-interactiva/xviewb-vod.png"
+              src="/icons/servicios/tv-interactiva/xviewb-vod.png"
               alt="VOD"
             />
             <h3>VOD</h3>
@@ -37,7 +37,7 @@ const XVBeneficios = () => {
           <div className="xview-beneficio xviewb-pausa">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewb-pausa.png"
+                src="/icons/servicios/tv-interactiva/xviewb-pausa.png"
                 alt="Pausa y reinicia"
               />
               <h3>Pausa y reinicia</h3>
@@ -54,7 +54,7 @@ const XVBeneficios = () => {
           <div className="xview-beneficio xviewb-regresa">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewn-regresa.png"
+                src="/icons/servicios/tv-interactiva/xviewn-regresa.png"
                 alt="Regresa"
               />
               <h3>Regresa</h3>
@@ -68,7 +68,7 @@ const XVBeneficios = () => {
           <div className="xview-beneficio xviewb-graba">
             <div className="xview-beneficio-content">
               <img
-                src="../src/assets/icons/servicios/tv-interactiva/xviewb-graba.png"
+                src="/icons/servicios/tv-interactiva/xviewb-graba.png"
                 alt="Graba"
               />
               <h3>Graba</h3>

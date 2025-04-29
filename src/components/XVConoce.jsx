@@ -34,7 +34,7 @@ const XVConoce = () => {
               <div className="d-block d-lg-none">
                 <img
                   className="w-100"
-                  src="../src/assets/images/servicios/tv-interactiva/caja-xview.png"
+                  src="/img/servicios/tv-interactiva/caja-xview.png"
                   alt="Xview"
                 />
               </div>
@@ -49,7 +49,7 @@ const XVConoce = () => {
             <div className="col-lg-5 col-xl-7 d-none d-lg-block">
               <img
                 className="w-100"
-                src="../src/assets/images/servicios/tv-interactiva/caja-xview.png"
+                src="/img/servicios/tv-interactiva/caja-xview.png"
                 alt="Xview"
               />
             </div>
