@@ -1,4 +1,8 @@
 /* ESTILOS GENERALES (se mantienen) */
+.pt-unic{
+  padding-top: 70px;
+}
+
 .paquetes-tarifarios {
   padding-top: 150px;
   padding-bottom: 150px;
@@ -251,3 +255,4 @@
   }
   
 }
+

@@ -9,7 +9,7 @@ const OFResidencial = () => {
             <title>Paquetes de Internet Rápido, TV y Telefonía | Megacable | ¡Contrata Hoy!</title>
             <meta name="description" content="Descubre los paquetes residenciales de Megacable: Internet de fibra óptica, televisión y telefonía ilimitada. ¡Conéctate sin interrupciones y aprovecha nuestras ofertas!" />
           </Helmet>
-    <div className="oferta-residencial-container">
+    <div className="oferta-residencial-container pt-unic">
       <PaquetesTarifarios />
     </div>
     </>
