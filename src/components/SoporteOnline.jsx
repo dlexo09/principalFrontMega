@@ -710,7 +710,7 @@ const options = {
       <p className="d-none d-md-block">Internet</p>
       </div>,
     content: (
-      <div className="container">
+      <div className="container-fluid p-0">
         <FAQSoporte faqs={faqInternet} />
       </div>
     ),

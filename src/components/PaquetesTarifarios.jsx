@@ -327,7 +327,6 @@ const PaquetesTarifarios = () => {
           ))}
         </Swiper>
 
-        {/* Controles de navegación - manteniendo las clases originales */}
         <button className="carousel-control-prev packs-prev" type="button">
           <span
             className="carousel-control-prev-icon"

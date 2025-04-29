@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import PaquetesTarifariosDisney from "./PaquetesTarifariosDisney";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 import "./PackStrDisney.css";
 
 const PackStrDisney = () => {
   const [selectedPack, setSelectedPack] = useState("triple");
-  const [isCliente, setIsCliente] = useState(false); // Estado para "¿Eres cliente?"
+  const [isCliente, setIsCliente] = useState(false);
 
-  // Función para manejar el cambio de cliente
   const handleClienteChange = (isClienteValue) => {
     setIsCliente(isClienteValue);
   };
@@ -27,9 +30,7 @@ const PackStrDisney = () => {
           </button>
           <button
             className={`pack-btn btn-lg mx-2 disney-cliente-btn ${
-              !isCliente
-                ? "pack-btn-active disney-btn-color"
-                : "pack-btn-inactive"
+              !isCliente ? "pack-btn-active disney-btn-color" : "pack-btn-inactive"
             }`}
             onClick={() => handleClienteChange(false)}
           >
@@ -47,14 +48,13 @@ const PackStrDisney = () => {
   );
 };
 
-// Componente para la tabla de clientes
 const ClienteTable = () => {
   return (
     <>
       <div className="mt-4">
         <p className="cliente-info mt-5">
-          ¡Elige el paquete ideal para disfrutar el mejor contenido para toda
-          la familia!
+          ¡Elige el paquete ideal para disfrutar el mejor contenido para toda la
+          familia!
         </p>
       </div>
       <div className="container table-str-clients d-none d-lg-block">
@@ -69,12 +69,8 @@ const ClienteTable = () => {
           <tbody>
             <tr className="tr-gray">
               <td className="text-start br-str-table1">Familiar</td>
-              <td>
-                <span></span>
-              </td>
-              <td>
-                <span></span>
-              </td>
+              <td><span></span></td>
+              <td><span></span></td>
             </tr>
             <tr>
               <td className="text-start">Deportes</td>
@@ -121,7 +117,6 @@ const ClienteTable = () => {
   );
 };
 
-// Componente para los botones de planes
 const PlanButton = () => {
   return (
     <div className="col-md-4 plans-contrata">
@@ -133,7 +128,6 @@ const PlanButton = () => {
   );
 };
 
-// Componente para el carrusel de clientes
 const ClienteCarousel = () => {
   const datosPrueba = [
     {
@@ -168,70 +162,62 @@ const ClienteCarousel = () => {
 
   return (
     <div className="carousel-container d-lg-none mt-5">
-      <div
-        id="carouselClienteMobile"
-        className="carousel slide d-flex justify-content-center"
-        data-bs-ride="carousel"
+      <Swiper
+        modules={[Navigation]}
+        navigation={{
+          nextEl: ".packs-next",
+          prevEl: ".packs-prev",
+        }}
+        spaceBetween={16}
+        slidesPerView={1}
+        breakpoints={{
+          576: {
+            slidesPerView: 2 ,
+          },
+        }}
+        className="pb-5"
       >
-        <div className="carousel-inner pt-5 pb-5">
-          {datosPrueba.map((paquete, index) => (
-            <div
-              key={index}
-              className={`carousel-item ${index === 0 ? "active" : ""}`}
-            >
-              <div className="paquete-item paquete-item-disney card m-2">
-                <div className="card-body card-body-movile">
-                  <img
-                    className="str-icon-movile"
-                    src="/icons/disney/strm-icon.png"
-                    alt="Icono Disney"
-                  />
-                  <h3 className="pack-movile-title">{paquete.titulo}</h3>
-                  <div className="text-start">{paquete.contenido}</div>
-                  <button className="btn-packs disney-btn-color btn-pack-movil">
-                    ¡Lo quiero!
-                  </button>
-                </div>
+        {datosPrueba.map((paquete, index) => (
+          <SwiperSlide key={index}>
+            <div className="paquete-item paquete-item-disney card mt-5">
+              <div className="card-body card-body-movile">
+                <img
+                  className="str-icon-movile"
+                  src="/icons/disney/strm-icon.png"
+                  alt="Icono Disney"
+                />
+                <h3 className="pack-movile-title">{paquete.titulo}</h3>
+                <div className="text-start">{paquete.contenido}</div>
+                <button className="btn-packs disney-btn-color btn-pack-movil">
+                  ¡Lo quiero!
+                </button>
               </div>
             </div>
-          ))}
-        </div>
-        <button
-          className="carousel-control-prev packs-prev"
-          type="button"
-          data-bs-target="#carouselClienteMobile"
-          data-bs-slide="prev"
-        >
-          <span
+          </SwiperSlide>
+        ))}
+        <div className="carousel-control-prev packs-prev">
+        <span
             className="carousel-control-prev-icon"
             aria-hidden="true"
           ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next packs-next"
-          type="button"
-          data-bs-target="#carouselClienteMobile"
-          data-bs-slide="next"
-        >
+        </div>
+
+        <button className="carousel-control-next packs-next" type="button">
           <span
             className="carousel-control-next-icon"
             aria-hidden="true"
           ></span>
-          <span className="visually-hidden">Next</span>
         </button>
-      </div>
+      </Swiper>
     </div>
   );
 };
 
-// Componente para el aviso legal
 const LegalDisclaimer = () => {
   return (
     <div className="pack-client-legal mt-5">
       <p className="pt-lg-5">
-        *Aplican restricciones. Consulta términos y condiciones{" "}
-        <a href="#">aquí</a>
+        *Aplican restricciones. Consulta términos y condiciones <a href="#">aquí</a>
       </p>
     </div>
   );

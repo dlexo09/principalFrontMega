@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 import PaquetesTarifariosNetflix from "./PaquetesTarifariosNetflix";
 import "./PackStrNetflix.css";
 
@@ -12,23 +17,27 @@ const PackStrNetflix = () => {
   };
 
   return (
-    <div className="container paquetes-tarifarios text-center">
+    <div className="paquetes-tarifarios text-center">
       <div className="cliente-question mb-4">
         <h3 className="small-title txt-netflix-color">EL MEJOR PLAN PARA TI</h3>
         <h3 className="big-title mb-5">¿Ya eres cliente Mega?</h3>
         <div className="btn-container">
           <button
-            className={`pack-btn btn-lg mx-2 netflix-cliente-btn ${isCliente ? "pack-btn-active netflix-btn-color" : "pack-btn-inactive"
-              }`}
+            className={`pack-btn btn-lg mx-2 netflix-cliente-btn ${
+              isCliente
+                ? "pack-btn-active netflix-btn-color"
+                : "pack-btn-inactive"
+            }`}
             onClick={() => handleClienteChange(true)}
           >
             Sí
           </button>
           <button
-            className={`pack-btn btn-lg mx-2 netflix-cliente-btn ${!isCliente
-              ? "pack-btn-active netflix-btn-color"
-              : "pack-btn-inactive"
-              }`}
+            className={`pack-btn btn-lg mx-2 netflix-cliente-btn ${
+              !isCliente
+                ? "pack-btn-active netflix-btn-color"
+                : "pack-btn-inactive"
+            }`}
             onClick={() => handleClienteChange(false)}
           >
             No
@@ -51,8 +60,8 @@ const ClienteTable = () => {
     <>
       <div className="mt-4">
         <p className="cliente-info mt-5">
-          ¡Elige el paquete ideal para disfrutar el mejor contenido para toda
-          la familia!
+          ¡Elige el paquete ideal para disfrutar el mejor contenido para toda la
+          familia!
         </p>
       </div>
       <div className="container table-str-clients d-none d-lg-block">
@@ -196,20 +205,22 @@ const PlanButton = () => {
   );
 };
 
-// Componente para el carrusel de clientes
+// Componente para el carrusel de clientes (ahora con Swiper)
 const ClienteCarousel = () => {
   const datosPrueba = [
     {
-      titulo: <>
-        ESTÁNDAR
-        <br />
-        CON ANUNCIOS
-      </>,
+      titulo: (
+        <>
+          ESTÁNDAR
+          <br />
+          CON ANUNCIOS
+        </>
+      ),
       contenido: (
         <ul className="beneficios-pack-movile">
           <li>
-            Con anuncios; todos los juegos móviles y la mayoría
-            de las series y películas están disponibles.{" "}
+            Con anuncios; todos los juegos móviles y la mayoría de las series y
+            películas están disponibles.{" "}
           </li>
           <li>2 dispositivos compatibles a la vez</li>
           <li>1080p (Full HD)</li>
@@ -222,8 +233,7 @@ const ClienteCarousel = () => {
       contenido: (
         <ul className="beneficios-pack-movile">
           <li>
-            Juegos móviles, series y películas; sin publicidad y
-            sin límite
+            Juegos móviles, series y películas; sin publicidad y sin límite
           </li>
           <li>2 dispositivos compatibles a la vez</li>
           <li>1080p (Full HD)</li>
@@ -237,8 +247,7 @@ const ClienteCarousel = () => {
       contenido: (
         <ul className="beneficios-pack-movile">
           <li>
-            Juegos móviles, series y películas; sin publicidad y
-            sin límite
+            Juegos móviles, series y películas; sin publicidad y sin límite
           </li>
           <li>4 dispositivos compatibles a la vez</li>
           <li>4K (Ultra HD) + HDR</li>
@@ -252,59 +261,53 @@ const ClienteCarousel = () => {
 
   return (
     <div className="carousel-container d-lg-none mt-5 d-flex justify-content-center">
-      <div
-        id="carouselClienteMobile"
-        className="carousel slide"
-        data-bs-ride="carousel"
+      <Swiper
+        modules={[Navigation]}
+        navigation={{
+          nextEl: ".packs-next",
+          prevEl: ".packs-prev",
+        }}
+        spaceBetween={16}
+        slidesPerView={1}
+        breakpoints={{
+          576: {
+            slidesPerView: 2,
+          },
+        }}
+        className="mySwiper pb-5 pt-5"
       >
-        <div className="carousel-inner pt-5 pb-5 ">
-          {datosPrueba.map((paquete, index) => (
-            <div
-              key={index}
-              className={`carousel-item ${index === 0 ? "active" : ""}`}
-            >
-              <div className="paquete-item paquete-item-netflix card m-2 ">
-                <div className="card-body card-body-movile ">
-                  <img
-                    className="str-icon-movile"
-                    src="/icons/netflix/strm-icon.png"
-                    alt="Icono Netflix"
-                  />
-                  <h3 className="pack-movile-title">{paquete.titulo}</h3>
-                  <div className="text-start">{paquete.contenido}</div>
-                  <button className="btn-packs netflix-btn-color btn-pack-movil">
-                    ¡Lo quiero!
-                  </button>
-                </div>
+        {datosPrueba.map((paquete, index) => (
+          <SwiperSlide key={index}>
+            <div className="paquete-item paquete-item-netflix card mt-2">
+              <div className="card-body card-body-movile">
+                <img
+                  className="str-icon-movile"
+                  src="/icons/netflix/strm-icon.png"
+                  alt="Icono Netflix"
+                />
+                <h3 className="pack-movile-title">{paquete.titulo}</h3>
+                <div className="text-start">{paquete.contenido}</div>
+                <button className="btn-packs netflix-btn-color btn-pack-movil">
+                  ¡Lo quiero!
+                </button>
               </div>
             </div>
-          ))}
-        </div>
-        <button
-          className="carousel-control-prev packs-prev"
-          type="button"
-          data-bs-target="#carouselClienteMobile"
-          data-bs-slide="prev"
-        >
+          </SwiperSlide>
+        ))}
+        <div className="carousel-control-prev packs-prev">
           <span
             className="carousel-control-prev-icon"
             aria-hidden="true"
           ></span>
-          <span className="visually-hidden">Previous</span>
-        </button>
-        <button
-          className="carousel-control-next packs-next"
-          type="button"
-          data-bs-target="#carouselClienteMobile"
-          data-bs-slide="next"
-        >
+        </div>
+
+        <button className="carousel-control-next packs-next" type="button">
           <span
             className="carousel-control-next-icon"
             aria-hidden="true"
           ></span>
-          <span className="visually-hidden">Next</span>
         </button>
-      </div>
+      </Swiper>
     </div>
   );
 };
