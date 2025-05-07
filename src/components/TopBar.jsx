@@ -99,7 +99,7 @@ const TopBar = () => {
         <div className="container-fluid">
           <a className="navbar-brand d-none d-md-block" href="#"></a>
           <div
-            className="container top-bar d-flex justify-content-md-between justify-content-center align-item-center"
+            className="container top-bar d-flex justify-content-lg-between justify-content-center align-item-center"
             id="navbarNav"
           >
             <div className="top-bar-phone d-lg-flex d-none align-items-center">
@@ -125,7 +125,7 @@ const TopBar = () => {
               </li>
             </ul>
 
-            <div className="client-mega d-md-flex d-none align-items-center">
+            <div className="client-mega d-lg-flex d-none align-items-center">
               <a href="https://pagoenlinea.megacable.com.mx/" target="_blank">
                 Paga en línea
               </a>

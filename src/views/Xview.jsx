@@ -19,7 +19,7 @@ const Xview = () => {
       <div className="container-fluid p-0">
         <h4 className="text-center title-tabs">
           <img
-            src="../src/assets/images/servicios/tv-interactiva/xview-logo.png"
+            src="/img/servicios/tv-interactiva/xview-logo.png"
             alt="Xview+"
           />
           <br />

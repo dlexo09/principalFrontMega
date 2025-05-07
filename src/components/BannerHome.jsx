@@ -91,39 +91,48 @@ const CarouselSlides = ({ banners }) => (
 );
 
 // Componente para un slide individual
-const CarouselSlide = ({ banner, isActive }) => (
-  <div className={`carousel-item ${isActive ? "active" : ""}`}>
-    {/* Fondo del Slider */}
-    <img
-      src={`/${banner.ruta}${banner.background}`}
-      className="d-block w-100 banner-background"
-      alt={`Slide`}
-    />
+const CarouselSlide = ({ banner, isActive }) => {
+  const [imgError, setImgError] = useState(false);
 
-    {/* Contenido Superpuesto */}
-    <div className="banner-home-content d-flex justify-content-center align-items-center">
-      <div className="container g-4 g-md-0 row text-white d-flex justify-content-center justify-content-md-between align-items-center banner-sup-container">
-        {/* Columna Izquierda: Texto */}
-        <div className="col-md-4 text-column order-2 order-md-1 text-center text-md-start">
-          <h1 className="mb-3 secondary-title banner-title">{banner.title}</h1>
-          <div className="mt-4 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
-            <a href={banner.linkButton} className="btn-action pe-5 ps-5">
-              {banner.textButton}
-            </a>
+  if (imgError) return null;
+
+  return (
+    <div className={`carousel-item ${isActive ? "active" : ""}`}>
+      {/* Fondo del Slider */}
+      <img
+        src={`/${banner.ruta}${banner.background}`}
+        className="d-block w-100 banner-background"
+        alt={`Slide`}
+        onError={() => setImgError(true)}
+      />
+
+      {/* Contenido Superpuesto */}
+      <div className="banner-home-content d-flex justify-content-center align-items-center">
+        <div className="container g-4 g-md-0 row text-white d-flex justify-content-center justify-content-md-between align-items-center banner-sup-container">
+          {/* Columna Izquierda: Texto */}
+          <div className="col-md-4 text-column order-2 order-md-1 text-center text-md-start">
+            <h1 className="mb-3 secondary-title banner-title">{banner.title}</h1>
+            <div className="mt-4 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
+              {banner.textButton && (
+                <a href={banner.linkButton} className="btn-action pe-5 ps-5 banner-btn-limit">
+                  <span className="banner-btn-text">{banner.textButton}</span>
+                </a>
+              )}
+            </div>
           </div>
-        </div>
 
-        {/* Columna Derecha: Imagen */}
-        <div className="order-2 order-md-1 d-none d-md-flex col-md-8 d-flex justify-content-end banner-principal-img">
-          <img className="img-netflix" src={`/${banner.ruta}${banner.imagenBanner}`} alt="" />
-        </div>
-        <div className="order-1 order-md-2 d-md-none banner-principal-img-mov">
-          <img className="img-netflix-movil" src={`/${banner.ruta}${banner.imagenMobile}`} alt="" />
+          {/* Columna Derecha: Imagen */}
+          <div className="order-2 order-md-1 d-none d-md-flex col-md-8 d-flex justify-content-end banner-principal-img">
+            <img className="img-netflix" src={`/${banner.ruta}${banner.imagenBanner}`} alt="" />
+          </div>
+          <div className="order-1 order-md-2 d-md-none banner-principal-img-mov">
+            <img className="img-netflix-movil" src={`/${banner.ruta}${banner.imagenMobile}`} alt="" />
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 // Componente para los botones de control del carrusel
 const CarouselControls = () => (
