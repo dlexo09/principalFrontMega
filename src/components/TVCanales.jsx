@@ -24,7 +24,7 @@ const Canales = () => {
         .catch((error) => console.error("Error fetching paquetes:", error));
 
       // Obtener los canales
-      fetch(`${serverAPILambda}api/canales/${currentLocation.idSucursal}`)
+      fetch(`${serverAPILambda}api/Canales/${currentLocation.idSucursal}`)
         .then((response) => response.json())
         .then((data) => {
           // Agrupar canales por selector
