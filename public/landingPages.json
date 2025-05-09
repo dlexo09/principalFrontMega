@@ -1,0 +1,24 @@
+[
+    {
+      "slug": "disneyplus",
+      "title": "",
+      "bannerImage": "/uploads/landing/bannerp-disney.jpg",
+      "description": "Esta es una descripción de la landing page.",
+      "formLink": "https://example.com/formulario",
+      "component": "<div><h2>Componente Dinámico</h2><p>Contenido adicional aquí.</p></div>",
+      "showHeader": true,
+      "showPackages": true
+
+    },
+    {
+      "slug": "triple-pack",
+      "title": "",
+      "bannerImage": "/uploads/landing/webbanner-amazon-mega-450.jpg",
+      "description": "Esta es una descripción de la landing page.",
+      "formLink": "https://example.com/formulario",
+      "component": "<div><h2>Componente Dinámico</h2><p>Contenido adicional aquí.</p></div>",
+      "showHeader": true,
+      "showPackages": false
+
+    }
+  ]

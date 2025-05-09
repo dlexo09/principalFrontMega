@@ -1,0 +1,63 @@
+.landing-banner {
+  position: relative;
+  width: 100%;
+  text-align: center;
+}
+
+.landing-banner-image {
+  width: 100%; /* Ocupa el 100% del ancho */
+  height: auto; /* Ajusta la altura automáticamente */
+}
+
+.landing-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+.landing-form-section {
+  background-color: #000; /* Fondo negro */
+  color: #fff; /* Texto blanco */
+  padding: 20px;
+  text-align: center;
+}
+
+.landing-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; /* Espaciado entre los elementos */
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en pantallas pequeñas */
+}
+
+.form-title {
+  font-size: 1.5rem;
+  margin: 0;
+  white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.form-control {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 250px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
