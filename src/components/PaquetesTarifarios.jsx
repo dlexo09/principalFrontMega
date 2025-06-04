@@ -18,6 +18,8 @@ const PaquetesTarifarios = () => {
   const [promos, setPromos] = useState([]);
   const promoValue = 0;
   const idSucursal = currentLocation?.idSucursal;
+  const nombreSucursal = currentLocation?.sucursalName || ""; // <-- Asegura que tienes el nombre
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -71,7 +73,12 @@ const PaquetesTarifarios = () => {
   );
 
   const handleButtonClick = (idContrata) => {
-    navigate(`/detallePaquete/${idContrata}`);
+    if (!idSucursal || !nombreSucursal) {
+      alert("Selecciona una sucursal para continuar.");
+      return;
+    }
+    const url = `https://ventas-web.megacable.com.mx/#/new-sale/${idContrata}/${idSucursal}/${encodeURIComponent(nombreSucursal)}`;
+    window.open(url, "_blank");
   };
 
   useEffect(() => {
