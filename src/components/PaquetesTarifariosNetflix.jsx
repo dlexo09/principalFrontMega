@@ -15,6 +15,8 @@ const PaquetesTarifariosNetflix = () => {
   const [extraPromos, setExtraPromos] = useState([]);
   const [selectedPromo, setSelectedPromo] = useState({});
   const promoValue = 0;
+  const idSucursal = currentLocation?.idSucursal;
+  const nombreSucursal = currentLocation?.sucursalName || ""; // <-- Asegura que tienes el nombre
   const navigate = useNavigate();
 
   // Obtener paquetes
@@ -105,8 +107,13 @@ const PaquetesTarifariosNetflix = () => {
     return () => clearTimeout(timer);
   }, [paquetes, selectedPack]);
 
-  const handleButtonClick = (idContrata) => {
-    navigate(`/detallePaquete/${idContrata}`);
+   const handleButtonClick = (idContrata) => {
+    if (!idSucursal || !nombreSucursal) {
+      alert("Selecciona una sucursal para continuar.");
+      return;
+    }
+    const url = `https://ventas-web.megacable.com.mx/#/new-sale/${idContrata}/${idSucursal}/${encodeURIComponent(nombreSucursal)}`;
+    window.open(url, "_blank");
   };
 
   const handlePromoChange = (uniqueId, promo) => {
