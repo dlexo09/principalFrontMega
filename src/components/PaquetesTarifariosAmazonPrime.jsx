@@ -6,7 +6,10 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import { serverAPILambda } from '../config';
 import { LocationContext } from '../LocationContext';
+import { cifrarAES } from "../utils/AES"; // Ajusta la ruta si es necesario
 import './PaquetesTarifarios.css';
+
+const AES_KEY = "9e3f2b1a4c6d8e7f0a1b2c3d4e5f6789a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5";
 
 const PaquetesTarifariosAmazonPrime = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -15,7 +18,7 @@ const PaquetesTarifariosAmazonPrime = () => {
   const [extraPromos, setExtraPromos] = useState([]);
   const [selectedPromo, setSelectedPromo] = useState({});
   const promoValue = 0;
-    const idSucursal = currentLocation?.idSucursal;
+  const idSucursal = currentLocation?.idSucursal;
   const nombreSucursal = currentLocation?.sucursalName || ""; // <-- Asegura que tienes el nombre
 
   const navigate = useNavigate();
@@ -116,12 +119,13 @@ const PaquetesTarifariosAmazonPrime = () => {
     }
   }, [paquetes, selectedPack]);
 
-  const handleButtonClick = (idContrata) => {
+  const handleButtonClick = (idPaqueteWeb, costoPaquete, idSucursal, nombreSucursal) => {
     if (!idSucursal || !nombreSucursal) {
       alert("Selecciona una sucursal para continuar.");
       return;
     }
-    const url = `https://ventas-web.megacable.com.mx/#/new-sale/${idContrata}/${idSucursal}/${encodeURIComponent(nombreSucursal)}`;
+    const costoCifrado = cifrarAES(String(costoPaquete), AES_KEY);
+    const url = `https://ventas-web.megacable.com.mx/#/new-sale/${idPaqueteWeb}/${idSucursal}/${encodeURIComponent(nombreSucursal)}?c=${encodeURIComponent(costoCifrado)}`;
     window.open(url, "_blank");
   };
 
@@ -293,8 +297,17 @@ const PaquetesTarifariosAmazonPrime = () => {
                             <p className="card-text">x {paquete.tarifaPromocionalTemp} meses</p>
                           )}
                         </div>
-                        <button className="btn btn-packs btn-pack-card" onClick={() => handleButtonClick(paquete.idContrata)}>¡Lo quiero!</button>
-
+                        <button
+                          className="btn btn-packs btn-pack-card"
+                          onClick={() => handleButtonClick(
+                            paquete.idContrata,
+                            paquete.tarifaPromocional,
+                            currentLocation?.idSucursal,
+                            currentLocation?.sucursalName
+                          )}
+                        >
+                          ¡Lo quiero!
+                        </button>
 
                       </div>
                     </div>
