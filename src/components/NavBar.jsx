@@ -48,7 +48,7 @@ const NavBar = () => {
       <div className="container">
         {/* Logo */}
         <div className="navbar-logo">
-          <a href={serverUrl}>
+          <a href="/">
             <img
               src="/img/general/mega-logo.png"
               alt="Logo"

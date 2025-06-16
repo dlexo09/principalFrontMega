@@ -10,7 +10,7 @@ const Trivias = () => {
   useEffect(() => {
     const fetchBanners = async () => {
       try {
-        const response = await fetch(`${serverAPILambda}api/trivias/`);
+        const response = await fetch(`${serverAPILambda}api/trivias`);
         const data = await response.json();
         const now = new Date();
         const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
