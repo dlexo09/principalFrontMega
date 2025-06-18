@@ -1,24 +1,94 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
-import { serverAPILambda } from '../config'; // Importar serverAPIUrl
-import { LocationContext } from '../LocationContext'; // Importar LocationContext
+import { serverAPILambda, S3_BASE_URL } from '../config';
+import { LocationContext } from '../LocationContext';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation'; // Importar estilos de navegación
+import 'swiper/css/navigation';
 import './BannerStreamingHome.css';
+
+// Constante para la URL base de S3/CloudFront
+const DEFAULT_PLACEHOLDER = "/img/placeholder-card.png";
+
+/**
+ * Registra información de depuración en consola
+ */
+const debug = (message, data) => {
+  console.log(`[BannerStreaming] ${message}`, data);
+};
+
+/**
+ * Obtiene la URL correcta para una imagen
+ * @param {string} fileName - Nombre del archivo o ruta
+ * @returns {string} URL completa de la imagen
+ */
+const getImageUrl = (fileName) => {
+  // Si no hay nombre de archivo, usar el placeholder
+  if (!fileName) {
+    debug('Sin nombre de archivo', { fileName });
+    return DEFAULT_PLACEHOLDER;
+  }
+  
+  // Si ya es una URL completa de S3/CloudFront, dejarla como está
+  if (fileName.startsWith('http')) {
+    debug('Usando URL completa', { fileName });
+    return fileName;
+  }
+
+  // Si ya incluye 'uploads/bannerHero/', extraer solo esa parte
+  if (fileName.includes('uploads/bannerHero/')) {
+    const match = fileName.match(/uploads\/bannerHero\/[^/]+$/);
+    if (match) {
+      const pathFragment = match[0];
+      const s3Url = `${S3_BASE_URL}/${pathFragment}`;
+      debug('Reconstruyendo URL desde ruta parcial', { s3Url });
+      return s3Url;
+    }
+  }
+
+  // Extraer solo el nombre del archivo, sin importar la ruta
+  const fileNameOnly = fileName.split('/').pop();
+  
+  // Construir la URL con la ruta correcta que funciona
+  const s3Url = `${S3_BASE_URL}/uploads/bannerHero/${fileNameOnly}`;
+  debug('Generando URL S3', { originalPath: fileName, s3Url });
+  return s3Url;
+};
 
 const BannerStreamingHome = () => {
   const { currentLocation } = useContext(LocationContext);
   const [cards, setCards] = useState([]);
   const [slidesPerView, setSlidesPerView] = useState(3);
   const [loop, setLoop] = useState(true);
+  const [loading, setLoading] = useState(true);
+  const [imageErrors, setImageErrors] = useState({});
+
+  // Función para probar rutas S3 diferentes
+  useEffect(() => {
+    // Función para probar la disponibilidad de una URL
+    const testUrl = (url, description) => {
+      const img = new Image();
+      img.onload = () => debug(`✅ URL accesible: ${description}`, { url });
+      img.onerror = () => debug(`❌ URL inaccesible: ${description}`, { url });
+      img.src = url;
+    };
+    
+    // Probar diferentes estructuras de URL con un archivo conocido
+    testUrl(`${S3_BASE_URL}/uploads/bannerHero/sdk444-logo.jpeg`, "S3 path: /uploads/bannerHero/");
+    testUrl(`${S3_BASE_URL}/dist/uploads/bannerHero/sdk444-logo.jpeg`, "S3 path: /dist/uploads/bannerHero/");
+    testUrl("/img/home/sdk444-logo.jpeg", "Local path: /img/home/");
+  }, []);
 
   useEffect(() => {
     const fetchCards = async () => {
       try {
+        setLoading(true);
+        debug('Solicitando datos de API', `${serverAPILambda}api/cardStreaming`);
         const response = await fetch(`${serverAPILambda}api/cardStreaming`);
         const data = await response.json();
+        debug('Datos recibidos:', data);
+        
         const currentDate = new Date();
 
         const filteredCards = data.filter(card => {
@@ -36,6 +106,7 @@ const BannerStreamingHome = () => {
 
         // Filtrar cards con permisos
         const filteredCardsWithPermissions = cardsWithPermissions.filter(card => card !== null);
+        debug('Cards filtradas', filteredCardsWithPermissions);
         setCards(filteredCardsWithPermissions);
 
         // Ajustar dinámicamente la configuración de Swiper
@@ -43,6 +114,8 @@ const BannerStreamingHome = () => {
         setLoop(filteredCardsWithPermissions.length >= 3);
       } catch (error) {
         console.error('Error fetching card streaming data:', error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -50,6 +123,74 @@ const BannerStreamingHome = () => {
       fetchCards();
     }
   }, [currentLocation]);
+
+  // Manejador de errores de imagen mejorado
+  const handleImageError = (e, cardId, isLogo = true) => {
+    const currentSrc = e.target.src;
+    const fileName = currentSrc.split('/').pop();
+    const errorKey = `${cardId}-${isLogo ? 'logo' : 'bg'}`;
+    
+    // Registrar el error
+    setImageErrors(prev => ({
+      ...prev,
+      [errorKey]: (prev[errorKey] || 0) + 1
+    }));
+    
+    debug('Error cargando imagen', { 
+      src: currentSrc, 
+      fileName,
+      cardId,
+      tipo: isLogo ? 'logo' : 'background',
+      intentos: imageErrors[errorKey] || 0
+    });
+    
+    // Prevenir múltiples llamadas
+    e.target.onerror = null;
+    
+    // Si ya estamos usando el placeholder, no seguir intentando
+    if (currentSrc.includes(DEFAULT_PLACEHOLDER)) {
+      debug('Ya usando placeholder, no hacer nada', { placeholder: DEFAULT_PLACEHOLDER });
+      return;
+    }
+
+    // Si la URL contiene /img/home/ y ha fallado, intentar con ruta S3 correcta
+    if (currentSrc.includes('/img/home/')) {
+      // Intentar con la ruta S3
+      const s3Url = `${S3_BASE_URL}/uploads/bannerHero/${fileName}`;
+      debug('URL local falló, intentando con URL S3 correcta', { s3Url });
+      e.target.src = s3Url;
+      
+      // Si la ruta S3 falla, usar placeholder
+      e.target.onerror = () => {
+        debug('S3 también falló, usando placeholder', { placeholder: DEFAULT_PLACEHOLDER });
+        e.target.src = DEFAULT_PLACEHOLDER;
+        e.target.onerror = null; // Evitar bucles
+      };
+      return;
+    }
+    
+    // Si es una URL de S3/CloudFront que falló, intentar con ruta local
+    if (currentSrc.includes(S3_BASE_URL)) {
+      const localUrl = `/img/home/${fileName}`;
+      debug('URL S3 falló, intentando con ruta local', { localUrl });
+      e.target.src = localUrl;
+      
+      // Si vuelve a fallar, usar placeholder
+      e.target.onerror = () => {
+        debug('Ruta local también falló, usando placeholder', { placeholder: DEFAULT_PLACEHOLDER });
+        e.target.src = DEFAULT_PLACEHOLDER;
+        e.target.onerror = null; // Evitar bucles
+      };
+    } else {
+      // Último recurso para cualquier otra situación: usar el placeholder
+      debug('Usando placeholder directo', { placeholder: DEFAULT_PLACEHOLDER });
+      e.target.src = DEFAULT_PLACEHOLDER;
+    }
+  };
+
+  if (loading) {
+    return <div className="loading-container">Cargando...</div>;
+  }
 
   return (
     <>
@@ -98,18 +239,77 @@ const BannerStreamingHome = () => {
           }}
         >
           {cards.map(card => {
-            const backgroundStyle = card.backgroundCard
-              ? { backgroundColor: card.backgroundCard }
-              : card.backgroundImageCard
-              ? { backgroundImage: `url(/img/home/${card.backgroundImageCard})` }
-              : { backgroundColor: '#000' };
+            const cardId = card.idCardStreaming;
+            debug(`Procesando card ${cardId}`, {
+              name: card.nameCard,
+              logoCard: card.logoCard,
+              s3_logo_url: card.s3_logo_url,
+              backgroundImageCard: card.backgroundImageCard,
+              s3_image_url: card.s3_image_url
+            });
+            
+            // Determinar el estilo de fondo
+            let backgroundStyle = {};
+            
+            // Priorizar URLs directas de S3
+            if (card.s3_image_url) {
+              // Si s3_image_url comienza con / o es ruta relativa, convertirla a S3
+              const bgUrl = card.s3_image_url.startsWith('http') ? 
+                card.s3_image_url : getImageUrl(card.s3_image_url);
+              
+              debug('Usando URL de imagen S3', { url: bgUrl, original: card.s3_image_url });
+              backgroundStyle = { backgroundImage: `url(${bgUrl})` };
+            } else if (card.backgroundCard) {
+              debug('Usando color de fondo', { color: card.backgroundCard });
+              backgroundStyle = { backgroundColor: `#${card.backgroundCard.replace('#', '')}` };
+            } else if (card.backgroundImageCard) {
+              const bgUrl = getImageUrl(card.backgroundImageCard);
+              debug('Usando imagen de fondo desde S3', { bgUrl });
+              backgroundStyle = { backgroundImage: `url(${bgUrl})` };
+            } else {
+              debug('Usando color negro por defecto');
+              backgroundStyle = { backgroundColor: '#000' };
+            }
+
+            // Determinar la URL del logo
+            let logoUrl;
+            if (card.s3_logo_url) {
+              // Si s3_logo_url comienza con / o es ruta relativa, convertirla a S3
+              logoUrl = card.s3_logo_url.startsWith('http') ? 
+                card.s3_logo_url : getImageUrl(card.s3_logo_url);
+              
+              debug('Usando URL de logo S3', { logoUrl, original: card.s3_logo_url });
+            } else if (card.logoCard) {
+              logoUrl = getImageUrl(card.logoCard);
+              debug('Usando logo desde S3', { logoUrl });
+            } else {
+              logoUrl = DEFAULT_PLACEHOLDER;
+              debug('Sin logo, usando placeholder', { logoUrl });
+            }
 
             return (
               <SwiperSlide key={card.idCardStreaming}>
-                <div className="swiper-img-container" style={backgroundStyle}>
+                <div 
+                  className="swiper-img-container" 
+                  style={backgroundStyle}
+                  data-card-id={card.idCardStreaming}
+                >
                   <div className="swiper-content d-flex align-items-center flex-column justify-content-center">
-                    <img src={`/img/home/${card.logoCard}`} alt={card.nameCard} />
-                    <a href={card.linkButton} className="hidden-button btn-action">{card.textButton}</a>
+                    <img 
+                      src={logoUrl} 
+                      alt={card.nameCard || 'Streaming'} 
+                      onError={(e) => handleImageError(e, card.idCardStreaming, true)}
+                      data-original-src={card.s3_logo_url || card.logoCard || ''}
+                    />
+                    <a 
+                      href={card.linkButton} 
+                      className="hidden-button btn-action"
+                      style={card.backgroundButton ? 
+                        { backgroundColor: `#${card.backgroundButton.replace('#', '')}` } : 
+                        {}}
+                    >
+                      {card.textButton}
+                    </a>
                   </div>
                 </div>
               </SwiperSlide>

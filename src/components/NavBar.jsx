@@ -8,12 +8,22 @@ const NavBar = () => {
   const [paqueteData, setPaqueteData] = useState([]);
   const idSucursal = currentLocation?.idSucursal;
 
+  // Log para verificar configuraciones al inicio
+  useEffect(() => {
+    console.log('=== NavBar: Configuración inicial ===');
+    console.log('serverUrl:', serverUrl);
+    console.log('serverAPILambda:', serverAPILambda);
+    console.log('currentLocation:', currentLocation);
+  }, []);
+
   useEffect(() => {
     const fetchPaqueteData = async () => {
       if (idSucursal) {
         try {
+          console.log(`Fetching paquete data for idSucursal: ${idSucursal}`);
           const response = await fetch(`${serverAPILambda}api/xview/${idSucursal}`);
           const data = await response.json();
+          console.log('Paquete data received:', data);
           setPaqueteData(data);
         } catch (error) {
           console.error('Error fetching paquete data:', error);
@@ -33,6 +43,7 @@ const NavBar = () => {
       return '/tv';
     }
   };
+  
   const getTextXview = () => {
     if (paqueteData.some(paquete => paquete.idTipoPaquete === 4)) {
       return 'Xview+';
@@ -43,19 +54,41 @@ const NavBar = () => {
     }
   };
 
+  // Función para manejar errores de imágenes y mostrar información útil
+  const handleImageError = (e) => {
+    console.error('=== Error cargando imagen ===');
+    console.error('Ruta intentada:', e.target.src);
+    console.error('Elemento:', e.target);
+    console.error('Alt text:', e.target.alt);
+    
+    // Evitar bucles infinitos de error
+    e.target.onerror = null;
+    
+    // Opcional: intentar una ruta alternativa
+    if (e.target.src.includes('/img/')) {
+      const newPath = e.target.src.replace('/img/', '/uploads/');
+      console.log('Intentando ruta alternativa:', newPath);
+      e.target.src = newPath;
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-xl navbar-custom navbar-container nav-menu">
       <div className="container">
-        {/* Logo */}
+        {/* Logo con manejo de errores */}
         <div className="navbar-logo">
-          <a href="/">
+          <a href={serverUrl}>
             <img
               src="/img/general/mega-logo.png"
               alt="Logo"
               className="logo-img"
+              onLoad={() => console.log('Logo cargado correctamente')}
+              onError={handleImageError}
             />
           </a>
         </div>
+        
+        {/* Resto del código sin cambios */}
         <button
           className="navbar-toggler"
           type="button"
@@ -69,6 +102,7 @@ const NavBar = () => {
         </button>
         <div className="navbar-container collapse navbar-collapse justify-content-end pt-2 pb-2" id="navbarNav">
           <ul className="navbar-nav">
+            {/* Dropdown de Oferta */}
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Oferta
@@ -79,6 +113,8 @@ const NavBar = () => {
                 <li><a className="dropdown-item" href="/mcm" target="_blank" rel="noopener noreferrer">MCM</a></li>
               </ul>
             </li>
+            
+            {/* Resto de los elementos del menú... */}
             <li className="nav-item dropdown">
               <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Servicios
@@ -127,5 +163,8 @@ const NavBar = () => {
     </nav>
   );
 };
+
+// Log para verificar que el componente se está exportando correctamente
+console.log('NavBar component loaded');
 
 export default NavBar;
