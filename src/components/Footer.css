@@ -69,8 +69,15 @@
 
 .accordion,
 .accordion-item {
-  background-color: #000;
+  background-color: #fff;
   border: none;
+  
+}
+
+.accordion
+.accordion-item-footer {
+background-color: #000;
+border-radius: 0 !important;
 }
 
 .accordion {

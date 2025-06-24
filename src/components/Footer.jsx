@@ -11,7 +11,7 @@ const AccordionItem = ({ id, title, content, link }) => {
 
   if (link) {
     return (
-      <div className="accordion-item">
+      <div className="accordion-item accordion-item-footer">
         <h2 className="accordion-header" id={`heading-${id}`}>
           <a
             className="btn-footer"
@@ -27,7 +27,7 @@ const AccordionItem = ({ id, title, content, link }) => {
   }
 
   return (
-    <div className="accordion-item">
+    <div className="accordion-item accordion-item-footer">
       <h2 className="accordion-header" id={`heading-${id}`}>
         <button
           className={`accordion-button ${!isExpanded ? 'collapsed' : ''}`}
