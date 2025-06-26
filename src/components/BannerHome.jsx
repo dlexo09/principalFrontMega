@@ -1,7 +1,37 @@
 import React, { useEffect, useState, useContext } from "react";
-import { serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
-import { LocationContext } from "../LocationContext"; // Ajusta la ruta según la ubicación de tu archivo LocationContext.js
+import { serverAPILambda, S3_BASE_URL } from "../config";
+import { LocationContext } from "../LocationContext";
 import "./BannerHome.css";
+
+// Constante para la URL base de S3/CloudFront
+const DEFAULT_PLACEHOLDER = "/img/placeholder-banner.png";
+
+/**
+ * Obtiene la URL correcta para una imagen, considerando rutas S3
+ * @param {string} basePath - Ruta base (ej: uploads/bannerHero/)
+ * @param {string} fileName - Nombre del archivo
+ * @returns {string} URL completa de la imagen
+ */
+const getImageUrl = (basePath = '', fileName = '') => {
+  if (!fileName) return DEFAULT_PLACEHOLDER;
+  
+  // Si es una URL completa
+  if (fileName.startsWith('http')) {
+    return fileName;
+  }
+  
+  // Limpiar barras iniciales para evitar dobles barras
+  const path = basePath ? (basePath.startsWith('/') ? basePath.substring(1) : basePath) : '';
+  const file = fileName.startsWith('/') ? fileName.substring(1) : fileName;
+  
+  // Si la ruta incluye 'uploads/' es una ruta S3
+  if (path.includes('uploads/')) {
+    return `${S3_BASE_URL}/${path}${file}`;
+  }
+  
+  // Para mantener compatibilidad con rutas anteriores
+  return `/${path}${file}`;
+};
 
 const BannerHome = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -92,18 +122,54 @@ const CarouselSlides = ({ banners }) => (
 
 // Componente para un slide individual
 const CarouselSlide = ({ banner, isActive }) => {
-  const [imgError, setImgError] = useState(false);
+  const [imgError, setImgError] = useState({
+    background: false,
+    banner: false,
+    mobile: false
+  });
 
-  if (imgError) return null;
+  // Manejo de errores de imagen con reintentos
+  const handleImageError = (e, type) => {
+    e.target.onerror = null; // Prevenir bucles infinitos
+    
+    // Si la imagen ya falló una vez, marcar error permanente
+    if (imgError[type]) {
+      return;
+    }
+    
+    // Marcar este tipo de imagen como con error
+    setImgError(prev => ({...prev, [type]: true}));
+    
+    // Intentar ruta alternativa con S3
+    if (e.target.src.includes(`/${banner.ruta}`)) {
+      const file = e.target.src.split(`/${banner.ruta}`)[1];
+      if (file) {
+        // Intentar ruta directa a S3
+        e.target.src = `${S3_BASE_URL}/uploads/bannerHero/${file}`;
+      } else {
+        e.target.src = DEFAULT_PLACEHOLDER;
+      }
+    } else {
+      e.target.src = DEFAULT_PLACEHOLDER;
+    }
+  };
+
+  // Si fallaron todas las imágenes principales, mostrar placeholder pero no ocultar el banner
+  const allImagesFailed = imgError.background && imgError.banner && imgError.mobile;
+
+  // Construir URLs utilizando la función getImageUrl
+  const backgroundUrl = getImageUrl(banner.ruta, banner.background);
+  const bannerImgUrl = getImageUrl(banner.ruta, banner.imagenBanner);
+  const mobileImgUrl = getImageUrl(banner.ruta, banner.imagenMobile);
 
   return (
     <div className={`carousel-item ${isActive ? "active" : ""}`}>
       {/* Fondo del Slider */}
       <img
-        src={`/${banner.ruta}${banner.background}`}
+        src={backgroundUrl}
         className="d-block w-100 banner-background"
         alt={`Slide`}
-        onError={() => setImgError(true)}
+        onError={(e) => handleImageError(e, 'background')}
       />
 
       {/* Contenido Superpuesto */}
@@ -123,10 +189,20 @@ const CarouselSlide = ({ banner, isActive }) => {
 
           {/* Columna Derecha: Imagen */}
           <div className="order-2 order-md-1 d-none d-md-flex col-md-8 d-flex justify-content-end banner-principal-img">
-            <img className="img-netflix" src={`/${banner.ruta}${banner.imagenBanner}`} alt="" />
+            <img 
+              className="img-netflix" 
+              src={bannerImgUrl} 
+              alt=""
+              onError={(e) => handleImageError(e, 'banner')}
+            />
           </div>
           <div className="order-1 order-md-2 d-md-none banner-principal-img-mov">
-            <img className="img-netflix-movil" src={`/${banner.ruta}${banner.imagenMobile}`} alt="" />
+            <img 
+              className="img-netflix-movil" 
+              src={mobileImgUrl} 
+              alt="" 
+              onError={(e) => handleImageError(e, 'mobile')}
+            />
           </div>
         </div>
       </div>
