@@ -169,17 +169,20 @@ const Footer = () => {
         `,
       },
     ],
-  ];
-
+  ]; 
+ 
   return (
     <footer className="footer">
       <div className="top-footer">
         <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center">
           <div className="contratar-container d-flex flex-column flex-lg-row align-items-center">
             <label>¡Quiero contratar!</label>
-            <form className='form-footer d-flex flex-column flex-md-row' action="">
-              <input type="text" placeholder='  Tu número'/>
-              <button type="submit">¡Llámame!</button>
+            <form className='form-footer d-flex flex-column flex-md-row' action="">              
+              <input type="text" class="form-control telefono" placeholder="Tu teléfono" name="phone" id="P2_dato1" required="" maxlength="14" data-ic-form-field="phone"></input>
+              
+              <input type="checkbox" id="i-acepto" required="" name="i-acepto" data-ic-form-field="i-acepto"></input>
+              <label class="form-check-label" id="l-acepto" for="i-acepto"><small>He leído y Acepto el <a target='_blank' href="/aviso-de-privacidad">Aviso de privacidad</a></small></label>
+              <button class="btn llamame-send" type="botton" id="f-llamame-home0_0">Llámame</button>
             </form>
           </div>
           <div className="social-foter-container d-flex flex-md-column flex-lg-row mt-4 mt-md-0">

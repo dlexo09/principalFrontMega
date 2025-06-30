@@ -195,11 +195,8 @@ const BannerStreamingHome = () => {
   return (
     <>
       <div className="banner-streaming-home text-center">
-        <h2 className="small-title mb-3 mb-md-0">TODO EN UN SOLO LUGAR</h2>
-        <h3 className="big-title">¡Agrega más entretenimiento!</h3>
-        <p className="txt-wht">
-          Si eres cliente, disfruta de la comodidad de gestionar todas tus suscripciones desde un solo lugar, ¡simplifica tus pagos y obtén más beneficios!
-        </p>
+        <h2 className="small-title mb-3 mb-md-0">¡AHORA MÁS DIVERSIÓN!</h2>
+        <h3 className="big-title ">CONTRATA Y ACTIVA TUS APPS FAVORITAS</h3>
       </div>
 
       <div className="container swiper-container streamings-home">

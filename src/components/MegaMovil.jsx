@@ -10,7 +10,7 @@ const MegaMovil = () => {
                     <h3 className="secondary-title">¡La mejor cobertura <span>sin cambiar tú número!</span> </h3>
                     <p className="mt-4 mt-lg-5 ">Descubre Mega Móvil y disfruta de minutos y SMS ilimitados en México, EE.UU y Canadá , junto con excelentes beneficios para cllientes.</p>
                     <div className="mt-4 mt-lg-5 d-flex justify-content-center justify-content-lg-start">
-                        <a href="https://megamovil.mx/" className="btn-action">
+                        <a target="_blank" href="https://megamovil.mx/" className="btn-action">
                             Saber más <span className="open-page-icon"></span>
                         </a>
                     </div>
