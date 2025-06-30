@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import { serverAPILambda, S3_BASE_URL } from "../config";
+import { serverAPILambda, serverUrl } from "../config";
 import { LocationContext } from "../LocationContext";
 import "./BannerHome.css";
 
@@ -26,7 +26,7 @@ const getImageUrl = (basePath = '', fileName = '') => {
   
   // Si la ruta incluye 'uploads/' es una ruta S3
   if (path.includes('uploads/')) {
-    return `${S3_BASE_URL}/${path}${file}`;
+    return `${serverUrl}/${path}${file}`;
   }
   
   // Para mantener compatibilidad con rutas anteriores
@@ -145,7 +145,7 @@ const CarouselSlide = ({ banner, isActive }) => {
       const file = e.target.src.split(`/${banner.ruta}`)[1];
       if (file) {
         // Intentar ruta directa a S3
-        e.target.src = `${S3_BASE_URL}/uploads/bannerHero/${file}`;
+        e.target.src = `${serverUrl}/uploads/bannerHero/${file}`;
       } else {
         e.target.src = DEFAULT_PLACEHOLDER;
       }

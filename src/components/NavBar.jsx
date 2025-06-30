@@ -10,20 +10,20 @@ const NavBar = () => {
 
   // Log para verificar configuraciones al inicio
   useEffect(() => {
-    console.log('=== NavBar: Configuración inicial ===');
-    console.log('serverUrl:', serverUrl);
-    console.log('serverAPILambda:', serverAPILambda);
-    console.log('currentLocation:', currentLocation);
+    // console.log('=== NavBar: Configuración inicial ===');
+    // console.log('serverUrl:', serverUrl);
+    // console.log('serverAPILambda:', serverAPILambda);
+    // console.log('currentLocation:', currentLocation);
   }, []);
 
   useEffect(() => {
     const fetchPaqueteData = async () => {
       if (idSucursal) {
         try {
-          console.log(`Fetching paquete data for idSucursal: ${idSucursal}`);
+          // console.log(`Fetching paquete data for idSucursal: ${idSucursal}`);
           const response = await fetch(`${serverAPILambda}api/xview/${idSucursal}`);
           const data = await response.json();
-          console.log('Paquete data received:', data);
+          // console.log('Paquete data received:', data);
           setPaqueteData(data);
         } catch (error) {
           console.error('Error fetching paquete data:', error);
@@ -56,10 +56,10 @@ const NavBar = () => {
 
   // Función para manejar errores de imágenes y mostrar información útil
   const handleImageError = (e) => {
-    console.error('=== Error cargando imagen ===');
-    console.error('Ruta intentada:', e.target.src);
-    console.error('Elemento:', e.target);
-    console.error('Alt text:', e.target.alt);
+    // console.error('=== Error cargando imagen ===');
+    // console.error('Ruta intentada:', e.target.src);
+    // console.error('Elemento:', e.target);
+    // console.error('Alt text:', e.target.alt);
     
     // Evitar bucles infinitos de error
     e.target.onerror = null;
@@ -67,7 +67,7 @@ const NavBar = () => {
     // Opcional: intentar una ruta alternativa
     if (e.target.src.includes('/img/')) {
       const newPath = e.target.src.replace('/img/', '/uploads/');
-      console.log('Intentando ruta alternativa:', newPath);
+      // console.log('Intentando ruta alternativa:', newPath);
       e.target.src = newPath;
     }
   };
@@ -82,7 +82,7 @@ const NavBar = () => {
               src="/img/general/mega-logo.png"
               alt="Logo"
               className="logo-img"
-              onLoad={() => console.log('Logo cargado correctamente')}
+              // onLoad={() => console.log('Logo cargado correctamente')}
               onError={handleImageError}
             />
           </a>
@@ -165,6 +165,6 @@ const NavBar = () => {
 };
 
 // Log para verificar que el componente se está exportando correctamente
-console.log('NavBar component loaded');
+// console.log('NavBar component loaded');
 
 export default NavBar;

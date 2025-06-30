@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCoverflow, Navigation } from 'swiper/modules';
-import { serverAPILambda, S3_BASE_URL } from '../config';
+import { serverAPILambda, serverUrl } from '../config';
 import { LocationContext } from '../LocationContext';
 import 'swiper/css';
 import 'swiper/css/effect-coverflow';
@@ -15,7 +15,7 @@ const DEFAULT_PLACEHOLDER = "/img/placeholder-card.png";
  * Registra información de depuración en consola
  */
 const debug = (message, data) => {
-  console.log(`[BannerStreaming] ${message}`, data);
+  // console.log(`[BannerStreaming] ${message}`, data);
 };
 
 /**
@@ -41,7 +41,7 @@ const getImageUrl = (fileName) => {
     const match = fileName.match(/uploads\/bannerHero\/[^/]+$/);
     if (match) {
       const pathFragment = match[0];
-      const s3Url = `${S3_BASE_URL}/${pathFragment}`;
+      const s3Url = `${serverUrl}/${pathFragment}`;
       debug('Reconstruyendo URL desde ruta parcial', { s3Url });
       return s3Url;
     }
@@ -51,7 +51,7 @@ const getImageUrl = (fileName) => {
   const fileNameOnly = fileName.split('/').pop();
   
   // Construir la URL con la ruta correcta que funciona
-  const s3Url = `${S3_BASE_URL}/uploads/bannerHero/${fileNameOnly}`;
+  const s3Url = `${serverUrl}/uploads/bannerHero/${fileNameOnly}`;
   debug('Generando URL S3', { originalPath: fileName, s3Url });
   return s3Url;
 };
@@ -75,8 +75,8 @@ const BannerStreamingHome = () => {
     };
     
     // Probar diferentes estructuras de URL con un archivo conocido
-    testUrl(`${S3_BASE_URL}/uploads/bannerHero/sdk444-logo.jpeg`, "S3 path: /uploads/bannerHero/");
-    testUrl(`${S3_BASE_URL}/dist/uploads/bannerHero/sdk444-logo.jpeg`, "S3 path: /dist/uploads/bannerHero/");
+    testUrl(`${serverUrl}/uploads/bannerHero/sdk444-logo.jpeg`, "S3 path: /uploads/bannerHero/");
+    testUrl(`${serverUrl}/dist/uploads/bannerHero/sdk444-logo.jpeg`, "S3 path: /dist/uploads/bannerHero/");
     testUrl("/img/home/sdk444-logo.jpeg", "Local path: /img/home/");
   }, []);
 
@@ -156,7 +156,7 @@ const BannerStreamingHome = () => {
     // Si la URL contiene /img/home/ y ha fallado, intentar con ruta S3 correcta
     if (currentSrc.includes('/img/home/')) {
       // Intentar con la ruta S3
-      const s3Url = `${S3_BASE_URL}/uploads/bannerHero/${fileName}`;
+      const s3Url = `${serverUrl}/uploads/bannerHero/${fileName}`;
       debug('URL local falló, intentando con URL S3 correcta', { s3Url });
       e.target.src = s3Url;
       
@@ -170,7 +170,7 @@ const BannerStreamingHome = () => {
     }
     
     // Si es una URL de S3/CloudFront que falló, intentar con ruta local
-    if (currentSrc.includes(S3_BASE_URL)) {
+    if (currentSrc.includes(serverUrl)) {
       const localUrl = `/img/home/${fileName}`;
       debug('URL S3 falló, intentando con ruta local', { localUrl });
       e.target.src = localUrl;
