@@ -30,8 +30,8 @@
 .pago-text{
   max-width: 500px;
 }
-.pago-text p{
-  max-width: 400px;
+.pago-text span{
+  font-weight: 600;
 }
 
 
