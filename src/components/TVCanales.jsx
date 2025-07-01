@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Helmet } from "react-helmet-async";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { LocationContext } from "../LocationContext";
 import { serverAPIUrl, serverAPILambda } from "../config";
 import "./TVCanales.css";

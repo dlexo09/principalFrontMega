@@ -1,8 +1,6 @@
 import { HelmetProvider } from 'react-helmet-async';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./components/Globales.css";
 
 import TopBar from './components/TopBar';
@@ -37,11 +35,36 @@ import ActivaMax from './views/ActivaMax';
 import DetallePaquete from './views/DetallePaquete';
 import LandingPage from './views/LandingPage';
 import Footer from './components/Footer';
+import LocationModal from "./components/LocationModal";
 import { LocationProvider } from './LocationContext';
 import './App.css';
 
 function App() {
+  const modalRef = useRef(null);
+  const [locations, setLocations] = useState([]);
+  const [currentLocation, setCurrentLocation] = useState(null);
+
   const [showHeader, setShowHeader] = useState(true); // Estado para controlar la visibilidad de TopBar y NavBar
+
+  // Puedes pasar estos handlers y estados a TopBar y LocationModal vía props o context
+  const handleLocationChange = (e) => {
+    const selectedLocation = locations.find(
+      (location) => location.sucursalName === e.target.value
+    );
+    setCurrentLocation(selectedLocation);
+    localStorage.setItem("selectedLocation", JSON.stringify(selectedLocation));
+    // Cierra el modal usando la instancia de Bootstrap
+    if (window.bootstrap && modalRef.current) {
+      const modal = window.bootstrap.Modal.getInstance(modalRef.current)
+        || new window.bootstrap.Modal(modalRef.current);
+      modal.hide();
+      setTimeout(() => {
+        const backdrop = document.querySelector('.modal-backdrop');
+        if (backdrop) backdrop.parentNode.removeChild(backdrop);
+      }, 500);
+    }
+  };
+
 
   return (
     <HelmetProvider>
@@ -50,7 +73,19 @@ function App() {
           {/* Mostrar TopBar y NavBar solo si showHeader es true */}
           {showHeader && (
             <>
-              <TopBar />
+              <LocationModal
+                ref={modalRef}
+                locations={locations}
+                currentLocation={currentLocation}
+                handleLocationChange={handleLocationChange}
+              />
+              <TopBar
+                modalRef={modalRef}
+                locations={locations}
+                setLocations={setLocations}
+                currentLocation={currentLocation}
+                setCurrentLocation={setCurrentLocation}
+              />
               <NavBar />
             </>
           )}

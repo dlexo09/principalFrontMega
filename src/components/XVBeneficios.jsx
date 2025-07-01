@@ -1,7 +1,5 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import "./XVPBeneficios.css";
 import "./Globales.css";
 import PaquetesTarifarios from "./PaquetesTarifarios";
