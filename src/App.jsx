@@ -34,10 +34,12 @@ import ActivaParamount from './views/ActivaParamount';
 import ActivaMax from './views/ActivaMax';
 import DetallePaquete from './views/DetallePaquete';
 import LandingPage from './views/LandingPage';
+import AvisoPrivacidad from './components/AvisoPrivacidad';
 import Footer from './components/Footer';
 import LocationModal from "./components/LocationModal";
 import { LocationProvider } from './LocationContext';
 import './App.css';
+
 
 function App() {
   const modalRef = useRef(null);
@@ -112,6 +114,7 @@ function App() {
               <Route path="/fibra-optica/*" element={<FibraOptica />} />
               <Route path="/xviewplus/*" element={<XviewPlus />} />
               <Route path="/xview/*" element={<Xview />} />
+              <Route path="/aviso-de-privacidad" element={<AvisoPrivacidad />} />
               <Route path="/tv/*" element={<TVMega />} />
               <Route path="/activa-netflix" element={<ActivaNetflix />} />
               <Route path="/activa-amazon" element={<ActivaAmazon />} />

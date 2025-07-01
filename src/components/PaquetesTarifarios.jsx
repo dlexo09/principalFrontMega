@@ -242,13 +242,18 @@ const PaquetesTarifarios = () => {
 
                       {(paquete.velocidadPromo === 0
                         ? paquete.velocidadInternet
-                        : paquete.velocidadPromo) >= 200 && (
-                        <p>
-                          <img
-                            src="/img/extensor_wifi_ultra.png"
-                            alt="Extensor Wifi Ultra Incluido"
-                            style={{ height: "40px", marginTop: "20px" }}
-                          />
+                        : paquete.velocidadPromo) >= 200 ? (
+                        <img
+                          src="/img/extensor_wifi_ultra.png"
+                          alt="Extensor Wifi Ultra Incluido"
+                          style={{ height: "40px", marginBlockStart: "10px" }}
+                        />
+                      ) : (
+                        <p
+                          className="card-title"
+                          style={{ marginBlockStart: "10px" }}
+                        >
+                          DE VELOCIDAD
                         </p>
                       )}
                     </div>
@@ -300,7 +305,7 @@ const PaquetesTarifarios = () => {
                       )}
 
                       <p className="card-servicio-txt servicio-m">
-                        Telefonia Fija
+                        + Telefonía Fija
                       </p>
                       <div className="promoExtra">
                         {promos
@@ -378,7 +383,7 @@ const PaquetesTarifarios = () => {
       </div>
 
       {isFullConnectedVisible && (
-        <div className="d-flex justify-content-center mb-3 full-connected-container">
+        <div className="d-flex justify-content-center full-connected-container">
           <p>
             <img
               src="/img/home/full_connected_home.png"
@@ -392,14 +397,12 @@ const PaquetesTarifarios = () => {
         </div>
       )}
 
-      <div className="container packs-terminos">
+      <div className="container packs-terminos mt-5">
         <p className="promo-xview">
           Incluyen <span>más de 30,000 hrs de contenido</span> en Xview+
         </p>
         <p>
-          Nota: Promoción válida domiciliando el pago a tarjeta. Tarifas
-          registradas ante el IFT. Aplican restricciones. Consulta términos y
-          condiciones <a href="">aquí.</a>
+          Nota: Promoción válida domiciliando el pago a tarjeta. Los paquetes mostrados incluyen max básico con anuncios. <a href="/files/ift/Folios_de_Registros_DAC.xlsx">Tarifas registradas ante el IFT</a>. Aplican restricciones. Consulta términos y condiciones <a href="">aquí.</a>
         </p>
       </div>
     </div>
