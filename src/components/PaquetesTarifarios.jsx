@@ -12,7 +12,8 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
-const AES_KEY = "9e3f2b1a4c6d8e7f0a1b2c3d4e5f6789a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5"; // Define aquí la clave y compártela
+const AES_KEY =
+  "9e3f2b1a4c6d8e7f0a1b2c3d4e5f6789a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5"; // Define aquí la clave y compártela
 
 const PaquetesTarifarios = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -76,13 +77,20 @@ const PaquetesTarifarios = () => {
     (item) => item.idSucursal === idSucursal && item.status === 1
   );
 
-  const handleButtonClick = (idPaqueteWeb, costoPaquete, idSucursal, nombreSucursal) => {
+  const handleButtonClick = (
+    idPaqueteWeb,
+    costoPaquete,
+    idSucursal,
+    nombreSucursal
+  ) => {
     if (!idSucursal || !nombreSucursal) {
       alert("Selecciona una sucursal para continuar.");
       return;
     }
     const costoCifrado = cifrarAES(String(costoPaquete), AES_KEY);
-    const url = `https://ventas-web.megacable.com.mx/#/new-sale/${idPaqueteWeb}/${idSucursal}/${encodeURIComponent(nombreSucursal)}?c=${encodeURIComponent(costoCifrado)}`;
+    const url = `https://ventas-web.megacable.com.mx/#/new-sale/${idPaqueteWeb}/${idSucursal}/${encodeURIComponent(
+      nombreSucursal
+    )}?c=${encodeURIComponent(costoCifrado)}`;
     window.open(url, "_blank");
   };
 
@@ -108,7 +116,6 @@ const PaquetesTarifarios = () => {
       });
     };
 
-
     // Ejecutar al montar y cuando cambien los paquetes
     setTimeout(() => {
       ajustarAlturas();
@@ -122,16 +129,18 @@ const PaquetesTarifarios = () => {
   return (
     <div className="container pad-container paquetes-tarifarios text-center">
       <h2 className="small-title tarifario-title">
-        Elige el paquete ideal para ti
+        MEGA internet simétrico y completamente ilimitado
       </h2>
-      <h3 className="big-title mb-5 title-especial">
-        ¡Te instalamos sin costo!<sup>*</sup>
-      </h3>
+      <p className="big-title mb-5 title-especial">
+        Elige tu paquete ideal ¡Te instalamos sin costo!<sup>*</sup>
+      </p>
+
       <div className="d-flex justify-content-center mb-3 btn-container">
         <button
           type="button"
-          className={`pack-btn ${selectedPack === "triple" ? "pack-btn-active" : "pack-btn-inactive"
-            } btn-lg mx-2`}
+          className={`pack-btn ${
+            selectedPack === "triple" ? "pack-btn-active" : "pack-btn-inactive"
+          } btn-lg mx-2`}
           onClick={() => setSelectedPack("triple")}
         >
           TRIPLE PACK
@@ -140,8 +149,9 @@ const PaquetesTarifarios = () => {
         </button>
         <button
           type="button"
-          className={`pack-btn ${selectedPack === "doble" ? "pack-btn-active" : "pack-btn-inactive"
-            } btn-lg mx-2`}
+          className={`pack-btn ${
+            selectedPack === "doble" ? "pack-btn-active" : "pack-btn-inactive"
+          } btn-lg mx-2`}
           onClick={() => setSelectedPack("doble")}
         >
           DOBLE PACK
@@ -172,7 +182,7 @@ const PaquetesTarifarios = () => {
             1024: {
               slidesPerView: 3,
               centeredSlides: false,
-            }
+            },
           }}
           className="carousel slide "
         >
@@ -192,16 +202,23 @@ const PaquetesTarifarios = () => {
                   />
                 )}
                 <img
-                  className={`icon-card-packs  d-md-block telefonia-icon ${selectedPack === "doble" ? "telefonia-icon-doble" : ""
-                    }`}
+                  className={`icon-card-packs  d-md-block telefonia-icon ${
+                    selectedPack === "doble" ? "telefonia-icon-doble" : ""
+                  }`}
                   src="/icons/telefonia-icon.png"
                   alt="Icono Telefonía"
                 />
               </div>
 
               <div className="d-flex justify-content-center container-packs-swiper h-100">
-                <div className={`paquete-item paquete-general-item card ${selectedPack === "doble" ? "paquete-item-doble" : "paquete-item-triple"}`}
-                  style={{ width: '100%', maxWidth: '340px' }}>
+                <div
+                  className={`paquete-item paquete-general-item card ${
+                    selectedPack === "doble"
+                      ? "paquete-item-doble"
+                      : "paquete-item-triple"
+                  }`}
+                  style={{ width: "100%", maxWidth: "340px" }}
+                >
                   <div className="card-body">
                     <div className="paquete-header">
                       <h2 className="card-title">
@@ -226,14 +243,14 @@ const PaquetesTarifarios = () => {
                       {(paquete.velocidadPromo === 0
                         ? paquete.velocidadInternet
                         : paquete.velocidadPromo) >= 200 && (
-                          <p>
-                            <img
-                              src="/img/extensor_wifi_ultra.png"
-                              alt="Extensor Wifi Ultra Incluido"
-                              style={{ height: "40px", marginTop: "20px" }}
-                            />
-                          </p>
-                        )}
+                        <p>
+                          <img
+                            src="/img/extensor_wifi_ultra.png"
+                            alt="Extensor Wifi Ultra Incluido"
+                            style={{ height: "40px", marginTop: "20px" }}
+                          />
+                        </p>
+                      )}
                     </div>
                     <div className="paquete-body">
                       {paquete.archivo && (
@@ -307,12 +324,12 @@ const PaquetesTarifarios = () => {
                           <span className="price-mxn">$</span>
                           {Math.round(
                             Number(paquete.tarifaPromocional) +
-                            Number(
-                              promos.reduce(
-                                (acc, promo) => acc + promo.costoMensualPromo,
-                                promoValue
+                              Number(
+                                promos.reduce(
+                                  (acc, promo) => acc + promo.costoMensualPromo,
+                                  promoValue
+                                )
                               )
-                            )
                           )}
                           <sup>*</sup>
                           <span className="time-crd">/mes</span>
@@ -325,17 +342,17 @@ const PaquetesTarifarios = () => {
                       </div>
                       <button
                         className="btn btn-packs btn-pack-card"
-                        onClick={() => handleButtonClick(
-                          paquete.idContrata,
-                          paquete.tarifaPromocional,
-                          currentLocation?.idSucursal,
-                          currentLocation?.sucursalName
-                        )}
+                        onClick={() =>
+                          handleButtonClick(
+                            paquete.idContrata,
+                            paquete.tarifaPromocional,
+                            currentLocation?.idSucursal,
+                            currentLocation?.sucursalName
+                          )
+                        }
                       >
                         ¡Lo quiero!
                       </button>
-
-
                     </div>
                   </div>
                 </div>
