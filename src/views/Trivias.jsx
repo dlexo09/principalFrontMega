@@ -1,63 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { serverAPILambda } from "../config"; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPILambda, S3_BASE_URL } from "../config"; 
 import "./Trivias.css";
 import ActivarCuenta from "./ActivarCuenta";
-
-const Trivias = () => {
-  const [banners, setBanners] = useState([]);
-  const [activeIndex, setActiveIndex] = useState(0);
-
-  useEffect(() => {
-    const fetchBanners = async () => {
-      try {
-        const response = await fetch(`${serverAPILambda}api/trivias`);
-        const data = await response.json();
-        const now = new Date();
-        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-
-        const activeBanners = data.filter((banner) => {
-          const startDate = new Date(new Date(banner.fhInicio).setHours(0, 0, 0, 0));
-          const endDate = new Date(new Date(banner.fhFin).setHours(23, 59, 59, 999));
-          return banner.status === 1 && startDate <= today && endDate >= today;
-        });
-
-        setBanners(activeBanners);
-      } catch (error) {
-        console.error("Error fetching banners:", error);
-      }
-    };
-
-    fetchBanners();
-  }, []);
-
-  useEffect(() => {
-    const carouselElement = document.getElementById("carouselTrivias");
-
-    const handleSlide = (event) => {
-      const newIndex = parseInt(event.to, 10);
-      setActiveIndex(newIndex);
-    };
-
-    // Escuchar el evento `slid.bs.carousel`
-    carouselElement.addEventListener("slid.bs.carousel", handleSlide);
-
-    return () => {
-      // Limpiar el evento al desmontar el componente
-      carouselElement.removeEventListener("slid.bs.carousel", handleSlide);
-    };
-  }, []);
-
-  return (
-    <ActivarCuenta mainTitle="PARTICIPA" title="Y GANA">
-      <div className="container pt-5 trivias-container">
-        <Header />
-        <TriviaCarousel banners={banners} activeIndex={activeIndex} />
-        <ParticipateButton banners={banners} activeIndex={activeIndex} />
-        <LegalNotice />
-      </div>
-    </ActivarCuenta>
-  );
-};
 
 // Componente para el encabezado
 const Header = () => (
@@ -86,20 +30,39 @@ const TriviaCarousel = ({ banners, activeIndex }) => (
       ))}
     </div>
     <div className="carousel-inner carrousel-trivias">
-      {banners.map((banner, index) => (
-        <div key={index} className={`carousel-item ${index === activeIndex ? "active" : ""}`}>
-          <img
-            src={`/uploads/bannerTrivias/${banner.bannerPrincipal}`}
-            className="d-block w-100 d-none d-md-block"
-            alt={`Slide ${index + 1}`}
-          />
-          <img
-            src={`/uploads/bannerTrivias/${banner.bannerMovil}`}
-            className="w-100 d-md-none"
-            alt={`Slide ${index + 1}`}
-          />
-        </div>
-      ))}
+      {banners.map((banner, index) => {
+        // Prioriza usar la URL de S3 completa si está disponible
+        const desktopImageUrl = banner.s3_banner_principal_url || 
+                                `/uploads/bannerTrivias/${banner.bannerPrincipal}`;
+                               
+        const mobileImageUrl = banner.s3_banner_movil_url || 
+                               `/uploads/bannerTrivias/${banner.bannerMovil}`;
+        
+        return (
+          <div key={index} className={`carousel-item ${index === activeIndex ? "active" : ""}`}>
+            <img
+              src={desktopImageUrl}
+              className="d-block w-100 d-none d-md-block"
+              alt={`Slide ${index + 1}`}
+              onError={(e) => {
+                e.target.onerror = null; // Evitar bucle infinito
+                // Intentar con ruta local
+                e.target.src = `/uploads/bannerTrivias/${banner.bannerPrincipal}`;
+              }}
+            />
+            <img
+              src={mobileImageUrl}
+              className="w-100 d-md-none"
+              alt={`Slide ${index + 1}`}
+              onError={(e) => {
+                e.target.onerror = null; // Evitar bucle infinito
+                // Intentar con ruta local
+                e.target.src = `/uploads/bannerTrivias/${banner.bannerMovil}`;
+              }}
+            />
+          </div>
+        );
+      })}
     </div>
     <button
       className="carousel-control-prev"
@@ -161,5 +124,63 @@ const LegalNotice = () => (
     </p>
   </div>
 );
+
+const Trivias = () => {
+  const [banners, setBanners] = useState([]);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const fetchBanners = async () => {
+      try {
+        const response = await fetch(`${serverAPILambda}api/trivias`);
+        const data = await response.json();
+        const now = new Date();
+        const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+        const activeBanners = data.filter((banner) => {
+          const startDate = new Date(new Date(banner.fhInicio).setHours(0, 0, 0, 0));
+          const endDate = new Date(new Date(banner.fhFin).setHours(23, 59, 59, 999));
+          return banner.status === 1 && startDate <= today && endDate >= today;
+        });
+
+        setBanners(activeBanners);
+      } catch (error) {
+        console.error("Error fetching banners:", error);
+      }
+    };
+
+    fetchBanners();
+  }, []);
+
+  useEffect(() => {
+    const carouselElement = document.getElementById("carouselTrivias");
+    
+    if (carouselElement) { // Verificar que el elemento exista
+      const handleSlide = (event) => {
+        const newIndex = parseInt(event.to, 10);
+        setActiveIndex(newIndex);
+      };
+
+      // Escuchar el evento `slid.bs.carousel`
+      carouselElement.addEventListener("slid.bs.carousel", handleSlide);
+
+      return () => {
+        // Limpiar el evento al desmontar el componente
+        carouselElement.removeEventListener("slid.bs.carousel", handleSlide);
+      };
+    }
+  }, [banners]); // Añadir banners como dependencia
+
+  return (
+    <ActivarCuenta mainTitle="PARTICIPA" title="Y GANA">
+      <div className="container pt-5 trivias-container">
+        <Header />
+        <TriviaCarousel banners={banners} activeIndex={activeIndex} />
+        <ParticipateButton banners={banners} activeIndex={activeIndex} />
+        <LegalNotice />
+      </div>
+    </ActivarCuenta>
+  );
+};
 
 export default Trivias;
