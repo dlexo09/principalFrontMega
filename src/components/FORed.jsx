@@ -127,7 +127,7 @@ const FORed = () => {
                   className="inp"
                   value={phone}
                   onChange={handlePhoneChange}
-                  maxLength="14"
+                  maxLength={14}
                   id="phone"
                   name="phone"
                   required
