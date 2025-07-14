@@ -11,19 +11,19 @@ const BannerHome = () => {
   useEffect(() => {
     const fetchBanners = async () => {
       if (!currentLocation) {
-        console.log("⏳ [BannerHome] No location, waiting...");
+        // console.log("⏳ [BannerHome] No location, waiting...");
         return;
       }
 
       try {
         setLoading(true);
-        console.log("🚀 [BannerHome] Fetching banners for:", currentLocation.sucursalName);
+        // console.log("🚀 [BannerHome] Fetching banners for:", currentLocation.sucursalName);
         
         // 1. Obtener todos los banners
         const response = await fetch(`${serverAPILambda}api/bannerHero`);
         const allBanners = await response.json();
-        console.log("📦 [BannerHome] All banners:", allBanners.length);
-        console.log("📦 [BannerHome] First banner data:", allBanners[0]);
+        // console.log("📦 [BannerHome] All banners:", allBanners.length);
+        // console.log("📦 [BannerHome] First banner data:", allBanners[0]);
 
         // 2. Filtrar banners activos por fecha
         const activeBanners = allBanners.filter(banner => {
@@ -35,7 +35,7 @@ const BannerHome = () => {
           return banner.status === 1 && startDate <= today && endDate >= today;
         });
         
-        console.log("✅ [BannerHome] Active banners:", activeBanners.length);
+        // console.log("✅ [BannerHome] Active banners:", activeBanners.length);
 
         // 3. Verificar permisos por sucursal
         const bannersWithPermissions = [];
@@ -49,16 +49,16 @@ const BannerHome = () => {
             
             if (permisoData.length > 0) {
               bannersWithPermissions.push(banner);
-              console.log(`✅ [BannerHome] Banner ${banner.idBannerHome} allowed`);
+              // console.log(`✅ [BannerHome] Banner ${banner.idBannerHome} allowed`);
             } else {
-              console.log(`❌ [BannerHome] Banner ${banner.idBannerHome} denied`);
+              // console.log(`❌ [BannerHome] Banner ${banner.idBannerHome} denied`);
             }
           } catch (error) {
             console.error(`❌ [BannerHome] Error checking permission for banner ${banner.idBannerHome}:`, error);
           }
         }
 
-        console.log("🎯 [BannerHome] Final banners:", bannersWithPermissions.length);
+        // console.log("🎯 [BannerHome] Final banners:", bannersWithPermissions.length);
         setBanners(bannersWithPermissions);
         
       } catch (error) {
@@ -159,24 +159,24 @@ const BannerSlide = ({ banner, isActive }) => {
   const bannerImageUrl = banner.s3_banner_url;
   const mobileImageUrl = banner.s3_mobile_url;
 
-  console.log("🖼️ [BannerSlide] URLs directas de la API:", {
-    banner: banner.title,
-    backgroundUrl,
-    bannerImageUrl,
-    mobileImageUrl
-  });
+  // console.log("🖼️ [BannerSlide] URLs directas de la API:", {
+  //   banner: banner.title,
+  //   backgroundUrl,
+  //   bannerImageUrl,
+  //   mobileImageUrl
+  // });
 
   const handleImageError = (type) => {
-    console.log(`❌ [BannerSlide] Image error for ${type}:`, banner.title);
-    console.log(`❌ [BannerSlide] Failed URL (${type}):`, 
-      type === 'background' ? backgroundUrl :
-      type === 'bannerImg' ? bannerImageUrl : mobileImageUrl
-    );
+    // console.log(`❌ [BannerSlide] Image error for ${type}:`, banner.title);
+    // console.log(`❌ [BannerSlide] Failed URL (${type}):`, 
+    //   type === 'background' ? backgroundUrl :
+    //   type === 'bannerImg' ? bannerImageUrl : mobileImageUrl
+    // );
     setImageError(prev => ({ ...prev, [type]: true }));
   };
 
   const handleImageLoad = (type) => {
-    console.log(`✅ [BannerSlide] Image loaded for ${type}:`, banner.title);
+    // console.log(`✅ [BannerSlide] Image loaded for ${type}:`, banner.title);
     setImageError(prev => ({ ...prev, [type]: false }));
   };
 

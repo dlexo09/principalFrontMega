@@ -7,16 +7,16 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
   // ✅ Usar el contexto directamente
   const { currentLocation, setCurrentLocation } = useContext(LocationContext);
 
-  console.log("🏠 [TopBar] Component rendered with context:", {
-    currentLocation,
-    currentLocationName: currentLocation?.sucursalName,
-    locations: locations.length,
-    hasSetCurrentLocation: !!setCurrentLocation
-  });
+  // console.log("🏠 [TopBar] Component rendered with context:", {
+  //   currentLocation,
+  //   currentLocationName: currentLocation?.sucursalName,
+  //   locations: locations.length,
+  //   hasSetCurrentLocation: !!setCurrentLocation
+  // });
 
   // ✅ Función para abrir el modal manualmente
   const openLocationModal = () => {
-    console.log("🏠 [TopBar] Opening location modal manually");
+    // console.log("🏠 [TopBar] Opening location modal manually");
     
     // Usar Bootstrap modal JavaScript API
     const modalElement = document.getElementById('locationModal');
@@ -36,11 +36,11 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
     const fetchLocations = async () => {
       if (locations.length === 0) {
         try {
-          console.log("🏠 [TopBar] Fetching locations from API...");
+          // console.log("🏠 [TopBar] Fetching locations from API...");
           const response = await fetch(`${serverAPILambda}api/sucursales`);
           const data = await response.json();
-          console.log("🏠 [TopBar] Locations fetched:", data);
-          console.log("🏠 [TopBar] Total locations:", data.length);
+          // console.log("🏠 [TopBar] Locations fetched:", data);
+          // console.log("🏠 [TopBar] Total locations:", data.length);
           
           setLocations(data);
 
@@ -49,7 +49,7 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
           if (savedLocation) {
             try {
               const parsedLocation = JSON.parse(savedLocation);
-              console.log("🏠 [TopBar] Found saved location:", parsedLocation);
+              // console.log("🏠 [TopBar] Found saved location:", parsedLocation);
               setCurrentLocation(parsedLocation);
             } catch (error) {
               console.error("🏠 [TopBar] Error parsing saved location:", error);
@@ -57,12 +57,12 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
               
               // ✅ Si el localStorage está corrupto, abrir modal
               setTimeout(() => {
-                console.log("🏠 [TopBar] Corrupted localStorage, opening modal");
+                // console.log("🏠 [TopBar] Corrupted localStorage, opening modal");
                 openLocationModal();
               }, 1000);
             }
           } else if (data.length > 0 && !currentLocation) {
-            console.log("🏠 [TopBar] No saved location, checking geolocation...");
+            // console.log("🏠 [TopBar] No saved location, checking geolocation...");
             
             // ✅ Intentar geolocalización con timeout
             if (navigator.geolocation) {
@@ -74,7 +74,7 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
 
               navigator.geolocation.getCurrentPosition(
                 (position) => {
-                  console.log("🏠 [TopBar] Geolocation successful:", position.coords);
+                  // console.log("🏠 [TopBar] Geolocation successful:", position.coords);
                   const userLat = position.coords.latitude;
                   const userLng = position.coords.longitude;
 
@@ -89,7 +89,7 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
                     }
                   });
 
-                  console.log("🏠 [TopBar] Closest location found:", closestLocation);
+                  // console.log("🏠 [TopBar] Closest location found:", closestLocation);
                   setCurrentLocation(closestLocation);
                   
                   try {
@@ -102,7 +102,7 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
                   console.warn("🏠 [TopBar] Geolocation failed or denied:", error.message, "Code:", error.code);
                   
                   // ✅ ABRIR MODAL en lugar de usar ubicación por defecto
-                  console.log("🏠 [TopBar] Geolocation failed, opening location selection modal");
+                  // console.log("🏠 [TopBar] Geolocation failed, opening location selection modal");
                   
                   // Esperar un poco para que el DOM esté listo
                   setTimeout(() => {
@@ -113,7 +113,7 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
               );
             } else {
               // ✅ Geolocalización no soportada, abrir modal
-              console.log("🏠 [TopBar] Geolocation not supported, opening modal");
+              // console.log("🏠 [TopBar] Geolocation not supported, opening modal");
               setTimeout(() => {
                 openLocationModal();
               }, 500);
@@ -125,17 +125,17 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
           // ✅ En caso de error de API, también abrir modal cuando esté disponible
           setTimeout(() => {
             if (locations.length > 0) {
-              console.log("🏠 [TopBar] API error but locations available, opening modal");
+              // console.log("🏠 [TopBar] API error but locations available, opening modal");
               openLocationModal();
             }
           }, 1000);
         }
       } else {
-        console.log("🏠 [TopBar] Locations already loaded:", locations.length);
+        // console.log("🏠 [TopBar] Locations already loaded:", locations.length);
         
         // ✅ Si ya hay ubicaciones pero no hay currentLocation, abrir modal
         if (!currentLocation && locations.length > 0) {
-          console.log("🏠 [TopBar] Locations loaded but no currentLocation, opening modal");
+          // console.log("🏠 [TopBar] Locations loaded but no currentLocation, opening modal");
           setTimeout(() => {
             openLocationModal();
           }, 500);
@@ -149,9 +149,9 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
   // ✅ useEffect separado para detectar cambios en currentLocation
   useEffect(() => {
     if (currentLocation) {
-      console.log("🏠 [TopBar] currentLocation changed:", currentLocation.sucursalName);
+      // console.log("🏠 [TopBar] currentLocation changed:", currentLocation.sucursalName);
     } else {
-      console.log("🏠 [TopBar] currentLocation is null/undefined");
+      // console.log("🏠 [TopBar] currentLocation is null/undefined");
     }
   }, [currentLocation]);
 
@@ -200,7 +200,7 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
                     return "Seleccionar Sucursal";
                   }
                   const locationName = currentLocation.sucursalName;
-                  console.log("🏠 [TopBar] Rendering location name:", locationName);
+                  // console.log("🏠 [TopBar] Rendering location name:", locationName);
                   return locationName;
                 })()}
                 <span className="down-icon"></span>

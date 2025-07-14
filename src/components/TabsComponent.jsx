@@ -3,7 +3,7 @@ import './TabsComponent.css';
 
 const TabsComponent = ({ tabs, basePath }) => {
   const location = useLocation();
-  console.log("Location:", location);
+  // console.log("Location:", location);
 
   return (
     <div className="tabs-container tabs-general">

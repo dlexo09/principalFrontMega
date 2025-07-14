@@ -42,10 +42,10 @@ const XVPBeneficios = () => {
           <iframe
             src="https://www.youtube.com/embed/fhKrsjRQixw?si=F5Ceb9-_TFUMySPd"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       ),
@@ -62,10 +62,10 @@ const XVPBeneficios = () => {
           <iframe
             src="https://www.youtube.com/embed/HtgZwBUWlMg?si=nqizd_eZNV-MZtAm"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       ),
@@ -81,10 +81,10 @@ const XVPBeneficios = () => {
           <iframe
             src="https://www.youtube.com/embed/hAWQUTPrsG8?si=xtfcXYIRUx_sUjbt"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       ),
@@ -100,10 +100,10 @@ const XVPBeneficios = () => {
           <iframe
             src="https://www.youtube.com/embed/9B1KpKgvc40?si=pCR3J43Y5oZDvrNg"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       ),
@@ -120,10 +120,10 @@ const XVPBeneficios = () => {
           <iframe
             src="https://www.youtube.com/embed/M8rj9z0JVCU?si=cbWMitPAVWD1QP_X"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       ),
@@ -139,10 +139,10 @@ const XVPBeneficios = () => {
           <iframe
             src="https://www.youtube.com/embed/qH76P7jI8YA?si=JV-b7OlLXXZ66j_2"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       ),
@@ -158,10 +158,10 @@ const XVPBeneficios = () => {
           <iframe
             src="https://www.youtube.com/embed/lkI56nla0O8?si=Pu5MhE5olkC1v9fL"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       ),
@@ -177,10 +177,10 @@ const XVPBeneficios = () => {
           <iframe
             src="https://www.youtube.com/embed/L0gqpdb9o0Y?si=1U21EX8t-0b4Ih7Q"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       ),
@@ -196,10 +196,10 @@ const XVPBeneficios = () => {
           <iframe
             src="https://www.youtube.com/embed/mzUf3NJoqv0?si=2XHUo9G0uNIdg6ie"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
+            referrerPolicy="strict-origin-when-cross-origin"
+            allowFullScreen
           ></iframe>
         </div>
       ),
