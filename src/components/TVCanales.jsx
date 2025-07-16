@@ -23,6 +23,7 @@ const Canales = () => {
         .catch((error) => console.error("Error fetching paquetes:", error));
 
       // Obtener los canales
+      // console.log(`${serverAPILambda}api/Canales/${currentLocation.idSucursal}`);
       fetch(`${serverAPILambda}api/Canales/${currentLocation.idSucursal}`)
         .then((response) => response.json())
         .then((data) => {
@@ -80,16 +81,18 @@ const Canales = () => {
               >
                 Todas
               </button>
-              {categorias.map((categoria) => (
-                <button
-                  key={categoria}
-                  className={` btn-filtro-canales mb-2 ${categoriaSeleccionada === categoria && "active"
-                    }`}
-                  onClick={() => setCategoriaSeleccionada(categoria)}
-                >
-                  {categoria}
-                </button>
-              ))}
+              {categorias.map((categoria) => {
+                const categoriaLabel = categoria && categoria.trim() ? categoria : "Otros";
+                return (
+                  <button
+                    key={categoriaLabel}
+                    className={`btn-filtro-canales mb-2 ${categoriaSeleccionada === categoria ? "active" : ""}`}
+                    onClick={() => setCategoriaSeleccionada(categoria)}
+                  >
+                    {categoriaLabel}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
@@ -116,6 +119,11 @@ const Canales = () => {
                     alt={`${canal.canal}`}
                     className="img-fluid canal-logo"
                     style={{ maxHeight: "75px", objectFit: "contain" }}
+                    onError={e => {
+                      console.warn("Imagen no encontrada:", e.target.src, canal);
+                      e.target.onerror = null;
+                      e.target.src = "../uploads/canales/logo-no-disponible.png"; // Usa aquí la ruta de tu imagen de respaldo
+                    }}
                   />
                 </div>
                 <div className="col-3 p-2 d-flex justify-content-center align-items-center canales-selector-title">
