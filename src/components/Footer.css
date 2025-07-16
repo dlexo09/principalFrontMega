@@ -52,7 +52,10 @@
   text-decoration: none;
   font-weight: 300;
   text-transform: uppercase;
-  padding-left: 20px;
+}
+.llamame-send{
+    padding-left: 20px;
+  transition: all 0.3s ease;
 }
 .llamame-send:hover{
   background-color: var(--turquesa-btn);
