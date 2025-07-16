@@ -1,0 +1,27 @@
+.tarifas-table-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  padding: 24px 16px;
+}
+
+.table th, .table td {
+  vertical-align: middle !important;
+  font-size: 1.1rem;
+}
+
+.table thead th {
+  background: linear-gradient(90deg, #007bff 80%, #008cff 100%);
+  color: #fff;
+  border: none;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: #f7fafd;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #e3f2fd;
+}
