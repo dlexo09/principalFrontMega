@@ -54,6 +54,11 @@
   text-transform: uppercase;
   padding-left: 20px;
 }
+.llamame-send:hover{
+  background-color: var(--turquesa-btn);
+  opacity: 0.8;
+  color: #000;
+}
 
 .accordion-item,
 .accordion-item button {

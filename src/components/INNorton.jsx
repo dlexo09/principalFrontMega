@@ -114,7 +114,7 @@ const PaquetesTarifarios = () => {
           className="carousel slide"
           data-bs-ride="carousel"
         >
-          <div className="carousel-inner">
+          <div className="carousel-inner carousel-innorton">
             {chunkedPaquetes.map((chunk, index) => (
               <div
                 key={index}
@@ -213,7 +213,7 @@ const PaquetesTarifarios = () => {
             ))}
           </div>
           <button
-            className="carousel-control-prev packs-prev"
+            className="carousel-control-prev packs-prev d-block d-xl-none"
             type="button"
             data-bs-target="#carouselPaquetes"
             data-bs-slide="prev"
@@ -225,7 +225,7 @@ const PaquetesTarifarios = () => {
             <span className="visually-hidden">Previous</span>
           </button>
           <button
-            className="carousel-control-next packs-next"
+            className="carousel-control-next packs-next d-block d-xl-none"
             type="button"
             data-bs-target="#carouselPaquetes"
             data-bs-slide="next"

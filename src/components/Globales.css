@@ -236,6 +236,7 @@ a{
    padding-top: 50px !important;
 }
 
+
 @media screen and (max-width:767px){
     .general-tabs-container{
         padding: 40px 0;
@@ -250,6 +251,12 @@ a{
     .secondary-title{
         line-height: 40px;
     }
+    .tyc-container input{
+    width: 20px !important;
+}
+.tyc-container{
+    margin-bottom: 20px;
+}
 }
 .oferta-residencial-container{
     margin-top: -80px;

@@ -173,18 +173,22 @@ const Footer = () => {
   return (
     <footer className="footer">
       <div className="top-footer">
-        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap flex">
           <div className="contratar-container d-flex flex-column flex-lg-row align-items-center">
             <label>¡Quiero contratar!</label>
-            <form className='form-footer d-flex flex-column flex-md-row' action="">              
-              <input type="text" className="form-control telefono" placeholder="Tu teléfono" name="phone" id="P2_dato1" required="" maxLength={14} data-ic-form-field="phone"></input>
+            
+            <form className='form-footer d-flex flex-column flex-md-row' role="form" id="f-llamame-home0">   
+              <input type="text" className="form-control telefono" placeholder="Tu teléfono" name="dato1" id="P2_dato1" required />    
+              <div className="tyc-container d-flex align-items-center gap-2">
+                <input type="checkbox" id="i-acepto" required="" name="i-acepto" data-ic-form-field="i-acepto"></input>
+                <label className="form-check-label" id="l-acepto" htmlFor="i-acepto"><small>He leído y Acepto el <a target='_blank' href="/aviso-de-privacidad">Aviso de privacidad</a></small></label>
+              </div>
               
-              <input type="checkbox" id="i-acepto" required="" name="i-acepto" data-ic-form-field="i-acepto"></input>
-              <label className="form-check-label" id="l-acepto" htmlFor="i-acepto"><small>He leído y Acepto el <a target='_blank' href="/aviso-de-privacidad">Aviso de privacidad</a></small></label>
-              <button className="btn llamame-send" type="botton" id="f-llamame-home0_0">Llámame</button>
+              <button className="llamame-send" type="button">Llámame</button>
             </form>
+
           </div>
-          <div className="social-foter-container d-flex flex-md-column flex-lg-row mt-4 mt-md-0">
+          <div className="social-foter-container d-flex flex-md-column flex-lg-row mt-4 mt-xxl-0">
             <h3>Síguenos en:</h3>
             <div className="social-footer">
               <a className='me-2' target='_BLANK' href="https://www.youtube.com/user/spotsmegacable"><img src="/icons/youtube-icon-footer.png" alt="Youtube" /></a>
