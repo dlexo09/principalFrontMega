@@ -59,6 +59,7 @@ a{
     text-decoration: none;
 }
 
+
 /*Titulos*/
 .small-title{
     color: var(--blue-dark);
@@ -75,8 +76,8 @@ a{
 .secondary-title{
     margin-top: 5px;
     font-size: clamp(1.8rem, 1.502rem + 1.1089vw, 2.5rem);
-    font-weight: 300;
-    line-height: 55px;
+    font-weight: 600;
+    line-height: auto;
 }
 .secondary-title span{
     font-weight: 600;
@@ -103,6 +104,7 @@ a{
     font-weight: 500;
     border: none;
     width: 250px;
+    transition: all 0.3s ease;
 }
 .btn-action{
     background-color: var(--turquesa-btn);
@@ -118,6 +120,7 @@ a{
     transition: background-color 0.2s ease-in-out;
     text-decoration: none;
     color: #000;
+    transition: all 0.3s ease !important;
 }
 .btn-packs:hover, .btn-action:hover{
     background-color: #01c6bd;
@@ -235,6 +238,7 @@ a{
    padding-top: 50px !important;
 }
 
+
 @media screen and (max-width:767px){
     .general-tabs-container{
         padding: 40px 0;
@@ -249,6 +253,12 @@ a{
     .secondary-title{
         line-height: 40px;
     }
+    .tyc-container input{
+    width: 20px !important;
+}
+.tyc-container{
+    margin-bottom: 20px;
+}
 }
 .oferta-residencial-container{
     margin-top: -80px;

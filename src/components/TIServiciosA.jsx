@@ -25,7 +25,7 @@ const TIServiciosA = () => {
       description:
         "Transfiere todas las llamadas de entrada de tu línea de Telefonía Fija Megacable a otro número telefónico, no importa si es de otra compañía, celular o larga distancia nacional e internacional.",
       image:
-        "/icons/servicios/servicios-adicionales/identificador-llamadas.png",
+        "/icons/servicios/servicios-adicionales/desvio-de-llamadas.png",
     },
     {
       id: 3,
@@ -33,7 +33,7 @@ const TIServiciosA = () => {
       description:
         "Incluye a una tercera persona en una conversación telefónica.",
       image:
-        "/icons/servicios/servicios-adicionales/identificador-llamadas.png",
+        "/icons/servicios/servicios-adicionales/llamada-tripartida.png",
     },
     {
       id: 4,
@@ -41,7 +41,7 @@ const TIServiciosA = () => {
       description:
         "Marca de una manera abreviada hasta a 8 destinos, estos pueden ser programados por el suscriptor.",
       image:
-        "/icons/servicios/servicios-adicionales/identificador-llamadas.png",
+        "/icons/servicios/servicios-adicionales/marcacion-rapida.png",
     },
     {
       id: 5,
@@ -49,7 +49,7 @@ const TIServiciosA = () => {
       description:
         "Cuando realices llamadas desde tu número de Telefonía Fija Megacable en el identificador de llamadas del teléfono de destino no aparecerá el número.",
       image:
-        "/icons/servicios/servicios-adicionales/identificador-llamadas.png",
+        "/icons/servicios/servicios-adicionales/numero-privado.png",
     },
     {
       id: 6,
@@ -57,7 +57,7 @@ const TIServiciosA = () => {
       description:
         "Si tienes configurado el servicio 'Número Privado', haz visible tu número a los destinatarios que tú elijas marcando al: *82.",
       image:
-        "/icons/servicios/servicios-adicionales/identificador-llamadas.png",
+        "/icons/servicios/servicios-adicionales/opcion-numero-privado.png",
     },
     {
       id: 7,
@@ -65,7 +65,7 @@ const TIServiciosA = () => {
       description:
         "Ya no se preocupe de esas llamadas anónimas, con este servicio no recibirá llamadas de números no identificados (anónimos), de esta manera el teléfono no sonara en lo absoluto.",
       image:
-        "/icons/servicios/servicios-adicionales/identificador-llamadas.png",
+        "/icons/servicios/servicios-adicionales/bloqueo-llamadas-anonimas.png",
     },
     {
       id: 8,
@@ -73,7 +73,7 @@ const TIServiciosA = () => {
       description:
         "La persona que llame a una línea de Telefonía Fija Megacable escuchara tono de ocupado, por lo tanto, no sonará el teléfono del cliente.",
       image:
-        "/icons/servicios/servicios-adicionales/identificador-llamadas.png",
+        "/icons/servicios/servicios-adicionales/bloqueo-llamadas-entrantes.png",
     },
     {
       id: 9,
@@ -81,7 +81,7 @@ const TIServiciosA = () => {
       description:
         "Cuando tengas ocupada tu línea podrás contestar otra presionando el botón FLASH de tu aparato telefónico y podrás cambiar entre una y otra llamada las veces que quieras.",
       image:
-        "/icons/servicios/servicios-adicionales/identificador-llamadas.png",
+        "/icons/servicios/servicios-adicionales/llamada-en-espera.png",
     },
     {
       id: 10,
@@ -89,14 +89,14 @@ const TIServiciosA = () => {
       description:
         "Evita que se realicen llamadas no deseadas de tu línea telefónica bloqueando las llamadas a celular con prefijo 044 y 045 así como las llamadas de larga distancia.",
       image:
-        "/icons/servicios/servicios-adicionales/identificador-llamadas.png",
+        "/icons/servicios/servicios-adicionales/bloqueo-destino.png",
     },
     {
       id: 11,
       title: "Línea Adicional",
       description: "Puedes contar con una 2da.",
       image:
-        "/icons/servicios/servicios-adicionales/identificador-llamadas.png",
+        "/icons/servicios/servicios-adicionales/linea-adicional.png",
     },
   ];
 

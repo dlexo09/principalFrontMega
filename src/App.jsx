@@ -27,6 +27,7 @@ import AmazonPrime from './views/AmazonPrime';
 import Paramount from './views/Paramount';
 import FibraOptica from './views/FibraOptica';
 import Ayuda from './views/Ayuda';
+import TerminosYCondiciones from './components/terminos-y-condiciones';
 import ActivaNetflix from './views/ActivaNetflix';
 import ActivaAmazon from './views/ActivaAmazon';
 import ActivaDisneyplus from './views/ActivaDisneyplus';
@@ -121,6 +122,7 @@ function AppContent() {
           <Route path="/xviewplus/*" element={<XviewPlus />} />
           <Route path="/xview/*" element={<Xview />} />
           <Route path="/aviso-de-privacidad" element={<AvisoPrivacidad />} />
+          <Route path="/terminos-y-condiciones" element={<TerminosYCondiciones />} />
           <Route path="/tv/*" element={<TVMega />} />
           <Route path="/activa-netflix" element={<ActivaNetflix />} />
           <Route path="/activa-amazon" element={<ActivaAmazon />} />
