@@ -1,0 +1,14 @@
+.tyc-text {
+    font-size: 14px;
+}
+.tyc-text h4{
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 20px;
+}
+.tyc-text span{
+    font-weight: 600;
+}
+li::marker {
+  font-weight: bold;
+}

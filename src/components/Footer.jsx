@@ -87,7 +87,7 @@ const Footer = () => {
         title: 'Legales',
         content: `
           <ul class="list-ct">
-            <li class="list-ct-item"><a href="/TerminosYCondiciones/" rel="noopener noreferrer">Términos y Condiciones</a></li>
+            <li class="list-ct-item"><a href="/terminos-y-condiciones/" rel="noopener noreferrer">Términos y Condiciones</a></li>
             <li class="list-ct-item"><a href="/TerminosYCondicionesInternet/" rel="noopener noreferrer">Términos y Condiciones de Internet</a></li>
             <li class="list-ct-item"><a href="/files/Netflix.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Netflix</a></li>
             <li class="list-ct-item"><a href="/files/AmazonPrime.pdf" target="_blank" rel="noopener noreferrer">Términos y Condiciones de Amazon Prime</a></li>
