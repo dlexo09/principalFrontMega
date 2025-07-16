@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
 import { LocationContext } from '../LocationContext';
-import { serverAPILambda } from '../config';
+import { serverAPIsFront } from '../config';
 import '../components/TopBar.css';
 
 const TopBar = ({ modalRef, locations, setLocations }) => {
@@ -37,7 +37,7 @@ const TopBar = ({ modalRef, locations, setLocations }) => {
       if (locations.length === 0) {
         try {
           // console.log("🏠 [TopBar] Fetching locations from API...");
-          const response = await fetch(`${serverAPILambda}api/sucursales`);
+          const response = await fetch(`${serverAPIsFront}api/sucursales`);
           const data = await response.json();
           // console.log("🏠 [TopBar] Locations fetched:", data);
           // console.log("🏠 [TopBar] Total locations:", data.length);

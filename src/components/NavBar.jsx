@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { serverUrl, serverAPILambda } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
+import { serverAPIsFront } from '../config'; // Ajusta la ruta según la ubicación de tu archivo config.js
 import { LocationContext } from '../LocationContext';
 import './NavBar.css';
 
@@ -21,7 +21,7 @@ const NavBar = () => {
       if (idSucursal) {
         try {
           // console.log(`Fetching paquete data for idSucursal: ${idSucursal}`);
-          const response = await fetch(`${serverAPILambda}api/xview/${idSucursal}`);
+          const response = await fetch(`${serverAPIsFront}api/xview/${idSucursal}`);
           const data = await response.json();
           // console.log('Paquete data received:', data);
           setPaqueteData(data);
