@@ -22,7 +22,7 @@ const BannerStrNetflix = () => {
                 </div>
                 <div className="col-md-7 col-xl-6 order-1 order-md-2">
                     <div className="streaming-cont-clasico">
-                        <img className='w-100' src="/img/streamings/banner-cont-clasico.png" alt="" />
+                        <img className='w-100' src="/img/streamings/netflix-principal.png" alt="" />
                     </div>
                 </div>
             </div>

@@ -54,12 +54,12 @@ const SOPCIS = () => {
           <h2 className="big-title-services">CONOCE EL MAPA INTERACTIVO</h2>
         </div>
         <div className="d-flex flex-column align-items-center mt-4">
-          <form className="w-100" style={{ maxWidth: 400 }}>
+          <form className="w-100 d-flex justify-content-center">
             {loading ? (
               <div>Cargando ciudades...</div>
             ) : (
               <select
-                className="form-control"
+                className="form-control form-control-select"
                 value={ciudadSeleccionada}
                 onChange={handleChange}
               >
@@ -78,13 +78,11 @@ const SOPCIS = () => {
             <div
               style={{
                 width: "100%",
-                maxWidth: 900,
+                maxWidth: 1200,
                 borderRadius: 12,
                 overflow: "hidden",
-                boxShadow: "0 2px 16px rgba(0,0,0,0.08)",
-                border: "1px solid #e0e0e0",
                 background: "#fff",
-                margin: "0 32px",
+                margin: "0",
               }}
             >
               {ciudadSeleccionada && (
@@ -93,6 +91,7 @@ const SOPCIS = () => {
                   src={`https://megacable.com.mx/pruebas/cis/proxy_ayuda_cis_new2.php?id_sucursal=${ciudadSeleccionada}`}
                   width="100%"
                   height="824"
+                  className="map-cis"
                   style={{
                     display: "block",
                     background: "#fff",
