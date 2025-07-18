@@ -18,6 +18,9 @@ const PaquetesTarifariosDisney = () => {
   const [selectedPack, setSelectedPack] = useState('triple');
   const [extraPromos, setExtraPromos] = useState([]);
   const [selectedPromo, setSelectedPromo] = useState({});
+  // Estado para controlar el popup
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+  const [selectedPackageData, setSelectedPackageData] = useState(null);
   const promoValue = 0;
   const idSucursal = currentLocation?.idSucursal;
   const nombreSucursal = currentLocation?.sucursalName || ""; // <-- Asegura que tienes el nombre
@@ -113,9 +116,19 @@ const PaquetesTarifariosDisney = () => {
       alert("Selecciona una sucursal para continuar.");
       return;
     }
-    const costoCifrado = cifrarAES(String(costoPaquete), AES_KEY);
-    const url = `https://ventas-web.megacable.com.mx/#/new-sale/${idPaqueteWeb}/${idSucursal}/${encodeURIComponent(nombreSucursal)}?c=${encodeURIComponent(costoCifrado)}`;
-    window.open(url, "_blank");
+    // Guardar los datos del paquete seleccionado y abrir el popup
+    setSelectedPackageData({
+      idPaqueteWeb,
+      costoPaquete,
+      idSucursal,
+      nombreSucursal
+    });
+    setIsPopupOpen(true);
+  };
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedPackageData(null);
   };
 
   const handlePromoChange = (uniqueId, promo) => {
@@ -124,6 +137,59 @@ const PaquetesTarifariosDisney = () => {
       [uniqueId]: promo,
     }));
     setTimeout(ajustarAlturas, 50);
+  };
+
+  // Componente del popup
+  const ContactPopup = () => {
+    if (!isPopupOpen) return null;
+
+    return (
+      <div className="popup-overlay" onClick={handleClosePopup}>
+        <div className="popup-content popup-content-tarifario" onClick={(e) => e.stopPropagation()}>
+          <div className="popup-header">
+            <h3>¡Quiero contratar!</h3>
+            <button className="popup-close-btn" onClick={handleClosePopup}>×</button>
+          </div>
+          <div className="popup-body">
+            <form role="form" id="f-llamame-home0">   
+              <input 
+                type="text" 
+                className="form-control telefono popup-input form-popup-streaming" 
+                placeholder="Tu teléfono" 
+                name="dato1" 
+                id="P2_dato1" 
+                required 
+              />    
+              <div className="popup-checkbox-container label-popup-container">
+                <input 
+                  type="checkbox" 
+                  id="i-acepto-popup" 
+                  required 
+                  name="i-acepto" 
+                  data-ic-form-field="i-acepto"
+                />
+                <label htmlFor="i-acepto-popup">
+                  <small>He leído y Acepto el <a target='_blank' href="/aviso-de-privacidad">Aviso de privacidad</a></small>
+                </label>
+              </div>
+              
+              <button className="popup-submit-btn" type="button">Llámame</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  // Funciones para el manejo del popup
+  const openPopup = (packageData) => {
+    setSelectedPackageData(packageData);
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+    setSelectedPackageData(null);
   };
 
   return (
@@ -207,20 +273,26 @@ const PaquetesTarifariosDisney = () => {
                         <h2 className="card-title">{paquete.idTipoRed == 3 ? 'INTERNET SIMÉTRICO' : 'INTERNET ILIMITADO'}</h2>
                         <p className="card-text velocidadPromo velocidadPromo-disney">{velocidad} MEGAS</p>
 
-                        {paquete.tiempoVelocidaPromo > 0 && (
+                        {paquete.tiempoVelocidaPromo > 0 ? (
                           <p className="card-text tiempoVelocidadPromo">
                             x {paquete.tiempoVelocidaPromo} meses<sup>*</sup>
                           </p>
+                        ) : (
+                          <p className="card-text tiempoVelocidadPromo"></p>
                         )}
 
-
-                        {showExtensor && (
-                          <p>
-                            <img
-                              src="/img/extensor_wifi_ultra.png"
-                              alt="IncluyeExtensor Wifi Ultra"
-                              style={{ height: '40px', marginTop: '20px' }}
-                            />
+                        {showExtensor ? (
+                          <img
+                            src="/img/extensor_wifi_ultra.png"
+                            alt="Extensor Wifi Ultra Incluido"
+                            style={{ height: '40px', marginBlockStart: '10px' }}
+                          />
+                        ) : (
+                          <p
+                            className="card-title"
+                            style={{ marginBlockStart: '10px' }}
+                          >
+                            DE VELOCIDAD
                           </p>
                         )}
 
@@ -260,7 +332,7 @@ const PaquetesTarifariosDisney = () => {
                           </div>
                         )}
 
-                        <p className="card-servicio-txt servicio-m">Telefonia Fija</p>
+                        <p className="card-servicio-txt servicio-m">+ Telefonía Fija</p>
                         <div className="promoExtra">
                           <div className="pack-str-container">
                             <p className="card-servicio-txt servicio-m mb-2">SELECCIONA TU PLAN</p>
@@ -332,6 +404,9 @@ const PaquetesTarifariosDisney = () => {
           </a>
         </p>
       </div>
+
+      {/* Popup de contacto */}
+      <ContactPopup />
     </div>
   );
 };
