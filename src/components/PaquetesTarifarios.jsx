@@ -3,17 +3,17 @@ import { useNavigate } from "react-router-dom";
 import { serverAPILambda } from "../config";
 import { LocationContext } from "../LocationContext";
 import { cifrarAES } from "../utils/AES";
-
 import "./PaquetesTarifarios.css";
-
-// Importaciones de Swiper
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
 const AES_KEY =
-  "9e3f2b1a4c6d8e7f0a1b2c3d4e5f6789a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5"; // Define aquí la clave y compártela
+  "9e3f2b1a4c6d8e7f0a1b2c3d4e5f6789a0b1c2d3e4f5a6b7c8d9e0f1a2b3c4d5";
+const SUCURSALES_PERMITIDAS = [
+  399, 400, 401, 416, 472, 473, 497, 517, 527, 528, 529, 534, 537, 540, 549, 41, 324
+];
 
 const PaquetesTarifarios = () => {
   const { currentLocation } = useContext(LocationContext);
@@ -23,7 +23,10 @@ const PaquetesTarifarios = () => {
   const [promos, setPromos] = useState([]);
   const promoValue = 0;
   const idSucursal = currentLocation?.idSucursal;
-  const nombreSucursal = currentLocation?.sucursalName || ""; // <-- Asegura que tienes el nombre
+  const nombreSucursal = currentLocation?.sucursalName || "";
+
+  const [showModal, setShowModal] = useState(false);
+  const [telefonoModal, setTelefonoModal] = useState("");
 
   const navigate = useNavigate();
 
@@ -41,7 +44,6 @@ const PaquetesTarifarios = () => {
         }
       }
     };
-
     fetchPaquetes();
   }, [selectedPack, currentLocation]);
 
@@ -55,7 +57,6 @@ const PaquetesTarifarios = () => {
         console.error("Error fetching full connected data:", error);
       }
     };
-
     fetchFullConnectedData();
   }, []);
 
@@ -69,7 +70,6 @@ const PaquetesTarifarios = () => {
         console.error("Error fetching promos:", error);
       }
     };
-
     fetchPromos();
   }, []);
 
@@ -94,34 +94,40 @@ const PaquetesTarifarios = () => {
     window.open(url, "_blank");
   };
 
+  const handleContrataAhora = () => {
+    setShowModal(true);
+  };
+
+  const handleModalSubmit = (e) => {
+    e.preventDefault();
+    if (!telefonoModal) {
+      alert("Por favor ingresa tu teléfono.");
+      return;
+    }
+    // Aquí puedes enviar el teléfono a tu backend si lo necesitas
+    alert("¡Gracias! Pronto te contactaremos.");
+    setShowModal(false);
+    setTelefonoModal("");
+  };
+
   useEffect(() => {
     const ajustarAlturas = () => {
       const items = document.querySelectorAll(".swiper .paquete-item");
       let maxHeight = 0;
-
-      // Reset heights
       items.forEach((item) => {
-        item.style.height = "auto"; // Resetea la altura
+        item.style.height = "auto";
       });
-
-      // Get max height
       items.forEach((item) => {
         const height = item.offsetHeight;
         if (height > maxHeight) maxHeight = height;
       });
-
-      // Apply max height
       items.forEach((item) => {
-        item.style.height = `${maxHeight}px`; // Ajusta la altura de todos al máximo
+        item.style.height = `${maxHeight}px`;
       });
     };
-
-    // Ejecutar al montar y cuando cambien los paquetes
     setTimeout(() => {
       ajustarAlturas();
-    }, 100); // delay para asegurar que el DOM ya esté pintado
-
-    // Opcional: ajustar al redimensionar la ventana
+    }, 100);
     window.addEventListener("resize", ajustarAlturas);
     return () => window.removeEventListener("resize", ajustarAlturas);
   }, [paquetes, selectedPack]);
@@ -138,9 +144,8 @@ const PaquetesTarifarios = () => {
       <div className="d-flex justify-content-center mb-3 btn-container">
         <button
           type="button"
-          className={`pack-btn ${
-            selectedPack === "triple" ? "pack-btn-active" : "pack-btn-inactive"
-          } btn-lg mx-2`}
+          className={`pack-btn ${selectedPack === "triple" ? "pack-btn-active" : "pack-btn-inactive"
+            } btn-lg mx-2`}
           onClick={() => setSelectedPack("triple")}
         >
           TRIPLE PACK
@@ -149,9 +154,8 @@ const PaquetesTarifarios = () => {
         </button>
         <button
           type="button"
-          className={`pack-btn ${
-            selectedPack === "doble" ? "pack-btn-active" : "pack-btn-inactive"
-          } btn-lg mx-2`}
+          className={`pack-btn ${selectedPack === "doble" ? "pack-btn-active" : "pack-btn-inactive"
+            } btn-lg mx-2`}
           onClick={() => setSelectedPack("doble")}
         >
           DOBLE PACK
@@ -163,7 +167,6 @@ const PaquetesTarifarios = () => {
         <p>(Cliente nuevo)</p>
       </div>
 
-      {/* Carrusel con Swiper manteniendo las clases originales */}
       <div className="position-relative ">
         <Swiper
           modules={[Navigation]}
@@ -172,7 +175,7 @@ const PaquetesTarifarios = () => {
             nextEl: ".packs-next",
           }}
           slidesPerView={1}
-          centeredSlides={paquetes.length === 1} // Centrar solo si hay 1 item
+          centeredSlides={paquetes.length === 1}
           spaceBetween={20}
           breakpoints={{
             768: {
@@ -202,9 +205,8 @@ const PaquetesTarifarios = () => {
                   />
                 )}
                 <img
-                  className={`icon-card-packs  d-md-block telefonia-icon ${
-                    selectedPack === "doble" ? "telefonia-icon-doble" : ""
-                  }`}
+                  className={`icon-card-packs  d-md-block telefonia-icon ${selectedPack === "doble" ? "telefonia-icon-doble" : ""
+                    }`}
                   src="/icons/telefonia-icon.png"
                   alt="Icono Telefonía"
                 />
@@ -212,11 +214,10 @@ const PaquetesTarifarios = () => {
 
               <div className="d-flex justify-content-center container-packs-swiper h-100">
                 <div
-                  className={`paquete-item paquete-general-item card ${
-                    selectedPack === "doble"
-                      ? "paquete-item-doble"
-                      : "paquete-item-triple"
-                  }`}
+                  className={`paquete-item paquete-general-item card ${selectedPack === "doble"
+                    ? "paquete-item-doble"
+                    : "paquete-item-triple"
+                    }`}
                   style={{ width: "100%", maxWidth: "340px" }}
                 >
                   <div className="card-body">
@@ -329,12 +330,12 @@ const PaquetesTarifarios = () => {
                           <span className="price-mxn">$</span>
                           {Math.round(
                             Number(paquete.tarifaPromocional) +
-                              Number(
-                                promos.reduce(
-                                  (acc, promo) => acc + promo.costoMensualPromo,
-                                  promoValue
-                                )
+                            Number(
+                              promos.reduce(
+                                (acc, promo) => acc + promo.costoMensualPromo,
+                                promoValue
                               )
+                            )
                           )}
                           <sup>*</sup>
                           <span className="time-crd">/mes</span>
@@ -345,19 +346,28 @@ const PaquetesTarifarios = () => {
                           </p>
                         )}
                       </div>
-                      <button
-                        className="btn btn-packs btn-pack-card"
-                        onClick={() =>
-                          handleButtonClick(
-                            paquete.idContrata,
-                            paquete.tarifaPromocional,
-                            currentLocation?.idSucursal,
-                            currentLocation?.sucursalName
-                          )
-                        }
-                      >
-                        ¡Lo quiero!
-                      </button>
+                      {SUCURSALES_PERMITIDAS.includes(Number(currentLocation?.idSucursal)) ? (
+                        <button
+                          className="btn btn-packs btn-pack-card"
+                          onClick={() =>
+                            handleButtonClick(
+                              paquete.idContrata,
+                              paquete.tarifaPromocional,
+                              currentLocation?.idSucursal,
+                              currentLocation?.sucursalName
+                            )
+                          }
+                        >
+                          ¡Lo quiero!
+                        </button>
+                      ) : (
+                        <button
+                          className="btn btn-packs btn-pack-card"
+                          onClick={handleContrataAhora}
+                        >
+                          Contrata ahora
+                        </button>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -405,6 +415,31 @@ const PaquetesTarifarios = () => {
           Nota: Promoción válida domiciliando el pago a tarjeta. Los paquetes mostrados incluyen max básico con anuncios. <a href="/files/ift/Folios_de_Registros_DAC.xlsx">Tarifas registradas ante el IFT</a>. Aplican restricciones. Consulta términos y condiciones <a href="">aquí.</a>
         </p>
       </div>
+
+      {showModal && (
+        <div className="modal-backdrop" style={{
+          position: "fixed", top: 0, left: 0, width: "100vw", height: "100vh",
+          background: "rgba(0,0,0,0.5)", display: "flex", alignItems: "center", justifyContent: "center", zIndex: 9999
+        }}>
+          <div className="modal-content" style={{
+            background: "#fff", padding: 24, borderRadius: 8, minWidth: 300
+          }}>
+            <h4>Déjanos tu teléfono</h4>
+            <form onSubmit={handleModalSubmit}>
+              <input
+                type="text"
+                className="form-control mb-3"
+                placeholder="Tu teléfono"
+                value={telefonoModal}
+                onChange={e => setTelefonoModal(e.target.value)}
+                required
+              />
+              <button type="submit" className="btn btn-primary">Enviar</button>
+              <button type="button" className="btn btn-secondary ms-2" onClick={() => setShowModal(false)}>Cancelar</button>
+            </form>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

@@ -168,23 +168,74 @@ const Footer = () => {
         `,
       },
     ],
-  ]; 
- 
+  ];
+
   return (
     <footer className="footer">
       <div className="top-footer">
         <div className="container d-flex flex-column flex-md-row justify-content-between align-items-center flex-wrap flex">
           <div className="contratar-container d-flex flex-column flex-lg-row align-items-center">
             <label>¡Quiero contratar!</label>
-            
-            <form className='form-footer d-flex flex-column flex-md-row' role="form" id="f-llamame-home0">   
-              <input type="text" className="form-control telefono" placeholder="Tu teléfono" name="dato1" id="P2_dato1" required />    
+
+            <form
+              className='form-footer d-flex flex-column flex-md-row'
+              role="form"
+              id="f-llamame-home0"
+              onSubmit={async e => {
+                e.preventDefault();
+                const telefono = e.target.dato1.value;
+                const acepta = e.target['i-acepto'].checked;
+                if (!telefono) {
+                  alert("Por favor ingresa tu teléfono.");
+                  return;
+                }
+                if (!acepta) {
+                  alert("Debes aceptar el aviso de privacidad.");
+                  return;
+                }
+                try {
+                  // Enviar datos al backend PHP
+                  const res = await fetch('/api/llamame', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ telefono })
+                  });
+                  const data = await res.json();
+                  if (data.success) {
+                    alert("¡Gracias! Pronto te contactaremos.");
+                    // Aquí puedes disparar eventos de seguimiento si lo necesitas
+                  } else {
+                    alert("Hubo un error, intenta de nuevo.");
+                  }
+                } catch (err) {
+                  alert("Error de conexión.");
+                }
+                e.target.reset();
+              }}
+            >
+              <input
+                type="text"
+                className="form-control telefono"
+                placeholder="Tu teléfono"
+                name="dato1"
+                id="P2_dato1"
+                required
+              />
               <div className="tyc-container d-flex align-items-center gap-2">
-                <input type="checkbox" id="i-acepto" required="" name="i-acepto" data-ic-form-field="i-acepto"></input>
-                <label className="form-check-label" id="l-acepto" htmlFor="i-acepto"><small>He leído y Acepto el <a target='_blank' href="/aviso-de-privacidad">Aviso de privacidad</a></small></label>
+                <input
+                  type="checkbox"
+                  id="i-acepto"
+                  required
+                  name="i-acepto"
+                  data-ic-form-field="i-acepto"
+                />
+                <label className="form-check-label" id="l-acepto" htmlFor="i-acepto">
+                  <small>
+                    He leído y Acepto el <a target='_blank' href="/aviso-de-privacidad">Aviso de privacidad</a>
+                  </small>
+                </label>
               </div>
-              
-              <button className="llamame-send" type="button">Llámame</button>
+              <button className="llamame-send" type="submit">Llámame</button>
             </form>
 
           </div>
