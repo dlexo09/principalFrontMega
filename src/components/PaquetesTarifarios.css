@@ -49,6 +49,8 @@
 
 .promoExtra, .promoExtra img {
   width: 100%;
+  margin-bottom: 10px;
+  border-radius: 50px;
 }
 
 .servicio-m {
@@ -254,5 +256,163 @@
     padding: 100px 0px;
   }
   
+}
+
+/* Estilos para el popup de contacto */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content-tarifario {
+  background: white;
+  border-radius: 30px;
+  padding: 30px;
+  max-width: 450px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.popup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 15px;
+}
+
+.popup-header h3 {
+  margin: 0;
+  color: #333;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.popup-close-btn {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #666;
+  cursor: pointer;
+  padding: 5px;
+  line-height: 1;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.popup-close-btn:hover {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.popup-body form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.popup-input {
+  padding: 12px 15px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.popup-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.popup-checkbox-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.popup-checkbox-container input[type="checkbox"] {
+  margin-top: 3px;
+  transform: scale(1.2);
+}
+
+.popup-checkbox-container label {
+  flex: 1;
+  line-height: 1.4;
+  color: #666;
+}
+
+.popup-checkbox-container label a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.popup-checkbox-container label a:hover {
+  text-decoration: underline;
+}
+
+.popup-submit-btn {
+  background: var(--turquesa-btn);
+  color: #000;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+}
+
+.popup-submit-btn:hover {
+  background: #01c6bd;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+}
+
+.popup-submit-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+}
+
+
+/* Responsive para el popup */
+@media (max-width: 768px) {
+  .popup-content {
+    padding: 20px;
+    margin: 20px;
+  }
+  
+  .popup-header h3 {
+    font-size: 1.3rem;
+  }
+  
+  .popup-input {
+    font-size: 16px; /* Evita zoom en iOS */
+  }
+}
+
+.form-popup-streaming{
+  width: 100% !important;
+}
+.label-popup-container{
+  text-align: left;
 }
 

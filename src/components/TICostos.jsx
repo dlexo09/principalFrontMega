@@ -63,11 +63,11 @@ const TICostos = () => {
             <select
               name="localidad"
               id="localidad"
-              className="form-control mb-2 text-uppercase h-40 back-gray localidad cargar"
+              className="form-control mb-2 text-uppercase h-40  localidad cargar form-control-select"
               value={paisSeleccionado}
               onChange={(e) => setPaisSeleccionado(e.target.value)}
             >
-              <option value="">SELECCIONA</option>
+              <option value="">SELECCIONA TU UBICACIÓN...</option>
               {localidades.map((loc) => (
                 <option key={loc} value={loc}>
                   {loc}
@@ -81,18 +81,18 @@ const TICostos = () => {
             {loading ? (
               <div className="text-center py-4">Cargando tarifas...</div>
             ) : tarifas.length > 0 ? (
-              <table className="table table-striped table-hover shadow rounded overflow-hidden">
+              <table className="table table-striped table-hover overflow-hidden table-costos">
                 <thead className="table-primary">
                   <tr>
-                    <th className="text-center" style={{ width: "50%" }}>Serie</th>
-                    <th className="text-center" style={{ width: "50%" }}>Tarifa por minuto</th>
+                    <th className="text-center th-limit" style={{ width: "50%" }}>Serie</th>
+                    <th className="text-center th-limit" style={{ width: "50%" }}>Tarifa por minuto</th>
                   </tr>
                 </thead>
                 <tbody>
                   {tarifas.map((tarifa) => (
                     <tr key={tarifa.id_tarifa_int}>
                       <td className="text-center fw-bold">{tarifa.serie}</td>
-                      <td className="text-center text-success fw-semibold">${tarifa.tarifa}</td>
+                      <td className="text-center fw-semibold">${tarifa.tarifa}</td>
                     </tr>
                   ))}
                 </tbody>

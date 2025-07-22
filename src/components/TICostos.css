@@ -1,27 +1,38 @@
-.tarifas-table-wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
-  padding: 24px 16px;
+.table-costos {
+  border-collapse: separate !important;
+  border-spacing: 0 !important;
+  border-radius: 42px;
+  border: 1px solid var(--blue-gray);
 }
 
-.table th, .table td {
-  vertical-align: middle !important;
-  font-size: 1.1rem;
+.table-costos thead th {
+  background-color: var(--blue-dark);
+  color: white;
+  border: 1px solid var(--blue-dark);
 }
 
-.table thead th {
-  background: linear-gradient(90deg, #007bff 80%, #008cff 100%);
-  color: #fff;
-  border: none;
+/* Solo aplicar el border-radius en las esquinas superiores */
+.table-costos thead th:first-child {
+  border-top-left-radius: 42px !important;
 }
 
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: #f7fafd;
+.table-costos thead th:last-child {
+  border-top-right-radius: 42px !important;
 }
-
-.table-hover tbody tr:hover {
-  background-color: #e3f2fd;
+.form-control-select{
+  background: #e5e5e5;
+  border-radius: 50px !important;
+  appearance: none; /* Quita el estilo nativo */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='14' height='10' viewBox='0 0 14 10' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l6 6 6-6' stroke='%23666' stroke-width='2' fill='none' fill-rule='evenodd'/%3E%3C/svg%3E")
+    no-repeat right 1rem center;
+  background-size: 12px;
+  padding-right: 40px !important;
+  padding-left: 15px !important;
+  font-size: 13px !important;
+}
+.form-control-select:focus {
+  border-color: none;
+  box-shadow: none;
 }
