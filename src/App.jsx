@@ -38,6 +38,7 @@ import LandingPage from './views/LandingPage';
 import AvisoPrivacidad from './components/AvisoPrivacidad';
 import Footer from './components/Footer';
 import LocationModal from "./components/LocationModal";
+
 import { LocationProvider, LocationContext } from './LocationContext';
 import './App.css';
 
@@ -54,7 +55,7 @@ function AppContent() {
     const selectedLocation = locations.find(
       (location) => location.sucursalName === e.target.value
     );
-    
+
     console.log("🔄 [App] Location changed to:", selectedLocation);
     setCurrentLocation(selectedLocation); // ✅ Actualiza el contexto
     localStorage.setItem("selectedLocation", JSON.stringify(selectedLocation));
@@ -146,9 +147,11 @@ function App() {
   return (
     <HelmetProvider>
       <LocationProvider>
+       
         <AppContent />
       </LocationProvider>
     </HelmetProvider>
+
   );
 }
 

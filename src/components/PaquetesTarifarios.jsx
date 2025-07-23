@@ -6,6 +6,8 @@ import { cifrarAES } from "../utils/AES";
 import "./PaquetesTarifarios.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import { useInConcert } from "../hooks/useInConcert";
+
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -27,6 +29,9 @@ const PaquetesTarifarios = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [telefonoModal, setTelefonoModal] = useState("");
+
+  // Hook de inConcert para esta página
+  const { submitLead } = useInConcert('paquetes_home');
 
   const navigate = useNavigate();
 
@@ -104,10 +109,20 @@ const PaquetesTarifarios = () => {
       alert("Por favor ingresa tu teléfono.");
       return;
     }
-    // Aquí puedes enviar el teléfono a tu backend si lo necesitas
-    alert("¡Gracias! Pronto te contactaremos.");
-    setShowModal(false);
-    setTelefonoModal("");
+
+    // Enviar a inConcert
+    const success = submitLead({
+      telefono: telefonoModal,
+      source: 'paquetes_tarifarios'
+    });
+
+    if (success) {
+      alert("¡Gracias! Pronto te contactaremos.");
+      setShowModal(false);
+      setTelefonoModal("");
+    } else {
+      alert("Error al enviar. Intenta de nuevo.");
+    }
   };
 
   useEffect(() => {
