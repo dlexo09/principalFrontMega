@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import { useInConcert } from '../hooks/useInConcert';
+import { submitLeadToInConcert } from '../services/inConcertAPI';
 import './CallToActionHome.css';
 
 const CallToActionHome = () => {
   const [phone, setPhone] = useState('');
   const [accepted, setAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  
-  // Usar el mismo hook con el mismo token 'home'
-  const { submitLead, isDevelopment } = useInConcert('home');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,27 +23,19 @@ const CallToActionHome = () => {
     setIsSubmitting(true);
 
     try {
-      const success = await submitLead({
-        telefono: phone,
-        source: 'call_to_action_home'
-      });
+      const result = await submitLeadToInConcert(phone, 'home');
 
-      if (success) {
-        alert('¡Gracias! Pronto te contactaremos.');
+      if (result.success) {
+        alert(`¡Gracias! Pronto te contactaremos. ID: ${result.contactId}`);
         setPhone('');
         setAccepted(false);
       } else {
-        if (isDevelopment) {
-          alert('¡Gracias! (Modo desarrollo - Lead simulado)');
-          setPhone('');
-          setAccepted(false);
-        } else {
-          alert('Error al enviar. Intenta de nuevo.');
-        }
+        alert('Error al enviar. Intenta de nuevo.');
+        console.error('Error enviando lead:', result.error);
       }
     } catch (error) {
       console.error('Error en call to action submit:', error);
-      alert('Error al enviar. Intenta de nuevo.');
+      alert('Error de conexión. Intenta de nuevo.');
     } finally {
       setIsSubmitting(false);
     }

@@ -3,10 +3,10 @@ import { useNavigate } from "react-router-dom";
 import { serverAPILambda } from "../config";
 import { LocationContext } from "../LocationContext";
 import { cifrarAES } from "../utils/AES";
+import { submitLeadToInConcert } from "../services/inConcertAPI";
 import "./PaquetesTarifarios.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-import { useInConcert } from "../hooks/useInConcert";
 
 import "swiper/css";
 import "swiper/css/navigation";
@@ -18,6 +18,8 @@ const SUCURSALES_PERMITIDAS = [
 ];
 
 const PaquetesTarifarios = () => {
+  console.log('🎯 PaquetesTarifarios: Componente iniciando');
+
   const { currentLocation } = useContext(LocationContext);
   const [paquetes, setPaquetes] = useState([]);
   const [selectedPack, setSelectedPack] = useState("triple");
@@ -29,24 +31,30 @@ const PaquetesTarifarios = () => {
 
   const [showModal, setShowModal] = useState(false);
   const [telefonoModal, setTelefonoModal] = useState("");
-
-  // Hook de inConcert para esta página
-  const { submitLead } = useInConcert('paquetes_home');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const navigate = useNavigate();
 
+  console.log('🎯 PaquetesTarifarios: CurrentLocation:', currentLocation);
+
   useEffect(() => {
+    console.log('🎯 PaquetesTarifarios: useEffect fetchPaquetes ejecutándose');
+    
     const fetchPaquetes = async () => {
       if (currentLocation) {
         try {
+          console.log('🎯 Fetching paquetes para:', currentLocation.idSucursal);
           const response = await fetch(
             `${serverAPILambda}api/${selectedPack}Pack/${currentLocation.idSucursal}`
           );
           const data = await response.json();
+          console.log('🎯 Paquetes obtenidos:', data);
           setPaquetes(data);
         } catch (error) {
           console.error("Error fetching paquetes:", error);
         }
+      } else {
+        console.log('🎯 No hay currentLocation, no se pueden cargar paquetes');
       }
     };
     fetchPaquetes();
@@ -103,25 +111,31 @@ const PaquetesTarifarios = () => {
     setShowModal(true);
   };
 
-  const handleModalSubmit = (e) => {
+  const handleModalSubmit = async (e) => {
     e.preventDefault();
     if (!telefonoModal) {
       alert("Por favor ingresa tu teléfono.");
       return;
     }
 
-    // Enviar a inConcert
-    const success = submitLead({
-      telefono: telefonoModal,
-      source: 'paquetes_tarifarios'
-    });
+    setIsSubmitting(true);
 
-    if (success) {
-      alert("¡Gracias! Pronto te contactaremos.");
-      setShowModal(false);
-      setTelefonoModal("");
-    } else {
-      alert("Error al enviar. Intenta de nuevo.");
+    try {
+      const result = await submitLeadToInConcert(telefonoModal, 'paquetes_home');
+      
+      if (result.success) {
+        alert(`¡Gracias! Pronto te contactaremos. ID: ${result.contactId}`);
+        setShowModal(false);
+        setTelefonoModal("");
+      } else {
+        alert("Error al enviar. Intenta de nuevo.");
+        console.error('Error enviando lead:', result.error);
+      }
+    } catch (error) {
+      console.error('Error en modal submit:', error);
+      alert("Error de conexión. Intenta de nuevo.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -147,6 +161,8 @@ const PaquetesTarifarios = () => {
     return () => window.removeEventListener("resize", ajustarAlturas);
   }, [paquetes, selectedPack]);
 
+  console.log('🎯 PaquetesTarifarios: Renderizando JSX, paquetes:', paquetes.length);
+
   return (
     <div className="container pad-container paquetes-tarifarios text-center">
       <h2 className="small-title tarifario-title">
@@ -159,8 +175,7 @@ const PaquetesTarifarios = () => {
       <div className="d-flex justify-content-center mb-3 btn-container">
         <button
           type="button"
-          className={`pack-btn ${selectedPack === "triple" ? "pack-btn-active" : "pack-btn-inactive"
-            } btn-lg mx-2`}
+          className={`pack-btn ${selectedPack === "triple" ? "pack-btn-active" : "pack-btn-inactive"} btn-lg mx-2`}
           onClick={() => setSelectedPack("triple")}
         >
           TRIPLE PACK
@@ -169,8 +184,7 @@ const PaquetesTarifarios = () => {
         </button>
         <button
           type="button"
-          className={`pack-btn ${selectedPack === "doble" ? "pack-btn-active" : "pack-btn-inactive"
-            } btn-lg mx-2`}
+          className={`pack-btn ${selectedPack === "doble" ? "pack-btn-active" : "pack-btn-inactive"} btn-lg mx-2`}
           onClick={() => setSelectedPack("doble")}
         >
           DOBLE PACK
@@ -182,7 +196,7 @@ const PaquetesTarifarios = () => {
         <p>(Cliente nuevo)</p>
       </div>
 
-      <div className="position-relative ">
+      <div className="position-relative">
         <Swiper
           modules={[Navigation]}
           navigation={{
@@ -202,7 +216,7 @@ const PaquetesTarifarios = () => {
               centeredSlides: false,
             },
           }}
-          className="carousel slide "
+          className="carousel slide"
         >
           {paquetes.map((paquete, index) => (
             <SwiperSlide key={index}>
@@ -214,14 +228,13 @@ const PaquetesTarifarios = () => {
                 />
                 {selectedPack !== "doble" && (
                   <img
-                    className="icon-card-packs tv-icon  d-md-block"
+                    className="icon-card-packs tv-icon d-md-block"
                     src="/icons/tv-icon.png"
                     alt="Icono TV"
                   />
                 )}
                 <img
-                  className={`icon-card-packs  d-md-block telefonia-icon ${selectedPack === "doble" ? "telefonia-icon-doble" : ""
-                    }`}
+                  className={`icon-card-packs d-md-block telefonia-icon ${selectedPack === "doble" ? "telefonia-icon-doble" : ""}`}
                   src="/icons/telefonia-icon.png"
                   alt="Icono Telefonía"
                 />
@@ -229,10 +242,7 @@ const PaquetesTarifarios = () => {
 
               <div className="d-flex justify-content-center container-packs-swiper h-100">
                 <div
-                  className={`paquete-item paquete-general-item card ${selectedPack === "doble"
-                    ? "paquete-item-doble"
-                    : "paquete-item-triple"
-                    }`}
+                  className={`paquete-item paquete-general-item card ${selectedPack === "doble" ? "paquete-item-doble" : "paquete-item-triple"}`}
                   style={{ width: "100%", maxWidth: "340px" }}
                 >
                   <div className="card-body">
@@ -442,15 +452,29 @@ const PaquetesTarifarios = () => {
             <h4>Déjanos tu teléfono</h4>
             <form onSubmit={handleModalSubmit}>
               <input
-                type="text"
+                type="tel"
                 className="form-control mb-3"
                 placeholder="Tu teléfono"
                 value={telefonoModal}
                 onChange={e => setTelefonoModal(e.target.value)}
+                disabled={isSubmitting}
                 required
               />
-              <button type="submit" className="btn btn-primary">Enviar</button>
-              <button type="button" className="btn btn-secondary ms-2" onClick={() => setShowModal(false)}>Cancelar</button>
+              <button 
+                type="submit" 
+                className="btn btn-primary"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Enviando...' : 'Enviar'}
+              </button>
+              <button 
+                type="button" 
+                className="btn btn-secondary ms-2" 
+                onClick={() => setShowModal(false)}
+                disabled={isSubmitting}
+              >
+                Cancelar
+              </button>
             </form>
           </div>
         </div>
