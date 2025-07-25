@@ -5,11 +5,16 @@
     background-position: center;
     height: 800px;
 }
-.str-netflix-logo img{
-    max-width: 400px;
+.str-max-logo img{
+    max-width: 300px;
 }
 .btn-contratar-str-max{
     background-color: var(--max-color);
+    transition: all 0.4s ease;
+}
+.btn-contratar-str-max:hover{
+    background-color: #fff;
+    color: #000 !important;
 }
 .btn-streaming{
     border-radius: 50px;
@@ -34,7 +39,7 @@
     .streaming-contratar{
         text-align: center;
     }
-    .str-netflix-logo{
+    .str-max-logo{
         display: flex;
         justify-content: center;
     }
@@ -49,7 +54,7 @@
         height: auto;
         padding: 120px 0;
     }
-    .str-netflix-logo img{
+    .str-max-logo img{
         max-width: 90%; 
     }
 }

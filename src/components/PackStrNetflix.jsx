@@ -17,7 +17,7 @@ const PackStrNetflix = () => {
   };
 
   return (
-    <div className="paquetes-tarifarios text-center">
+    <div id="pack-str-netflix" className="paquetes-tarifarios text-center">
       <div className="cliente-question mb-4">
         <h3 className="small-title txt-netflix-color">EL MEJOR PLAN PARA TI</h3>
         <h3 className="big-title mb-5">¿Ya eres cliente Mega?</h3>

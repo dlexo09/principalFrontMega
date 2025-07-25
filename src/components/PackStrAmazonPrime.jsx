@@ -7,7 +7,7 @@ const PackStrAmazonPrime = () => {
 
   return (
     <>
-    <div className="container paquetes-tarifarios text-center paquetes-tarifarios-strm">
+    <div id="pack-str-amazon-prime" className="container paquetes-tarifarios text-center paquetes-tarifarios-strm">
       <Header isCliente={isCliente} setIsCliente={setIsCliente} />
       {isCliente ? (
         <ClienteBenefits />

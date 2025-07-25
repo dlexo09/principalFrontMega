@@ -66,7 +66,7 @@ const PackStrMax = () => {
   const chunkedPaquetes = chunkArray(paquetes, chunkSize);
 
   return (
-    <div className="container paquetes-tarifarios text-center  paquetes-tarifarios-strm">
+    <div id="pack-str-max" className="container paquetes-tarifarios text-center  paquetes-tarifarios-strm">
       <div className="cliente-question mb-4">
         <h3 className="small-title txt-max-color">EL MEJOR PLAN PARA TI</h3>
         <h3 className="big-title mb-5">Por ser cliente Mega</h3>

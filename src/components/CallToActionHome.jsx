@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { submitLeadToInConcert } from '../services/inConcertAPI';
 import './CallToActionHome.css';
+import '../components/Globales.css';
 
 const CallToActionHome = () => {
   const [phone, setPhone] = useState('');
@@ -44,7 +45,7 @@ const CallToActionHome = () => {
   return (
     <div className="call-to-action-home" id="CallToActionHome">
       <form onSubmit={handleSubmit} className="d-flex align-items-center justify-content-center">
-        <label className="text-white me-3">QUIERO CONTRATAR Y DESEO QUE ME LLAMEN</label>
+        <label className="cta-label">QUIERO CONTRATAR Y DESEO QUE ME LLAMEN</label>
         <input
           type="tel"
           className="form-control me-3"
@@ -54,7 +55,7 @@ const CallToActionHome = () => {
           disabled={isSubmitting}
           required
         />
-        <div className="form-check me-3">
+        <div className="form-check form-check-home me-3 ">
           <input
             type="checkbox"
             className="form-check-input"
@@ -64,13 +65,13 @@ const CallToActionHome = () => {
             disabled={isSubmitting}
             required
           />
-          <label className="form-check-label text-white" htmlFor="privacyCheck">
+          <label className="form-check-label" htmlFor="privacyCheck">
             He leído y Acepto el Aviso de privacidad
           </label>
         </div>
         <button 
           type="submit" 
-          className="btn btn-primary"
+          className="btn btn-packs ps-5 pe-5"
           disabled={isSubmitting}
         >
           {isSubmitting ? 'Enviando...' : 'Llámame'}

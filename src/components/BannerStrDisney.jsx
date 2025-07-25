@@ -16,12 +16,22 @@ const BannerStrDisney = () => {
                     </div>
 
                     <div className="streaming-contratar ps-md-4 ps-lg-5 mt-5 mt-md-4 mt-xl-5">
-                        <button className='btn-contratar-str-disney btn-streaming'>Contratar</button>
+                        <button 
+                            className='btn-contratar-str-disney btn-streaming'
+                            onClick={() => {
+                                const element = document.getElementById('pack-str-disney');
+                                if (element) {
+                                    element.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                        >
+                            Contratar
+                        </button>
                     </div>
                 </div>
                 <div className="col-md-7 col-xl-6 order-1 order-md-2">
                     <div className="streaming-cont-clasico">
-                        <img className='w-100' src="/img/streamings/disney-principal.png" alt="" />
+                        <img className='w-100' src="/img/streamings/disneyplus/disney-principal.png" alt="" />
                     </div>
                 </div>
             </div>
