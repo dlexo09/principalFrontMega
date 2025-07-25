@@ -1,19 +1,244 @@
 .call-to-action-home {
-    background-color: #003366; /* Azul marino más claro */
-    padding: 20px;
-    height: 150px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  background: var(--blue-dark);
+  padding: 25px 20px;
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.call-to-action-home::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/img/home/waves-bg-1.png') no-repeat center;
+  background-size: cover;
+  opacity: 0.08;
+  z-index: 1;
+}
+
+.call-to-action-home form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  gap: 15px;
+  flex-wrap: nowrap;
+  position: relative;
+  z-index: 2;
+}
+
+.call-to-action-home .cta-label {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.call-to-action-home .form-control {
+  width: 220px;
+  padding: 12px 18px;
+  border: none;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  background-color: #ffffff;
+  color: #333;
+  flex-shrink: 0;
+}
+
+.call-to-action-home .form-control:focus {
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.call-to-action-home .form-control::placeholder {
+  color: #888;
+  font-weight: 400;
+}
+
+.call-to-action-home .form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+}
+
+.call-to-action-home .form-check-input {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.call-to-action-home .form-check-input:checked {
+  background-color: #00D7CC;
+  border-color: #00D7CC;
+}
+
+
+.call-to-action-home .form-check-label {
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+
+
+.call-to-action-home .btn-primary:hover::before {
+  left: 100%;
+}
+
+.call-to-action-home .btn-primary:active {
+  transform: translateY(0);
+}
+
+.call-to-action-home .btn-primary:disabled {
+  background: linear-gradient(135deg, #ccc 0%, #999 100%);
+  color: #666;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.call-to-action-home .btn-primary:disabled::before {
+  display: none;
+}
+.form-check-home {
+  border: none !important;
+}
+.form-check-label{
+
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1199px) {
+  .call-to-action-home {
+    padding: 22px 15px;
+    min-height: 110px;
   }
   
   .call-to-action-home form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+    gap: 12px;
+    max-width: 1200px;
+  }
+  
+  .call-to-action-home .cta-label {
+    font-size: 14px;
+    margin-right: 8px;
   }
   
   .call-to-action-home .form-control {
-    width: auto;
+    width: 200px;
+    padding: 10px 16px;
   }
+  
+  .call-to-action-home .btn-primary {
+    padding: 10px 25px;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .call-to-action-home {
+    padding: 20px 10px;
+    min-height: 100px;
+  }
+  
+  .call-to-action-home form {
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .call-to-action-home .cta-label {
+    font-size: 13px;
+    text-align: center;
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .call-to-action-home .form-control {
+    width: 180px;
+  }
+  
+  .call-to-action-home .form-check-label {
+    font-size: 12px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .call-to-action-home {
+    background-image: url('/img/general/wave-sht-general-movil.png');
+    background-size: 100% 100%;
+    padding: 25px 10px;
+    min-height: auto;
+  }
+  
+  .call-to-action-home::before {
+    background-image: url('/img/home/waves-bg-1-movil.png');
+  }
+  
+  .call-to-action-home form {
+    flex-direction: column;
+    gap: 15px;
+    align-items: stretch;
+  }
+  
+  .call-to-action-home .cta-label {
+    width: 100%;
+    margin-bottom: 0;
+    font-size: 14px;
+    white-space: normal;
+    text-align: center;
+  }
+  
+  .call-to-action-home .form-control {
+    width: 100%;
+  }
+  
+  .call-to-action-home .form-check {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+  }
+  
+  .call-to-action-home .form-check-label {
+    white-space: normal;
+    text-align: center;
+  }
+  
+  .call-to-action-home .btn-primary {
+    width: 100%;
+    padding: 15px 40px;
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .call-to-action-home .form-check-label {
+    font-size: 12px;
+  }
+  
+  .call-to-action-home .cta-label {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+}

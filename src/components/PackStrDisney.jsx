@@ -15,7 +15,7 @@ const PackStrDisney = () => {
   };
 
   return (
-    <div className="container paquetes-tarifarios text-center">
+    <div id="pack-str-disney" className="container paquetes-tarifarios text-center">
       <div className="cliente-question mb-4">
         <h3 className="small-title txt-disney-color">EL MEJOR PLAN PARA TI</h3>
         <h3 className="big-title mb-5">¿Ya eres cliente Mega?</h3>
@@ -121,7 +121,7 @@ const PlanButton = () => {
   return (
     <div className="col-md-4 plans-contrata">
       <img src="/icons/disney/strm-icon.png" alt="" />
-      <button className="btn-packs disney-btn-color btn-client-pos">
+      <button onClick={() => window.open('https://sel.megacable.com.mx/', '_blank')} className="btn-packs disney-btn-color btn-client-pos">
         ¡Lo quiero!
       </button>
     </div>

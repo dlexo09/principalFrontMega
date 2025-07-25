@@ -8,7 +8,7 @@ const BannerStrMax = () => {
         <div className="str-max-container d-flex">
             <div className="container-fluid bannerStreaming-content m-auto row d-flex align-items-center justify-content-evenly">
                 <div className="col-md-5 col-xl-3 order-2 order-md-1">
-                    <div className="str-netflix-logo mt-5 mt-md-0">
+                    <div className="str-max-logo mt-5 mt-md-0">
                         <img className='w-100' src="/img/streamings/max/max-logo.png" alt="" />
                     </div>
 
@@ -17,12 +17,22 @@ const BannerStrMax = () => {
                     </div>
 
                     <div className="streaming-contratar mt-5 mt-md-4 mt-xl-5">
-                        <a href='https://auth.megacable.com.mx/realms/mega/protocol/openid-connect/auth?client_id=sel&redirect_uri=https%3A%2F%2Fsel.megacable.com.mx%2F&state=dcaa9fe2-f238-4170-a203-4dc97bc189cf&response_mode=fragment&response_type=code&scope=openid&nonce=7067ea3f-fe27-4d3f-8ce6-d82ff298acd7' className='btn-contratar-str-max btn-streaming'>Contratar</a>
+                        <button 
+                            className='btn-contratar-str-max btn-streaming'
+                            onClick={() => {
+                                const element = document.getElementById('pack-str-max');
+                                if (element) {
+                                    element.scrollIntoView({ behavior: 'smooth' });
+                                }
+                            }}
+                        >
+                            Contratar
+                        </button>
                     </div>
                 </div>
                 <div className="col-md-7 col-xl-6 order-1 order-md-2">
                     <div className="streaming-cont-clasico">
-                        <img className='w-100' src="/img/streamings/max-principal.png" alt="" />
+                        <img className='w-100' src="/img/streamings/max/max-principal.png" alt="" />
                     </div>
                 </div>
             </div>
